@@ -1,0 +1,177 @@
+{
+  "adjudicated_labeled": 0,
+  "audit_dir": "results\\human_audit_v4",
+  "claim_policy": "This report tracks human-audit readiness only. Empty or pending labels do not support human-audited claims.",
+  "pack_count": 2,
+  "packs": [
+    {
+      "adjudication": {
+        "by_status": {
+          "pending": 100
+        },
+        "completion_rate": 0.0,
+        "exists": true,
+        "invalid": 0,
+        "items": 100,
+        "labeled": 0,
+        "path": "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.adjudicated_labels.jsonl",
+        "pending": 100
+      },
+      "agreement": {
+        "auditors": [
+          "auditor1",
+          "auditor2"
+        ],
+        "completion": {
+          "auditor1": {
+            "completion_rate": 0.0,
+            "labeled": 0,
+            "rows": 100
+          },
+          "auditor2": {
+            "completion_rate": 0.0,
+            "labeled": 0,
+            "rows": 100
+          }
+        },
+        "conflicts": 0,
+        "pairwise": [
+          {
+            "agreement_rate": null,
+            "agreements": 0,
+            "auditors": [
+              "auditor1",
+              "auditor2"
+            ],
+            "cohen_kappa": null,
+            "compared": 0
+          }
+        ]
+      },
+      "auditors": {
+        "fever_v4_n100_structbalanced_blind100.auditor1.labels": {
+          "completion_rate": 0.0,
+          "exists": true,
+          "invalid": 0,
+          "labeled": 0,
+          "path": "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.auditor1.labels.csv",
+          "pending": 100,
+          "rows": 100
+        },
+        "fever_v4_n100_structbalanced_blind100.auditor2.labels": {
+          "completion_rate": 0.0,
+          "exists": true,
+          "invalid": 0,
+          "labeled": 0,
+          "path": "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.auditor2.labels.csv",
+          "pending": 100,
+          "rows": 100
+        }
+      },
+      "expected_label_counts": {
+        "false": 50,
+        "true": 50,
+        "unknown": 0
+      },
+      "failed_gates": [
+        {
+          "actual": 0,
+          "gate": "all_items_adjudicated",
+          "required": 100
+        }
+      ],
+      "manifest": "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.manifest.json",
+      "pack_name": "fever_v4_n100_structbalanced_blind100",
+      "readiness_file": null,
+      "readiness_file_ready": null,
+      "ready": false,
+      "selected_items": 100
+    },
+    {
+      "adjudication": {
+        "by_status": {
+          "pending": 200
+        },
+        "completion_rate": 0.0,
+        "exists": true,
+        "invalid": 0,
+        "items": 200,
+        "labeled": 0,
+        "path": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.adjudicated_labels.jsonl",
+        "pending": 200
+      },
+      "agreement": {
+        "auditors": [
+          "auditor1",
+          "auditor2"
+        ],
+        "completion": {
+          "auditor1": {
+            "completion_rate": 0.0,
+            "labeled": 0,
+            "rows": 200
+          },
+          "auditor2": {
+            "completion_rate": 0.0,
+            "labeled": 0,
+            "rows": 200
+          }
+        },
+        "conflicts": 0,
+        "pairwise": [
+          {
+            "agreement_rate": null,
+            "agreements": 0,
+            "auditors": [
+              "auditor1",
+              "auditor2"
+            ],
+            "cohen_kappa": null,
+            "compared": 0
+          }
+        ]
+      },
+      "auditors": {
+        "hotpot_v4_semanticswap_n100_blind200.auditor1.labels": {
+          "completion_rate": 0.0,
+          "exists": true,
+          "invalid": 0,
+          "labeled": 0,
+          "path": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.auditor1.labels.csv",
+          "pending": 200,
+          "rows": 200
+        },
+        "hotpot_v4_semanticswap_n100_blind200.auditor2.labels": {
+          "completion_rate": 0.0,
+          "exists": true,
+          "invalid": 0,
+          "labeled": 0,
+          "path": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.auditor2.labels.csv",
+          "pending": 200,
+          "rows": 200
+        }
+      },
+      "expected_label_counts": {
+        "false": 100,
+        "true": 100,
+        "unknown": 0
+      },
+      "failed_gates": [
+        {
+          "actual": 0,
+          "gate": "all_items_adjudicated",
+          "required": 200
+        }
+      ],
+      "manifest": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.manifest.json",
+      "pack_name": "hotpot_v4_semanticswap_n100_blind200",
+      "readiness_file": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.readiness.json",
+      "readiness_file_ready": false,
+      "ready": false,
+      "selected_items": 200
+    }
+  ],
+  "pending": 300,
+  "ready": false,
+  "total_items": 300
+}

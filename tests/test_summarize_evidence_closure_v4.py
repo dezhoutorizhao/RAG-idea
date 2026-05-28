@@ -2,6 +2,7 @@ import json
 
 from experiments.summarize_evidence_closure import (
     _ext4_prepare_dry_run_status,
+    _human_audit_v4_status,
     _remote_storage_probe_status,
     _semantic_swap_status,
 )
@@ -168,6 +169,34 @@ def test_ext4_prepare_dry_run_status_is_non_destructive(tmp_path):
     assert status["destructive_operations_executed"] is False
     assert status["cleanup_step_count"] == 2
     assert status["docker_json_logs_bytes"] == "123\n"
+
+
+def test_human_audit_v4_status_is_aggregated(tmp_path):
+    _write_json(
+        tmp_path / "human_audit_v4_status_20260529.json",
+        {
+            "ready": False,
+            "pack_count": 1,
+            "total_items": 2,
+            "adjudicated_labeled": 1,
+            "pending": 1,
+            "packs": [
+                {
+                    "pack_name": "pack",
+                    "selected_items": 2,
+                    "ready": False,
+                    "adjudication": {"labeled": 1, "pending": 1},
+                }
+            ],
+        },
+    )
+
+    status = _human_audit_v4_status(tmp_path)
+
+    assert status["ready"] is False
+    assert status["pack_count"] == 1
+    assert status["packs"][0]["adjudicated_labeled"] == 1
+    assert status["packs"][0]["pending"] == 1
 
 
 def _calibrated(auroc, target_met_count):

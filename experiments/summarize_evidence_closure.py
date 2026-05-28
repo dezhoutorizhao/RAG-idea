@@ -73,6 +73,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     semantic_swap = _semantic_swap_status(results)
     remote_storage_probe = _remote_storage_probe_status(results)
     ext4_prepare_dry_run = _ext4_prepare_dry_run_status(results)
+    human_audit_v4_status = _human_audit_v4_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -99,6 +100,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         },
         "latest_v4_diagnostics": {
             "hotpot_semantic_swap_n100": semantic_swap,
+            "human_audit_v4": human_audit_v4_status,
         },
         "risk_control": {
             "hotpot_cp": {
@@ -189,7 +191,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "Independent external review has not been rerun after the latest storage-status update.",
         ],
         "remaining_human_audit_blockers": [
-            "Hotpot semantic-swap blind200 pack is prepared, but adjudicated labels are pending.",
+            "Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items.",
         ],
     }
     return closure
@@ -347,6 +349,31 @@ def _ext4_prepare_dry_run_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _human_audit_v4_status(results: Path) -> dict[str, Any] | None:
+    path = results / "human_audit_v4_status_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "ready": payload.get("ready"),
+        "pack_count": payload.get("pack_count"),
+        "total_items": payload.get("total_items"),
+        "adjudicated_labeled": payload.get("adjudicated_labeled"),
+        "pending": payload.get("pending"),
+        "packs": [
+            {
+                "pack_name": pack.get("pack_name"),
+                "selected_items": pack.get("selected_items"),
+                "ready": pack.get("ready"),
+                "adjudicated_labeled": get(pack, "adjudication", "labeled"),
+                "pending": get(pack, "adjudication", "pending"),
+            }
+            for pack in payload.get("packs", [])
+        ],
+    }
+
+
 def render_markdown(status: dict[str, Any]) -> str:
     hotpot = status["main_bridge_results"]["hotpot_corm_multiseed"]
     fever = status["main_bridge_results"]["fever_nearmiss_corm_v3_multiseed"]
@@ -358,6 +385,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     risk = status["risk_control"]
     claims = status["claim_verification"]
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
+    human_v4 = status["latest_v4_diagnostics"].get("human_audit_v4")
 
     def row(method: str, item: dict[str, float | None]) -> str:
         return (
@@ -479,6 +507,21 @@ def render_markdown(status: dict[str, Any]) -> str:
             f"- Human-audited labels complete: `{semantic['human_audit_pack']['ready']}` "
             f"(labeled `{semantic['human_audit_pack']['labeled']}`, pending `{semantic['human_audit_pack']['pending']}`).",
             "",
+        ]
+    )
+    if human_v4:
+        lines.extend(
+            [
+                "Human audit v4 aggregate:",
+                f"- Ready: `{human_v4['ready']}`; packs: `{human_v4['pack_count']}`; "
+                f"items: `{human_v4['total_items']}`.",
+                f"- Adjudicated labels: `{human_v4['adjudicated_labeled']}`; "
+                f"pending: `{human_v4['pending']}`.",
+                "",
+            ]
+        )
+    lines.extend(
+        [
             "## Claim Boundary",
             "",
             "Allowed claims:",

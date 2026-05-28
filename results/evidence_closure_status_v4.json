@@ -57,7 +57,7 @@
     "The method solves robust RAG generally across tasks.",
     "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4."
   ],
-  "generated_at_utc": "2026-05-28T18:36:22.901568+00:00",
+  "generated_at_utc": "2026-05-28T18:41:36.419947+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "hotpot_semantic_swap_n100": {
@@ -146,6 +146,30 @@
         "risk_at_30": 0.06666666666666665,
         "risk_at_50": 0.06999999999999995
       }
+    },
+    "human_audit_v4": {
+      "adjudicated_labeled": 0,
+      "artifact": "results/human_audit_v4_status_20260529.json",
+      "pack_count": 2,
+      "packs": [
+        {
+          "adjudicated_labeled": 0,
+          "pack_name": "fever_v4_n100_structbalanced_blind100",
+          "pending": 100,
+          "ready": false,
+          "selected_items": 100
+        },
+        {
+          "adjudicated_labeled": 0,
+          "pack_name": "hotpot_v4_semanticswap_n100_blind200",
+          "pending": 200,
+          "ready": false,
+          "selected_items": 200
+        }
+      ],
+      "pending": 300,
+      "ready": false,
+      "total_items": 300
     }
   },
   "main_bridge_results": {
@@ -232,7 +256,7 @@
     }
   },
   "remaining_human_audit_blockers": [
-    "Hotpot semantic-swap blind200 pack is prepared, but adjudicated labels are pending."
+    "Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items."
   ],
   "remaining_non_human_blockers": [
     "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",

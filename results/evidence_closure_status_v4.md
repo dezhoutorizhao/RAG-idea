@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-28T18:36:22.901568+00:00`
+Generated: `2026-05-28T18:41:36.419947+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -72,6 +72,10 @@ Semantic-swap n100:
 - CSRM-Calibrated-Logistic AUROC mean: `0.9658`; vs calibrated logistic orbit AUROC delta mean: `0.0000`.
 - Human-audited labels complete: `False` (labeled `0`, pending `200`).
 
+Human audit v4 aggregate:
+- Ready: `False`; packs: `2`; items: `300`.
+- Adjudicated labels: `0`; pending: `300`.
+
 ## Claim Boundary
 
 Allowed claims:
@@ -95,7 +99,7 @@ Remaining non-human blockers:
 - Independent external review has not been rerun after the latest storage-status update.
 
 Remaining human-audit blockers:
-- Hotpot semantic-swap blind200 pack is prepared, but adjudicated labels are pending.
+- Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items.
 
 ## Verification
 
