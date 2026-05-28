@@ -1,0 +1,101 @@
+{
+  "anti_shortcut": {
+    "random_label_median_auc": 0.5,
+    "structural_max_auc": 0.5,
+    "structural_passed_0_55": true
+  },
+  "balance": {
+    "search": {
+      "candidate_combinations_evaluated": 50000,
+      "candidate_combinations_total": 1399358844975,
+      "exhaustive": false,
+      "max_combinations": 50000,
+      "objective": "minimize structural-only max single-feature AUROC, then mean feature gap",
+      "seed": 97
+    },
+    "selected_n": 24,
+    "selected_negative": 12,
+    "selected_positive": 12
+  },
+  "compare_vs_naive": {
+    "aurc_reduction": 0.1315444942278971,
+    "auroc_improvement": 0.23611111111111116,
+    "baseline": {
+      "aurc": 0.2806166230794377,
+      "auroc": 0.7638888888888888,
+      "risk_at_30": 0.125,
+      "risk_at_50": 0.33333333333333337
+    },
+    "risk_at_30_reduction": 0.125,
+    "risk_at_50_reduction": 0.33333333333333337,
+    "target": {
+      "aurc": 0.1490721288515406,
+      "auroc": 1.0,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.0
+    }
+  },
+  "csrm": {
+    "aurc": 0.1490721288515406,
+    "auroc": 1.0,
+    "n": 24,
+    "negative": 12,
+    "positive": 12,
+    "risk_at_30": 0.0,
+    "risk_at_50": 0.0
+  },
+  "inputs": {
+    "private": "results\\fever_orbits_v4_n12.private_eval.jsonl",
+    "raw": "results\\fever_orbits_v4_n12.raw.jsonl"
+  },
+  "limitations": [
+    "Constant-score diagnostics remove retrieval-score shortcuts and are not real retrieval evidence.",
+    "Structural-balanced subset selection is diagnostic; main evidence still requires larger construction-time hard negatives and human-audited labels."
+  ],
+  "outputs": {
+    "anti_shortcut": "results\\fever_orbits_v4_n12.constant.structbalanced.anti_shortcut.json",
+    "balance_report": "results\\fever_orbits_v4_n12.constant.structbalanced.balance_report.json",
+    "balanced_private": "results\\fever_orbits_v4_n12.constant.structbalanced.private_eval.jsonl",
+    "balanced_raw": "results\\fever_orbits_v4_n12.constant.structbalanced.raw.jsonl",
+    "balanced_scored": "results\\fever_orbits_v4_n12.constant.structbalanced.textonly_scored.jsonl",
+    "compare": "results\\fever_orbits_v4_n12.constant.structbalanced.textonly_compare.json",
+    "constant_raw": "results\\fever_orbits_v4_n12.constant.raw.jsonl",
+    "constant_score_report": "results\\fever_orbits_v4_n12.constant.score_control_report.json",
+    "constant_scored": "results\\fever_orbits_v4_n12.constant.textonly_scored.jsonl",
+    "constant_scored_report": "results\\fever_orbits_v4_n12.constant.textonly_report.json",
+    "eval": "results\\fever_orbits_v4_n12.constant.structbalanced.textonly_eval.json",
+    "summary": "results\\fever_orbits_v4_n12.constant.structbalanced.summary.json"
+  },
+  "score_control": {
+    "constant_score": 0.5,
+    "mode": "constant",
+    "score_summary_after": {
+      "max": 0.5,
+      "mean": 0.5,
+      "min": 0.5,
+      "n": 864,
+      "unique_values": 1
+    },
+    "score_summary_before": {
+      "max": 1.0,
+      "mean": 0.1095601813221383,
+      "min": 0.0,
+      "n": 864,
+      "unique_values": 5
+    }
+  },
+  "scoring": {
+    "orbits": 72,
+    "scorer": {
+      "feature_sources": [
+        "query",
+        "candidate_answer",
+        "visible_evidence_text",
+        "retrieval_score"
+      ],
+      "scorer": "textonly_lexical_v4",
+      "uses_private_fields": false
+    },
+    "source_item_groups": 12
+  }
+}
