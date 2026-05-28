@@ -1,0 +1,243 @@
+{
+  "csrm_vs_strongest_non_csrm": {
+    "by_aurc": {
+      "aurc_reduction": -0.027817850927443655,
+      "auroc_improvement": 0.0,
+      "risk_at_30_reduction": 0.0,
+      "risk_at_50_reduction": 0.0
+    },
+    "by_auroc": {
+      "aurc_reduction": -0.027817850927443655,
+      "auroc_improvement": 0.0,
+      "risk_at_30_reduction": 0.0,
+      "risk_at_50_reduction": 0.0
+    },
+    "by_risk_at_30": {
+      "aurc_reduction": -0.027817850927443655,
+      "auroc_improvement": 0.0,
+      "risk_at_30_reduction": 0.0,
+      "risk_at_50_reduction": 0.0
+    }
+  },
+  "fairness": {
+    "llm_judge": "not run; no external LLM calls in this baseline batch",
+    "logistic_scores": "out-of-fold by source_item_group_id when possible",
+    "same_input_rows": true,
+    "same_scored_evidence": true
+  },
+  "methods": {
+    "calibrated_logistic_context": {
+      "aurc": 0.25,
+      "auroc": 0.5,
+      "risk_at_30": 0.5,
+      "risk_at_50": 0.5,
+      "risk_at_70": 0.5,
+      "score_summary": {
+        "max": 0.5,
+        "mean": 0.5,
+        "min": 0.5,
+        "unique": 1
+      }
+    },
+    "calibrated_logistic_orbit": {
+      "aurc": 0.1520695669145795,
+      "auroc": 1.0,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.0,
+      "risk_at_70": 0.2857142857142857,
+      "score_summary": {
+        "max": 0.9829672415286957,
+        "mean": 0.5000582541177867,
+        "min": 0.0002462981455482091,
+        "unique": 200
+      }
+    },
+    "context_sufficiency_clean": {
+      "aurc": 0.4975,
+      "auroc": 0.5,
+      "risk_at_30": 0.5,
+      "risk_at_50": 0.5,
+      "risk_at_70": 0.5,
+      "score_summary": {
+        "max": 0.2813664360170441,
+        "mean": 0.1928211588496717,
+        "min": 0.004952731583516987,
+        "unique": 100
+      }
+    },
+    "corm_max_clean": {
+      "aurc": 0.25,
+      "auroc": 0.5,
+      "risk_at_30": 0.5,
+      "risk_at_50": 0.5,
+      "risk_at_70": 0.5,
+      "score_summary": {
+        "max": 0.5,
+        "mean": 0.5,
+        "min": 0.5,
+        "unique": 1
+      }
+    },
+    "corm_mean_clean": {
+      "aurc": 0.25,
+      "auroc": 0.5,
+      "risk_at_30": 0.5,
+      "risk_at_50": 0.5,
+      "risk_at_70": 0.5,
+      "score_summary": {
+        "max": 0.5,
+        "mean": 0.5,
+        "min": 0.5,
+        "unique": 1
+      }
+    },
+    "csrm_rule": {
+      "aurc": 0.15281785092744365,
+      "auroc": 1.0,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.0,
+      "risk_at_70": 0.2857142857142857,
+      "score_summary": {
+        "max": 0.5988894399790303,
+        "mean": 0.4394351587322558,
+        "min": 0.2503928855235049,
+        "unique": 200
+      }
+    },
+    "equal_budget_mean": {
+      "aurc": 0.4192604512309343,
+      "auroc": 0.6309,
+      "risk_at_30": 0.3833333333333333,
+      "risk_at_50": 0.43000000000000005,
+      "risk_at_70": 0.3928571428571429,
+      "score_summary": {
+        "max": 0.27534950239671907,
+        "mean": 0.18041346287175042,
+        "min": 0.002732620300250857,
+        "unique": 200
+      }
+    },
+    "equal_budget_min": {
+      "aurc": 0.3353615065931079,
+      "auroc": 0.7151,
+      "risk_at_30": 0.30000000000000004,
+      "risk_at_50": 0.36,
+      "risk_at_70": 0.37142857142857144,
+      "score_summary": {
+        "max": 0.2704510451332143,
+        "mean": 0.16149126615612056,
+        "min": 0.0,
+        "unique": 200
+      }
+    },
+    "equal_budget_q25": {
+      "aurc": 0.3737719026021214,
+      "auroc": 0.6742,
+      "risk_at_30": 0.35,
+      "risk_at_50": 0.39,
+      "risk_at_70": 0.3857142857142857,
+      "score_summary": {
+        "max": 0.27234103558655653,
+        "mean": 0.17095236451393547,
+        "min": 0.0016225646586177922,
+        "unique": 200
+      }
+    },
+    "faithful_sure_multi": {
+      "aurc": 0.3925212233203899,
+      "auroc": 0.6591,
+      "risk_at_30": 0.35,
+      "risk_at_50": 0.38,
+      "risk_at_70": 0.3857142857142857,
+      "score_summary": {
+        "max": 0.4041161857605567,
+        "mean": 0.29618382797447096,
+        "min": 0.1448451563796962,
+        "unique": 200
+      }
+    },
+    "retrieval_stability": {
+      "aurc": 0.25,
+      "auroc": 0.5,
+      "risk_at_30": 0.5,
+      "risk_at_50": 0.5,
+      "risk_at_70": 0.5,
+      "score_summary": {
+        "max": 0.75,
+        "mean": 0.75,
+        "min": 0.75,
+        "unique": 1
+      }
+    },
+    "self_consistency_proxy": {
+      "aurc": 0.125,
+      "auroc": 1.0,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.0,
+      "risk_at_70": 0.2857142857142857,
+      "score_summary": {
+        "max": 1.0,
+        "mean": 0.5,
+        "min": 0.0,
+        "unique": 2
+      }
+    }
+  },
+  "n": 200,
+  "negative": 100,
+  "positive": 100,
+  "private_input": "results\\hotpot_orbits_v4_supportpreserve_n100.private_eval.jsonl",
+  "raw_input": "results\\hotpot_orbits_v4_supportpreserve_n100.constant.raw.jsonl",
+  "scored_input": "results\\hotpot_orbits_v4_supportpreserve_n100.constant.textonly_scored.jsonl",
+  "source_item_groups": 100,
+  "strongest_non_csrm": {
+    "by_aurc": {
+      "method": "self_consistency_proxy",
+      "metrics": {
+        "aurc": 0.125,
+        "auroc": 1.0,
+        "risk_at_30": 0.0,
+        "risk_at_50": 0.0,
+        "risk_at_70": 0.2857142857142857,
+        "score_summary": {
+          "max": 1.0,
+          "mean": 0.5,
+          "min": 0.0,
+          "unique": 2
+        }
+      }
+    },
+    "by_auroc": {
+      "method": "self_consistency_proxy",
+      "metrics": {
+        "aurc": 0.125,
+        "auroc": 1.0,
+        "risk_at_30": 0.0,
+        "risk_at_50": 0.0,
+        "risk_at_70": 0.2857142857142857,
+        "score_summary": {
+          "max": 1.0,
+          "mean": 0.5,
+          "min": 0.0,
+          "unique": 2
+        }
+      }
+    },
+    "by_risk_at_30": {
+      "method": "self_consistency_proxy",
+      "metrics": {
+        "aurc": 0.125,
+        "auroc": 1.0,
+        "risk_at_30": 0.0,
+        "risk_at_50": 0.0,
+        "risk_at_70": 0.2857142857142857,
+        "score_summary": {
+          "max": 1.0,
+          "mean": 0.5,
+          "min": 0.0,
+          "unique": 2
+        }
+      }
+    }
+  }
+}

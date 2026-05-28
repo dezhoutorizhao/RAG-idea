@@ -1,0 +1,1395 @@
+{
+  "by_construction_type": {
+    "stable": {
+      "baseline_mean": 0.9737801463610406,
+      "n": 20,
+      "negative": 0,
+      "positive": 20,
+      "target_mean": 0.988400560290802,
+      "target_minus_baseline_mean": 0.014620413929761522
+    },
+    "wrong_answer": {
+      "baseline_mean": 0.027726753647749756,
+      "n": 20,
+      "negative": 20,
+      "positive": 0,
+      "target_mean": 0.011273511229596217,
+      "target_minus_baseline_mean": -0.016453242418153543
+    }
+  },
+  "feature_gaps": [
+    {
+      "absolute_gap": 1.0,
+      "feature": "answer_consistency",
+      "negative_mean": 0.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 1.0
+    },
+    {
+      "absolute_gap": 1.0,
+      "feature": "support_signature_consistency",
+      "negative_mean": 0.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 1.0
+    },
+    {
+      "absolute_gap": 1.0,
+      "feature": "orbit_answer_flip_rate",
+      "negative_mean": 1.0,
+      "positive_mean": 0.0,
+      "positive_minus_negative": -1.0
+    },
+    {
+      "absolute_gap": 0.06150708614867039,
+      "feature": "clean_to_worst_gap",
+      "negative_mean": 0.06615723856578028,
+      "positive_mean": 0.004650152417109886,
+      "positive_minus_negative": -0.06150708614867039
+    },
+    {
+      "absolute_gap": 0.06150708614867037,
+      "feature": "min_sufficiency",
+      "negative_mean": 0.13544517604087528,
+      "positive_mean": 0.19695226218954565,
+      "positive_minus_negative": 0.06150708614867037
+    },
+    {
+      "absolute_gap": 0.057292291703978704,
+      "feature": "verifier_entropy",
+      "negative_mean": 0.43910867398351466,
+      "positive_mean": 0.49640096568749337,
+      "positive_minus_negative": 0.057292291703978704
+    },
+    {
+      "absolute_gap": 0.027227159592270705,
+      "feature": "naive_orbit_average",
+      "negative_mean": 0.1720501788058299,
+      "positive_mean": 0.1992773383981006,
+      "positive_minus_negative": 0.027227159592270705
+    },
+    {
+      "absolute_gap": 0.027227159592270705,
+      "feature": "mean_sufficiency",
+      "negative_mean": 0.1720501788058299,
+      "positive_mean": 0.1992773383981006,
+      "positive_minus_negative": 0.027227159592270705
+    },
+    {
+      "absolute_gap": 0.009274282118678312,
+      "feature": "mean_missing",
+      "negative_mean": 0.7551319496061599,
+      "positive_mean": 0.7458576674874816,
+      "positive_minus_negative": -0.009274282118678312
+    },
+    {
+      "absolute_gap": 0.0025663186697732674,
+      "feature": "sufficiency_variance",
+      "negative_mean": 0.0025750945079933483,
+      "positive_mean": 8.775838220081039e-06,
+      "positive_minus_negative": -0.0025663186697732674
+    },
+    {
+      "absolute_gap": 0.000221492058824449,
+      "feature": "max_conflict",
+      "negative_mean": 0.08041685396687719,
+      "positive_mean": 0.08019536190805274,
+      "positive_minus_negative": -0.000221492058824449
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "corm_max_clean",
+      "negative_mean": 0.5,
+      "positive_mean": 0.5,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "corm_mean_clean",
+      "negative_mean": 0.5,
+      "positive_mean": 0.5,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "context_sufficiency_clean",
+      "negative_mean": 0.2016024146066555,
+      "positive_mean": 0.2016024146066555,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "clean_sufficiency",
+      "negative_mean": 0.2016024146066555,
+      "positive_mean": 0.2016024146066555,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "retrieval_overlap",
+      "negative_mean": 1.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "perturbation_count",
+      "negative_mean": 1.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.0
+    }
+  ],
+  "metrics": {
+    "baseline_calibrated_logistic_orbit": {
+      "auroc": 1.0,
+      "mean_score_negative": 0.027726753647749756,
+      "mean_score_positive": 0.9737801463610406,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.0
+    },
+    "target": {
+      "auroc": 1.0,
+      "mean_score_negative": 0.011273511229596217,
+      "mean_score_positive": 0.988400560290802,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.0
+    }
+  },
+  "private_input": "results\\hotpot_orbits_v4_supportpreserve_n100.private_eval.jsonl",
+  "raw_input": "results\\hotpot_orbits_v4_supportpreserve_n100.constant.raw.jsonl",
+  "scored_input": "results\\hotpot_orbits_v4_supportpreserve_n100.constant.textonly_scored.jsonl",
+  "seed": 31,
+  "split_sizes": {
+    "calibration": 40,
+    "calibration_groups": 20,
+    "test": 40,
+    "test_groups": 20,
+    "train": 120,
+    "train_groups": 60
+  },
+  "top_cases": {
+    "baseline_over_target_on_positive": [
+      {
+        "baseline_score": 0.9762494638613944,
+        "candidate_answer": "320 years",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5adce88b5542992c1e3a249a:stable",
+        "query": "How long did the state exist whose army ransacked and looted the city, Halebidu, twice in the 14th century ?",
+        "score_gap_target_minus_baseline": 0.01215446425153377,
+        "source_item_group_id": "hotpot_supportpreserve:5adce88b5542992c1e3a249a",
+        "target_score": 0.9884039281129282,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.78779994458527
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9762690119523901,
+        "candidate_answer": "Mickey's PhilharMagic",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5a792ad055429907847277d1:stable",
+        "query": "What 4-D film attraction at Walt Disney World is based off a 2004 computer-animated Christmas movie? ",
+        "score_gap_target_minus_baseline": 0.012494702183389328,
+        "source_item_group_id": "hotpot_supportpreserve:5a792ad055429907847277d1",
+        "target_score": 0.9887637141357795,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7609181111723821
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5031099070422955
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9758823528759467,
+        "candidate_answer": "Hellenism",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5a881cbb55429938390d3ee7:stable",
+        "query": "St. John of the Cross Episcopal Church has a rectory that was in a style that was a product of what earlier style?",
+        "score_gap_target_minus_baseline": 0.012634408205667302,
+        "source_item_group_id": "hotpot_supportpreserve:5a881cbb55429938390d3ee7",
+        "target_score": 0.988516761081614,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7907306781229607
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9758004496463359,
+        "candidate_answer": "Mayor of the City of New York",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5a8ba3ff55429971feec4744:stable",
+        "query": "Stokely Webster has paintings can be found at the official residence of whom?",
+        "score_gap_target_minus_baseline": 0.0127936853450199,
+        "source_item_group_id": "hotpot_supportpreserve:5a8ba3ff55429971feec4744",
+        "target_score": 0.9885941349913558,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7569114346905336
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9754655407523655,
+        "candidate_answer": "1874",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5abd8c295542992ac4f382ab:stable",
+        "query": " The Minnesota State High School Mathematics League was founded by a professor at a private coeducational liberal arts college founded in what year? ",
+        "score_gap_target_minus_baseline": 0.013384334498797168,
+        "source_item_group_id": "hotpot_supportpreserve:5abd8c295542992ac4f382ab",
+        "target_score": 0.9888498752511626,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7694253484134995
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5115340550196913
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9749844355616224,
+        "candidate_answer": "8 km",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5adf3e355542993a75d26440:stable",
+        "query": "How long is the bridge in the \u00d6resund Region that connect Copenhagen, Denmark and Malmo, Sweden?",
+        "score_gap_target_minus_baseline": 0.013510694032803028,
+        "source_item_group_id": "hotpot_supportpreserve:5adf3e355542993a75d26440",
+        "target_score": 0.9884951295944254,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7129519328136825
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5225152848892793
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.974651809353824,
+        "candidate_answer": "London, England",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5ab90fdd55429916710eb0fc:stable",
+        "query": "Wheelock Whitney is just one member of the Whitney Family. Where did this American family originate from?",
+        "score_gap_target_minus_baseline": 0.01391304467298915,
+        "source_item_group_id": "hotpot_supportpreserve:5ab90fdd55429916710eb0fc",
+        "target_score": 0.9885648540268132,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7855693627056252
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9750628197603183,
+        "candidate_answer": "Masayoshi \"Masa\" Takayama",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5ae55b8255429908b63265ef:stable",
+        "query": "What chef is the owner of a Japanese restaurant in the Tribeca neighborhood and also owns two Bar Masas in New York and Nevada?",
+        "score_gap_target_minus_baseline": 0.014081208627558128,
+        "source_item_group_id": "hotpot_supportpreserve:5ae55b8255429908b63265ef",
+        "target_score": 0.9891440283878764,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7520080674506012
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5448608700351303
+          }
+        ]
+      }
+    ],
+    "target_high_false_positive": [
+      {
+        "baseline_score": 0.05327525420188037,
+        "candidate_answer": "comparable to the seven Wonders of the World",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5a764c0b55429976ec32bd89:wrong_answer",
+        "query": "What criteria subjectively qualifies the Houston Astrodome to be called the Eighth Wonder of the World?",
+        "score_gap_target_minus_baseline": -0.03538593933127178,
+        "source_item_group_id": "hotpot_supportpreserve:5a764c0b55429976ec32bd89",
+        "target_score": 0.01788931487060859,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7706797058943343
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.06356368813402671,
+        "candidate_answer": "fifth-largest",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5a80522b5542996402f6a4c1:wrong_answer",
+        "query": "What population ranking is the Oklahoma city located south of a wilderness area spanning over 5000 acres?",
+        "score_gap_target_minus_baseline": -0.04572345441709938,
+        "source_item_group_id": "hotpot_supportpreserve:5a80522b5542996402f6a4c1",
+        "target_score": 0.017840233716927337,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7516878921706214
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0642940158749308,
+        "candidate_answer": "21",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5ae25d2b554299495565da46:wrong_answer",
+        "query": "Who has more singles titles, Brian Gottfried or Peter Fleming?",
+        "score_gap_target_minus_baseline": -0.046908096381759704,
+        "source_item_group_id": "hotpot_supportpreserve:5ae25d2b554299495565da46",
+        "target_score": 0.017385919493171104,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7906735642248724
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.047363121914243134,
+        "candidate_answer": "November",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5ac213805542992f1f2b37e7:wrong_answer",
+        "query": "When did the animated series Kent Scott wrote end after beginning in September of 2002 on \"Nick on CBS\"?",
+        "score_gap_target_minus_baseline": -0.030061082211904566,
+        "source_item_group_id": "hotpot_supportpreserve:5ac213805542992f1f2b37e7",
+        "target_score": 0.017302039702338567,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7909314547423406
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.057211973933404804,
+        "candidate_answer": "Chrysler K platform",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5a8303c255429954d2e2ec01:wrong_answer",
+        "query": "The Plymouth fury produced from 1955 to 1989  was replaced by what for police and fleet applications?",
+        "score_gap_target_minus_baseline": -0.03995674423696362,
+        "source_item_group_id": "hotpot_supportpreserve:5a8303c255429954d2e2ec01",
+        "target_score": 0.017255229696441183,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7307758559951741
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.03787347750882,
+        "candidate_answer": "8 km",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5adf3e355542993a75d26440:wrong_answer",
+        "query": "How long is the bridge in the \u00d6resund Region that connect Copenhagen, Denmark and Malmo, Sweden?",
+        "score_gap_target_minus_baseline": -0.02079129869384727,
+        "source_item_group_id": "hotpot_supportpreserve:5adf3e355542993a75d26440",
+        "target_score": 0.01708217881497273,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.6704402550121721
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5419496849390737
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.057711405374538935,
+        "candidate_answer": "2012",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5a899bf955429946c8d6e959:wrong_answer",
+        "query": "When was the New Orleans Pelicans player featured on the NBA 2K16 cover first drafted?",
+        "score_gap_target_minus_baseline": -0.041003432294321504,
+        "source_item_group_id": "hotpot_supportpreserve:5a899bf955429946c8d6e959",
+        "target_score": 0.01670797308021743,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7054833953951417
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.030561627614668085,
+        "candidate_answer": "Hellenism",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5a881cbb55429938390d3ee7:wrong_answer",
+        "query": "St. John of the Cross Episcopal Church has a rectory that was in a style that was a product of what earlier style?",
+        "score_gap_target_minus_baseline": -0.01396053050396457,
+        "source_item_group_id": "hotpot_supportpreserve:5a881cbb55429938390d3ee7",
+        "target_score": 0.016601097110703514,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7497781004003511
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ],
+    "target_low_false_negative": [
+      {
+        "baseline_score": 0.9718232975748697,
+        "candidate_answer": "Naguib Mahfouz",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e:stable",
+        "query": "Which writer won the Nobel Prize, William H. Gass or Naguib Mahfouz?",
+        "score_gap_target_minus_baseline": 0.015977522117798237,
+        "source_item_group_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e",
+        "target_score": 0.987800819692668,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.6229519950843195
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5341286166670145
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9725805400567596,
+        "candidate_answer": "21",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5ae25d2b554299495565da46:stable",
+        "query": "Who has more singles titles, Brian Gottfried or Peter Fleming?",
+        "score_gap_target_minus_baseline": 0.01544697766404346,
+        "source_item_group_id": "hotpot_supportpreserve:5ae25d2b554299495565da46",
+        "target_score": 0.9880275177208031,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7917674874751875
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9734289433435519,
+        "candidate_answer": "Chrysler K platform",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5a8303c255429954d2e2ec01:stable",
+        "query": "The Plymouth fury produced from 1955 to 1989  was replaced by what for police and fleet applications?",
+        "score_gap_target_minus_baseline": 0.014651956777319897,
+        "source_item_group_id": "hotpot_supportpreserve:5a8303c255429954d2e2ec01",
+        "target_score": 0.9880809001208718,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7336484605413157
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9731933517229319,
+        "candidate_answer": "2012",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5a899bf955429946c8d6e959:stable",
+        "query": "When was the New Orleans Pelicans player featured on the NBA 2K16 cover first drafted?",
+        "score_gap_target_minus_baseline": 0.014922295482993952,
+        "source_item_group_id": "hotpot_supportpreserve:5a899bf955429946c8d6e959",
+        "target_score": 0.9881156472059258,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7167746802948042
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9735851617410572,
+        "candidate_answer": "Sam Phillips",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5ac26ac15542992f1f2b38bc:stable",
+        "query": "Who is the film dedicated to that Paramount Classics and MTV Films co-purchased the rights to?",
+        "score_gap_target_minus_baseline": 0.014539101270260812,
+        "source_item_group_id": "hotpot_supportpreserve:5ac26ac15542992f1f2b38bc",
+        "target_score": 0.9881242630113181,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8009281447540912
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9725213007534569,
+        "candidate_answer": "fifth-largest",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5a80522b5542996402f6a4c1:stable",
+        "query": "What population ranking is the Oklahoma city located south of a wilderness area spanning over 5000 acres?",
+        "score_gap_target_minus_baseline": 0.015704247849921527,
+        "source_item_group_id": "hotpot_supportpreserve:5a80522b5542996402f6a4c1",
+        "target_score": 0.9882255486033784,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7530055270967114
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9738677280318705,
+        "candidate_answer": "Geraldine Page",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5adcd2435542992c1e3a241b:stable",
+        "query": "Which eight-time Academy Award nominee was Tennessee Williams's choice to play a leading role in his play \"Clothes for a Summer Hotel\"?",
+        "score_gap_target_minus_baseline": 0.014386227459123102,
+        "source_item_group_id": "hotpot_supportpreserve:5adcd2435542992c1e3a241b",
+        "target_score": 0.9882539554909936,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7569233917408803
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9739744367092726,
+        "candidate_answer": "Sarajevo",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_supportpreserve:5ae5dae2554299546bf82fa4:stable",
+        "query": "Faruk Halibegovic was born in what city that is the capital and largest city of Bosnia and Herzegovina with a population of 275,524?",
+        "score_gap_target_minus_baseline": 0.014337403285839545,
+        "source_item_group_id": "hotpot_supportpreserve:5ae5dae2554299546bf82fa4",
+        "target_score": 0.9883118399951122,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5864722385485961
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.5745940128202002
+          }
+        ]
+      }
+    ],
+    "target_over_baseline_on_negative": [
+      {
+        "baseline_score": 0.0020215644563183303,
+        "candidate_answer": "London, England",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5ab90fdd55429916710eb0fc:wrong_answer",
+        "query": "Wheelock Whitney is just one member of the Whitney Family. Where did this American family originate from?",
+        "score_gap_target_minus_baseline": 0.0020754596937546292,
+        "source_item_group_id": "hotpot_supportpreserve:5ab90fdd55429916710eb0fc",
+        "target_score": 0.00409702415007296,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8076801648966639
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.001270535241755558,
+        "candidate_answer": "Sam Phillips",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5ac26ac15542992f1f2b38bc:wrong_answer",
+        "query": "Who is the film dedicated to that Paramount Classics and MTV Films co-purchased the rights to?",
+        "score_gap_target_minus_baseline": 0.0018855110374890022,
+        "source_item_group_id": "hotpot_supportpreserve:5ac26ac15542992f1f2b38bc",
+        "target_score": 0.0031560462792445602,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8224730392716104
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0008514639884677342,
+        "candidate_answer": "Juan Carlos Onetti",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5a79332555429907847277e7:wrong_answer",
+        "query": "Who died first, Bryce Courtenay or Juan Carlos Onetti?",
+        "score_gap_target_minus_baseline": 0.0016817909108617878,
+        "source_item_group_id": "hotpot_supportpreserve:5a79332555429907847277e7",
+        "target_score": 0.002533254899329522,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7351094975328358
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0008034229000870313,
+        "candidate_answer": "Geraldine Page",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5adcd2435542992c1e3a241b:wrong_answer",
+        "query": "Which eight-time Academy Award nominee was Tennessee Williams's choice to play a leading role in his play \"Clothes for a Summer Hotel\"?",
+        "score_gap_target_minus_baseline": 0.0016164039636386287,
+        "source_item_group_id": "hotpot_supportpreserve:5adcd2435542992c1e3a241b",
+        "target_score": 0.00241982686372566,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7993818110116834
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0007669401263001684,
+        "candidate_answer": "Zixing",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5abd1b6e55429933744ab729:wrong_answer",
+        "query": "Which of the following cities is a county-level city, Jingzhou or Zixing?",
+        "score_gap_target_minus_baseline": 0.0016096979788068969,
+        "source_item_group_id": "hotpot_supportpreserve:5abd1b6e55429933744ab729",
+        "target_score": 0.0023766381051070653,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8130343233704119
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0007959570054171783,
+        "candidate_answer": "Mickey's PhilharMagic",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5a792ad055429907847277d1:wrong_answer",
+        "query": "What 4-D film attraction at Walt Disney World is based off a 2004 computer-animated Christmas movie? ",
+        "score_gap_target_minus_baseline": 0.001572958982381046,
+        "source_item_group_id": "hotpot_supportpreserve:5a792ad055429907847277d1",
+        "target_score": 0.0023689159877982244,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8036269509444319
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0002725637622025284,
+        "candidate_answer": "Naguib Mahfouz",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e:wrong_answer",
+        "query": "Which writer won the Nobel Prize, William H. Gass or Naguib Mahfouz?",
+        "score_gap_target_minus_baseline": 0.0009200633391257424,
+        "source_item_group_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e",
+        "target_score": 0.0011926271013282708,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7297887949300036
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.01245635043275025,
+        "candidate_answer": "Mayor of the City of New York",
+        "construction_type": "wrong_answer",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_supportpreserve:5a8ba3ff55429971feec4744:wrong_answer",
+        "query": "Stokely Webster has paintings can be found at the official residence of whom?",
+        "score_gap_target_minus_baseline": -0.002586710482361034,
+        "source_item_group_id": "hotpot_supportpreserve:5a8ba3ff55429971feec4744",
+        "target_score": 0.009869639950389216,
+        "top_features": [
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "orbit_answer_flip_rate",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7765471300335594
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ]
+  }
+}
