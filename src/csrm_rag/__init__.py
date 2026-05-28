@@ -10,6 +10,7 @@ from .critic import (
     naive_orbit_sufficiency,
     single_set_sufficiency,
 )
+from .feature_firewall import FORBIDDEN_KEYS, assert_no_forbidden_features
 from .metrics import (
     area_under_risk_coverage,
     calibration_error,
@@ -25,6 +26,8 @@ __all__ = [
     "EvidenceDoc",
     "EvidenceSet",
     "QueryOrbit",
+    "FORBIDDEN_KEYS",
+    "assert_no_forbidden_features",
     "calibration_error",
     "area_under_risk_coverage",
     "corm_max_score",

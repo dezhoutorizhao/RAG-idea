@@ -1,0 +1,44 @@
+{
+  "feature_summary": {
+    "clean_sufficiency": {
+      "max": 0.2627462517517444,
+      "mean": 0.23220120553886905,
+      "min": 0.21114707052074264
+    },
+    "mean_sufficiency": {
+      "max": 0.26856863324542246,
+      "mean": 0.21979279909401095,
+      "min": 0.15019134814282986
+    },
+    "sufficiency_variance": {
+      "max": 0.012668606326412037,
+      "mean": 0.0010983926412043217,
+      "min": 9.200883047987968e-08
+    },
+    "verifier_entropy": {
+      "max": 0.6931471805579453,
+      "mean": 0.11552453009215748,
+      "min": -1.000088900581841e-12
+    },
+    "worst_sufficiency": {
+      "max": 0.2627462517517444,
+      "mean": 0.20551080513171519,
+      "min": 0.03763644453391535
+    }
+  },
+  "orbits": 12,
+  "private_input": "results\\hotpot_orbits_v4_smoke.private_eval.jsonl",
+  "raw_input": "results\\hotpot_orbits_v4_smoke.raw.jsonl",
+  "scored_output": "results\\hotpot_orbits_v4_smoke.textonly_scored.jsonl",
+  "scorer": {
+    "feature_sources": [
+      "query",
+      "candidate_answer",
+      "visible_evidence_text",
+      "retrieval_score"
+    ],
+    "scorer": "textonly_lexical_v4",
+    "uses_private_fields": false
+  },
+  "source_item_groups": 3
+}
