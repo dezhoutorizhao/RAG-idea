@@ -49,3 +49,48 @@ def test_legacy_orbit_to_v4_splits_raw_and_private_fields(tmp_path):
     summary = validate_v4_pair(raw_path, private_path)
     assert summary["leakage_free_raw"] is True
     assert summary["orbits"] == 1
+
+
+def test_legacy_orbit_to_v4_limits_visible_perturbations_by_default():
+    legacy = {
+        "orbit_id": "hotpot:item1:stable",
+        "clean": {
+            "query": "q",
+            "answer": "a",
+            "label_answerable": True,
+            "metadata": {"support_key": "hidden"},
+            "docs": [{"doc_id": "d1", "text": "visible"}],
+        },
+        "perturbations": [
+            {"query": "q1", "answer": "a", "label_answerable": True, "docs": [{"doc_id": "d2", "text": "v2"}]},
+            {"query": "q2", "answer": "a", "label_answerable": True, "docs": [{"doc_id": "d3", "text": "v3"}]},
+        ],
+    }
+
+    raw, private = legacy_orbit_to_v4(legacy, "hotpot")
+
+    assert len(raw["perturbations"]) == 1
+    assert private["label_answerable"] is True
+
+
+def test_legacy_orbit_to_v4_keeps_failed_perturbation_for_negative_orbit():
+    legacy = {
+        "orbit_id": "fever:item1:fragile_mixed",
+        "clean": {
+            "query": "q",
+            "answer": "a",
+            "label_answerable": True,
+            "metadata": {"support_key": "hidden"},
+            "docs": [{"doc_id": "d1", "text": "visible"}],
+        },
+        "perturbations": [
+            {"query": "stable", "answer": "a", "label_answerable": True, "docs": [{"doc_id": "d2", "text": "stable"}]},
+            {"query": "failed", "answer": "a", "label_answerable": False, "docs": [{"doc_id": "d3", "text": "failed"}]},
+        ],
+    }
+
+    raw, private = legacy_orbit_to_v4(legacy, "fever")
+
+    assert len(raw["perturbations"]) == 1
+    assert raw["perturbations"][0]["query"] == "failed"
+    assert private["label_answerable"] is False

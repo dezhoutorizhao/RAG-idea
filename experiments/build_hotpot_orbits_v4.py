@@ -22,6 +22,7 @@ def build_hotpot_orbits_v4(
     max_examples: int,
     split: str,
     seed: int,
+    perturbation_limit: int | None,
 ) -> dict:
     with TemporaryDirectory() as temp_dir:
         legacy_path = Path(temp_dir) / "hotpot_legacy.jsonl"
@@ -32,6 +33,7 @@ def build_hotpot_orbits_v4(
             raw_path=raw_output,
             private_path=private_output,
             dataset="hotpot_qa/distractor",
+            perturbation_limit=perturbation_limit,
         )
     return {
         "dataset": "hotpot_qa/distractor",
@@ -41,6 +43,7 @@ def build_hotpot_orbits_v4(
         "split": split,
         "seed": seed,
         "max_examples": max_examples,
+        "perturbation_limit": perturbation_limit,
     }
 
 
@@ -64,13 +67,21 @@ def main() -> None:
     parser.add_argument("--max-examples", type=int, default=200)
     parser.add_argument("--split", default="validation")
     parser.add_argument("--seed", type=int, default=13)
+    parser.add_argument(
+        "--perturbation-limit",
+        type=int,
+        default=1,
+        help="Export the same maximum number of perturbations per orbit; use -1 to keep all.",
+    )
     args = parser.parse_args()
+    perturbation_limit = None if args.perturbation_limit < 0 else args.perturbation_limit
     summary = build_hotpot_orbits_v4(
         raw_output=args.raw_output,
         private_output=args.private_output,
         max_examples=args.max_examples,
         split=args.split,
         seed=args.seed,
+        perturbation_limit=perturbation_limit,
     )
     print(json.dumps(summary, indent=2, sort_keys=True))
 

@@ -8,11 +8,25 @@ from .data_schema import OrbitPrivateEvalOnly, OrbitRaw
 from .feature_firewall import assert_no_forbidden_features
 
 
-def legacy_orbit_to_v4(raw_orbit: dict, dataset: str) -> tuple[dict, dict]:
+def legacy_orbit_to_v4(
+    raw_orbit: dict,
+    dataset: str,
+    perturbation_limit: int | None = 1,
+) -> tuple[dict, dict]:
     orbit_id = str(raw_orbit["orbit_id"])
     source_item_group_id = orbit_id.rsplit(":", 1)[0]
     clean = raw_orbit["clean"]
-    perturbations = list(raw_orbit.get("perturbations") or [])
+    all_perturbations = list(raw_orbit.get("perturbations") or [])
+    orbit_label = _orbit_label(clean, all_perturbations)
+    perturbations = _select_visible_perturbations(
+        all_perturbations,
+        label_answerable=orbit_label,
+        limit=perturbation_limit,
+    )
+    if perturbation_limit is not None:
+        if perturbation_limit < 1:
+            raise ValueError("perturbation_limit must be at least 1 or None")
+        perturbations = perturbations[:perturbation_limit]
     construction_type = orbit_id.rsplit(":", 1)[-1]
 
     raw = OrbitRaw(
@@ -37,11 +51,11 @@ def legacy_orbit_to_v4(raw_orbit: dict, dataset: str) -> tuple[dict, dict]:
         orbit_id=orbit_id,
         source_item_group_id=source_item_group_id,
         dataset=dataset,
-        label_answerable=bool(_orbit_label(clean, perturbations)),
+        label_answerable=bool(orbit_label),
         construction_type=construction_type,
         label_source=str((clean.get("metadata") or {}).get("label_source") or "legacy_heuristic"),
         gold_answer=str(clean.get("answer") or ""),
-        heuristic_label="stable_answerable" if _orbit_label(clean, perturbations) else "fragile",
+        heuristic_label="stable_answerable" if orbit_label else "fragile",
         support_key=str((clean.get("metadata") or {}).get("support_key") or ""),
     ).to_dict()
 
@@ -49,7 +63,13 @@ def legacy_orbit_to_v4(raw_orbit: dict, dataset: str) -> tuple[dict, dict]:
     return raw, private
 
 
-def write_v4_jsonl(orbits: Iterable[dict], raw_path: Path, private_path: Path, dataset: str) -> int:
+def write_v4_jsonl(
+    orbits: Iterable[dict],
+    raw_path: Path,
+    private_path: Path,
+    dataset: str,
+    perturbation_limit: int | None = 1,
+) -> int:
     raw_path.parent.mkdir(parents=True, exist_ok=True)
     private_path.parent.mkdir(parents=True, exist_ok=True)
     count = 0
@@ -57,7 +77,11 @@ def write_v4_jsonl(orbits: Iterable[dict], raw_path: Path, private_path: Path, d
         "w", encoding="utf-8"
     ) as private_file:
         for orbit in orbits:
-            raw, private = legacy_orbit_to_v4(orbit, dataset)
+            raw, private = legacy_orbit_to_v4(
+                orbit,
+                dataset,
+                perturbation_limit=perturbation_limit,
+            )
             raw_file.write(json.dumps(raw, ensure_ascii=False) + "\n")
             private_file.write(json.dumps(private, ensure_ascii=False) + "\n")
             count += 1
@@ -105,6 +129,26 @@ def _retrieval_scores(sets: list[dict]) -> list[float]:
         for doc in item.get("docs") or []:
             scores.append(float(doc.get("corm_score") or doc.get("retrieval_score") or 0.0))
     return scores
+
+
+def _select_visible_perturbations(
+    perturbations: list[dict],
+    *,
+    label_answerable: bool,
+    limit: int | None,
+) -> list[dict]:
+    if limit is None:
+        return perturbations
+    if limit < 1:
+        raise ValueError("perturbation_limit must be at least 1 or None")
+    if label_answerable:
+        return perturbations[:limit]
+
+    failed = [item for item in perturbations if item.get("label_answerable") is not True]
+    selected = failed[:limit]
+    if len(selected) < limit:
+        selected.extend(perturbations[: limit - len(selected)])
+    return selected
 
 
 def _orbit_label(clean: dict, perturbations: list[dict]) -> bool:
