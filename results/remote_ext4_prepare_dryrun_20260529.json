@@ -1,0 +1,123 @@
+{
+  "after": {
+    "df_root_machine": {
+      "command": "df -PT / 2>&1 || true",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "\u6587\u4ef6\u7cfb\u7edf       \u7c7b\u578b    1024-\u5757       \u5df2\u7528     \u53ef\u7528 \u914d\u989d \u6302\u8f7d\u70b9\n/dev/nvme0n1p2 ext4 1967357936 1854213852 13134052 100% /\n"
+    },
+    "df_target": {
+      "command": "df -hT /home/syk 2>&1 || true",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "\u6587\u4ef6\u7cfb\u7edf       \u7c7b\u578b  \u5bb9\u91cf  \u5df2\u7528  \u53ef\u7528 \u5df2\u7528% \u6302\u8f7d\u70b9\n/dev/nvme0n1p2 ext4  1.9T  1.8T   13G  100% /\n"
+    },
+    "docker_json_logs_bytes": {
+      "command": "printf '%s\\n' '***' | sudo -S -p '' bash -lc 'find /var/lib/docker/containers -name '\"'\"'*-json.log'\"'\"' -type f -printf '\"'\"'%s\\n'\"'\"' 2>/dev/null | awk '\"'\"'{s+=$1} END{print s+0}'\"'\"''",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "143790631435\n"
+    },
+    "docker_system_df": {
+      "command": "printf '%s\\n' '***' | sudo -S -p '' bash -lc 'docker system df 2>&1 || true'",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE\nImages          24        23        15.9GB    3.418GB (21%)\nContainers      31        23        10.43GB   8.989GB (86%)\nLocal Volumes   91        16        97.06GB   36.86GB (37%)\nBuild Cache     65        0         2.833GB   2.833GB\n"
+    },
+    "root_cache": {
+      "command": "printf '%s\\n' '***' | sudo -S -p '' bash -lc 'du -sh /root/.cache 2>&1 || true'",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "31G\t/root/.cache\n"
+    },
+    "user_cache": {
+      "command": "du -sh /home/syk/.cache 2>&1 || true",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "19G\t/home/syk/.cache\n"
+    },
+    "user_conda_pkg_cache": {
+      "command": "du -sh /home/syk/miniconda3/pkgs 2>&1 || true",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "5.0G\t/home/syk/miniconda3/pkgs\n"
+    }
+  },
+  "before": {
+    "df_root_machine": {
+      "command": "df -PT / 2>&1 || true",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "\u6587\u4ef6\u7cfb\u7edf       \u7c7b\u578b    1024-\u5757       \u5df2\u7528     \u53ef\u7528 \u914d\u989d \u6302\u8f7d\u70b9\n/dev/nvme0n1p2 ext4 1967357936 1854213820 13134084 100% /\n"
+    },
+    "df_target": {
+      "command": "df -hT /home/syk 2>&1 || true",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "\u6587\u4ef6\u7cfb\u7edf       \u7c7b\u578b  \u5bb9\u91cf  \u5df2\u7528  \u53ef\u7528 \u5df2\u7528% \u6302\u8f7d\u70b9\n/dev/nvme0n1p2 ext4  1.9T  1.8T   13G  100% /\n"
+    },
+    "docker_json_logs_bytes": {
+      "command": "printf '%s\\n' '***' | sudo -S -p '' bash -lc 'find /var/lib/docker/containers -name '\"'\"'*-json.log'\"'\"' -type f -printf '\"'\"'%s\\n'\"'\"' 2>/dev/null | awk '\"'\"'{s+=$1} END{print s+0}'\"'\"''",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "143790630971\n"
+    },
+    "docker_system_df": {
+      "command": "printf '%s\\n' '***' | sudo -S -p '' bash -lc 'docker system df 2>&1 || true'",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE\nImages          24        23        15.9GB    3.418GB (21%)\nContainers      31        23        10.43GB   8.989GB (86%)\nLocal Volumes   91        16        97.06GB   36.86GB (37%)\nBuild Cache     65        0         2.833GB   2.833GB\n"
+    },
+    "root_cache": {
+      "command": "printf '%s\\n' '***' | sudo -S -p '' bash -lc 'du -sh /root/.cache 2>&1 || true'",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "31G\t/root/.cache\n"
+    },
+    "user_cache": {
+      "command": "du -sh /home/syk/.cache 2>&1 || true",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "19G\t/home/syk/.cache\n"
+    },
+    "user_conda_pkg_cache": {
+      "command": "du -sh /home/syk/miniconda3/pkgs 2>&1 || true",
+      "exit_status": 0,
+      "stderr": "",
+      "stdout": "5.0G\t/home/syk/miniconda3/pkgs\n"
+    }
+  },
+  "claim_policy": "Dry-run output is only an execution plan. Execute mode must be followed by an independent write/fsync/read/delete storage probe before launching full CoRM-RAG reproduction.",
+  "cleanup_plan": [
+    {
+      "command": "find /var/lib/docker/containers -name '*-json.log' -type f -exec sh -c 'for path do : > \"$path\"; done' sh {} +",
+      "description": "Truncate Docker json-file logs; preserves containers/images/volumes but deletes logs.",
+      "name": "truncate_docker_json_logs",
+      "risk": "medium"
+    },
+    {
+      "command": "test -d /root/.cache && find /root/.cache -mindepth 1 -maxdepth 1 -exec rm -rf -- {} + || true",
+      "description": "Delete immediate contents of /root/.cache; may require re-downloading cached assets.",
+      "name": "clear_root_cache",
+      "risk": "medium"
+    },
+    {
+      "command": "test -d /home/syk/.cache && find /home/syk/.cache -mindepth 1 -maxdepth 1 -exec rm -rf -- {} + || true",
+      "description": "Delete immediate contents of /home/syk/.cache.",
+      "name": "clear_user_cache",
+      "risk": "low_to_medium"
+    }
+  ],
+  "cleanup_results": [],
+  "destructive_operations_executed": false,
+  "min_free_gib": 180.0,
+  "mode": "dry_run",
+  "next_probe_command": "python experiments/check_remote_storage_status.py --host 192.168.103.101 --user syk --port 22 --target /home/syk --min-free-gib 180 --output results/remote_storage_status_after_ext4_cleanup.json",
+  "observed_at_utc": "2026-05-28T18:35:02.888337+00:00",
+  "remote": {
+    "host": "192.168.103.101",
+    "port": 22,
+    "user": "syk"
+  },
+  "target": "/home/syk"
+}

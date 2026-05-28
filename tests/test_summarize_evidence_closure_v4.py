@@ -1,6 +1,10 @@
 import json
 
-from experiments.summarize_evidence_closure import _remote_storage_probe_status, _semantic_swap_status
+from experiments.summarize_evidence_closure import (
+    _ext4_prepare_dry_run_status,
+    _remote_storage_probe_status,
+    _semantic_swap_status,
+)
 
 
 def test_semantic_swap_status_reads_latest_v4_diagnostic(tmp_path):
@@ -136,6 +140,34 @@ def test_remote_storage_probe_status_marks_write_failure(tmp_path):
     assert status["ready_for_full_reproduction_storage"] is False
     assert status["target_filesystem_type"] == "fuseblk"
     assert "No space left" in status["write_probe_error"]
+
+
+def test_ext4_prepare_dry_run_status_is_non_destructive(tmp_path):
+    _write_json(
+        tmp_path / "remote_ext4_prepare_dryrun_20260529.json",
+        {
+            "mode": "dry_run",
+            "target": "/home/syk",
+            "destructive_operations_executed": False,
+            "min_free_gib": 180.0,
+            "cleanup_plan": [{"name": "truncate_logs"}, {"name": "clear_root_cache"}],
+            "before": {
+                "docker_json_logs_bytes": {"stdout": "123\n"},
+                "root_cache": {"stdout": "31G\t/root/.cache\n"},
+                "user_cache": {"stdout": "19G\t/home/syk/.cache\n"},
+                "user_conda_pkg_cache": {"stdout": "5.0G\t/home/syk/miniconda3/pkgs\n"},
+                "df_target": {"stdout": "ext4 13G /\n"},
+            },
+            "next_probe_command": "python experiments/check_remote_storage_status.py ...",
+        },
+    )
+
+    status = _ext4_prepare_dry_run_status(tmp_path)
+
+    assert status["mode"] == "dry_run"
+    assert status["destructive_operations_executed"] is False
+    assert status["cleanup_step_count"] == 2
+    assert status["docker_json_logs_bytes"] == "123\n"
 
 
 def _calibrated(auroc, target_met_count):

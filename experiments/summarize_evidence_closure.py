@@ -72,6 +72,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     claims = load_json(results / "claims_verification.json")
     semantic_swap = _semantic_swap_status(results)
     remote_storage_probe = _remote_storage_probe_status(results)
+    ext4_prepare_dry_run = _ext4_prepare_dry_run_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -165,6 +166,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "wiki_faiss_exists": get(remote, "observed_outputs", "wiki_faiss_exists"),
             "terminal_failure": get(remote, "terminal_failure", "summary"),
             "latest_storage_probe": remote_storage_probe,
+            "latest_ext4_prepare_dry_run": ext4_prepare_dry_run,
         },
         "allowed_claims": [
             "CSRM has strong bridge evidence on HotpotQA-derived orbits with released CoRM critic scores.",
@@ -324,6 +326,27 @@ def _remote_storage_probe_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _ext4_prepare_dry_run_status(results: Path) -> dict[str, Any] | None:
+    path = results / "remote_ext4_prepare_dryrun_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "mode": payload.get("mode"),
+        "target": payload.get("target"),
+        "destructive_operations_executed": payload.get("destructive_operations_executed"),
+        "min_free_gib": payload.get("min_free_gib"),
+        "cleanup_step_count": len(payload.get("cleanup_plan", [])),
+        "docker_json_logs_bytes": get(payload, "before", "docker_json_logs_bytes", "stdout"),
+        "root_cache": get(payload, "before", "root_cache", "stdout"),
+        "user_cache": get(payload, "before", "user_cache", "stdout"),
+        "user_conda_pkg_cache": get(payload, "before", "user_conda_pkg_cache", "stdout"),
+        "df_target": get(payload, "before", "df_target", "stdout"),
+        "next_probe_command": payload.get("next_probe_command"),
+    }
+
+
 def render_markdown(status: dict[str, Any]) -> str:
     hotpot = status["main_bridge_results"]["hotpot_corm_multiseed"]
     fever = status["main_bridge_results"]["fever_nearmiss_corm_v3_multiseed"]
@@ -331,6 +354,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     reconstruction = status["corm_reconstruction"]
     terminal_failure = str(reconstruction["terminal_failure"] or "not recorded").rstrip(".")
     storage_probe = reconstruction.get("latest_storage_probe")
+    ext4_dry_run = reconstruction.get("latest_ext4_prepare_dry_run")
     risk = status["risk_control"]
     claims = status["claim_verification"]
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
@@ -414,6 +438,20 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"storage-ready: `{storage_probe['ready_for_full_reproduction_storage']}`.",
                 f"- Write probe error: `{write_error}`.",
                 f"- GPU query: `{gpu_query}`.",
+                "",
+            ]
+        )
+    if ext4_dry_run:
+        lines.extend(
+            [
+                "Latest ext4 cleanup dry run:",
+                f"- Target: `{ext4_dry_run['target']}`; mode: `{ext4_dry_run['mode']}`; "
+                f"destructive operations executed: `{ext4_dry_run['destructive_operations_executed']}`.",
+                f"- Cleanup steps planned: `{ext4_dry_run['cleanup_step_count']}`; "
+                f"minimum free required: `{ext4_dry_run['min_free_gib']}` GiB.",
+                f"- Docker JSON logs bytes: `{str(ext4_dry_run.get('docker_json_logs_bytes') or '').strip()}`.",
+                f"- Root cache: `{str(ext4_dry_run.get('root_cache') or '').strip()}`; "
+                f"user cache: `{str(ext4_dry_run.get('user_cache') or '').strip()}`.",
                 "",
             ]
         )

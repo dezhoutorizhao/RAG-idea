@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-28T18:28:05.967310+00:00`
+Generated: `2026-05-28T18:36:22.901568+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -54,6 +54,12 @@ Latest storage probe:
 - Write probe passed: `False`; storage-ready: `False`.
 - Write probe error: `mktemp: 无法通过模板 “/mnt/ntfs-disk/csrm_write_probe.XXXXXX” 创建目录: 设备上没有空间`.
 - GPU query: `0, NVIDIA GeForce RTX 4090, 24564, 24076; 1, NVIDIA GeForce RTX 4090, 24564, 24097`.
+
+Latest ext4 cleanup dry run:
+- Target: `/home/syk`; mode: `dry_run`; destructive operations executed: `False`.
+- Cleanup steps planned: `3`; minimum free required: `180.0` GiB.
+- Docker JSON logs bytes: `143790630971`.
+- Root cache: `31G	/root/.cache`; user cache: `19G	/home/syk/.cache`.
 
 ## Latest V4 Hotpot Diagnostic
 

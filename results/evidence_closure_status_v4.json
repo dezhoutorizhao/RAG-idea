@@ -15,6 +15,20 @@
   "corm_reconstruction": {
     "complete_embedding_shards": 52,
     "latest_complete_embedding_shard": "embeddings_shard_000051.npy",
+    "latest_ext4_prepare_dry_run": {
+      "artifact": "results/remote_ext4_prepare_dryrun_20260529.json",
+      "cleanup_step_count": 3,
+      "destructive_operations_executed": false,
+      "df_target": "\u6587\u4ef6\u7cfb\u7edf       \u7c7b\u578b  \u5bb9\u91cf  \u5df2\u7528  \u53ef\u7528 \u5df2\u7528% \u6302\u8f7d\u70b9\n/dev/nvme0n1p2 ext4  1.9T  1.8T   13G  100% /\n",
+      "docker_json_logs_bytes": "143790630971\n",
+      "min_free_gib": 180.0,
+      "mode": "dry_run",
+      "next_probe_command": "python experiments/check_remote_storage_status.py --host 192.168.103.101 --user syk --port 22 --target /home/syk --min-free-gib 180 --output results/remote_storage_status_after_ext4_cleanup.json",
+      "root_cache": "31G\t/root/.cache\n",
+      "target": "/home/syk",
+      "user_cache": "19G\t/home/syk/.cache\n",
+      "user_conda_pkg_cache": "5.0G\t/home/syk/miniconda3/pkgs\n"
+    },
     "latest_observed_at": "2026-05-27T13:34:41+08:00",
     "latest_storage_probe": {
       "artifact": "results/remote_storage_status_20260529.json",
@@ -43,7 +57,7 @@
     "The method solves robust RAG generally across tasks.",
     "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4."
   ],
-  "generated_at_utc": "2026-05-28T18:28:05.967310+00:00",
+  "generated_at_utc": "2026-05-28T18:36:22.901568+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "hotpot_semantic_swap_n100": {
