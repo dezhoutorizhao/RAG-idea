@@ -1,0 +1,1411 @@
+{
+  "by_construction_type": {
+    "distractor": {
+      "baseline_mean": 0.2516686276552559,
+      "n": 1,
+      "negative": 1,
+      "positive": 0,
+      "target_mean": 0.3810896347319604,
+      "target_minus_baseline_mean": 0.1294210070767045
+    },
+    "false_premise": {
+      "baseline_mean": 0.26365062849329196,
+      "n": 7,
+      "negative": 7,
+      "positive": 0,
+      "target_mean": 0.3758391292705699,
+      "target_minus_baseline_mean": 0.11218850077727792
+    },
+    "missing_hop": {
+      "baseline_mean": 0.35517904405875295,
+      "n": 12,
+      "negative": 12,
+      "positive": 0,
+      "target_mean": 0.33651957560351403,
+      "target_minus_baseline_mean": -0.018659468455238835
+    },
+    "stable": {
+      "baseline_mean": 0.6463129912149206,
+      "n": 20,
+      "negative": 0,
+      "positive": 20,
+      "target_mean": 0.614298387999172,
+      "target_minus_baseline_mean": -0.03201460321574827
+    }
+  },
+  "feature_gaps": [
+    {
+      "absolute_gap": 0.05833333333333335,
+      "feature": "retrieval_overlap",
+      "negative_mean": 0.5861904761904762,
+      "positive_mean": 0.5278571428571428,
+      "positive_minus_negative": -0.05833333333333335
+    },
+    {
+      "absolute_gap": 0.03851390492977799,
+      "feature": "min_sufficiency",
+      "negative_mean": 0.15904869426979157,
+      "positive_mean": 0.19756259919956956,
+      "positive_minus_negative": 0.03851390492977799
+    },
+    {
+      "absolute_gap": 0.03851390492977798,
+      "feature": "clean_to_worst_gap",
+      "negative_mean": 0.04592212829553639,
+      "positive_mean": 0.007408223365758406,
+      "positive_minus_negative": -0.03851390492977798
+    },
+    {
+      "absolute_gap": 0.036004467865181355,
+      "feature": "verifier_entropy",
+      "negative_mean": 0.4657465147404502,
+      "positive_mean": 0.5017509826056316,
+      "positive_minus_negative": 0.036004467865181355
+    },
+    {
+      "absolute_gap": 0.018385040161575134,
+      "feature": "naive_orbit_average",
+      "negative_mean": 0.18378741001915394,
+      "positive_mean": 0.20217245018072907,
+      "positive_minus_negative": 0.018385040161575134
+    },
+    {
+      "absolute_gap": 0.018385040161575134,
+      "feature": "mean_sufficiency",
+      "negative_mean": 0.18378741001915394,
+      "positive_mean": 0.20217245018072907,
+      "positive_minus_negative": 0.018385040161575134
+    },
+    {
+      "absolute_gap": 0.011201674412563922,
+      "feature": "mean_missing",
+      "negative_mean": 0.7696404839510269,
+      "positive_mean": 0.758438809538463,
+      "positive_minus_negative": -0.011201674412563922
+    },
+    {
+      "absolute_gap": 0.0011158946449554897,
+      "feature": "sufficiency_variance",
+      "negative_mean": 0.0011542834347116272,
+      "positive_mean": 3.838878975613754e-05,
+      "positive_minus_negative": -0.0011158946449554897
+    },
+    {
+      "absolute_gap": 0.00029590877173869823,
+      "feature": "max_conflict",
+      "negative_mean": 0.0824964290511638,
+      "positive_mean": 0.08220052027942511,
+      "positive_minus_negative": -0.00029590877173869823
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "corm_max_clean",
+      "negative_mean": 0.5,
+      "positive_mean": 0.5,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "corm_mean_clean",
+      "negative_mean": 0.5,
+      "positive_mean": 0.5,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "context_sufficiency_clean",
+      "negative_mean": 0.20497082256532795,
+      "positive_mean": 0.20497082256532795,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "clean_sufficiency",
+      "negative_mean": 0.20497082256532795,
+      "positive_mean": 0.20497082256532795,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "answer_consistency",
+      "negative_mean": 1.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "support_signature_consistency",
+      "negative_mean": 1.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "orbit_answer_flip_rate",
+      "negative_mean": 0.0,
+      "positive_mean": 0.0,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "perturbation_count",
+      "negative_mean": 1.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.0
+    }
+  ],
+  "metrics": {
+    "baseline_calibrated_logistic_orbit": {
+      "auroc": 0.8575,
+      "mean_score_negative": 0.3179685777906668,
+      "mean_score_positive": 0.6463129912149206,
+      "risk_at_30": 0.16666666666666663,
+      "risk_at_50": 0.15000000000000002
+    },
+    "target": {
+      "auroc": 0.8,
+      "mean_score_negative": 0.35250992234340595,
+      "mean_score_positive": 0.614298387999172,
+      "risk_at_30": 0.33333333333333337,
+      "risk_at_50": 0.30000000000000004
+    }
+  },
+  "private_input": "results\\hotpot_orbits_v4_n100.constant.hardmatched.private_eval.jsonl",
+  "raw_input": "results\\hotpot_orbits_v4_n100.constant.hardmatched.raw.jsonl",
+  "scored_input": "results\\hotpot_orbits_v4_n100.constant.hardmatched.textonly_scored.jsonl",
+  "seed": 31,
+  "split_sizes": {
+    "calibration": 40,
+    "calibration_groups": 20,
+    "test": 40,
+    "test_groups": 20,
+    "train": 120,
+    "train_groups": 60
+  },
+  "top_cases": {
+    "baseline_over_target_on_positive": [
+      {
+        "baseline_score": 0.7240328340026733,
+        "candidate_answer": "1998",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5adc1af75542994650320c75:stable",
+        "query": "In which year was this single by Cher, written by  Brian Higgins and included in the album The Very Best of Cher, released?",
+        "score_gap_target_minus_baseline": -0.27828282794225456,
+        "source_item_group_id": "hotpot:5adc1af75542994650320c75",
+        "target_score": 0.4457500060604187,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7557742824777711
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6901982548186294,
+        "candidate_answer": "37,776",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5a85db6e5542994c784ddb96:stable",
+        "query": "What is the student body for Ron Johnson's alma mater?",
+        "score_gap_target_minus_baseline": -0.26221161916254804,
+        "source_item_group_id": "hotpot:5a85db6e5542994c784ddb96",
+        "target_score": 0.42798663565608136,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8147900488086757
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6846925134371825,
+        "candidate_answer": "the Knight Company",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5ae712fa554299572ea546b9:stable",
+        "query": "What was the name of the band of Confederate army deserters in the 2016 movie starring Matthew McConaughey, Gugu Mbatha-Raw, and Keri Russell?",
+        "score_gap_target_minus_baseline": -0.06639722983659646,
+        "source_item_group_id": "hotpot:5ae712fa554299572ea546b9",
+        "target_score": 0.618295283600586,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7551692242362705
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.7012054496775616,
+        "candidate_answer": "U.S. Senator Pat McCarran",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5a8b051255429971feec460e:stable",
+        "query": "Henderson Executive Airport got its name in 1996 when it was purchased by Clark County to be used as a reliever airport for an airport named after what politican?",
+        "score_gap_target_minus_baseline": -0.0660655961981178,
+        "source_item_group_id": "hotpot:5a8b051255429971feec460e",
+        "target_score": 0.6351398534794438,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7797071532876059
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6825280033751266,
+        "candidate_answer": "Pennsylvania",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5a81d92f554299676cceb0f9:stable",
+        "query": "Where are the 17th Street Canal and the Beaver and Erie Canal located? ",
+        "score_gap_target_minus_baseline": -0.06292427324036498,
+        "source_item_group_id": "hotpot:5a81d92f554299676cceb0f9",
+        "target_score": 0.6196037301347617,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7647909405973947
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6373351453560144,
+        "candidate_answer": "Nebula Award, the Philip K. Dick Award, and the Hugo Award",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5a7e1ad155429965cec5ea66:stable",
+        "query": "The first book in the Sprawl Trilogy won what three awards?",
+        "score_gap_target_minus_baseline": -0.06102452472309294,
+        "source_item_group_id": "hotpot:5a7e1ad155429965cec5ea66",
+        "target_score": 0.5763106206329215,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7970281537453797
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.723981571763629,
+        "candidate_answer": "United States",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5a8e296f554299068b959e71:stable",
+        "query": "What country does Washington Dulles International Airport and Baltimore\u2013Washington metropolitan area have in common?",
+        "score_gap_target_minus_baseline": -0.06038536596035837,
+        "source_item_group_id": "hotpot:5a8e296f554299068b959e71",
+        "target_score": 0.6635962058032706,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7212664574629345
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.522011342028976
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.676529470153743,
+        "candidate_answer": "T. R. M. Howard",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5a888fe6554299206df2b2f7:stable",
+        "query": "\"Black Maverick\" is a biography of what American civil rights leader, fraternal organization leader, entrepreneur and surgeon?",
+        "score_gap_target_minus_baseline": -0.05582754012212887,
+        "source_item_group_id": "hotpot:5a888fe6554299206df2b2f7",
+        "target_score": 0.6207019300316141,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7524129821096031
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5101313331241122
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ],
+    "target_high_false_positive": [
+      {
+        "baseline_score": 0.7010131997162082,
+        "candidate_answer": "action figure toyline",
+        "construction_type": "missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5ae4cf975542990ba0bbb151:missing_hop",
+        "query": "What line featured characters from a DC Comic creator by Bob Kane and Bill Finger?",
+        "score_gap_target_minus_baseline": -0.007915766170350058,
+        "source_item_group_id": "hotpot:5ae4cf975542990ba0bbb151",
+        "target_score": 0.6930974335458582,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.781688126562515
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.7345285186386055,
+        "candidate_answer": "United States",
+        "construction_type": "missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a8e296f554299068b959e71:missing_hop",
+        "query": "What country does Washington Dulles International Airport and Baltimore\u2013Washington metropolitan area have in common?",
+        "score_gap_target_minus_baseline": -0.06424279685986156,
+        "source_item_group_id": "hotpot:5a8e296f554299068b959e71",
+        "target_score": 0.6702857217787439,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7182891347626555
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5226624077659123
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6040239597950118,
+        "candidate_answer": "George Martin",
+        "construction_type": "false_premise",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5adfe0de55429925eb1afae9:false_premise",
+        "query": "Who produced a song, written and performed by Paul McCartney and Michael Jackson, which was included on an album titled \"Pipes of Peace\"?",
+        "score_gap_target_minus_baseline": 0.057423485833383525,
+        "source_item_group_id": "hotpot:5adfe0de55429925eb1afae9",
+        "target_score": 0.6614474456283953,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7576486044424047
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.53117349514473
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.5117595326778359,
+        "candidate_answer": "Latin American culture",
+        "construction_type": "false_premise",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5ab6ecd85542991d322236cf:false_premise",
+        "query": "The Carnaval del Pueblo is Eurpoe's largest celebration of what expression of the people of Latin America?",
+        "score_gap_target_minus_baseline": 0.1334071489973575,
+        "source_item_group_id": "hotpot:5ab6ecd85542991d322236cf",
+        "target_score": 0.6451666816751934,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.6957043910923258
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5615709260698557
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.5457194916609817,
+        "candidate_answer": "Eddie \"The Eagle\" Edwards",
+        "construction_type": "missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5ab28e2a5542993be8fa9947:missing_hop",
+        "query": "Who holds the world record for jumping over 6 buses and appeared on the British television series \"The Jump\"?",
+        "score_gap_target_minus_baseline": 0.05195911890048577,
+        "source_item_group_id": "hotpot:5ab28e2a5542993be8fa9947",
+        "target_score": 0.5976786105614674,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7789504822423003
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6413667549961524,
+        "candidate_answer": "very little",
+        "construction_type": "missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a7cb993554299452d57b9c2:missing_hop",
+        "query": "How much change in elevation is there at the site of the 1999 FIA GT Hockenheim 500km?",
+        "score_gap_target_minus_baseline": -0.044553877991041047,
+        "source_item_group_id": "hotpot:5a7cb993554299452d57b9c2",
+        "target_score": 0.5968128770051113,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7899508956000892
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.5418333519771094,
+        "candidate_answer": "T. R. M. Howard",
+        "construction_type": "missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a888fe6554299206df2b2f7:missing_hop",
+        "query": "\"Black Maverick\" is a biography of what American civil rights leader, fraternal organization leader, entrepreneur and surgeon?",
+        "score_gap_target_minus_baseline": -0.005897979248100871,
+        "source_item_group_id": "hotpot:5a888fe6554299206df2b2f7",
+        "target_score": 0.5359353727290085,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7738884594137211
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5030795373642556
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.4339704169398079,
+        "candidate_answer": "U.S. Senator Pat McCarran",
+        "construction_type": "false_premise",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a8b051255429971feec460e:false_premise",
+        "query": "Henderson Executive Airport got its name in 1996 when it was purchased by Clark County to be used as a reliever airport for an airport named after what politican?",
+        "score_gap_target_minus_baseline": 0.07682477787839997,
+        "source_item_group_id": "hotpot:5a8b051255429971feec460e",
+        "target_score": 0.5107951948182079,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7788413438295526
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5005616795228025
+          }
+        ]
+      }
+    ],
+    "target_low_false_negative": [
+      {
+        "baseline_score": 0.6901982548186294,
+        "candidate_answer": "37,776",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5a85db6e5542994c784ddb96:stable",
+        "query": "What is the student body for Ron Johnson's alma mater?",
+        "score_gap_target_minus_baseline": -0.26221161916254804,
+        "source_item_group_id": "hotpot:5a85db6e5542994c784ddb96",
+        "target_score": 0.42798663565608136,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8147900488086757
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.7240328340026733,
+        "candidate_answer": "1998",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5adc1af75542994650320c75:stable",
+        "query": "In which year was this single by Cher, written by  Brian Higgins and included in the album The Very Best of Cher, released?",
+        "score_gap_target_minus_baseline": -0.27828282794225456,
+        "source_item_group_id": "hotpot:5adc1af75542994650320c75",
+        "target_score": 0.4457500060604187,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7557742824777711
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.4567903941499241,
+        "candidate_answer": "Latin American culture",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5ab6ecd85542991d322236cf:stable",
+        "query": "The Carnaval del Pueblo is Eurpoe's largest celebration of what expression of the people of Latin America?",
+        "score_gap_target_minus_baseline": 0.058198630447223676,
+        "source_item_group_id": "hotpot:5ab6ecd85542991d322236cf",
+        "target_score": 0.5149890245971478,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7023424256209833
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5469410749554593
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6073316966752594,
+        "candidate_answer": "very little",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5a7cb993554299452d57b9c2:stable",
+        "query": "How much change in elevation is there at the site of the 1999 FIA GT Hockenheim 500km?",
+        "score_gap_target_minus_baseline": -0.04974915827302184,
+        "source_item_group_id": "hotpot:5a7cb993554299452d57b9c2",
+        "target_score": 0.5575825384022376,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7878451513743308
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6373351453560144,
+        "candidate_answer": "Nebula Award, the Philip K. Dick Award, and the Hugo Award",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5a7e1ad155429965cec5ea66:stable",
+        "query": "The first book in the Sprawl Trilogy won what three awards?",
+        "score_gap_target_minus_baseline": -0.06102452472309294,
+        "source_item_group_id": "hotpot:5a7e1ad155429965cec5ea66",
+        "target_score": 0.5763106206329215,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7970281537453797
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6259531256519406,
+        "candidate_answer": "Andrew Lloyd Webber and Tim Rice",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5a810221554299260e20a1f9:stable",
+        "query": "Who wrote the 1970 international hit song Murray Head is most recognized for?",
+        "score_gap_target_minus_baseline": -0.04269068091111228,
+        "source_item_group_id": "hotpot:5a810221554299260e20a1f9",
+        "target_score": 0.5832624447408283,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7983055681527199
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5066200874823206
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6382216685114319,
+        "candidate_answer": "I Saw Her Standing There",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5adfd42555429942ec259b52:stable",
+        "query": "What song featured on the Beatles' album \"Please Please Me\" was covered by Tiffany? ",
+        "score_gap_target_minus_baseline": -0.020893492311780948,
+        "source_item_group_id": "hotpot:5adfd42555429942ec259b52",
+        "target_score": 0.617328176199651,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7281317013711702
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.548428947745897
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6846925134371825,
+        "candidate_answer": "the Knight Company",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot:5ae712fa554299572ea546b9:stable",
+        "query": "What was the name of the band of Confederate army deserters in the 2016 movie starring Matthew McConaughey, Gugu Mbatha-Raw, and Keri Russell?",
+        "score_gap_target_minus_baseline": -0.06639722983659646,
+        "source_item_group_id": "hotpot:5ae712fa554299572ea546b9",
+        "target_score": 0.618295283600586,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7551692242362705
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ],
+    "target_over_baseline_on_negative": [
+      {
+        "baseline_score": 0.10404709518757231,
+        "candidate_answer": "Andrew Lloyd Webber and Tim Rice",
+        "construction_type": "false_premise",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a810221554299260e20a1f9:false_premise",
+        "query": "Who wrote the 1970 international hit song Murray Head is most recognized for?",
+        "score_gap_target_minus_baseline": 0.3755828735801197,
+        "source_item_group_id": "hotpot:5a810221554299260e20a1f9",
+        "target_score": 0.47962996876769204,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7910136198858458
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5371657943868597
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.5117595326778359,
+        "candidate_answer": "Latin American culture",
+        "construction_type": "false_premise",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5ab6ecd85542991d322236cf:false_premise",
+        "query": "The Carnaval del Pueblo is Eurpoe's largest celebration of what expression of the people of Latin America?",
+        "score_gap_target_minus_baseline": 0.1334071489973575,
+        "source_item_group_id": "hotpot:5ab6ecd85542991d322236cf",
+        "target_score": 0.6451666816751934,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.6957043910923258
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5615709260698557
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.2516686276552559,
+        "candidate_answer": "Westminster system",
+        "construction_type": "distractor",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a8eed625542995085b374b9:distractor",
+        "query": "Which system of parliament was modeled after the United Kingdom and is also used in Canada? ",
+        "score_gap_target_minus_baseline": 0.1294210070767045,
+        "source_item_group_id": "hotpot:5a8eed625542995085b374b9",
+        "target_score": 0.3810896347319604,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.6995420443248673
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5213571076690293
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.4339704169398079,
+        "candidate_answer": "U.S. Senator Pat McCarran",
+        "construction_type": "false_premise",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a8b051255429971feec460e:false_premise",
+        "query": "Henderson Executive Airport got its name in 1996 when it was purchased by Clark County to be used as a reliever airport for an airport named after what politican?",
+        "score_gap_target_minus_baseline": 0.07682477787839997,
+        "source_item_group_id": "hotpot:5a8b051255429971feec460e",
+        "target_score": 0.5107951948182079,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7788413438295526
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5005616795228025
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.13032507338416616,
+        "candidate_answer": "I Saw Her Standing There",
+        "construction_type": "false_premise",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5adfd42555429942ec259b52:false_premise",
+        "query": "What song featured on the Beatles' album \"Please Please Me\" was covered by Tiffany? ",
+        "score_gap_target_minus_baseline": 0.07427778338635413,
+        "source_item_group_id": "hotpot:5adfd42555429942ec259b52",
+        "target_score": 0.20460285677052029,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7472808242929472
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5251726061186044
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.6040239597950118,
+        "candidate_answer": "George Martin",
+        "construction_type": "false_premise",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5adfe0de55429925eb1afae9:false_premise",
+        "query": "Who produced a song, written and performed by Paul McCartney and Michael Jackson, which was included on an album titled \"Pipes of Peace\"?",
+        "score_gap_target_minus_baseline": 0.057423485833383525,
+        "source_item_group_id": "hotpot:5adfe0de55429925eb1afae9",
+        "target_score": 0.6614474456283953,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7576486044424047
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.53117349514473
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.5457194916609817,
+        "candidate_answer": "Eddie \"The Eagle\" Edwards",
+        "construction_type": "missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5ab28e2a5542993be8fa9947:missing_hop",
+        "query": "Who holds the world record for jumping over 6 buses and appeared on the British television series \"The Jump\"?",
+        "score_gap_target_minus_baseline": 0.05195911890048577,
+        "source_item_group_id": "hotpot:5ab28e2a5542993be8fa9947",
+        "target_score": 0.5976786105614674,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7789504822423003
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.04902683297160977,
+        "candidate_answer": "the Knight Company",
+        "construction_type": "false_premise",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot:5ae712fa554299572ea546b9:false_premise",
+        "query": "What was the name of the band of Confederate army deserters in the 2016 movie starring Matthew McConaughey, Gugu Mbatha-Raw, and Keri Russell?",
+        "score_gap_target_minus_baseline": 0.04443423664397994,
+        "source_item_group_id": "hotpot:5ae712fa554299572ea546b9",
+        "target_score": 0.09346106961558971,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7762956284847768
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ]
+  }
+}

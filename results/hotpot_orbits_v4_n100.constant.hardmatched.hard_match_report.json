@@ -1,0 +1,821 @@
+{
+  "feature_balance": {
+    "answer_all_count": {
+      "absolute_mean_gap": 1.6300000000000008,
+      "negative_mean": 12.17,
+      "positive_mean": 13.8
+    },
+    "answer_all_coverage": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 0.97,
+      "positive_mean": 0.97
+    },
+    "answer_clean_coverage": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 0.97,
+      "positive_mean": 0.97
+    },
+    "answer_perturbation_coverage": {
+      "absolute_mean_gap": 0.16609523809523807,
+      "negative_mean": 0.8039047619047619,
+      "positive_mean": 0.97
+    },
+    "clean_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 6.0,
+      "positive_mean": 6.0
+    },
+    "clean_perturbation_jaccard": {
+      "absolute_mean_gap": 0.015579800858448456,
+      "negative_mean": 0.5647254995390762,
+      "positive_mean": 0.5491456986806278
+    },
+    "max_retrieval_score": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 0.5,
+      "positive_mean": 0.5
+    },
+    "mean_doc_chars": {
+      "absolute_mean_gap": 8.800833333333287,
+      "negative_mean": 513.0591666666667,
+      "positive_mean": 504.2583333333334
+    },
+    "mean_retrieval_score": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 0.5,
+      "positive_mean": 0.5
+    },
+    "perturbation_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 1.0,
+      "positive_mean": 1.0
+    },
+    "query_all_jaccard": {
+      "absolute_mean_gap": 0.0001338783766874005,
+      "negative_mean": 0.0353957106113897,
+      "positive_mean": 0.0355295889880771
+    },
+    "query_clean_jaccard": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 0.04765072732747794,
+      "positive_mean": 0.04765072732747794
+    },
+    "query_perturbation_jaccard": {
+      "absolute_mean_gap": 0.003356260122774915,
+      "negative_mean": 0.03913986085240139,
+      "positive_mean": 0.042496120975176306
+    },
+    "total_doc_chars": {
+      "absolute_mean_gap": 105.60999999999967,
+      "negative_mean": 6156.71,
+      "positive_mean": 6051.1
+    },
+    "total_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 12.0,
+      "positive_mean": 12.0
+    }
+  },
+  "feature_names": [
+    "answer_all_count",
+    "answer_all_coverage",
+    "answer_clean_coverage",
+    "answer_perturbation_coverage",
+    "clean_doc_count",
+    "clean_perturbation_jaccard",
+    "max_retrieval_score",
+    "mean_doc_chars",
+    "mean_retrieval_score",
+    "perturbation_count",
+    "query_all_jaccard",
+    "query_clean_jaccard",
+    "query_perturbation_jaccard",
+    "total_doc_chars",
+    "total_doc_count"
+  ],
+  "input_n": 400,
+  "input_negative": 300,
+  "input_positive": 100,
+  "inputs": {
+    "private": "results\\hotpot_orbits_v4_n100.private_eval.jsonl",
+    "raw": "results\\hotpot_orbits_v4_n100.constant.raw.jsonl",
+    "scored": "results\\hotpot_orbits_v4_n100.constant.textonly_scored.jsonl"
+  },
+  "matched_n": 200,
+  "matched_negative": 100,
+  "matched_positive": 100,
+  "negative_construction_counts": {
+    "distractor": 8,
+    "false_premise": 22,
+    "missing_hop": 70
+  },
+  "outputs": {
+    "private": "results\\hotpot_orbits_v4_n100.constant.hardmatched.private_eval.jsonl",
+    "raw": "results\\hotpot_orbits_v4_n100.constant.hardmatched.raw.jsonl",
+    "report": "results\\hotpot_orbits_v4_n100.constant.hardmatched.hard_match_report.json",
+    "scored": "results\\hotpot_orbits_v4_n100.constant.hardmatched.textonly_scored.jsonl"
+  },
+  "pairs": [
+    {
+      "distance": 0.5514718508486566,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a80f793554299260e20a1e1:missing_hop",
+      "positive_orbit_id": "hotpot:5a80f793554299260e20a1e1:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.6987927686566899,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ae5086d55429908b63264eb:missing_hop",
+      "positive_orbit_id": "hotpot:5ae5086d55429908b63264eb:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.8410701057602723,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a893fc855429951533612f0:missing_hop",
+      "positive_orbit_id": "hotpot:5a893fc855429951533612f0:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.1771649968456619,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5adf8a065542992d7e9f9392:false_premise",
+      "positive_orbit_id": "hotpot:5adf8a065542992d7e9f9392:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.541823654949049,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a7283365542991f9a20c4b2:missing_hop",
+      "positive_orbit_id": "hotpot:5a7283365542991f9a20c4b2:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.5617108675188884,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5a8b051255429971feec460e:false_premise",
+      "positive_orbit_id": "hotpot:5a8b051255429971feec460e:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.12063709444058,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ab8ee805542991b5579f051:missing_hop",
+      "positive_orbit_id": "hotpot:5ab8ee805542991b5579f051:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.551579750519979,
+      "negative_construction_type": "distractor",
+      "negative_orbit_id": "hotpot:5a8eed625542995085b374b9:distractor",
+      "positive_orbit_id": "hotpot:5a8eed625542995085b374b9:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.41664664440974936,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ae80d25554299540e5a5709:missing_hop",
+      "positive_orbit_id": "hotpot:5ae80d25554299540e5a5709:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.713044935202255,
+      "negative_construction_type": "distractor",
+      "negative_orbit_id": "hotpot:5ae18b555542997b2ef7d1f7:distractor",
+      "positive_orbit_id": "hotpot:5ae18b555542997b2ef7d1f7:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.3996773614711552,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ab8c3c65542991b5579effd:missing_hop",
+      "positive_orbit_id": "hotpot:5ab8c3c65542991b5579effd:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.1173940013720902,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5abd0553554299700f9d7963:missing_hop",
+      "positive_orbit_id": "hotpot:5abd0553554299700f9d7963:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.45276162864424563,
+      "negative_construction_type": "distractor",
+      "negative_orbit_id": "hotpot:5ac524e55542994611c8b3d0:distractor",
+      "positive_orbit_id": "hotpot:5ac524e55542994611c8b3d0:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.4934293044852716,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ae53fcb55429960a22e029e:missing_hop",
+      "positive_orbit_id": "hotpot:5ae53fcb55429960a22e029e:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.0,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5ab6ecd85542991d322236cf:false_premise",
+      "positive_orbit_id": "hotpot:5ab6ecd85542991d322236cf:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.0,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5adf5daf5542995534e8c79d:false_premise",
+      "positive_orbit_id": "hotpot:5adf5daf5542995534e8c79d:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.6871208972542622,
+      "negative_construction_type": "distractor",
+      "negative_orbit_id": "hotpot:5a716dc15542994082a3e82b:distractor",
+      "positive_orbit_id": "hotpot:5a716dc15542994082a3e82b:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.8185688511620831,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ab28e2a5542993be8fa9947:missing_hop",
+      "positive_orbit_id": "hotpot:5ab28e2a5542993be8fa9947:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.9787946177758118,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a7e1ad155429965cec5ea66:missing_hop",
+      "positive_orbit_id": "hotpot:5a7e1ad155429965cec5ea66:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.08405018059757623,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ab2ce27554299545a2cfa98:missing_hop",
+      "positive_orbit_id": "hotpot:5ab2ce27554299545a2cfa98:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.42390907423100976,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a8f503c5542992414482a34:missing_hop",
+      "positive_orbit_id": "hotpot:5a8f503c5542992414482a34:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.9248545538402582,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5adce4f65542992c1e3a2474:missing_hop",
+      "positive_orbit_id": "hotpot:5adce4f65542992c1e3a2474:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.12302764883835726,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ac5630e5542993e66e823d5:missing_hop",
+      "positive_orbit_id": "hotpot:5ac5630e5542993e66e823d5:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.5440899586609884,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a81711455429938b614233e:missing_hop",
+      "positive_orbit_id": "hotpot:5a81711455429938b614233e:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.7389041685884934,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5adfc77b554299603e4183ab:missing_hop",
+      "positive_orbit_id": "hotpot:5adfc77b554299603e4183ab:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.1132040132923678,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a802b595542995d8a8ddf51:missing_hop",
+      "positive_orbit_id": "hotpot:5a802b595542995d8a8ddf51:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.4918080852618605,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a716eeb5542994082a3e82e:missing_hop",
+      "positive_orbit_id": "hotpot:5a716eeb5542994082a3e82e:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.4239587742025455,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ac0dcf25542996f0d89cc2c:missing_hop",
+      "positive_orbit_id": "hotpot:5ac0dcf25542996f0d89cc2c:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.8136814085653188,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a8468c95542990548d0b2b1:missing_hop",
+      "positive_orbit_id": "hotpot:5a8468c95542990548d0b2b1:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.7878236697539325,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5ac275f155429921a00aaf82:false_premise",
+      "positive_orbit_id": "hotpot:5ac275f155429921a00aaf82:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.6358416021719799,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5adfffe755429925eb1afbd1:missing_hop",
+      "positive_orbit_id": "hotpot:5adfffe755429925eb1afbd1:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.558934335674071,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5a8545ba5542997b5ce3ffdd:false_premise",
+      "positive_orbit_id": "hotpot:5a8545ba5542997b5ce3ffdd:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.11719774097677887,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a8f43555542992414482a21:missing_hop",
+      "positive_orbit_id": "hotpot:5a8f43555542992414482a21:stable",
+      "same_group": true
+    },
+    {
+      "distance": 3.1263915936630595,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ae5fd395542996de7b71ab3:missing_hop",
+      "positive_orbit_id": "hotpot:5ae5fd395542996de7b71ab3:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.0896517413227302,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5ae12fcf5542990adbacf72c:false_premise",
+      "positive_orbit_id": "hotpot:5ae12fcf5542990adbacf72c:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.6302740515698875,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5abbf698554299114383a0b5:missing_hop",
+      "positive_orbit_id": "hotpot:5abbf698554299114383a0b5:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.337485926105727,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5ac4d717554299076e296e0e:false_premise",
+      "positive_orbit_id": "hotpot:5ac4d717554299076e296e0e:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.5236008099100362,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ab97c0255429970cfb8eb1f:missing_hop",
+      "positive_orbit_id": "hotpot:5ab97c0255429970cfb8eb1f:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.9936390917846407,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a79f95d5542996c55b2dcbd:missing_hop",
+      "positive_orbit_id": "hotpot:5a79f95d5542996c55b2dcbd:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.915586406674015,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ab811395542990e739ec80f:missing_hop",
+      "positive_orbit_id": "hotpot:5ab811395542990e739ec80f:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.7144504580948253,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5abf8ae85542990832d3a14b:false_premise",
+      "positive_orbit_id": "hotpot:5abf8ae85542990832d3a14b:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.7213962444578734,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a7e1a2955429965cec5ea5d:missing_hop",
+      "positive_orbit_id": "hotpot:5a7e1a2955429965cec5ea5d:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.472583075066023,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5abd68b45542993062266c77:missing_hop",
+      "positive_orbit_id": "hotpot:5abd68b45542993062266c77:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.0376741336632904,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5abd245555429924427fcf0f:missing_hop",
+      "positive_orbit_id": "hotpot:5abd245555429924427fcf0f:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.5601891175794486,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5a87100655429960ec39b71e:false_premise",
+      "positive_orbit_id": "hotpot:5a87100655429960ec39b71e:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.3057729147424353,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5a79e7b45542994f819ef0ff:false_premise",
+      "positive_orbit_id": "hotpot:5a79e7b45542994f819ef0ff:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.9533000979135583,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5a7b48b15542995eb53be8eb:false_premise",
+      "positive_orbit_id": "hotpot:5a7b48b15542995eb53be8eb:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.5106541210649063,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a7c6c9d554299683c1c6302:missing_hop",
+      "positive_orbit_id": "hotpot:5a7c6c9d554299683c1c6302:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.43090862194046126,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ab43b9d5542990594ba9bc3:missing_hop",
+      "positive_orbit_id": "hotpot:5ab43b9d5542990594ba9bc3:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.436010186080728,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5ae34b275542992e3233c371:false_premise",
+      "positive_orbit_id": "hotpot:5ae34b275542992e3233c371:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.5712264525809885,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a85db6e5542994c784ddb96:missing_hop",
+      "positive_orbit_id": "hotpot:5a85db6e5542994c784ddb96:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.104464883345074,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5adcfbf45542990d50227d86:missing_hop",
+      "positive_orbit_id": "hotpot:5adcfbf45542990d50227d86:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.3325950597468492,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ab8524f5542990e739ec8c4:missing_hop",
+      "positive_orbit_id": "hotpot:5ab8524f5542990e739ec8c4:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.410254020561749,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a7dbb605542997cc2c47486:missing_hop",
+      "positive_orbit_id": "hotpot:5a7dbb605542997cc2c47486:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.6173236899849628,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ae0038655429925eb1afbe0:missing_hop",
+      "positive_orbit_id": "hotpot:5ae0038655429925eb1afbe0:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.4821048575166076,
+      "negative_construction_type": "distractor",
+      "negative_orbit_id": "hotpot:5abd0097554299700f9d7956:distractor",
+      "positive_orbit_id": "hotpot:5abd0097554299700f9d7956:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.0244111710436843,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a77510b5542994aec3b728b:missing_hop",
+      "positive_orbit_id": "hotpot:5a77510b5542994aec3b728b:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.8943055868675696,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a81d92f554299676cceb0f9:missing_hop",
+      "positive_orbit_id": "hotpot:5a81d92f554299676cceb0f9:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.7698167431740321,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a72120e55429971e9dc923f:missing_hop",
+      "positive_orbit_id": "hotpot:5a72120e55429971e9dc923f:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.845938052825479,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a7df7115542990b8f503b0f:missing_hop",
+      "positive_orbit_id": "hotpot:5a7df7115542990b8f503b0f:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.5950434730952694,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5adc1af75542994650320c75:missing_hop",
+      "positive_orbit_id": "hotpot:5adc1af75542994650320c75:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.1473162768161893,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a7cef6955429909bec768ad:missing_hop",
+      "positive_orbit_id": "hotpot:5a7cef6955429909bec768ad:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.693670762587645,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a84a7f95542992a431d1a85:missing_hop",
+      "positive_orbit_id": "hotpot:5a84a7f95542992a431d1a85:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.9363102118509046,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5aba71be5542994dbf01990c:missing_hop",
+      "positive_orbit_id": "hotpot:5aba71be5542994dbf01990c:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.7681977229756765,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ac1276c554299294b2190bc:missing_hop",
+      "positive_orbit_id": "hotpot:5ac1276c554299294b2190bc:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.9701803846381144,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ab7178f5542991d32223774:missing_hop",
+      "positive_orbit_id": "hotpot:5ab7178f5542991d32223774:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.27534702839912556,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ac283f7554299677310254a:missing_hop",
+      "positive_orbit_id": "hotpot:5ac283f7554299677310254a:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.9899362286885889,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5a8332815542993344745fe9:false_premise",
+      "positive_orbit_id": "hotpot:5a8332815542993344745fe9:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.20422898892590324,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a7cb993554299452d57b9c2:missing_hop",
+      "positive_orbit_id": "hotpot:5a7cb993554299452d57b9c2:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.9334100235471645,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5abffda6554299012d1db55b:missing_hop",
+      "positive_orbit_id": "hotpot:5abffda6554299012d1db55b:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.6932050068103556,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5ae51fa25542992663a4f11f:false_premise",
+      "positive_orbit_id": "hotpot:5ae51fa25542992663a4f11f:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.07913601500281173,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ae7281c5542991e8301cb69:missing_hop",
+      "positive_orbit_id": "hotpot:5ae7281c5542991e8301cb69:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.160333752397758,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a7f3c8f55429930675136c9:missing_hop",
+      "positive_orbit_id": "hotpot:5a7f3c8f55429930675136c9:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.4256569892209938,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ac43e0f554299076e296d8e:missing_hop",
+      "positive_orbit_id": "hotpot:5ac43e0f554299076e296d8e:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.6839812348457076,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a75e62f5542992d0ec06013:missing_hop",
+      "positive_orbit_id": "hotpot:5a75e62f5542992d0ec06013:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.6273005286472754,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ae0d7315542990adbacf678:missing_hop",
+      "positive_orbit_id": "hotpot:5ae0d7315542990adbacf678:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.4540240713651795,
+      "negative_construction_type": "distractor",
+      "negative_orbit_id": "hotpot:5ae7b271554299540e5a564d:distractor",
+      "positive_orbit_id": "hotpot:5ae7b271554299540e5a564d:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.4701764599104226,
+      "negative_construction_type": "distractor",
+      "negative_orbit_id": "hotpot:5ab29624554299545a2cf9b5:distractor",
+      "positive_orbit_id": "hotpot:5ab29624554299545a2cf9b5:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.420202752931098,
+      "negative_construction_type": "distractor",
+      "negative_orbit_id": "hotpot:5a84a8ce5542997175ce1f1c:distractor",
+      "positive_orbit_id": "hotpot:5a84a8ce5542997175ce1f1c:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.28407407611337837,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ae684925542995703ce8b71:missing_hop",
+      "positive_orbit_id": "hotpot:5ae684925542995703ce8b71:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.6127103136810044,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a75e61c5542992d0ec06012:missing_hop",
+      "positive_orbit_id": "hotpot:5a75e61c5542992d0ec06012:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.47183505247393814,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a7fc03d5542992097ad2fbc:missing_hop",
+      "positive_orbit_id": "hotpot:5a7fc03d5542992097ad2fbc:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.0490807256702896,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5a7a05485542990783324def:false_premise",
+      "positive_orbit_id": "hotpot:5a7a05485542990783324def:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.17124705787717984,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5aba6f3e55429955dce3ee21:missing_hop",
+      "positive_orbit_id": "hotpot:5aba6f3e55429955dce3ee21:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.6463544501240064,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5adfe0de55429925eb1afae9:false_premise",
+      "positive_orbit_id": "hotpot:5adfe0de55429925eb1afae9:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.656558121617786,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ab73de755429928e1fe383b:missing_hop",
+      "positive_orbit_id": "hotpot:5ab73de755429928e1fe383b:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.4423649915645955,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5a801e845542992097ad2fd9:false_premise",
+      "positive_orbit_id": "hotpot:5a801e845542992097ad2fd9:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.0809618529163911,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ae4cf975542990ba0bbb151:missing_hop",
+      "positive_orbit_id": "hotpot:5ae4cf975542990ba0bbb151:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.006571255662961,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5adfd42555429942ec259b52:false_premise",
+      "positive_orbit_id": "hotpot:5adfd42555429942ec259b52:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.6741945224414042,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5a810221554299260e20a1f9:false_premise",
+      "positive_orbit_id": "hotpot:5a810221554299260e20a1f9:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.7946964697584302,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5ae712fa554299572ea546b9:false_premise",
+      "positive_orbit_id": "hotpot:5ae712fa554299572ea546b9:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.4775255569395929,
+      "negative_construction_type": "false_premise",
+      "negative_orbit_id": "hotpot:5ae1e6d95542997283cd22c3:false_premise",
+      "positive_orbit_id": "hotpot:5ae1e6d95542997283cd22c3:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.41487160453548166,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a888fe6554299206df2b2f7:missing_hop",
+      "positive_orbit_id": "hotpot:5a888fe6554299206df2b2f7:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.7016722229950647,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a8f5a185542992414482a71:missing_hop",
+      "positive_orbit_id": "hotpot:5a8f5a185542992414482a71:stable",
+      "same_group": true
+    },
+    {
+      "distance": 1.2235438286505478,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5ab488bc5542990594ba9c55:missing_hop",
+      "positive_orbit_id": "hotpot:5ab488bc5542990594ba9c55:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.19229332613847117,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a8e296f554299068b959e71:missing_hop",
+      "positive_orbit_id": "hotpot:5a8e296f554299068b959e71:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.570163681761309,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a7263e05542997f82783998:missing_hop",
+      "positive_orbit_id": "hotpot:5a7263e05542997f82783998:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.8930944453373352,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a713f395542994082a3e6ea:missing_hop",
+      "positive_orbit_id": "hotpot:5a713f395542994082a3e6ea:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.4343120757911696,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5abecdf45542997719eab5d4:missing_hop",
+      "positive_orbit_id": "hotpot:5abecdf45542997719eab5d4:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.5622874775309114,
+      "negative_construction_type": "missing_hop",
+      "negative_orbit_id": "hotpot:5a887293554299206df2b273:missing_hop",
+      "positive_orbit_id": "hotpot:5a887293554299206df2b273:stable",
+      "same_group": true
+    }
+  ],
+  "prefer_same_group": true
+}
