@@ -1,0 +1,83 @@
+{
+  "feature_balance": {
+    "clean_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 6.0,
+      "positive_mean": 6.0
+    },
+    "max_retrieval_score": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 1.0,
+      "positive_mean": 1.0
+    },
+    "mean_doc_chars": {
+      "absolute_mean_gap": 2.6666666666666714,
+      "negative_mean": 116.70833333333333,
+      "positive_mean": 114.04166666666666
+    },
+    "mean_retrieval_score": {
+      "absolute_mean_gap": 0.08333333333333334,
+      "negative_mean": 0.112140578432351,
+      "positive_mean": 0.19547391176568435
+    },
+    "perturbation_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 1.0,
+      "positive_mean": 1.0
+    },
+    "total_doc_chars": {
+      "absolute_mean_gap": 32.0,
+      "negative_mean": 1400.5,
+      "positive_mean": 1368.5
+    },
+    "total_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 12.0,
+      "positive_mean": 12.0
+    }
+  },
+  "input_n": 24,
+  "input_negative": 20,
+  "input_positive": 4,
+  "inputs": {
+    "private": "results\\fever_orbits_v4_smoke.private_eval.jsonl",
+    "raw": "results\\fever_orbits_v4_smoke.raw.jsonl",
+    "scored": "results\\fever_orbits_v4_smoke.textonly_scored.jsonl"
+  },
+  "matched_n": 8,
+  "matched_negative": 4,
+  "matched_positive": 4,
+  "outputs": {
+    "private": "results\\fever_orbits_v4_smoke.matched.private_eval.jsonl",
+    "raw": "results\\fever_orbits_v4_smoke.matched.raw.jsonl",
+    "report": "results\\fever_orbits_v4_smoke.matched.match_report.json",
+    "scored": "results\\fever_orbits_v4_smoke.matched.textonly_scored.jsonl"
+  },
+  "pairs": [
+    {
+      "distance": 1.9787208166779777,
+      "negative_orbit_id": "fever:4f99160cf65dc9e25cb7a99e04e8688c:distractor",
+      "positive_orbit_id": "fever:4f99160cf65dc9e25cb7a99e04e8688c:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.034477155734796,
+      "negative_orbit_id": "fever:4336a732d713a27fc558b61c90f0f440:distractor",
+      "positive_orbit_id": "fever:4336a732d713a27fc558b61c90f0f440:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.800173499832016,
+      "negative_orbit_id": "fever:9a2ce22de1acef55d9f23bc0b2c12e26:conflict",
+      "positive_orbit_id": "fever:9a2ce22de1acef55d9f23bc0b2c12e26:stable",
+      "same_group": true
+    },
+    {
+      "distance": 2.7745882944786913,
+      "negative_orbit_id": "fever:5906c0b9404671c031ce851ac076ac6c:distractor",
+      "positive_orbit_id": "fever:5906c0b9404671c031ce851ac076ac6c:stable",
+      "same_group": true
+    }
+  ],
+  "prefer_same_group": true
+}

@@ -1,0 +1,77 @@
+{
+  "feature_balance": {
+    "clean_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 6.0,
+      "positive_mean": 6.0
+    },
+    "max_retrieval_score": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 1.0,
+      "positive_mean": 1.0
+    },
+    "mean_doc_chars": {
+      "absolute_mean_gap": 0.6111111111110858,
+      "negative_mean": 465.6666666666667,
+      "positive_mean": 466.27777777777777
+    },
+    "mean_retrieval_score": {
+      "absolute_mean_gap": 0.0038515665155854917,
+      "negative_mean": 0.42148668392945093,
+      "positive_mean": 0.4253382504450364
+    },
+    "perturbation_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 1.0,
+      "positive_mean": 1.0
+    },
+    "total_doc_chars": {
+      "absolute_mean_gap": 7.33333333333303,
+      "negative_mean": 5588.0,
+      "positive_mean": 5595.333333333333
+    },
+    "total_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 12.0,
+      "positive_mean": 12.0
+    }
+  },
+  "input_n": 12,
+  "input_negative": 9,
+  "input_positive": 3,
+  "inputs": {
+    "private": "results\\hotpot_orbits_v4_smoke.private_eval.jsonl",
+    "raw": "results\\hotpot_orbits_v4_smoke.raw.jsonl",
+    "scored": "results\\hotpot_orbits_v4_smoke.textonly_scored.jsonl"
+  },
+  "matched_n": 6,
+  "matched_negative": 3,
+  "matched_positive": 3,
+  "outputs": {
+    "private": "results\\hotpot_orbits_v4_smoke.matched.private_eval.jsonl",
+    "raw": "results\\hotpot_orbits_v4_smoke.matched.raw.jsonl",
+    "report": "results\\hotpot_orbits_v4_smoke.matched.match_report.json",
+    "scored": "results\\hotpot_orbits_v4_smoke.matched.textonly_scored.jsonl"
+  },
+  "pairs": [
+    {
+      "distance": 0.3911653883323875,
+      "negative_orbit_id": "hotpot:5aba926f55429901930fa83e:missing_hop",
+      "positive_orbit_id": "hotpot:5aba926f55429901930fa83e:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.17623340336411317,
+      "negative_orbit_id": "hotpot:5ae1fced5542997283cd230e:missing_hop",
+      "positive_orbit_id": "hotpot:5ae1fced5542997283cd230e:stable",
+      "same_group": true
+    },
+    {
+      "distance": 0.3554842633075892,
+      "negative_orbit_id": "hotpot:5a890b895542995153361278:missing_hop",
+      "positive_orbit_id": "hotpot:5a890b895542995153361278:stable",
+      "same_group": true
+    }
+  ],
+  "prefer_same_group": true
+}
