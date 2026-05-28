@@ -67,7 +67,27 @@
     "The method solves robust RAG generally across tasks.",
     "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4."
   ],
-  "generated_at_utc": "2026-05-28T19:01:44.349581+00:00",
+  "end2end_selective_rag_proxy": {
+    "all_win": false,
+    "artifact": "results/end2end_selective_rag_proxy_summary_20260529.json",
+    "aurc_losses": 4,
+    "aurc_ties": 0,
+    "aurc_wins": 8,
+    "claim_implication": "The proxy supports a directional but not all-win end-to-end selective RAG claim. CSRM improves mean Risk@30/Risk@50 versus the strongest non-CSRM selector, but some Hotpot v4 variants are mixed or negative, so this evidence should be framed as proxy/diagnostic evidence rather than a complete NeurIPS main result.",
+    "has_losses": true,
+    "mean_aurc_reduction": 0.10855268310842242,
+    "mean_risk30_reduction": 0.15277777777777776,
+    "mean_risk50_reduction": 0.19166666666666665,
+    "primary_method": "csrm",
+    "risk30_losses": 2,
+    "risk30_ties": 2,
+    "risk30_wins": 8,
+    "risk50_losses": 0,
+    "risk50_ties": 0,
+    "risk50_wins": 12,
+    "row_count": 12
+  },
+  "generated_at_utc": "2026-05-28T19:08:16.215687+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "hotpot_semantic_swap_n100": {
@@ -296,7 +316,8 @@
   "remaining_non_human_blockers": [
     "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
     "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
-    "Independent external review has not been rerun after the latest storage-status update."
+    "Independent external review has not been rerun after the latest storage-status update.",
+    "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction."
   ],
   "risk_control": {
     "fever_cp": {

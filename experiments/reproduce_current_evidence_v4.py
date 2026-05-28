@@ -17,6 +17,11 @@ if str(SRC) not in sys.path:
 
 from experiments.run_human_audit_eval_v4 import run_human_audit_eval_v4
 from experiments.summarize_evidence_closure import evidence_closure, render_markdown as render_closure_markdown
+from experiments.summarize_end2end_selective_rag_proxy import (
+    DEFAULT_INPUTS as DEFAULT_END2END_PROXY_INPUTS,
+    render_markdown as render_end2end_proxy_markdown,
+    summarize_end2end_selective_rag_proxy,
+)
 from experiments.summarize_fever_cp_transfer_sweep import (
     DEFAULT_INPUTS as DEFAULT_FEVER_CP_SWEEP_INPUTS,
     render_markdown as render_fever_cp_sweep_markdown,
@@ -85,6 +90,21 @@ def reproduce_current_evidence_v4(
             "name": "summarize_fever_cp_transfer_sweep",
             "outputs": [str(fever_cp_sweep_json), str(fever_cp_sweep_md)],
             "ready": not fever_cp_sweep["negative_evidence_for_main_risk_claim"],
+        }
+    )
+
+    end2end_proxy_json = results / "end2end_selective_rag_proxy_summary_20260529.json"
+    end2end_proxy_md = results / "end2end_selective_rag_proxy_summary_20260529.md"
+    end2end_proxy = summarize_end2end_selective_rag_proxy(
+        [root / path for path in DEFAULT_END2END_PROXY_INPUTS]
+    )
+    _write_json(end2end_proxy_json, end2end_proxy)
+    end2end_proxy_md.write_text(render_end2end_proxy_markdown(end2end_proxy), encoding="utf-8")
+    commands.append(
+        {
+            "name": "summarize_end2end_selective_rag_proxy",
+            "outputs": [str(end2end_proxy_json), str(end2end_proxy_md)],
+            "ready": not end2end_proxy["aggregate"]["has_losses"],
         }
     )
 

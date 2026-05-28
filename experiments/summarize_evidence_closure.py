@@ -77,6 +77,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     human_audit_v4_eval_status = _human_audit_v4_eval_status(results)
     current_reproduction_status = _current_reproduction_status(results)
     fever_cp_sweep = _fever_cp_transfer_sweep_status(results)
+    end2end_proxy = _end2end_proxy_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -156,6 +157,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "failed_claims": claims.get("failed_claims"),
         },
         "current_evidence_reproduction": current_reproduction_status,
+        "end2end_selective_rag_proxy": end2end_proxy,
         "corm_reconstruction": {
             "preflight_ready": preflight.get("ready"),
             "missing_required_artifacts": preflight.get("missing_required_artifacts"),
@@ -195,6 +197,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
             "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
             "Independent external review has not been rerun after the latest storage-status update.",
+            "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
         ],
         "remaining_human_audit_blockers": [
             "Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items.",
@@ -408,6 +411,34 @@ def _fever_cp_transfer_sweep_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _end2end_proxy_status(results: Path) -> dict[str, Any] | None:
+    path = results / "end2end_selective_rag_proxy_summary_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    aggregate = payload.get("aggregate", {})
+    return {
+        "artifact": str(path.as_posix()),
+        "primary_method": payload.get("primary_method"),
+        "row_count": aggregate.get("row_count"),
+        "risk30_wins": aggregate.get("risk30_wins"),
+        "risk30_ties": aggregate.get("risk30_ties"),
+        "risk30_losses": aggregate.get("risk30_losses"),
+        "risk50_wins": aggregate.get("risk50_wins"),
+        "risk50_ties": aggregate.get("risk50_ties"),
+        "risk50_losses": aggregate.get("risk50_losses"),
+        "aurc_wins": aggregate.get("aurc_wins"),
+        "aurc_ties": aggregate.get("aurc_ties"),
+        "aurc_losses": aggregate.get("aurc_losses"),
+        "mean_risk30_reduction": aggregate.get("mean_risk30_reduction"),
+        "mean_risk50_reduction": aggregate.get("mean_risk50_reduction"),
+        "mean_aurc_reduction": aggregate.get("mean_aurc_reduction"),
+        "all_win": aggregate.get("all_win"),
+        "has_losses": aggregate.get("has_losses"),
+        "claim_implication": payload.get("claim_implication"),
+    }
+
+
 def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     path = results / "human_audit_v4_eval_status_20260529.json"
     if not path.exists():
@@ -465,6 +496,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     risk = status["risk_control"]
     claims = status["claim_verification"]
     reproduction = status.get("current_evidence_reproduction")
+    end2end_proxy = status.get("end2end_selective_rag_proxy")
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
     human_v4 = status["latest_v4_diagnostics"].get("human_audit_v4")
     human_v4_eval = status["latest_v4_diagnostics"].get("human_audit_v4_eval")
@@ -550,6 +582,31 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"- Full CoRM reconstruction ready: `{reproduction['full_corm_reconstruction_ready']}`; "
                 f"remote storage ready: `{reproduction['remote_storage_ready']}`.",
                 f"- Claim verifier passed: `{reproduction['claim_verifier_passed']}`.",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## End-to-End Selective RAG Proxy", ""])
+    if end2end_proxy:
+        lines.extend(
+            [
+                f"- Rows: `{end2end_proxy['row_count']}`; all-win: `{end2end_proxy['all_win']}`; "
+                f"has losses/mixed rows: `{end2end_proxy['has_losses']}`.",
+                f"- Risk@30 wins/ties/losses vs strongest non-CSRM: "
+                f"`{end2end_proxy['risk30_wins']}` / `{end2end_proxy['risk30_ties']}` / "
+                f"`{end2end_proxy['risk30_losses']}`.",
+                f"- Risk@50 wins/ties/losses vs strongest non-CSRM: "
+                f"`{end2end_proxy['risk50_wins']}` / `{end2end_proxy['risk50_ties']}` / "
+                f"`{end2end_proxy['risk50_losses']}`.",
+                f"- AURC wins/ties/losses vs strongest non-CSRM: "
+                f"`{end2end_proxy['aurc_wins']}` / `{end2end_proxy['aurc_ties']}` / "
+                f"`{end2end_proxy['aurc_losses']}`.",
+                f"- Mean Risk@30/Risk@50/AURC reduction: "
+                f"`{_fmt(end2end_proxy['mean_risk30_reduction'])}` / "
+                f"`{_fmt(end2end_proxy['mean_risk50_reduction'])}` / "
+                f"`{_fmt(end2end_proxy['mean_aurc_reduction'])}`.",
+                f"- Claim implication: {end2end_proxy['claim_implication']}",
                 "",
             ]
         )

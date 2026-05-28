@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-28T19:01:44.349581+00:00`
+Generated: `2026-05-28T19:08:16.215687+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -47,6 +47,15 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 - Human audit pending: `300`; human eval ready: `False`.
 - Full CoRM reconstruction ready: `False`; remote storage ready: `False`.
 - Claim verifier passed: `True`.
+
+## End-to-End Selective RAG Proxy
+
+- Rows: `12`; all-win: `False`; has losses/mixed rows: `True`.
+- Risk@30 wins/ties/losses vs strongest non-CSRM: `8` / `2` / `2`.
+- Risk@50 wins/ties/losses vs strongest non-CSRM: `12` / `0` / `0`.
+- AURC wins/ties/losses vs strongest non-CSRM: `8` / `0` / `4`.
+- Mean Risk@30/Risk@50/AURC reduction: `0.1528` / `0.1917` / `0.1086`.
+- Claim implication: The proxy supports a directional but not all-win end-to-end selective RAG claim. CSRM improves mean Risk@30/Risk@50 versus the strongest non-CSRM selector, but some Hotpot v4 variants are mixed or negative, so this evidence should be framed as proxy/diagnostic evidence rather than a complete NeurIPS main result.
 
 ## CoRM Reconstruction
 
@@ -109,6 +118,7 @@ Remaining non-human blockers:
 - Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.
 - FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.
 - Independent external review has not been rerun after the latest storage-status update.
+- End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.
 
 Remaining human-audit blockers:
 - Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items.

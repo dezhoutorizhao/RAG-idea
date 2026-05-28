@@ -5,6 +5,7 @@ from experiments.summarize_evidence_closure import (
     _human_audit_v4_eval_status,
     _human_audit_v4_status,
     _current_reproduction_status,
+    _end2end_proxy_status,
     _fever_cp_transfer_sweep_status,
     _remote_storage_probe_status,
     _semantic_swap_status,
@@ -256,6 +257,41 @@ def test_fever_cp_transfer_sweep_status_marks_boundary(tmp_path):
     assert status["target_020_misses"] == 2
     assert status["first_supported_target"] == 0.35
     assert status["negative_evidence_for_main_risk_claim"] is True
+
+
+def test_end2end_proxy_status_marks_mixed_results(tmp_path):
+    _write_json(
+        tmp_path / "end2end_selective_rag_proxy_summary_20260529.json",
+        {
+            "primary_method": "csrm",
+            "aggregate": {
+                "row_count": 2,
+                "risk30_wins": 1,
+                "risk30_ties": 0,
+                "risk30_losses": 1,
+                "risk50_wins": 2,
+                "risk50_ties": 0,
+                "risk50_losses": 0,
+                "aurc_wins": 1,
+                "aurc_ties": 0,
+                "aurc_losses": 1,
+                "mean_risk30_reduction": 0.1,
+                "mean_risk50_reduction": 0.2,
+                "mean_aurc_reduction": 0.05,
+                "all_win": False,
+                "has_losses": True,
+            },
+            "claim_implication": "proxy-only",
+        },
+    )
+
+    status = _end2end_proxy_status(tmp_path)
+
+    assert status["primary_method"] == "csrm"
+    assert status["row_count"] == 2
+    assert status["risk30_losses"] == 1
+    assert status["all_win"] is False
+    assert status["has_losses"] is True
 
 
 def test_current_reproduction_status_is_aggregated(tmp_path):

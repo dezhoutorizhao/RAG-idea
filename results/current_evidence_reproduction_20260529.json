@@ -6,7 +6,8 @@
     "non_human": [
       "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
       "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
-      "Independent external review has not been rerun after the latest storage-status update."
+      "Independent external review has not been rerun after the latest storage-status update.",
+      "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction."
     ]
   },
   "claim_policy": "This one-command reproduction rebuilds the current evidence gates and closure artifacts. It does not fabricate human labels, does not delete server data, and does not complete full CoRM-RAG reproduction.",
@@ -37,6 +38,14 @@
       "ready": false
     },
     {
+      "name": "summarize_end2end_selective_rag_proxy",
+      "outputs": [
+        "results\\end2end_selective_rag_proxy_summary_20260529.json",
+        "results\\end2end_selective_rag_proxy_summary_20260529.md"
+      ],
+      "ready": false
+    },
+    {
       "name": "summarize_evidence_closure",
       "outputs": [
         "results\\evidence_closure_status_v4.json",
@@ -54,7 +63,7 @@
     "human_audit_v4_ready": false,
     "remote_storage_ready": false
   },
-  "generated_at_utc": "2026-05-28T19:01:44.342674+00:00",
+  "generated_at_utc": "2026-05-28T19:08:16.208823+00:00",
   "ready_for_neurips_main_claim": false,
   "root": ".",
   "strict": false
