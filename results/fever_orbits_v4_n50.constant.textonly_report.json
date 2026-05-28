@@ -1,0 +1,44 @@
+{
+  "feature_summary": {
+    "clean_sufficiency": {
+      "max": 0.12434571125747598,
+      "mean": 0.04071094625021203,
+      "min": 0.012499999999999997
+    },
+    "mean_sufficiency": {
+      "max": 0.1221340799760785,
+      "mean": 0.031454021356929145,
+      "min": 0.012499999999999997
+    },
+    "sufficiency_variance": {
+      "max": 0.002386662277356599,
+      "mean": 0.00018736318547076734,
+      "min": 0.0
+    },
+    "verifier_entropy": {
+      "max": 0.6931471805579453,
+      "mean": 0.18021826694432572,
+      "min": -1.000088900581841e-12
+    },
+    "worst_sufficiency": {
+      "max": 0.11992244869468102,
+      "mean": 0.021925753288667447,
+      "min": 0.012499999999999997
+    }
+  },
+  "orbits": 300,
+  "private_input": "results\\fever_orbits_v4_n50.private_eval.jsonl",
+  "raw_input": "results\\fever_orbits_v4_n50.constant.raw.jsonl",
+  "scored_output": "results\\fever_orbits_v4_n50.constant.textonly_scored.jsonl",
+  "scorer": {
+    "feature_sources": [
+      "query",
+      "candidate_answer",
+      "visible_evidence_text",
+      "retrieval_score"
+    ],
+    "scorer": "textonly_lexical_v4",
+    "uses_private_fields": false
+  },
+  "source_item_groups": 50
+}

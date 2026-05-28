@@ -1,0 +1,101 @@
+{
+  "anti_shortcut": {
+    "random_label_median_auc": 0.4968,
+    "structural_max_auc": 0.5242,
+    "structural_passed_0_55": true
+  },
+  "balance": {
+    "search": {
+      "candidate_combinations_evaluated": 50000,
+      "candidate_combinations_total": 134779202705884326091012854146888406558699863725012545,
+      "exhaustive": false,
+      "max_combinations": 50000,
+      "objective": "minimize structural-only max single-feature AUROC, then mean feature gap",
+      "seed": 97
+    },
+    "selected_n": 100,
+    "selected_negative": 50,
+    "selected_positive": 50
+  },
+  "compare_vs_naive": {
+    "aurc_reduction": 0.18578574295822564,
+    "auroc_improvement": 0.3556,
+    "baseline": {
+      "aurc": 0.34617102866455757,
+      "auroc": 0.6372,
+      "risk_at_30": 0.33333333333333337,
+      "risk_at_50": 0.36
+    },
+    "risk_at_30_reduction": 0.33333333333333337,
+    "risk_at_50_reduction": 0.33999999999999997,
+    "target": {
+      "aurc": 0.16038528570633193,
+      "auroc": 0.9928,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.020000000000000018
+    }
+  },
+  "csrm": {
+    "aurc": 0.16038528570633193,
+    "auroc": 0.9928,
+    "n": 100,
+    "negative": 50,
+    "positive": 50,
+    "risk_at_30": 0.0,
+    "risk_at_50": 0.020000000000000018
+  },
+  "inputs": {
+    "private": "results\\fever_orbits_v4_n50.private_eval.jsonl",
+    "raw": "results\\fever_orbits_v4_n50.raw.jsonl"
+  },
+  "limitations": [
+    "Constant-score diagnostics remove retrieval-score shortcuts and are not real retrieval evidence.",
+    "Structural-balanced subset selection is diagnostic; main evidence still requires larger construction-time hard negatives and human-audited labels."
+  ],
+  "outputs": {
+    "anti_shortcut": "results\\fever_orbits_v4_n50.constant.structbalanced.anti_shortcut.json",
+    "balance_report": "results\\fever_orbits_v4_n50.constant.structbalanced.balance_report.json",
+    "balanced_private": "results\\fever_orbits_v4_n50.constant.structbalanced.private_eval.jsonl",
+    "balanced_raw": "results\\fever_orbits_v4_n50.constant.structbalanced.raw.jsonl",
+    "balanced_scored": "results\\fever_orbits_v4_n50.constant.structbalanced.textonly_scored.jsonl",
+    "compare": "results\\fever_orbits_v4_n50.constant.structbalanced.textonly_compare.json",
+    "constant_raw": "results\\fever_orbits_v4_n50.constant.raw.jsonl",
+    "constant_score_report": "results\\fever_orbits_v4_n50.constant.score_control_report.json",
+    "constant_scored": "results\\fever_orbits_v4_n50.constant.textonly_scored.jsonl",
+    "constant_scored_report": "results\\fever_orbits_v4_n50.constant.textonly_report.json",
+    "eval": "results\\fever_orbits_v4_n50.constant.structbalanced.textonly_eval.json",
+    "summary": "results\\fever_orbits_v4_n50.constant.structbalanced.summary.json"
+  },
+  "score_control": {
+    "constant_score": 0.5,
+    "mode": "constant",
+    "score_summary_after": {
+      "max": 0.5,
+      "mean": 0.5,
+      "min": 0.5,
+      "n": 3600,
+      "unique_values": 1
+    },
+    "score_summary_before": {
+      "max": 1.0,
+      "mean": 0.12395764995993971,
+      "min": 0.0,
+      "n": 3600,
+      "unique_values": 39
+    }
+  },
+  "scoring": {
+    "orbits": 300,
+    "scorer": {
+      "feature_sources": [
+        "query",
+        "candidate_answer",
+        "visible_evidence_text",
+        "retrieval_score"
+      ],
+      "scorer": "textonly_lexical_v4",
+      "uses_private_fields": false
+    },
+    "source_item_groups": 50
+  }
+}

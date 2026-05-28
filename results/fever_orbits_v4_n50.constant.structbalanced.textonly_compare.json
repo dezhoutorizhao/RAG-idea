@@ -1,0 +1,146 @@
+{
+  "baselines": [
+    "corm_max_clean",
+    "single_set_sure_style",
+    "naive_orbit_average"
+  ],
+  "comparisons": {
+    "corm_max_clean": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.09000674157303373,
+          "p2_5": 0.06117557545452751,
+          "p97_5": 0.10584496127604648
+        },
+        "auroc_improvement": {
+          "median": 0.49397832195905256,
+          "p2_5": 0.47591328783621034,
+          "p97_5": 0.5
+        },
+        "risk_at_30_reduction": {
+          "median": 0.5,
+          "p2_5": 0.33333333333333337,
+          "p97_5": 0.6333333333333333
+        },
+        "risk_at_50_reduction": {
+          "median": 0.43999999999999995,
+          "p2_5": 0.33999999999999997,
+          "p97_5": 0.5599999999999999
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.08961471429366807,
+        "auroc_improvement": 0.4928,
+        "baseline": {
+          "aurc": 0.25,
+          "auroc": 0.5,
+          "risk_at_30": 0.5333333333333333,
+          "risk_at_50": 0.54
+        },
+        "risk_at_30_reduction": 0.5333333333333333,
+        "risk_at_50_reduction": 0.52,
+        "target": {
+          "aurc": 0.16038528570633193,
+          "auroc": 0.9928,
+          "risk_at_30": 0.0,
+          "risk_at_50": 0.020000000000000018
+        }
+      }
+    },
+    "naive_orbit_average": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.17851752207675126,
+          "p2_5": 0.1081407883343525,
+          "p97_5": 0.26253862529705907
+        },
+        "auroc_improvement": {
+          "median": 0.35196314102564097,
+          "p2_5": 0.23489395758303322,
+          "p97_5": 0.46185064935064934
+        },
+        "risk_at_30_reduction": {
+          "median": 0.30000000000000004,
+          "p2_5": 0.09999999999999998,
+          "p97_5": 0.4666666666666667
+        },
+        "risk_at_50_reduction": {
+          "median": 0.31999999999999995,
+          "p2_5": 0.19999999999999996,
+          "p97_5": 0.41999999999999993
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.18578574295822564,
+        "auroc_improvement": 0.3556,
+        "baseline": {
+          "aurc": 0.34617102866455757,
+          "auroc": 0.6372,
+          "risk_at_30": 0.33333333333333337,
+          "risk_at_50": 0.36
+        },
+        "risk_at_30_reduction": 0.33333333333333337,
+        "risk_at_50_reduction": 0.33999999999999997,
+        "target": {
+          "aurc": 0.16038528570633193,
+          "auroc": 0.9928,
+          "risk_at_30": 0.0,
+          "risk_at_50": 0.020000000000000018
+        }
+      }
+    },
+    "single_set_sure_style": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.32413237836686615,
+          "p2_5": 0.21959133438433484,
+          "p97_5": 0.42986327796170726
+        },
+        "auroc_improvement": {
+          "median": 0.5082296266559614,
+          "p2_5": 0.376957045363308,
+          "p97_5": 0.6182256122039342
+        },
+        "risk_at_30_reduction": {
+          "median": 0.5,
+          "p2_5": 0.30000000000000004,
+          "p97_5": 0.6666666666666666
+        },
+        "risk_at_50_reduction": {
+          "median": 0.4600000000000001,
+          "p2_5": 0.33999999999999997,
+          "p97_5": 0.56
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.33239886118126327,
+        "auroc_improvement": 0.51,
+        "baseline": {
+          "aurc": 0.4927841468875952,
+          "auroc": 0.4828,
+          "risk_at_30": 0.5,
+          "risk_at_50": 0.52
+        },
+        "risk_at_30_reduction": 0.5,
+        "risk_at_50_reduction": 0.5,
+        "target": {
+          "aurc": 0.16038528570633193,
+          "auroc": 0.9928,
+          "risk_at_30": 0.0,
+          "risk_at_50": 0.020000000000000018
+        }
+      }
+    }
+  },
+  "input": "results\\fever_orbits_v4_n50.constant.structbalanced.textonly_scored.jsonl",
+  "n": 100,
+  "negative": 50,
+  "positive": 50,
+  "target": "csrm"
+}

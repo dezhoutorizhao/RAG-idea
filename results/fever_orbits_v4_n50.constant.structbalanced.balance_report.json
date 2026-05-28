@@ -1,0 +1,164 @@
+{
+  "feature_balance": {
+    "clean_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 6.0,
+      "positive_mean": 6.0
+    },
+    "max_retrieval_score": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 0.5,
+      "positive_mean": 0.5
+    },
+    "mean_doc_chars": {
+      "absolute_mean_gap": 1.3966666666666185,
+      "negative_mean": 195.8466666666667,
+      "positive_mean": 197.2433333333333
+    },
+    "mean_retrieval_score": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 0.5,
+      "positive_mean": 0.5
+    },
+    "perturbation_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 1.0,
+      "positive_mean": 1.0
+    },
+    "total_doc_chars": {
+      "absolute_mean_gap": 16.76000000000022,
+      "negative_mean": 2350.16,
+      "positive_mean": 2366.92
+    },
+    "total_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 12.0,
+      "positive_mean": 12.0
+    }
+  },
+  "input_n": 300,
+  "input_negative": 250,
+  "input_positive": 50,
+  "inputs": {
+    "private": "results\\fever_orbits_v4_n50.private_eval.jsonl",
+    "raw": "results\\fever_orbits_v4_n50.constant.raw.jsonl",
+    "scored": "results\\fever_orbits_v4_n50.constant.textonly_scored.jsonl"
+  },
+  "outputs": {
+    "private": "results\\fever_orbits_v4_n50.constant.structbalanced.private_eval.jsonl",
+    "raw": "results\\fever_orbits_v4_n50.constant.structbalanced.raw.jsonl",
+    "report": "results\\fever_orbits_v4_n50.constant.structbalanced.balance_report.json",
+    "scored": "results\\fever_orbits_v4_n50.constant.structbalanced.textonly_scored.jsonl"
+  },
+  "search": {
+    "candidate_combinations_evaluated": 50000,
+    "candidate_combinations_total": 134779202705884326091012854146888406558699863725012545,
+    "exhaustive": false,
+    "max_combinations": 50000,
+    "objective": "minimize structural-only max single-feature AUROC, then mean feature gap",
+    "seed": 97
+  },
+  "selected_n": 100,
+  "selected_negative": 50,
+  "selected_negative_orbit_ids": [
+    "fever:272603bec62da8b3e7d12b789c46d4e4:missing",
+    "fever:272603bec62da8b3e7d12b789c46d4e4:fragile_mixed",
+    "fever:272603bec62da8b3e7d12b789c46d4e4:near_miss_dilution",
+    "fever:3274df79314d353891126a738de8eacb:fragile_mixed",
+    "fever:3274df79314d353891126a738de8eacb:conflict",
+    "fever:3274df79314d353891126a738de8eacb:distractor",
+    "fever:83d3379146d7ce231a13db5913ef71b1:distractor",
+    "fever:f73836b300a7e7b9d2c159e9d7315062:missing",
+    "fever:f73836b300a7e7b9d2c159e9d7315062:distractor",
+    "fever:c5e1b6dca66caedb0dab3729eed61566:missing",
+    "fever:c5e1b6dca66caedb0dab3729eed61566:fragile_mixed",
+    "fever:b69b08e1ccea8d3ea7bca2382494f242:missing",
+    "fever:b69b08e1ccea8d3ea7bca2382494f242:distractor",
+    "fever:336be12b7c7af954afd0fe51349bd96e:fragile_mixed",
+    "fever:a02584211c05420c10c9391af9a1869a:missing",
+    "fever:72ff3c039ab5e08bcfe9fa6832d43479:fragile_mixed",
+    "fever:bcb6eff1086ba4e7b3cbd61c53884205:conflict",
+    "fever:e3e57bfeee0a4366723b5cac274f876f:fragile_mixed",
+    "fever:e3e57bfeee0a4366723b5cac274f876f:distractor",
+    "fever:378bc6bf0c06491c22d8d00215d61f7e:missing",
+    "fever:d42c67a5c20a8422440ff255d1d08560:distractor",
+    "fever:db7573f6f6dc38227dcea8b73bd306dd:conflict",
+    "fever:db7573f6f6dc38227dcea8b73bd306dd:distractor",
+    "fever:bc7a90b2d276cc5fc476c149435efb78:fragile_mixed",
+    "fever:bc7a90b2d276cc5fc476c149435efb78:conflict",
+    "fever:83cc87c10fe1920f7133832cfdd3eb4b:fragile_mixed",
+    "fever:83cc87c10fe1920f7133832cfdd3eb4b:distractor",
+    "fever:e0f23c947d89483be22c2201c7ea12d7:missing",
+    "fever:e0f23c947d89483be22c2201c7ea12d7:fragile_mixed",
+    "fever:80ac62ec8e299829c35084fa5c81d3ff:missing",
+    "fever:612de2b166dd901f1f2c1ccca1b9f532:near_miss_dilution",
+    "fever:c59972939410e8dce2c330a1b8ea61be:missing",
+    "fever:c59972939410e8dce2c330a1b8ea61be:distractor",
+    "fever:a091b2d291a5cc8ee47c690ef88fd805:missing",
+    "fever:5b595fd76b192b24bb53180df4fa73f5:missing",
+    "fever:5b595fd76b192b24bb53180df4fa73f5:conflict",
+    "fever:a3d6f325ca464b920b1c2a0183729129:missing",
+    "fever:86a8f276dc1fdbfa936df24fdce284c6:missing",
+    "fever:86a8f276dc1fdbfa936df24fdce284c6:distractor",
+    "fever:afbb56e0c3d4e523d75d3574e23c2e59:missing",
+    "fever:78409188ede90db8f7c408d111a1a9e3:distractor",
+    "fever:297c4b7dc9dc55faa7834ecc9b05e658:missing",
+    "fever:297c4b7dc9dc55faa7834ecc9b05e658:distractor",
+    "fever:4dcea7ede48cc1f5650a2de642ee97e5:conflict",
+    "fever:d328311cfd08fc582f412c0be4199756:missing",
+    "fever:d328311cfd08fc582f412c0be4199756:distractor",
+    "fever:07f00f258e0e5ffd3f180a08e8894417:missing",
+    "fever:f3922cf14b5f3369bd2fe30ce6952a3a:missing",
+    "fever:f09441aaef67dea0c210af208dc9af54:missing",
+    "fever:f09441aaef67dea0c210af208dc9af54:distractor"
+  ],
+  "selected_positive": 50,
+  "structural_only_probe": {
+    "features": {
+      "clean_doc_count": {
+        "auroc": 0.5,
+        "mean_negative": 6.0,
+        "mean_positive": 6.0,
+        "unique_values": 1
+      },
+      "max_retrieval_score": {
+        "auroc": 0.5,
+        "mean_negative": 0.5,
+        "mean_positive": 0.5,
+        "unique_values": 1
+      },
+      "mean_doc_chars": {
+        "auroc": 0.5242,
+        "mean_negative": 195.8466666666667,
+        "mean_positive": 197.2433333333333,
+        "unique_values": 79
+      },
+      "mean_retrieval_score": {
+        "auroc": 0.5,
+        "mean_negative": 0.5,
+        "mean_positive": 0.5,
+        "unique_values": 1
+      },
+      "perturbation_count": {
+        "auroc": 0.5,
+        "mean_negative": 1.0,
+        "mean_positive": 1.0,
+        "unique_values": 1
+      },
+      "total_doc_chars": {
+        "auroc": 0.5242,
+        "mean_negative": 2350.16,
+        "mean_positive": 2366.92,
+        "unique_values": 79
+      },
+      "total_doc_count": {
+        "auroc": 0.5,
+        "mean_negative": 12.0,
+        "mean_positive": 12.0,
+        "unique_values": 1
+      }
+    },
+    "max_single_feature_auroc": 0.5242,
+    "passed_0_55_threshold": true
+  }
+}
