@@ -1,0 +1,146 @@
+{
+  "baselines": [
+    "corm_max_clean",
+    "single_set_sure_style",
+    "naive_orbit_average"
+  ],
+  "comparisons": {
+    "corm_max_clean": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": -0.09801587301587295,
+          "p2_5": -0.31631944444444443,
+          "p97_5": 0.03987312030075185
+        },
+        "auroc_improvement": {
+          "median": 0.5,
+          "p2_5": 0.5,
+          "p97_5": 0.5
+        },
+        "risk_at_30_reduction": {
+          "median": 0.25,
+          "p2_5": 0.0,
+          "p97_5": 0.75
+        },
+        "risk_at_50_reduction": {
+          "median": 0.16666666666666663,
+          "p2_5": 0.0,
+          "p97_5": 0.33333333333333337
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": -0.09355158730158725,
+        "auroc_improvement": 0.5,
+        "baseline": {
+          "aurc": 0.4166666666666667,
+          "auroc": 0.5,
+          "risk_at_30": 0.75,
+          "risk_at_50": 0.8333333333333334
+        },
+        "risk_at_30_reduction": 0.25,
+        "risk_at_50_reduction": 0.16666666666666663,
+        "target": {
+          "aurc": 0.5102182539682539,
+          "auroc": 1.0,
+          "risk_at_30": 0.5,
+          "risk_at_50": 0.6666666666666667
+        }
+      }
+    },
+    "naive_orbit_average": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.15534812409812415,
+          "p2_5": -0.019064211913182083,
+          "p97_5": 0.35122628596893307
+        },
+        "auroc_improvement": {
+          "median": 0.40909090909090906,
+          "p2_5": 0.0,
+          "p97_5": 0.8809523809523809
+        },
+        "risk_at_30_reduction": {
+          "median": 0.25,
+          "p2_5": 0.0,
+          "p97_5": 0.625
+        },
+        "risk_at_50_reduction": {
+          "median": 0.16666666666666663,
+          "p2_5": 0.0,
+          "p97_5": 0.41666666666666674
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.16547619047619044,
+        "auroc_improvement": 0.4125,
+        "baseline": {
+          "aurc": 0.6756944444444444,
+          "auroc": 0.5875,
+          "risk_at_30": 0.75,
+          "risk_at_50": 0.8333333333333334
+        },
+        "risk_at_30_reduction": 0.25,
+        "risk_at_50_reduction": 0.16666666666666663,
+        "target": {
+          "aurc": 0.5102182539682539,
+          "auroc": 1.0,
+          "risk_at_30": 0.5,
+          "risk_at_50": 0.6666666666666667
+        }
+      }
+    },
+    "single_set_sure_style": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.20835997442455245,
+          "p2_5": -0.005166817632850318,
+          "p97_5": 0.39022203641768866
+        },
+        "auroc_improvement": {
+          "median": 0.5,
+          "p2_5": 0.10869565217391308,
+          "p97_5": 0.8043478260869565
+        },
+        "risk_at_30_reduction": {
+          "median": 0.25,
+          "p2_5": 0.0,
+          "p97_5": 0.625
+        },
+        "risk_at_50_reduction": {
+          "median": 0.16666666666666663,
+          "p2_5": 0.0,
+          "p97_5": 0.41666666666666674
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.2189484126984128,
+        "auroc_improvement": 0.5,
+        "baseline": {
+          "aurc": 0.7291666666666667,
+          "auroc": 0.5,
+          "risk_at_30": 0.75,
+          "risk_at_50": 0.8333333333333334
+        },
+        "risk_at_30_reduction": 0.25,
+        "risk_at_50_reduction": 0.16666666666666663,
+        "target": {
+          "aurc": 0.5102182539682539,
+          "auroc": 1.0,
+          "risk_at_30": 0.5,
+          "risk_at_50": 0.6666666666666667
+        }
+      }
+    }
+  },
+  "input": "results\\fever_orbits_v4_smoke.constant.textonly_scored.jsonl",
+  "n": 24,
+  "negative": 20,
+  "positive": 4,
+  "target": "csrm"
+}
