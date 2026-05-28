@@ -1,0 +1,121 @@
+import json
+
+from experiments.summarize_evidence_closure import _semantic_swap_status
+
+
+def test_semantic_swap_status_reads_latest_v4_diagnostic(tmp_path):
+    results = tmp_path
+    _write_json(
+        results / "hotpot_orbits_v4_semanticswap_n100.construction_audit.json",
+        {
+            "passed": True,
+            "groups": 2,
+            "failed_groups": 0,
+            "aggregate": {
+                "mean_clean_doc_overlap": 1.0,
+                "mean_perturbation_doc_overlap": 1.0,
+                "text_changed_rate": 1.0,
+                "answer_mentions_reduced_rate": 1.0,
+            },
+        },
+    )
+    _write_json(
+        results / "hotpot_orbits_v4_semanticswap_n100.constant.anti_shortcut.json",
+        {
+            "structural_only_probe": {
+                "max_single_feature_auroc": 0.5,
+                "passed_0_55_threshold": True,
+            },
+            "random_label_sanity": {"auroc": {"median": 0.49}},
+            "group_split_probe": {"passed_no_group_overlap": True},
+        },
+    )
+    _write_json(
+        results / "baselines_hotpot_v4_semanticswap_n100.json",
+        {
+            "methods": {
+                "csrm_rule": {"auroc": 0.9, "risk_at_30": 0.1, "risk_at_50": 0.2, "aurc": 0.3}
+            },
+            "strongest_non_csrm": {
+                "by_auroc": {
+                    "method": "calibrated_logistic_orbit",
+                    "metrics": {"auroc": 0.95, "risk_at_30": 0.05, "risk_at_50": 0.1, "aurc": 0.2},
+                }
+            },
+            "csrm_vs_strongest_non_csrm": {
+                "by_auroc": {
+                    "auroc_improvement": -0.05,
+                    "risk_at_30_reduction": -0.05,
+                    "risk_at_50_reduction": -0.1,
+                    "aurc_reduction": -0.1,
+                }
+            },
+        },
+    )
+    _write_json(
+        results / "calibration_hotpot_v4_semanticswap_n100.json",
+        {
+            "aggregate": {
+                "csrm_calibrated_logistic": _calibrated(0.96, 2),
+                "csrm_calibrated_isotonic": _calibrated(0.92, 3),
+            }
+        },
+    )
+    _write_json(
+        results / "compare_calibrated_hotpot_v4_semanticswap_n100.json",
+        {
+            "aggregate": {
+                "csrm_calibrated_logistic": {
+                    "calibrated_logistic_orbit": {
+                        "auroc_improvement": {"mean": 0.0},
+                        "risk_at_30_reduction": {"mean": 0.0},
+                        "risk_at_50_reduction": {"mean": 0.0},
+                        "aurc_reduction": {"mean": 0.01},
+                    }
+                }
+            }
+        },
+    )
+    audit_dir = results / "human_audit_v4"
+    audit_dir.mkdir()
+    _write_json(
+        audit_dir / "hotpot_v4_semanticswap_n100_blind200.manifest.json",
+        {
+            "pack_name": "pack",
+            "selected_items": 2,
+            "selected_label_counts": {"true": 1, "false": 1, "unknown": 0},
+        },
+    )
+    _write_json(
+        audit_dir / "hotpot_v4_semanticswap_n100_blind200.readiness.json",
+        {
+            "ready": False,
+            "labeled": 0,
+            "pending": 2,
+            "completion_rate": 0.0,
+            "failed_gates": [{"gate": "min_labeled_total"}],
+        },
+    )
+
+    status = _semantic_swap_status(results)
+
+    assert status["construction_audit"]["passed"] is True
+    assert status["anti_shortcut"]["max_single_feature_auroc"] == 0.5
+    assert status["strongest_non_csrm"]["name"] == "calibrated_logistic_orbit"
+    assert status["calibrated"]["logistic"]["target_met_count"] == 2
+    assert status["human_audit_pack"]["pending"] == 2
+
+
+def _calibrated(auroc, target_met_count):
+    return {
+        "auroc": {"mean": auroc},
+        "risk_at_30": {"mean": 0.0},
+        "risk_at_50": {"mean": 0.1},
+        "aurc": {"mean": 0.2},
+        "brier": {"mean": 0.05},
+        "target_met_count": target_met_count,
+    }
+
+
+def _write_json(path, payload):
+    path.write_text(json.dumps(payload), encoding="utf-8")
