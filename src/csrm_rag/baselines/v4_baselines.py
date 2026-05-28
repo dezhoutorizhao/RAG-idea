@@ -30,9 +30,22 @@ BASELINE_METHODS = [
     "equal_budget_q25",
     "retrieval_stability",
     "self_consistency_proxy",
+    "equal_budget_ensemble_logistic",
     "calibrated_logistic_context",
     "calibrated_logistic_orbit",
     "csrm_rule",
+]
+
+ENSEMBLE_FEATURE_METHODS = [
+    "corm_max_clean",
+    "corm_mean_clean",
+    "faithful_sure_multi",
+    "context_sufficiency_clean",
+    "equal_budget_mean",
+    "equal_budget_min",
+    "equal_budget_q25",
+    "retrieval_stability",
+    "self_consistency_proxy",
 ]
 
 
@@ -66,6 +79,11 @@ def baseline_scores(inputs: BaselineInputs) -> dict[str, list[float]]:
     )
     scores["calibrated_logistic_orbit"] = out_of_fold_logistic_scores(
         [_orbit_features(orbit) for orbit in orbits],
+        labels,
+        groups=groups,
+    )
+    scores["equal_budget_ensemble_logistic"] = out_of_fold_logistic_scores(
+        _score_feature_matrix(scores, ENSEMBLE_FEATURE_METHODS),
         labels,
         groups=groups,
     )
@@ -113,6 +131,13 @@ def _splitter(y: np.ndarray, groups: Sequence[str] | None, n_splits: int):
     negative = int((~y).sum())
     splits = max(2, min(n_splits, positive, negative))
     return StratifiedKFold(n_splits=splits, shuffle=True, random_state=0).split(np.zeros_like(y), y)
+
+
+def _score_feature_matrix(scores: dict[str, Sequence[float]], methods: Sequence[str]) -> list[list[float]]:
+    if not methods:
+        return []
+    row_count = len(scores[methods[0]])
+    return [[float(scores[method][index]) for method in methods] for index in range(row_count)]
 
 
 def _faithful_sure_multi(orbit: QueryOrbit) -> float:

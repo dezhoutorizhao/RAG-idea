@@ -1,12 +1,12 @@
 # V4 Strong Baseline Coverage
 
-Generated: `2026-05-28T19:14:04.613321+00:00`
+Generated: `2026-05-28T19:23:01.344855+00:00`
 
 ## Baseline Package
 
 - Baseline files: `6`.
 - Comparison files: `6`.
-- Method union: `calibrated_logistic_context, calibrated_logistic_orbit, context_sufficiency_clean, corm_max_clean, corm_mean_clean, csrm_rule, equal_budget_mean, equal_budget_min, equal_budget_q25, faithful_sure_multi, retrieval_stability, self_consistency_proxy`.
+- Method union: `calibrated_logistic_context, calibrated_logistic_orbit, context_sufficiency_clean, corm_max_clean, corm_mean_clean, csrm_rule, equal_budget_ensemble_logistic, equal_budget_mean, equal_budget_min, equal_budget_q25, faithful_sure_multi, retrieval_stability, self_consistency_proxy`.
 
 ## CSRM-Rule vs Strongest Non-CSRM
 
@@ -16,7 +16,7 @@ Generated: `2026-05-28T19:14:04.613321+00:00`
 
 | Dataset | Strongest by AUROC | AUROC delta | Risk@30 delta | Risk@50 delta | AURC delta | Verdict |
 |---|---|---:|---:|---:|---:|---|
-| fever_v4_n100_structbalanced | calibrated_logistic_orbit | 0.0000 | 0.0000 | 0.0000 | -0.0025 | loss |
+| fever_v4_n100_structbalanced | equal_budget_ensemble_logistic | 0.0000 | 0.0000 | 0.0000 | -0.0031 | loss |
 | hotpot_v4_hardneg_n100 | retrieval_stability | -0.1748 | -0.1833 | -0.2200 | -0.1157 | loss |
 | hotpot_v4_n100_hardmatched | calibrated_logistic_orbit | -0.1556 | -0.1833 | -0.1300 | -0.1061 | loss |
 | hotpot_v4_n100_structbalanced | calibrated_logistic_orbit | -0.1996 | -0.2833 | -0.1800 | -0.1772 | loss |

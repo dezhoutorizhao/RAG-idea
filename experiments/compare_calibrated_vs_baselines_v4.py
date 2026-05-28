@@ -21,7 +21,9 @@ if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
 from csrm_rag import area_under_risk_coverage, risk_coverage_curve, roc_auc, selective_risk_at_coverage
+from csrm_rag import corm_mean_score
 from csrm_rag.baselines.v4_baselines import (
+    ENSEMBLE_FEATURE_METHODS,
     _answer_consistency,
     _context_features,
     _equal_budget_min,
@@ -159,28 +161,48 @@ def _run_seed(
 
 
 def _baseline_scores(train_orbits, train_labels, test_orbits) -> dict[str, list[float]]:
+    train_base = _nonlearned_baseline_scores(train_orbits)
+    test_base = _nonlearned_baseline_scores(test_orbits)
+    baselines = dict(test_base)
+    baselines["equal_budget_ensemble_logistic"] = _fit_predict_logistic(
+        _score_feature_matrix(train_base, ENSEMBLE_FEATURE_METHODS),
+        train_labels,
+        _score_feature_matrix(test_base, ENSEMBLE_FEATURE_METHODS),
+    )
+    baselines["calibrated_logistic_context"] = _fit_predict_logistic(
+        [_context_features(orbit) for orbit in train_orbits],
+        train_labels,
+        [_context_features(orbit) for orbit in test_orbits],
+    )
+    baselines["calibrated_logistic_orbit"] = _fit_predict_logistic(
+        [_orbit_features(orbit) for orbit in train_orbits],
+        train_labels,
+        [_orbit_features(orbit) for orbit in test_orbits],
+    )
+    return baselines
+
+
+def _nonlearned_baseline_scores(orbits) -> dict[str, list[float]]:
     return {
-        "corm_max_clean": [max([doc.corm_score for doc in orbit.clean.docs] or [0.0]) for orbit in test_orbits],
-        "faithful_sure_multi": [_faithful_sure_multi(orbit) for orbit in test_orbits],
+        "corm_max_clean": [max([doc.corm_score for doc in orbit.clean.docs] or [0.0]) for orbit in orbits],
+        "corm_mean_clean": [corm_mean_score(orbit.clean) for orbit in orbits],
+        "faithful_sure_multi": [_faithful_sure_multi(orbit) for orbit in orbits],
         "context_sufficiency_clean": [
-            _safe_context_sufficiency(orbit) for orbit in test_orbits
+            _safe_context_sufficiency(orbit) for orbit in orbits
         ],
-        "equal_budget_mean": [_equal_budget_mean(orbit) for orbit in test_orbits],
-        "equal_budget_min": [_equal_budget_min(orbit) for orbit in test_orbits],
-        "equal_budget_q25": [_equal_budget_quantile(orbit, 0.25) for orbit in test_orbits],
-        "retrieval_stability": [_retrieval_stability(orbit) for orbit in test_orbits],
-        "self_consistency_proxy": [_answer_consistency(orbit) for orbit in test_orbits],
-        "calibrated_logistic_context": _fit_predict_logistic(
-            [_context_features(orbit) for orbit in train_orbits],
-            train_labels,
-            [_context_features(orbit) for orbit in test_orbits],
-        ),
-        "calibrated_logistic_orbit": _fit_predict_logistic(
-            [_orbit_features(orbit) for orbit in train_orbits],
-            train_labels,
-            [_orbit_features(orbit) for orbit in test_orbits],
-        ),
+        "equal_budget_mean": [_equal_budget_mean(orbit) for orbit in orbits],
+        "equal_budget_min": [_equal_budget_min(orbit) for orbit in orbits],
+        "equal_budget_q25": [_equal_budget_quantile(orbit, 0.25) for orbit in orbits],
+        "retrieval_stability": [_retrieval_stability(orbit) for orbit in orbits],
+        "self_consistency_proxy": [_answer_consistency(orbit) for orbit in orbits],
     }
+
+
+def _score_feature_matrix(scores: dict[str, Sequence[float]], methods: Sequence[str]) -> list[list[float]]:
+    if not methods:
+        return []
+    row_count = len(scores[methods[0]])
+    return [[float(scores[method][index]) for method in methods] for index in range(row_count)]
 
 
 def _fit_predict_logistic(features_train, train_labels, features_test) -> list[float]:

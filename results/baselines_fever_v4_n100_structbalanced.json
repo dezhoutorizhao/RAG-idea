@@ -1,19 +1,19 @@
 {
   "csrm_vs_strongest_non_csrm": {
     "by_aurc": {
-      "aurc_reduction": -0.0025153605392126133,
+      "aurc_reduction": -0.003061576606306654,
       "auroc_improvement": 0.0,
       "risk_at_30_reduction": 0.0,
       "risk_at_50_reduction": 0.0
     },
     "by_auroc": {
-      "aurc_reduction": -0.0025153605392126133,
+      "aurc_reduction": -0.003061576606306654,
       "auroc_improvement": 0.0,
       "risk_at_30_reduction": 0.0,
       "risk_at_50_reduction": 0.0
     },
     "by_risk_at_30": {
-      "aurc_reduction": -0.0025153605392126133,
+      "aurc_reduction": -0.003061576606306654,
       "auroc_improvement": 0.0,
       "risk_at_30_reduction": 0.0,
       "risk_at_50_reduction": 0.0
@@ -104,6 +104,19 @@
         "unique": 174
       }
     },
+    "equal_budget_ensemble_logistic": {
+      "aurc": 0.14801847905741716,
+      "auroc": 1.0,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.0,
+      "risk_at_70": 0.2857142857142857,
+      "score_summary": {
+        "max": 0.9999999595162766,
+        "mean": 0.5004859359276346,
+        "min": 1.6193259839897197e-05,
+        "unique": 183
+      }
+    },
     "equal_budget_mean": {
       "aurc": 0.3312622606194255,
       "auroc": 0.7087,
@@ -192,49 +205,49 @@
   "source_item_groups": 100,
   "strongest_non_csrm": {
     "by_aurc": {
-      "method": "calibrated_logistic_orbit",
+      "method": "equal_budget_ensemble_logistic",
       "metrics": {
-        "aurc": 0.1485646951245112,
+        "aurc": 0.14801847905741716,
         "auroc": 1.0,
         "risk_at_30": 0.0,
         "risk_at_50": 0.0,
         "risk_at_70": 0.2857142857142857,
         "score_summary": {
-          "max": 0.999999944181835,
-          "mean": 0.5037676492402398,
-          "min": 1.2702481788513227e-10,
+          "max": 0.9999999595162766,
+          "mean": 0.5004859359276346,
+          "min": 1.6193259839897197e-05,
           "unique": 183
         }
       }
     },
     "by_auroc": {
-      "method": "calibrated_logistic_orbit",
+      "method": "equal_budget_ensemble_logistic",
       "metrics": {
-        "aurc": 0.1485646951245112,
+        "aurc": 0.14801847905741716,
         "auroc": 1.0,
         "risk_at_30": 0.0,
         "risk_at_50": 0.0,
         "risk_at_70": 0.2857142857142857,
         "score_summary": {
-          "max": 0.999999944181835,
-          "mean": 0.5037676492402398,
-          "min": 1.2702481788513227e-10,
+          "max": 0.9999999595162766,
+          "mean": 0.5004859359276346,
+          "min": 1.6193259839897197e-05,
           "unique": 183
         }
       }
     },
     "by_risk_at_30": {
-      "method": "calibrated_logistic_orbit",
+      "method": "equal_budget_ensemble_logistic",
       "metrics": {
-        "aurc": 0.1485646951245112,
+        "aurc": 0.14801847905741716,
         "auroc": 1.0,
         "risk_at_30": 0.0,
         "risk_at_50": 0.0,
         "risk_at_70": 0.2857142857142857,
         "score_summary": {
-          "max": 0.999999944181835,
-          "mean": 0.5037676492402398,
-          "min": 1.2702481788513227e-10,
+          "max": 0.9999999595162766,
+          "mean": 0.5004859359276346,
+          "min": 1.6193259839897197e-05,
           "unique": 183
         }
       }

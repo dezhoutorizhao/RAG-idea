@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-28T19:14:04.629883+00:00`
+Generated: `2026-05-28T19:23:01.360715+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,7 +51,7 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## V4 Strong Baselines
 
 - Baseline files: `6`; comparison files: `6`.
-- Method union: `calibrated_logistic_context, calibrated_logistic_orbit, context_sufficiency_clean, corm_max_clean, corm_mean_clean, csrm_rule, equal_budget_mean, equal_budget_min, equal_budget_q25, faithful_sure_multi, retrieval_stability, self_consistency_proxy`.
+- Method union: `calibrated_logistic_context, calibrated_logistic_orbit, context_sufficiency_clean, corm_max_clean, corm_mean_clean, csrm_rule, equal_budget_ensemble_logistic, equal_budget_mean, equal_budget_min, equal_budget_q25, faithful_sure_multi, retrieval_stability, self_consistency_proxy`.
 - CSRM-Rule losses vs strongest by AUROC/Risk@30/AURC: `6` / `6` / `6`.
 - CSRM-Calibrated-Logistic robust Risk@30 wins/losses: `1` / `1`; AURC robust wins/losses: `1` / `5`.
 - Claim implication: The v4 strong-baseline package is present and includes context sufficiency, faithful SURE-style multi-set scoring, equal-budget orbit reducers, retrieval stability, self-consistency, and out-of-fold calibrated logistic context/orbit baselines. It strengthens reviewer-facing baseline coverage, but it is also negative boundary evidence: CSRM-Rule is not an all-win method against the strongest learned/context baselines, and calibrated CSRM should be reported with per-setting caveats.
