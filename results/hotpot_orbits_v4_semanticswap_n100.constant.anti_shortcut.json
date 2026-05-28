@@ -2,22 +2,22 @@
   "group_split_probe": {
     "folds": {
       "0": {
-        "groups": 39,
-        "n": 78,
-        "negative": 39,
-        "positive": 39
+        "groups": 37,
+        "n": 74,
+        "negative": 37,
+        "positive": 37
       },
       "1": {
-        "groups": 28,
-        "n": 56,
-        "negative": 28,
-        "positive": 28
+        "groups": 29,
+        "n": 58,
+        "negative": 29,
+        "positive": 29
       },
       "2": {
-        "groups": 33,
-        "n": 66,
-        "negative": 33,
-        "positive": 33
+        "groups": 34,
+        "n": 68,
+        "negative": 34,
+        "positive": 34
       }
     },
     "max_group_overlap_between_folds": 0,
@@ -46,11 +46,11 @@
   },
   "random_label_sanity": {
     "auroc": {
-      "max": 0.5926,
-      "median": 0.49575,
-      "min": 0.4179,
-      "p2_5": 0.4275,
-      "p97_5": 0.5733
+      "max": 0.6038,
+      "median": 0.4961,
+      "min": 0.3987,
+      "p2_5": 0.4143,
+      "p97_5": 0.5688
     },
     "trials": 200,
     "valid_trials": 200
@@ -71,10 +71,10 @@
         "unique_values": 1
       },
       "mean_doc_chars": {
-        "auroc": 0.50105,
-        "mean_negative": 495.1475,
-        "mean_positive": 494.98333333333335,
-        "unique_values": 172
+        "auroc": 0.5009,
+        "mean_negative": 492.3075,
+        "mean_positive": 492.19166666666666,
+        "unique_values": 173
       },
       "mean_retrieval_score": {
         "auroc": 0.5,
@@ -89,10 +89,10 @@
         "unique_values": 1
       },
       "total_doc_chars": {
-        "auroc": 0.50105,
-        "mean_negative": 5941.77,
-        "mean_positive": 5939.8,
-        "unique_values": 172
+        "auroc": 0.5009,
+        "mean_negative": 5907.69,
+        "mean_positive": 5906.3,
+        "unique_values": 173
       },
       "total_doc_count": {
         "auroc": 0.5,
@@ -101,7 +101,7 @@
         "unique_values": 1
       }
     },
-    "max_single_feature_auroc": 0.50105,
+    "max_single_feature_auroc": 0.5009,
     "passed_0_55_threshold": true
   }
 }

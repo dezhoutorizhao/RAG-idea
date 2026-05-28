@@ -1,78 +1,78 @@
 {
   "by_construction_type": {
     "semantic_swap": {
-      "baseline_mean": 0.18272465861081127,
+      "baseline_mean": 0.23557645841842367,
       "n": 20,
       "negative": 20,
       "positive": 0,
-      "target_mean": 0.1960538466829629,
-      "target_minus_baseline_mean": 0.013329188072151646
+      "target_mean": 0.24047787311313465,
+      "target_minus_baseline_mean": 0.004901414694710994
     },
     "stable": {
-      "baseline_mean": 0.877937305271448,
+      "baseline_mean": 0.8947431319884585,
       "n": 20,
       "negative": 0,
       "positive": 20,
-      "target_mean": 0.8679986492533566,
-      "target_minus_baseline_mean": -0.009938656018091453
+      "target_mean": 0.8862810857106579,
+      "target_minus_baseline_mean": -0.0084620462778006
     }
   },
   "feature_gaps": [
     {
-      "absolute_gap": 0.10009845337920664,
+      "absolute_gap": 0.09900133045334092,
       "feature": "verifier_entropy",
-      "negative_mean": 0.38468247688311097,
-      "positive_mean": 0.4847809302623176,
-      "positive_minus_negative": 0.10009845337920664
+      "negative_mean": 0.40025719370099244,
+      "positive_mean": 0.49925852415433336,
+      "positive_minus_negative": 0.09900133045334092
     },
     {
-      "absolute_gap": 0.09591238613205973,
-      "feature": "clean_to_worst_gap",
-      "negative_mean": 0.09938515015328828,
-      "positive_mean": 0.0034727640212285525,
-      "positive_minus_negative": -0.09591238613205973
-    },
-    {
-      "absolute_gap": 0.09591238613205971,
+      "absolute_gap": 0.09875844701784607,
       "feature": "min_sufficiency",
-      "negative_mean": 0.09280499159267663,
-      "positive_mean": 0.18871737772473635,
-      "positive_minus_negative": 0.09591238613205971
+      "negative_mean": 0.09999926942078215,
+      "positive_mean": 0.19875771643862822,
+      "positive_minus_negative": 0.09875844701784607
     },
     {
-      "absolute_gap": 0.047956193066029884,
+      "absolute_gap": 0.09875844701784604,
+      "feature": "clean_to_worst_gap",
+      "negative_mean": 0.10354937137305957,
+      "positive_mean": 0.00479092435521353,
+      "positive_minus_negative": -0.09875844701784604
+    },
+    {
+      "absolute_gap": 0.04937922350892304,
       "feature": "naive_orbit_average",
-      "negative_mean": 0.14249756666932076,
-      "positive_mean": 0.19045375973535064,
-      "positive_minus_negative": 0.047956193066029884
+      "negative_mean": 0.15177395510731195,
+      "positive_mean": 0.201153178616235,
+      "positive_minus_negative": 0.04937922350892304
     },
     {
-      "absolute_gap": 0.047956193066029884,
+      "absolute_gap": 0.04937922350892304,
       "feature": "mean_sufficiency",
-      "negative_mean": 0.14249756666932076,
-      "positive_mean": 0.19045375973535064,
-      "positive_minus_negative": 0.047956193066029884
+      "negative_mean": 0.15177395510731195,
+      "positive_mean": 0.201153178616235,
+      "positive_minus_negative": 0.04937922350892304
     },
     {
-      "absolute_gap": 0.02572885432461891,
+      "absolute_gap": 0.030158548364973226,
       "feature": "mean_missing",
-      "negative_mean": 0.7815004367396119,
-      "positive_mean": 0.755771582414993,
-      "positive_minus_negative": -0.02572885432461891
+      "negative_mean": 0.7754022855033993,
+      "positive_mean": 0.7452437371384261,
+      "positive_minus_negative": -0.030158548364973226
     },
     {
-      "absolute_gap": 0.003209890551785652,
+      "absolute_gap": 0.0037481552351082705,
       "feature": "sufficiency_variance",
-      "negative_mean": 0.003214437152712105,
-      "positive_mean": 4.546600926452798e-06,
-      "positive_minus_negative": -0.003209890551785652
+      "negative_mean": 0.0037573779416709835,
+      "positive_mean": 9.22270656271284e-06,
+      "positive_minus_negative": -0.0037481552351082705
     },
     {
-      "absolute_gap": 0.0002218554004726897,
+      "absolute_gap": 0.00014762975450896554,
       "feature": "max_conflict",
-      "negative_mean": 0.08011355107139875,
-      "positive_mean": 0.07989169567092606,
-      "positive_minus_negative": -0.0002218554004726897
+      "negative_mean": 0.07930550186347898,
+      "positive_mean": 0.07915787210897002,
+      "positive_minus_negative": -0.00014762975450896554
     },
     {
       "absolute_gap": 0.0,
@@ -91,15 +91,15 @@
     {
       "absolute_gap": 0.0,
       "feature": "context_sufficiency_clean",
-      "negative_mean": 0.1921901417459649,
-      "positive_mean": 0.1921901417459649,
+      "negative_mean": 0.2035486407938417,
+      "positive_mean": 0.2035486407938417,
       "positive_minus_negative": 0.0
     },
     {
       "absolute_gap": 0.0,
       "feature": "clean_sufficiency",
-      "negative_mean": 0.1921901417459649,
-      "positive_mean": 0.1921901417459649,
+      "negative_mean": 0.2035486407938417,
+      "positive_mean": 0.2035486407938417,
       "positive_minus_negative": 0.0
     },
     {
@@ -140,18 +140,18 @@
   ],
   "metrics": {
     "baseline_calibrated_logistic_orbit": {
-      "auroc": 0.9725,
-      "mean_score_negative": 0.18272465861081127,
-      "mean_score_positive": 0.877937305271448,
+      "auroc": 0.9525,
+      "mean_score_negative": 0.23557645841842367,
+      "mean_score_positive": 0.8947431319884585,
       "risk_at_30": 0.0,
-      "risk_at_50": 0.09999999999999998
+      "risk_at_50": 0.15000000000000002
     },
     "target": {
-      "auroc": 0.9725,
-      "mean_score_negative": 0.1960538466829629,
-      "mean_score_positive": 0.8679986492533566,
+      "auroc": 0.95,
+      "mean_score_negative": 0.24047787311313465,
+      "mean_score_positive": 0.8862810857106579,
       "risk_at_30": 0.0,
-      "risk_at_50": 0.09999999999999998
+      "risk_at_50": 0.15000000000000002
     }
   },
   "private_input": "results\\hotpot_orbits_v4_semanticswap_n100.private_eval.jsonl",
@@ -169,16 +169,54 @@
   "top_cases": {
     "baseline_over_target_on_positive": [
       {
-        "baseline_score": 0.8339934482952638,
+        "baseline_score": 0.7913892760693154,
+        "candidate_answer": "Marvel",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_semanticswap:5adf3e835542993a75d26442:stable",
+        "query": "Which comic series involves characters such as Nick Fury and Baron von Strucker?",
+        "score_gap_target_minus_baseline": -0.021031116301244324,
+        "source_item_group_id": "hotpot_semanticswap:5adf3e835542993a75d26442",
+        "target_score": 0.7703581597680711,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.6232123149068113
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5684032863534809
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.8012057295314754,
         "candidate_answer": "Naguib Mahfouz",
         "construction_type": "stable",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": true,
         "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:stable",
         "query": "Which writer won the Nobel Prize, William H. Gass or Naguib Mahfouz?",
-        "score_gap_target_minus_baseline": -0.018410807761587655,
+        "score_gap_target_minus_baseline": -0.01673755914030417,
         "source_item_group_id": "hotpot_semanticswap:5ae1fced5542997283cd230e",
-        "target_score": 0.8155826405336761,
+        "target_score": 0.7844681703911712,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -207,16 +245,16 @@
         ]
       },
       {
-        "baseline_score": 0.8045219391104592,
-        "candidate_answer": "Juan Carlos Onetti",
+        "baseline_score": 0.9309980074552142,
+        "candidate_answer": "21 years and 154 days",
         "construction_type": "stable",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5a79332555429907847277e7:stable",
-        "query": "Who died first, Bryce Courtenay or Juan Carlos Onetti?",
-        "score_gap_target_minus_baseline": -0.015081761377282232,
-        "source_item_group_id": "hotpot_semanticswap:5a79332555429907847277e7",
-        "target_score": 0.789440177733177,
+        "orbit_id": "hotpot_semanticswap:5a8f155e554299458435d54c:stable",
+        "query": "The Kellock-Taschereau Commission was appointed by a prime minister who served how long in office?",
+        "score_gap_target_minus_baseline": -0.010749275262355362,
+        "source_item_group_id": "hotpot_semanticswap:5a8f155e554299458435d54c",
+        "target_score": 0.9202487321928589,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -236,121 +274,7 @@
           },
           {
             "feature": "mean_missing",
-            "value": 0.6615838833613938
-          },
-          {
-            "feature": "verifier_entropy",
-            "value": 0.5720350200572122
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.8588098861728838,
-        "candidate_answer": "8 km",
-        "construction_type": "stable",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5adf3e355542993a75d26440:stable",
-        "query": "How long is the bridge in the \u00d6resund Region that connect Copenhagen, Denmark and Malmo, Sweden?",
-        "score_gap_target_minus_baseline": -0.012926239068972611,
-        "source_item_group_id": "hotpot_semanticswap:5adf3e355542993a75d26440",
-        "target_score": 0.8458836471039112,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7129519328136825
-          },
-          {
-            "feature": "verifier_entropy",
-            "value": 0.5225152848892793
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.8535237123434122,
-        "candidate_answer": "director and screenwriter.",
-        "construction_type": "stable",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5add60905542995b365fab1d:stable",
-        "query": "What do Victor Salva and Emilio Fern\u00e1ndez have in common?",
-        "score_gap_target_minus_baseline": -0.012131103594135717,
-        "source_item_group_id": "hotpot_semanticswap:5add60905542995b365fab1d",
-        "target_score": 0.8413926087492765,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7143900939625915
-          },
-          {
-            "feature": "verifier_entropy",
-            "value": 0.5096572697764794
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.8798438109675821,
-        "candidate_answer": "2012",
-        "construction_type": "stable",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5a899bf955429946c8d6e959:stable",
-        "query": "When was the New Orleans Pelicans player featured on the NBA 2K16 cover first drafted?",
-        "score_gap_target_minus_baseline": -0.011224309639921382,
-        "source_item_group_id": "hotpot_semanticswap:5a899bf955429946c8d6e959",
-        "target_score": 0.8686195013276607,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7167746802948042
+            "value": 0.7963902011762082
           },
           {
             "feature": "corm_max_clean",
@@ -359,16 +283,16 @@
         ]
       },
       {
-        "baseline_score": 0.8835965896320996,
+        "baseline_score": 0.9003920357369295,
         "candidate_answer": "Chrysler K platform",
         "construction_type": "stable",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": true,
         "orbit_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01:stable",
         "query": "The Plymouth fury produced from 1955 to 1989  was replaced by what for police and fleet applications?",
-        "score_gap_target_minus_baseline": -0.010520112016148553,
+        "score_gap_target_minus_baseline": -0.01058007471945066,
         "source_item_group_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01",
-        "target_score": 0.8730764776159511,
+        "target_score": 0.8898119610174788,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -397,552 +321,16 @@
         ]
       },
       {
-        "baseline_score": 0.879057333384063,
-        "candidate_answer": "Mayor of the City of New York",
-        "construction_type": "stable",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744:stable",
-        "query": "Stokely Webster has paintings can be found at the official residence of whom?",
-        "score_gap_target_minus_baseline": -0.01043487949133659,
-        "source_item_group_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744",
-        "target_score": 0.8686224538927264,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7569114346905336
-          },
-          {
-            "feature": "corm_max_clean",
-            "value": 0.5
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.895279401415323,
-        "candidate_answer": "Geraldine Page",
-        "construction_type": "stable",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b:stable",
-        "query": "Which eight-time Academy Award nominee was Tennessee Williams's choice to play a leading role in his play \"Clothes for a Summer Hotel\"?",
-        "score_gap_target_minus_baseline": -0.009845724446022719,
-        "source_item_group_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b",
-        "target_score": 0.8854336769693003,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7569233917408803
-          },
-          {
-            "feature": "corm_max_clean",
-            "value": 0.5
-          }
-        ]
-      }
-    ],
-    "target_high_false_positive": [
-      {
-        "baseline_score": 0.880326327224208,
-        "candidate_answer": "Chrysler K platform",
-        "construction_type": "semantic_swap",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01:semantic_swap",
-        "query": "The Plymouth fury produced from 1955 to 1989  was replaced by what for police and fleet applications?",
-        "score_gap_target_minus_baseline": -0.009838094647813711,
-        "source_item_group_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01",
-        "target_score": 0.8704882325763943,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7339390555598002
-          },
-          {
-            "feature": "corm_max_clean",
-            "value": 0.5
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.852627182593055,
-        "candidate_answer": "8 km",
-        "construction_type": "semantic_swap",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5adf3e355542993a75d26440:semantic_swap",
-        "query": "How long is the bridge in the \u00d6resund Region that connect Copenhagen, Denmark and Malmo, Sweden?",
-        "score_gap_target_minus_baseline": -0.01161864789717093,
-        "source_item_group_id": "hotpot_semanticswap:5adf3e355542993a75d26440",
-        "target_score": 0.8410085346958841,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.713288454237539
-          },
-          {
-            "feature": "verifier_entropy",
-            "value": 0.5220674536926344
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.7601431263961098,
-        "candidate_answer": "Geraldine Page",
-        "construction_type": "semantic_swap",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b:semantic_swap",
-        "query": "Which eight-time Academy Award nominee was Tennessee Williams's choice to play a leading role in his play \"Clothes for a Summer Hotel\"?",
-        "score_gap_target_minus_baseline": 0.027997959811784878,
-        "source_item_group_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b",
-        "target_score": 0.7881410862078947,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.778250858630731
-          },
-          {
-            "feature": "corm_max_clean",
-            "value": 0.5
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.7182791085121446,
-        "candidate_answer": "director and screenwriter.",
-        "construction_type": "semantic_swap",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5add60905542995b365fab1d:semantic_swap",
-        "query": "What do Victor Salva and Emilio Fern\u00e1ndez have in common?",
-        "score_gap_target_minus_baseline": 0.026175626436561017,
-        "source_item_group_id": "hotpot_semanticswap:5add60905542995b365fab1d",
-        "target_score": 0.7444547349487056,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7346502133101361
-          },
-          {
-            "feature": "verifier_entropy",
-            "value": 0.5007598392957238
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.36128807817658626,
-        "candidate_answer": "Mayor of the City of New York",
-        "construction_type": "semantic_swap",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744:semantic_swap",
-        "query": "Stokely Webster has paintings can be found at the official residence of whom?",
-        "score_gap_target_minus_baseline": 0.11747699455453281,
-        "source_item_group_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744",
-        "target_score": 0.47876507273111907,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7736799740035248
-          },
-          {
-            "feature": "corm_max_clean",
-            "value": 0.5
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.04057500248506251,
-        "candidate_answer": "The Crowned Prince of the Philadelphia Mob",
-        "construction_type": "semantic_swap",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5add67915542992200553af8:semantic_swap",
-        "query": "What was the nickname of the hitman hired by an Italian American Criminal Organization?",
-        "score_gap_target_minus_baseline": 0.0520684605480408,
-        "source_item_group_id": "hotpot_semanticswap:5add67915542992200553af8",
-        "target_score": 0.09264346303310331,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7914403612563041
-          },
-          {
-            "feature": "corm_max_clean",
-            "value": 0.5
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.0284292228274284,
-        "candidate_answer": "320 years",
-        "construction_type": "semantic_swap",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5adce88b5542992c1e3a249a:semantic_swap",
-        "query": "How long did the state exist whose army ransacked and looted the city, Halebidu, twice in the 14th century ?",
-        "score_gap_target_minus_baseline": 0.03963794278936251,
-        "source_item_group_id": "hotpot_semanticswap:5adce88b5542992c1e3a249a",
-        "target_score": 0.06806716561679091,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.8083566983898299
-          },
-          {
-            "feature": "corm_max_clean",
-            "value": 0.5
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.0037375870283057667,
-        "candidate_answer": "December 13, 2015",
-        "construction_type": "semantic_swap",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5ac0e0c75542997d64295a6e:semantic_swap",
-        "query": "Reggaet\u00f3n Lento is a song by the boy band formed on which date?",
-        "score_gap_target_minus_baseline": 0.007207215291147557,
-        "source_item_group_id": "hotpot_semanticswap:5ac0e0c75542997d64295a6e",
-        "target_score": 0.010944802319453323,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.8122435389654227
-          },
-          {
-            "feature": "corm_max_clean",
-            "value": 0.5
-          }
-        ]
-      }
-    ],
-    "target_low_false_negative": [
-      {
-        "baseline_score": 0.8045219391104592,
-        "candidate_answer": "Juan Carlos Onetti",
-        "construction_type": "stable",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5a79332555429907847277e7:stable",
-        "query": "Who died first, Bryce Courtenay or Juan Carlos Onetti?",
-        "score_gap_target_minus_baseline": -0.015081761377282232,
-        "source_item_group_id": "hotpot_semanticswap:5a79332555429907847277e7",
-        "target_score": 0.789440177733177,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.6615838833613938
-          },
-          {
-            "feature": "verifier_entropy",
-            "value": 0.5720350200572122
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.8339934482952638,
-        "candidate_answer": "Naguib Mahfouz",
-        "construction_type": "stable",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:stable",
-        "query": "Which writer won the Nobel Prize, William H. Gass or Naguib Mahfouz?",
-        "score_gap_target_minus_baseline": -0.018410807761587655,
-        "source_item_group_id": "hotpot_semanticswap:5ae1fced5542997283cd230e",
-        "target_score": 0.8155826405336761,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.6229519950843195
-          },
-          {
-            "feature": "verifier_entropy",
-            "value": 0.5341286166670145
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.8367728556271938,
-        "candidate_answer": "27 January 1974",
-        "construction_type": "stable",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5ae6363b55429929b0807af0:stable",
-        "query": "When was the defending titlist of 2009\u201310 Biathlon World Cup \u2013 Pursuit Men born? ",
-        "score_gap_target_minus_baseline": -0.004812945109577416,
-        "source_item_group_id": "hotpot_semanticswap:5ae6363b55429929b0807af0",
-        "target_score": 0.8319599105176164,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7371233495894852
-          },
-          {
-            "feature": "corm_max_clean",
-            "value": 0.5
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.8535237123434122,
-        "candidate_answer": "director and screenwriter.",
-        "construction_type": "stable",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5add60905542995b365fab1d:stable",
-        "query": "What do Victor Salva and Emilio Fern\u00e1ndez have in common?",
-        "score_gap_target_minus_baseline": -0.012131103594135717,
-        "source_item_group_id": "hotpot_semanticswap:5add60905542995b365fab1d",
-        "target_score": 0.8413926087492765,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7143900939625915
-          },
-          {
-            "feature": "verifier_entropy",
-            "value": 0.5096572697764794
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.8588098861728838,
+        "baseline_score": 0.8812235766060926,
         "candidate_answer": "8 km",
         "construction_type": "stable",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": true,
         "orbit_id": "hotpot_semanticswap:5adf3e355542993a75d26440:stable",
         "query": "How long is the bridge in the \u00d6resund Region that connect Copenhagen, Denmark and Malmo, Sweden?",
-        "score_gap_target_minus_baseline": -0.012926239068972611,
+        "score_gap_target_minus_baseline": -0.010442384458484,
         "source_item_group_id": "hotpot_semanticswap:5adf3e355542993a75d26440",
-        "target_score": 0.8458836471039112,
+        "target_score": 0.8707811921476086,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -971,16 +359,16 @@
         ]
       },
       {
-        "baseline_score": 0.8753240842976568,
-        "candidate_answer": "Estadio de L\u00f3pez Cort\u00e1zar",
+        "baseline_score": 0.9310614639019672,
+        "candidate_answer": "Sam Phillips",
         "construction_type": "stable",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5ac403c45542997ea680c9b5:stable",
-        "query": "Where does Tiko's Spanish football club hold home games at?",
-        "score_gap_target_minus_baseline": -0.007685424520509132,
-        "source_item_group_id": "hotpot_semanticswap:5ac403c45542997ea680c9b5",
-        "target_score": 0.8676386597771477,
+        "orbit_id": "hotpot_semanticswap:5ac26ac15542992f1f2b38bc:stable",
+        "query": "Who is the film dedicated to that Paramount Classics and MTV Films co-purchased the rights to?",
+        "score_gap_target_minus_baseline": -0.009915062454586399,
+        "source_item_group_id": "hotpot_semanticswap:5ac26ac15542992f1f2b38bc",
+        "target_score": 0.9211464014473808,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -1000,45 +388,7 @@
           },
           {
             "feature": "mean_missing",
-            "value": 0.7618827124499319
-          },
-          {
-            "feature": "verifier_entropy",
-            "value": 0.5232154457850801
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.8798438109675821,
-        "candidate_answer": "2012",
-        "construction_type": "stable",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5a899bf955429946c8d6e959:stable",
-        "query": "When was the New Orleans Pelicans player featured on the NBA 2K16 cover first drafted?",
-        "score_gap_target_minus_baseline": -0.011224309639921382,
-        "source_item_group_id": "hotpot_semanticswap:5a899bf955429946c8d6e959",
-        "target_score": 0.8686195013276607,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.7167746802948042
+            "value": 0.8009281447540912
           },
           {
             "feature": "corm_max_clean",
@@ -1047,16 +397,16 @@
         ]
       },
       {
-        "baseline_score": 0.879057333384063,
-        "candidate_answer": "Mayor of the City of New York",
+        "baseline_score": 0.881248023220167,
+        "candidate_answer": "Sam Taylor",
         "construction_type": "stable",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": true,
-        "orbit_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744:stable",
-        "query": "Stokely Webster has paintings can be found at the official residence of whom?",
-        "score_gap_target_minus_baseline": -0.01043487949133659,
-        "source_item_group_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744",
-        "target_score": 0.8686224538927264,
+        "orbit_id": "hotpot_semanticswap:5a79c1095542996c55b2dc62:stable",
+        "query": "Who died first, Chester Erskine or Sam Taylor?",
+        "score_gap_target_minus_baseline": -0.00933874960116976,
+        "source_item_group_id": "hotpot_semanticswap:5a79c1095542996c55b2dc62",
+        "target_score": 0.8719092736189973,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -1076,7 +426,45 @@
           },
           {
             "feature": "mean_missing",
-            "value": 0.7569114346905336
+            "value": 0.7222145918159986
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9145932656822624,
+        "candidate_answer": "niece",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_semanticswap:5ac458f8554299204fd21f2a:stable",
+        "query": "What is the relationship of Yeshahework Yilma's mother to the man who was Ethiopia's emperor from 1930 to 1974? ",
+        "score_gap_target_minus_baseline": -0.009297115203264705,
+        "source_item_group_id": "hotpot_semanticswap:5ac458f8554299204fd21f2a",
+        "target_score": 0.9052961504789977,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7631100572031517
           },
           {
             "feature": "corm_max_clean",
@@ -1085,18 +473,18 @@
         ]
       }
     ],
-    "target_over_baseline_on_negative": [
+    "target_high_false_positive": [
       {
-        "baseline_score": 0.36128807817658626,
-        "candidate_answer": "Mayor of the City of New York",
+        "baseline_score": 0.8974345139285892,
+        "candidate_answer": "Chrysler K platform",
         "construction_type": "semantic_swap",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744:semantic_swap",
-        "query": "Stokely Webster has paintings can be found at the official residence of whom?",
-        "score_gap_target_minus_baseline": 0.11747699455453281,
-        "source_item_group_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744",
-        "target_score": 0.47876507273111907,
+        "orbit_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01:semantic_swap",
+        "query": "The Plymouth fury produced from 1955 to 1989  was replaced by what for police and fleet applications?",
+        "score_gap_target_minus_baseline": -0.01023999617417437,
+        "source_item_group_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01",
+        "target_score": 0.8871945177544148,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -1116,7 +504,7 @@
           },
           {
             "feature": "mean_missing",
-            "value": 0.7736799740035248
+            "value": 0.7339390555598002
           },
           {
             "feature": "corm_max_clean",
@@ -1125,16 +513,16 @@
         ]
       },
       {
-        "baseline_score": 0.04057500248506251,
-        "candidate_answer": "The Crowned Prince of the Philadelphia Mob",
+        "baseline_score": 0.8877245257148451,
+        "candidate_answer": "Masayoshi \"Masa\" Takayama",
         "construction_type": "semantic_swap",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5add67915542992200553af8:semantic_swap",
-        "query": "What was the nickname of the hitman hired by an Italian American Criminal Organization?",
-        "score_gap_target_minus_baseline": 0.0520684605480408,
-        "source_item_group_id": "hotpot_semanticswap:5add67915542992200553af8",
-        "target_score": 0.09264346303310331,
+        "orbit_id": "hotpot_semanticswap:5ae55b8255429908b63265ef:semantic_swap",
+        "query": "What chef is the owner of a Japanese restaurant in the Tribeca neighborhood and also owns two Bar Masas in New York and Nevada?",
+        "score_gap_target_minus_baseline": -0.0018269766725861336,
+        "source_item_group_id": "hotpot_semanticswap:5ae55b8255429908b63265ef",
+        "target_score": 0.8858975490422589,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -1154,25 +542,25 @@
           },
           {
             "feature": "mean_missing",
-            "value": 0.7914403612563041
+            "value": 0.7527562830810988
           },
           {
-            "feature": "corm_max_clean",
-            "value": 0.5
+            "feature": "verifier_entropy",
+            "value": 0.5427491285715378
           }
         ]
       },
       {
-        "baseline_score": 0.0284292228274284,
-        "candidate_answer": "320 years",
+        "baseline_score": 0.8756543564851297,
+        "candidate_answer": "8 km",
         "construction_type": "semantic_swap",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5adce88b5542992c1e3a249a:semantic_swap",
-        "query": "How long did the state exist whose army ransacked and looted the city, Halebidu, twice in the 14th century ?",
-        "score_gap_target_minus_baseline": 0.03963794278936251,
-        "source_item_group_id": "hotpot_semanticswap:5adce88b5542992c1e3a249a",
-        "target_score": 0.06806716561679091,
+        "orbit_id": "hotpot_semanticswap:5adf3e355542993a75d26440:semantic_swap",
+        "query": "How long is the bridge in the \u00d6resund Region that connect Copenhagen, Denmark and Malmo, Sweden?",
+        "score_gap_target_minus_baseline": -0.00970426757041798,
+        "source_item_group_id": "hotpot_semanticswap:5adf3e355542993a75d26440",
+        "target_score": 0.8659500889147117,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -1192,25 +580,63 @@
           },
           {
             "feature": "mean_missing",
-            "value": 0.8083566983898299
+            "value": 0.713288454237539
           },
           {
-            "feature": "corm_max_clean",
-            "value": 0.5
+            "feature": "verifier_entropy",
+            "value": 0.5220674536926344
           }
         ]
       },
       {
-        "baseline_score": 0.7601431263961098,
+        "baseline_score": 0.8036038552315882,
+        "candidate_answer": "Jennifer Taylor",
+        "construction_type": "semantic_swap",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_semanticswap:5ac31602554299741d48a1bf:semantic_swap",
+        "query": "Which of the actress starred in  Zombie Night appeared in the 1998 erotic thriller \"Wild Things\"?",
+        "score_gap_target_minus_baseline": 0.013579093842104095,
+        "source_item_group_id": "hotpot_semanticswap:5ac31602554299741d48a1bf",
+        "target_score": 0.8171829490736923,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.764005007258778
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5102966219849441
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.8005892581071409,
         "candidate_answer": "Geraldine Page",
         "construction_type": "semantic_swap",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": false,
         "orbit_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b:semantic_swap",
         "query": "Which eight-time Academy Award nominee was Tennessee Williams's choice to play a leading role in his play \"Clothes for a Summer Hotel\"?",
-        "score_gap_target_minus_baseline": 0.027997959811784878,
+        "score_gap_target_minus_baseline": 0.012521180117587627,
         "source_item_group_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b",
-        "target_score": 0.7881410862078947,
+        "target_score": 0.8131104382247285,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -1239,16 +665,16 @@
         ]
       },
       {
-        "baseline_score": 0.7182791085121446,
-        "candidate_answer": "director and screenwriter.",
+        "baseline_score": 0.4223517962857317,
+        "candidate_answer": "Mayor of the City of New York",
         "construction_type": "semantic_swap",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5add60905542995b365fab1d:semantic_swap",
-        "query": "What do Victor Salva and Emilio Fern\u00e1ndez have in common?",
-        "score_gap_target_minus_baseline": 0.026175626436561017,
-        "source_item_group_id": "hotpot_semanticswap:5add60905542995b365fab1d",
-        "target_score": 0.7444547349487056,
+        "orbit_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744:semantic_swap",
+        "query": "Stokely Webster has paintings can be found at the official residence of whom?",
+        "score_gap_target_minus_baseline": 0.07557544928401705,
+        "source_item_group_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744",
+        "target_score": 0.49792724556974877,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -1268,45 +694,7 @@
           },
           {
             "feature": "mean_missing",
-            "value": 0.7346502133101361
-          },
-          {
-            "feature": "verifier_entropy",
-            "value": 0.5007598392957238
-          }
-        ]
-      },
-      {
-        "baseline_score": 0.0037375870283057667,
-        "candidate_answer": "December 13, 2015",
-        "construction_type": "semantic_swap",
-        "dataset": "hotpot_qa/distractor",
-        "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5ac0e0c75542997d64295a6e:semantic_swap",
-        "query": "Reggaet\u00f3n Lento is a song by the boy band formed on which date?",
-        "score_gap_target_minus_baseline": 0.007207215291147557,
-        "source_item_group_id": "hotpot_semanticswap:5ac0e0c75542997d64295a6e",
-        "target_score": 0.010944802319453323,
-        "top_features": [
-          {
-            "feature": "answer_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "support_signature_consistency",
-            "value": 1.0
-          },
-          {
-            "feature": "retrieval_overlap",
-            "value": 1.0
-          },
-          {
-            "feature": "perturbation_count",
-            "value": 1.0
-          },
-          {
-            "feature": "mean_missing",
-            "value": 0.8122435389654227
+            "value": 0.7736799740035248
           },
           {
             "feature": "corm_max_clean",
@@ -1315,16 +703,16 @@
         ]
       },
       {
-        "baseline_score": 0.0027877459215591136,
-        "candidate_answer": "27 January 1974",
+        "baseline_score": 0.010524855942847551,
+        "candidate_answer": "fifth-largest",
         "construction_type": "semantic_swap",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5ae6363b55429929b0807af0:semantic_swap",
-        "query": "When was the defending titlist of 2009\u201310 Biathlon World Cup \u2013 Pursuit Men born? ",
-        "score_gap_target_minus_baseline": 0.0055658550836392914,
-        "source_item_group_id": "hotpot_semanticswap:5ae6363b55429929b0807af0",
-        "target_score": 0.008353601005198405,
+        "orbit_id": "hotpot_semanticswap:5a80522b5542996402f6a4c1:semantic_swap",
+        "query": "What population ranking is the Oklahoma city located south of a wilderness area spanning over 5000 acres?",
+        "score_gap_target_minus_baseline": 0.007755905232729359,
+        "source_item_group_id": "hotpot_semanticswap:5a80522b5542996402f6a4c1",
+        "target_score": 0.01828076117557691,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -1344,7 +732,7 @@
           },
           {
             "feature": "mean_missing",
-            "value": 0.7595431026836699
+            "value": 0.7745690334762743
           },
           {
             "feature": "corm_max_clean",
@@ -1353,16 +741,16 @@
         ]
       },
       {
-        "baseline_score": 0.0022932752358440288,
-        "candidate_answer": "Juan Carlos Onetti",
+        "baseline_score": 0.006368108656213117,
+        "candidate_answer": "Koch Industries",
         "construction_type": "semantic_swap",
         "dataset": "hotpot_qa/distractor",
         "label_answerable": false,
-        "orbit_id": "hotpot_semanticswap:5a79332555429907847277e7:semantic_swap",
-        "query": "Who died first, Bryce Courtenay or Juan Carlos Onetti?",
-        "score_gap_target_minus_baseline": 0.004255079811725102,
-        "source_item_group_id": "hotpot_semanticswap:5a79332555429907847277e7",
-        "target_score": 0.0065483550475691306,
+        "orbit_id": "hotpot_semanticswap:5adf8ade5542993344016ce8:semantic_swap",
+        "query": "Dutch-born American businessman, Harry Koch, fathered a son born in 1900 that founded which oil refinery firm?",
+        "score_gap_target_minus_baseline": 0.005732787829299149,
+        "source_item_group_id": "hotpot_semanticswap:5adf8ade5542993344016ce8",
+        "target_score": 0.012100896485512266,
         "top_features": [
           {
             "feature": "answer_consistency",
@@ -1382,11 +770,623 @@
           },
           {
             "feature": "mean_missing",
-            "value": 0.7156655766125889
+            "value": 0.7478577681135009
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ],
+    "target_low_false_negative": [
+      {
+        "baseline_score": 0.7913892760693154,
+        "candidate_answer": "Marvel",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_semanticswap:5adf3e835542993a75d26442:stable",
+        "query": "Which comic series involves characters such as Nick Fury and Baron von Strucker?",
+        "score_gap_target_minus_baseline": -0.021031116301244324,
+        "source_item_group_id": "hotpot_semanticswap:5adf3e835542993a75d26442",
+        "target_score": 0.7703581597680711,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.6232123149068113
           },
           {
             "feature": "verifier_entropy",
-            "value": 0.5002577869237382
+            "value": 0.5684032863534809
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.8012057295314754,
+        "candidate_answer": "Naguib Mahfouz",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:stable",
+        "query": "Which writer won the Nobel Prize, William H. Gass or Naguib Mahfouz?",
+        "score_gap_target_minus_baseline": -0.01673755914030417,
+        "source_item_group_id": "hotpot_semanticswap:5ae1fced5542997283cd230e",
+        "target_score": 0.7844681703911712,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.6229519950843195
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5341286166670145
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.828574944796979,
+        "candidate_answer": "Kill Hannah",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_semanticswap:5a8078d85542995d8a8ddf78:stable",
+        "query": "Which of the following rock bands is from Chicago: Kill Hannah or Louis XIV?",
+        "score_gap_target_minus_baseline": 0.007659467106657325,
+        "source_item_group_id": "hotpot_semanticswap:5a8078d85542995d8a8ddf78",
+        "target_score": 0.8362344119036363,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7457967212916125
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5645521424118171
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.8748793265216676,
+        "candidate_answer": "Koch Industries",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_semanticswap:5adf8ade5542993344016ce8:stable",
+        "query": "Dutch-born American businessman, Harry Koch, fathered a son born in 1900 that founded which oil refinery firm?",
+        "score_gap_target_minus_baseline": -0.008935904816200102,
+        "source_item_group_id": "hotpot_semanticswap:5adf8ade5542993344016ce8",
+        "target_score": 0.8659434217054675,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7052681947254951
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5591846837819896
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.8812235766060926,
+        "candidate_answer": "8 km",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_semanticswap:5adf3e355542993a75d26440:stable",
+        "query": "How long is the bridge in the \u00d6resund Region that connect Copenhagen, Denmark and Malmo, Sweden?",
+        "score_gap_target_minus_baseline": -0.010442384458484,
+        "source_item_group_id": "hotpot_semanticswap:5adf3e355542993a75d26440",
+        "target_score": 0.8707811921476086,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7129519328136825
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5225152848892793
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.881248023220167,
+        "candidate_answer": "Sam Taylor",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_semanticswap:5a79c1095542996c55b2dc62:stable",
+        "query": "Who died first, Chester Erskine or Sam Taylor?",
+        "score_gap_target_minus_baseline": -0.00933874960116976,
+        "source_item_group_id": "hotpot_semanticswap:5a79c1095542996c55b2dc62",
+        "target_score": 0.8719092736189973,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7222145918159986
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9003920357369295,
+        "candidate_answer": "Chrysler K platform",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01:stable",
+        "query": "The Plymouth fury produced from 1955 to 1989  was replaced by what for police and fleet applications?",
+        "score_gap_target_minus_baseline": -0.01058007471945066,
+        "source_item_group_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01",
+        "target_score": 0.8898119610174788,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7336484605413157
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9027686170636194,
+        "candidate_answer": "Jennifer Taylor",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_semanticswap:5ac31602554299741d48a1bf:stable",
+        "query": "Which of the actress starred in  Zombie Night appeared in the 1998 erotic thriller \"Wild Things\"?",
+        "score_gap_target_minus_baseline": -0.007467963379343412,
+        "source_item_group_id": "hotpot_semanticswap:5ac31602554299741d48a1bf",
+        "target_score": 0.895300653684276,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7436957204506524
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5188663719066066
+          }
+        ]
+      }
+    ],
+    "target_over_baseline_on_negative": [
+      {
+        "baseline_score": 0.4223517962857317,
+        "candidate_answer": "Mayor of the City of New York",
+        "construction_type": "semantic_swap",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744:semantic_swap",
+        "query": "Stokely Webster has paintings can be found at the official residence of whom?",
+        "score_gap_target_minus_baseline": 0.07557544928401705,
+        "source_item_group_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744",
+        "target_score": 0.49792724556974877,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7736799740035248
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.8036038552315882,
+        "candidate_answer": "Jennifer Taylor",
+        "construction_type": "semantic_swap",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_semanticswap:5ac31602554299741d48a1bf:semantic_swap",
+        "query": "Which of the actress starred in  Zombie Night appeared in the 1998 erotic thriller \"Wild Things\"?",
+        "score_gap_target_minus_baseline": 0.013579093842104095,
+        "source_item_group_id": "hotpot_semanticswap:5ac31602554299741d48a1bf",
+        "target_score": 0.8171829490736923,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.764005007258778
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5102966219849441
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.8005892581071409,
+        "candidate_answer": "Geraldine Page",
+        "construction_type": "semantic_swap",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b:semantic_swap",
+        "query": "Which eight-time Academy Award nominee was Tennessee Williams's choice to play a leading role in his play \"Clothes for a Summer Hotel\"?",
+        "score_gap_target_minus_baseline": 0.012521180117587627,
+        "source_item_group_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b",
+        "target_score": 0.8131104382247285,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.778250858630731
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.010524855942847551,
+        "candidate_answer": "fifth-largest",
+        "construction_type": "semantic_swap",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_semanticswap:5a80522b5542996402f6a4c1:semantic_swap",
+        "query": "What population ranking is the Oklahoma city located south of a wilderness area spanning over 5000 acres?",
+        "score_gap_target_minus_baseline": 0.007755905232729359,
+        "source_item_group_id": "hotpot_semanticswap:5a80522b5542996402f6a4c1",
+        "target_score": 0.01828076117557691,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7745690334762743
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.006368108656213117,
+        "candidate_answer": "Koch Industries",
+        "construction_type": "semantic_swap",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_semanticswap:5adf8ade5542993344016ce8:semantic_swap",
+        "query": "Dutch-born American businessman, Harry Koch, fathered a son born in 1900 that founded which oil refinery firm?",
+        "score_gap_target_minus_baseline": 0.005732787829299149,
+        "source_item_group_id": "hotpot_semanticswap:5adf8ade5542993344016ce8",
+        "target_score": 0.012100896485512266,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7478577681135009
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0035734628206848702,
+        "candidate_answer": "Sam Taylor",
+        "construction_type": "semantic_swap",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_semanticswap:5a79c1095542996c55b2dc62:semantic_swap",
+        "query": "Who died first, Chester Erskine or Sam Taylor?",
+        "score_gap_target_minus_baseline": 0.0026367454795955553,
+        "source_item_group_id": "hotpot_semanticswap:5a79c1095542996c55b2dc62",
+        "target_score": 0.006210208300280426,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.756925550449078
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0011825392375954102,
+        "candidate_answer": "comparable to the seven Wonders of the World",
+        "construction_type": "semantic_swap",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_semanticswap:5a764c0b55429976ec32bd89:semantic_swap",
+        "query": "What criteria subjectively qualifies the Houston Astrodome to be called the Eighth Wonder of the World?",
+        "score_gap_target_minus_baseline": 0.0007395029236635922,
+        "source_item_group_id": "hotpot_semanticswap:5a764c0b55429976ec32bd89",
+        "target_score": 0.0019220421612590024,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7999138286899967
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0009067612983684432,
+        "candidate_answer": "Hellenism",
+        "construction_type": "semantic_swap",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_semanticswap:5a881cbb55429938390d3ee7:semantic_swap",
+        "query": "St. John of the Cross Episcopal Church has a rectory that was in a style that was a product of what earlier style?",
+        "score_gap_target_minus_baseline": 0.0005226660269520884,
+        "source_item_group_id": "hotpot_semanticswap:5a881cbb55429938390d3ee7",
+        "target_score": 0.0014294273253205316,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8113464441402419
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
           }
         ]
       }

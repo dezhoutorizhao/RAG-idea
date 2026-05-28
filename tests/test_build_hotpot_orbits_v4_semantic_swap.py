@@ -33,3 +33,23 @@ def test_semantic_swap_keeps_answer_and_doc_ids_but_changes_evidence_text():
     assert "Paris" in " ".join(doc["text"] for doc in stable["docs"])
     assert "Paris" not in " ".join(doc["text"] for doc in swapped["docs"])
     assert swapped["label_answerable"] is False
+
+
+def test_semantic_swap_skips_yes_no_answers():
+    item = {
+        "id": "unit",
+        "question": "Is the festival hosted in Paris?",
+        "answer": "no",
+        "context": {
+            "title": ["Ada", "Festival", "Berlin", "Lyon"],
+            "sentences": [
+                ["Ada founded the River Light Festival."],
+                ["The River Light Festival is hosted in Berlin."],
+                ["Berlin is mentioned as background."],
+                ["Lyon has another river event."],
+            ],
+        },
+        "supporting_facts": {"title": ["Ada", "Festival"], "sent_id": [0, 0]},
+    }
+
+    assert _build_semantic_swap_records(item, local_idx=0, max_docs=4) == []

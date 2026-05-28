@@ -97,35 +97,35 @@
             "accuracy": 0.85,
             "coverage": 0.3,
             "risk": 0.15000000000000002,
-            "threshold": 0.5555016347335522
+            "threshold": 0.5567579238597873
           },
           "accepted_error_at_50": {
             "accepted": 100,
-            "accuracy": 0.86,
+            "accuracy": 0.85,
             "coverage": 0.5,
-            "risk": 0.14,
-            "threshold": 0.5416355360410612
+            "risk": 0.15000000000000002,
+            "threshold": 0.5435690638412886
           },
           "accepted_error_at_70": {
             "accepted": 140,
-            "accuracy": 0.6928571428571428,
+            "accuracy": 0.7071428571428572,
             "coverage": 0.7,
-            "risk": 0.30714285714285716,
-            "threshold": 0.5003313227838954
+            "risk": 0.2928571428571428,
+            "threshold": 0.5038624918678025
           },
           "answer_accuracy": 0.5,
-          "aurc": 0.23190677510776295,
+          "aurc": 0.22795489327561977,
           "coverage_at_risk_10": {
-            "accepted": 10,
-            "coverage": 0.05,
+            "accepted": 20,
+            "coverage": 0.1,
             "risk": 0.09999999999999998,
-            "threshold": 0.577324355222991
+            "threshold": 0.5718176111292099
           },
           "coverage_at_risk_20": {
-            "accepted": 120,
-            "coverage": 0.6,
-            "risk": 0.19999999999999996,
-            "threshold": 0.5262758273226927
+            "accepted": 122,
+            "coverage": 0.61,
+            "risk": 0.19672131147540983,
+            "threshold": 0.5281377265331836
           },
           "n": 200
         },
@@ -170,27 +170,27 @@
         "naive_orbit_average": {
           "accepted_error_at_30": {
             "accepted": 60,
-            "accuracy": 0.7833333333333333,
+            "accuracy": 0.7666666666666667,
             "coverage": 0.3,
-            "risk": 0.21666666666666667,
-            "threshold": 0.19769394411021446
+            "risk": 0.23333333333333328,
+            "threshold": 0.19795659757685505
           },
           "accepted_error_at_50": {
             "accepted": 100,
             "accuracy": 0.76,
             "coverage": 0.5,
             "risk": 0.24,
-            "threshold": 0.1774821451950756
+            "threshold": 0.17864809348187932
           },
           "accepted_error_at_70": {
             "accepted": 140,
-            "accuracy": 0.6857142857142857,
+            "accuracy": 0.7,
             "coverage": 0.7,
-            "risk": 0.3142857142857143,
-            "threshold": 0.14353588668783251
+            "risk": 0.30000000000000004,
+            "threshold": 0.1470859781893019
           },
           "answer_accuracy": 0.5,
-          "aurc": 0.27388280401102955,
+          "aurc": 0.2719244735164208,
           "coverage_at_risk_10": {
             "accepted": 6,
             "coverage": 0.03,
@@ -198,10 +198,10 @@
             "threshold": 0.2471900711617046
           },
           "coverage_at_risk_20": {
-            "accepted": 71,
-            "coverage": 0.355,
-            "risk": 0.19718309859154926,
-            "threshold": 0.18974889010549262
+            "accepted": 72,
+            "coverage": 0.36,
+            "risk": 0.19444444444444442,
+            "threshold": 0.1911483564126501
           },
           "n": 200
         },
@@ -211,21 +211,21 @@
             "accuracy": 0.5,
             "coverage": 0.3,
             "risk": 0.5,
-            "threshold": 0.21409321071608012
+            "threshold": 0.21428878167917914
           },
           "accepted_error_at_50": {
             "accepted": 100,
             "accuracy": 0.5,
             "coverage": 0.5,
             "risk": 0.5,
-            "threshold": 0.19745170826024533
+            "threshold": 0.197589628810095
           },
           "accepted_error_at_70": {
             "accepted": 140,
             "accuracy": 0.5,
             "coverage": 0.7,
             "risk": 0.5,
-            "threshold": 0.18418225635906055
+            "threshold": 0.18479513018398802
           },
           "answer_accuracy": 0.5,
           "aurc": 0.4975,
@@ -582,18 +582,6 @@
           "orbit_id": "hotpot_semanticswap:5a86fde6554299211dda2b7f:semantic_swap"
         },
         {
-          "answer": "no",
-          "confidence": 1.0,
-          "correct": true,
-          "orbit_id": "hotpot_semanticswap:5a8198565542995ce29dcc13:stable"
-        },
-        {
-          "answer": "no",
-          "confidence": 1.0,
-          "correct": false,
-          "orbit_id": "hotpot_semanticswap:5a8198565542995ce29dcc13:semantic_swap"
-        },
-        {
           "answer": "Juan Carlos Onetti",
           "confidence": 1.0,
           "correct": true,
@@ -808,18 +796,6 @@
           "confidence": 1.0,
           "correct": false,
           "orbit_id": "hotpot_semanticswap:5a88a23f5542997e5c09a652:semantic_swap"
-        },
-        {
-          "answer": "no",
-          "confidence": 1.0,
-          "correct": true,
-          "orbit_id": "hotpot_semanticswap:5ae518ae5542993aec5ec13c:stable"
-        },
-        {
-          "answer": "no",
-          "confidence": 1.0,
-          "correct": false,
-          "orbit_id": "hotpot_semanticswap:5ae518ae5542993aec5ec13c:semantic_swap"
         },
         {
           "answer": "San Diego County Fair",
@@ -1444,6 +1420,30 @@
           "confidence": 1.0,
           "correct": false,
           "orbit_id": "hotpot_semanticswap:5ac458f8554299204fd21f2a:semantic_swap"
+        },
+        {
+          "answer": "2002 Winter Olympics",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a801f215542992bc0c4a6b2:stable"
+        },
+        {
+          "answer": "2002 Winter Olympics",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a801f215542992bc0c4a6b2:semantic_swap"
+        },
+        {
+          "answer": "professional tennis player.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8b91d25542995d1e6f13fc:stable"
+        },
+        {
+          "answer": "professional tennis player.",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8b91d25542995d1e6f13fc:semantic_swap"
         }
       ]
     },
@@ -1532,35 +1532,35 @@
             "accuracy": 0.85,
             "coverage": 0.3,
             "risk": 0.15000000000000002,
-            "threshold": 0.5555016347335522
+            "threshold": 0.5567579238597873
           },
           "accepted_error_at_50": {
             "accepted": 100,
-            "accuracy": 0.86,
+            "accuracy": 0.85,
             "coverage": 0.5,
-            "risk": 0.14,
-            "threshold": 0.5416355360410612
+            "risk": 0.15000000000000002,
+            "threshold": 0.5435690638412886
           },
           "accepted_error_at_70": {
             "accepted": 140,
-            "accuracy": 0.6928571428571428,
+            "accuracy": 0.7071428571428572,
             "coverage": 0.7,
-            "risk": 0.30714285714285716,
-            "threshold": 0.5003313227838954
+            "risk": 0.2928571428571428,
+            "threshold": 0.5038624918678025
           },
           "answer_accuracy": 0.5,
-          "aurc": 0.23190677510776295,
+          "aurc": 0.22795489327561977,
           "coverage_at_risk_10": {
-            "accepted": 10,
-            "coverage": 0.05,
+            "accepted": 20,
+            "coverage": 0.1,
             "risk": 0.09999999999999998,
-            "threshold": 0.577324355222991
+            "threshold": 0.5718176111292099
           },
           "coverage_at_risk_20": {
-            "accepted": 120,
-            "coverage": 0.6,
-            "risk": 0.19999999999999996,
-            "threshold": 0.5262758273226927
+            "accepted": 122,
+            "coverage": 0.61,
+            "risk": 0.19672131147540983,
+            "threshold": 0.5281377265331836
           },
           "n": 200
         },
@@ -1570,7 +1570,7 @@
             "accuracy": 0.5,
             "coverage": 0.3,
             "risk": 0.5,
-            "threshold": 0.9166666666666666
+            "threshold": 0.925
           },
           "accepted_error_at_50": {
             "accepted": 100,
@@ -1605,27 +1605,27 @@
         "naive_orbit_average": {
           "accepted_error_at_30": {
             "accepted": 60,
-            "accuracy": 0.7833333333333333,
+            "accuracy": 0.7666666666666667,
             "coverage": 0.3,
-            "risk": 0.21666666666666667,
-            "threshold": 0.19769394411021446
+            "risk": 0.23333333333333328,
+            "threshold": 0.19795659757685505
           },
           "accepted_error_at_50": {
             "accepted": 100,
             "accuracy": 0.76,
             "coverage": 0.5,
             "risk": 0.24,
-            "threshold": 0.1774821451950756
+            "threshold": 0.17864809348187932
           },
           "accepted_error_at_70": {
             "accepted": 140,
-            "accuracy": 0.6857142857142857,
+            "accuracy": 0.7,
             "coverage": 0.7,
-            "risk": 0.3142857142857143,
-            "threshold": 0.14353588668783251
+            "risk": 0.30000000000000004,
+            "threshold": 0.1470859781893019
           },
           "answer_accuracy": 0.5,
-          "aurc": 0.27388280401102955,
+          "aurc": 0.2719244735164208,
           "coverage_at_risk_10": {
             "accepted": 6,
             "coverage": 0.03,
@@ -1633,10 +1633,10 @@
             "threshold": 0.2471900711617046
           },
           "coverage_at_risk_20": {
-            "accepted": 71,
-            "coverage": 0.355,
-            "risk": 0.19718309859154926,
-            "threshold": 0.18974889010549262
+            "accepted": 72,
+            "coverage": 0.36,
+            "risk": 0.19444444444444442,
+            "threshold": 0.1911483564126501
           },
           "n": 200
         },
@@ -1646,21 +1646,21 @@
             "accuracy": 0.5,
             "coverage": 0.3,
             "risk": 0.5,
-            "threshold": 0.21409321071608012
+            "threshold": 0.21428878167917914
           },
           "accepted_error_at_50": {
             "accepted": 100,
             "accuracy": 0.5,
             "coverage": 0.5,
             "risk": 0.5,
-            "threshold": 0.19745170826024533
+            "threshold": 0.197589628810095
           },
           "accepted_error_at_70": {
             "accepted": 140,
             "accuracy": 0.5,
             "coverage": 0.7,
             "risk": 0.5,
-            "threshold": 0.18418225635906055
+            "threshold": 0.18479513018398802
           },
           "answer_accuracy": 0.5,
           "aurc": 0.4975,
@@ -2017,18 +2017,6 @@
           "orbit_id": "hotpot_semanticswap:5a86fde6554299211dda2b7f:semantic_swap"
         },
         {
-          "answer": "no",
-          "confidence": 0.625,
-          "correct": true,
-          "orbit_id": "hotpot_semanticswap:5a8198565542995ce29dcc13:stable"
-        },
-        {
-          "answer": "no",
-          "confidence": 0.625,
-          "correct": false,
-          "orbit_id": "hotpot_semanticswap:5a8198565542995ce29dcc13:semantic_swap"
-        },
-        {
           "answer": "Juan Carlos Onetti",
           "confidence": 0.71875,
           "correct": true,
@@ -2243,18 +2231,6 @@
           "confidence": 1.0,
           "correct": false,
           "orbit_id": "hotpot_semanticswap:5a88a23f5542997e5c09a652:semantic_swap"
-        },
-        {
-          "answer": "no",
-          "confidence": 0.4772727272727273,
-          "correct": true,
-          "orbit_id": "hotpot_semanticswap:5ae518ae5542993aec5ec13c:stable"
-        },
-        {
-          "answer": "no",
-          "confidence": 0.4772727272727273,
-          "correct": false,
-          "orbit_id": "hotpot_semanticswap:5ae518ae5542993aec5ec13c:semantic_swap"
         },
         {
           "answer": "San Diego County Fair",
@@ -2879,6 +2855,30 @@
           "confidence": 0.826923076923077,
           "correct": false,
           "orbit_id": "hotpot_semanticswap:5ac458f8554299204fd21f2a:semantic_swap"
+        },
+        {
+          "answer": "2002 Winter Olympics",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a801f215542992bc0c4a6b2:stable"
+        },
+        {
+          "answer": "2002 Winter Olympics",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a801f215542992bc0c4a6b2:semantic_swap"
+        },
+        {
+          "answer": "professional tennis player.",
+          "confidence": 0.5833333333333333,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8b91d25542995d1e6f13fc:stable"
+        },
+        {
+          "answer": "professional tennis player.",
+          "confidence": 0.5833333333333333,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8b91d25542995d1e6f13fc:semantic_swap"
         }
       ]
     }

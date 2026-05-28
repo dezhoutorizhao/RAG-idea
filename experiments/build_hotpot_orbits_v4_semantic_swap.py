@@ -81,6 +81,8 @@ def build_hotpot_orbits_v4_semantic_swap(
 def _build_semantic_swap_records(item: dict, *, local_idx: int, max_docs: int) -> list[dict]:
     question = str(item["question"])
     answer = str(item["answer"])
+    if _norm(answer) in {"yes", "no"}:
+        return []
     paragraphs = _paragraphs(item, question, answer)
     support_docs = [doc for doc in paragraphs if doc["is_support"]]
     distractor_docs = [doc for doc in paragraphs if not doc["is_support"]]

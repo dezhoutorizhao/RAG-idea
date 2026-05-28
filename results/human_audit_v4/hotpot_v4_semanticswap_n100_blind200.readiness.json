@@ -1,0 +1,36 @@
+{
+  "agreement_with_expected": null,
+  "by_split": {
+    "unknown": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 200,
+      "total": 200
+    }
+  },
+  "completion_rate": 0.0,
+  "failed_gates": [
+    {
+      "actual": 0,
+      "gate": "min_labeled_total",
+      "required": 200
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 100,
+      "split": "unknown"
+    }
+  ],
+  "input": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.adjudicated_labels.jsonl",
+  "invalid": 0,
+  "label_field": "adjudicated_label_answerable",
+  "labeled": 0,
+  "min_labeled_per_split": 100,
+  "min_labeled_total": 200,
+  "pending": 200,
+  "ready": false,
+  "total": 200
+}

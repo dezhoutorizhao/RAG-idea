@@ -1,0 +1,34 @@
+{
+  "audit_items": 200,
+  "auditors": [
+    "auditor1",
+    "auditor2"
+  ],
+  "completion": {
+    "auditor1": {
+      "completion_rate": 0.0,
+      "labeled": 0,
+      "rows": 200
+    },
+    "auditor2": {
+      "completion_rate": 0.0,
+      "labeled": 0,
+      "rows": 200
+    }
+  },
+  "conflicts": [],
+  "input": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.merged_labels.jsonl",
+  "pairwise": [
+    {
+      "agreement_rate": null,
+      "agreements": 0,
+      "auditors": [
+        "auditor1",
+        "auditor2"
+      ],
+      "cohen_kappa": null,
+      "compared": 0
+    }
+  ],
+  "rows": 400
+}
