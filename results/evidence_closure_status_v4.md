@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-28T18:13:28.583452+00:00`
+Generated: `2026-05-28T18:28:05.967310+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -84,7 +84,7 @@ Disallowed claims:
 - CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4.
 
 Remaining non-human blockers:
-- Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts.
+- Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.
 - FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.
 - Independent external review has not been rerun after the latest storage-status update.
 

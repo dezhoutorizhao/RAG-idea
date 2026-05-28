@@ -43,7 +43,7 @@
     "The method solves robust RAG generally across tasks.",
     "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4."
   ],
-  "generated_at_utc": "2026-05-28T18:13:28.583452+00:00",
+  "generated_at_utc": "2026-05-28T18:28:05.967310+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "hotpot_semantic_swap_n100": {
@@ -221,7 +221,7 @@
     "Hotpot semantic-swap blind200 pack is prepared, but adjudicated labels are pending."
   ],
   "remaining_non_human_blockers": [
-    "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts.",
+    "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
     "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
     "Independent external review has not been rerun after the latest storage-status update."
   ],

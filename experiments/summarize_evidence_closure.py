@@ -182,7 +182,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4.",
         ],
         "remaining_non_human_blockers": [
-            "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts.",
+            "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
             "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
             "Independent external review has not been rerun after the latest storage-status update.",
         ],
