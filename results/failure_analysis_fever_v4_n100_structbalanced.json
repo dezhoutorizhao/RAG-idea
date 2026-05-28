@@ -1,0 +1,1427 @@
+{
+  "by_construction_type": {
+    "conflict": {
+      "baseline_mean": 0.0014166263071407423,
+      "n": 5,
+      "negative": 5,
+      "positive": 0,
+      "target_mean": 0.0014973842252178774,
+      "target_minus_baseline_mean": 8.07579180771349e-05
+    },
+    "distractor": {
+      "baseline_mean": 0.017820134271033898,
+      "n": 2,
+      "negative": 2,
+      "positive": 0,
+      "target_mean": 0.033152671748700055,
+      "target_minus_baseline_mean": 0.015332537477666157
+    },
+    "fragile_mixed": {
+      "baseline_mean": 0.00041582537356575427,
+      "n": 5,
+      "negative": 5,
+      "positive": 0,
+      "target_mean": 0.000580627937609477,
+      "target_minus_baseline_mean": 0.0001648025640437228
+    },
+    "missing": {
+      "baseline_mean": 0.16036048544943507,
+      "n": 5,
+      "negative": 5,
+      "positive": 0,
+      "target_mean": 0.16272002399731342,
+      "target_minus_baseline_mean": 0.002359538547878347
+    },
+    "near_miss_dilution": {
+      "baseline_mean": 0.0003697376081240393,
+      "n": 4,
+      "negative": 4,
+      "positive": 0,
+      "target_mean": 0.0005804618299929969,
+      "target_minus_baseline_mean": 0.0002107242218689576
+    },
+    "stable": {
+      "baseline_mean": 0.9717317666581587,
+      "n": 20,
+      "negative": 0,
+      "positive": 20,
+      "target_mean": 0.9705416028035909,
+      "target_minus_baseline_mean": -0.0011901638545678494
+    }
+  },
+  "feature_gaps": [
+    {
+      "absolute_gap": 0.6006802721088436,
+      "feature": "retrieval_overlap",
+      "negative_mean": 0.3993197278911565,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.6006802721088436
+    },
+    {
+      "absolute_gap": 0.06252245354705913,
+      "feature": "verifier_entropy",
+      "negative_mean": 0.12078006491838858,
+      "positive_mean": 0.1833025184654477,
+      "positive_minus_negative": 0.06252245354705913
+    },
+    {
+      "absolute_gap": 0.03856819936647965,
+      "feature": "clean_to_worst_gap",
+      "negative_mean": 0.04027855619486066,
+      "positive_mean": 0.001710356828381014,
+      "positive_minus_negative": -0.03856819936647965
+    },
+    {
+      "absolute_gap": 0.03700339224707938,
+      "feature": "min_sufficiency",
+      "negative_mean": 0.009365355233002283,
+      "positive_mean": 0.046368747480081664,
+      "positive_minus_negative": 0.03700339224707938
+    },
+    {
+      "absolute_gap": 0.01771929256383955,
+      "feature": "naive_orbit_average",
+      "negative_mean": 0.02950463333043262,
+      "positive_mean": 0.04722392589427217,
+      "positive_minus_negative": 0.01771929256383955
+    },
+    {
+      "absolute_gap": 0.01771929256383955,
+      "feature": "mean_sufficiency",
+      "negative_mean": 0.02950463333043262,
+      "positive_mean": 0.04722392589427217,
+      "positive_minus_negative": 0.01771929256383955
+    },
+    {
+      "absolute_gap": 0.005315648405033402,
+      "feature": "mean_missing",
+      "negative_mean": 0.8679112100882223,
+      "positive_mean": 0.8625955616831888,
+      "positive_minus_negative": -0.005315648405033402
+    },
+    {
+      "absolute_gap": 0.0015648071194002897,
+      "feature": "context_sufficiency_clean",
+      "negative_mean": 0.04964391142786296,
+      "positive_mean": 0.04807910430846267,
+      "positive_minus_negative": -0.0015648071194002897
+    },
+    {
+      "absolute_gap": 0.0015648071194002897,
+      "feature": "clean_sufficiency",
+      "negative_mean": 0.04964391142786296,
+      "positive_mean": 0.04807910430846267,
+      "positive_minus_negative": -0.0015648071194002897
+    },
+    {
+      "absolute_gap": 0.000604788170980442,
+      "feature": "sufficiency_variance",
+      "negative_mean": 0.0006059946525156263,
+      "positive_mean": 1.206481535184259e-06,
+      "positive_minus_negative": -0.000604788170980442
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "corm_max_clean",
+      "negative_mean": 0.5,
+      "positive_mean": 0.5,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "corm_mean_clean",
+      "negative_mean": 0.5,
+      "positive_mean": 0.5,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "max_conflict",
+      "negative_mean": 0.0,
+      "positive_mean": 0.0,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "answer_consistency",
+      "negative_mean": 1.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "support_signature_consistency",
+      "negative_mean": 1.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "orbit_answer_flip_rate",
+      "negative_mean": 0.0,
+      "positive_mean": 0.0,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "perturbation_count",
+      "negative_mean": 1.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.0
+    }
+  ],
+  "metrics": {
+    "baseline_calibrated_logistic_orbit": {
+      "auroc": 1.0,
+      "mean_score_negative": 0.04038494783929865,
+      "mean_score_positive": 0.9717317666581587,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.04761904761904767
+    },
+    "target": {
+      "auroc": 1.0,
+      "mean_score_negative": 0.0425055891246703,
+      "mean_score_positive": 0.9705416028035909,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.04761904761904767
+    }
+  },
+  "private_input": "results\\fever_orbits_v4_n100.constant.structbalanced.private_eval.jsonl",
+  "raw_input": "results\\fever_orbits_v4_n100.constant.structbalanced.raw.jsonl",
+  "scored_input": "results\\fever_orbits_v4_n100.constant.structbalanced.textonly_scored.jsonl",
+  "seed": 31,
+  "split_sizes": {
+    "calibration": 38,
+    "calibration_groups": 20,
+    "test": 41,
+    "test_groups": 20,
+    "train": 121,
+    "train_groups": 60
+  },
+  "top_cases": {
+    "baseline_over_target_on_positive": [
+      {
+        "baseline_score": 0.9080254316509846,
+        "candidate_answer": "REFUTES",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:b695f4e8ca6d6ead33ef6c9177345b1b:stable",
+        "query": "Determine whether this claim is supported or refuted: The World Trade Center featured one building.",
+        "score_gap_target_minus_baseline": -0.006245181933584143,
+        "source_item_group_id": "fever:b695f4e8ca6d6ead33ef6c9177345b1b",
+        "target_score": 0.9017802497174005,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8722777777777777
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9532422048735258,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:419c7444c231c70cf176ce8c678cfe04:stable",
+        "query": "Determine whether this claim is supported or refuted: Stephen Colbert hosts talk shows.",
+        "score_gap_target_minus_baseline": -0.004926678651082872,
+        "source_item_group_id": "fever:419c7444c231c70cf176ce8c678cfe04",
+        "target_score": 0.948315526222443,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8646739965270821
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9347814313360182,
+        "candidate_answer": "REFUTES",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:c0182fa98dd12d789469371a6f112945:stable",
+        "query": "Determine whether this claim is supported or refuted: Janelle Mon\u00e1e is a tomato.",
+        "score_gap_target_minus_baseline": -0.003207402933579573,
+        "source_item_group_id": "fever:c0182fa98dd12d789469371a6f112945",
+        "target_score": 0.9315740284024386,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8708964646464646
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.953458845341123,
+        "candidate_answer": "REFUTES",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9:stable",
+        "query": "Determine whether this claim is supported or refuted: Southampton F.C. is only a cricket club.",
+        "score_gap_target_minus_baseline": -0.003064756386803036,
+        "source_item_group_id": "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9",
+        "target_score": 0.95039408895432,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8698717948717949
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.955670123876884,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:5fb08243710e06fb61b2d533ba6dde68:stable",
+        "query": "Determine whether this claim is supported or refuted: Randy Savage is a professional at a fighting sport.",
+        "score_gap_target_minus_baseline": -0.002766842153966498,
+        "source_item_group_id": "fever:5fb08243710e06fb61b2d533ba6dde68",
+        "target_score": 0.9529032817229175,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8663605238166642
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9293310340815487,
+        "candidate_answer": "REFUTES",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:d8d4b897f4420729c6a9bfb50ef9fe65:stable",
+        "query": "Determine whether this claim is supported or refuted: Weekly Idol is hosted by Future.",
+        "score_gap_target_minus_baseline": -0.00188750596042786,
+        "source_item_group_id": "fever:d8d4b897f4420729c6a9bfb50ef9fe65",
+        "target_score": 0.9274435281211209,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8709558823529412
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9447721979120024,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:stable",
+        "query": "Determine whether this claim is supported or refuted: Girl is by at least one singer.",
+        "score_gap_target_minus_baseline": -0.0018006798301042348,
+        "source_item_group_id": "fever:25dc4f70725e49253af408b42070e0c8",
+        "target_score": 0.9429715180818982,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8701499118165784
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9447721979120024,
+        "candidate_answer": "REFUTES",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:4ba8157c90daf69a2d3cf7a755ca29aa:stable",
+        "query": "Determine whether this claim is supported or refuted: John Krasinski is a car.",
+        "score_gap_target_minus_baseline": -0.0018006798301042348,
+        "source_item_group_id": "fever:4ba8157c90daf69a2d3cf7a755ca29aa",
+        "target_score": 0.9429715180818982,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8701499118165784
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ],
+    "target_high_false_positive": [
+      {
+        "baseline_score": 0.5215354075670121,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "missing",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:419c7444c231c70cf176ce8c678cfe04:missing",
+        "query": "Determine whether this claim is supported or refuted: Stephen Colbert hosts talk shows.",
+        "score_gap_target_minus_baseline": -0.03695305803292076,
+        "source_item_group_id": "fever:419c7444c231c70cf176ce8c678cfe04",
+        "target_score": 0.48458234953409135,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8661981668012523
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.2740438015236712,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "missing",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:5fb08243710e06fb61b2d533ba6dde68:missing",
+        "query": "Determine whether this claim is supported or refuted: Randy Savage is a professional at a fighting sport.",
+        "score_gap_target_minus_baseline": 0.03586860464483693,
+        "source_item_group_id": "fever:5fb08243710e06fb61b2d533ba6dde68",
+        "target_score": 0.3099124061685081,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.868917378917379
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.035218271377441566,
+        "candidate_answer": "REFUTES",
+        "construction_type": "distractor",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9:distractor",
+        "query": "Determine whether this claim is supported or refuted: Southampton F.C. is only a cricket club.",
+        "score_gap_target_minus_baseline": 0.029737586351533028,
+        "source_item_group_id": "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9",
+        "target_score": 0.0649558577289746,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8724358974358974
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.006139987400474888,
+        "candidate_answer": "REFUTES",
+        "construction_type": "missing",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:dc1923d6c06e0387b37b6d1d6f4c5876:missing",
+        "query": "Determine whether this claim is supported or refuted: Avenged Sevenfold is by a British band.",
+        "score_gap_target_minus_baseline": 0.01260185857917991,
+        "source_item_group_id": "fever:dc1923d6c06e0387b37b6d1d6f4c5876",
+        "target_score": 0.0187418459796548,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8704545454545455
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0031240956321557825,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "conflict",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:419c7444c231c70cf176ce8c678cfe04:conflict",
+        "query": "Determine whether this claim is supported or refuted: Stephen Colbert hosts talk shows.",
+        "score_gap_target_minus_baseline": -0.00027159053970043185,
+        "source_item_group_id": "fever:419c7444c231c70cf176ce8c678cfe04",
+        "target_score": 0.0028525050924553506,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8683446314477171
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.002734159264671399,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "conflict",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:5fb08243710e06fb61b2d533ba6dde68:conflict",
+        "query": "Determine whether this claim is supported or refuted: Randy Savage is a professional at a fighting sport.",
+        "score_gap_target_minus_baseline": -2.390234194328154e-05,
+        "source_item_group_id": "fever:5fb08243710e06fb61b2d533ba6dde68",
+        "target_score": 0.0027102569227281173,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8690688940688941
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.001718163938450747,
+        "candidate_answer": "REFUTES",
+        "construction_type": "fragile_mixed",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:d8d4b897f4420729c6a9bfb50ef9fe65:fragile_mixed",
+        "query": "Determine whether this claim is supported or refuted: Weekly Idol is hosted by Future.",
+        "score_gap_target_minus_baseline": 0.0006533280527134678,
+        "source_item_group_id": "fever:d8d4b897f4420729c6a9bfb50ef9fe65",
+        "target_score": 0.002371491991164215,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8729166666666667
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.00121635264360554,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "conflict",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:conflict",
+        "query": "Determine whether this claim is supported or refuted: Girl is by at least one singer.",
+        "score_gap_target_minus_baseline": 0.0006750740948864998,
+        "source_item_group_id": "fever:25dc4f70725e49253af408b42070e0c8",
+        "target_score": 0.0018914267384920397,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8725308641975308
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ],
+    "target_low_false_negative": [
+      {
+        "baseline_score": 0.9080254316509846,
+        "candidate_answer": "REFUTES",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:b695f4e8ca6d6ead33ef6c9177345b1b:stable",
+        "query": "Determine whether this claim is supported or refuted: The World Trade Center featured one building.",
+        "score_gap_target_minus_baseline": -0.006245181933584143,
+        "source_item_group_id": "fever:b695f4e8ca6d6ead33ef6c9177345b1b",
+        "target_score": 0.9017802497174005,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8722777777777777
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9293310340815487,
+        "candidate_answer": "REFUTES",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:d8d4b897f4420729c6a9bfb50ef9fe65:stable",
+        "query": "Determine whether this claim is supported or refuted: Weekly Idol is hosted by Future.",
+        "score_gap_target_minus_baseline": -0.00188750596042786,
+        "source_item_group_id": "fever:d8d4b897f4420729c6a9bfb50ef9fe65",
+        "target_score": 0.9274435281211209,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8709558823529412
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9347814313360182,
+        "candidate_answer": "REFUTES",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:c0182fa98dd12d789469371a6f112945:stable",
+        "query": "Determine whether this claim is supported or refuted: Janelle Mon\u00e1e is a tomato.",
+        "score_gap_target_minus_baseline": -0.003207402933579573,
+        "source_item_group_id": "fever:c0182fa98dd12d789469371a6f112945",
+        "target_score": 0.9315740284024386,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8708964646464646
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9447721979120024,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:stable",
+        "query": "Determine whether this claim is supported or refuted: Girl is by at least one singer.",
+        "score_gap_target_minus_baseline": -0.0018006798301042348,
+        "source_item_group_id": "fever:25dc4f70725e49253af408b42070e0c8",
+        "target_score": 0.9429715180818982,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8701499118165784
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9447721979120024,
+        "candidate_answer": "REFUTES",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:4ba8157c90daf69a2d3cf7a755ca29aa:stable",
+        "query": "Determine whether this claim is supported or refuted: John Krasinski is a car.",
+        "score_gap_target_minus_baseline": -0.0018006798301042348,
+        "source_item_group_id": "fever:4ba8157c90daf69a2d3cf7a755ca29aa",
+        "target_score": 0.9429715180818982,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8701499118165784
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9532422048735258,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:419c7444c231c70cf176ce8c678cfe04:stable",
+        "query": "Determine whether this claim is supported or refuted: Stephen Colbert hosts talk shows.",
+        "score_gap_target_minus_baseline": -0.004926678651082872,
+        "source_item_group_id": "fever:419c7444c231c70cf176ce8c678cfe04",
+        "target_score": 0.948315526222443,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8646739965270821
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.953458845341123,
+        "candidate_answer": "REFUTES",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9:stable",
+        "query": "Determine whether this claim is supported or refuted: Southampton F.C. is only a cricket club.",
+        "score_gap_target_minus_baseline": -0.003064756386803036,
+        "source_item_group_id": "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9",
+        "target_score": 0.95039408895432,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8698717948717949
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.955670123876884,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "stable",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": true,
+        "orbit_id": "fever:5fb08243710e06fb61b2d533ba6dde68:stable",
+        "query": "Determine whether this claim is supported or refuted: Randy Savage is a professional at a fighting sport.",
+        "score_gap_target_minus_baseline": -0.002766842153966498,
+        "source_item_group_id": "fever:5fb08243710e06fb61b2d533ba6dde68",
+        "target_score": 0.9529032817229175,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8663605238166642
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ],
+    "target_over_baseline_on_negative": [
+      {
+        "baseline_score": 0.2740438015236712,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "missing",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:5fb08243710e06fb61b2d533ba6dde68:missing",
+        "query": "Determine whether this claim is supported or refuted: Randy Savage is a professional at a fighting sport.",
+        "score_gap_target_minus_baseline": 0.03586860464483693,
+        "source_item_group_id": "fever:5fb08243710e06fb61b2d533ba6dde68",
+        "target_score": 0.3099124061685081,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.868917378917379
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.035218271377441566,
+        "candidate_answer": "REFUTES",
+        "construction_type": "distractor",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9:distractor",
+        "query": "Determine whether this claim is supported or refuted: Southampton F.C. is only a cricket club.",
+        "score_gap_target_minus_baseline": 0.029737586351533028,
+        "source_item_group_id": "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9",
+        "target_score": 0.0649558577289746,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8724358974358974
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.006139987400474888,
+        "candidate_answer": "REFUTES",
+        "construction_type": "missing",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:dc1923d6c06e0387b37b6d1d6f4c5876:missing",
+        "query": "Determine whether this claim is supported or refuted: Avenged Sevenfold is by a British band.",
+        "score_gap_target_minus_baseline": 0.01260185857917991,
+        "source_item_group_id": "fever:dc1923d6c06e0387b37b6d1d6f4c5876",
+        "target_score": 0.0187418459796548,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8704545454545455
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0004219971646262326,
+        "candidate_answer": "REFUTES",
+        "construction_type": "distractor",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:d26a12b4429d8dfa13442ef3750c3d3b:distractor",
+        "query": "Determine whether this claim is supported or refuted: Kenneth Lonergan is the director of Pacific Rim.",
+        "score_gap_target_minus_baseline": 0.0009274886037992871,
+        "source_item_group_id": "fever:d26a12b4429d8dfa13442ef3750c3d3b",
+        "target_score": 0.0013494857684255197,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8678849902534113
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.00121635264360554,
+        "candidate_answer": "SUPPORTS",
+        "construction_type": "conflict",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:conflict",
+        "query": "Determine whether this claim is supported or refuted: Girl is by at least one singer.",
+        "score_gap_target_minus_baseline": 0.0006750740948864998,
+        "source_item_group_id": "fever:25dc4f70725e49253af408b42070e0c8",
+        "target_score": 0.0018914267384920397,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8725308641975308
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0011171836386221201,
+        "candidate_answer": "REFUTES",
+        "construction_type": "near_miss_dilution",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9:near_miss_dilution",
+        "query": "Determine whether this claim is supported or refuted: Southampton F.C. is only a cricket club.",
+        "score_gap_target_minus_baseline": 0.0006697078463666513,
+        "source_item_group_id": "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9",
+        "target_score": 0.0017868914849887715,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8724358974358974
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.001718163938450747,
+        "candidate_answer": "REFUTES",
+        "construction_type": "fragile_mixed",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:d8d4b897f4420729c6a9bfb50ef9fe65:fragile_mixed",
+        "query": "Determine whether this claim is supported or refuted: Weekly Idol is hosted by Future.",
+        "score_gap_target_minus_baseline": 0.0006533280527134678,
+        "source_item_group_id": "fever:d8d4b897f4420729c6a9bfb50ef9fe65",
+        "target_score": 0.002371491991164215,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8729166666666667
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          },
+          {
+            "feature": "corm_mean_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 5.9578855767104957e-05,
+        "candidate_answer": "REFUTES",
+        "construction_type": "missing",
+        "dataset": "copenlu/fever_gold_evidence",
+        "label_answerable": false,
+        "orbit_id": "fever:c1d92c0f60eb777c06a68ee38ec7c717:missing",
+        "query": "Determine whether this claim is supported or refuted: Michigan is the largest country by total area east of the Mississippi River.",
+        "score_gap_target_minus_baseline": 0.00020640603172696897,
+        "source_item_group_id": "fever:c1d92c0f60eb777c06a68ee38ec7c717",
+        "target_score": 0.0002659848874940739,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8652777777777777
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ]
+  }
+}
