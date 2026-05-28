@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-28T18:47:32.415537+00:00`
+Generated: `2026-05-28T18:53:01.155383+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -38,6 +38,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 
 - Hotpot CP empirical transfer: `True`; formal guarantee: `False`; target misses: `0`.
 - FEVER CP empirical transfer: `False`; formal guarantee: `False`; target misses: `2`.
+
+## Current Evidence Reproduction
+
+- Ready for NeurIPS main claim: `False`.
+- Human audit pending: `300`; human eval ready: `False`.
+- Full CoRM reconstruction ready: `False`; remote storage ready: `False`.
+- Claim verifier passed: `True`.
 
 ## CoRM Reconstruction
 

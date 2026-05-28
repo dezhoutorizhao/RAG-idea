@@ -75,6 +75,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     ext4_prepare_dry_run = _ext4_prepare_dry_run_status(results)
     human_audit_v4_status = _human_audit_v4_status(results)
     human_audit_v4_eval_status = _human_audit_v4_eval_status(results)
+    current_reproduction_status = _current_reproduction_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -152,6 +153,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "passed_claims": claims.get("passed_claims"),
             "failed_claims": claims.get("failed_claims"),
         },
+        "current_evidence_reproduction": current_reproduction_status,
         "corm_reconstruction": {
             "preflight_ready": preflight.get("ready"),
             "missing_required_artifacts": preflight.get("missing_required_artifacts"),
@@ -401,6 +403,27 @@ def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _current_reproduction_status(results: Path) -> dict[str, Any] | None:
+    path = results / "current_evidence_reproduction_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "ready_for_neurips_main_claim": payload.get("ready_for_neurips_main_claim"),
+        "human_audit_v4_ready": get(payload, "gate_summary", "human_audit_v4_ready"),
+        "human_audit_v4_eval_ready": get(payload, "gate_summary", "human_audit_v4_eval_ready"),
+        "human_audit_v4_pending": get(payload, "gate_summary", "human_audit_v4_pending"),
+        "full_corm_reconstruction_ready": get(
+            payload,
+            "gate_summary",
+            "full_corm_reconstruction_ready",
+        ),
+        "remote_storage_ready": get(payload, "gate_summary", "remote_storage_ready"),
+        "claim_verifier_passed": get(payload, "gate_summary", "claim_verifier_passed"),
+    }
+
+
 def render_markdown(status: dict[str, Any]) -> str:
     hotpot = status["main_bridge_results"]["hotpot_corm_multiseed"]
     fever = status["main_bridge_results"]["fever_nearmiss_corm_v3_multiseed"]
@@ -411,6 +434,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     ext4_dry_run = reconstruction.get("latest_ext4_prepare_dry_run")
     risk = status["risk_control"]
     claims = status["claim_verification"]
+    reproduction = status.get("current_evidence_reproduction")
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
     human_v4 = status["latest_v4_diagnostics"].get("human_audit_v4")
     human_v4_eval = status["latest_v4_diagnostics"].get("human_audit_v4_eval")
@@ -468,6 +492,26 @@ def render_markdown(status: dict[str, Any]) -> str:
             f"formal guarantee: `{risk['fever_cp']['formal_risk_guarantee_supported']}`; "
             f"target misses: `{risk['fever_cp']['target_miss_count']}`.",
             "",
+            "## Current Evidence Reproduction",
+            "",
+        ]
+    )
+    if reproduction:
+        lines.extend(
+            [
+                f"- Ready for NeurIPS main claim: `{reproduction['ready_for_neurips_main_claim']}`.",
+                f"- Human audit pending: `{reproduction['human_audit_v4_pending']}`; "
+                f"human eval ready: `{reproduction['human_audit_v4_eval_ready']}`.",
+                f"- Full CoRM reconstruction ready: `{reproduction['full_corm_reconstruction_ready']}`; "
+                f"remote storage ready: `{reproduction['remote_storage_ready']}`.",
+                f"- Claim verifier passed: `{reproduction['claim_verifier_passed']}`.",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(
+        [
             "## CoRM Reconstruction",
             "",
             f"- Preflight ready: `{reconstruction['preflight_ready']}`.",

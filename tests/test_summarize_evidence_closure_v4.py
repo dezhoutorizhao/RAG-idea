@@ -4,6 +4,7 @@ from experiments.summarize_evidence_closure import (
     _ext4_prepare_dry_run_status,
     _human_audit_v4_eval_status,
     _human_audit_v4_status,
+    _current_reproduction_status,
     _remote_storage_probe_status,
     _semantic_swap_status,
 )
@@ -226,6 +227,29 @@ def test_human_audit_v4_eval_status_is_aggregated(tmp_path):
     assert status["ready"] is False
     assert status["evaluated_pack_count"] == 0
     assert status["packs"][0]["evaluation_ready"] is False
+
+
+def test_current_reproduction_status_is_aggregated(tmp_path):
+    _write_json(
+        tmp_path / "current_evidence_reproduction_20260529.json",
+        {
+            "ready_for_neurips_main_claim": False,
+            "gate_summary": {
+                "human_audit_v4_ready": False,
+                "human_audit_v4_eval_ready": False,
+                "human_audit_v4_pending": 300,
+                "full_corm_reconstruction_ready": False,
+                "remote_storage_ready": False,
+                "claim_verifier_passed": True,
+            },
+        },
+    )
+
+    status = _current_reproduction_status(tmp_path)
+
+    assert status["ready_for_neurips_main_claim"] is False
+    assert status["human_audit_v4_pending"] == 300
+    assert status["claim_verifier_passed"] is True
 
 
 def _calibrated(auroc, target_met_count):

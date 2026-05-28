@@ -50,6 +50,16 @@
     "terminal_failure": "The 250k-shard resume wrote embeddings_shard_000051.npy completely, then failed while writing/flushing wiki_passages.jsonl with OSError [Errno 5] Input/output error on the NTFS/fuseblk mount.",
     "wiki_faiss_exists": false
   },
+  "current_evidence_reproduction": {
+    "artifact": "results/current_evidence_reproduction_20260529.json",
+    "claim_verifier_passed": true,
+    "full_corm_reconstruction_ready": false,
+    "human_audit_v4_eval_ready": false,
+    "human_audit_v4_pending": 300,
+    "human_audit_v4_ready": false,
+    "ready_for_neurips_main_claim": false,
+    "remote_storage_ready": false
+  },
   "disallowed_claims": [
     "Full original CoRM-RAG retrieval-generation reproduction is complete.",
     "A general formal risk-control guarantee is established.",
@@ -57,7 +67,7 @@
     "The method solves robust RAG generally across tasks.",
     "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4."
   ],
-  "generated_at_utc": "2026-05-28T18:47:32.415537+00:00",
+  "generated_at_utc": "2026-05-28T18:53:01.155383+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "hotpot_semantic_swap_n100": {
