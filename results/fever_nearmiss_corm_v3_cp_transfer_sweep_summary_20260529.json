@@ -1,0 +1,231 @@
+{
+  "claim_implication": "FEVER near-miss is negative evidence for the 0.20 empirical risk-transfer claim: the primary method misses at 0.20 and only passes all observed seeds after relaxing the target to 0.3500. This should be reported as a boundary condition, not as a NeurIPS-level main risk-control result.",
+  "dataset": "FEVER v3 near-miss CoRM 1200",
+  "formal_risk_guarantee_supported": false,
+  "generated_at_utc": "2026-05-28T19:01:44.335249+00:00",
+  "inputs": [
+    "results\\fever_nearmiss_corm_v3_risk_control_cp_multiseed.json",
+    "results\\fever_nearmiss_corm_v3_risk_control_cp_target025.json",
+    "results\\fever_nearmiss_corm_v3_risk_control_cp_target030.json",
+    "results\\fever_nearmiss_corm_v3_risk_control_cp_target035.json"
+  ],
+  "interpretation": "This diagnostic sweeps the empirical risk target while keeping the same FEVER near-miss input, split seeds, train/calibration fractions, alpha, and minimum-acceptance rule. It is an empirical transfer stress test, not a distribution-free guarantee.",
+  "methods": [
+    "csrm_logreg_calibrated",
+    "csrm_fixed_weights"
+  ],
+  "negative_evidence_for_main_risk_claim": true,
+  "primary_method": "csrm_logreg_calibrated",
+  "primary_method_failures_at_020": [
+    {
+      "accepted": 54,
+      "coverage": 0.225,
+      "empirical_risk": 0.25925925925925924,
+      "errors": 14,
+      "risk_excess": 0.059259259259259234,
+      "seed": 31,
+      "target_met": false
+    },
+    {
+      "accepted": 52,
+      "coverage": 0.21666666666666667,
+      "empirical_risk": 0.23076923076923078,
+      "errors": 12,
+      "risk_excess": 0.03076923076923077,
+      "seed": 47,
+      "target_met": false
+    }
+  ],
+  "primary_method_first_supported_target": {
+    "cp_feasible_count": 3,
+    "empirical_transfer_supported": true,
+    "formal_risk_guarantee_supported": false,
+    "method": "csrm_logreg_calibrated",
+    "nonzero_coverage_count": 3,
+    "risk_target": 0.35,
+    "seed_count": 3,
+    "target_met_count": 3,
+    "target_miss_count": 0,
+    "test_coverage_mean": 0.22916666666666666,
+    "test_empirical_risk_max": 0.3442622950819672,
+    "test_empirical_risk_mean": 0.25616823977479714
+  },
+  "primary_method_target_020": {
+    "cp_feasible_count": 3,
+    "empirical_transfer_supported": false,
+    "formal_risk_guarantee_supported": false,
+    "method": "csrm_logreg_calibrated",
+    "nonzero_coverage_count": 3,
+    "risk_target": 0.2,
+    "seed_count": 3,
+    "target_met_count": 1,
+    "target_miss_count": 2,
+    "test_coverage_mean": 0.20694444444444446,
+    "test_empirical_risk_max": 0.25925925925925924,
+    "test_empirical_risk_mean": 0.18659864396298506
+  },
+  "risk_targets": [
+    0.2,
+    0.25,
+    0.3,
+    0.35
+  ],
+  "target_rows": [
+    {
+      "input": "results\\fever_orbits_nearmiss_corm_1200_v3.jsonl",
+      "methods": {
+        "csrm_fixed_weights": {
+          "cp_feasible_count": 3,
+          "empirical_transfer_supported": false,
+          "formal_risk_guarantee_supported": false,
+          "method": "csrm_fixed_weights",
+          "nonzero_coverage_count": 3,
+          "risk_target": 0.2,
+          "seed_count": 3,
+          "target_met_count": 1,
+          "target_miss_count": 2,
+          "test_coverage_mean": 0.21388888888888888,
+          "test_empirical_risk_max": 0.3220338983050847,
+          "test_empirical_risk_mean": 0.20189446715559434
+        },
+        "csrm_logreg_calibrated": {
+          "cp_feasible_count": 3,
+          "empirical_transfer_supported": false,
+          "formal_risk_guarantee_supported": false,
+          "method": "csrm_logreg_calibrated",
+          "nonzero_coverage_count": 3,
+          "risk_target": 0.2,
+          "seed_count": 3,
+          "target_met_count": 1,
+          "target_miss_count": 2,
+          "test_coverage_mean": 0.20694444444444446,
+          "test_empirical_risk_max": 0.25925925925925924,
+          "test_empirical_risk_mean": 0.18659864396298506
+        }
+      },
+      "risk_target": 0.2,
+      "seeds": [
+        17,
+        31,
+        47
+      ]
+    },
+    {
+      "input": "results\\fever_orbits_nearmiss_corm_1200_v3.jsonl",
+      "methods": {
+        "csrm_fixed_weights": {
+          "cp_feasible_count": 3,
+          "empirical_transfer_supported": false,
+          "formal_risk_guarantee_supported": false,
+          "method": "csrm_fixed_weights",
+          "nonzero_coverage_count": 3,
+          "risk_target": 0.25,
+          "seed_count": 3,
+          "target_met_count": 1,
+          "target_miss_count": 2,
+          "test_coverage_mean": 0.2222222222222222,
+          "test_empirical_risk_max": 0.3220338983050847,
+          "test_empirical_risk_mean": 0.230562281409739
+        },
+        "csrm_logreg_calibrated": {
+          "cp_feasible_count": 3,
+          "empirical_transfer_supported": false,
+          "formal_risk_guarantee_supported": false,
+          "method": "csrm_logreg_calibrated",
+          "nonzero_coverage_count": 3,
+          "risk_target": 0.25,
+          "seed_count": 3,
+          "target_met_count": 1,
+          "target_miss_count": 2,
+          "test_coverage_mean": 0.2152777777777778,
+          "test_empirical_risk_max": 0.2857142857142857,
+          "test_empirical_risk_mean": 0.21373200442967885
+        }
+      },
+      "risk_target": 0.25,
+      "seeds": [
+        17,
+        31,
+        47
+      ]
+    },
+    {
+      "input": "results\\fever_orbits_nearmiss_corm_1200_v3.jsonl",
+      "methods": {
+        "csrm_fixed_weights": {
+          "cp_feasible_count": 3,
+          "empirical_transfer_supported": false,
+          "formal_risk_guarantee_supported": false,
+          "method": "csrm_fixed_weights",
+          "nonzero_coverage_count": 3,
+          "risk_target": 0.3,
+          "seed_count": 3,
+          "target_met_count": 1,
+          "target_miss_count": 2,
+          "test_coverage_mean": 0.2236111111111111,
+          "test_empirical_risk_max": 0.3220338983050847,
+          "test_empirical_risk_mean": 0.23794507949021151
+        },
+        "csrm_logreg_calibrated": {
+          "cp_feasible_count": 3,
+          "empirical_transfer_supported": false,
+          "formal_risk_guarantee_supported": false,
+          "method": "csrm_logreg_calibrated",
+          "nonzero_coverage_count": 3,
+          "risk_target": 0.3,
+          "seed_count": 3,
+          "target_met_count": 1,
+          "target_miss_count": 2,
+          "test_coverage_mean": 0.225,
+          "test_empirical_risk_max": 0.3333333333333333,
+          "test_empirical_risk_mean": 0.2448624172762104
+        }
+      },
+      "risk_target": 0.3,
+      "seeds": [
+        17,
+        31,
+        47
+      ]
+    },
+    {
+      "input": "results\\fever_orbits_nearmiss_corm_1200_v3.jsonl",
+      "methods": {
+        "csrm_fixed_weights": {
+          "cp_feasible_count": 3,
+          "empirical_transfer_supported": true,
+          "formal_risk_guarantee_supported": false,
+          "method": "csrm_fixed_weights",
+          "nonzero_coverage_count": 3,
+          "risk_target": 0.35,
+          "seed_count": 3,
+          "target_met_count": 3,
+          "target_miss_count": 0,
+          "test_coverage_mean": 0.2236111111111111,
+          "test_empirical_risk_max": 0.3220338983050847,
+          "test_empirical_risk_mean": 0.23794507949021151
+        },
+        "csrm_logreg_calibrated": {
+          "cp_feasible_count": 3,
+          "empirical_transfer_supported": true,
+          "formal_risk_guarantee_supported": false,
+          "method": "csrm_logreg_calibrated",
+          "nonzero_coverage_count": 3,
+          "risk_target": 0.35,
+          "seed_count": 3,
+          "target_met_count": 3,
+          "target_miss_count": 0,
+          "test_coverage_mean": 0.22916666666666666,
+          "test_empirical_risk_max": 0.3442622950819672,
+          "test_empirical_risk_mean": 0.25616823977479714
+        }
+      },
+      "risk_target": 0.35,
+      "seeds": [
+        17,
+        31,
+        47
+      ]
+    }
+  ]
+}

@@ -17,6 +17,11 @@ if str(SRC) not in sys.path:
 
 from experiments.run_human_audit_eval_v4 import run_human_audit_eval_v4
 from experiments.summarize_evidence_closure import evidence_closure, render_markdown as render_closure_markdown
+from experiments.summarize_fever_cp_transfer_sweep import (
+    DEFAULT_INPUTS as DEFAULT_FEVER_CP_SWEEP_INPUTS,
+    render_markdown as render_fever_cp_sweep_markdown,
+    summarize_fever_cp_transfer_sweep,
+)
 from experiments.summarize_human_audit_v4_status import (
     render_markdown as render_human_audit_markdown,
     summarize_human_audit_v4_status,
@@ -67,6 +72,19 @@ def reproduce_current_evidence_v4(
             "outputs": [str(eval_status_json), str(eval_status_md)],
             "ready": eval_status["ready"],
             "evaluated_pack_count": eval_status["evaluated_pack_count"],
+        }
+    )
+
+    fever_cp_sweep_json = results / "fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json"
+    fever_cp_sweep_md = results / "fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.md"
+    fever_cp_sweep = summarize_fever_cp_transfer_sweep([root / path for path in DEFAULT_FEVER_CP_SWEEP_INPUTS])
+    _write_json(fever_cp_sweep_json, fever_cp_sweep)
+    fever_cp_sweep_md.write_text(render_fever_cp_sweep_markdown(fever_cp_sweep), encoding="utf-8")
+    commands.append(
+        {
+            "name": "summarize_fever_cp_transfer_sweep",
+            "outputs": [str(fever_cp_sweep_json), str(fever_cp_sweep_md)],
+            "ready": not fever_cp_sweep["negative_evidence_for_main_risk_claim"],
         }
     )
 

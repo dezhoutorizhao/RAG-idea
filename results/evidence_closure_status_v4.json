@@ -67,7 +67,7 @@
     "The method solves robust RAG generally across tasks.",
     "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4."
   ],
-  "generated_at_utc": "2026-05-28T18:53:01.155383+00:00",
+  "generated_at_utc": "2026-05-28T19:01:44.349581+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "hotpot_semantic_swap_n100": {
@@ -302,7 +302,23 @@
     "fever_cp": {
       "empirical_transfer_supported": false,
       "formal_risk_guarantee_supported": false,
-      "target_miss_count": 2
+      "target_miss_count": 2,
+      "transfer_sweep": {
+        "artifact": "results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json",
+        "claim_implication": "FEVER near-miss is negative evidence for the 0.20 empirical risk-transfer claim: the primary method misses at 0.20 and only passes all observed seeds after relaxing the target to 0.3500. This should be reported as a boundary condition, not as a NeurIPS-level main risk-control result.",
+        "first_supported_max_test_risk": 0.3442622950819672,
+        "first_supported_target": 0.35,
+        "negative_evidence_for_main_risk_claim": true,
+        "primary_method": "csrm_logreg_calibrated",
+        "risk_targets": [
+          0.2,
+          0.25,
+          0.3,
+          0.35
+        ],
+        "target_020_misses": 2,
+        "target_020_supported": false
+      }
     },
     "hotpot_cp": {
       "empirical_transfer_supported": true,

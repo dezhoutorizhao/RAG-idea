@@ -76,6 +76,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     human_audit_v4_status = _human_audit_v4_status(results)
     human_audit_v4_eval_status = _human_audit_v4_eval_status(results)
     current_reproduction_status = _current_reproduction_status(results)
+    fever_cp_sweep = _fever_cp_transfer_sweep_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -145,6 +146,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
                     "csrm_logreg_calibrated",
                     "target_miss_count",
                 ),
+                "transfer_sweep": fever_cp_sweep,
             },
         },
         "structural_audits": structural,
@@ -378,6 +380,34 @@ def _human_audit_v4_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _fever_cp_transfer_sweep_status(results: Path) -> dict[str, Any] | None:
+    path = results / "fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    first_supported = payload.get("primary_method_first_supported_target")
+    target_020 = payload.get("primary_method_target_020")
+    return {
+        "artifact": str(path.as_posix()),
+        "primary_method": payload.get("primary_method"),
+        "risk_targets": payload.get("risk_targets"),
+        "negative_evidence_for_main_risk_claim": payload.get(
+            "negative_evidence_for_main_risk_claim"
+        ),
+        "target_020_supported": None
+        if target_020 is None
+        else target_020.get("empirical_transfer_supported"),
+        "target_020_misses": None if target_020 is None else target_020.get("target_miss_count"),
+        "first_supported_target": None
+        if first_supported is None
+        else first_supported.get("risk_target"),
+        "first_supported_max_test_risk": None
+        if first_supported is None
+        else first_supported.get("test_empirical_risk_max"),
+        "claim_implication": payload.get("claim_implication"),
+    }
+
+
 def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     path = results / "human_audit_v4_eval_status_20260529.json"
     if not path.exists():
@@ -491,6 +521,21 @@ def render_markdown(status: dict[str, Any]) -> str:
             f"- FEVER CP empirical transfer: `{risk['fever_cp']['empirical_transfer_supported']}`; "
             f"formal guarantee: `{risk['fever_cp']['formal_risk_guarantee_supported']}`; "
             f"target misses: `{risk['fever_cp']['target_miss_count']}`.",
+        ]
+    )
+    fever_sweep = risk["fever_cp"].get("transfer_sweep")
+    if fever_sweep:
+        lines.extend(
+            [
+                f"- FEVER CP target sweep: 0.20 supported `{fever_sweep['target_020_supported']}` "
+                f"with `{fever_sweep['target_020_misses']}` misses; first observed all-seed pass "
+                f"at `{_fmt(fever_sweep['first_supported_target'])}` with max test risk "
+                f"`{_fmt(fever_sweep['first_supported_max_test_risk'])}`.",
+                f"- FEVER CP claim implication: {fever_sweep['claim_implication']}",
+            ]
+        )
+    lines.extend(
+        [
             "",
             "## Current Evidence Reproduction",
             "",

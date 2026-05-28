@@ -58,3 +58,10 @@ Next required work:
 3. If pilot quality is acceptable, label `results/audit_sample_paper_1000_v3.jsonl`.
 4. Execute or refine the remote CoRM reconstruction plan, then resolve preflight by producing/staging `wiki_passages.jsonl`, `wiki_embeddings.npy`, `wiki.faiss`, `perturbations.jsonl`, and `biased_nq_test.jsonl`; otherwise keep the released-score bridge framing.
 5. Re-run independent review only after audited metrics exist.
+
+## Delta - 2026-05-29
+
+- Current storage status supersedes the older note that `/mnt/ntfs-disk` is writable. The latest remote probe reports about 322 GiB available on `/mnt/ntfs-disk`, but write probes fail with `No space left on device`; therefore it is not usable for full CoRM-RAG reproduction. A dry-run ext4 cleanup plan exists for `/home/syk`, but deleting/truncating Docker logs and caches still requires explicit user approval.
+- Added FEVER CP empirical-transfer sweep artifacts: `results/fever_nearmiss_corm_v3_risk_control_cp_target025.json`, `results/fever_nearmiss_corm_v3_risk_control_cp_target030.json`, `results/fever_nearmiss_corm_v3_risk_control_cp_target035.json`, and `results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.{json,md}`.
+- FEVER near-miss remains negative evidence for the 0.20 empirical risk-transfer claim. `csrm_logreg_calibrated` passes only 1/3 seeds at targets 0.20, 0.25, and 0.30, and first passes all observed seeds at 0.35 with max test empirical risk 0.3443. This must be reported as a boundary/failure analysis, not as a NeurIPS-level general risk-control result.
+- `experiments/reproduce_current_evidence_v4.py` now rebuilds the human audit v4 gate, FEVER CP transfer-sweep summary, evidence closure, and current-evidence report. Latest full test run: `125 passed`.

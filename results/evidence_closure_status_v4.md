@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-28T18:53:01.155383+00:00`
+Generated: `2026-05-28T19:01:44.349581+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -38,6 +38,8 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 
 - Hotpot CP empirical transfer: `True`; formal guarantee: `False`; target misses: `0`.
 - FEVER CP empirical transfer: `False`; formal guarantee: `False`; target misses: `2`.
+- FEVER CP target sweep: 0.20 supported `False` with `2` misses; first observed all-seed pass at `0.3500` with max test risk `0.3443`.
+- FEVER CP claim implication: FEVER near-miss is negative evidence for the 0.20 empirical risk-transfer claim: the primary method misses at 0.20 and only passes all observed seeds after relaxing the target to 0.3500. This should be reported as a boundary condition, not as a NeurIPS-level main risk-control result.
 
 ## Current Evidence Reproduction
 

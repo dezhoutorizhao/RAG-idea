@@ -5,6 +5,7 @@ from experiments.summarize_evidence_closure import (
     _human_audit_v4_eval_status,
     _human_audit_v4_status,
     _current_reproduction_status,
+    _fever_cp_transfer_sweep_status,
     _remote_storage_probe_status,
     _semantic_swap_status,
 )
@@ -227,6 +228,34 @@ def test_human_audit_v4_eval_status_is_aggregated(tmp_path):
     assert status["ready"] is False
     assert status["evaluated_pack_count"] == 0
     assert status["packs"][0]["evaluation_ready"] is False
+
+
+def test_fever_cp_transfer_sweep_status_marks_boundary(tmp_path):
+    _write_json(
+        tmp_path / "fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json",
+        {
+            "primary_method": "csrm_logreg_calibrated",
+            "risk_targets": [0.2, 0.25, 0.3, 0.35],
+            "negative_evidence_for_main_risk_claim": True,
+            "primary_method_target_020": {
+                "empirical_transfer_supported": False,
+                "target_miss_count": 2,
+            },
+            "primary_method_first_supported_target": {
+                "risk_target": 0.35,
+                "test_empirical_risk_max": 0.3442,
+            },
+            "claim_implication": "negative evidence",
+        },
+    )
+
+    status = _fever_cp_transfer_sweep_status(tmp_path)
+
+    assert status["primary_method"] == "csrm_logreg_calibrated"
+    assert status["target_020_supported"] is False
+    assert status["target_020_misses"] == 2
+    assert status["first_supported_target"] == 0.35
+    assert status["negative_evidence_for_main_risk_claim"] is True
 
 
 def test_current_reproduction_status_is_aggregated(tmp_path):
