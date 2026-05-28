@@ -1,0 +1,22 @@
+{
+  "constant_score": 0.5,
+  "intended_use": "Controlled anti-shortcut diagnostic; not a replacement for real retrieval evidence.",
+  "mode": "constant",
+  "orbits": 200,
+  "raw_input": "results\\hotpot_orbits_v4_hardneg_n100.raw.jsonl",
+  "raw_output": "results\\hotpot_orbits_v4_hardneg_n100.constant.raw.jsonl",
+  "score_summary_after": {
+    "max": 0.5,
+    "mean": 0.5,
+    "min": 0.5,
+    "n": 2400,
+    "unique_values": 1
+  },
+  "score_summary_before": {
+    "max": 1.0,
+    "mean": 0.41061901899416703,
+    "min": 0.0,
+    "n": 2400,
+    "unique_values": 598
+  }
+}

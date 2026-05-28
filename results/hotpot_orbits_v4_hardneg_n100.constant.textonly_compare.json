@@ -1,0 +1,146 @@
+{
+  "baselines": [
+    "corm_max_clean",
+    "single_set_sure_style",
+    "naive_orbit_average"
+  ],
+  "comparisons": {
+    "corm_max_clean": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": -0.009045800490146028,
+          "p2_5": -0.061804064452106955,
+          "p97_5": 0.027180450058789885
+        },
+        "auroc_improvement": {
+          "median": 0.3254830917874396,
+          "p2_5": 0.2634085213032581,
+          "p97_5": 0.38185274109643863
+        },
+        "risk_at_30_reduction": {
+          "median": 0.31666666666666665,
+          "p2_5": 0.16666666666666674,
+          "p97_5": 0.46666666666666656
+        },
+        "risk_at_50_reduction": {
+          "median": 0.28,
+          "p2_5": 0.20000000000000007,
+          "p97_5": 0.37
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": -0.009712623953490096,
+        "auroc_improvement": 0.32520000000000004,
+        "baseline": {
+          "aurc": 0.25,
+          "auroc": 0.5,
+          "risk_at_30": 0.5,
+          "risk_at_50": 0.5
+        },
+        "risk_at_30_reduction": 0.31666666666666665,
+        "risk_at_50_reduction": 0.28,
+        "target": {
+          "aurc": 0.2597126239534901,
+          "auroc": 0.8252,
+          "risk_at_30": 0.18333333333333335,
+          "risk_at_50": 0.21999999999999997
+        }
+      }
+    },
+    "naive_orbit_average": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.2016988393392215,
+          "p2_5": 0.16295162524530937,
+          "p97_5": 0.2387650243267329
+        },
+        "auroc_improvement": {
+          "median": 0.27884615384615385,
+          "p2_5": 0.22820000000000007,
+          "p97_5": 0.33563425370148053
+        },
+        "risk_at_30_reduction": {
+          "median": 0.25,
+          "p2_5": 0.1333333333333333,
+          "p97_5": 0.3666666666666667
+        },
+        "risk_at_50_reduction": {
+          "median": 0.25,
+          "p2_5": 0.18000000000000005,
+          "p97_5": 0.31000000000000005
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.2038512826662972,
+        "auroc_improvement": 0.27670000000000006,
+        "baseline": {
+          "aurc": 0.4635639066197873,
+          "auroc": 0.5485,
+          "risk_at_30": 0.44999999999999996,
+          "risk_at_50": 0.47
+        },
+        "risk_at_30_reduction": 0.2666666666666666,
+        "risk_at_50_reduction": 0.25,
+        "target": {
+          "aurc": 0.2597126239534901,
+          "auroc": 0.8252,
+          "risk_at_30": 0.18333333333333335,
+          "risk_at_50": 0.21999999999999997
+        }
+      }
+    },
+    "single_set_sure_style": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.23692238317544614,
+          "p2_5": 0.1887951814034437,
+          "p97_5": 0.2825794627939826
+        },
+        "auroc_improvement": {
+          "median": 0.32669082125603854,
+          "p2_5": 0.27311220889202537,
+          "p97_5": 0.3835034013605442
+        },
+        "risk_at_30_reduction": {
+          "median": 0.31666666666666654,
+          "p2_5": 0.20000000000000007,
+          "p97_5": 0.41666666666666663
+        },
+        "risk_at_50_reduction": {
+          "median": 0.28,
+          "p2_5": 0.21999999999999997,
+          "p97_5": 0.3400000000000001
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.2377873760465099,
+        "auroc_improvement": 0.32520000000000004,
+        "baseline": {
+          "aurc": 0.4975,
+          "auroc": 0.5,
+          "risk_at_30": 0.5,
+          "risk_at_50": 0.5
+        },
+        "risk_at_30_reduction": 0.31666666666666665,
+        "risk_at_50_reduction": 0.28,
+        "target": {
+          "aurc": 0.2597126239534901,
+          "auroc": 0.8252,
+          "risk_at_30": 0.18333333333333335,
+          "risk_at_50": 0.21999999999999997
+        }
+      }
+    }
+  },
+  "input": "results\\hotpot_orbits_v4_hardneg_n100.constant.textonly_scored.jsonl",
+  "n": 200,
+  "negative": 100,
+  "positive": 100,
+  "target": "csrm"
+}

@@ -1,0 +1,1395 @@
+{
+  "by_construction_type": {
+    "hard_missing_hop": {
+      "baseline_mean": 0.04636808509080798,
+      "n": 20,
+      "negative": 20,
+      "positive": 0,
+      "target_mean": 0.04685797345258622,
+      "target_minus_baseline_mean": 0.0004898883617782347
+    },
+    "stable": {
+      "baseline_mean": 0.9558651893535842,
+      "n": 20,
+      "negative": 0,
+      "positive": 20,
+      "target_mean": 0.9554947039393775,
+      "target_minus_baseline_mean": -0.0003704854142065228
+    }
+  },
+  "feature_gaps": [
+    {
+      "absolute_gap": 0.3773809523809525,
+      "feature": "retrieval_overlap",
+      "negative_mean": 0.6226190476190475,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.3773809523809525
+    },
+    {
+      "absolute_gap": 0.04386865930000595,
+      "feature": "max_conflict",
+      "negative_mean": 0.07999457054510654,
+      "positive_mean": 0.036125911245100596,
+      "positive_minus_negative": -0.04386865930000595
+    },
+    {
+      "absolute_gap": 0.010135408028182663,
+      "feature": "min_sufficiency",
+      "negative_mean": 0.19741090361181055,
+      "positive_mean": 0.2075463116399932,
+      "positive_minus_negative": 0.010135408028182663
+    },
+    {
+      "absolute_gap": 0.010135408028182642,
+      "feature": "clean_to_worst_gap",
+      "negative_mean": 0.015046264074020594,
+      "positive_mean": 0.004910856045837951,
+      "positive_minus_negative": -0.010135408028182642
+    },
+    {
+      "absolute_gap": 0.008570514065825985,
+      "feature": "mean_missing",
+      "negative_mean": 0.7419924743420261,
+      "positive_mean": 0.7334219602762001,
+      "positive_minus_negative": -0.008570514065825985
+    },
+    {
+      "absolute_gap": 0.005533101511331684,
+      "feature": "verifier_entropy",
+      "negative_mean": 0.5053243848067095,
+      "positive_mean": 0.5108574863180412,
+      "positive_minus_negative": 0.005533101511331684
+    },
+    {
+      "absolute_gap": 0.004128563373709371,
+      "feature": "naive_orbit_average",
+      "negative_mean": 0.20587317628920276,
+      "positive_mean": 0.21000173966291213,
+      "positive_minus_negative": 0.004128563373709371
+    },
+    {
+      "absolute_gap": 0.004128563373709371,
+      "feature": "mean_sufficiency",
+      "negative_mean": 0.20587317628920276,
+      "positive_mean": 0.21000173966291213,
+      "positive_minus_negative": 0.004128563373709371
+    },
+    {
+      "absolute_gap": 0.0001014078395377206,
+      "feature": "sufficiency_variance",
+      "negative_mean": 0.00011087814326963626,
+      "positive_mean": 9.470303731915647e-06,
+      "positive_minus_negative": -0.0001014078395377206
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "corm_max_clean",
+      "negative_mean": 0.5,
+      "positive_mean": 0.5,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "corm_mean_clean",
+      "negative_mean": 0.5,
+      "positive_mean": 0.5,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "context_sufficiency_clean",
+      "negative_mean": 0.21245716768583117,
+      "positive_mean": 0.21245716768583117,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "clean_sufficiency",
+      "negative_mean": 0.21245716768583117,
+      "positive_mean": 0.21245716768583117,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "answer_consistency",
+      "negative_mean": 1.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "support_signature_consistency",
+      "negative_mean": 1.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "orbit_answer_flip_rate",
+      "negative_mean": 0.0,
+      "positive_mean": 0.0,
+      "positive_minus_negative": 0.0
+    },
+    {
+      "absolute_gap": 0.0,
+      "feature": "perturbation_count",
+      "negative_mean": 1.0,
+      "positive_mean": 1.0,
+      "positive_minus_negative": 0.0
+    }
+  ],
+  "metrics": {
+    "baseline_calibrated_logistic_orbit": {
+      "auroc": 1.0,
+      "mean_score_negative": 0.04636808509080798,
+      "mean_score_positive": 0.9558651893535842,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.0
+    },
+    "target": {
+      "auroc": 1.0,
+      "mean_score_negative": 0.04685797345258622,
+      "mean_score_positive": 0.9554947039393775,
+      "risk_at_30": 0.0,
+      "risk_at_50": 0.0
+    }
+  },
+  "private_input": "results\\hotpot_orbits_v4_hardneg_n100.private_eval.jsonl",
+  "raw_input": "results\\hotpot_orbits_v4_hardneg_n100.constant.raw.jsonl",
+  "scored_input": "results\\hotpot_orbits_v4_hardneg_n100.constant.textonly_scored.jsonl",
+  "seed": 31,
+  "split_sizes": {
+    "calibration": 40,
+    "calibration_groups": 20,
+    "test": 40,
+    "test_groups": 20,
+    "train": 120,
+    "train_groups": 60
+  },
+  "top_cases": {
+    "baseline_over_target_on_positive": [
+      {
+        "baseline_score": 0.9581903548577658,
+        "candidate_answer": "November",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5ac213805542992f1f2b37e7:stable",
+        "query": "When did the animated series Kent Scott wrote end after beginning in September of 2002 on \"Nick on CBS\"?",
+        "score_gap_target_minus_baseline": -0.004990002587590969,
+        "source_item_group_id": "hotpot_hardneg:5ac213805542992f1f2b37e7",
+        "target_score": 0.9532003522701749,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8078970787828467
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9681256141564917,
+        "candidate_answer": "320 years",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5adce88b5542992c1e3a249a:stable",
+        "query": "How long did the state exist whose army ransacked and looted the city, Halebidu, twice in the 14th century ?",
+        "score_gap_target_minus_baseline": -0.004816381584001661,
+        "source_item_group_id": "hotpot_hardneg:5adce88b5542992c1e3a249a",
+        "target_score": 0.96330923257249,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.78779994458527
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.95763026649953,
+        "candidate_answer": "Sam Phillips",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5ac26ac15542992f1f2b38bc:stable",
+        "query": "Who is the film dedicated to that Paramount Classics and MTV Films co-purchased the rights to?",
+        "score_gap_target_minus_baseline": -0.00472329430156726,
+        "source_item_group_id": "hotpot_hardneg:5ac26ac15542992f1f2b38bc",
+        "target_score": 0.9529069721979627,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7972982088037299
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9655951324104002,
+        "candidate_answer": "Chrysler K platform",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5a8303c255429954d2e2ec01:stable",
+        "query": "The Plymouth fury produced from 1955 to 1989  was replaced by what for police and fleet applications?",
+        "score_gap_target_minus_baseline": -0.004192804062407518,
+        "source_item_group_id": "hotpot_hardneg:5a8303c255429954d2e2ec01",
+        "target_score": 0.9614023283479927,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.6910189748359424
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9638765924933625,
+        "candidate_answer": "Hellenism",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5a881cbb55429938390d3ee7:stable",
+        "query": "St. John of the Cross Episcopal Church has a rectory that was in a style that was a product of what earlier style?",
+        "score_gap_target_minus_baseline": -0.0033889263374179412,
+        "source_item_group_id": "hotpot_hardneg:5a881cbb55429938390d3ee7",
+        "target_score": 0.9604876661559446,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7886388569007045
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9676371637572607,
+        "candidate_answer": "Geraldine Page",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5adcd2435542992c1e3a241b:stable",
+        "query": "Which eight-time Academy Award nominee was Tennessee Williams's choice to play a leading role in his play \"Clothes for a Summer Hotel\"?",
+        "score_gap_target_minus_baseline": -0.003116017001289828,
+        "source_item_group_id": "hotpot_hardneg:5adcd2435542992c1e3a241b",
+        "target_score": 0.9645211467559709,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7473373761951269
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5119959578640041
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.965714227121665,
+        "candidate_answer": "Mickey's PhilharMagic",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5a792ad055429907847277d1:stable",
+        "query": "What 4-D film attraction at Walt Disney World is based off a 2004 computer-animated Christmas movie? ",
+        "score_gap_target_minus_baseline": -0.0028122362093957465,
+        "source_item_group_id": "hotpot_hardneg:5a792ad055429907847277d1",
+        "target_score": 0.9629019909122692,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7557094337137413
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5052489396445432
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.965380424013408,
+        "candidate_answer": "Mayor of the City of New York",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5a8ba3ff55429971feec4744:stable",
+        "query": "Stokely Webster has paintings can be found at the official residence of whom?",
+        "score_gap_target_minus_baseline": -0.002615998011253229,
+        "source_item_group_id": "hotpot_hardneg:5a8ba3ff55429971feec4744",
+        "target_score": 0.9627644260021547,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7439092301049958
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5025993479410444
+          }
+        ]
+      }
+    ],
+    "target_high_false_positive": [
+      {
+        "baseline_score": 0.14732976008722165,
+        "candidate_answer": "320 years",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5adce88b5542992c1e3a249a:hard_missing_hop",
+        "query": "How long did the state exist whose army ransacked and looted the city, Halebidu, twice in the 14th century ?",
+        "score_gap_target_minus_baseline": -0.012801216790460535,
+        "source_item_group_id": "hotpot_hardneg:5adce88b5542992c1e3a249a",
+        "target_score": 0.13452854329676112,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7894852062182595
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.1557471505585273,
+        "candidate_answer": "Hellenism",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5a881cbb55429938390d3ee7:hard_missing_hop",
+        "query": "St. John of the Cross Episcopal Church has a rectory that was in a style that was a product of what earlier style?",
+        "score_gap_target_minus_baseline": -0.023031815398178418,
+        "source_item_group_id": "hotpot_hardneg:5a881cbb55429938390d3ee7",
+        "target_score": 0.1327153351603489,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.79165928455348
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.11566271657068418,
+        "candidate_answer": "Sarajevo",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5ae5dae2554299546bf82fa4:hard_missing_hop",
+        "query": "Faruk Halibegovic was born in what city that is the capital and largest city of Bosnia and Herzegovina with a population of 275,524?",
+        "score_gap_target_minus_baseline": 0.004896935911472153,
+        "source_item_group_id": "hotpot_hardneg:5ae5dae2554299546bf82fa4",
+        "target_score": 0.12055965248215633,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5853108705352226
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.573911432674115
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.10709953498612539,
+        "candidate_answer": "8 km",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5adf3e355542993a75d26440:hard_missing_hop",
+        "query": "How long is the bridge in the \u00d6resund Region that connect Copenhagen, Denmark and Malmo, Sweden?",
+        "score_gap_target_minus_baseline": 0.0014171245869110394,
+        "source_item_group_id": "hotpot_hardneg:5adf3e355542993a75d26440",
+        "target_score": 0.10851665957303643,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.6738387140780829
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5360603163238538
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.08306054377025879,
+        "candidate_answer": "Masayoshi \"Masa\" Takayama",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5ae55b8255429908b63265ef:hard_missing_hop",
+        "query": "What chef is the owner of a Japanese restaurant in the Tribeca neighborhood and also owns two Bar Masas in New York and Nevada?",
+        "score_gap_target_minus_baseline": 0.0044887113929038686,
+        "source_item_group_id": "hotpot_hardneg:5ae55b8255429908b63265ef",
+        "target_score": 0.08754925516316266,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7677443726916757
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5434273069023974
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.07825605358629367,
+        "candidate_answer": "London, England",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5ab90fdd55429916710eb0fc:hard_missing_hop",
+        "query": "Wheelock Whitney is just one member of the Whitney Family. Where did this American family originate from?",
+        "score_gap_target_minus_baseline": 0.003360031195594429,
+        "source_item_group_id": "hotpot_hardneg:5ab90fdd55429916710eb0fc",
+        "target_score": 0.0816160847818881,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7870597118647287
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.06066344607604083,
+        "candidate_answer": "1874",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5abd8c295542992ac4f382ab:hard_missing_hop",
+        "query": " The Minnesota State High School Mathematics League was founded by a professor at a private coeducational liberal arts college founded in what year? ",
+        "score_gap_target_minus_baseline": 0.00573958660157111,
+        "source_item_group_id": "hotpot_hardneg:5abd8c295542992ac4f382ab",
+        "target_score": 0.06640303267761194,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7702405355578902
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.50992562332056
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.05182734620984723,
+        "candidate_answer": "Mickey's PhilharMagic",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5a792ad055429907847277d1:hard_missing_hop",
+        "query": "What 4-D film attraction at Walt Disney World is based off a 2004 computer-animated Christmas movie? ",
+        "score_gap_target_minus_baseline": 0.00572879400030131,
+        "source_item_group_id": "hotpot_hardneg:5a792ad055429907847277d1",
+        "target_score": 0.05755614021014854,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7777489319969613
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ],
+    "target_low_false_negative": [
+      {
+        "baseline_score": 0.8797332983157395,
+        "candidate_answer": "Zixing",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5abd1b6e55429933744ab729:stable",
+        "query": "Which of the following cities is a county-level city, Jingzhou or Zixing?",
+        "score_gap_target_minus_baseline": 0.016621233821824344,
+        "source_item_group_id": "hotpot_hardneg:5abd1b6e55429933744ab729",
+        "target_score": 0.8963545321375639,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7876965342866681
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5345415604259367
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9364961123797463,
+        "candidate_answer": "Juan Carlos Onetti",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5a79332555429907847277e7:stable",
+        "query": "Who died first, Bryce Courtenay or Juan Carlos Onetti?",
+        "score_gap_target_minus_baseline": 0.007497806225247539,
+        "source_item_group_id": "hotpot_hardneg:5a79332555429907847277e7",
+        "target_score": 0.9439939186049938,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.644986059520608
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5772016218082338
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9541422474357499,
+        "candidate_answer": "fifth-largest",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5a80522b5542996402f6a4c1:stable",
+        "query": "What population ranking is the Oklahoma city located south of a wilderness area spanning over 5000 acres?",
+        "score_gap_target_minus_baseline": -0.0017596283975647165,
+        "source_item_group_id": "hotpot_hardneg:5a80522b5542996402f6a4c1",
+        "target_score": 0.9523826190381852,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7314573575144131
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.95763026649953,
+        "candidate_answer": "Sam Phillips",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5ac26ac15542992f1f2b38bc:stable",
+        "query": "Who is the film dedicated to that Paramount Classics and MTV Films co-purchased the rights to?",
+        "score_gap_target_minus_baseline": -0.00472329430156726,
+        "source_item_group_id": "hotpot_hardneg:5ac26ac15542992f1f2b38bc",
+        "target_score": 0.9529069721979627,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7972982088037299
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9581903548577658,
+        "candidate_answer": "November",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5ac213805542992f1f2b37e7:stable",
+        "query": "When did the animated series Kent Scott wrote end after beginning in September of 2002 on \"Nick on CBS\"?",
+        "score_gap_target_minus_baseline": -0.004990002587590969,
+        "source_item_group_id": "hotpot_hardneg:5ac213805542992f1f2b37e7",
+        "target_score": 0.9532003522701749,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.8078970787828467
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9512933001579753,
+        "candidate_answer": "Masayoshi \"Masa\" Takayama",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5ae55b8255429908b63265ef:stable",
+        "query": "What chef is the owner of a Japanese restaurant in the Tribeca neighborhood and also owns two Bar Masas in New York and Nevada?",
+        "score_gap_target_minus_baseline": 0.0021736830059178036,
+        "source_item_group_id": "hotpot_hardneg:5ae55b8255429908b63265ef",
+        "target_score": 0.9534669831638931,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7520080674506012
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5448608700351303
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.9544872482241947,
+        "candidate_answer": "London, England",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5ab90fdd55429916710eb0fc:stable",
+        "query": "Wheelock Whitney is just one member of the Whitney Family. Where did this American family originate from?",
+        "score_gap_target_minus_baseline": -0.000274843518513479,
+        "source_item_group_id": "hotpot_hardneg:5ab90fdd55429916710eb0fc",
+        "target_score": 0.9542124047056812,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.782304719547365
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.956720480156142,
+        "candidate_answer": "21",
+        "construction_type": "stable",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": true,
+        "orbit_id": "hotpot_hardneg:5ae25d2b554299495565da46:stable",
+        "query": "Who has more singles titles, Brian Gottfried or Peter Fleming?",
+        "score_gap_target_minus_baseline": -0.0010985833827008573,
+        "source_item_group_id": "hotpot_hardneg:5ae25d2b554299495565da46",
+        "target_score": 0.9556218967734411,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7887081860961187
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ],
+    "target_over_baseline_on_negative": [
+      {
+        "baseline_score": 0.05071822415382776,
+        "candidate_answer": "Juan Carlos Onetti",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5a79332555429907847277e7:hard_missing_hop",
+        "query": "Who died first, Bryce Courtenay or Juan Carlos Onetti?",
+        "score_gap_target_minus_baseline": 0.006358310290594124,
+        "source_item_group_id": "hotpot_hardneg:5a79332555429907847277e7",
+        "target_score": 0.057076534444421886,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.6450894775569529
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5744796490981531
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.06066344607604083,
+        "candidate_answer": "1874",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5abd8c295542992ac4f382ab:hard_missing_hop",
+        "query": " The Minnesota State High School Mathematics League was founded by a professor at a private coeducational liberal arts college founded in what year? ",
+        "score_gap_target_minus_baseline": 0.00573958660157111,
+        "source_item_group_id": "hotpot_hardneg:5abd8c295542992ac4f382ab",
+        "target_score": 0.06640303267761194,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7702405355578902
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.50992562332056
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.05182734620984723,
+        "candidate_answer": "Mickey's PhilharMagic",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5a792ad055429907847277d1:hard_missing_hop",
+        "query": "What 4-D film attraction at Walt Disney World is based off a 2004 computer-animated Christmas movie? ",
+        "score_gap_target_minus_baseline": 0.00572879400030131,
+        "source_item_group_id": "hotpot_hardneg:5a792ad055429907847277d1",
+        "target_score": 0.05755614021014854,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7777489319969613
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.04604763162524689,
+        "candidate_answer": "Mayor of the City of New York",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5a8ba3ff55429971feec4744:hard_missing_hop",
+        "query": "Stokely Webster has paintings can be found at the official residence of whom?",
+        "score_gap_target_minus_baseline": 0.00553967166035535,
+        "source_item_group_id": "hotpot_hardneg:5a8ba3ff55429971feec4744",
+        "target_score": 0.05158730328560224,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7629694938021293
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.0064527381287920686,
+        "candidate_answer": "Naguib Mahfouz",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5ae1fced5542997283cd230e:hard_missing_hop",
+        "query": "Which writer won the Nobel Prize, William H. Gass or Naguib Mahfouz?",
+        "score_gap_target_minus_baseline": 0.005420318657276015,
+        "source_item_group_id": "hotpot_hardneg:5ae1fced5542997283cd230e",
+        "target_score": 0.011873056786068084,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.612741798631309
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5641277174786061
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.11566271657068418,
+        "candidate_answer": "Sarajevo",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5ae5dae2554299546bf82fa4:hard_missing_hop",
+        "query": "Faruk Halibegovic was born in what city that is the capital and largest city of Bosnia and Herzegovina with a population of 275,524?",
+        "score_gap_target_minus_baseline": 0.004896935911472153,
+        "source_item_group_id": "hotpot_hardneg:5ae5dae2554299546bf82fa4",
+        "target_score": 0.12055965248215633,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5853108705352226
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.573911432674115
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.08306054377025879,
+        "candidate_answer": "Masayoshi \"Masa\" Takayama",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5ae55b8255429908b63265ef:hard_missing_hop",
+        "query": "What chef is the owner of a Japanese restaurant in the Tribeca neighborhood and also owns two Bar Masas in New York and Nevada?",
+        "score_gap_target_minus_baseline": 0.0044887113929038686,
+        "source_item_group_id": "hotpot_hardneg:5ae55b8255429908b63265ef",
+        "target_score": 0.08754925516316266,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7677443726916757
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "verifier_entropy",
+            "value": 0.5434273069023974
+          }
+        ]
+      },
+      {
+        "baseline_score": 0.07825605358629367,
+        "candidate_answer": "London, England",
+        "construction_type": "hard_missing_hop",
+        "dataset": "hotpot_qa/distractor",
+        "label_answerable": false,
+        "orbit_id": "hotpot_hardneg:5ab90fdd55429916710eb0fc:hard_missing_hop",
+        "query": "Wheelock Whitney is just one member of the Whitney Family. Where did this American family originate from?",
+        "score_gap_target_minus_baseline": 0.003360031195594429,
+        "source_item_group_id": "hotpot_hardneg:5ab90fdd55429916710eb0fc",
+        "target_score": 0.0816160847818881,
+        "top_features": [
+          {
+            "feature": "answer_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "support_signature_consistency",
+            "value": 1.0
+          },
+          {
+            "feature": "perturbation_count",
+            "value": 1.0
+          },
+          {
+            "feature": "mean_missing",
+            "value": 0.7870597118647287
+          },
+          {
+            "feature": "retrieval_overlap",
+            "value": 0.7142857142857143
+          },
+          {
+            "feature": "corm_max_clean",
+            "value": 0.5
+          }
+        ]
+      }
+    ]
+  }
+}
