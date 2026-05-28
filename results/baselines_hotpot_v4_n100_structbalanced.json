@@ -1,0 +1,243 @@
+{
+  "csrm_vs_strongest_non_csrm": {
+    "by_aurc": {
+      "aurc_reduction": -0.19482392781218072,
+      "auroc_improvement": 0.14600000000000002,
+      "risk_at_30_reduction": 0.0,
+      "risk_at_50_reduction": 0.06999999999999995
+    },
+    "by_auroc": {
+      "aurc_reduction": -0.17718119825473183,
+      "auroc_improvement": -0.1996,
+      "risk_at_30_reduction": -0.2833333333333333,
+      "risk_at_50_reduction": -0.18000000000000005
+    },
+    "by_risk_at_30": {
+      "aurc_reduction": -0.17718119825473183,
+      "auroc_improvement": -0.1996,
+      "risk_at_30_reduction": -0.2833333333333333,
+      "risk_at_50_reduction": -0.18000000000000005
+    }
+  },
+  "fairness": {
+    "llm_judge": "not run; no external LLM calls in this baseline batch",
+    "logistic_scores": "out-of-fold by source_item_group_id when possible",
+    "same_input_rows": true,
+    "same_scored_evidence": true
+  },
+  "methods": {
+    "calibrated_logistic_context": {
+      "aurc": 0.543429839208048,
+      "auroc": 0.4484,
+      "risk_at_30": 0.55,
+      "risk_at_50": 0.52,
+      "risk_at_70": 0.5285714285714286,
+      "score_summary": {
+        "max": 0.6548957353688979,
+        "mean": 0.502868233755521,
+        "min": 0.3504480716766428,
+        "unique": 100
+      }
+    },
+    "calibrated_logistic_orbit": {
+      "aurc": 0.2676427295574489,
+      "auroc": 0.8456,
+      "risk_at_30": 0.16666666666666663,
+      "risk_at_50": 0.22999999999999998,
+      "risk_at_70": 0.3285714285714286,
+      "score_summary": {
+        "max": 0.9027034723864833,
+        "mean": 0.5021641664470021,
+        "min": 1.4863150741456692e-05,
+        "unique": 200
+      }
+    },
+    "context_sufficiency_clean": {
+      "aurc": 0.5112375836844426,
+      "auroc": 0.4757,
+      "risk_at_30": 0.5166666666666666,
+      "risk_at_50": 0.53,
+      "risk_at_70": 0.5142857142857142,
+      "score_summary": {
+        "max": 0.32870065683357474,
+        "mean": 0.20230813205199266,
+        "min": 0.031594301009623585,
+        "unique": 100
+      }
+    },
+    "corm_max_clean": {
+      "aurc": 0.25,
+      "auroc": 0.5,
+      "risk_at_30": 0.44999999999999996,
+      "risk_at_50": 0.48,
+      "risk_at_70": 0.5071428571428571,
+      "score_summary": {
+        "max": 0.5,
+        "mean": 0.5,
+        "min": 0.5,
+        "unique": 1
+      }
+    },
+    "corm_mean_clean": {
+      "aurc": 0.25,
+      "auroc": 0.5,
+      "risk_at_30": 0.44999999999999996,
+      "risk_at_50": 0.48,
+      "risk_at_70": 0.5071428571428571,
+      "score_summary": {
+        "max": 0.5,
+        "mean": 0.5,
+        "min": 0.5,
+        "unique": 1
+      }
+    },
+    "csrm_rule": {
+      "aurc": 0.4448239278121807,
+      "auroc": 0.646,
+      "risk_at_30": 0.44999999999999996,
+      "risk_at_50": 0.41000000000000003,
+      "risk_at_70": 0.3928571428571429,
+      "score_summary": {
+        "max": 0.5975180795465723,
+        "mean": 0.5175136564820815,
+        "min": 0.4179065322705987,
+        "unique": 200
+      }
+    },
+    "equal_budget_mean": {
+      "aurc": 0.41243262258992597,
+      "auroc": 0.6369,
+      "risk_at_30": 0.4,
+      "risk_at_50": 0.42000000000000004,
+      "risk_at_70": 0.41428571428571426,
+      "score_summary": {
+        "max": 0.3106229735705467,
+        "mean": 0.1851574015701135,
+        "min": 0.028977962600857478,
+        "unique": 200
+      }
+    },
+    "equal_budget_min": {
+      "aurc": 0.38140622182799155,
+      "auroc": 0.6892,
+      "risk_at_30": 0.3666666666666667,
+      "risk_at_50": 0.36,
+      "risk_at_70": 0.37142857142857144,
+      "score_summary": {
+        "max": 0.2925452903075186,
+        "mean": 0.16609604066369937,
+        "min": 0.0,
+        "unique": 196
+      }
+    },
+    "equal_budget_q25": {
+      "aurc": 0.3927471013072035,
+      "auroc": 0.6694,
+      "risk_at_30": 0.4,
+      "risk_at_50": 0.39,
+      "risk_at_70": 0.4,
+      "score_summary": {
+        "max": 0.3015841319390326,
+        "mean": 0.17562672111690641,
+        "min": 0.027521686326497187,
+        "unique": 200
+      }
+    },
+    "faithful_sure_multi": {
+      "aurc": 0.40537718635242387,
+      "auroc": 0.6519,
+      "risk_at_30": 0.3666666666666667,
+      "risk_at_50": 0.42000000000000004,
+      "risk_at_70": 0.4214285714285714,
+      "score_summary": {
+        "max": 0.42176639363534973,
+        "mean": 0.2985238999619726,
+        "min": 0.16699099233826492,
+        "unique": 200
+      }
+    },
+    "retrieval_stability": {
+      "aurc": 0.5129095578377818,
+      "auroc": 0.5491,
+      "risk_at_30": 0.5333333333333333,
+      "risk_at_50": 0.42000000000000004,
+      "risk_at_70": 0.4214285714285714,
+      "score_summary": {
+        "max": 0.75,
+        "mean": 0.6080214285714286,
+        "min": 0.51,
+        "unique": 5
+      }
+    },
+    "self_consistency_proxy": {
+      "aurc": 0.5,
+      "auroc": 0.5,
+      "risk_at_30": 0.44999999999999996,
+      "risk_at_50": 0.48,
+      "risk_at_70": 0.5071428571428571,
+      "score_summary": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0,
+        "unique": 1
+      }
+    }
+  },
+  "n": 200,
+  "negative": 100,
+  "positive": 100,
+  "private_input": "results\\hotpot_orbits_v4_n100.constant.structbalanced.private_eval.jsonl",
+  "raw_input": "results\\hotpot_orbits_v4_n100.constant.structbalanced.raw.jsonl",
+  "scored_input": "results\\hotpot_orbits_v4_n100.constant.structbalanced.textonly_scored.jsonl",
+  "source_item_groups": 100,
+  "strongest_non_csrm": {
+    "by_aurc": {
+      "method": "corm_max_clean",
+      "metrics": {
+        "aurc": 0.25,
+        "auroc": 0.5,
+        "risk_at_30": 0.44999999999999996,
+        "risk_at_50": 0.48,
+        "risk_at_70": 0.5071428571428571,
+        "score_summary": {
+          "max": 0.5,
+          "mean": 0.5,
+          "min": 0.5,
+          "unique": 1
+        }
+      }
+    },
+    "by_auroc": {
+      "method": "calibrated_logistic_orbit",
+      "metrics": {
+        "aurc": 0.2676427295574489,
+        "auroc": 0.8456,
+        "risk_at_30": 0.16666666666666663,
+        "risk_at_50": 0.22999999999999998,
+        "risk_at_70": 0.3285714285714286,
+        "score_summary": {
+          "max": 0.9027034723864833,
+          "mean": 0.5021641664470021,
+          "min": 1.4863150741456692e-05,
+          "unique": 200
+        }
+      }
+    },
+    "by_risk_at_30": {
+      "method": "calibrated_logistic_orbit",
+      "metrics": {
+        "aurc": 0.2676427295574489,
+        "auroc": 0.8456,
+        "risk_at_30": 0.16666666666666663,
+        "risk_at_50": 0.22999999999999998,
+        "risk_at_70": 0.3285714285714286,
+        "score_summary": {
+          "max": 0.9027034723864833,
+          "mean": 0.5021641664470021,
+          "min": 1.4863150741456692e-05,
+          "unique": 200
+        }
+      }
+    }
+  }
+}

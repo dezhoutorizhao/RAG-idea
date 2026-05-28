@@ -1,0 +1,214 @@
+{
+  "feature_balance": {
+    "clean_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 6.0,
+      "positive_mean": 6.0
+    },
+    "max_retrieval_score": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 0.5,
+      "positive_mean": 0.5
+    },
+    "mean_doc_chars": {
+      "absolute_mean_gap": 0.010833333333266637,
+      "negative_mean": 504.26916666666665,
+      "positive_mean": 504.2583333333334
+    },
+    "mean_retrieval_score": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 0.5,
+      "positive_mean": 0.5
+    },
+    "perturbation_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 1.0,
+      "positive_mean": 1.0
+    },
+    "total_doc_chars": {
+      "absolute_mean_gap": 0.12999999999919964,
+      "negative_mean": 6051.23,
+      "positive_mean": 6051.1
+    },
+    "total_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 12.0,
+      "positive_mean": 12.0
+    }
+  },
+  "input_n": 400,
+  "input_negative": 300,
+  "input_positive": 100,
+  "inputs": {
+    "private": "results\\hotpot_orbits_v4_n100.private_eval.jsonl",
+    "raw": "results\\hotpot_orbits_v4_n100.constant.raw.jsonl",
+    "scored": "results\\hotpot_orbits_v4_n100.constant.textonly_scored.jsonl"
+  },
+  "outputs": {
+    "private": "results\\hotpot_orbits_v4_n100.constant.structbalanced.private_eval.jsonl",
+    "raw": "results\\hotpot_orbits_v4_n100.constant.structbalanced.raw.jsonl",
+    "report": "results\\hotpot_orbits_v4_n100.constant.structbalanced.balance_report.json",
+    "scored": "results\\hotpot_orbits_v4_n100.constant.structbalanced.textonly_scored.jsonl"
+  },
+  "search": {
+    "candidate_combinations_evaluated": 100000,
+    "candidate_combinations_total": 4158251463258564744783383526326405580280466005743648708663033657304756328324008620,
+    "exhaustive": false,
+    "max_combinations": 100000,
+    "objective": "minimize structural-only max single-feature AUROC, then mean feature gap",
+    "seed": 97
+  },
+  "selected_n": 200,
+  "selected_negative": 100,
+  "selected_negative_orbit_ids": [
+    "hotpot:5adf8a065542992d7e9f9392:missing_hop",
+    "hotpot:5a7283365542991f9a20c4b2:false_premise",
+    "hotpot:5a8b051255429971feec460e:missing_hop",
+    "hotpot:5a8eed625542995085b374b9:distractor",
+    "hotpot:5ae18b555542997b2ef7d1f7:false_premise",
+    "hotpot:5ab8c3c65542991b5579effd:missing_hop",
+    "hotpot:5ab8c3c65542991b5579effd:distractor",
+    "hotpot:5abd0553554299700f9d7963:missing_hop",
+    "hotpot:5ac524e55542994611c8b3d0:distractor",
+    "hotpot:5ae53fcb55429960a22e029e:distractor",
+    "hotpot:5ab6ecd85542991d322236cf:distractor",
+    "hotpot:5a716dc15542994082a3e82b:false_premise",
+    "hotpot:5a716dc15542994082a3e82b:distractor",
+    "hotpot:5ab28e2a5542993be8fa9947:missing_hop",
+    "hotpot:5ab28e2a5542993be8fa9947:distractor",
+    "hotpot:5a7e1ad155429965cec5ea66:distractor",
+    "hotpot:5ab2ce27554299545a2cfa98:false_premise",
+    "hotpot:5a8f503c5542992414482a34:distractor",
+    "hotpot:5ac5630e5542993e66e823d5:missing_hop",
+    "hotpot:5a81711455429938b614233e:distractor",
+    "hotpot:5adfc77b554299603e4183ab:false_premise",
+    "hotpot:5adfc77b554299603e4183ab:distractor",
+    "hotpot:5a802b595542995d8a8ddf51:distractor",
+    "hotpot:5a716eeb5542994082a3e82e:false_premise",
+    "hotpot:5ac0dcf25542996f0d89cc2c:distractor",
+    "hotpot:5adfffe755429925eb1afbd1:false_premise",
+    "hotpot:5a8f43555542992414482a21:missing_hop",
+    "hotpot:5a8f43555542992414482a21:false_premise",
+    "hotpot:5a8f43555542992414482a21:distractor",
+    "hotpot:5ae5fd395542996de7b71ab3:missing_hop",
+    "hotpot:5ae5fd395542996de7b71ab3:distractor",
+    "hotpot:5ae12fcf5542990adbacf72c:missing_hop",
+    "hotpot:5ae12fcf5542990adbacf72c:false_premise",
+    "hotpot:5abbf698554299114383a0b5:missing_hop",
+    "hotpot:5a79f95d5542996c55b2dcbd:distractor",
+    "hotpot:5ab811395542990e739ec80f:false_premise",
+    "hotpot:5ab811395542990e739ec80f:distractor",
+    "hotpot:5abf8ae85542990832d3a14b:missing_hop",
+    "hotpot:5a7e1a2955429965cec5ea5d:false_premise",
+    "hotpot:5abd68b45542993062266c77:missing_hop",
+    "hotpot:5abd245555429924427fcf0f:false_premise",
+    "hotpot:5a79e7b45542994f819ef0ff:distractor",
+    "hotpot:5a7b48b15542995eb53be8eb:missing_hop",
+    "hotpot:5a7b48b15542995eb53be8eb:distractor",
+    "hotpot:5a7c6c9d554299683c1c6302:false_premise",
+    "hotpot:5ae34b275542992e3233c371:false_premise",
+    "hotpot:5ae34b275542992e3233c371:distractor",
+    "hotpot:5a85db6e5542994c784ddb96:distractor",
+    "hotpot:5adcfbf45542990d50227d86:false_premise",
+    "hotpot:5ab8524f5542990e739ec8c4:false_premise",
+    "hotpot:5a7dbb605542997cc2c47486:missing_hop",
+    "hotpot:5a7dbb605542997cc2c47486:false_premise",
+    "hotpot:5ae0038655429925eb1afbe0:distractor",
+    "hotpot:5abd0097554299700f9d7956:false_premise",
+    "hotpot:5a81d92f554299676cceb0f9:false_premise",
+    "hotpot:5a72120e55429971e9dc923f:distractor",
+    "hotpot:5a7df7115542990b8f503b0f:false_premise",
+    "hotpot:5adc1af75542994650320c75:missing_hop",
+    "hotpot:5adc1af75542994650320c75:distractor",
+    "hotpot:5a7cef6955429909bec768ad:missing_hop",
+    "hotpot:5a7cef6955429909bec768ad:distractor",
+    "hotpot:5a84a7f95542992a431d1a85:missing_hop",
+    "hotpot:5a84a7f95542992a431d1a85:false_premise",
+    "hotpot:5a84a7f95542992a431d1a85:distractor",
+    "hotpot:5aba71be5542994dbf01990c:distractor",
+    "hotpot:5ac1276c554299294b2190bc:missing_hop",
+    "hotpot:5ac1276c554299294b2190bc:distractor",
+    "hotpot:5ab7178f5542991d32223774:missing_hop",
+    "hotpot:5ab7178f5542991d32223774:distractor",
+    "hotpot:5a8332815542993344745fe9:false_premise",
+    "hotpot:5a7cb993554299452d57b9c2:distractor",
+    "hotpot:5ae51fa25542992663a4f11f:distractor",
+    "hotpot:5ae7281c5542991e8301cb69:missing_hop",
+    "hotpot:5a7f3c8f55429930675136c9:missing_hop",
+    "hotpot:5a7f3c8f55429930675136c9:false_premise",
+    "hotpot:5ac43e0f554299076e296d8e:missing_hop",
+    "hotpot:5ac43e0f554299076e296d8e:distractor",
+    "hotpot:5ae0d7315542990adbacf678:missing_hop",
+    "hotpot:5ae7b271554299540e5a564d:missing_hop",
+    "hotpot:5ab29624554299545a2cf9b5:false_premise",
+    "hotpot:5a84a8ce5542997175ce1f1c:distractor",
+    "hotpot:5ae684925542995703ce8b71:missing_hop",
+    "hotpot:5a7fc03d5542992097ad2fbc:missing_hop",
+    "hotpot:5a7a05485542990783324def:missing_hop",
+    "hotpot:5a7a05485542990783324def:false_premise",
+    "hotpot:5aba6f3e55429955dce3ee21:distractor",
+    "hotpot:5adfe0de55429925eb1afae9:false_premise",
+    "hotpot:5ab73de755429928e1fe383b:distractor",
+    "hotpot:5a801e845542992097ad2fd9:missing_hop",
+    "hotpot:5a801e845542992097ad2fd9:distractor",
+    "hotpot:5ae4cf975542990ba0bbb151:false_premise",
+    "hotpot:5adfd42555429942ec259b52:distractor",
+    "hotpot:5ae1e6d95542997283cd22c3:distractor",
+    "hotpot:5a888fe6554299206df2b2f7:missing_hop",
+    "hotpot:5a8f5a185542992414482a71:distractor",
+    "hotpot:5a8e296f554299068b959e71:false_premise",
+    "hotpot:5a7263e05542997f82783998:false_premise",
+    "hotpot:5abecdf45542997719eab5d4:missing_hop",
+    "hotpot:5abecdf45542997719eab5d4:false_premise",
+    "hotpot:5abecdf45542997719eab5d4:distractor"
+  ],
+  "selected_positive": 100,
+  "structural_only_probe": {
+    "features": {
+      "clean_doc_count": {
+        "auroc": 0.5,
+        "mean_negative": 6.0,
+        "mean_positive": 6.0,
+        "unique_values": 1
+      },
+      "max_retrieval_score": {
+        "auroc": 0.5,
+        "mean_negative": 0.5,
+        "mean_positive": 0.5,
+        "unique_values": 1
+      },
+      "mean_doc_chars": {
+        "auroc": 0.5,
+        "mean_negative": 504.26916666666665,
+        "mean_positive": 504.2583333333334,
+        "unique_values": 196
+      },
+      "mean_retrieval_score": {
+        "auroc": 0.5,
+        "mean_negative": 0.5,
+        "mean_positive": 0.5,
+        "unique_values": 1
+      },
+      "perturbation_count": {
+        "auroc": 0.5,
+        "mean_negative": 1.0,
+        "mean_positive": 1.0,
+        "unique_values": 1
+      },
+      "total_doc_chars": {
+        "auroc": 0.5,
+        "mean_negative": 6051.23,
+        "mean_positive": 6051.1,
+        "unique_values": 196
+      },
+      "total_doc_count": {
+        "auroc": 0.5,
+        "mean_negative": 12.0,
+        "mean_positive": 12.0,
+        "unique_values": 1
+      }
+    },
+    "max_single_feature_auroc": 0.5,
+    "passed_0_55_threshold": true
+  }
+}
