@@ -1,0 +1,146 @@
+{
+  "baselines": [
+    "corm_max_clean",
+    "single_set_sure_style",
+    "naive_orbit_average"
+  ],
+  "comparisons": {
+    "corm_max_clean": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.01747166828460517,
+          "p2_5": -0.04447981245193072,
+          "p97_5": 0.0520505658290924
+        },
+        "auroc_improvement": {
+          "median": 0.3914891489148915,
+          "p2_5": 0.33609687468596117,
+          "p97_5": 0.43739983974358976
+        },
+        "risk_at_30_reduction": {
+          "median": 0.35,
+          "p2_5": 0.21666666666666667,
+          "p97_5": 0.4999999999999999
+        },
+        "risk_at_50_reduction": {
+          "median": 0.3500000000000001,
+          "p2_5": 0.25,
+          "p97_5": 0.44000000000000006
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.018093224892237053,
+        "auroc_improvement": 0.39280000000000004,
+        "baseline": {
+          "aurc": 0.25,
+          "auroc": 0.5,
+          "risk_at_30": 0.5,
+          "risk_at_50": 0.5
+        },
+        "risk_at_30_reduction": 0.35,
+        "risk_at_50_reduction": 0.36,
+        "target": {
+          "aurc": 0.23190677510776295,
+          "auroc": 0.8928,
+          "risk_at_30": 0.15000000000000002,
+          "risk_at_50": 0.14
+        }
+      }
+    },
+    "naive_orbit_average": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.042229901306704815,
+          "p2_5": 0.02255340099570352,
+          "p97_5": 0.06456412163773231
+        },
+        "auroc_improvement": {
+          "median": 0.06189123376623373,
+          "p2_5": 0.03475560897435892,
+          "p97_5": 0.0930349257326375
+        },
+        "risk_at_30_reduction": {
+          "median": 0.06666666666666665,
+          "p2_5": 0.016666666666666607,
+          "p97_5": 0.1333333333333333
+        },
+        "risk_at_50_reduction": {
+          "median": 0.08999999999999997,
+          "p2_5": 0.030000000000000027,
+          "p97_5": 0.14
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.0419760289032666,
+        "auroc_improvement": 0.062100000000000044,
+        "baseline": {
+          "aurc": 0.27388280401102955,
+          "auroc": 0.8307,
+          "risk_at_30": 0.21666666666666667,
+          "risk_at_50": 0.24
+        },
+        "risk_at_30_reduction": 0.06666666666666665,
+        "risk_at_50_reduction": 0.09999999999999998,
+        "target": {
+          "aurc": 0.23190677510776295,
+          "auroc": 0.8928,
+          "risk_at_30": 0.15000000000000002,
+          "risk_at_50": 0.14
+        }
+      }
+    },
+    "single_set_sure_style": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.26369755597698136,
+          "p2_5": 0.20244696923025435,
+          "p97_5": 0.3248231577545578
+        },
+        "auroc_improvement": {
+          "median": 0.3953804347826087,
+          "p2_5": 0.3173076923076923,
+          "p97_5": 0.4618558776167472
+        },
+        "risk_at_30_reduction": {
+          "median": 0.35,
+          "p2_5": 0.25,
+          "p97_5": 0.4833333333333333
+        },
+        "risk_at_50_reduction": {
+          "median": 0.35,
+          "p2_5": 0.27,
+          "p97_5": 0.43000000000000005
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.265593224892237,
+        "auroc_improvement": 0.39280000000000004,
+        "baseline": {
+          "aurc": 0.4975,
+          "auroc": 0.5,
+          "risk_at_30": 0.5,
+          "risk_at_50": 0.5
+        },
+        "risk_at_30_reduction": 0.35,
+        "risk_at_50_reduction": 0.36,
+        "target": {
+          "aurc": 0.23190677510776295,
+          "auroc": 0.8928,
+          "risk_at_30": 0.15000000000000002,
+          "risk_at_50": 0.14
+        }
+      }
+    }
+  },
+  "input": "results\\hotpot_orbits_v4_semanticswap_n100.constant.textonly_scored.jsonl",
+  "n": 200,
+  "negative": 100,
+  "positive": 100,
+  "target": "csrm"
+}

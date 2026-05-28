@@ -1,0 +1,107 @@
+{
+  "group_split_probe": {
+    "folds": {
+      "0": {
+        "groups": 39,
+        "n": 78,
+        "negative": 39,
+        "positive": 39
+      },
+      "1": {
+        "groups": 28,
+        "n": 56,
+        "negative": 28,
+        "positive": 28
+      },
+      "2": {
+        "groups": 33,
+        "n": 66,
+        "negative": 33,
+        "positive": 33
+      }
+    },
+    "max_group_overlap_between_folds": 0,
+    "n_groups": 100,
+    "passed_no_group_overlap": true
+  },
+  "inputs": {
+    "private": "results\\hotpot_orbits_v4_semanticswap_n100.private_eval.jsonl",
+    "raw": "results\\hotpot_orbits_v4_semanticswap_n100.constant.raw.jsonl",
+    "scored": "results\\hotpot_orbits_v4_semanticswap_n100.constant.textonly_scored.jsonl"
+  },
+  "interpretation": {
+    "private_metadata_note": "This is an upper bound from evaluator-only private fields; high values mean these fields must never reach scorers.",
+    "random_label_pass_threshold": "random_label_csrm_auroc_median near 0.5 is preferred",
+    "structural_only_pass_threshold": "max_single_feature_auroc <= 0.55 is preferred"
+  },
+  "n": 200,
+  "negative": 100,
+  "positive": 100,
+  "private_metadata_leakage_upper_bound": {
+    "construction_type_oriented_auroc": 1.0,
+    "construction_type_positive_rate": {
+      "semantic_swap": 0.0,
+      "stable": 1.0
+    }
+  },
+  "random_label_sanity": {
+    "auroc": {
+      "max": 0.5926,
+      "median": 0.49575,
+      "min": 0.4179,
+      "p2_5": 0.4275,
+      "p97_5": 0.5733
+    },
+    "trials": 200,
+    "valid_trials": 200
+  },
+  "raw_firewall_passed": true,
+  "structural_only_probe": {
+    "features": {
+      "clean_doc_count": {
+        "auroc": 0.5,
+        "mean_negative": 6.0,
+        "mean_positive": 6.0,
+        "unique_values": 1
+      },
+      "max_retrieval_score": {
+        "auroc": 0.5,
+        "mean_negative": 0.5,
+        "mean_positive": 0.5,
+        "unique_values": 1
+      },
+      "mean_doc_chars": {
+        "auroc": 0.50105,
+        "mean_negative": 495.1475,
+        "mean_positive": 494.98333333333335,
+        "unique_values": 172
+      },
+      "mean_retrieval_score": {
+        "auroc": 0.5,
+        "mean_negative": 0.5,
+        "mean_positive": 0.5,
+        "unique_values": 1
+      },
+      "perturbation_count": {
+        "auroc": 0.5,
+        "mean_negative": 1.0,
+        "mean_positive": 1.0,
+        "unique_values": 1
+      },
+      "total_doc_chars": {
+        "auroc": 0.50105,
+        "mean_negative": 5941.77,
+        "mean_positive": 5939.8,
+        "unique_values": 172
+      },
+      "total_doc_count": {
+        "auroc": 0.5,
+        "mean_negative": 12.0,
+        "mean_positive": 12.0,
+        "unique_values": 1
+      }
+    },
+    "max_single_feature_auroc": 0.50105,
+    "passed_0_55_threshold": true
+  }
+}

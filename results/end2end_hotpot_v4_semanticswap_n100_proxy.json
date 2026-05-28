@@ -1,0 +1,2894 @@
+{
+  "generators": [
+    "copy_candidate",
+    "lexical_guarded"
+  ],
+  "n": 200,
+  "notes": [
+    "This is an end-to-end selective RAG proxy over materialized v4 evidence sets.",
+    "Correctness requires both generated answer match and answerable evidence label.",
+    "It is not a full CoRM-RAG reproduction with fresh Wikipedia retrieval/generation."
+  ],
+  "private_input": "results\\hotpot_orbits_v4_semanticswap_n100.private_eval.jsonl",
+  "raw_input": "results\\hotpot_orbits_v4_semanticswap_n100.constant.raw.jsonl",
+  "results": {
+    "copy_candidate": {
+      "answer_accuracy": 0.5,
+      "methods": {
+        "clean_retrieval_max": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.5,
+            "coverage": 0.3,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "coverage": 0.5,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.5,
+            "coverage": 0.7,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.25,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "n": 200
+        },
+        "corm_max_clean": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.5,
+            "coverage": 0.3,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "coverage": 0.5,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.5,
+            "coverage": 0.7,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.25,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "n": 200
+        },
+        "csrm": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.85,
+            "coverage": 0.3,
+            "risk": 0.15000000000000002,
+            "threshold": 0.5555016347335522
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.86,
+            "coverage": 0.5,
+            "risk": 0.14,
+            "threshold": 0.5416355360410612
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.6928571428571428,
+            "coverage": 0.7,
+            "risk": 0.30714285714285716,
+            "threshold": 0.5003313227838954
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.23190677510776295,
+          "coverage_at_risk_10": {
+            "accepted": 10,
+            "coverage": 0.05,
+            "risk": 0.09999999999999998,
+            "threshold": 0.577324355222991
+          },
+          "coverage_at_risk_20": {
+            "accepted": 120,
+            "coverage": 0.6,
+            "risk": 0.19999999999999996,
+            "threshold": 0.5262758273226927
+          },
+          "n": 200
+        },
+        "generator_confidence": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.5,
+            "coverage": 0.3,
+            "risk": 0.5,
+            "threshold": 1.0
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "coverage": 0.5,
+            "risk": 0.5,
+            "threshold": 1.0
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.5,
+            "coverage": 0.7,
+            "risk": 0.5,
+            "threshold": 1.0
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.5,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 1.0
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 1.0
+          },
+          "n": 200
+        },
+        "naive_orbit_average": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.7833333333333333,
+            "coverage": 0.3,
+            "risk": 0.21666666666666667,
+            "threshold": 0.19769394411021446
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.76,
+            "coverage": 0.5,
+            "risk": 0.24,
+            "threshold": 0.1774821451950756
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.6857142857142857,
+            "coverage": 0.7,
+            "risk": 0.3142857142857143,
+            "threshold": 0.14353588668783251
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.27388280401102955,
+          "coverage_at_risk_10": {
+            "accepted": 6,
+            "coverage": 0.03,
+            "risk": 0.0,
+            "threshold": 0.2471900711617046
+          },
+          "coverage_at_risk_20": {
+            "accepted": 71,
+            "coverage": 0.355,
+            "risk": 0.19718309859154926,
+            "threshold": 0.18974889010549262
+          },
+          "n": 200
+        },
+        "single_set_sure_style": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.5,
+            "coverage": 0.3,
+            "risk": 0.5,
+            "threshold": 0.21409321071608012
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "coverage": 0.5,
+            "risk": 0.5,
+            "threshold": 0.19745170826024533
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.5,
+            "coverage": 0.7,
+            "risk": 0.5,
+            "threshold": 0.18418225635906055
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.4975,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.2813664360170441
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.2813664360170441
+          },
+          "n": 200
+        }
+      },
+      "outputs": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:semantic_swap"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:semantic_swap"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a890b895542995153361278:stable"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a890b895542995153361278:semantic_swap"
+        },
+        {
+          "answer": "Mariaan de Swardt",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a90b2175542990a984936ae:stable"
+        },
+        {
+          "answer": "Mariaan de Swardt",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a90b2175542990a984936ae:semantic_swap"
+        },
+        {
+          "answer": "Hellenism",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a881cbb55429938390d3ee7:stable"
+        },
+        {
+          "answer": "Hellenism",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a881cbb55429938390d3ee7:semantic_swap"
+        },
+        {
+          "answer": "comparable to the seven Wonders of the World",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a764c0b55429976ec32bd89:stable"
+        },
+        {
+          "answer": "comparable to the seven Wonders of the World",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a764c0b55429976ec32bd89:semantic_swap"
+        },
+        {
+          "answer": "Oyster Bay",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac2da27554299657fa2909f:stable"
+        },
+        {
+          "answer": "Oyster Bay",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac2da27554299657fa2909f:semantic_swap"
+        },
+        {
+          "answer": "Sam Phillips",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac26ac15542992f1f2b38bc:stable"
+        },
+        {
+          "answer": "Sam Phillips",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac26ac15542992f1f2b38bc:semantic_swap"
+        },
+        {
+          "answer": "Denmark men's national ice hockey",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8a521d5542992d82986f15:stable"
+        },
+        {
+          "answer": "Denmark men's national ice hockey",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8a521d5542992d82986f15:semantic_swap"
+        },
+        {
+          "answer": "people working in film and the performing arts",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae650fb55429929b0807b2e:stable"
+        },
+        {
+          "answer": "people working in film and the performing arts",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae650fb55429929b0807b2e:semantic_swap"
+        },
+        {
+          "answer": "Milium",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8bc1b85542997f31a41db8:stable"
+        },
+        {
+          "answer": "Milium",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8bc1b85542997f31a41db8:semantic_swap"
+        },
+        {
+          "answer": "Kairi in the video game series \"Kingdom Hearts\".",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ab209ec554299722f9b4ca2:stable"
+        },
+        {
+          "answer": "Kairi in the video game series \"Kingdom Hearts\".",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ab209ec554299722f9b4ca2:semantic_swap"
+        },
+        {
+          "answer": "Donald McNichol",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8bb90f5542996e8ac88a02:stable"
+        },
+        {
+          "answer": "Donald McNichol",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8bb90f5542996e8ac88a02:semantic_swap"
+        },
+        {
+          "answer": "Alfred Hitchcock",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac31b0a554299741d48a1f0:stable"
+        },
+        {
+          "answer": "Alfred Hitchcock",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac31b0a554299741d48a1f0:semantic_swap"
+        },
+        {
+          "answer": "8 km",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adf3e355542993a75d26440:stable"
+        },
+        {
+          "answer": "8 km",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adf3e355542993a75d26440:semantic_swap"
+        },
+        {
+          "answer": "Razor Ramon",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5abd245555429924427fcf0f:stable"
+        },
+        {
+          "answer": "Razor Ramon",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5abd245555429924427fcf0f:semantic_swap"
+        },
+        {
+          "answer": "Province of Canterbury",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a84b5975542991dd0999da3:stable"
+        },
+        {
+          "answer": "Province of Canterbury",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a84b5975542991dd0999da3:semantic_swap"
+        },
+        {
+          "answer": "Mayor of the City of New York",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744:stable"
+        },
+        {
+          "answer": "Mayor of the City of New York",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744:semantic_swap"
+        },
+        {
+          "answer": "Chrysler K platform",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01:stable"
+        },
+        {
+          "answer": "Chrysler K platform",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01:semantic_swap"
+        },
+        {
+          "answer": "New York City, New York",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7b374c5542995eb53be8cc:stable"
+        },
+        {
+          "answer": "New York City, New York",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7b374c5542995eb53be8cc:semantic_swap"
+        },
+        {
+          "answer": "New York",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7b63eb55429931da12ca7e:stable"
+        },
+        {
+          "answer": "New York",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7b63eb55429931da12ca7e:semantic_swap"
+        },
+        {
+          "answer": "Badfinger",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a90492655429933b8a204d8:stable"
+        },
+        {
+          "answer": "Badfinger",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a90492655429933b8a204d8:semantic_swap"
+        },
+        {
+          "answer": "Dr. Brewster M. Higley",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8a502b5542996c9b8d5ea6:stable"
+        },
+        {
+          "answer": "Dr. Brewster M. Higley",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8a502b5542996c9b8d5ea6:semantic_swap"
+        },
+        {
+          "answer": "Pasek and Paul",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae5a4e5554299546bf82f01:stable"
+        },
+        {
+          "answer": "Pasek and Paul",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae5a4e5554299546bf82f01:semantic_swap"
+        },
+        {
+          "answer": "Sherwood Stewart",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a78e3b955429974737f78f1:stable"
+        },
+        {
+          "answer": "Sherwood Stewart",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a78e3b955429974737f78f1:semantic_swap"
+        },
+        {
+          "answer": "Athenion",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a85cd295542997175ce202b:stable"
+        },
+        {
+          "answer": "Athenion",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a85cd295542997175ce202b:semantic_swap"
+        },
+        {
+          "answer": "manager",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5add6cf45542992ae4cec55f:stable"
+        },
+        {
+          "answer": "manager",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5add6cf45542992ae4cec55f:semantic_swap"
+        },
+        {
+          "answer": "IT",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a86fde6554299211dda2b7f:stable"
+        },
+        {
+          "answer": "IT",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a86fde6554299211dda2b7f:semantic_swap"
+        },
+        {
+          "answer": "no",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8198565542995ce29dcc13:stable"
+        },
+        {
+          "answer": "no",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8198565542995ce29dcc13:semantic_swap"
+        },
+        {
+          "answer": "Juan Carlos Onetti",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a79332555429907847277e7:stable"
+        },
+        {
+          "answer": "Juan Carlos Onetti",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a79332555429907847277e7:semantic_swap"
+        },
+        {
+          "answer": "Jennifer Taylor",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac31602554299741d48a1bf:stable"
+        },
+        {
+          "answer": "Jennifer Taylor",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac31602554299741d48a1bf:semantic_swap"
+        },
+        {
+          "answer": "1860",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae4a2e25542996836b02cee:stable"
+        },
+        {
+          "answer": "1860",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae4a2e25542996836b02cee:semantic_swap"
+        },
+        {
+          "answer": "Wakefern Food Corporation",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8192045542995ce29dcc04:stable"
+        },
+        {
+          "answer": "Wakefern Food Corporation",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8192045542995ce29dcc04:semantic_swap"
+        },
+        {
+          "answer": "five months",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a817d8c55429903bc27b974:stable"
+        },
+        {
+          "answer": "five months",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a817d8c55429903bc27b974:semantic_swap"
+        },
+        {
+          "answer": "Orissa",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adf0ae45542992d7e9f9286:stable"
+        },
+        {
+          "answer": "Orissa",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adf0ae45542992d7e9f9286:semantic_swap"
+        },
+        {
+          "answer": "Benny Andersson",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7309a15542992359bc320c:stable"
+        },
+        {
+          "answer": "Benny Andersson",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7309a15542992359bc320c:semantic_swap"
+        },
+        {
+          "answer": "1954",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac54f8d5542993e66e822f5:stable"
+        },
+        {
+          "answer": "1954",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac54f8d5542993e66e822f5:semantic_swap"
+        },
+        {
+          "answer": "University of Texas Longhorns",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae5cf625542996de7b71a22:stable"
+        },
+        {
+          "answer": "University of Texas Longhorns",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae5cf625542996de7b71a22:semantic_swap"
+        },
+        {
+          "answer": "Curtis James Martin Jr.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae1d5a3554299234fd04319:stable"
+        },
+        {
+          "answer": "Curtis James Martin Jr.",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae1d5a3554299234fd04319:semantic_swap"
+        },
+        {
+          "answer": "Woking, England",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ab6390f5542995eadeeff7a:stable"
+        },
+        {
+          "answer": "Woking, England",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ab6390f5542995eadeeff7a:semantic_swap"
+        },
+        {
+          "answer": "Rudebox",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7344e95542991f9a20c6ce:stable"
+        },
+        {
+          "answer": "Rudebox",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7344e95542991f9a20c6ce:semantic_swap"
+        },
+        {
+          "answer": "National Aviation Hall of Fame",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5aba7cb455429901930fa7eb:stable"
+        },
+        {
+          "answer": "National Aviation Hall of Fame",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5aba7cb455429901930fa7eb:semantic_swap"
+        },
+        {
+          "answer": "cocktail",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac083b0554299294b21900d:stable"
+        },
+        {
+          "answer": "cocktail",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac083b0554299294b21900d:semantic_swap"
+        },
+        {
+          "answer": "1988",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7d1bf65542995ed0d165f0:stable"
+        },
+        {
+          "answer": "1988",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7d1bf65542995ed0d165f0:semantic_swap"
+        },
+        {
+          "answer": "Hannaford",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a81a2705542990a1d231e30:stable"
+        },
+        {
+          "answer": "Hannaford",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a81a2705542990a1d231e30:semantic_swap"
+        },
+        {
+          "answer": "Ian Thomas Garner MacKaye",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a82626655429966c78a6a08:stable"
+        },
+        {
+          "answer": "Ian Thomas Garner MacKaye",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a82626655429966c78a6a08:semantic_swap"
+        },
+        {
+          "answer": "Edward Lucky McKee",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a88a23f5542997e5c09a652:stable"
+        },
+        {
+          "answer": "Edward Lucky McKee",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a88a23f5542997e5c09a652:semantic_swap"
+        },
+        {
+          "answer": "no",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae518ae5542993aec5ec13c:stable"
+        },
+        {
+          "answer": "no",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae518ae5542993aec5ec13c:semantic_swap"
+        },
+        {
+          "answer": "San Diego County Fair",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8d227a554299585d9e37b1:stable"
+        },
+        {
+          "answer": "San Diego County Fair",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8d227a554299585d9e37b1:semantic_swap"
+        },
+        {
+          "answer": "Sarajevo",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae5dae2554299546bf82fa4:stable"
+        },
+        {
+          "answer": "Sarajevo",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae5dae2554299546bf82fa4:semantic_swap"
+        },
+        {
+          "answer": "December 13, 2015",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac0e0c75542997d64295a6e:stable"
+        },
+        {
+          "answer": "December 13, 2015",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac0e0c75542997d64295a6e:semantic_swap"
+        },
+        {
+          "answer": "Murcia",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8268aa55429940e5e1a8aa:stable"
+        },
+        {
+          "answer": "Murcia",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8268aa55429940e5e1a8aa:semantic_swap"
+        },
+        {
+          "answer": "Sam Taylor",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a79c1095542996c55b2dc62:stable"
+        },
+        {
+          "answer": "Sam Taylor",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a79c1095542996c55b2dc62:semantic_swap"
+        },
+        {
+          "answer": "mixed martial arts",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae18d615542997283cd2229:stable"
+        },
+        {
+          "answer": "mixed martial arts",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae18d615542997283cd2229:semantic_swap"
+        },
+        {
+          "answer": "Via Vai",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae0156455429942ec259c15:stable"
+        },
+        {
+          "answer": "Via Vai",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae0156455429942ec259c15:semantic_swap"
+        },
+        {
+          "answer": "musician, editor and composer.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a876f785542993e715abf42:stable"
+        },
+        {
+          "answer": "musician, editor and composer.",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a876f785542993e715abf42:semantic_swap"
+        },
+        {
+          "answer": "21",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae25d2b554299495565da46:stable"
+        },
+        {
+          "answer": "21",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae25d2b554299495565da46:semantic_swap"
+        },
+        {
+          "answer": "The Process",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a9068f85542990a98493623:stable"
+        },
+        {
+          "answer": "The Process",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a9068f85542990a98493623:semantic_swap"
+        },
+        {
+          "answer": "the City of Peace",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a772c395542993735360207:stable"
+        },
+        {
+          "answer": "the City of Peace",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a772c395542993735360207:semantic_swap"
+        },
+        {
+          "answer": "fifth-largest",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a80522b5542996402f6a4c1:stable"
+        },
+        {
+          "answer": "fifth-largest",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a80522b5542996402f6a4c1:semantic_swap"
+        },
+        {
+          "answer": "director and screenwriter.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5add60905542995b365fab1d:stable"
+        },
+        {
+          "answer": "director and screenwriter.",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5add60905542995b365fab1d:semantic_swap"
+        },
+        {
+          "answer": "Transporter 3",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a75092b55429916b0164242:stable"
+        },
+        {
+          "answer": "Transporter 3",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a75092b55429916b0164242:semantic_swap"
+        },
+        {
+          "answer": "Koch Industries",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adf8ade5542993344016ce8:stable"
+        },
+        {
+          "answer": "Koch Industries",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adf8ade5542993344016ce8:semantic_swap"
+        },
+        {
+          "answer": "July 25 to August 4",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae25e835542992decbdccd1:stable"
+        },
+        {
+          "answer": "July 25 to August 4",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae25e835542992decbdccd1:semantic_swap"
+        },
+        {
+          "answer": "North Sea",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8013e45542995d8a8ddf41:stable"
+        },
+        {
+          "answer": "North Sea",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8013e45542995d8a8ddf41:semantic_swap"
+        },
+        {
+          "answer": "ranch hand Jett Rink",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a871a5e5542996432c5721e:stable"
+        },
+        {
+          "answer": "ranch hand Jett Rink",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a871a5e5542996432c5721e:semantic_swap"
+        },
+        {
+          "answer": "1874",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5abd8c295542992ac4f382ab:stable"
+        },
+        {
+          "answer": "1874",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5abd8c295542992ac4f382ab:semantic_swap"
+        },
+        {
+          "answer": "brothers",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8b8b3a5542995d1e6f13e5:stable"
+        },
+        {
+          "answer": "brothers",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8b8b3a5542995d1e6f13e5:semantic_swap"
+        },
+        {
+          "answer": "27 January 1974",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae6363b55429929b0807af0:stable"
+        },
+        {
+          "answer": "27 January 1974",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae6363b55429929b0807af0:semantic_swap"
+        },
+        {
+          "answer": "German",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac0b8395542996f0d89cc21:stable"
+        },
+        {
+          "answer": "German",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac0b8395542996f0d89cc21:semantic_swap"
+        },
+        {
+          "answer": "Marvel",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adf3e835542993a75d26442:stable"
+        },
+        {
+          "answer": "Marvel",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adf3e835542993a75d26442:semantic_swap"
+        },
+        {
+          "answer": "The Handmaid's Tale",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a731a635542994cef4bc458:stable"
+        },
+        {
+          "answer": "The Handmaid's Tale",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a731a635542994cef4bc458:semantic_swap"
+        },
+        {
+          "answer": "Abraham Alfonse Albert Gallatin",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adcc90c5542990d50227d1b:stable"
+        },
+        {
+          "answer": "Abraham Alfonse Albert Gallatin",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adcc90c5542990d50227d1b:semantic_swap"
+        },
+        {
+          "answer": "Port Clinton",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae402085542995dadf242ca:stable"
+        },
+        {
+          "answer": "Port Clinton",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae402085542995dadf242ca:semantic_swap"
+        },
+        {
+          "answer": "Ector County",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a81d19b55429926c1cdad90:stable"
+        },
+        {
+          "answer": "Ector County",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a81d19b55429926c1cdad90:semantic_swap"
+        },
+        {
+          "answer": "Les Temps modernes",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a77174f55429966f1a36c4c:stable"
+        },
+        {
+          "answer": "Les Temps modernes",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a77174f55429966f1a36c4c:semantic_swap"
+        },
+        {
+          "answer": "Maxwell Smart",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a79395455429970f5fffe7d:stable"
+        },
+        {
+          "answer": "Maxwell Smart",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a79395455429970f5fffe7d:semantic_swap"
+        },
+        {
+          "answer": "international football competition",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a886886554299206df2b258:stable"
+        },
+        {
+          "answer": "international football competition",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a886886554299206df2b258:semantic_swap"
+        },
+        {
+          "answer": "Austrian Volksbanks",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adfb10855429942ec259af9:stable"
+        },
+        {
+          "answer": "Austrian Volksbanks",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adfb10855429942ec259af9:semantic_swap"
+        },
+        {
+          "answer": "Toshi Ichiyanagi",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae0d7315542990adbacf678:stable"
+        },
+        {
+          "answer": "Toshi Ichiyanagi",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae0d7315542990adbacf678:semantic_swap"
+        },
+        {
+          "answer": "November 15, 1903",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a790f5e55429970f5fffe40:stable"
+        },
+        {
+          "answer": "November 15, 1903",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a790f5e55429970f5fffe40:semantic_swap"
+        },
+        {
+          "answer": "Robert Digges Wimberly Connor",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae1b2b9554299422ee99684:stable"
+        },
+        {
+          "answer": "Robert Digges Wimberly Connor",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae1b2b9554299422ee99684:semantic_swap"
+        },
+        {
+          "answer": "Mickey's PhilharMagic",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a792ad055429907847277d1:stable"
+        },
+        {
+          "answer": "Mickey's PhilharMagic",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a792ad055429907847277d1:semantic_swap"
+        },
+        {
+          "answer": "Charles L. Clifford",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8ce851554299441c6b9f6c:stable"
+        },
+        {
+          "answer": "Charles L. Clifford",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8ce851554299441c6b9f6c:semantic_swap"
+        },
+        {
+          "answer": "The Crowned Prince of the Philadelphia Mob",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5add67915542992200553af8:stable"
+        },
+        {
+          "answer": "The Crowned Prince of the Philadelphia Mob",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5add67915542992200553af8:semantic_swap"
+        },
+        {
+          "answer": "London, England",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ab90fdd55429916710eb0fc:stable"
+        },
+        {
+          "answer": "London, England",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ab90fdd55429916710eb0fc:semantic_swap"
+        },
+        {
+          "answer": "Masayoshi \"Masa\" Takayama",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae55b8255429908b63265ef:stable"
+        },
+        {
+          "answer": "Masayoshi \"Masa\" Takayama",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae55b8255429908b63265ef:semantic_swap"
+        },
+        {
+          "answer": "November",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac213805542992f1f2b37e7:stable"
+        },
+        {
+          "answer": "November",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac213805542992f1f2b37e7:semantic_swap"
+        },
+        {
+          "answer": "320 years",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adce88b5542992c1e3a249a:stable"
+        },
+        {
+          "answer": "320 years",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adce88b5542992c1e3a249a:semantic_swap"
+        },
+        {
+          "answer": "Estadio de L\u00f3pez Cort\u00e1zar",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac403c45542997ea680c9b5:stable"
+        },
+        {
+          "answer": "Estadio de L\u00f3pez Cort\u00e1zar",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac403c45542997ea680c9b5:semantic_swap"
+        },
+        {
+          "answer": "Geraldine Page",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b:stable"
+        },
+        {
+          "answer": "Geraldine Page",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b:semantic_swap"
+        },
+        {
+          "answer": "Kill Hannah",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8078d85542995d8a8ddf78:stable"
+        },
+        {
+          "answer": "Kill Hannah",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8078d85542995d8a8ddf78:semantic_swap"
+        },
+        {
+          "answer": "Jung Yun-ho",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a85dfcc5542994775f60673:stable"
+        },
+        {
+          "answer": "Jung Yun-ho",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a85dfcc5542994775f60673:semantic_swap"
+        },
+        {
+          "answer": "Zixing",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5abd1b6e55429933744ab729:stable"
+        },
+        {
+          "answer": "Zixing",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5abd1b6e55429933744ab729:semantic_swap"
+        },
+        {
+          "answer": "bobsledder",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae33a3b5542992f92d8224a:stable"
+        },
+        {
+          "answer": "bobsledder",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae33a3b5542992f92d8224a:semantic_swap"
+        },
+        {
+          "answer": "2012",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a899bf955429946c8d6e959:stable"
+        },
+        {
+          "answer": "2012",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a899bf955429946c8d6e959:semantic_swap"
+        },
+        {
+          "answer": "Cartoon Network",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a78bd515542990784727749:stable"
+        },
+        {
+          "answer": "Cartoon Network",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a78bd515542990784727749:semantic_swap"
+        },
+        {
+          "answer": "21 years and 154 days",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8f155e554299458435d54c:stable"
+        },
+        {
+          "answer": "21 years and 154 days",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8f155e554299458435d54c:semantic_swap"
+        },
+        {
+          "answer": "Jonathan Kaplan",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7bd25a554299294a54ab13:stable"
+        },
+        {
+          "answer": "Jonathan Kaplan",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7bd25a554299294a54ab13:semantic_swap"
+        },
+        {
+          "answer": "niece",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac458f8554299204fd21f2a:stable"
+        },
+        {
+          "answer": "niece",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac458f8554299204fd21f2a:semantic_swap"
+        }
+      ]
+    },
+    "lexical_guarded": {
+      "answer_accuracy": 0.5,
+      "methods": {
+        "clean_retrieval_max": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.5,
+            "coverage": 0.3,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "coverage": 0.5,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.5,
+            "coverage": 0.7,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.25,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "n": 200
+        },
+        "corm_max_clean": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.5,
+            "coverage": 0.3,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "coverage": 0.5,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.5,
+            "coverage": 0.7,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.25,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "n": 200
+        },
+        "csrm": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.85,
+            "coverage": 0.3,
+            "risk": 0.15000000000000002,
+            "threshold": 0.5555016347335522
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.86,
+            "coverage": 0.5,
+            "risk": 0.14,
+            "threshold": 0.5416355360410612
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.6928571428571428,
+            "coverage": 0.7,
+            "risk": 0.30714285714285716,
+            "threshold": 0.5003313227838954
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.23190677510776295,
+          "coverage_at_risk_10": {
+            "accepted": 10,
+            "coverage": 0.05,
+            "risk": 0.09999999999999998,
+            "threshold": 0.577324355222991
+          },
+          "coverage_at_risk_20": {
+            "accepted": 120,
+            "coverage": 0.6,
+            "risk": 0.19999999999999996,
+            "threshold": 0.5262758273226927
+          },
+          "n": 200
+        },
+        "generator_confidence": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.5,
+            "coverage": 0.3,
+            "risk": 0.5,
+            "threshold": 0.9166666666666666
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "coverage": 0.5,
+            "risk": 0.5,
+            "threshold": 0.875
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.5,
+            "coverage": 0.7,
+            "risk": 0.5,
+            "threshold": 0.826923076923077
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.5,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 1.0
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 1.0
+          },
+          "n": 200
+        },
+        "naive_orbit_average": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.7833333333333333,
+            "coverage": 0.3,
+            "risk": 0.21666666666666667,
+            "threshold": 0.19769394411021446
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.76,
+            "coverage": 0.5,
+            "risk": 0.24,
+            "threshold": 0.1774821451950756
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.6857142857142857,
+            "coverage": 0.7,
+            "risk": 0.3142857142857143,
+            "threshold": 0.14353588668783251
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.27388280401102955,
+          "coverage_at_risk_10": {
+            "accepted": 6,
+            "coverage": 0.03,
+            "risk": 0.0,
+            "threshold": 0.2471900711617046
+          },
+          "coverage_at_risk_20": {
+            "accepted": 71,
+            "coverage": 0.355,
+            "risk": 0.19718309859154926,
+            "threshold": 0.18974889010549262
+          },
+          "n": 200
+        },
+        "single_set_sure_style": {
+          "accepted_error_at_30": {
+            "accepted": 60,
+            "accuracy": 0.5,
+            "coverage": 0.3,
+            "risk": 0.5,
+            "threshold": 0.21409321071608012
+          },
+          "accepted_error_at_50": {
+            "accepted": 100,
+            "accuracy": 0.5,
+            "coverage": 0.5,
+            "risk": 0.5,
+            "threshold": 0.19745170826024533
+          },
+          "accepted_error_at_70": {
+            "accepted": 140,
+            "accuracy": 0.5,
+            "coverage": 0.7,
+            "risk": 0.5,
+            "threshold": 0.18418225635906055
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.4975,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.2813664360170441
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.005,
+            "risk": 0.0,
+            "threshold": 0.2813664360170441
+          },
+          "n": 200
+        }
+      },
+      "outputs": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:semantic_swap"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:semantic_swap"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a890b895542995153361278:stable"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a890b895542995153361278:semantic_swap"
+        },
+        {
+          "answer": "Mariaan de Swardt",
+          "confidence": 0.925,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a90b2175542990a984936ae:stable"
+        },
+        {
+          "answer": "Mariaan de Swardt",
+          "confidence": 0.925,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a90b2175542990a984936ae:semantic_swap"
+        },
+        {
+          "answer": "Hellenism",
+          "confidence": 0.9423076923076923,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a881cbb55429938390d3ee7:stable"
+        },
+        {
+          "answer": "Hellenism",
+          "confidence": 0.9423076923076923,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a881cbb55429938390d3ee7:semantic_swap"
+        },
+        {
+          "answer": "comparable to the seven Wonders of the World",
+          "confidence": 0.6590909090909091,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a764c0b55429976ec32bd89:stable"
+        },
+        {
+          "answer": "comparable to the seven Wonders of the World",
+          "confidence": 0.6590909090909091,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a764c0b55429976ec32bd89:semantic_swap"
+        },
+        {
+          "answer": "Oyster Bay",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac2da27554299657fa2909f:stable"
+        },
+        {
+          "answer": "Oyster Bay",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac2da27554299657fa2909f:semantic_swap"
+        },
+        {
+          "answer": "Sam Phillips",
+          "confidence": 0.9375,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac26ac15542992f1f2b38bc:stable"
+        },
+        {
+          "answer": "Sam Phillips",
+          "confidence": 0.9375,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac26ac15542992f1f2b38bc:semantic_swap"
+        },
+        {
+          "answer": "Denmark men's national ice hockey",
+          "confidence": 0.8636363636363636,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8a521d5542992d82986f15:stable"
+        },
+        {
+          "answer": "Denmark men's national ice hockey",
+          "confidence": 0.8636363636363636,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8a521d5542992d82986f15:semantic_swap"
+        },
+        {
+          "answer": "people working in film and the performing arts",
+          "confidence": 0.8500000000000001,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae650fb55429929b0807b2e:stable"
+        },
+        {
+          "answer": "people working in film and the performing arts",
+          "confidence": 0.8500000000000001,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae650fb55429929b0807b2e:semantic_swap"
+        },
+        {
+          "answer": "Milium",
+          "confidence": 0.8636363636363636,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8bc1b85542997f31a41db8:stable"
+        },
+        {
+          "answer": "Milium",
+          "confidence": 0.8636363636363636,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8bc1b85542997f31a41db8:semantic_swap"
+        },
+        {
+          "answer": "Kairi in the video game series \"Kingdom Hearts\".",
+          "confidence": 0.8636363636363636,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ab209ec554299722f9b4ca2:stable"
+        },
+        {
+          "answer": "Kairi in the video game series \"Kingdom Hearts\".",
+          "confidence": 0.8636363636363636,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ab209ec554299722f9b4ca2:semantic_swap"
+        },
+        {
+          "answer": "Donald McNichol",
+          "confidence": 0.9166666666666666,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8bb90f5542996e8ac88a02:stable"
+        },
+        {
+          "answer": "Donald McNichol",
+          "confidence": 0.9166666666666666,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8bb90f5542996e8ac88a02:semantic_swap"
+        },
+        {
+          "answer": "Alfred Hitchcock",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac31b0a554299741d48a1f0:stable"
+        },
+        {
+          "answer": "Alfred Hitchcock",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac31b0a554299741d48a1f0:semantic_swap"
+        },
+        {
+          "answer": "8 km",
+          "confidence": 0.7954545454545454,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adf3e355542993a75d26440:stable"
+        },
+        {
+          "answer": "8 km",
+          "confidence": 0.7954545454545454,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adf3e355542993a75d26440:semantic_swap"
+        },
+        {
+          "answer": "Razor Ramon",
+          "confidence": 0.8333333333333334,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5abd245555429924427fcf0f:stable"
+        },
+        {
+          "answer": "Razor Ramon",
+          "confidence": 0.8333333333333334,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5abd245555429924427fcf0f:semantic_swap"
+        },
+        {
+          "answer": "Province of Canterbury",
+          "confidence": 0.7857142857142857,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a84b5975542991dd0999da3:stable"
+        },
+        {
+          "answer": "Province of Canterbury",
+          "confidence": 0.7857142857142857,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a84b5975542991dd0999da3:semantic_swap"
+        },
+        {
+          "answer": "Mayor of the City of New York",
+          "confidence": 0.9166666666666666,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744:stable"
+        },
+        {
+          "answer": "Mayor of the City of New York",
+          "confidence": 0.9166666666666666,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8ba3ff55429971feec4744:semantic_swap"
+        },
+        {
+          "answer": "Chrysler K platform",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01:stable"
+        },
+        {
+          "answer": "Chrysler K platform",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8303c255429954d2e2ec01:semantic_swap"
+        },
+        {
+          "answer": "New York City, New York",
+          "confidence": 0.953125,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7b374c5542995eb53be8cc:stable"
+        },
+        {
+          "answer": "New York City, New York",
+          "confidence": 0.953125,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7b374c5542995eb53be8cc:semantic_swap"
+        },
+        {
+          "answer": "New York",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7b63eb55429931da12ca7e:stable"
+        },
+        {
+          "answer": "New York",
+          "confidence": 0.75,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7b63eb55429931da12ca7e:semantic_swap"
+        },
+        {
+          "answer": "Badfinger",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a90492655429933b8a204d8:stable"
+        },
+        {
+          "answer": "Badfinger",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a90492655429933b8a204d8:semantic_swap"
+        },
+        {
+          "answer": "Dr. Brewster M. Higley",
+          "confidence": 0.8392857142857143,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8a502b5542996c9b8d5ea6:stable"
+        },
+        {
+          "answer": "Dr. Brewster M. Higley",
+          "confidence": 0.8392857142857143,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8a502b5542996c9b8d5ea6:semantic_swap"
+        },
+        {
+          "answer": "Pasek and Paul",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae5a4e5554299546bf82f01:stable"
+        },
+        {
+          "answer": "Pasek and Paul",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae5a4e5554299546bf82f01:semantic_swap"
+        },
+        {
+          "answer": "Sherwood Stewart",
+          "confidence": 0.90625,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a78e3b955429974737f78f1:stable"
+        },
+        {
+          "answer": "Sherwood Stewart",
+          "confidence": 0.90625,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a78e3b955429974737f78f1:semantic_swap"
+        },
+        {
+          "answer": "Athenion",
+          "confidence": 0.925,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a85cd295542997175ce202b:stable"
+        },
+        {
+          "answer": "Athenion",
+          "confidence": 0.925,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a85cd295542997175ce202b:semantic_swap"
+        },
+        {
+          "answer": "manager",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5add6cf45542992ae4cec55f:stable"
+        },
+        {
+          "answer": "manager",
+          "confidence": 0.75,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5add6cf45542992ae4cec55f:semantic_swap"
+        },
+        {
+          "answer": "IT",
+          "confidence": 0.6136363636363636,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a86fde6554299211dda2b7f:stable"
+        },
+        {
+          "answer": "IT",
+          "confidence": 0.6136363636363636,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a86fde6554299211dda2b7f:semantic_swap"
+        },
+        {
+          "answer": "no",
+          "confidence": 0.625,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8198565542995ce29dcc13:stable"
+        },
+        {
+          "answer": "no",
+          "confidence": 0.625,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8198565542995ce29dcc13:semantic_swap"
+        },
+        {
+          "answer": "Juan Carlos Onetti",
+          "confidence": 0.71875,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a79332555429907847277e7:stable"
+        },
+        {
+          "answer": "Juan Carlos Onetti",
+          "confidence": 0.71875,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a79332555429907847277e7:semantic_swap"
+        },
+        {
+          "answer": "Jennifer Taylor",
+          "confidence": 0.8636363636363636,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac31602554299741d48a1bf:stable"
+        },
+        {
+          "answer": "Jennifer Taylor",
+          "confidence": 0.8636363636363636,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac31602554299741d48a1bf:semantic_swap"
+        },
+        {
+          "answer": "1860",
+          "confidence": 0.925,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae4a2e25542996836b02cee:stable"
+        },
+        {
+          "answer": "1860",
+          "confidence": 0.925,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae4a2e25542996836b02cee:semantic_swap"
+        },
+        {
+          "answer": "Wakefern Food Corporation",
+          "confidence": 0.95,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8192045542995ce29dcc04:stable"
+        },
+        {
+          "answer": "Wakefern Food Corporation",
+          "confidence": 0.95,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8192045542995ce29dcc04:semantic_swap"
+        },
+        {
+          "answer": "five months",
+          "confidence": 0.875,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a817d8c55429903bc27b974:stable"
+        },
+        {
+          "answer": "five months",
+          "confidence": 0.875,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a817d8c55429903bc27b974:semantic_swap"
+        },
+        {
+          "answer": "Orissa",
+          "confidence": 0.8928571428571428,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adf0ae45542992d7e9f9286:stable"
+        },
+        {
+          "answer": "Orissa",
+          "confidence": 0.8928571428571428,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adf0ae45542992d7e9f9286:semantic_swap"
+        },
+        {
+          "answer": "Benny Andersson",
+          "confidence": 0.9375,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7309a15542992359bc320c:stable"
+        },
+        {
+          "answer": "Benny Andersson",
+          "confidence": 0.9375,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7309a15542992359bc320c:semantic_swap"
+        },
+        {
+          "answer": "1954",
+          "confidence": 0.6785714285714286,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac54f8d5542993e66e822f5:stable"
+        },
+        {
+          "answer": "1954",
+          "confidence": 0.6785714285714286,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac54f8d5542993e66e822f5:semantic_swap"
+        },
+        {
+          "answer": "University of Texas Longhorns",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae5cf625542996de7b71a22:stable"
+        },
+        {
+          "answer": "University of Texas Longhorns",
+          "confidence": 0.75,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae5cf625542996de7b71a22:semantic_swap"
+        },
+        {
+          "answer": "Curtis James Martin Jr.",
+          "confidence": 0.90625,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae1d5a3554299234fd04319:stable"
+        },
+        {
+          "answer": "Curtis James Martin Jr.",
+          "confidence": 0.90625,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae1d5a3554299234fd04319:semantic_swap"
+        },
+        {
+          "answer": "Woking, England",
+          "confidence": 0.8846153846153846,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ab6390f5542995eadeeff7a:stable"
+        },
+        {
+          "answer": "Woking, England",
+          "confidence": 0.8846153846153846,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ab6390f5542995eadeeff7a:semantic_swap"
+        },
+        {
+          "answer": "Rudebox",
+          "confidence": 0.90625,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7344e95542991f9a20c6ce:stable"
+        },
+        {
+          "answer": "Rudebox",
+          "confidence": 0.90625,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7344e95542991f9a20c6ce:semantic_swap"
+        },
+        {
+          "answer": "National Aviation Hall of Fame",
+          "confidence": 0.875,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5aba7cb455429901930fa7eb:stable"
+        },
+        {
+          "answer": "National Aviation Hall of Fame",
+          "confidence": 0.875,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5aba7cb455429901930fa7eb:semantic_swap"
+        },
+        {
+          "answer": "cocktail",
+          "confidence": 0.55,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac083b0554299294b21900d:stable"
+        },
+        {
+          "answer": "cocktail",
+          "confidence": 0.55,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac083b0554299294b21900d:semantic_swap"
+        },
+        {
+          "answer": "1988",
+          "confidence": 0.9423076923076923,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7d1bf65542995ed0d165f0:stable"
+        },
+        {
+          "answer": "1988",
+          "confidence": 0.9423076923076923,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7d1bf65542995ed0d165f0:semantic_swap"
+        },
+        {
+          "answer": "Hannaford",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a81a2705542990a1d231e30:stable"
+        },
+        {
+          "answer": "Hannaford",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a81a2705542990a1d231e30:semantic_swap"
+        },
+        {
+          "answer": "Ian Thomas Garner MacKaye",
+          "confidence": 0.8636363636363636,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a82626655429966c78a6a08:stable"
+        },
+        {
+          "answer": "Ian Thomas Garner MacKaye",
+          "confidence": 0.8636363636363636,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a82626655429966c78a6a08:semantic_swap"
+        },
+        {
+          "answer": "Edward Lucky McKee",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a88a23f5542997e5c09a652:stable"
+        },
+        {
+          "answer": "Edward Lucky McKee",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a88a23f5542997e5c09a652:semantic_swap"
+        },
+        {
+          "answer": "no",
+          "confidence": 0.4772727272727273,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae518ae5542993aec5ec13c:stable"
+        },
+        {
+          "answer": "no",
+          "confidence": 0.4772727272727273,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae518ae5542993aec5ec13c:semantic_swap"
+        },
+        {
+          "answer": "San Diego County Fair",
+          "confidence": 0.765625,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8d227a554299585d9e37b1:stable"
+        },
+        {
+          "answer": "San Diego County Fair",
+          "confidence": 0.765625,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8d227a554299585d9e37b1:semantic_swap"
+        },
+        {
+          "answer": "Sarajevo",
+          "confidence": 0.9,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae5dae2554299546bf82fa4:stable"
+        },
+        {
+          "answer": "Sarajevo",
+          "confidence": 0.9,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae5dae2554299546bf82fa4:semantic_swap"
+        },
+        {
+          "answer": "December 13, 2015",
+          "confidence": 0.8125,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac0e0c75542997d64295a6e:stable"
+        },
+        {
+          "answer": "December 13, 2015",
+          "confidence": 0.8125,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac0e0c75542997d64295a6e:semantic_swap"
+        },
+        {
+          "answer": "Murcia",
+          "confidence": 0.9375,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8268aa55429940e5e1a8aa:stable"
+        },
+        {
+          "answer": "Murcia",
+          "confidence": 0.9375,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8268aa55429940e5e1a8aa:semantic_swap"
+        },
+        {
+          "answer": "Sam Taylor",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a79c1095542996c55b2dc62:stable"
+        },
+        {
+          "answer": "Sam Taylor",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a79c1095542996c55b2dc62:semantic_swap"
+        },
+        {
+          "answer": "mixed martial arts",
+          "confidence": 0.7857142857142857,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae18d615542997283cd2229:stable"
+        },
+        {
+          "answer": "mixed martial arts",
+          "confidence": 0.7857142857142857,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae18d615542997283cd2229:semantic_swap"
+        },
+        {
+          "answer": "Via Vai",
+          "confidence": 0.8636363636363636,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae0156455429942ec259c15:stable"
+        },
+        {
+          "answer": "Via Vai",
+          "confidence": 0.8636363636363636,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae0156455429942ec259c15:semantic_swap"
+        },
+        {
+          "answer": "musician, editor and composer.",
+          "confidence": 0.8846153846153846,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a876f785542993e715abf42:stable"
+        },
+        {
+          "answer": "musician, editor and composer.",
+          "confidence": 0.8846153846153846,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a876f785542993e715abf42:semantic_swap"
+        },
+        {
+          "answer": "21",
+          "confidence": 0.8333333333333334,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae25d2b554299495565da46:stable"
+        },
+        {
+          "answer": "21",
+          "confidence": 0.8333333333333334,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae25d2b554299495565da46:semantic_swap"
+        },
+        {
+          "answer": "The Process",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a9068f85542990a98493623:stable"
+        },
+        {
+          "answer": "The Process",
+          "confidence": 0.75,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a9068f85542990a98493623:semantic_swap"
+        },
+        {
+          "answer": "the City of Peace",
+          "confidence": 0.8125,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a772c395542993735360207:stable"
+        },
+        {
+          "answer": "the City of Peace",
+          "confidence": 0.8125,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a772c395542993735360207:semantic_swap"
+        },
+        {
+          "answer": "fifth-largest",
+          "confidence": 0.826923076923077,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a80522b5542996402f6a4c1:stable"
+        },
+        {
+          "answer": "fifth-largest",
+          "confidence": 0.826923076923077,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a80522b5542996402f6a4c1:semantic_swap"
+        },
+        {
+          "answer": "director and screenwriter.",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5add60905542995b365fab1d:stable"
+        },
+        {
+          "answer": "director and screenwriter.",
+          "confidence": 0.75,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5add60905542995b365fab1d:semantic_swap"
+        },
+        {
+          "answer": "Transporter 3",
+          "confidence": 0.8125,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a75092b55429916b0164242:stable"
+        },
+        {
+          "answer": "Transporter 3",
+          "confidence": 0.8125,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a75092b55429916b0164242:semantic_swap"
+        },
+        {
+          "answer": "Koch Industries",
+          "confidence": 0.95,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adf8ade5542993344016ce8:stable"
+        },
+        {
+          "answer": "Koch Industries",
+          "confidence": 0.95,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adf8ade5542993344016ce8:semantic_swap"
+        },
+        {
+          "answer": "July 25 to August 4",
+          "confidence": 0.7749999999999999,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae25e835542992decbdccd1:stable"
+        },
+        {
+          "answer": "July 25 to August 4",
+          "confidence": 0.7749999999999999,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae25e835542992decbdccd1:semantic_swap"
+        },
+        {
+          "answer": "North Sea",
+          "confidence": 0.8928571428571428,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8013e45542995d8a8ddf41:stable"
+        },
+        {
+          "answer": "North Sea",
+          "confidence": 0.8928571428571428,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8013e45542995d8a8ddf41:semantic_swap"
+        },
+        {
+          "answer": "ranch hand Jett Rink",
+          "confidence": 0.7794117647058824,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a871a5e5542996432c5721e:stable"
+        },
+        {
+          "answer": "ranch hand Jett Rink",
+          "confidence": 0.7794117647058824,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a871a5e5542996432c5721e:semantic_swap"
+        },
+        {
+          "answer": "1874",
+          "confidence": 0.953125,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5abd8c295542992ac4f382ab:stable"
+        },
+        {
+          "answer": "1874",
+          "confidence": 0.953125,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5abd8c295542992ac4f382ab:semantic_swap"
+        },
+        {
+          "answer": "brothers",
+          "confidence": 0.6666666666666667,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8b8b3a5542995d1e6f13e5:stable"
+        },
+        {
+          "answer": "brothers",
+          "confidence": 0.6666666666666667,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8b8b3a5542995d1e6f13e5:semantic_swap"
+        },
+        {
+          "answer": "27 January 1974",
+          "confidence": 0.875,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae6363b55429929b0807af0:stable"
+        },
+        {
+          "answer": "27 January 1974",
+          "confidence": 0.875,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae6363b55429929b0807af0:semantic_swap"
+        },
+        {
+          "answer": "German",
+          "confidence": 0.8500000000000001,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac0b8395542996f0d89cc21:stable"
+        },
+        {
+          "answer": "German",
+          "confidence": 0.8500000000000001,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac0b8395542996f0d89cc21:semantic_swap"
+        },
+        {
+          "answer": "Marvel",
+          "confidence": 0.8636363636363636,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adf3e835542993a75d26442:stable"
+        },
+        {
+          "answer": "Marvel",
+          "confidence": 0.8636363636363636,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adf3e835542993a75d26442:semantic_swap"
+        },
+        {
+          "answer": "The Handmaid's Tale",
+          "confidence": 0.925,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a731a635542994cef4bc458:stable"
+        },
+        {
+          "answer": "The Handmaid's Tale",
+          "confidence": 0.925,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a731a635542994cef4bc458:semantic_swap"
+        },
+        {
+          "answer": "Abraham Alfonse Albert Gallatin",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adcc90c5542990d50227d1b:stable"
+        },
+        {
+          "answer": "Abraham Alfonse Albert Gallatin",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adcc90c5542990d50227d1b:semantic_swap"
+        },
+        {
+          "answer": "Port Clinton",
+          "confidence": 0.9318181818181818,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae402085542995dadf242ca:stable"
+        },
+        {
+          "answer": "Port Clinton",
+          "confidence": 0.9318181818181818,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae402085542995dadf242ca:semantic_swap"
+        },
+        {
+          "answer": "Ector County",
+          "confidence": 0.8333333333333334,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a81d19b55429926c1cdad90:stable"
+        },
+        {
+          "answer": "Ector County",
+          "confidence": 0.8333333333333334,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a81d19b55429926c1cdad90:semantic_swap"
+        },
+        {
+          "answer": "Les Temps modernes",
+          "confidence": 0.6590909090909091,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a77174f55429966f1a36c4c:stable"
+        },
+        {
+          "answer": "Les Temps modernes",
+          "confidence": 0.6590909090909091,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a77174f55429966f1a36c4c:semantic_swap"
+        },
+        {
+          "answer": "Maxwell Smart",
+          "confidence": 0.8125,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a79395455429970f5fffe7d:stable"
+        },
+        {
+          "answer": "Maxwell Smart",
+          "confidence": 0.8125,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a79395455429970f5fffe7d:semantic_swap"
+        },
+        {
+          "answer": "international football competition",
+          "confidence": 0.9423076923076923,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a886886554299206df2b258:stable"
+        },
+        {
+          "answer": "international football competition",
+          "confidence": 0.9423076923076923,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a886886554299206df2b258:semantic_swap"
+        },
+        {
+          "answer": "Austrian Volksbanks",
+          "confidence": 0.8846153846153846,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adfb10855429942ec259af9:stable"
+        },
+        {
+          "answer": "Austrian Volksbanks",
+          "confidence": 0.8846153846153846,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adfb10855429942ec259af9:semantic_swap"
+        },
+        {
+          "answer": "Toshi Ichiyanagi",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae0d7315542990adbacf678:stable"
+        },
+        {
+          "answer": "Toshi Ichiyanagi",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae0d7315542990adbacf678:semantic_swap"
+        },
+        {
+          "answer": "November 15, 1903",
+          "confidence": 0.7954545454545454,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a790f5e55429970f5fffe40:stable"
+        },
+        {
+          "answer": "November 15, 1903",
+          "confidence": 0.7954545454545454,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a790f5e55429970f5fffe40:semantic_swap"
+        },
+        {
+          "answer": "Robert Digges Wimberly Connor",
+          "confidence": 0.8500000000000001,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae1b2b9554299422ee99684:stable"
+        },
+        {
+          "answer": "Robert Digges Wimberly Connor",
+          "confidence": 0.8500000000000001,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae1b2b9554299422ee99684:semantic_swap"
+        },
+        {
+          "answer": "Mickey's PhilharMagic",
+          "confidence": 0.826923076923077,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a792ad055429907847277d1:stable"
+        },
+        {
+          "answer": "Mickey's PhilharMagic",
+          "confidence": 0.826923076923077,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a792ad055429907847277d1:semantic_swap"
+        },
+        {
+          "answer": "Charles L. Clifford",
+          "confidence": 0.8295454545454546,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8ce851554299441c6b9f6c:stable"
+        },
+        {
+          "answer": "Charles L. Clifford",
+          "confidence": 0.8295454545454546,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8ce851554299441c6b9f6c:semantic_swap"
+        },
+        {
+          "answer": "The Crowned Prince of the Philadelphia Mob",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5add67915542992200553af8:stable"
+        },
+        {
+          "answer": "The Crowned Prince of the Philadelphia Mob",
+          "confidence": 0.75,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5add67915542992200553af8:semantic_swap"
+        },
+        {
+          "answer": "London, England",
+          "confidence": 0.7,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ab90fdd55429916710eb0fc:stable"
+        },
+        {
+          "answer": "London, England",
+          "confidence": 0.7,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ab90fdd55429916710eb0fc:semantic_swap"
+        },
+        {
+          "answer": "Masayoshi \"Masa\" Takayama",
+          "confidence": 0.9,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae55b8255429908b63265ef:stable"
+        },
+        {
+          "answer": "Masayoshi \"Masa\" Takayama",
+          "confidence": 0.9,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae55b8255429908b63265ef:semantic_swap"
+        },
+        {
+          "answer": "November",
+          "confidence": 0.7857142857142857,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac213805542992f1f2b37e7:stable"
+        },
+        {
+          "answer": "November",
+          "confidence": 0.7857142857142857,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac213805542992f1f2b37e7:semantic_swap"
+        },
+        {
+          "answer": "320 years",
+          "confidence": 0.7857142857142857,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adce88b5542992c1e3a249a:stable"
+        },
+        {
+          "answer": "320 years",
+          "confidence": 0.7857142857142857,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adce88b5542992c1e3a249a:semantic_swap"
+        },
+        {
+          "answer": "Estadio de L\u00f3pez Cort\u00e1zar",
+          "confidence": 0.8333333333333334,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac403c45542997ea680c9b5:stable"
+        },
+        {
+          "answer": "Estadio de L\u00f3pez Cort\u00e1zar",
+          "confidence": 0.8333333333333334,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac403c45542997ea680c9b5:semantic_swap"
+        },
+        {
+          "answer": "Geraldine Page",
+          "confidence": 0.9166666666666666,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b:stable"
+        },
+        {
+          "answer": "Geraldine Page",
+          "confidence": 0.9166666666666666,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5adcd2435542992c1e3a241b:semantic_swap"
+        },
+        {
+          "answer": "Kill Hannah",
+          "confidence": 0.9166666666666666,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8078d85542995d8a8ddf78:stable"
+        },
+        {
+          "answer": "Kill Hannah",
+          "confidence": 0.9166666666666666,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8078d85542995d8a8ddf78:semantic_swap"
+        },
+        {
+          "answer": "Jung Yun-ho",
+          "confidence": 0.9117647058823529,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a85dfcc5542994775f60673:stable"
+        },
+        {
+          "answer": "Jung Yun-ho",
+          "confidence": 0.9117647058823529,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a85dfcc5542994775f60673:semantic_swap"
+        },
+        {
+          "answer": "Zixing",
+          "confidence": 0.90625,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5abd1b6e55429933744ab729:stable"
+        },
+        {
+          "answer": "Zixing",
+          "confidence": 0.90625,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5abd1b6e55429933744ab729:semantic_swap"
+        },
+        {
+          "answer": "bobsledder",
+          "confidence": 0.9583333333333333,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae33a3b5542992f92d8224a:stable"
+        },
+        {
+          "answer": "bobsledder",
+          "confidence": 0.9583333333333333,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae33a3b5542992f92d8224a:semantic_swap"
+        },
+        {
+          "answer": "2012",
+          "confidence": 0.875,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a899bf955429946c8d6e959:stable"
+        },
+        {
+          "answer": "2012",
+          "confidence": 0.875,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a899bf955429946c8d6e959:semantic_swap"
+        },
+        {
+          "answer": "Cartoon Network",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a78bd515542990784727749:stable"
+        },
+        {
+          "answer": "Cartoon Network",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a78bd515542990784727749:semantic_swap"
+        },
+        {
+          "answer": "21 years and 154 days",
+          "confidence": 0.875,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a8f155e554299458435d54c:stable"
+        },
+        {
+          "answer": "21 years and 154 days",
+          "confidence": 0.875,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a8f155e554299458435d54c:semantic_swap"
+        },
+        {
+          "answer": "Jonathan Kaplan",
+          "confidence": 0.8125,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a7bd25a554299294a54ab13:stable"
+        },
+        {
+          "answer": "Jonathan Kaplan",
+          "confidence": 0.8125,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5a7bd25a554299294a54ab13:semantic_swap"
+        },
+        {
+          "answer": "niece",
+          "confidence": 0.826923076923077,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ac458f8554299204fd21f2a:stable"
+        },
+        {
+          "answer": "niece",
+          "confidence": 0.826923076923077,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ac458f8554299204fd21f2a:semantic_swap"
+        }
+      ]
+    }
+  },
+  "scored_input": "results\\hotpot_orbits_v4_semanticswap_n100.constant.textonly_scored.jsonl",
+  "selector_methods": [
+    "clean_retrieval_max",
+    "corm_max_clean",
+    "csrm",
+    "naive_orbit_average",
+    "single_set_sure_style"
+  ]
+}
