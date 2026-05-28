@@ -71,6 +71,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     remote = load_json(results / "corm_full_wikipedia_job_status.json")
     claims = load_json(results / "claims_verification.json")
     semantic_swap = _semantic_swap_status(results)
+    remote_storage_probe = _remote_storage_probe_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -163,6 +164,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             ),
             "wiki_faiss_exists": get(remote, "observed_outputs", "wiki_faiss_exists"),
             "terminal_failure": get(remote, "terminal_failure", "summary"),
+            "latest_storage_probe": remote_storage_probe,
         },
         "allowed_claims": [
             "CSRM has strong bridge evidence on HotpotQA-derived orbits with released CoRM critic scores.",
@@ -293,12 +295,42 @@ def _semantic_swap_status(results: Path) -> dict[str, Any]:
     }
 
 
+def _remote_storage_probe_status(results: Path) -> dict[str, Any] | None:
+    path = results / "remote_storage_status_20260529.json"
+    if not path.exists():
+        return None
+
+    payload = load_json(path)
+    target = payload.get("target")
+    target_fs = None
+    for filesystem in payload.get("filesystems", []):
+        if filesystem.get("mount") == target:
+            target_fs = filesystem
+            break
+
+    return {
+        "artifact": str(path.as_posix()),
+        "observed_at_utc": payload.get("observed_at_utc"),
+        "target": target,
+        "ready_for_full_reproduction_storage": payload.get("ready_for_full_reproduction_storage"),
+        "target_available_gib": payload.get("target_available_gib"),
+        "target_min_free_met": payload.get("target_min_free_met"),
+        "target_write_probe_passed": payload.get("target_write_probe_passed"),
+        "target_filesystem_type": None if target_fs is None else target_fs.get("type"),
+        "target_capacity": None if target_fs is None else target_fs.get("capacity"),
+        "target_findmnt": get(payload, "target_findmnt", "stdout"),
+        "gpu_query": get(payload, "gpu_query", "stdout"),
+        "write_probe_error": get(payload, "write_probe", "stderr"),
+    }
+
+
 def render_markdown(status: dict[str, Any]) -> str:
     hotpot = status["main_bridge_results"]["hotpot_corm_multiseed"]
     fever = status["main_bridge_results"]["fever_nearmiss_corm_v3_multiseed"]
     nli = status["main_bridge_results"]["nli_cross_scorer_paper_1000"]
     reconstruction = status["corm_reconstruction"]
     terminal_failure = str(reconstruction["terminal_failure"] or "not recorded").rstrip(".")
+    storage_probe = reconstruction.get("latest_storage_probe")
     risk = status["risk_control"]
     claims = status["claim_verification"]
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
@@ -365,7 +397,28 @@ def render_markdown(status: dict[str, Any]) -> str:
             f"latest: `{reconstruction['latest_complete_embedding_shard']}`.",
             f"- FAISS exists: `{reconstruction['wiki_faiss_exists']}`.",
             f"- Terminal failure: {terminal_failure}.",
-            "",
+        "",
+        ]
+    )
+    if storage_probe:
+        write_error = str(storage_probe.get("write_probe_error") or "not recorded").strip()
+        gpu_query = "; ".join(str(storage_probe.get("gpu_query") or "").splitlines())
+        lines.extend(
+            [
+                "Latest storage probe:",
+                f"- Target: `{storage_probe['target']}` "
+                f"({storage_probe['target_filesystem_type']}, capacity `{storage_probe['target_capacity']}`).",
+                f"- Reported available: `{_fmt(storage_probe['target_available_gib'])}` GiB; "
+                f"minimum met: `{storage_probe['target_min_free_met']}`.",
+                f"- Write probe passed: `{storage_probe['target_write_probe_passed']}`; "
+                f"storage-ready: `{storage_probe['ready_for_full_reproduction_storage']}`.",
+                f"- Write probe error: `{write_error}`.",
+                f"- GPU query: `{gpu_query}`.",
+                "",
+            ]
+        )
+    lines.extend(
+        [
             "## Latest V4 Hotpot Diagnostic",
             "",
             "Semantic-swap n100:",

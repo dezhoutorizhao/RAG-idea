@@ -16,6 +16,20 @@
     "complete_embedding_shards": 52,
     "latest_complete_embedding_shard": "embeddings_shard_000051.npy",
     "latest_observed_at": "2026-05-27T13:34:41+08:00",
+    "latest_storage_probe": {
+      "artifact": "results/remote_storage_status_20260529.json",
+      "gpu_query": "0, NVIDIA GeForce RTX 4090, 24564, 24076\n1, NVIDIA GeForce RTX 4090, 24564, 24097\n",
+      "observed_at_utc": "2026-05-28T18:09:53.915778+00:00",
+      "ready_for_full_reproduction_storage": false,
+      "target": "/mnt/ntfs-disk",
+      "target_available_gib": 322.14443588256836,
+      "target_capacity": "84%",
+      "target_filesystem_type": "fuseblk",
+      "target_findmnt": "/dev/nvme1n1p1 fuseblk rw,relatime,user_id=0,group_id=0,default_permissions,allow_other,blksize=4096\n",
+      "target_min_free_met": true,
+      "target_write_probe_passed": false,
+      "write_probe_error": "mktemp: \u65e0\u6cd5\u901a\u8fc7\u6a21\u677f \u201c/mnt/ntfs-disk/csrm_write_probe.XXXXXX\u201d \u521b\u5efa\u76ee\u5f55: \u8bbe\u5907\u4e0a\u6ca1\u6709\u7a7a\u95f4\n"
+    },
     "missing_required_artifacts": 5,
     "preflight_ready": false,
     "remote_status": "failed_storage_io_after_fresh_250k_recovery",
@@ -29,7 +43,7 @@
     "The method solves robust RAG generally across tasks.",
     "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4."
   ],
-  "generated_at_utc": "2026-05-28T18:05:33.316068+00:00",
+  "generated_at_utc": "2026-05-28T18:13:28.583452+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "hotpot_semantic_swap_n100": {

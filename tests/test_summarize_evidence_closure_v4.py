@@ -1,6 +1,6 @@
 import json
 
-from experiments.summarize_evidence_closure import _semantic_swap_status
+from experiments.summarize_evidence_closure import _remote_storage_probe_status, _semantic_swap_status
 
 
 def test_semantic_swap_status_reads_latest_v4_diagnostic(tmp_path):
@@ -104,6 +104,38 @@ def test_semantic_swap_status_reads_latest_v4_diagnostic(tmp_path):
     assert status["strongest_non_csrm"]["name"] == "calibrated_logistic_orbit"
     assert status["calibrated"]["logistic"]["target_met_count"] == 2
     assert status["human_audit_pack"]["pending"] == 2
+
+
+def test_remote_storage_probe_status_marks_write_failure(tmp_path):
+    _write_json(
+        tmp_path / "remote_storage_status_20260529.json",
+        {
+            "observed_at_utc": "2026-05-28T18:09:53+00:00",
+            "target": "/mnt/ntfs-disk",
+            "ready_for_full_reproduction_storage": False,
+            "target_available_gib": 322.14,
+            "target_min_free_met": True,
+            "target_write_probe_passed": False,
+            "filesystems": [
+                {
+                    "mount": "/mnt/ntfs-disk",
+                    "type": "fuseblk",
+                    "capacity": "84%",
+                }
+            ],
+            "target_findmnt": {"stdout": "/dev/nvme1n1p1 fuseblk rw\n"},
+            "gpu_query": {"stdout": "0, NVIDIA GeForce RTX 4090, 24564, 24076\n"},
+            "write_probe": {"stderr": "No space left on device\n"},
+        },
+    )
+
+    status = _remote_storage_probe_status(tmp_path)
+
+    assert status["target_min_free_met"] is True
+    assert status["target_write_probe_passed"] is False
+    assert status["ready_for_full_reproduction_storage"] is False
+    assert status["target_filesystem_type"] == "fuseblk"
+    assert "No space left" in status["write_probe_error"]
 
 
 def _calibrated(auroc, target_met_count):

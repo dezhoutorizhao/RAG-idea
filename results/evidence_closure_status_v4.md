@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-28T18:05:33.316068+00:00`
+Generated: `2026-05-28T18:13:28.583452+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -47,6 +47,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 - Complete embedding shards: `52`; latest: `embeddings_shard_000051.npy`.
 - FAISS exists: `False`.
 - Terminal failure: The 250k-shard resume wrote embeddings_shard_000051.npy completely, then failed while writing/flushing wiki_passages.jsonl with OSError [Errno 5] Input/output error on the NTFS/fuseblk mount.
+
+Latest storage probe:
+- Target: `/mnt/ntfs-disk` (fuseblk, capacity `84%`).
+- Reported available: `322.1444` GiB; minimum met: `True`.
+- Write probe passed: `False`; storage-ready: `False`.
+- Write probe error: `mktemp: 无法通过模板 “/mnt/ntfs-disk/csrm_write_probe.XXXXXX” 创建目录: 设备上没有空间`.
+- GPU query: `0, NVIDIA GeForce RTX 4090, 24564, 24076; 1, NVIDIA GeForce RTX 4090, 24564, 24097`.
 
 ## Latest V4 Hotpot Diagnostic
 

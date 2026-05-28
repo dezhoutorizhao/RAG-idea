@@ -1,0 +1,62 @@
+{
+  "claim_policy": "This checks storage writability and free space only; it is not a completed CoRM-RAG reproduction result.",
+  "filesystems": [
+    {
+      "available_1k_blocks": 13229476,
+      "blocks_1k": 1967357936,
+      "capacity": "100%",
+      "filesystem": "/dev/nvme0n1p2",
+      "mount": "/",
+      "type": "ext4",
+      "used_1k_blocks": 1854118428
+    },
+    {
+      "available_1k_blocks": 337792924,
+      "blocks_1k": 2000396284,
+      "capacity": "84%",
+      "filesystem": "/dev/nvme1n1p1",
+      "mount": "/mnt/ntfs-disk",
+      "type": "fuseblk",
+      "used_1k_blocks": 1662603360
+    },
+    {
+      "available_1k_blocks": 13431312,
+      "blocks_1k": 98762796,
+      "capacity": "87%",
+      "filesystem": "tmpfs",
+      "mount": "/dev/shm",
+      "type": "tmpfs",
+      "used_1k_blocks": 85331484
+    }
+  ],
+  "gpu_query": {
+    "command": "nvidia-smi --query-gpu=index,name,memory.total,memory.free --format=csv,noheader,nounits 2>&1 || true",
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 24076\n1, NVIDIA GeForce RTX 4090, 24564, 24097\n"
+  },
+  "min_free_gib": 180.0,
+  "observed_at_utc": "2026-05-28T18:09:53.915778+00:00",
+  "ready_for_full_reproduction_storage": false,
+  "remote": {
+    "host": "192.168.103.101",
+    "port": 22,
+    "user": "syk"
+  },
+  "target": "/mnt/ntfs-disk",
+  "target_available_gib": 322.14443588256836,
+  "target_findmnt": {
+    "command": "findmnt -no SOURCE,FSTYPE,OPTIONS /mnt/ntfs-disk 2>&1 || true",
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "/dev/nvme1n1p1 fuseblk rw,relatime,user_id=0,group_id=0,default_permissions,allow_other,blksize=4096\n"
+  },
+  "target_min_free_met": true,
+  "target_write_probe_passed": false,
+  "write_probe": {
+    "command": "set -e; TESTDIR=$(mktemp -d /mnt/ntfs-disk/csrm_write_probe.XXXXXX); trap 'rm -rf \"$TESTDIR\"' EXIT; TESTFILE=\"$TESTDIR/probe.bin\" python3 -c 'import os,pathlib;p=pathlib.Path(os.environ['\"'\"'TESTFILE'\"'\"']);data=b'\"'\"'csrm_remote_write_probe\\n'\"'\"';f=open(p,'\"'\"'wb'\"'\"');f.write(data);f.flush();os.fsync(f.fileno());f.close();assert p.read_bytes()==data'",
+    "exit_status": 1,
+    "stderr": "mktemp: \u65e0\u6cd5\u901a\u8fc7\u6a21\u677f \u201c/mnt/ntfs-disk/csrm_write_probe.XXXXXX\u201d \u521b\u5efa\u76ee\u5f55: \u8bbe\u5907\u4e0a\u6ca1\u6709\u7a7a\u95f4\n",
+    "stdout": ""
+  }
+}
