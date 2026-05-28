@@ -74,6 +74,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     remote_storage_probe = _remote_storage_probe_status(results)
     ext4_prepare_dry_run = _ext4_prepare_dry_run_status(results)
     human_audit_v4_status = _human_audit_v4_status(results)
+    human_audit_v4_eval_status = _human_audit_v4_eval_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -101,6 +102,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         "latest_v4_diagnostics": {
             "hotpot_semantic_swap_n100": semantic_swap,
             "human_audit_v4": human_audit_v4_status,
+            "human_audit_v4_eval": human_audit_v4_eval_status,
         },
         "risk_control": {
             "hotpot_cp": {
@@ -374,6 +376,31 @@ def _human_audit_v4_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
+    path = results / "human_audit_v4_eval_status_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "ready": payload.get("ready"),
+        "pack_count": payload.get("pack_count"),
+        "evaluated_pack_count": payload.get("evaluated_pack_count"),
+        "allow_partial": payload.get("allow_partial"),
+        "packs": [
+            {
+                "pack_name": pack.get("pack_name"),
+                "selected_items": pack.get("selected_items"),
+                "labeled": pack.get("labeled"),
+                "pending": pack.get("pending"),
+                "evaluation_ready": pack.get("evaluation_ready"),
+                "evaluated": pack.get("evaluated"),
+            }
+            for pack in payload.get("packs", [])
+        ],
+    }
+
+
 def render_markdown(status: dict[str, Any]) -> str:
     hotpot = status["main_bridge_results"]["hotpot_corm_multiseed"]
     fever = status["main_bridge_results"]["fever_nearmiss_corm_v3_multiseed"]
@@ -386,6 +413,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     claims = status["claim_verification"]
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
     human_v4 = status["latest_v4_diagnostics"].get("human_audit_v4")
+    human_v4_eval = status["latest_v4_diagnostics"].get("human_audit_v4_eval")
 
     def row(method: str, item: dict[str, float | None]) -> str:
         return (
@@ -517,6 +545,16 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"items: `{human_v4['total_items']}`.",
                 f"- Adjudicated labels: `{human_v4['adjudicated_labeled']}`; "
                 f"pending: `{human_v4['pending']}`.",
+                "",
+            ]
+        )
+    if human_v4_eval:
+        lines.extend(
+            [
+                "Human audit v4 evaluation gate:",
+                f"- Ready: `{human_v4_eval['ready']}`; evaluated packs: "
+                f"`{human_v4_eval['evaluated_pack_count']}/{human_v4_eval['pack_count']}`; "
+                f"allow partial: `{human_v4_eval['allow_partial']}`.",
                 "",
             ]
         )

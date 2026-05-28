@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-28T18:41:36.419947+00:00`
+Generated: `2026-05-28T18:47:32.415537+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -75,6 +75,9 @@ Semantic-swap n100:
 Human audit v4 aggregate:
 - Ready: `False`; packs: `2`; items: `300`.
 - Adjudicated labels: `0`; pending: `300`.
+
+Human audit v4 evaluation gate:
+- Ready: `False`; evaluated packs: `0/2`; allow partial: `False`.
 
 ## Claim Boundary
 
