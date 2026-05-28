@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Human Audit v4 Label Row",
+  "type": "object",
+  "required": ["audit_id", "auditor_id", "label_answerable"],
+  "additionalProperties": true,
+  "properties": {
+    "audit_id": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Opaque blind audit identifier. This is not the orbit_id."
+    },
+    "dataset": {
+      "type": "string"
+    },
+    "auditor_id": {
+      "type": "string",
+      "minLength": 1
+    },
+    "label_answerable": {
+      "type": "string",
+      "enum": ["", "answerable", "fragile", "unsure", "true", "false", "yes", "no"]
+    },
+    "failure_type": {
+      "type": "string",
+      "enum": [
+        "",
+        "supported_all_sets",
+        "missing_evidence",
+        "conflicting_evidence",
+        "distractor_only",
+        "ambiguous_or_insufficient",
+        "answer_label_mismatch",
+        "other"
+      ]
+    },
+    "confidence": {
+      "type": "string",
+      "pattern": "^(|1|2|3)$"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}

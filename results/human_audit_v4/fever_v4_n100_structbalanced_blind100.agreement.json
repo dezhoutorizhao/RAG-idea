@@ -1,0 +1,34 @@
+{
+  "audit_items": 100,
+  "auditors": [
+    "auditor1",
+    "auditor2"
+  ],
+  "completion": {
+    "auditor1": {
+      "completion_rate": 0.0,
+      "labeled": 0,
+      "rows": 100
+    },
+    "auditor2": {
+      "completion_rate": 0.0,
+      "labeled": 0,
+      "rows": 100
+    }
+  },
+  "conflicts": [],
+  "input": "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.merged_labels.jsonl",
+  "pairwise": [
+    {
+      "agreement_rate": null,
+      "agreements": 0,
+      "auditors": [
+        "auditor1",
+        "auditor2"
+      ],
+      "cohen_kappa": null,
+      "compared": 0
+    }
+  ],
+  "rows": 200
+}
