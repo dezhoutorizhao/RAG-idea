@@ -1,0 +1,566 @@
+{
+  "generators": [
+    "copy_candidate",
+    "lexical_guarded"
+  ],
+  "n": 6,
+  "notes": [
+    "This is an end-to-end selective RAG proxy over materialized v4 evidence sets.",
+    "Correctness requires both generated answer match and answerable evidence label.",
+    "It is not a full CoRM-RAG reproduction with fresh Wikipedia retrieval/generation."
+  ],
+  "private_input": "results\\hotpot_orbits_v4_smoke.constant.matched.private_eval.jsonl",
+  "raw_input": "results\\hotpot_orbits_v4_smoke.constant.matched.raw.jsonl",
+  "results": {
+    "copy_candidate": {
+      "answer_accuracy": 0.5,
+      "methods": {
+        "clean_retrieval_max": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.6666666666666666,
+            "coverage": 0.5,
+            "risk": 0.33333333333333337,
+            "threshold": 0.5
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 0.5
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.25,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "n": 6
+        },
+        "corm_max_clean": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.6666666666666666,
+            "coverage": 0.5,
+            "risk": 0.33333333333333337,
+            "threshold": 0.5
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 0.5
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.25,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "n": 6
+        },
+        "csrm": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 0.5415993797428492
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.6666666666666666,
+            "coverage": 0.5,
+            "risk": 0.33333333333333337,
+            "threshold": 0.5413752353663496
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 0.5200779847558732
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.3027777777777778,
+          "coverage_at_risk_10": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "risk": 0.0,
+            "threshold": null
+          },
+          "coverage_at_risk_20": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "risk": 0.0,
+            "threshold": null
+          },
+          "n": 6
+        },
+        "generator_confidence": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 1.0
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.6666666666666666,
+            "coverage": 0.5,
+            "risk": 0.33333333333333337,
+            "threshold": 1.0
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 1.0
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.5,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 1.0
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 1.0
+          },
+          "n": 6
+        },
+        "naive_orbit_average": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 0.23338726464194587
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.6666666666666666,
+            "coverage": 0.5,
+            "risk": 0.33333333333333337,
+            "threshold": 0.21683444427855686
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 0.15425795161375305
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.3583333333333333,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.2429145985613339
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.2429145985613339
+          },
+          "n": 6
+        },
+        "single_set_sure_style": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 0.22809049771291573
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.3333333333333333,
+            "coverage": 0.5,
+            "risk": 0.6666666666666667,
+            "threshold": 0.21240183659462836
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 0.15521430030570652
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.4166666666666667,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.22809049771291573
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.22809049771291573
+          },
+          "n": 6
+        }
+      },
+      "outputs": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot:5aba926f55429901930fa83e:missing_hop"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot:5ae1fced5542997283cd230e:missing_hop"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a890b895542995153361278:stable"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot:5a890b895542995153361278:distractor"
+        }
+      ]
+    },
+    "lexical_guarded": {
+      "answer_accuracy": 0.5,
+      "methods": {
+        "clean_retrieval_max": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.6666666666666666,
+            "coverage": 0.5,
+            "risk": 0.33333333333333337,
+            "threshold": 0.5
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 0.5
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.25,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "n": 6
+        },
+        "corm_max_clean": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 0.5
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.6666666666666666,
+            "coverage": 0.5,
+            "risk": 0.33333333333333337,
+            "threshold": 0.5
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 0.5
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.25,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.5
+          },
+          "n": 6
+        },
+        "csrm": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 0.5415993797428492
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.6666666666666666,
+            "coverage": 0.5,
+            "risk": 0.33333333333333337,
+            "threshold": 0.5413752353663496
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 0.5200779847558732
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.3027777777777778,
+          "coverage_at_risk_10": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "risk": 0.0,
+            "threshold": null
+          },
+          "coverage_at_risk_20": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "risk": 0.0,
+            "threshold": null
+          },
+          "n": 6
+        },
+        "generator_confidence": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 1.0
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.3333333333333333,
+            "coverage": 0.5,
+            "risk": 0.6666666666666667,
+            "threshold": 1.0
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 0.8500000000000001
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.5,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 1.0
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 1.0
+          },
+          "n": 6
+        },
+        "naive_orbit_average": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 0.23338726464194587
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.6666666666666666,
+            "coverage": 0.5,
+            "risk": 0.33333333333333337,
+            "threshold": 0.21683444427855686
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 0.15425795161375305
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.3583333333333333,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.2429145985613339
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.2429145985613339
+          },
+          "n": 6
+        },
+        "single_set_sure_style": {
+          "accepted_error_at_30": {
+            "accepted": 2,
+            "accuracy": 0.5,
+            "coverage": 0.3333333333333333,
+            "risk": 0.5,
+            "threshold": 0.22809049771291573
+          },
+          "accepted_error_at_50": {
+            "accepted": 3,
+            "accuracy": 0.3333333333333333,
+            "coverage": 0.5,
+            "risk": 0.6666666666666667,
+            "threshold": 0.21240183659462836
+          },
+          "accepted_error_at_70": {
+            "accepted": 5,
+            "accuracy": 0.6,
+            "coverage": 0.8333333333333334,
+            "risk": 0.4,
+            "threshold": 0.15521430030570652
+          },
+          "answer_accuracy": 0.5,
+          "aurc": 0.4166666666666667,
+          "coverage_at_risk_10": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.22809049771291573
+          },
+          "coverage_at_risk_20": {
+            "accepted": 1,
+            "coverage": 0.16666666666666666,
+            "risk": 0.0,
+            "threshold": 0.22809049771291573
+          },
+          "n": 6
+        }
+      },
+      "outputs": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": true,
+          "orbit_id": "hotpot:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": false,
+          "orbit_id": "hotpot:5aba926f55429901930fa83e:missing_hop"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot:5ae1fced5542997283cd230e:missing_hop"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a890b895542995153361278:stable"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot:5a890b895542995153361278:distractor"
+        }
+      ]
+    }
+  },
+  "scored_input": "results\\hotpot_orbits_v4_smoke.constant.matched.textonly_scored.jsonl",
+  "selector_methods": [
+    "clean_retrieval_max",
+    "corm_max_clean",
+    "csrm",
+    "naive_orbit_average",
+    "single_set_sure_style"
+  ]
+}
