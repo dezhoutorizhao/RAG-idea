@@ -1,0 +1,214 @@
+{
+  "feature_balance": {
+    "clean_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 6.0,
+      "positive_mean": 6.0
+    },
+    "max_retrieval_score": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 0.5,
+      "positive_mean": 0.5
+    },
+    "mean_doc_chars": {
+      "absolute_mean_gap": 0.22416666666666174,
+      "negative_mean": 135.18416666666667,
+      "positive_mean": 135.40833333333333
+    },
+    "mean_retrieval_score": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 0.5,
+      "positive_mean": 0.5
+    },
+    "perturbation_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 1.0,
+      "positive_mean": 1.0
+    },
+    "total_doc_chars": {
+      "absolute_mean_gap": 2.6900000000000546,
+      "negative_mean": 1622.21,
+      "positive_mean": 1624.9
+    },
+    "total_doc_count": {
+      "absolute_mean_gap": 0.0,
+      "negative_mean": 12.0,
+      "positive_mean": 12.0
+    }
+  },
+  "input_n": 600,
+  "input_negative": 500,
+  "input_positive": 100,
+  "inputs": {
+    "private": "results\\fever_orbits_v4_n100.private_eval.jsonl",
+    "raw": "results\\fever_orbits_v4_n100.constant.raw.jsonl",
+    "scored": "results\\fever_orbits_v4_n100.constant.textonly_scored.jsonl"
+  },
+  "outputs": {
+    "private": "results\\fever_orbits_v4_n100.constant.structbalanced.private_eval.jsonl",
+    "raw": "results\\fever_orbits_v4_n100.constant.structbalanced.raw.jsonl",
+    "report": "results\\fever_orbits_v4_n100.constant.structbalanced.balance_report.json",
+    "scored": "results\\fever_orbits_v4_n100.constant.structbalanced.textonly_scored.jsonl"
+  },
+  "search": {
+    "candidate_combinations_evaluated": 100000,
+    "candidate_combinations_total": 204169423593847671561387240724193094030165460090325932474143661505758330944415515994945349100113181687417345,
+    "exhaustive": false,
+    "max_combinations": 100000,
+    "objective": "minimize structural-only max single-feature AUROC, then mean feature gap",
+    "seed": 97
+  },
+  "selected_n": 200,
+  "selected_negative": 100,
+  "selected_negative_orbit_ids": [
+    "fever:25dc4f70725e49253af408b42070e0c8:conflict",
+    "fever:464d4ff5ebb5aa6aee350541fdb28c3d:missing",
+    "fever:661aef33e38b8c114801f13bca7271b1:fragile_mixed",
+    "fever:661aef33e38b8c114801f13bca7271b1:near_miss_dilution",
+    "fever:7a1d5fec61985727e0cf1bb614f651c5:fragile_mixed",
+    "fever:419c7444c231c70cf176ce8c678cfe04:missing",
+    "fever:419c7444c231c70cf176ce8c678cfe04:conflict",
+    "fever:666a4ab1f248eccb2e736936a1f9b4c5:conflict",
+    "fever:92e105d87420af42f01f8152b2fff359:missing",
+    "fever:92e105d87420af42f01f8152b2fff359:fragile_mixed",
+    "fever:92e105d87420af42f01f8152b2fff359:distractor",
+    "fever:08a25e669f3bd53ad79737e21e480499:fragile_mixed",
+    "fever:08a25e669f3bd53ad79737e21e480499:near_miss_dilution",
+    "fever:5bf8b1329f2cfc1192fef638b6c09969:conflict",
+    "fever:89ed4c10e41c186046cbb039de28a13f:fragile_mixed",
+    "fever:5fb08243710e06fb61b2d533ba6dde68:missing",
+    "fever:5fb08243710e06fb61b2d533ba6dde68:conflict",
+    "fever:334ab40bf92ccf8f0f23e036180e8f6c:near_miss_dilution",
+    "fever:2c55911245fc0fff7ab10af83db854b1:conflict",
+    "fever:928739b87c697697f9710347f24b88ec:fragile_mixed",
+    "fever:969e952f3f4c8dc8655b9afe091d9c60:near_miss_dilution",
+    "fever:969e952f3f4c8dc8655b9afe091d9c60:distractor",
+    "fever:fc25a044eda81c7bd3453eb223d2dae2:distractor",
+    "fever:bc09cc89391092ed87d3d5cc18166916:fragile_mixed",
+    "fever:c1797a9dfb798a7e76aa1acfdb222d5f:near_miss_dilution",
+    "fever:3aa664fedb88f162c5d611cf9d273bb7:missing",
+    "fever:3aa664fedb88f162c5d611cf9d273bb7:fragile_mixed",
+    "fever:12cdc2dc4dd2640f9329e8f0abf2040c:distractor",
+    "fever:4bb5b9ef3fceda4884b771bd22afe296:missing",
+    "fever:4bb5b9ef3fceda4884b771bd22afe296:distractor",
+    "fever:d0f5fc5085ab4f3cd92cf014fa1e2101:distractor",
+    "fever:408058cb7e75f7de239987715d1f3ffd:fragile_mixed",
+    "fever:3b8202b9bafce8231a5698416c73fb67:conflict",
+    "fever:259f56a3e8cf4eccd3560bddadd4048e:near_miss_dilution",
+    "fever:78bf7dd1bc28a62cbc11403d5733ab1b:near_miss_dilution",
+    "fever:5f7b1ef9efff95227e169ca656decbad:conflict",
+    "fever:5f7b1ef9efff95227e169ca656decbad:distractor",
+    "fever:47a76d6890138b63445dc153427c67ba:fragile_mixed",
+    "fever:d3074b9a4d55c7840734512c713ea992:distractor",
+    "fever:7f2d7ecf5cf5f01bfce68d24c9832c10:near_miss_dilution",
+    "fever:8ea4e61a2559ea56673b59763fd63561:fragile_mixed",
+    "fever:8ea4e61a2559ea56673b59763fd63561:conflict",
+    "fever:8ea4e61a2559ea56673b59763fd63561:near_miss_dilution",
+    "fever:8ea4e61a2559ea56673b59763fd63561:distractor",
+    "fever:95a5be5861d38f738e004c5f3b0cc31a:near_miss_dilution",
+    "fever:c1d92c0f60eb777c06a68ee38ec7c717:missing",
+    "fever:c1d92c0f60eb777c06a68ee38ec7c717:conflict",
+    "fever:c1d92c0f60eb777c06a68ee38ec7c717:near_miss_dilution",
+    "fever:a959eb1a2f9c236630eafd5fa00fcb8d:fragile_mixed",
+    "fever:a959eb1a2f9c236630eafd5fa00fcb8d:conflict",
+    "fever:3d78158dd59565aa8679baed5e99ed29:missing",
+    "fever:3d78158dd59565aa8679baed5e99ed29:near_miss_dilution",
+    "fever:c1fe6e63ea6cf66cc694b118c6fb7684:missing",
+    "fever:6e402658c5c412fa366d7c433d3c67a8:missing",
+    "fever:c3d672a8c8fdb1d1ce484d2b6aad4af2:near_miss_dilution",
+    "fever:e769c4582f9b4ab619f68a4d819d9d6c:fragile_mixed",
+    "fever:4bd903ce9c58a0948793733e51cc0de6:missing",
+    "fever:5906c0b9404671c031ce851ac076ac6c:conflict",
+    "fever:5906c0b9404671c031ce851ac076ac6c:distractor",
+    "fever:74d840fe319fe64974c986321ef09566:fragile_mixed",
+    "fever:74d840fe319fe64974c986321ef09566:near_miss_dilution",
+    "fever:d26a12b4429d8dfa13442ef3750c3d3b:distractor",
+    "fever:7eb549aea795fdb0ee7ff97cc229894f:fragile_mixed",
+    "fever:7eb549aea795fdb0ee7ff97cc229894f:near_miss_dilution",
+    "fever:4c8bdb2a4f4d4acbb61c5a8e583d9679:distractor",
+    "fever:2c82b223ec975b3ed959f198bfb1a79b:fragile_mixed",
+    "fever:2c82b223ec975b3ed959f198bfb1a79b:conflict",
+    "fever:2c82b223ec975b3ed959f198bfb1a79b:near_miss_dilution",
+    "fever:2c82b223ec975b3ed959f198bfb1a79b:distractor",
+    "fever:d4cd01f3de1ce3656048ef1cbec70dc1:missing",
+    "fever:d4cd01f3de1ce3656048ef1cbec70dc1:conflict",
+    "fever:db48d0ef07c35d9a3640ac04cd947454:conflict",
+    "fever:faa32ad2a50f53151da5956343b47bbf:near_miss_dilution",
+    "fever:55dbea21a5ddc78795fe720e6d2cd90f:fragile_mixed",
+    "fever:55dbea21a5ddc78795fe720e6d2cd90f:conflict",
+    "fever:55dbea21a5ddc78795fe720e6d2cd90f:distractor",
+    "fever:b29c618a700235c6b958ea2a77f2d430:near_miss_dilution",
+    "fever:b29c618a700235c6b958ea2a77f2d430:distractor",
+    "fever:c772ba820e9bdf7b2b6c04e281677e11:fragile_mixed",
+    "fever:c772ba820e9bdf7b2b6c04e281677e11:near_miss_dilution",
+    "fever:26646da1f2e4b23d524aecf367db6cab:missing",
+    "fever:26646da1f2e4b23d524aecf367db6cab:fragile_mixed",
+    "fever:26646da1f2e4b23d524aecf367db6cab:near_miss_dilution",
+    "fever:c59a351ca075ac69c936bdde44a675fa:conflict",
+    "fever:f9ec3246f54551e028be5e278e85b5d8:missing",
+    "fever:f9ec3246f54551e028be5e278e85b5d8:fragile_mixed",
+    "fever:f9ec3246f54551e028be5e278e85b5d8:near_miss_dilution",
+    "fever:d8d4b897f4420729c6a9bfb50ef9fe65:fragile_mixed",
+    "fever:dc1923d6c06e0387b37b6d1d6f4c5876:missing",
+    "fever:4ba8157c90daf69a2d3cf7a755ca29aa:fragile_mixed",
+    "fever:4ba8157c90daf69a2d3cf7a755ca29aa:near_miss_dilution",
+    "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9:near_miss_dilution",
+    "fever:1d0ee37d49d54fde9eb4a0c3939f5ec9:distractor",
+    "fever:f0599bdcc6eea6fbaad0037c13f6b14c:fragile_mixed",
+    "fever:414c8a73d1bddfb17a58e15a1ab2a1ad:missing",
+    "fever:414c8a73d1bddfb17a58e15a1ab2a1ad:distractor",
+    "fever:f191b47ffea14f388584a00ca0511792:conflict",
+    "fever:92f3cc6c582fedd6e6a8a321b972389a:fragile_mixed",
+    "fever:92f3cc6c582fedd6e6a8a321b972389a:conflict",
+    "fever:a3476c229d852d07c72224f002c85a11:fragile_mixed"
+  ],
+  "selected_positive": 100,
+  "structural_only_probe": {
+    "features": {
+      "clean_doc_count": {
+        "auroc": 0.5,
+        "mean_negative": 6.0,
+        "mean_positive": 6.0,
+        "unique_values": 1
+      },
+      "max_retrieval_score": {
+        "auroc": 0.5,
+        "mean_negative": 0.5,
+        "mean_positive": 0.5,
+        "unique_values": 1
+      },
+      "mean_doc_chars": {
+        "auroc": 0.50015,
+        "mean_negative": 135.18416666666667,
+        "mean_positive": 135.40833333333333,
+        "unique_values": 145
+      },
+      "mean_retrieval_score": {
+        "auroc": 0.5,
+        "mean_negative": 0.5,
+        "mean_positive": 0.5,
+        "unique_values": 1
+      },
+      "perturbation_count": {
+        "auroc": 0.5,
+        "mean_negative": 1.0,
+        "mean_positive": 1.0,
+        "unique_values": 1
+      },
+      "total_doc_chars": {
+        "auroc": 0.50015,
+        "mean_negative": 1622.21,
+        "mean_positive": 1624.9,
+        "unique_values": 145
+      },
+      "total_doc_count": {
+        "auroc": 0.5,
+        "mean_negative": 12.0,
+        "mean_positive": 12.0,
+        "unique_values": 1
+      }
+    },
+    "max_single_feature_auroc": 0.50015,
+    "passed_0_55_threshold": true
+  }
+}

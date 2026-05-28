@@ -1,0 +1,146 @@
+{
+  "baselines": [
+    "corm_max_clean",
+    "single_set_sure_style",
+    "naive_orbit_average"
+  ],
+  "comparisons": {
+    "corm_max_clean": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.098810074775673,
+          "p2_5": 0.07799737077646007,
+          "p97_5": 0.10674175385951751
+        },
+        "auroc_improvement": {
+          "median": 0.5,
+          "p2_5": 0.5,
+          "p97_5": 0.5
+        },
+        "risk_at_30_reduction": {
+          "median": 0.5,
+          "p2_5": 0.3666666666666667,
+          "p97_5": 0.6166666666666667
+        },
+        "risk_at_50_reduction": {
+          "median": 0.47,
+          "p2_5": 0.38,
+          "p97_5": 0.55
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.09891994433627618,
+        "auroc_improvement": 0.5,
+        "baseline": {
+          "aurc": 0.25,
+          "auroc": 0.5,
+          "risk_at_30": 0.43333333333333335,
+          "risk_at_50": 0.43999999999999995
+        },
+        "risk_at_30_reduction": 0.43333333333333335,
+        "risk_at_50_reduction": 0.43999999999999995,
+        "target": {
+          "aurc": 0.15108005566372382,
+          "auroc": 1.0,
+          "risk_at_30": 0.0,
+          "risk_at_50": 0.0
+        }
+      }
+    },
+    "naive_orbit_average": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.18031148676657832,
+          "p2_5": 0.1195225490931916,
+          "p97_5": 0.23958807438686497
+        },
+        "auroc_improvement": {
+          "median": 0.2942648383545191,
+          "p2_5": 0.223022302230223,
+          "p97_5": 0.3633863386338634
+        },
+        "risk_at_30_reduction": {
+          "median": 0.23333333333333328,
+          "p2_5": 0.1166666666666667,
+          "p97_5": 0.35
+        },
+        "risk_at_50_reduction": {
+          "median": 0.31999999999999995,
+          "p2_5": 0.22999999999999998,
+          "p97_5": 0.4
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.18018220495570167,
+        "auroc_improvement": 0.2913,
+        "baseline": {
+          "aurc": 0.3312622606194255,
+          "auroc": 0.7087,
+          "risk_at_30": 0.23333333333333328,
+          "risk_at_50": 0.35
+        },
+        "risk_at_30_reduction": 0.23333333333333328,
+        "risk_at_50_reduction": 0.35,
+        "target": {
+          "aurc": 0.15108005566372382,
+          "auroc": 1.0,
+          "risk_at_30": 0.0,
+          "risk_at_50": 0.0
+        }
+      }
+    },
+    "single_set_sure_style": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.3302193545065795,
+          "p2_5": 0.25811662715743566,
+          "p97_5": 0.39370625913851315
+        },
+        "auroc_improvement": {
+          "median": 0.4665796868727419,
+          "p2_5": 0.3851,
+          "p97_5": 0.539053905390539
+        },
+        "risk_at_30_reduction": {
+          "median": 0.44999999999999996,
+          "p2_5": 0.33333333333333337,
+          "p97_5": 0.5833333333333333
+        },
+        "risk_at_50_reduction": {
+          "median": 0.43000000000000005,
+          "p2_5": 0.36,
+          "p97_5": 0.5
+        }
+      },
+      "bootstrap_samples": 200,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.33079389230301004,
+        "auroc_improvement": 0.46514999999999995,
+        "baseline": {
+          "aurc": 0.48187394796673383,
+          "auroc": 0.53485,
+          "risk_at_30": 0.44999999999999996,
+          "risk_at_50": 0.47
+        },
+        "risk_at_30_reduction": 0.44999999999999996,
+        "risk_at_50_reduction": 0.47,
+        "target": {
+          "aurc": 0.15108005566372382,
+          "auroc": 1.0,
+          "risk_at_30": 0.0,
+          "risk_at_50": 0.0
+        }
+      }
+    }
+  },
+  "input": "results\\fever_orbits_v4_n100.constant.structbalanced.textonly_scored.jsonl",
+  "n": 200,
+  "negative": 100,
+  "positive": 100,
+  "target": "csrm"
+}
