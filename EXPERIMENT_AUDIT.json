@@ -1,0 +1,222 @@
+{
+  "auditor": "local-deterministic-claim-ledger-verifier",
+  "cross_model_audit_available": false,
+  "date": "2026-05-20",
+  "integrity_status": "warn",
+  "overall_verdict": "warn",
+  "checks": {
+    "dead_code": {
+      "details": "Core evaluation path is tested, but no full static call-graph audit was run.",
+      "status": "warn"
+    },
+    "eval_type": {
+      "details": "HotpotQA and FEVER use real dataset structure with constructed heuristic orbit labels; synthetic toy is proxy only; pilot and paper-grade audit files, shuffled blind annotator packs, audited-label metric recomputation, an automated set-level NLI sensitivity probe, and a Clopper-Pearson risk-control pressure test are scripted, but human audit is not complete.",
+      "status": "warn"
+    },
+    "gt_provenance": {
+      "details": "Dataset-provided structures are used, but stress-orbit answerability labels are constructed heuristics pending human audit.",
+      "status": "warn"
+    },
+    "result_existence": {
+      "details": "CLAIMS_LEDGER.json verified against results/claims_verification.json with 27/27 claims passing.",
+      "status": "pass"
+    },
+    "scope": {
+      "details": "Hotpot bridge is strong; FEVER v3 near-miss provides a second heuristic stress bridge and now passes structural plus dataset-constraint audits on all three FEVER v3 seeds, including support-feature provenance; an automated set-level NLI probe preserves the CSRM directional ranking on the v3 paper-grade audit sample; Clopper-Pearson thresholding supports Hotpot-only empirical target transfer but still fails FEVER v3 in two of three split seeds; shuffled blind audit packs are prepared but unlabeled; full CoRM-RAG reproduction and completed human audit are missing, and the current released CoRM source does not expose exact producers for wiki.faiss or biased_nq_test.jsonl. Supplemental reconstruction helpers, a remote execution plan, a secret-free script pack, an import-ready remote runtime, a verified remote checkpoint, a staged-input streaming encoder smoke, a 16-passage real HF/Contriever streaming smoke, an API-free template Biased-NQ smoke, a remote eval-staging patch, a bounded template eval-smoke path, a post-FAISS smoke watcher, and an isolated partial-index template eval smoke now exist, but no full reconstructed CoRM evaluation has run.",
+      "status": "warn"
+    },
+    "score_normalization": {
+      "details": "Claim ledger uses raw metrics from result JSON files; no checked claim relies on self-normalized prediction scores.",
+      "status": "pass"
+    }
+  },
+  "audit_artifacts": {
+    "evaluation_script": "experiments/evaluate_audited_orbits.py",
+    "calibration_multiseed_script": "experiments/summarize_calibration_seeds.py",
+    "hotpot_calibration_multiseed": "results/hotpot_corm_calibration_multiseed.json",
+    "fever_calibration_multiseed": "results/fever_nearmiss_corm_v3_calibration_multiseed.json",
+    "risk_control_cp_script": "experiments/evaluate_risk_control_cp.py",
+    "hotpot_risk_control_cp_multiseed": "results/hotpot_corm_risk_control_cp_multiseed.json",
+    "fever_risk_control_cp_multiseed": "results/fever_nearmiss_corm_v3_risk_control_cp_multiseed.json",
+    "export_script": "experiments/export_audit_pack.py",
+    "merge_script": "experiments/merge_audit_annotations.py",
+    "readiness_script": "experiments/check_audit_readiness.py",
+    "adjudication_summary_script": "experiments/summarize_adjudication.py",
+    "corm_reproduction_preflight_script": "experiments/check_corm_reproduction_readiness.py",
+    "corm_reproduction_preflight": "results/corm_reproduction_preflight.json",
+    "corm_reproduction_path_audit_script": "experiments/audit_corm_reproduction_path.py",
+    "corm_reproduction_path_audit": "results/corm_reproduction_path_audit.json",
+    "corm_supplemental_faiss_builder": "experiments/build_corm_faiss_index.py",
+    "corm_supplemental_biased_nq_builder": "experiments/build_corm_biased_nq_test.py",
+    "corm_reconstruction_plan_script": "experiments/plan_corm_reconstruction.py",
+    "corm_reconstruction_plan": "results/corm_reconstruction_plan.json",
+    "corm_remote_script_pack_script": "experiments/materialize_corm_remote_scripts.py",
+    "corm_remote_script_pack_manifest": "results/corm_remote_scripts_manifest.json",
+    "corm_remote_script_pack_dir": "results/corm_remote_scripts",
+    "corm_remote_runtime_status": "results/corm_remote_runtime_status.json",
+    "corm_eval_stage_dir_patch_status": "results/corm_eval_stage_dir_patch_status.json",
+    "corm_template_smoke_eval_readiness_status": "results/corm_template_smoke_eval_readiness_status.json",
+    "corm_template_smoke_eval_watcher_status": "results/corm_template_smoke_eval_watcher_status.json",
+    "corm_release_manifest_script": "experiments/check_corm_release_manifest.py",
+    "corm_release_manifest": "results/corm_release_manifest.json",
+    "nli_set_probe_report": "NLI_PROBE_REPORT.md",
+    "nli_set_probe_pilot": "results/audit_sample_100_v3_nli_set_eval.json",
+    "nli_set_probe_paper_grade": "results/audit_sample_paper_1000_v3_nli_set_eval.json",
+    "orbit_consistency_audits": {
+      "hotpot_main": "results/hotpot_orbit_consistency_audit.json",
+      "fever_v3_main": "results/fever_nearmiss_corm_v3_orbit_consistency_audit.json",
+      "fever_v3_seed31": "results/fever_nearmiss_corm_v3_seed31_orbit_consistency_audit.json",
+      "fever_v3_seed47": "results/fever_nearmiss_corm_v3_seed47_orbit_consistency_audit.json"
+    },
+    "pilot": {
+      "adjudication": "results/audit_sample_100_v3_adjudication.json",
+      "file": "results/audit_sample_100_v3.jsonl",
+      "label_csv": "results/audit_pack_100_v3.labels.csv",
+      "manifest": "results/audit_pack_100_v3.manifest.json",
+      "blind_annotator1_label_csv": "results/audit_pack_100_v3_a1.blind.labels.csv",
+      "blind_annotator1_manifest": "results/audit_pack_100_v3_a1.blind.manifest.json",
+      "blind_annotator1_review_html": "results/audit_pack_100_v3_a1.blind.review.html",
+      "blind_annotator2_label_csv": "results/audit_pack_100_v3_a2.blind.labels.csv",
+      "blind_annotator2_manifest": "results/audit_pack_100_v3_a2.blind.manifest.json",
+      "blind_annotator2_review_html": "results/audit_pack_100_v3_a2.blind.review.html",
+      "adjudicated_readiness": "results/audit_sample_100_v3_adjudicated_readiness.json",
+      "readiness": "results/audit_sample_100_v3_readiness.json",
+      "review_html": "results/audit_pack_100_v3.review.html",
+      "summary": "results/audit_sample_100_v3_summary.json",
+      "total": 100,
+      "labeled": 0,
+      "ready": false
+    },
+    "paper_grade_candidate": {
+      "adjudication": "results/audit_sample_paper_1000_v3_adjudication.json",
+      "file": "results/audit_sample_paper_1000_v3.jsonl",
+      "label_csv": "results/audit_pack_paper_1000_v3.labels.csv",
+      "manifest": "results/audit_pack_paper_1000_v3.manifest.json",
+      "blind_annotator1_label_csv": "results/audit_pack_paper_1000_v3_a1.blind.labels.csv",
+      "blind_annotator1_manifest": "results/audit_pack_paper_1000_v3_a1.blind.manifest.json",
+      "blind_annotator1_review_html": "results/audit_pack_paper_1000_v3_a1.blind.review.html",
+      "blind_annotator2_label_csv": "results/audit_pack_paper_1000_v3_a2.blind.labels.csv",
+      "blind_annotator2_manifest": "results/audit_pack_paper_1000_v3_a2.blind.manifest.json",
+      "blind_annotator2_review_html": "results/audit_pack_paper_1000_v3_a2.blind.review.html",
+      "adjudicated_readiness": "results/audit_sample_paper_1000_v3_adjudicated_readiness.json",
+      "readiness": "results/audit_sample_paper_1000_v3_readiness.json",
+      "review_html": "results/audit_pack_paper_1000_v3.review.html",
+      "summary": "results/audit_sample_paper_1000_v3_summary.json",
+      "total": 1000,
+      "labeled": 0,
+      "per_split": 100,
+      "ready": false
+    },
+    "corm_partial_template_eval_smoke_status": "results/corm_partial_template_eval_smoke_status.json"
+  },
+  "claims": [
+    {
+      "id": "C1_hotpot_main_gain",
+      "impact": "supported_bridge"
+    },
+    {
+      "id": "C2_hotpot_multiseed_stability",
+      "impact": "supported_bridge"
+    },
+    {
+      "id": "C3_orbit_alignment_required",
+      "impact": "supported_bridge"
+    },
+    {
+      "id": "C4_answer_consistency_mechanism",
+      "impact": "supported_bridge"
+    },
+    {
+      "id": "C5_fever_second_domain_sanity",
+      "impact": "supported_secondary_bridge"
+    },
+    {
+      "id": "C6_human_audit_not_complete",
+      "impact": "unsupported_until_audited"
+    },
+    {
+      "id": "C7_case_studies_available",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C8_paired_bootstrap_positive_deltas",
+      "impact": "supported_bridge"
+    },
+    {
+      "id": "C9_corm_original_reproduction_blocked",
+      "impact": "unsupported_until_preflight_passes"
+    },
+    {
+      "id": "C10_calibrated_risk_guarantee_not_supported",
+      "impact": "unsupported_until_stronger_calibration"
+    },
+    {
+      "id": "C14_cp_risk_control_partial_hotpot_only",
+      "impact": "supported_partial_pressure_test"
+    },
+    {
+      "id": "C15_corm_reproduction_path_blocked",
+      "impact": "supported_blocker"
+    },
+    {
+      "id": "C16_corm_supplemental_reconstruction_tools",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C17_corm_reconstruction_plan_ready",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C18_corm_remote_script_pack_materialized",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C19_corm_remote_runtime_ready",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C20_corm_remote_checkpoint_uploaded",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C21_corm_streaming_encoder_smoke",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C22_corm_hf_streaming_encoder_smoke",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C23_corm_template_biased_nq_smoke",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C24_corm_eval_stage_dir_patch",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C25_corm_template_smoke_eval_readiness",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C26_corm_template_smoke_eval_watcher",
+      "impact": "supported_artifact"
+    },
+    {
+      "id": "C11_structural_consistency_audits_pass",
+      "impact": "supported_structural_audit"
+    },
+    {
+      "id": "C12_nli_set_probe_cross_scorer",
+      "impact": "supported_probe"
+    },
+    {
+      "id": "C13_hf_release_checkpoint_only",
+      "impact": "supported_blocker"
+    },
+    {
+      "id": "C27_corm_partial_template_eval_smoke",
+      "impact": "supported_artifact"
+    }
+  ]
+}

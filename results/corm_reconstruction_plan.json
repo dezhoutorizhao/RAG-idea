@@ -1,0 +1,190 @@
+{
+  "claim_policy": "A run using these steps is reconstructed-pipeline evidence, not exact CoRM-RAG original reproduction, unless original artifacts or equivalence checks are supplied.",
+  "data_src": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data",
+  "local_inputs": {
+    "biased_nq_builder": {
+      "exists": true,
+      "is_dir": false,
+      "is_file": true,
+      "path": "D:\\\u7f1d\u5408RAG-idea\\experiments\\build_corm_biased_nq_test.py",
+      "size_bytes": 5135
+    },
+    "biased_nq_test": {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data\\biased_nq_test.jsonl",
+      "size_bytes": null
+    },
+    "checkpoint": {
+      "exists": true,
+      "is_dir": false,
+      "is_file": true,
+      "path": "D:\\\u7f1d\u5408RAG-idea\\checkpoints\\hf\\critic-v12-mixed\\checkpoint-latest\\state.pt",
+      "size_bytes": 5208606507
+    },
+    "corm_repo": {
+      "exists": true,
+      "is_dir": true,
+      "is_file": false,
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG",
+      "size_bytes": null
+    },
+    "faiss_builder": {
+      "exists": true,
+      "is_dir": false,
+      "is_file": true,
+      "path": "D:\\\u7f1d\u5408RAG-idea\\experiments\\build_corm_faiss_index.py",
+      "size_bytes": 5537
+    },
+    "perturbations": {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data\\perturbations.jsonl",
+      "size_bytes": null
+    },
+    "streaming_wikipedia_encoder": {
+      "exists": true,
+      "is_dir": false,
+      "is_file": true,
+      "path": "D:\\\u7f1d\u5408RAG-idea\\experiments\\encode_corm_wikipedia_streaming.py",
+      "size_bytes": 15602
+    },
+    "template_perturbation_builder": {
+      "exists": true,
+      "is_dir": false,
+      "is_file": true,
+      "path": "D:\\\u7f1d\u5408RAG-idea\\experiments\\build_corm_template_perturbations.py",
+      "size_bytes": 7653
+    },
+    "wiki_embeddings": {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data\\wiki_embeddings.npy",
+      "size_bytes": null
+    },
+    "wiki_faiss": {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data\\wiki.faiss",
+      "size_bytes": null
+    },
+    "wiki_passages": {
+      "exists": false,
+      "is_dir": false,
+      "is_file": false,
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data\\wiki_passages.jsonl",
+      "size_bytes": null
+    },
+    "workspace": {
+      "exists": true,
+      "is_dir": true,
+      "is_file": false,
+      "path": "D:\\\u7f1d\u5408RAG-idea",
+      "size_bytes": null
+    }
+  },
+  "missing_local_reconstruction_inputs": [
+    "wiki_passages",
+    "wiki_embeddings",
+    "wiki_faiss",
+    "perturbations",
+    "biased_nq_test"
+  ],
+  "remote": {
+    "hf_endpoint_default": "https://hf-mirror.com",
+    "hf_home": "/dev/shm/csrm_corm_runtime/hf_cache",
+    "hf_policy": "Default direct huggingface.co access timed out on the server, while process-start HF_ENDPOINT=https://hf-mirror.com with HF_HOME under /dev/shm successfully streamed Wikipedia and loaded facebook/contriever-msmarco in the remote smoke.",
+    "host": "192.168.103.101",
+    "password_policy": "Do not write passwords into scripts or reports; use interactive SSH, SSH keys, or caller-provided secret handling.",
+    "remote_root": "/mnt/ntfs-disk/csrm_corm_reconstruction",
+    "runtime_root": "/dev/shm/csrm_corm_runtime",
+    "ssh_port": 22,
+    "storage_policy": "Use /mnt/ntfs-disk for persistent workspace/data and /dev/shm/csrm_corm_runtime for the transient Python runtime and HuggingFace cache; root filesystem is effectively full and /mnt/ntfs-disk is an NTFS/fuseblk mount with limited POSIX permission support.",
+    "user": "syk"
+  },
+  "remote_steps": [
+    {
+      "command": "mkdir -p /mnt/ntfs-disk/csrm_corm_reconstruction/workspace /mnt/ntfs-disk/csrm_corm_reconstruction/data /mnt/ntfs-disk/csrm_corm_reconstruction/outputs/corm_reconstructed_eval /mnt/ntfs-disk/csrm_corm_reconstruction/outputs/corm_reconstructed_eval_template_smoke /mnt/ntfs-disk/csrm_corm_reconstruction/stage/eval_data /mnt/ntfs-disk/csrm_corm_reconstruction/stage/eval_data_template_smoke /mnt/ntfs-disk/csrm_corm_reconstruction/stage/template_smoke_data /dev/shm/csrm_corm_runtime/hf_cache /dev/shm/csrm_corm_runtime/hf_cache/hub /dev/shm/csrm_corm_runtime/hf_cache/datasets /dev/shm/csrm_corm_runtime/pip_cache /dev/shm/csrm_corm_runtime/tmp /dev/shm/csrm_corm_runtime/xdg_cache /dev/shm/csrm_corm_runtime/vllm_cache /dev/shm/csrm_corm_runtime/mamba_root /dev/shm/csrm_corm_runtime/mamba_pkgs /dev/shm/csrm_corm_runtime/micromamba",
+      "name": "prepare_remote_dirs"
+    },
+    {
+      "caveat": "The system Python is 3.8; the reconstructed evaluation uses an isolated Python 3.10 micromamba environment under /dev/shm when conda-forge is reachable, with a system Python 3.8 venv fallback if conda-forge metadata download fails. /dev/shm is used because the persistent /mnt/ntfs-disk mount does not support all POSIX permission operations required by micromamba.",
+      "command": "if [ ! -x /dev/shm/csrm_corm_runtime/micromamba/bin/micromamba ]; then curl -L https://micro.mamba.pm/api/micromamba/linux-64/latest | tar --touch -xvj -C /dev/shm/csrm_corm_runtime/micromamba bin/micromamba; fi && (/dev/shm/csrm_corm_runtime/micromamba/bin/micromamba create -y -p /dev/shm/csrm_corm_runtime/py_runtime -c conda-forge python=3.10 pip || (rm -rf /dev/shm/csrm_corm_runtime/py_runtime && python3 -m venv --copies /dev/shm/csrm_corm_runtime/py_runtime))",
+      "name": "create_remote_venv"
+    },
+    {
+      "caveat": "CUDA-specific torch/vLLM wheels may need adjustment for the server driver and Python version; Python 3.8 fallback pins vLLM to 0.5.5 and adds a minimal pyairports shim because the current pyairports 0.0.1 wheel lacks the module imported by outlines.",
+      "command": "$CORM_RECON_PIP install --upgrade pip setuptools wheel && if $CORM_RECON_PYTHON -c \"import sys; raise SystemExit(0 if sys.version_info < (3, 9) else 1)\"; then $CORM_RECON_PIP install numpy scipy scikit-learn datasets huggingface_hub transformers tokenizers==0.20.3 'torch>=2.1' faiss-cpu 'vllm==0.5.5'; else $CORM_RECON_PIP install numpy scipy scikit-learn datasets huggingface_hub transformers 'torch>=2.1' faiss-cpu 'vllm>=0.5'; fi && $CORM_RECON_PYTHON -c \"import sysconfig; from pathlib import Path; p=Path(sysconfig.get_paths()['purelib'])/'pyairports'; p.mkdir(exist_ok=True); (p/'__init__.py').write_text('from .airports import AIRPORT_LIST\\\\n'); (p/'airports.py').write_text('AIRPORT_LIST = []\\\\n')\"",
+      "name": "install_runtime"
+    },
+    {
+      "caveat": "This supplemental streaming encoder avoids the upstream encode_wikipedia.py OOM risk by writing embeddings_shard_*.npy incrementally. For smoke tests, add --max-articles or --max-passages manually; full reconstruction should omit those limits.",
+      "command": "cd /mnt/ntfs-disk/csrm_corm_reconstruction/workspace && HF_ENDPOINT=${HF_ENDPOINT:-https://hf-mirror.com} HF_HOME=/dev/shm/csrm_corm_runtime/hf_cache HF_HUB_CACHE=/dev/shm/csrm_corm_runtime/hf_cache/hub HF_DATASETS_CACHE=/dev/shm/csrm_corm_runtime/hf_cache/datasets HF_HUB_ETAG_TIMEOUT=${HF_HUB_ETAG_TIMEOUT:-60} HF_HUB_DOWNLOAD_TIMEOUT=${HF_HUB_DOWNLOAD_TIMEOUT:-180} $CORM_RECON_PYTHON experiments/encode_corm_wikipedia_streaming.py --output-dir /mnt/ntfs-disk/csrm_corm_reconstruction/data --device cuda:0 --encode-batch-size 256 --passages-per-shard 250000 --resume",
+      "expected_outputs": [
+        "/mnt/ntfs-disk/csrm_corm_reconstruction/data/wiki_passages.jsonl",
+        "/mnt/ntfs-disk/csrm_corm_reconstruction/data/embeddings_shard_000000.npy"
+      ],
+      "name": "build_passages_and_embeddings"
+    },
+    {
+      "command": "cd /mnt/ntfs-disk/csrm_corm_reconstruction/workspace && $CORM_RECON_PYTHON experiments/build_corm_faiss_index.py --embeddings /mnt/ntfs-disk/csrm_corm_reconstruction/data --output /mnt/ntfs-disk/csrm_corm_reconstruction/data/wiki.faiss --manifest /mnt/ntfs-disk/csrm_corm_reconstruction/outputs/wiki_faiss_manifest.json",
+      "expected_outputs": [
+        "/mnt/ntfs-disk/csrm_corm_reconstruction/data/wiki.faiss"
+      ],
+      "name": "build_faiss_index"
+    },
+    {
+      "caveat": "Requires an OpenAI-compatible API for original-style perturbations; alternatively stage an existing perturbations.jsonl file or use the template fallback step below for reconstructed-pipeline smoke only.",
+      "command": "cd /mnt/ntfs-disk/csrm_corm_reconstruction/workspace/external_repos/CoRM-RAG && OPENAI_API_KEY=$OPENAI_API_KEY OPENAI_BASE_URL=$OPENAI_BASE_URL $CORM_RECON_PYTHON src/gen_perturbations_api.py --output /mnt/ntfs-disk/csrm_corm_reconstruction/data/perturbations.jsonl --data nq_val",
+      "expected_outputs": [
+        "/mnt/ntfs-disk/csrm_corm_reconstruction/data/perturbations.jsonl"
+      ],
+      "name": "generate_or_stage_perturbations"
+    },
+    {
+      "caveat": "Template fallback for smoke and plumbing tests only; do not report it as original Biased-NQ evidence.",
+      "command": "cd /mnt/ntfs-disk/csrm_corm_reconstruction/workspace && HF_ENDPOINT=${HF_ENDPOINT:-https://hf-mirror.com} HF_HOME=/dev/shm/csrm_corm_runtime/hf_cache HF_HUB_CACHE=/dev/shm/csrm_corm_runtime/hf_cache/hub HF_DATASETS_CACHE=/dev/shm/csrm_corm_runtime/hf_cache/datasets $CORM_RECON_PYTHON experiments/build_corm_template_perturbations.py --output /mnt/ntfs-disk/csrm_corm_reconstruction/data/perturbations.template_smoke.jsonl --manifest /mnt/ntfs-disk/csrm_corm_reconstruction/outputs/perturbations_template_smoke_manifest.json --max-queries 100",
+      "expected_outputs": [
+        "/mnt/ntfs-disk/csrm_corm_reconstruction/data/perturbations.template_smoke.jsonl"
+      ],
+      "name": "generate_template_perturbations_smoke"
+    },
+    {
+      "command": "cd /mnt/ntfs-disk/csrm_corm_reconstruction/workspace && $CORM_RECON_PYTHON experiments/build_corm_biased_nq_test.py --perturbations /mnt/ntfs-disk/csrm_corm_reconstruction/data/perturbations.jsonl --output /mnt/ntfs-disk/csrm_corm_reconstruction/data/biased_nq_test.jsonl --manifest /mnt/ntfs-disk/csrm_corm_reconstruction/outputs/biased_nq_manifest.json",
+      "expected_outputs": [
+        "/mnt/ntfs-disk/csrm_corm_reconstruction/data/biased_nq_test.jsonl"
+      ],
+      "name": "materialize_biased_nq"
+    },
+    {
+      "caveat": "Template fallback for smoke and plumbing tests only; do not report it as original Biased-NQ evidence.",
+      "command": "cd /mnt/ntfs-disk/csrm_corm_reconstruction/workspace && $CORM_RECON_PYTHON experiments/build_corm_biased_nq_test.py --perturbations /mnt/ntfs-disk/csrm_corm_reconstruction/data/perturbations.template_smoke.jsonl --output /mnt/ntfs-disk/csrm_corm_reconstruction/data/biased_nq_test.template_smoke.jsonl --manifest /mnt/ntfs-disk/csrm_corm_reconstruction/outputs/biased_nq_template_smoke_manifest.json",
+      "expected_outputs": [
+        "/mnt/ntfs-disk/csrm_corm_reconstruction/data/biased_nq_test.template_smoke.jsonl"
+      ],
+      "name": "materialize_template_biased_nq_smoke"
+    },
+    {
+      "command": "cd /mnt/ntfs-disk/csrm_corm_reconstruction/workspace/external_repos/CoRM-RAG/src && PATH=/dev/shm/csrm_corm_runtime/py_runtime/bin:$PATH HF_ENDPOINT=${HF_ENDPOINT:-https://hf-mirror.com} HF_HOME=/dev/shm/csrm_corm_runtime/hf_cache HF_HUB_CACHE=/dev/shm/csrm_corm_runtime/hf_cache/hub HF_DATASETS_CACHE=/dev/shm/csrm_corm_runtime/hf_cache/datasets HF_HUB_ETAG_TIMEOUT=${HF_HUB_ETAG_TIMEOUT:-60} HF_HUB_DOWNLOAD_TIMEOUT=${HF_HUB_DOWNLOAD_TIMEOUT:-180} DATA_SRC=/mnt/ntfs-disk/csrm_corm_reconstruction/data EVAL_STAGE_DIR=/mnt/ntfs-disk/csrm_corm_reconstruction/stage/eval_data SKIP_FAISS_COPY=${SKIP_FAISS_COPY:-1} CRITIC_PATH=/mnt/ntfs-disk/csrm_corm_reconstruction/workspace/checkpoints/hf/critic-v12-mixed/checkpoint-latest/state.pt OUTPUT_DIR=/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/corm_reconstructed_eval GENERATOR_MODEL=${GENERATOR_MODEL:-Qwen/Qwen2.5-7B-Instruct} bash run_eval.sh",
+      "expected_outputs": [
+        "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/corm_reconstructed_eval/evaluation_results.json"
+      ],
+      "name": "run_reconstructed_eval"
+    },
+    {
+      "caveat": "Template Biased-NQ smoke evaluation is for pipeline debugging only. It uses the deterministic template fallback and a small per-dataset cap; do not report it as original Biased-NQ or full CoRM-RAG reproduction evidence.",
+      "command": "SMOKE_DATA_SRC=/mnt/ntfs-disk/csrm_corm_reconstruction/stage/template_smoke_data && mkdir -p \"$SMOKE_DATA_SRC\" && ln -sf /mnt/ntfs-disk/csrm_corm_reconstruction/data/wiki.faiss \"$SMOKE_DATA_SRC/wiki.faiss\" && ln -sf /mnt/ntfs-disk/csrm_corm_reconstruction/data/wiki_passages.jsonl \"$SMOKE_DATA_SRC/wiki_passages.jsonl\" && ln -sf /mnt/ntfs-disk/csrm_corm_reconstruction/data/biased_nq_test.template_smoke.jsonl \"$SMOKE_DATA_SRC/biased_nq_test.jsonl\" && cd /mnt/ntfs-disk/csrm_corm_reconstruction/workspace/external_repos/CoRM-RAG/src && PATH=/dev/shm/csrm_corm_runtime/py_runtime/bin:$PATH HF_ENDPOINT=${HF_ENDPOINT:-https://hf-mirror.com} HF_HOME=/dev/shm/csrm_corm_runtime/hf_cache HF_HUB_CACHE=/dev/shm/csrm_corm_runtime/hf_cache/hub HF_DATASETS_CACHE=/dev/shm/csrm_corm_runtime/hf_cache/datasets HF_HUB_ETAG_TIMEOUT=${HF_HUB_ETAG_TIMEOUT:-60} HF_HUB_DOWNLOAD_TIMEOUT=${HF_HUB_DOWNLOAD_TIMEOUT:-180} DATA_SRC=\"$SMOKE_DATA_SRC\" EVAL_STAGE_DIR=/mnt/ntfs-disk/csrm_corm_reconstruction/stage/eval_data_template_smoke SKIP_FAISS_COPY=${SKIP_FAISS_COPY:-1} EVAL_DATASETS=Biased_NQ EVAL_MAX_EXAMPLES=${EVAL_MAX_EXAMPLES:-20} EVAL_RERANK_DEPTH=${EVAL_RERANK_DEPTH:-10} EVAL_MAX_CONTEXT_DOCS=${EVAL_MAX_CONTEXT_DOCS:-2} CRITIC_PATH=/mnt/ntfs-disk/csrm_corm_reconstruction/workspace/checkpoints/hf/critic-v12-mixed/checkpoint-latest/state.pt OUTPUT_DIR=/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/corm_reconstructed_eval_template_smoke GENERATOR_MODEL=${GENERATOR_MODEL:-Qwen/Qwen2.5-0.5B-Instruct} bash run_eval.sh",
+      "expected_outputs": [
+        "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/corm_reconstructed_eval_template_smoke/evaluation_results.json"
+      ],
+      "name": "run_template_biased_nq_smoke_eval"
+    }
+  ],
+  "status": "planned_not_executed",
+  "supplemental_tools_ready": true,
+  "workspace": "D:\\\u7f1d\u5408RAG-idea"
+}

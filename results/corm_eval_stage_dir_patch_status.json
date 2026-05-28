@@ -1,0 +1,21 @@
+{
+  "status": "deployed_verified",
+  "observed_at": "2026-05-20",
+  "remote": {
+    "host": "192.168.103.101",
+    "user": "syk",
+    "run_eval": "/mnt/ntfs-disk/csrm_corm_reconstruction/workspace/external_repos/CoRM-RAG/src/run_eval.sh",
+    "run_script": "/mnt/ntfs-disk/csrm_corm_reconstruction/workspace/results/corm_remote_scripts/04_run_reconstructed_eval.sh"
+  },
+  "checks": {
+    "run_eval_bash_n": true,
+    "run_script_bash_n": true,
+    "line_endings_fixed_for_bash": true,
+    "eval_stage_dir_configurable": true,
+    "skip_faiss_copy_configurable": true,
+    "remote_run_uses_large_stage_dir": "/mnt/ntfs-disk/csrm_corm_reconstruction/stage/eval_data",
+    "remote_run_defaults_skip_faiss_copy": true
+  },
+  "reason": "The server root filesystem has about 1.9GB free, so staging a full wiki.faiss under /tmp/eval_data would fail. The reconstructed evaluation now stages or symlinks under the large /mnt/ntfs-disk mount.",
+  "claim_policy": "Deployment-readiness evidence only; this does not produce reconstructed CoRM evaluation metrics."
+}

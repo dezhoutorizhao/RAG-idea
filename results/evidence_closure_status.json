@@ -1,0 +1,151 @@
+{
+  "allowed_claims": [
+    "CSRM has strong bridge evidence on HotpotQA-derived orbits with released CoRM critic scores.",
+    "CSRM has secondary bridge evidence on FEVER v3 near-miss orbits.",
+    "Orbit alignment is necessary under the implemented shuffled-perturbation ablation.",
+    "The directional CSRM ranking survives an automated NLI cross-scorer sensitivity probe.",
+    "Hotpot-only empirical risk-target transfer is supported under the conservative CP pressure test."
+  ],
+  "claim_verification": {
+    "failed_claims": 0,
+    "passed_claims": 28,
+    "total_claims": 28
+  },
+  "corm_reconstruction": {
+    "complete_embedding_shards": 52,
+    "latest_complete_embedding_shard": "embeddings_shard_000051.npy",
+    "latest_observed_at": "2026-05-27T13:34:41+08:00",
+    "missing_required_artifacts": 5,
+    "preflight_ready": false,
+    "remote_status": "failed_storage_io_after_fresh_250k_recovery",
+    "terminal_failure": "The 250k-shard resume wrote embeddings_shard_000051.npy completely, then failed while writing/flushing wiki_passages.jsonl with OSError [Errno 5] Input/output error on the NTFS/fuseblk mount.",
+    "wiki_faiss_exists": false
+  },
+  "disallowed_claims": [
+    "Full original CoRM-RAG retrieval-generation reproduction is complete.",
+    "A general formal risk-control guarantee is established.",
+    "The results are human-audited.",
+    "The method solves robust RAG generally across tasks."
+  ],
+  "generated_at_utc": "2026-05-27T05:42:32.230940+00:00",
+  "human_audit_v3_excluded_by_user": true,
+  "main_bridge_results": {
+    "fever_nearmiss_corm_v3_multiseed": {
+      "corm_max_clean": {
+        "aurc": 0.8305555555555552,
+        "auroc": 0.5,
+        "risk_at_30": 0.8333333333333334
+      },
+      "csrm": {
+        "aurc": 0.5301117889973995,
+        "auroc": 1.0,
+        "risk_at_30": 0.4444444444444444
+      },
+      "csrm_shuffled_perturbations": {
+        "aurc": 0.977810090970241,
+        "auroc": 0.032715,
+        "risk_at_30": 1.0
+      },
+      "naive_orbit_average": {
+        "aurc": 0.7719454352819145,
+        "auroc": 0.7763891666666667,
+        "risk_at_30": 0.6407407407407407
+      },
+      "single_set_sure_style": {
+        "aurc": 0.826388888888889,
+        "auroc": 0.5,
+        "risk_at_30": 0.8333333333333334
+      }
+    },
+    "hotpot_corm_multiseed": {
+      "corm_max_clean": {
+        "aurc": 0.7443687185929656,
+        "auroc": 0.5,
+        "risk_at_30": 0.7496513249651325
+      },
+      "csrm": {
+        "aurc": 0.40489864613787746,
+        "auroc": 0.9975651904132611,
+        "risk_at_30": 0.16689911668991164
+      },
+      "csrm_shuffled_perturbations": {
+        "aurc": 0.9633005358102938,
+        "auroc": 0.00013611111111111113,
+        "risk_at_30": 1.0
+      },
+      "naive_orbit_average": {
+        "aurc": 0.582912422706895,
+        "auroc": 0.8321209351124691,
+        "risk_at_30": 0.5118665736866573
+      },
+      "single_set_sure_style": {
+        "aurc": 0.7374717336683417,
+        "auroc": 0.5,
+        "risk_at_30": 0.7496513249651325
+      }
+    },
+    "nli_cross_scorer_paper_1000": {
+      "corm_max_clean": {
+        "aurc": 0.7838157041951291,
+        "auroc": 0.524403125,
+        "risk_at_30": 0.78
+      },
+      "csrm": {
+        "aurc": 0.6676145688591014,
+        "auroc": 0.7352875,
+        "risk_at_30": 0.6266666666666667
+      },
+      "csrm_shuffled_perturbations": {
+        "aurc": 0.8920563418661511,
+        "auroc": 0.32814375,
+        "risk_at_30": 0.9366666666666666
+      },
+      "naive_orbit_average": {
+        "aurc": 0.7959136913255165,
+        "auroc": 0.48796875,
+        "risk_at_30": 0.86
+      },
+      "single_set_sure_style": {
+        "aurc": 0.8201848128326241,
+        "auroc": 0.48176875,
+        "risk_at_30": 0.87
+      }
+    }
+  },
+  "remaining_non_human_blockers": [
+    "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts.",
+    "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
+    "Independent external review has not been rerun after the latest storage-status update."
+  ],
+  "risk_control": {
+    "fever_cp": {
+      "empirical_transfer_supported": false,
+      "formal_risk_guarantee_supported": false,
+      "target_miss_count": 2
+    },
+    "hotpot_cp": {
+      "empirical_transfer_supported": true,
+      "formal_risk_guarantee_supported": false,
+      "target_miss_count": 0
+    }
+  },
+  "structural_audits": {
+    "fever_nearmiss_corm_v3_orbit_consistency_audit.json": {
+      "error_count": 0,
+      "passed": true
+    },
+    "fever_nearmiss_corm_v3_seed31_orbit_consistency_audit.json": {
+      "error_count": 0,
+      "passed": true
+    },
+    "fever_nearmiss_corm_v3_seed47_orbit_consistency_audit.json": {
+      "error_count": 0,
+      "passed": true
+    },
+    "hotpot_orbit_consistency_audit.json": {
+      "error_count": 0,
+      "passed": true
+    }
+  },
+  "verdict": "non_human_bridge_closed_except_full_corm_reconstruction_and_formal_risk"
+}

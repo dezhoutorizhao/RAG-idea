@@ -1,0 +1,1294 @@
+{
+  "case_counts": {
+    "corm_false_accept_csrm_reject": 3,
+    "csrm_false_accept_failure": 3,
+    "csrm_true_accept": 3,
+    "naive_false_accept_csrm_reject": 3,
+    "single_set_false_accept_csrm_reject": 3
+  },
+  "categories": {
+    "corm_false_accept_csrm_reject": [
+      {
+        "answer": "Art of Dying",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.12285338342189789,
+              "doc_id": "Panic! at the Disco",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Panic!  at the Disco is an American rock band from Las Vegas, Nevada, formed in 2004 and featuring the current lineup of vocalist Brendon Urie, accompanied on tour by bassist Dallon Weekes, guitarist Kenneth Harris and drummer Dan Pawlovich.  Founded by childhood friends Ryan Ross, Spencer Smith, Brent Wilson and Urie, Panic!  at the Disco recorded its first demos while its members were in high school.  Shortly after, the band recorded and released its debut studio album, \"A Fever You Can't Swea"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9893081784248352,
+              "doc_id": "Vices and Virtues (Art of Dying album)",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Vices and Virtues is the second studio album by Canadian rock band Art of Dying.  It is the band's major label debut after signing under David Draiman and Dan Donegan's Intoxication records.  Coincidentally, alternative rock band Panic!  at the Disco released their third album, also titled \"Vices & Virtues\" (not counting the ampersand), four days prior.  As of September 2014, \"Vices and Virtues\" has sold over 50,000 copies."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.004345588851720095,
+              "doc_id": "Vices &amp; Virtues Tour",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "Vices & Virtues Tour was a concert tour by American rock band Panic!  at the Disco in support of their \"Vices & Virtues\" album, in 2011.  It was split into three legs.  The first leg was called \"An Intimate Evening With Panic!  at the Disco\".  It began on January 23, 2011 and currently had twelve shows listed.  The second part was after the album's release, named the \"Vices & Virtues European Tour\".  The third leg of the tour was called the \"Vices & Virtues Asian Tour\".  This had at least two da"
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Vices and Virtues, coincidentally released just four days after \"Vices & Virtues\" by Las Vegas band Panic! at the Disco, was the second studio album by which Canadian rock band?",
+          "support_key": "Panic! at the Disco|Vices and Virtues (Art of Dying album)"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a8ad2f3554299515336138d:distractor",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.09681763499975204,
+                "doc_id": "A Fever You Can't Sweat Out",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "A Fever You Can't Sweat Out is the debut studio album by American rock band Panic!  at the Disco.  Produced by Matt Squire, the album was released on September 27, 2005, on Decaydance and Fueled by Ramen.  The group formed in Las Vegas in 2004 and began posting demos online, which caught the attention of Fall Out Boy bassist Pete Wentz.  Wentz signed the group to his own imprint label, Decaydance, without them having ever performed live."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0031064259819686413,
+                "doc_id": "The Ballad of Mona Lisa",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "\"The Ballad of Mona Lisa\" (commonly referred to as simply \"Mona Lisa\") is a song by American rock band Panic!  at the Disco, released February 1, 2011 as the first single from the group's third studio album, \"Vices & Virtues\" (2011).  Vocalist Brendon Urie wrote the song to express personal struggles and convictions many years prior to its official production for \"Vices & Virtues\".  The song impacted radio on February 15, 2011."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.018383093178272247,
+                "doc_id": "Panic! at the Disco discography",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Panic!  at the Disco is an American rock band that originated in Las Vegas, Nevada.  Their 2005 debut album, \"A Fever You Can't Sweat Out\", reached number 13 on the US \"Billboard\" 200, and has sold more than 2.2 million copies since its September 2005 release, spearheaded by the platinum top 10 hit single, \"I Write Sins Not Tragedies\".  The band's second album, \"Pretty.  Odd. \", was released on March 21, 2008, entering the US chart at, and peaking at, number 2.  Their third effort, \"Vices & Virt"
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "distractor_only",
+            "query": "Vices and Virtues, coincidentally released just four days after \"Vices & Virtues\" by Las Vegas band Panic! at the Disco, was the second studio album by which Canadian rock band? Prefer background context even if direct evidence is absent.",
+            "support_key": "distractor_only"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9893081784248352,
+          "csrm": 0.24277083333333338,
+          "naive_orbit_average": 0.2804166666666667,
+          "single_set_sure_style": 0.5233333333333334
+        },
+        "split": "hotpot_distractor"
+      },
+      {
+        "answer": "Blue Grass Airport",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9883472323417664,
+              "doc_id": "Flower Alley",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Flower Alley (foaled May 7, 2002) is an American Thoroughbred racehorse.  He was bred at Bona Terra Farms by George Brunacini, who was killed in the August 27, 2006, crash of Comair Flight 5191 at Blue Grass Airport in Lexington, Kentucky."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.43951287865638733,
+              "doc_id": "Blue Grass Airport",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Blue Grass Airport (IATA: LEX, ICAO: KLEX, FAA LID: LEX) is a public airport in Fayette County, Kentucky, 4 miles west of downtown Lexington.  Located among world-renowned horse farms and situated directly across from Keeneland Race Course, Blue Grass Airport is the primary airport serving central and eastern Kentucky.  More than 1.2 million passengers depart or arrive annually at Blue Grass Airport.  In 2016, the airport served 1,245,251 passengers via four major airline carriers: Allegiant, Am"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.00033310186699964106,
+              "doc_id": "Joseph A. Hardy Connellsville Airport",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "Joseph A. Hardy Connellsville Airport (ICAO: KVVS) is a public-use airport located four nautical miles (7 km) southwest of Connellsville in Dunbar Township, Fayette County, Pennsylvania, United States.  It is owned by the Fayette County Airport Authority and serves the south-eastern segment of the Pittsburgh metropolitan area.  The airport serves the general aviation community with no scheduled commercial airline service."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Flower Alley was bred by the trainer who was killed at what Fayette County, Kentucky airport?",
+          "support_key": "Blue Grass Airport|Flower Alley"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a89dd4d554299669944a5e3:distractor",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.001383368973620236,
+                "doc_id": "Fayette County School System (Georgia)",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Fayette County School System is a public school district based in Fayetteville, Georgia, United States and covering residents of Fayette County.  The county is included in the Atlanta-Sandy Springs-Roswell Metropolitan Statistical Area.  The school system serves all of Fayette County."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.00048616109415888786,
+                "doc_id": "Manara, Ohio",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Manara is an unincorporated community in Marion Township, Fayette County, Ohio, United States.  It is located at , at the intersection of Washington-Waterloo Road (Fayette County Highway 35) and Bloomingburg-New Holland Road (Fayette County Highway 27)."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 8.687684749020264e-05,
+                "doc_id": "Falmouth, Indiana",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Falmouth is an unincorporated community in Fayette and Rush counties in the U.S. state of Indiana.  Located at the northeastern corner of Union Township and the southeastern corner of Washington Township in Rush County and along the northwestern edge of Fairview Township in Fayette County, it lies at the intersection of CR800E (Rush County) with CR600N (Rush County)/CR400N(Fayette County).  Falmouth sits northwest of Connersville and northeast of Rushville, the county seats of Fayette and Rush c"
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "distractor_only",
+            "query": "Flower Alley was bred by the trainer who was killed at what Fayette County, Kentucky airport? Prefer background context even if direct evidence is absent.",
+            "support_key": "distractor_only"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9883472323417664,
+          "csrm": 0.24277083333333338,
+          "naive_orbit_average": 0.2804166666666667,
+          "single_set_sure_style": 0.5233333333333334
+        },
+        "split": "hotpot_distractor"
+      },
+      {
+        "answer": "Janet Damita Jo Jackson",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.01083264872431755,
+              "doc_id": "Janet Jackson",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Janet Damita Jo Jackson (born May 16, 1966) is an American singer, songwriter, dancer and actress.  Known for sonically innovative, socially conscious, and sexually provocative records, elaborate stage shows, and high-profile television and film roles, she has been a prominent figure in popular culture for over 30 years."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9875783324241638,
+              "doc_id": "Back Up, Dancer",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "\"Back Up, Dancer\" is the second episode of the seventh season of the American television series \"Will & Grace\".  It was written by Tracy Poust and Jon Kinnally and directed by series producer James Burrows.  The episode originally aired on the National Broadcasting Company (NBC) in the United States on September 23, 2004.  Guest stars in \"Back Up, Dancer\" include Will Arnett, Bobby Cannavale, and Janet Jackson."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 9.398775728186592e-05,
+              "doc_id": "Glee: The Music, The Power of Madonna",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "Glee: The Music, The Power of Madonna is the debut extended play (EP) by the cast of the musical television series \"Glee\".  It contains eight songs from the season one \"Glee\" episode, \"The Power of Madonna\", which was a tribute episode dedicated to American recording artist Madonna.  She had sold the rights to her entire catalog of music to \"Glee\" in 2009, and producers of the show developed the episode called \"The Power of Madonna\"; the show featured a number of cover versions of Madonna's song"
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Which American music star appeared as a guest in a Will & Grace episode called \"Back Up, Dancer\"?",
+          "support_key": "Back Up, Dancer|Janet Jackson"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a74684655429929fddd8410:distractor",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 2.188106554967817e-05,
+                "doc_id": "It's Always Sunny in Philadelphia (season 6)",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "The sixth season of the American comedy television series \"It's Always Sunny in Philadelphia\" premiered on FX on September 16, 2010.  The season contains 14 episodes and concluded airing on December 9, 2010 with the hour-long Christmas special (which was produced for season 5, however aired as part of season 6).  An additional episode called \"The Gang Gets Successful\" (production code IP06004) was produced for this season, but was not aired, despite scenes from the episode being included in prom"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 7.55834043957293e-05,
+                "doc_id": "Glee: The Music, The Power of Madonna",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Glee: The Music, The Power of Madonna is the debut extended play (EP) by the cast of the musical television series \"Glee\".  It contains eight songs from the season one \"Glee\" episode, \"The Power of Madonna\", which was a tribute episode dedicated to American recording artist Madonna.  She had sold the rights to her entire catalog of music to \"Glee\" in 2009, and producers of the show developed the episode called \"The Power of Madonna\"; the show featured a number of cover versions of Madonna's song"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 3.046423262276221e-05,
+                "doc_id": "The Surreal Life: Fame Games",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "The Surreal Life: Fame Games is an American reality television series that was originally broadcast on the VH1 cable network.  A spin-off of the VH1 show, \"The Surreal Life\", the show assembles ten alumni of the show's 6 prior seasons to compete in a ten-week competition that takes place in Las Vegas, with the winner taking home a prize of $100,000 provided by the online gaming site Golden Palace.net.  Robin Leach is the host.  The contestants also compete in a game show format elimination round"
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "distractor_only",
+            "query": "Which American music star appeared as a guest in a Will & Grace episode called \"Back Up, Dancer\"? Prefer background context even if direct evidence is absent.",
+            "support_key": "distractor_only"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9875783324241638,
+          "csrm": 0.24277083333333338,
+          "naive_orbit_average": 0.2804166666666667,
+          "single_set_sure_style": 0.5233333333333334
+        },
+        "split": "hotpot_distractor"
+      }
+    ],
+    "csrm_false_accept_failure": [
+      {
+        "answer": "Apium",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.03213350847363472,
+              "doc_id": "Apium",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Apium (including celery and the marshworts) is a genus of about 20 species of flowering plants in the family Apiaceae, with a subcosmopolitan distribution in Europe, Asia, Africa, South America and Australia.  They are medium to tall biennials or perennials growing up to 1 m high in the wet soil of marshes and salt marshes, and have pinnate to bipinnate leaves and small white flowers in compound umbels.  Some species are edible, notably \"Apium graveolens\", which includes the commercially importa"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5935230255126953,
+              "doc_id": "Elodea",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Elodea is a genus of 6 species of aquatic plants often called the waterweeds described as a genus in 1803.  \"Elodea\" is native to North and South America and is also widely used as aquarium vegetation.  It lives in fresh water."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.2746258080005646,
+              "doc_id": "Apium annuum",
+              "missing": 0.75,
+              "support": 0.45,
+              "text": "Apium annuum is one of the 20 species of the genus \"Apium\" of the family Apiaceae.  It is an annual herb with a distribution in salt-marsh and saline habitats of Victoria, south and western Australia."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Which genus has more species, Apium or Elodea?",
+          "support_key": "Apium|Elodea"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5adf39295542992d7e9f92df:missing_hop",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04057889059185982,
+                "doc_id": "Apium",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Apium (including celery and the marshworts) is a genus of about 20 species of flowering plants in the family Apiaceae, with a subcosmopolitan distribution in Europe, Asia, Africa, South America and Australia.  They are medium to tall biennials or perennials growing up to 1 m high in the wet soil of marshes and salt marshes, and have pinnate to bipinnate leaves and small white flowers in compound umbels.  Some species are edible, notably \"Apium graveolens\", which includes the commercially importa"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.24874518811702728,
+                "doc_id": "Apium annuum",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "Apium annuum is one of the 20 species of the genus \"Apium\" of the family Apiaceae.  It is an annual herb with a distribution in salt-marsh and saline habitats of Victoria, south and western Australia."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0021591377444565296,
+                "doc_id": "Tricholoma apium",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "Tricholoma apium is a mushroom of the agaric genus \"Tricholoma\" that is found in Europe.  It is classified as vulnerable in the IUCN Red List of Threatened Species."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "missing_hop_framing",
+            "query": "Which genus has more species, Apium or Elodea? Answer using only one supporting hop if possible.",
+            "support_key": "Apium|Elodea"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5935230255126953,
+          "csrm": 0.7403000000000001,
+          "naive_orbit_average": 0.5526666666666668,
+          "single_set_sure_style": 0.5633333333333335
+        },
+        "split": "hotpot_missing_hop"
+      },
+      {
+        "answer": "football",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9266347885131836,
+              "doc_id": "BayArena",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "BayArena (] ) is a football stadium in Leverkusen, North Rhine-Westphalia, Germany, which has been the home ground of Bundesliga club Bayer Leverkusen since 1958."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9604792594909668,
+              "doc_id": "Bayer 04 Leverkusen",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Bayer 04 Leverkusen Fu\u00dfball GmbH, also known as Bayer 04 Leverkusen ] , Bayer Leverkusen, Leverkusen or simply Bayer, is a German football club based in Leverkusen, North Rhine-Westphalia.  The club plays in the Bundesliga, the top tier of the German football league system, and hosts matches at the BayArena."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 3.3050997444661334e-05,
+              "doc_id": "Sport in Gibraltar",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "Sport plays a prominent role in Gibraltarian life.  The range of sports practiced in the British overseas territory of Gibraltar is wide and varied in comparison to its size of less than 7 km2 .  The Government of Gibraltar promotes sport within The Rock and supports many local sports associations financially.  Gibraltar also competes in international sporting events, having competed in the Commonwealth Games since 1958, and in the biennial Island Games, which it hosted in 1995 and will host aga"
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Which sport has been played at the BayArena in Leverkusen, Germany, since 1958?",
+          "support_key": "BayArena|Bayer 04 Leverkusen"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a7ae2f2554299042af8f6aa:missing_hop",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.943499743938446,
+                "doc_id": "BayArena",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "BayArena (] ) is a football stadium in Leverkusen, North Rhine-Westphalia, Germany, which has been the home ground of Bundesliga club Bayer Leverkusen since 1958."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.952370285987854,
+                "doc_id": "2017\u201318 Bayer 04 Leverkusen season",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "The 2017\u201318 Bayer 04 Leverkusen season is the 114th season in the football club's history and 39th consecutive and overall season in the top flight of German football, the Bundesliga, having been promoted from the 2.  Bundesliga Nord in 1979.  In addition to the domestic league, Bayer Leverkusen also are participating in this season's edition of the domestic cup, the DFB-Pokal.  This is the 60th season for Leverkusen in the BayArena, located in Leverkusen, North Rhine-Westphalia, Germany.  The s"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 2.446619691909291e-05,
+                "doc_id": "Sport in Gibraltar",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Sport plays a prominent role in Gibraltarian life.  The range of sports practiced in the British overseas territory of Gibraltar is wide and varied in comparison to its size of less than 7 km2 .  The Government of Gibraltar promotes sport within The Rock and supports many local sports associations financially.  Gibraltar also competes in international sporting events, having competed in the Commonwealth Games since 1958, and in the biennial Island Games, which it hosted in 1995 and will host aga"
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "missing_hop_framing",
+            "query": "Which sport has been played at the BayArena in Leverkusen, Germany, since 1958? Answer using only one supporting hop if possible.",
+            "support_key": "BayArena|Bayer 04 Leverkusen"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9604792594909668,
+          "csrm": 0.726047619047619,
+          "naive_orbit_average": 0.54,
+          "single_set_sure_style": 0.5533333333333335
+        },
+        "split": "hotpot_missing_hop"
+      },
+      {
+        "answer": "no",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.7742969989776611,
+              "doc_id": "Battle Sheep",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Battle Sheep is a 2010 board game developed by Francesco Rotta.  It has been published by Blue Orange Games, HUCH!  & friends and Lautapelit.fi."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9349552392959595,
+              "doc_id": "Shadows Over Camelot",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Shadows Over Camelot is an Arthurian-themed board game designed by Serge Laget and Bruno Cathala, illustrated by Julien Delval and Cyrille Daujean.  The game was unveiled by the publishers Days of Wonder at the 2005 American International Toy Fair and was more widely released in May and June 2005.  The game was also published in French as \"Les Chevaliers de la Table Ronde\" and in German as \"Schatten \u00fcber Camelot\".  In 2008, an expansion for Shadows over Camelot was released titled \"Merlin's Comp"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.03307725489139557,
+              "doc_id": "Battle of Chapakchur",
+              "missing": 0.75,
+              "support": 0.45,
+              "text": "The Battle of Chapakchur (Turkish:\"\u00c7apak\u00e7ur\") was a decisive battle fought between Kara Koyunlu (Black Sheep Turkomen) under the leadership of Jahan Shah and Aq Qoyunlu (White Sheep Turkomen) under the leadership of Uzun Hasan.  Jahan Shah was defeated by Uzun Hasan in a battle near the sanjak of \u00c7apak\u00e7ur in present-day eastern Turkey on October 30 (or November 11), 1467."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Were Shadows Over Camelot and Battle Sheep released by the same publisher?",
+          "support_key": "Battle Sheep|Shadows Over Camelot"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5ab499a55542996a3a969f9f:missing_hop",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.6656525731086731,
+                "doc_id": "Battle Sheep",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Battle Sheep is a 2010 board game developed by Francesco Rotta.  It has been published by Blue Orange Games, HUCH!  & friends and Lautapelit.fi."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 3.4146061807405204e-05,
+                "doc_id": "Shadows of Knight (album)",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "Shadows of Knight is the third studio album by American garage rock band The Shadows of Knight, and was released on Super K Productions, SKS 6002, in 1969.  Recording for the album came after lead vocalist Jim Sohns revamped the Shadows of Knight's line-up and signed with Super K. Although \"Shadows of Knight\" did not chart and was the last album featuring new material by the group until \"A Knight to Remember\", a single taken from the effort, \"Shake\", became a moderate national success in the Uni"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 6.718507938785478e-05,
+                "doc_id": "Jose Tafoya",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "Jose Piedad Tafoya (1834 - ca. 1913), sometimes called the Prince of the Comancheros, was one of the more notable traders from New Mexico who traveled throughout the Southern Great Plains exchanging goods with the Comanches and their allies the Kiowa for stolen horses, cattle, and sometimes human captives.  According to legend, he was seven feet tall.  He was born in La Cuesta, New Mexico in 1834 and first visited the Great Plains as early as 1859.  In the 1850s, he operated a sheep ranch in San"
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "missing_hop_framing",
+            "query": "Were Shadows Over Camelot and Battle Sheep released by the same publisher? Answer using only one supporting hop if possible.",
+            "support_key": "Battle Sheep|Shadows Over Camelot"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9349552392959595,
+          "csrm": 0.7208333333333334,
+          "naive_orbit_average": 0.55,
+          "single_set_sure_style": 0.5633333333333335
+        },
+        "split": "hotpot_missing_hop"
+      }
+    ],
+    "csrm_true_accept": [
+      {
+        "answer": "Apium",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.03213350847363472,
+              "doc_id": "Apium",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Apium (including celery and the marshworts) is a genus of about 20 species of flowering plants in the family Apiaceae, with a subcosmopolitan distribution in Europe, Asia, Africa, South America and Australia.  They are medium to tall biennials or perennials growing up to 1 m high in the wet soil of marshes and salt marshes, and have pinnate to bipinnate leaves and small white flowers in compound umbels.  Some species are edible, notably \"Apium graveolens\", which includes the commercially importa"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5935230255126953,
+              "doc_id": "Elodea",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Elodea is a genus of 6 species of aquatic plants often called the waterweeds described as a genus in 1803.  \"Elodea\" is native to North and South America and is also widely used as aquarium vegetation.  It lives in fresh water."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.2746258080005646,
+              "doc_id": "Apium annuum",
+              "missing": 0.75,
+              "support": 0.45,
+              "text": "Apium annuum is one of the 20 species of the genus \"Apium\" of the family Apiaceae.  It is an annual herb with a distribution in salt-marsh and saline habitats of Victoria, south and western Australia."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Which genus has more species, Apium or Elodea?",
+          "support_key": "Apium|Elodea"
+        },
+        "label_answerable": true,
+        "orbit_id": "hotpot:5adf39295542992d7e9f92df:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.028337789699435234,
+                "doc_id": "Apium",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Apium (including celery and the marshworts) is a genus of about 20 species of flowering plants in the family Apiaceae, with a subcosmopolitan distribution in Europe, Asia, Africa, South America and Australia.  They are medium to tall biennials or perennials growing up to 1 m high in the wet soil of marshes and salt marshes, and have pinnate to bipinnate leaves and small white flowers in compound umbels.  Some species are edible, notably \"Apium graveolens\", which includes the commercially importa"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.4871571362018585,
+                "doc_id": "Elodea",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Elodea is a genus of 6 species of aquatic plants often called the waterweeds described as a genus in 1803.  \"Elodea\" is native to North and South America and is also widely used as aquarium vegetation.  It lives in fresh water."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.1826230138540268,
+                "doc_id": "Apium annuum",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "Apium annuum is one of the 20 species of the genus \"Apium\" of the family Apiaceae.  It is an annual herb with a distribution in salt-marsh and saline habitats of Victoria, south and western Australia."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Which genus has more species, Apium or Elodea? Please verify each supporting hop.",
+            "support_key": "Apium|Elodea"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.6341730952262878,
+                "doc_id": "Elodea",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Elodea is a genus of 6 species of aquatic plants often called the waterweeds described as a genus in 1803.  \"Elodea\" is native to North and South America and is also widely used as aquarium vegetation.  It lives in fresh water."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.032840803265571594,
+                "doc_id": "Apium",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Apium (including celery and the marshworts) is a genus of about 20 species of flowering plants in the family Apiaceae, with a subcosmopolitan distribution in Europe, Asia, Africa, South America and Australia.  They are medium to tall biennials or perennials growing up to 1 m high in the wet soil of marshes and salt marshes, and have pinnate to bipinnate leaves and small white flowers in compound umbels.  Some species are edible, notably \"Apium graveolens\", which includes the commercially importa"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.19062070548534393,
+                "doc_id": "Apium annuum",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "Apium annuum is one of the 20 species of the genus \"Apium\" of the family Apiaceae.  It is an annual herb with a distribution in salt-marsh and saline habitats of Victoria, south and western Australia."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using the available evidence, Which genus has more species, Apium or Elodea?",
+            "support_key": "Apium|Elodea"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5935230255126953,
+          "csrm": 0.7598333333333334,
+          "naive_orbit_average": 0.5633333333333335,
+          "single_set_sure_style": 0.5633333333333335
+        },
+        "split": "hotpot_stable_support"
+      },
+      {
+        "answer": "no",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.8234484195709229,
+              "doc_id": "Chien Fran\u00e7ais Blanc et Orange",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Chien Fran\u00e7ais Blanc et Orange (FCI No.316) is a breed of dog of the scenthound type, originating in France.  The breed is used for hunting in packs and descends from the old Hound of Saintonge type of large hunting dog."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.8596566915512085,
+              "doc_id": "Cretan Hound",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Kritikos Lagonikos (Cretan Hound) (Greek:K\u03c1\u03b7\u03c4\u03b9\u03ba\u03cc\u03c2 \u039b\u03b1\u03b3\u03c9\u03bd\u03b9\u03ba\u03cc\u03c2) is a hunting breed of dog from the island of Crete, in Greece.  It is considered"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.678993284702301,
+              "doc_id": "Chien Fran\u00e7ais Blanc et Noir",
+              "missing": 0.75,
+              "support": 0.45,
+              "text": "The Chien Fran\u00e7ais Blanc et Noir (FCI No.220) translated into English as the French White and Black Hound, is a breed of dog of the scenthound type, originating in France.  The breed is used for hunting in packs and descends from the old Hound of Saintonge type of large hunting dog."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Are the Chien Fran\u00e7ais Blanc et Orange and Cretan Hound both used for hunting in packs?",
+          "support_key": "Chien Fran\u00e7ais Blanc et Orange|Cretan Hound"
+        },
+        "label_answerable": true,
+        "orbit_id": "hotpot:5a893fc855429951533612f0:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.7926003336906433,
+                "doc_id": "Chien Fran\u00e7ais Blanc et Orange",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Chien Fran\u00e7ais Blanc et Orange (FCI No.316) is a breed of dog of the scenthound type, originating in France.  The breed is used for hunting in packs and descends from the old Hound of Saintonge type of large hunting dog."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.7973584532737732,
+                "doc_id": "Cretan Hound",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Kritikos Lagonikos (Cretan Hound) (Greek:K\u03c1\u03b7\u03c4\u03b9\u03ba\u03cc\u03c2 \u039b\u03b1\u03b3\u03c9\u03bd\u03b9\u03ba\u03cc\u03c2) is a hunting breed of dog from the island of Crete, in Greece.  It is considered"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.019696064293384552,
+                "doc_id": "Grand Anglo-Fran\u00e7ais Blanc et Noir",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "The Grand Anglo-Fran\u00e7ais Blanc et Noir (FCI No.323) translated into English as the Great Anglo-French White and Black Hound, is a breed of dog used in hunting as a scenthound, usually in packs.  It is one of the Anglo-French hound breeds which were created by crossing French scenthounds with English (Anglo) Foxhounds."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Are the Chien Fran\u00e7ais Blanc et Orange and Cretan Hound both used for hunting in packs? Please verify each supporting hop.",
+            "support_key": "Chien Fran\u00e7ais Blanc et Orange|Cretan Hound"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.8603522181510925,
+                "doc_id": "Cretan Hound",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Kritikos Lagonikos (Cretan Hound) (Greek:K\u03c1\u03b7\u03c4\u03b9\u03ba\u03cc\u03c2 \u039b\u03b1\u03b3\u03c9\u03bd\u03b9\u03ba\u03cc\u03c2) is a hunting breed of dog from the island of Crete, in Greece.  It is considered"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.8462722897529602,
+                "doc_id": "Chien Fran\u00e7ais Blanc et Orange",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Chien Fran\u00e7ais Blanc et Orange (FCI No.316) is a breed of dog of the scenthound type, originating in France.  The breed is used for hunting in packs and descends from the old Hound of Saintonge type of large hunting dog."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.7025213837623596,
+                "doc_id": "Chien Fran\u00e7ais Blanc et Noir",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "The Chien Fran\u00e7ais Blanc et Noir (FCI No.220) translated into English as the French White and Black Hound, is a breed of dog of the scenthound type, originating in France.  The breed is used for hunting in packs and descends from the old Hound of Saintonge type of large hunting dog."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using the available evidence, Are the Chien Fran\u00e7ais Blanc et Orange and Cretan Hound both used for hunting in packs?",
+            "support_key": "Chien Fran\u00e7ais Blanc et Orange|Cretan Hound"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.8596566915512085,
+          "csrm": 0.7480524050030185,
+          "naive_orbit_average": 0.5600000000000002,
+          "single_set_sure_style": 0.5633333333333335
+        },
+        "split": "hotpot_stable_support"
+      },
+      {
+        "answer": "John le Carr\u00e9",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.13553202152252197,
+              "doc_id": "John le Carr\u00e9",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "David John Moore Cornwell (born 19 October 1931), known by the pseudonym John le Carr\u00e9 ( ), is a British author of espionage novels.  During the 1950s and the 1960s, he worked for both the Security Service and the Secret Intelligence Service, and began writing novels under his pen name.  His third novel, \"The Spy Who Came in from the Cold\" (1963), became an international best-seller and remains one of his best-known works.  Following the success of this novel, he left MI6 to become a full-time a"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.6317756175994873,
+              "doc_id": "Hart Crane",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Harold Hart Crane (July 21, 1899 \u2013 April 27, 1932) was an American poet.  Finding both inspiration and provocation in the poetry of T. S. Eliot, Crane wrote modernist poetry that was difficult, highly stylized, and ambitious in its scope.  In his most ambitious work, \"The Bridge\", Crane sought to write an epic poem, in the vein of \"The Waste Land\", that expressed a more optimistic view of modern, urban culture than the one that he found in Eliot's work.  In the years following his suicide at the"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.056490566581487656,
+              "doc_id": "John le Carr\u00e9: The Biography",
+              "missing": 0.75,
+              "support": 0.45,
+              "text": "John le Carr\u00e9: The Biography is a 2015 biography of John le Carr\u00e9 written by Adam Sisman and published by Harper."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Which author found inspiration in their career prior to writing, Hart Crane or John le Carr\u00e9?",
+          "support_key": "Hart Crane|John le Carr\u00e9"
+        },
+        "label_answerable": true,
+        "orbit_id": "hotpot:5ab310bb554299233954fef9:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.12220262736082077,
+                "doc_id": "John le Carr\u00e9",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "David John Moore Cornwell (born 19 October 1931), known by the pseudonym John le Carr\u00e9 ( ), is a British author of espionage novels.  During the 1950s and the 1960s, he worked for both the Security Service and the Secret Intelligence Service, and began writing novels under his pen name.  His third novel, \"The Spy Who Came in from the Cold\" (1963), became an international best-seller and remains one of his best-known works.  Following the success of this novel, he left MI6 to become a full-time a"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.7042104005813599,
+                "doc_id": "Hart Crane",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Harold Hart Crane (July 21, 1899 \u2013 April 27, 1932) was an American poet.  Finding both inspiration and provocation in the poetry of T. S. Eliot, Crane wrote modernist poetry that was difficult, highly stylized, and ambitious in its scope.  In his most ambitious work, \"The Bridge\", Crane sought to write an epic poem, in the vein of \"The Waste Land\", that expressed a more optimistic view of modern, urban culture than the one that he found in Eliot's work.  In the years following his suicide at the"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.019441114738583565,
+                "doc_id": "Connie Sachs",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "Connie Sachs is a fictional character created by John le Carr\u00e9.  Sachs plays a key supporting role in le Carr\u00e9's \"Karla Trilogy\" of spy novels including \"Tinker Tailor Soldier Spy\"; \"The Honourable Schoolboy\"; and \"Smiley's People\"."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Which author found inspiration in their career prior to writing, Hart Crane or John le Carr\u00e9? Please verify each supporting hop.",
+            "support_key": "Hart Crane|John le Carr\u00e9"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.5340386629104614,
+                "doc_id": "Hart Crane",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Harold Hart Crane (July 21, 1899 \u2013 April 27, 1932) was an American poet.  Finding both inspiration and provocation in the poetry of T. S. Eliot, Crane wrote modernist poetry that was difficult, highly stylized, and ambitious in its scope.  In his most ambitious work, \"The Bridge\", Crane sought to write an epic poem, in the vein of \"The Waste Land\", that expressed a more optimistic view of modern, urban culture than the one that he found in Eliot's work.  In the years following his suicide at the"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.42395707964897156,
+                "doc_id": "John le Carr\u00e9",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "David John Moore Cornwell (born 19 October 1931), known by the pseudonym John le Carr\u00e9 ( ), is a British author of espionage novels.  During the 1950s and the 1960s, he worked for both the Security Service and the Secret Intelligence Service, and began writing novels under his pen name.  His third novel, \"The Spy Who Came in from the Cold\" (1963), became an international best-seller and remains one of his best-known works.  Following the success of this novel, he left MI6 to become a full-time a"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.2024942934513092,
+                "doc_id": "John le Carr\u00e9: The Biography",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "John le Carr\u00e9: The Biography is a 2015 biography of John le Carr\u00e9 written by Adam Sisman and published by Harper."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using the available evidence, Which author found inspiration in their career prior to writing, Hart Crane or John le Carr\u00e9?",
+            "support_key": "Hart Crane|John le Carr\u00e9"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.6317756175994873,
+          "csrm": 0.7473333333333333,
+          "naive_orbit_average": 0.5633333333333335,
+          "single_set_sure_style": 0.5633333333333335
+        },
+        "split": "hotpot_stable_support"
+      }
+    ],
+    "naive_false_accept_csrm_reject": [
+      {
+        "answer": "no",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9005433320999146,
+              "doc_id": "Shearwater (band)",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Shearwater is an American indie rock band from Austin, Texas, led by multi-instrumentalist and lead singer Jonathan Meiburg, a singer-songwriter.  The band's music is notable for its imagery based in nature, cerebral yet intimate melodic songs, as well as Meiburg's vocals."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.47528505325317383,
+              "doc_id": "Phoenix (band)",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Phoenix is an indie pop band from Versailles, France, consisting of Thomas Mars (lead vocals), Deck d'Arcy (bass/ keyboards/ backing vocals), Christian Mazzalai (guitar/ keyboards/ backing vocals) and Laurent Brancowitz (guitar/ backing vocals).  They are best known for their singles \"Too Young\", \"If I Ever Feel Better\" and \"1901\"."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.00015224787057377398,
+              "doc_id": "Emo",
+              "missing": 0.75,
+              "support": 0.45,
+              "text": "Emo is a genre of rock music characterized by an emphasis on emotional expression, sometimes through confessional lyrics.  It emerged as a style of post-hardcore from the mid-1980s hardcore punk movement of Washington, D.C., where it was known as emotional hardcore or emocore and pioneered by Washington, D.C. hardcore bands such as Rites of Spring and Embrace.  However, as the genre was taken up by a new generation of musicians in the early 1990s, its sound and meaning shifted and changed and it"
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Do the bands named Phoenix and Shearwater specialize in the exact same genre?",
+          "support_key": "Phoenix (band)|Shearwater (band)"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5ab9aed855429970cfb8eb6d:false_premise",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0015529276570305228,
+                "doc_id": "Emo",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "Emo is a genre of rock music characterized by an emphasis on emotional expression, sometimes through confessional lyrics.  It emerged as a style of post-hardcore from the mid-1980s hardcore punk movement of Washington, D.C., where it was known as emotional hardcore or emocore and pioneered by Washington, D.C. hardcore bands such as Rites of Spring and Embrace.  However, as the genre was taken up by a new generation of musicians in the early 1990s, its sound and meaning shifted and changed and it"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.09923368692398071,
+                "doc_id": "Bryan's shearwater",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "The Bryan's shearwater (\"Puffinus bryani\") is a species of shearwater that may occur around the Hawaiian Islands.  It is the smallest species of shearwater and is black and white with a bluish gray beak and blue tarsi.  First collected in 1963 and thought to be a little shearwater (\"Puffinus assimilis\") it was determined using DNA analysis to be distinct in 2011.  It is rare and possibly threatened and there is little information on its breeding or non-breeding ranges.  It is named after Edwin H"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0011618818389251828,
+                "doc_id": "Fusiles",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "Fusiles, also known as arte de fusil (literally \"art of the projection\") was a shift in the Mexican music industry towards more exact covers of foreign rock.  This shift focused on performing covers in English as opposed to performing the same covers in Spanish.  Mexican cover bands had been popular since the early 1950s, and more and more of these bands, such as the popular Los Dug Dug's, included both English and Spanish translations on their records.  This focus on the authenticity of the mus"
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "false_premise",
+            "query": "Assuming the answer is not no, Do the bands named Phoenix and Shearwater specialize in the exact same genre?",
+            "support_key": "Phoenix (band)|Shearwater (band):false_premise"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9005433320999146,
+          "csrm": 0.5262976190476191,
+          "naive_orbit_average": 0.5450000000000002,
+          "single_set_sure_style": 0.5633333333333335
+        },
+        "split": "hotpot_false_premise"
+      },
+      {
+        "answer": "Smithfield, Rhode Island",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.02636755257844925,
+              "doc_id": "Bryant Bulldogs women's basketball",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Bryant Bulldogs women's basketball team represents Bryant University in NCAA Division I women's basketball.  The team currently competes in the Northeast Conference."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.6530395746231079,
+              "doc_id": "Bryant University",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Bryant University is a private university, located in Smithfield, Rhode Island, U.S., that grants the degrees of bachelor of arts, bachelor of science, and master's degrees in business, taxation, accounting, communication, global environmental studies, and physician assistant studies.  Until August 2004, it was known as Bryant College.  Bryant comprises the College of Arts and Sciences and the College of Business, and is accredited by the New England Association of Schools and Colleges and the A"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9871031641960144,
+              "doc_id": "Bryant Bulldogs",
+              "missing": 0.75,
+              "support": 0.45,
+              "text": "The Bryant Bulldogs are the athletic teams representing Bryant University in Smithfield, Rhode Island.  The Bulldogs are currently in NCAA Division I reclassification process and compete at the Division I level as a member of the Northeast Conference.  Bryant's largest rivalry during its Division II years was Bentley College, both founders of the Northeast-10 and both have prominent business programs.  Bryant University athletics started out as a member of the National Association of Intercolleg"
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "In what town is the university which the Bryant Bulldogs represent?",
+          "support_key": "Bryant Bulldogs women's basketball|Bryant University"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a8888e35542997e5c09a5f6:false_premise",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.012245225720107555,
+                "doc_id": "Bryant Bulldogs",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "The Bryant Bulldogs are the athletic teams representing Bryant University in Smithfield, Rhode Island.  The Bulldogs are currently in NCAA Division I reclassification process and compete at the Division I level as a member of the Northeast Conference.  Bryant's largest rivalry during its Division II years was Bentley College, both founders of the Northeast-10 and both have prominent business programs.  Bryant University athletics started out as a member of the National Association of Intercolleg"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.01351744681596756,
+                "doc_id": "Bryant Bulldogs men's lacrosse",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "The Bryant Bulldogs men's lacrosse team represents Bryant University in National Collegiate Athletic Association (NCAA) Division I lacrosse.  Bryant currently competes in the Northeast Conference (NEC) and plays its home games in Bulldog Stadium in Smithfield, Rhode Island."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0199335478246212,
+                "doc_id": "Bryant Bulldogs football",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "The Bryant Bulldogs football program represents Bryant University in college football.  The Bulldogs are members of the Northeast Conference and compete at the NCAA Division I Football Championship Subdivision level.  Since its inception in 1999, the team has played its home game at Bulldog Stadium in Smithfield, Rhode Island."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "false_premise",
+            "query": "Assuming the answer is not Smithfield, Rhode Island, In what town is the university which the Bryant Bulldogs represent?",
+            "support_key": "Bryant Bulldogs women's basketball|Bryant University:false_premise"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9871031641960144,
+          "csrm": 0.5260476190476191,
+          "naive_orbit_average": 0.54,
+          "single_set_sure_style": 0.5533333333333335
+        },
+        "split": "hotpot_false_premise"
+      },
+      {
+        "answer": "Motion City Soundtrack",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.05888810753822327,
+              "doc_id": "Candlelight Red",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Candlelight Red is a rock band from Williamsport, Pennsylvania.  They have produced two studio albums and an EP.  Their EP \"Demons\" and album \"Reclamation\" was produced by Morgan Rose of Sevendust."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9194580316543579,
+              "doc_id": "Motion City Soundtrack",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Motion City Soundtrack was an American rock band that formed in Minneapolis, Minnesota in 1997.  The band's line-up consisted of vocalist and guitarist Justin Pierre, lead guitarist Joshua Cain, keyboardist Jesse Johnson, bassist Matthew Taylor, and drummer Tony Thaxton.  Over the course of their nearly twenty-year career, the group toured heavily and released six studio albums, the majority on independent label Epitaph Records.  The band's sound, at times described as pop punk or emo, made nota"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.911357045173645,
+              "doc_id": "Motion City Soundtrack discography",
+              "missing": 0.75,
+              "support": 0.45,
+              "text": "The following is the discography of Motion City Soundtrack, an American rock band that formed in Minneapolis, Minnesota in 1997.  The band's line-up consisted of vocalist and guitarist Justin Pierre, lead guitarist Joshua Cain, keyboardist Jesse Johnson, bassist Matthew Taylor, and drummer Tony Thaxton.  Over the course of their nearly twenty-year career, the group toured heavily and released six studio albums, the majority on independent label Epitaph Records.  The band's sound, at times descri"
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Who has released more studio albums, Candlelight Red or Motion City Soundtrack?",
+          "support_key": "Candlelight Red|Motion City Soundtrack"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5ac2546a554299636651997b:false_premise",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.6316835880279541,
+                "doc_id": "Candlelight Red",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Candlelight Red is a rock band from Williamsport, Pennsylvania.  They have produced two studio albums and an EP.  Their EP \"Demons\" and album \"Reclamation\" was produced by Morgan Rose of Sevendust."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.7537537217140198,
+                "doc_id": "Motion City Soundtrack",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Motion City Soundtrack was an American rock band that formed in Minneapolis, Minnesota in 1997.  The band's line-up consisted of vocalist and guitarist Justin Pierre, lead guitarist Joshua Cain, keyboardist Jesse Johnson, bassist Matthew Taylor, and drummer Tony Thaxton.  Over the course of their nearly twenty-year career, the group toured heavily and released six studio albums, the majority on independent label Epitaph Records.  The band's sound, at times described as pop punk or emo, made nota"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.7248996496200562,
+                "doc_id": "Motion City Soundtrack discography",
+                "missing": 0.75,
+                "support": 0.45,
+                "text": "The following is the discography of Motion City Soundtrack, an American rock band that formed in Minneapolis, Minnesota in 1997.  The band's line-up consisted of vocalist and guitarist Justin Pierre, lead guitarist Joshua Cain, keyboardist Jesse Johnson, bassist Matthew Taylor, and drummer Tony Thaxton.  Over the course of their nearly twenty-year career, the group toured heavily and released six studio albums, the majority on independent label Epitaph Records.  The band's sound, at times descri"
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "false_premise",
+            "query": "Assuming the answer is not Motion City Soundtrack, Who has released more studio albums, Candlelight Red or Motion City Soundtrack?",
+            "support_key": "Candlelight Red|Motion City Soundtrack:false_premise"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9194580316543579,
+          "csrm": 0.5598333333333334,
+          "naive_orbit_average": 0.5633333333333335,
+          "single_set_sure_style": 0.5633333333333335
+        },
+        "split": "hotpot_false_premise"
+      }
+    ],
+    "single_set_false_accept_csrm_reject": [
+      {
+        "answer": "Eliot Cutler",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9571735858917236,
+              "doc_id": "Eliot Cutler",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Eliot Cutler (born July 29, 1946) is an American lawyer who was an Independent candidate in Maine's 2010 and 2014 gubernatorial races."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9861517548561096,
+              "doc_id": "Libby Mitchell",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Elizabeth H. \"Libby\" Mitchell (born Elizabeth Anne Harrill on June 22, 1940) is an American politician from Maine.  Mitchell, a Democrat, represented part of Kennebec County in the Maine Senate from 2004 to 2010.  Mitchell was also the Democrats' 2010 candidate for the office of Governor of Maine.  She finished in third place behind Republican Paul LePage and unenrolled attorney Eliot Cutler.  She is the only woman in United States history to have been elected as both speaker of her state house "
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9602698087692261,
+              "doc_id": "Maine gubernatorial election, 2010",
+              "missing": 0.75,
+              "support": 0.45,
+              "text": "The 2010 Maine gubernatorial election took place on November 2, 2010.  Incumbent Democratic Governor John Baldacci was term-limited and unable to seek re-election.  Primary elections took place on June 8, 2010.  The candidates who appeared on the November ballot were (in alphabetical order by last name): Eliot Cutler (Independent), Paul LePage (Republican), Libby Mitchell (Democrat), Shawn Moody (Independent), and Kevin Scott (Independent)."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "What is the name of the independent candidate in Maine's 2010 gubernatorial race who finished ahead of Libby Mitchell?",
+          "support_key": "Eliot Cutler|Libby Mitchell"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a70f39c5542994082a3e429:distractor",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 2.804510404530447e-05,
+                "doc_id": "Farid Khavari",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Farid A. Khavari, Ph.D, is an economist, author, patent-holder, designer, and small business owner.  In 2010, he ran as an independent candidate for Governor of Florida.  He was also an independent candidate for the 2014 Florida Gubernatorial race."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 1.0531681255088188e-05,
+                "doc_id": "Doug Duncan",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Douglas M. Duncan (born October 25, 1955) is an American politician and member of the Democratic Party.  Duncan served as County Executive of Montgomery County, Maryland from 1994 to 2006.  Duncan held the office longer than any other county executive in the county's history.  In 2006, Duncan was a candidate for the Democratic nomination in the Maryland gubernatorial election.  He abruptly dropped out of the race on June 22, 2006, citing clinical depression, handing the nomination to Baltimore M"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 1.168871131085325e-05,
+                "doc_id": "Al Checchi",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Alfred Attilio Checchi (born June 6, 1948) is an American businessman who was a candidate for Governor of California in the 1998 gubernatorial election, losing to fellow Democrat Gray Davis in the June 1998 primary.  Checchi finished in second place in the Democratic primary, capturing 12.49% of the vote.  He ran as a New Democrat and called for increased spending on education.  He set a new record at the time for spending in a California gubernatorial race, spending over $40 million of his pers"
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "distractor_only",
+            "query": "What is the name of the independent candidate in Maine's 2010 gubernatorial race who finished ahead of Libby Mitchell? Prefer background context even if direct evidence is absent.",
+            "support_key": "distractor_only"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9861517548561096,
+          "csrm": 0.2496875,
+          "naive_orbit_average": 0.2854166666666667,
+          "single_set_sure_style": 0.5333333333333334
+        },
+        "split": "hotpot_distractor"
+      },
+      {
+        "answer": "Leonarda Cianciulli",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9607069492340088,
+              "doc_id": "Black Journal",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Black Journal (originally titled Gran Bollito) is a 1977 Italian drama film directed by Mauro Bolognini.  It is based on the real life events of Leonarda Cianciulli, the Italian serial killer best known as the \"Soap-Maker of Correggio\"."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9420577883720398,
+              "doc_id": "Leonarda Cianciulli",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Leonarda Cianciulli (14 November 1893 \u2013 15 October 1970) was an Italian serial killer.  Better known as the \"Soap-Maker of Correggio\" (Italian: \"la Saponificatrice di Correggio\"), she murdered three women in Correggio between 1939 and 1940, and turned their bodies into soap and teacakes."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 5.0054430175805464e-05,
+              "doc_id": "Black Journal (television)",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "Black Journal was a public affairs television program that began at WNET in 1968.  It covered issues relevant to African American communities with film crews sent to Atlanta, Detroit, New Orleans, and Los Angeles, and Ethiopia.  The show won Emmy, Peabody and Russwurm awards.  \"Black Journal\" moved to commercial television in 1977, with Tony Brown as producer and host, renamed as Tony Brown's Journal.  It returned to public television in 1982, until 2008.  The show was originally broadcast as on"
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Black Journal is based on the real life events of what serial killer that  murdered three women in Correggio?",
+          "support_key": "Black Journal|Leonarda Cianciulli"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5a8c7ac2554299653c1aa08e:distractor",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0006267190328799188,
+                "doc_id": "Mary Ann Cotton",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Mary Ann Cotton (\"n\u00e9e \" Robson; 31 October 1832 \u2013 24 March 1873) was an English serial killer, convicted of, and hanged for, the murder by poisoning of her stepson Charles Edward Cotton.  It is likely that she murdered three of her four husbands, apparently in order to collect on their insurance policies, and many others.  She may have murdered as many as 21 people, including 11 of her 13 children.  She chiefly used arsenic poisoning, causing gastric pain and rapid decline of health."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.00010888153337873518,
+                "doc_id": "My Wife Is an Actress",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "My Wife is an Actress (French: Ma femme est une actrice ) is a French romantic comedy-drama film starring Yvan Attal and Charlotte Gainsbourg.  Attal plays a journalist who becomes obsessively jealous when his actress wife gets a part in a movie with an attractive co-star.  Attal also wrote and directed the film.  The film stars Terence Stamp among others.  This film is also highly biographic, as Yvan and Charlotte are a real life couple since 1991, and have three children.  According to Yvan, t"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0037141984794288874,
+                "doc_id": "George Chapman (murderer)",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "George Chapman (14 December 1865 \u2013 7 April 1903) was a Polish serial killer known as the Borough Poisoner.  Born Seweryn Antonowicz K\u0142osowski in Congress Poland, he moved as an adult to England, where he committed his crimes.  He was convicted and executed after poisoning three women, but is remembered today mostly because some police officers suspected him of being the notorious serial killer Jack the Ripper."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "distractor_only",
+            "query": "Black Journal is based on the real life events of what serial killer that  murdered three women in Correggio? Prefer background context even if direct evidence is absent.",
+            "support_key": "distractor_only"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9607069492340088,
+          "csrm": 0.24277083333333338,
+          "naive_orbit_average": 0.2804166666666667,
+          "single_set_sure_style": 0.5233333333333334
+        },
+        "split": "hotpot_distractor"
+      },
+      {
+        "answer": "Miller Brewing",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9272361397743225,
+              "doc_id": "Pearl Brewing Company",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Pearl Brewing Company (also known as the Pearl Brewery or just Pearl) was an American brewery, established in 1883 in Downtown San Antonio, Texas, USA.  In 1985, Pearl's parent company purchased the Pabst Brewing Company and assumed the Pabst name.  In 1999, the Pabst Brewing Company began transferring its production to Miller Brewing, on a contract basis, and closing all of its breweries.  Pearl beer is still in production at Miller's Ft. Worth, Texas facility, but the Pearl Brewery in San "
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.43543490767478943,
+              "doc_id": "The History of Ranching (Winn)",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The History of Ranching is a mural that was originally located at the Pearl Brewery in San Antonio, Texas.  The Pearl Brewing Company had always preferred to use Texas artists whenever possible.  Long after other brewers had moved to using only photographs in their advertising campaigns, Pearl continued to use ads that featured sketches, drawings, or paintings of the concept or product.  The more famous of Pearl's artistic advertisements were of Judge Roy Bean's Jersey Lilly and a collage called"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 9.845730528468266e-05,
+              "doc_id": "Pueblo Levee Mural Project",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "The Pueblo Levee Mural Project is a mural along a levee of the Arkansas River certified by the Guinness Book of Records as the longest painting in the world.  It is a 3-mile long continuous mural located in Pueblo, Colorado.  The mural was originally started in the 1970s, according to the city website, when students of nearby Colorado State University\u2013Pueblo began painting over existing graffiti.  They worked at night to evade notice by the police, and in the end the work received support from t"
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "The History of Ranching is a mural that was originally located at an American brewery that in 1999 began trasfering its production to who?",
+          "support_key": "Pearl Brewing Company|The History of Ranching (Winn)"
+        },
+        "label_answerable": false,
+        "orbit_id": "hotpot:5ab9d44255429939ce03dc36:distractor",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0009138885652646422,
+                "doc_id": "Boulevard Brewing Company",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Boulevard Brewing Company is a brewery located in Kansas City, Missouri.  The Brewers Association currently ranks the American arm of Boulevard's parent company, Duvel Moortgat USA, as the 12th largest craft brewery, and the 18th largest active brewery in the United States based on 2014 sales volume.  Before the sale of Anheuser-Busch to InBev in 2008, Boulevard was the largest independent American brewery in the state of Missouri.  Boulevard's beers are available in select markets across the co"
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.03399834409356117,
+                "doc_id": "Erie Brewing Company",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "The Erie Brewery Company is an American brewery in Erie, Pennsylvania.  Founded as a brewpub in 1994, Erie Brewing transitioned to a full-time brewery in 1999.  The brewery has won three medals from the Great American Beer Festival."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 2.68619587586727e-05,
+                "doc_id": "Bavarian Brewing Company",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Bavarian Brewing Company was a brewery established in Covington, Kentucky, in 1866 by Julius Deglow, but became known as the Bavarian Brewery in the 1870s.  The brewery was originally located on Pike Street and the business expanded to include the 12th street property by 1877.  The company also operated as the John Meyer Brewery and the Meyer-Riedlin Brewery before becoming incorporated at Bavarian Brewery Co. in 1889 by William Riedlin.  The company was family owned until it was acquired by Int"
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "distractor_only",
+            "query": "The History of Ranching is a mural that was originally located at an American brewery that in 1999 began trasfering its production to who? Prefer background context even if direct evidence is absent.",
+            "support_key": "distractor_only"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9272361397743225,
+          "csrm": 0.24277083333333338,
+          "naive_orbit_average": 0.2804166666666667,
+          "single_set_sure_style": 0.5233333333333334
+        },
+        "split": "hotpot_distractor"
+      }
+    ]
+  },
+  "input": "results\\hotpot_orbits_corm_800.jsonl",
+  "thresholds_at_30_coverage": {
+    "corm_max_clean": 0.952782392501831,
+    "csrm": 0.6990833333333334,
+    "naive_orbit_average": 0.5233333333333334,
+    "single_set_sure_style": 0.5233333333333334
+  }
+}

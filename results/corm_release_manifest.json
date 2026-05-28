@@ -1,0 +1,47 @@
+{
+  "checkpoint_available": true,
+  "github_error": "HTTPError: HTTP Error 403: rate limit exceeded",
+  "github_file_count": 0,
+  "github_files": [],
+  "github_query_ok": false,
+  "github_tree_url": "https://api.github.com/repos/PeiYangLiu/CoRM-RAG/git/trees/main?recursive=1",
+  "hf_error": null,
+  "hf_file_count": 3,
+  "hf_files": [
+    ".gitattributes",
+    "README.md",
+    "critic-v12-mixed/checkpoint-latest/state.pt"
+  ],
+  "hf_query_ok": true,
+  "hf_repo": "PeiyangLiu/CoRM-RAG",
+  "interpretation": "Full CoRM-RAG reproduction remains blocked unless wiki.faiss, wiki_passages.jsonl, and biased_nq_test.jsonl are obtained or rebuilt. The released checkpoint alone is sufficient for critic-scoring bridge studies, but not for the original retrieval-generation evaluation.",
+  "missing_public_data_artifacts": [
+    "wiki.faiss",
+    "wiki_passages.jsonl",
+    "biased_nq_test.jsonl"
+  ],
+  "missing_public_data_count": 3,
+  "release_status": "checkpoint_only_or_data_missing",
+  "required_public_artifacts": [
+    {
+      "available_on_github": false,
+      "available_on_hf": true,
+      "name": "critic-v12-mixed/checkpoint-latest/state.pt"
+    },
+    {
+      "available_on_github": false,
+      "available_on_hf": false,
+      "name": "wiki.faiss"
+    },
+    {
+      "available_on_github": false,
+      "available_on_hf": false,
+      "name": "wiki_passages.jsonl"
+    },
+    {
+      "available_on_github": false,
+      "available_on_hf": false,
+      "name": "biased_nq_test.jsonl"
+    }
+  ]
+}

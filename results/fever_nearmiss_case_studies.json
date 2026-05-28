@@ -1,0 +1,1870 @@
+{
+  "case_counts": {
+    "corm_false_accept_csrm_reject": 3,
+    "csrm_false_accept_failure": 3,
+    "csrm_true_accept": 3,
+    "naive_false_accept_csrm_reject": 3,
+    "single_set_false_accept_csrm_reject": 3
+  },
+  "categories": {
+    "corm_false_accept_csrm_reject": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9284123182296753,
+              "doc_id": "Carlos_Santana:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Carlos Santana -LRB- born July 20 , 1947 -RRB- is a Mexican and American musician who first became famous in the late 1960s and early 1970s with his band , Santana , which pioneered a fusion of rock and Latin American music ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.04944690316915512,
+              "doc_id": "Homer_Hickam:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.18266384303569794,
+              "doc_id": "Arizona:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Carlos Santana was born in the forties.",
+          "support_key": "Carlos_Santana:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:a5b7cd05c31b6190e7c09ba3dba6435b:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.015436231158673763,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.01373607199639082,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.00991823896765709,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Carlos Santana was born in the forties.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9284123182296753,
+          "csrm": 0.21375000000000002,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9263608455657959,
+              "doc_id": "Michael_Vick:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Michael Dwayne Vick -LRB- born June 26 , 1980 -RRB- is a former American football quarterback who played 13 seasons in the National Football League , primarily with the Atlanta Falcons and the Philadelphia Eagles ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.05501307174563408,
+              "doc_id": "Homer_Hickam:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.06016737222671509,
+              "doc_id": "Arizona:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Michael Vick has a middle name.",
+          "support_key": "Michael_Vick:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:f6f646454394aa0e8b5b6a9317b01e0b:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0018995292484760284,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0018788509769365191,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.002872493816539645,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Michael Vick has a middle name.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9263608455657959,
+          "csrm": 0.21375000000000002,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5861139297485352,
+              "doc_id": "Paris_-LRB-Paris_Hilton_album-RRB-:9",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "It also incorporates elements of other genres , such as reggae , soul and pop rock , in its production ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9196689128875732,
+              "doc_id": "Reggae:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Reggae -LRB- -LSB- \u02c8r\u025bge\u026a -RSB- -RRB- is a music genre that originated in Jamaica in the late 1960s ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.03651810437440872,
+              "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Paris (Paris Hilton album) incorporates elements of a music genre that originated in Jamaica in the late 1960s.",
+          "support_key": "Paris_-LRB-Paris_Hilton_album-RRB-:9|Reggae:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:4c40695ae3dd9b59eea95c4cb42f9252:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.1159888282418251,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.039224933832883835,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.02456146478652954,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Paris (Paris Hilton album) incorporates elements of a music genre that originated in Jamaica in the late 1960s.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9196689128875732,
+          "csrm": 0.21375000000000002,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      }
+    ],
+    "csrm_false_accept_failure": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5257770419120789,
+              "doc_id": "Homer_Hickam:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.03099088929593563,
+              "doc_id": "Arizona:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.002447170438244939,
+              "doc_id": "Sikkim:4",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Homer Hickman has written best-selling memoirs.",
+          "support_key": "Homer_Hickam:2"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:e894f9d46a585a32306b364c04530f10:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.08186265826225281,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.015884187072515488,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.031001433730125427,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: Homer Hickman has written best-selling memoirs.",
+            "support_key": "near_miss:REFUTES:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04242498800158501,
+                "doc_id": "Dave_Gibbons:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "David Chester `` Dave '' Gibbons -LRB- born 14 April 1949 -RRB- is an English comic book artist , writer and sometimes letterer ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.2376246452331543,
+                "doc_id": "Penguin_Books:1",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "It was founded in 1935 by Sir Allen Lane as a line of the publishers The Bodley Head , only becoming a separate company the following year ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.5399426221847534,
+                "doc_id": "Penguin_Books:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Penguin Books is a British publishing house ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: Homer Hickman has written best-selling memoirs.",
+            "support_key": "near_miss:REFUTES:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.020531369373202324,
+                "doc_id": "Arizona:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.009825962595641613,
+                "doc_id": "Sikkim:4",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.052697449922561646,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: Homer Hickman has written best-selling memoirs.",
+            "support_key": "near_miss:REFUTES:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.05083166062831879,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.005593406036496162,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.015459132380783558,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: Homer Hickman has written best-selling memoirs.",
+            "support_key": "near_miss:REFUTES:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5257770419120789,
+          "csrm": 0.5899285714285715,
+          "naive_orbit_average": 0.7,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_near_miss_dilution"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.0696244016289711,
+              "doc_id": "Arizona:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.009242665953934193,
+              "doc_id": "Homer_Hickam:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.04821078106760979,
+              "doc_id": "Sikkim:4",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Arizona is in the southern United States.",
+          "support_key": "Arizona:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:c5089595a76ab788ceddae2ff756821f:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04121677577495575,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0474197082221508,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04578881338238716,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: Arizona is in the southern United States.",
+            "support_key": "near_miss:REFUTES:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.09901183843612671,
+                "doc_id": "Dave_Gibbons:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "David Chester `` Dave '' Gibbons -LRB- born 14 April 1949 -RRB- is an English comic book artist , writer and sometimes letterer ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.12115899473428726,
+                "doc_id": "Penguin_Books:1",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "It was founded in 1935 by Sir Allen Lane as a line of the publishers The Bodley Head , only becoming a separate company the following year ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.3937802314758301,
+                "doc_id": "Penguin_Books:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Penguin Books is a British publishing house ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: Arizona is in the southern United States.",
+            "support_key": "near_miss:REFUTES:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.03148898482322693,
+                "doc_id": "Homer_Hickam:2",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.06329382956027985,
+                "doc_id": "Sikkim:4",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.02984658256173134,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: Arizona is in the southern United States.",
+            "support_key": "near_miss:REFUTES:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.02642970159649849,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.02808758057653904,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.029230734333395958,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: Arizona is in the southern United States.",
+            "support_key": "near_miss:REFUTES:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.0696244016289711,
+          "csrm": 0.5899285714285715,
+          "naive_orbit_average": 0.7,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_near_miss_dilution"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.06131577491760254,
+              "doc_id": "Sikkim:4",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.013352137990295887,
+              "doc_id": "Homer_Hickam:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.0017827012343332171,
+              "doc_id": "Arizona:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Sikkim is host to Kanchenjunga, the highest peak in India.",
+          "support_key": "Sikkim:4"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:f0293348b72ec3cc523410e040daa287:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0048582954332232475,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.005403974559158087,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.022293874993920326,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: Sikkim is host to Kanchenjunga, the highest peak in India.",
+            "support_key": "near_miss:REFUTES:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.1154426634311676,
+                "doc_id": "Dave_Gibbons:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "David Chester `` Dave '' Gibbons -LRB- born 14 April 1949 -RRB- is an English comic book artist , writer and sometimes letterer ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.07112344354391098,
+                "doc_id": "Penguin_Books:1",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "It was founded in 1935 by Sir Allen Lane as a line of the publishers The Bodley Head , only becoming a separate company the following year ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.2520682215690613,
+                "doc_id": "Penguin_Books:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Penguin Books is a British publishing house ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: Sikkim is host to Kanchenjunga, the highest peak in India.",
+            "support_key": "near_miss:REFUTES:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.01859050802886486,
+                "doc_id": "Homer_Hickam:2",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.007952878251671791,
+                "doc_id": "Arizona:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0023641246370971203,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: Sikkim is host to Kanchenjunga, the highest peak in India.",
+            "support_key": "near_miss:REFUTES:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.002711992710828781,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.00212458404712379,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.010410087183117867,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: Sikkim is host to Kanchenjunga, the highest peak in India.",
+            "support_key": "near_miss:REFUTES:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.06131577491760254,
+          "csrm": 0.5899285714285715,
+          "naive_orbit_average": 0.7,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_near_miss_dilution"
+      }
+    ],
+    "csrm_true_accept": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5257770419120789,
+              "doc_id": "Homer_Hickam:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.03099088929593563,
+              "doc_id": "Arizona:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.002447170438244939,
+              "doc_id": "Sikkim:4",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Homer Hickman has written best-selling memoirs.",
+          "support_key": "Homer_Hickam:2"
+        },
+        "label_answerable": true,
+        "orbit_id": "fever:e894f9d46a585a32306b364c04530f10:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.3023841679096222,
+                "doc_id": "Homer_Hickam:2",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.005607778672128916,
+                "doc_id": "Arizona:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.000318110513035208,
+                "doc_id": "Sikkim:4",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Homer Hickman has written best-selling memoirs.",
+            "support_key": "Homer_Hickam:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.2336001694202423,
+                "doc_id": "Homer_Hickam:2",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0349242202937603,
+                "doc_id": "Arizona:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.004633213393390179,
+                "doc_id": "Sikkim:4",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Homer Hickman has written best-selling memoirs.",
+            "support_key": "Homer_Hickam:2"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5257770419120789,
+          "csrm": 0.8185,
+          "naive_orbit_average": 0.67,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_stable_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.0696244016289711,
+              "doc_id": "Arizona:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.009242665953934193,
+              "doc_id": "Homer_Hickam:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.04821078106760979,
+              "doc_id": "Sikkim:4",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Arizona is in the southern United States.",
+          "support_key": "Arizona:0"
+        },
+        "label_answerable": true,
+        "orbit_id": "fever:c5089595a76ab788ceddae2ff756821f:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.1033012643456459,
+                "doc_id": "Arizona:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.001243546255864203,
+                "doc_id": "Homer_Hickam:2",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.002246185904368758,
+                "doc_id": "Sikkim:4",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Arizona is in the southern United States.",
+            "support_key": "Arizona:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.10753358155488968,
+                "doc_id": "Arizona:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0031772146467119455,
+                "doc_id": "Homer_Hickam:2",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.03242608159780502,
+                "doc_id": "Sikkim:4",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Arizona is in the southern United States.",
+            "support_key": "Arizona:0"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.0696244016289711,
+          "csrm": 0.8185,
+          "naive_orbit_average": 0.67,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_stable_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.06131577491760254,
+              "doc_id": "Sikkim:4",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.013352137990295887,
+              "doc_id": "Homer_Hickam:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.0017827012343332171,
+              "doc_id": "Arizona:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Sikkim is host to Kanchenjunga, the highest peak in India.",
+          "support_key": "Sikkim:4"
+        },
+        "label_answerable": true,
+        "orbit_id": "fever:f0293348b72ec3cc523410e040daa287:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.7731022834777832,
+                "doc_id": "Sikkim:4",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.005486219190061092,
+                "doc_id": "Homer_Hickam:2",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.008288136683404446,
+                "doc_id": "Arizona:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Sikkim is host to Kanchenjunga, the highest peak in India.",
+            "support_key": "Sikkim:4"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.7501870393753052,
+                "doc_id": "Sikkim:4",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "A part of the Eastern Himalaya , Sikkim is notable for its biodiversity , including alpine and subtropical climates , as well as being a host to Kanchenjunga , the highest peak in India and third highest on Earth ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.02830643765628338,
+                "doc_id": "Homer_Hickam:2",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.014764050021767616,
+                "doc_id": "Arizona:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Sikkim is host to Kanchenjunga, the highest peak in India.",
+            "support_key": "Sikkim:4"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.06131577491760254,
+          "csrm": 0.8185,
+          "naive_orbit_average": 0.67,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_stable_evidence"
+      }
+    ],
+    "naive_false_accept_csrm_reject": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.7833558320999146,
+              "doc_id": "Byron_Howard:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "He was nominated for a Golden Globe Award for Tangled and won for Zootopia ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.674156665802002,
+              "doc_id": "Zootopia:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The film was directed by Byron Howard and Rich Moore , co-directed by Jared Bush , and stars the voices of Ginnifer Goodwin , Jason Bateman , Idris Elba , Jenny Slate , Nate Torrence , Bonnie Hunt , Don Lake , Tommy Chong , J. K. Simmons , Octavia Spencer , Alan Tudyk , and Shakira ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.7910377979278564,
+              "doc_id": "Zootopia:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Zootopia -LRB- known as Zootropolis in some territories -RRB- is a 2016 American 3D computer-animated buddy comedy-adventure film produced by Walt Disney Animation Studios and released by Walt Disney Pictures ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Byron Howard co-directed at least one animated film.",
+          "support_key": "Byron_Howard:2|Zootopia:0|Zootopia:2"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:f7c3d399da82434fce9ec8abf22bfc2c:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04970598965883255,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.015458428300917149,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.03372956067323685,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: Byron Howard co-directed at least one animated film.",
+            "support_key": "near_miss:REFUTES:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.1289326250553131,
+                "doc_id": "Dave_Gibbons:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "David Chester `` Dave '' Gibbons -LRB- born 14 April 1949 -RRB- is an English comic book artist , writer and sometimes letterer ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.12761487066745758,
+                "doc_id": "Penguin_Books:1",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "It was founded in 1935 by Sir Allen Lane as a line of the publishers The Bodley Head , only becoming a separate company the following year ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.5390334725379944,
+                "doc_id": "Penguin_Books:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Penguin Books is a British publishing house ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: Byron Howard co-directed at least one animated film.",
+            "support_key": "near_miss:REFUTES:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.03995700553059578,
+                "doc_id": "Homer_Hickam:2",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.073496975004673,
+                "doc_id": "Arizona:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.03779347985982895,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: Byron Howard co-directed at least one animated film.",
+            "support_key": "near_miss:REFUTES:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.035885877907276154,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.011455408297479153,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.02799042873084545,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: Byron Howard co-directed at least one animated film.",
+            "support_key": "near_miss:REFUTES:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.7910377979278564,
+          "csrm": 0.571,
+          "naive_orbit_average": 0.7,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_near_miss_dilution"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.09971069544553757,
+              "doc_id": "Indian_Army:3",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Indian Army originated from the armies of the East India Company , which eventually became the British Indian Army , and the armies of the princely states , which finally became the national army after independence ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.17824602127075195,
+              "doc_id": "Army:3",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Within a national military force , the word army may also mean a field army ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.09374769777059555,
+              "doc_id": "Army:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "An army -LRB- from Latin arma `` arms , weapons '' via Old French arm\u00e9e , `` armed '' -LRB- feminine -RRB- -RRB- or ground force is a fighting force that fights primarily on land ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: The Indian Army is a military force.",
+          "support_key": "Army:0|Army:3|Indian_Army:3"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:ddf6774ac03614ee08ab8a1017d9f9e6:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.017267219722270966,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.01261990424245596,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.02931484952569008,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: The Indian Army is a military force.",
+            "support_key": "near_miss:REFUTES:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.07243738323450089,
+                "doc_id": "Dave_Gibbons:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "David Chester `` Dave '' Gibbons -LRB- born 14 April 1949 -RRB- is an English comic book artist , writer and sometimes letterer ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.24572041630744934,
+                "doc_id": "Penguin_Books:1",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "It was founded in 1935 by Sir Allen Lane as a line of the publishers The Bodley Head , only becoming a separate company the following year ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.4339699447154999,
+                "doc_id": "Penguin_Books:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Penguin Books is a British publishing house ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: The Indian Army is a military force.",
+            "support_key": "near_miss:REFUTES:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04249459505081177,
+                "doc_id": "Homer_Hickam:2",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.004723524674773216,
+                "doc_id": "Arizona:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.008392774499952793,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: The Indian Army is a military force.",
+            "support_key": "near_miss:REFUTES:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.008158965036273003,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.002509175566956401,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.011211891658604145,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: The Indian Army is a military force.",
+            "support_key": "near_miss:REFUTES:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.17824602127075195,
+          "csrm": 0.571,
+          "naive_orbit_average": 0.7,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_near_miss_dilution"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.08111822605133057,
+              "doc_id": "French_Indochina:3",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "A grouping of the three Vietnamese regions of Tonkin -LRB- north -RRB- , Annam -LRB- centre -RRB- , and Cochinchina -LRB- south -RRB- with Cambodia was formed in 1887 ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.09719737619161606,
+              "doc_id": "Annam_-LRB-French_protectorate-RRB-:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Annam -LRB- -LSB- An Nam , -RSB- or Trung K\u1ef3 , alternate spelling : Anam -RRB- was a French protectorate encompassing the central region of Vietnam ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.19450508058071136,
+              "doc_id": "French_Protectorate_of_Cambodia:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The French protectorate of Cambodia -LRB- \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge -RRB- , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: There was a grouping of French colonial territories called French Indochina.",
+          "support_key": "Annam_-LRB-French_protectorate-RRB-:0|French_Indochina:3|French_Protectorate_of_Cambodia:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:0a4f033494e9a5da1eb72db1efa3e600:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.009935996495187283,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.02618274837732315,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.030524879693984985,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: There was a grouping of French colonial territories called French Indochina.",
+            "support_key": "near_miss:REFUTES:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.1341456174850464,
+                "doc_id": "Dave_Gibbons:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "David Chester `` Dave '' Gibbons -LRB- born 14 April 1949 -RRB- is an English comic book artist , writer and sometimes letterer ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.10511397570371628,
+                "doc_id": "Penguin_Books:1",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "It was founded in 1935 by Sir Allen Lane as a line of the publishers The Bodley Head , only becoming a separate company the following year ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.3552453815937042,
+                "doc_id": "Penguin_Books:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Penguin Books is a British publishing house ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: There was a grouping of French colonial territories called French Indochina.",
+            "support_key": "near_miss:REFUTES:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.08005578070878983,
+                "doc_id": "Homer_Hickam:2",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Hickam has also written a number of best-selling memoirs and novels including the `` Josh Thurlow '' historical fiction novels ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.006625983398407698,
+                "doc_id": "Arizona:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Arizona -LRB- -LSB- \u025b\u0259r\u1d7b\u02c8zo\u028an\u0259 , _ \u00e6r\u1d7b - -RSB- -RRB- -LRB- Hoozdo Hahoodzo -LSB- x\u00f2\u02d0zt\u00f2 x\u0251\u0300x\u00f2\u02d0ts\u00f2 -RSB- O'odham : Al\u012d \u1e63onak -LSB- \u02e1a\u027ai \u02e1\u0283onak -RSB- -RRB- is a state in the southwestern region of the United States ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.005483831278979778,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: There was a grouping of French colonial territories called French Indochina.",
+            "support_key": "near_miss:REFUTES:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.005560202989727259,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.008017039857804775,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.016381120309233665,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: There was a grouping of French colonial territories called French Indochina.",
+            "support_key": "near_miss:REFUTES:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.19450508058071136,
+          "csrm": 0.571,
+          "naive_orbit_average": 0.7,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_near_miss_dilution"
+      }
+    ],
+    "single_set_false_accept_csrm_reject": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.7833558320999146,
+              "doc_id": "Byron_Howard:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "He was nominated for a Golden Globe Award for Tangled and won for Zootopia ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.674156665802002,
+              "doc_id": "Zootopia:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The film was directed by Byron Howard and Rich Moore , co-directed by Jared Bush , and stars the voices of Ginnifer Goodwin , Jason Bateman , Idris Elba , Jenny Slate , Nate Torrence , Bonnie Hunt , Don Lake , Tommy Chong , J. K. Simmons , Octavia Spencer , Alan Tudyk , and Shakira ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.7910377979278564,
+              "doc_id": "Zootopia:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Zootopia -LRB- known as Zootropolis in some territories -RRB- is a 2016 American 3D computer-animated buddy comedy-adventure film produced by Walt Disney Animation Studios and released by Walt Disney Pictures ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Byron Howard co-directed at least one animated film.",
+          "support_key": "Byron_Howard:2|Zootopia:0|Zootopia:2"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:f7c3d399da82434fce9ec8abf22bfc2c:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.04249461367726326,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.046927325427532196,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.07052001357078552,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Byron Howard co-directed at least one animated film.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.7910377979278564,
+          "csrm": 0.20375000000000001,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.09971069544553757,
+              "doc_id": "Indian_Army:3",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Indian Army originated from the armies of the East India Company , which eventually became the British Indian Army , and the armies of the princely states , which finally became the national army after independence ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.17824602127075195,
+              "doc_id": "Army:3",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Within a national military force , the word army may also mean a field army ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.09374769777059555,
+              "doc_id": "Army:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "An army -LRB- from Latin arma `` arms , weapons '' via Old French arm\u00e9e , `` armed '' -LRB- feminine -RRB- -RRB- or ground force is a fighting force that fights primarily on land ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: The Indian Army is a military force.",
+          "support_key": "Army:0|Army:3|Indian_Army:3"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:ddf6774ac03614ee08ab8a1017d9f9e6:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0022981250658631325,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.009339896030724049,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.01097962912172079,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: The Indian Army is a military force.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.17824602127075195,
+          "csrm": 0.20375000000000001,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.08111822605133057,
+              "doc_id": "French_Indochina:3",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "A grouping of the three Vietnamese regions of Tonkin -LRB- north -RRB- , Annam -LRB- centre -RRB- , and Cochinchina -LRB- south -RRB- with Cambodia was formed in 1887 ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.09719737619161606,
+              "doc_id": "Annam_-LRB-French_protectorate-RRB-:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Annam -LRB- -LSB- An Nam , -RSB- or Trung K\u1ef3 , alternate spelling : Anam -RRB- was a French protectorate encompassing the central region of Vietnam ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.19450508058071136,
+              "doc_id": "French_Protectorate_of_Cambodia:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The French protectorate of Cambodia -LRB- \u1794 \u179a\u1791 \u179f\u1780\u1798 \u1796 \u1787 \u1780 \u179a \u1798\u17a2 \u178e \u1793 \u1782\u1798\u1793 \u1799\u1798\u1794 \u179a \u1784 , Protectorat fran\u00e7ais du Cambodge -RRB- , refers to the Kingdom of Cambodia when it was a French protectorate within French Indochina -- a collection of Southeast Asian protectorates within the French Colonial Empire ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: There was a grouping of French colonial territories called French Indochina.",
+          "support_key": "Annam_-LRB-French_protectorate-RRB-:0|French_Indochina:3|French_Protectorate_of_Cambodia:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:0a4f033494e9a5da1eb72db1efa3e600:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0009932147804647684,
+                "doc_id": "Chaka_Khan:5",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "In the course of her solo career , Khan has achieved three gold singles , three gold albums and one platinum album with I Feel for You ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.007394112646579742,
+                "doc_id": "I_Feel_for_You_-LRB-album-RRB-:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "I Feel for You is the fifth solo studio album by American R&B / funk singer Chaka Khan , released on the Warner Bros. ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0058127655647695065,
+                "doc_id": "Happiness_in_Slavery:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: There was a grouping of French colonial territories called French Indochina.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.19450508058071136,
+          "csrm": 0.20375000000000001,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      }
+    ]
+  },
+  "input": "results\\fever_orbits_nearmiss_corm_1200.jsonl",
+  "thresholds_at_30_coverage": {
+    "corm_max_clean": 0.6820945143699646,
+    "csrm": 0.58225,
+    "naive_orbit_average": 0.67,
+    "single_set_sure_style": 0.67
+  }
+}

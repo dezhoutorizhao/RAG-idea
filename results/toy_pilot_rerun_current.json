@@ -1,0 +1,157 @@
+{
+  "corm_max_clean": {
+    "accuracy_at_0_5": 0.2,
+    "auroc": 0.518225,
+    "calibration": {
+      "ece": 0.698255240210875,
+      "mce": 0.72865193495146
+    },
+    "mean_score_negative": 0.8979234422553991,
+    "mean_score_positive": 0.8995824320327785,
+    "risk_at_30_coverage": {
+      "accepted": 300,
+      "accuracy": 0.23333333333333334,
+      "coverage": 0.3,
+      "risk": 0.7666666666666666,
+      "threshold": 0.9332225648306445
+    },
+    "risk_at_50_coverage": {
+      "accepted": 500,
+      "accuracy": 0.208,
+      "coverage": 0.5,
+      "risk": 0.792,
+      "threshold": 0.9092832089649837
+    },
+    "risk_at_70_coverage": {
+      "accepted": 700,
+      "accuracy": 0.2,
+      "coverage": 0.7,
+      "risk": 0.8,
+      "threshold": 0.8764483081852533
+    }
+  },
+  "corm_mean_clean": {
+    "accuracy_at_0_5": 0.2,
+    "auroc": 0.5214625,
+    "calibration": {
+      "ece": 0.6399173865419883,
+      "mce": 0.6591138036204498
+    },
+    "mean_score_negative": 0.8392649774957198,
+    "mean_score_positive": 0.8425270227270616,
+    "risk_at_30_coverage": {
+      "accepted": 300,
+      "accuracy": 0.23,
+      "coverage": 0.3,
+      "risk": 0.77,
+      "threshold": 0.8635874756197555
+    },
+    "risk_at_50_coverage": {
+      "accepted": 500,
+      "accuracy": 0.212,
+      "coverage": 0.5,
+      "risk": 0.788,
+      "threshold": 0.8408101118642944
+    },
+    "risk_at_70_coverage": {
+      "accepted": 700,
+      "accuracy": 0.20142857142857143,
+      "coverage": 0.7,
+      "risk": 0.7985714285714286,
+      "threshold": 0.8170162295768618
+    }
+  },
+  "csrm": {
+    "accuracy_at_0_5": 0.609,
+    "auroc": 1.0,
+    "calibration": {
+      "ece": 0.39714255543439336,
+      "mce": 0.6507059998141791
+    },
+    "mean_score_negative": 0.454184636398135,
+    "mean_score_positive": 0.8310257684205732,
+    "risk_at_30_coverage": {
+      "accepted": 300,
+      "accuracy": 0.6666666666666666,
+      "coverage": 0.3,
+      "risk": 0.33333333333333337,
+      "threshold": 0.6511019688556021
+    },
+    "risk_at_50_coverage": {
+      "accepted": 500,
+      "accuracy": 0.4,
+      "coverage": 0.5,
+      "risk": 0.6,
+      "threshold": 0.5183952138906069
+    },
+    "risk_at_70_coverage": {
+      "accepted": 700,
+      "accuracy": 0.2857142857142857,
+      "coverage": 0.7,
+      "risk": 0.7142857142857143,
+      "threshold": 0.40254455739650286
+    }
+  },
+  "naive_orbit_average": {
+    "accuracy_at_0_5": 0.801,
+    "auroc": 0.96388125,
+    "calibration": {
+      "ece": 0.24320530327214632,
+      "mce": 0.4143083433361094
+    },
+    "mean_score_negative": 0.3412844539780659,
+    "mean_score_positive": 0.5943696169663865,
+    "risk_at_30_coverage": {
+      "accepted": 300,
+      "accuracy": 0.6233333333333333,
+      "coverage": 0.3,
+      "risk": 0.3766666666666667,
+      "threshold": 0.5578683780046817
+    },
+    "risk_at_50_coverage": {
+      "accepted": 500,
+      "accuracy": 0.4,
+      "coverage": 0.5,
+      "risk": 0.6,
+      "threshold": 0.36655821186218307
+    },
+    "risk_at_70_coverage": {
+      "accepted": 700,
+      "accuracy": 0.2857142857142857,
+      "coverage": 0.7,
+      "risk": 0.7142857142857143,
+      "threshold": 0.2687415666792026
+    }
+  },
+  "single_set_sure_style": {
+    "accuracy_at_0_5": 0.888,
+    "auroc": 0.9858625,
+    "calibration": {
+      "ece": 0.26187019171733766,
+      "mce": 0.4461823414256036
+    },
+    "mean_score_negative": 0.3322650084523765,
+    "mean_score_positive": 0.5938795188733352,
+    "risk_at_30_coverage": {
+      "accepted": 300,
+      "accuracy": 0.6566666666666666,
+      "coverage": 0.3,
+      "risk": 0.3433333333333334,
+      "threshold": 0.503509335401606
+    },
+    "risk_at_50_coverage": {
+      "accepted": 500,
+      "accuracy": 0.4,
+      "coverage": 0.5,
+      "risk": 0.6,
+      "threshold": 0.43773292480868814
+    },
+    "risk_at_70_coverage": {
+      "accepted": 700,
+      "accuracy": 0.2857142857142857,
+      "coverage": 0.7,
+      "risk": 0.7142857142857143,
+      "threshold": 0.271460710736031
+    }
+  }
+}

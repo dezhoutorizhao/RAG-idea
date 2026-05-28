@@ -1,0 +1,60 @@
+# CSRM-RAG Recovery Note - 2026-05-20
+
+Recovered source session:
+
+- Session id: `019e41ac-628a-7a81-91af-926c54edd17b`
+- Session log: `C:\Users\Administrator\.codex\sessions\2026\05\20\rollout-2026-05-20T03-17-57-019e41ac-628a-7a81-91af-926c54edd17b.jsonl`
+- Original active request: `/research-pipeline "improve method X"` with CoRM-RAG as the reference paper and a NeurIPS main-track evidence/novelty bar.
+
+Recovered status:
+
+- The old session remained active and did not complete the NeurIPS-level goal.
+- The usable method direction is CSRM-RAG: counterfactual sufficiency stability / selective risk for robust RAG, evaluated as a bridge study on released CoRM critic scores.
+- The currently supportable claim is limited: CSRM reduces selective risk on HotpotQA-derived and FEVER v3 near-miss counterfactual evidence orbits versus CoRM clean scoring, SURE-style single-set sufficiency, and naive orbit averaging when using released CoRM critic scores.
+- Unsupported claims remain: general robust RAG superiority, formal calibrated risk guarantees, human-audited validity, and full CoRM-RAG NQ/Biased-NQ/TruthfulQA reproduction.
+
+Verification performed after recovery:
+
+- Latest full test run passed: `$env:PYTHONPATH='D:\缝合RAG-idea\src;D:\缝合RAG-idea'; python -m pytest -q` reported 73 passed.
+- Latest claim verification passed all 27 claims after adding the CoRM reconstruction-path blocker, supplemental reconstruction-tool artifact, remote reconstruction-plan artifact, remote script-pack artifact, remote runtime-readiness artifact, remote checkpoint-staging artifact, staged-input streaming encoder smoke artifact, real HF/Contriever streaming encoder smoke artifact, template Biased-NQ smoke artifact, remote eval-staging patch artifact, bounded template eval-smoke readiness artifact, post-FAISS template-smoke watcher artifact, and isolated partial-index template eval-smoke artifact.
+- `experiments/check_corm_reproduction_readiness.py` reported `ready=false`.
+
+Current blockers:
+
+- Human audit is not complete. Current v3 pilot and paper-grade audit packs have zero labels.
+- Full CoRM-RAG reproduction is blocked by missing full `wiki.faiss`, `wiki_passages.jsonl`, `biased_nq_test.jsonl`, and perturbation generation/staging. The remote checkpoint is now uploaded and SHA256-verified, remote `faiss`/`vllm` import in a transient `/dev/shm` runtime, and a 16-passage real HF/Contriever streaming smoke passed via the mirror endpoint, but no reconstructed evaluation has run.
+- The public Hugging Face repo `PeiyangLiu/CoRM-RAG` only exposes README, `.gitattributes`, and the critic checkpoint; it does not expose the missing data/index artifacts.
+- Server `192.168.103.101:22` has two RTX 4090 GPUs. Its root disk is effectively full and the default Python environment lacks the ML stack needed for this project, but `/mnt/ntfs-disk` is writable and has about 300 GB free for future staged GPU work.
+- Calibration does not support a formal risk-control claim: the original empirical threshold misses the 0.20 target in part of the Hotpot and FEVER v3 multi-seed calibration summaries, and the newer Clopper-Pearson thresholding still fails FEVER v3.
+
+Latest recovery actions:
+
+- Regenerated v3 adjudication/readiness reports for the pilot and paper-grade audit packs.
+- Updated audit protocol, experiment plan, audit report, result-to-claim report, research pipeline report, claim ledger, and JSON summaries to point active audit work at v3 files.
+- Kept older v2 packs only as historical artifacts.
+- Added a set-level NLI sensitivity probe over the v3 pilot and paper-grade audit samples. On the 1,000-row paper-grade sample, CSRM AUROC is 0.7353 and Risk@30 is 0.6267 versus naive orbit averaging AUROC 0.4880 and Risk@30 0.8600. This is cross-scorer sensitivity evidence, not human audit.
+- Rechecked the server and found `/mnt/ntfs-disk` has about 300 GB free and is writable; future GPU work should use that mount instead of the full root filesystem.
+- Added `NOVELTY_AUDIT_UPDATE_20260520.md` after a fresh arXiv/web check. The updated novelty position is that CSRM-RAG must be framed as counterfactual sufficiency stability over aligned evidence-set orbits, not as a plain evidence sufficiency verifier.
+- Added `experiments/check_corm_release_manifest.py` and `results/corm_release_manifest.json`. HF release query succeeded and found only `.gitattributes`, `README.md`, and the critic checkpoint; the required full-reproduction data/index artifacts were absent from that queried release.
+- Added `experiments/evaluate_risk_control_cp.py` and Clopper-Pearson risk-control pressure-test outputs. Logistic CSRM meets the 0.20 target on Hotpot in 3/3 split seeds with nonzero coverage, but FEVER v3 near-miss still misses in two of three seeds; this supports only a Hotpot-only empirical transfer statement, not formal risk control.
+- Added `experiments/audit_corm_reproduction_path.py` and `results/corm_reproduction_path_audit.json`. The available CoRM source partially scripts `wiki_passages.jsonl`, but no exact released-script producer is detected for `wiki.faiss` or `biased_nq_test.jsonl`.
+- Added `experiments/build_corm_faiss_index.py` and `experiments/build_corm_biased_nq_test.py` as supplemental helpers for a future reconstructed CoRM run. These are not upstream artifacts and do not complete original reproduction.
+- Added `experiments/plan_corm_reconstruction.py` and `results/corm_reconstruction_plan.json`. The plan targets `/mnt/ntfs-disk/csrm_corm_reconstruction` on the remote 4090 server; runtime setup has been partially executed, but data generation and reconstructed evaluation have not.
+- Added `experiments/materialize_corm_remote_scripts.py`, `results/corm_remote_scripts_manifest.json`, and `results/corm_remote_scripts/`. The script pack materializes the remote reconstruction plan and reports no embedded secret markers; it has been deployed to the server. It now includes a bounded `04_run_template_biased_nq_smoke_eval.sh` path and a `05_watch_and_run_template_smoke_eval.sh` watcher for post-FAISS plumbing checks. The eval scripts now put `/dev/shm/csrm_corm_runtime/py_runtime/bin` on `PATH` and default template smoke to `Qwen/Qwen2.5-0.5B-Instruct` because the current remote vLLM/Transformers stack does not support Qwen3.
+- Added `results/corm_remote_runtime_status.json` after bootstrapping the remote runtime. It records torch/CUDA, FAISS, Transformers, datasets, and vLLM import readiness under `/dev/shm/csrm_corm_runtime`; this is runtime-readiness evidence only.
+- Added `results/corm_remote_checkpoint_status.json` after uploading the 5.2GB critic checkpoint to the remote workspace and verifying SHA256.
+- Added `experiments/encode_corm_wikipedia_streaming.py` plus `results/corm_streaming_encoder_remote_smoke.json` and `results/corm_streaming_encoder_remote_hf_smoke.json`. The remote staged-JSONL/dummy-backend smoke proves sharded passage/embedding output and FAISS indexing work without full in-memory Wikipedia; the HF smoke proves that the mirror endpoint plus `/dev/shm` cache can stream real Wikipedia, encode 16 passages with Contriever on CUDA, and build FAISS. Full Wikipedia generation has now been launched but is not complete.
+- Added and updated `results/corm_full_wikipedia_job_status.json` for the full remote Wikipedia/Contriever/FAISS construction job. The first attempt exited at 2026-05-20T20:01:06+08:00 with `Errno 28` while opening `embeddings_shard_000044.npy`; it left forty-four complete shards and a `wiki_passages.jsonl` with one unembedded 50,000-passage tail. The first resume under PID `340588` / encoder PID `340645` used 1,000,000 passages per new shard and successfully wrote `embeddings_shard_000044.npy` through `embeddings_shard_000048.npy`, but it exited at 2026-05-21T00:11:36+08:00 with `Errno 28` while opening `embeddings_shard_000049.npy`. The temporary-copy resume repair then hit `Errno 5` on a 5.5GB `wiki_passages.jsonl.resume_repair`, so the encoder was changed to truncate `wiki_passages.jsonl` in place instead of copying a large repair file. The active second recovery was launched at 2026-05-21T00:30:43+08:00 under launcher PID `1836368` / encoder PID `1836375` using 4,000,000 passages per new shard. At 2026-05-21T00:31:38+08:00, `wiki_passages.jsonl` had been realigned to 7,200,000 lines, no repair temp file existed, and 49 embedding shards were present. It has not yet built the final `wiki.faiss` or streaming/FAISS manifests.
+- Added `experiments/build_corm_template_perturbations.py` and `results/corm_template_biased_nq_remote_smoke.json`. The remote template fallback generated 100 NQ validation rows, 500 deterministic perturbation slots, and `biased_nq_test.template_smoke.jsonl`; this is smoke/plumbing evidence only, not original Biased-NQ evidence.
+- Added `results/corm_eval_stage_dir_patch_status.json` after patching and redeploying `external_repos/CoRM-RAG/src/run_eval.sh` so reconstructed eval can stage or symlink `wiki.faiss` under `/mnt/ntfs-disk/.../stage/eval_data` instead of the almost-full root `/tmp`. Remote `bash -n` checks pass.
+- Added `results/corm_template_smoke_eval_readiness_status.json` after adding `EVAL_MAX_EXAMPLES` support to `run_eval.sh` / `run_evaluation.py` and deploying `04_run_template_biased_nq_smoke_eval.sh`. This is readiness for a small template Biased_NQ smoke run after `wiki.faiss` exists; it has not produced metrics.
+- Added `results/corm_template_smoke_eval_watcher_status.json` after launching the remote watcher. After the second storage failure, watcher PID `342843` was stopped and the redeployable remote script pack was removed to free NTFS file records. This should be redeployed after `wiki.faiss` exists or storage is stable. This is operational status only and has not produced metrics.
+- Added `results/corm_partial_template_eval_smoke_status.json` after an isolated partial-index smoke on the first four embedding shards. It built a 200,000-vector flat FAISS index and completed a two-example template Biased_NQ run with retrieval, CoRM critic scoring, vLLM generation, and metric writing using `Qwen/Qwen2.5-0.5B-Instruct`. This is deployment plumbing evidence only; the two-example accuracy is 0.0 and is not performance evidence.
+
+Next required work:
+
+1. Complete human labels for `results/audit_sample_100_v3.jsonl`.
+2. Run adjudication/readiness summaries and audited-label metric recomputation.
+3. If pilot quality is acceptable, label `results/audit_sample_paper_1000_v3.jsonl`.
+4. Execute or refine the remote CoRM reconstruction plan, then resolve preflight by producing/staging `wiki_passages.jsonl`, `wiki_embeddings.npy`, `wiki.faiss`, `perturbations.jsonl`, and `biased_nq_test.jsonl`; otherwise keep the released-score bridge framing.
+5. Re-run independent review only after audited metrics exist.

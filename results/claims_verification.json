@@ -1,0 +1,1810 @@
+{
+  "claims": [
+    {
+      "checks": [
+        {
+          "actual": 0.16666666666666663,
+          "expected": 0.16666666666666663,
+          "file": "results/hotpot_orbits_corm_800_eval_fullabl.json",
+          "path": [
+            "summary",
+            "csrm",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "status": "pass",
+          "tolerance": 1e-09,
+          "type": "metric_equals"
+        },
+        {
+          "file": "results/hotpot_orbits_corm_800_eval_fullabl.json",
+          "left": [
+            "summary",
+            "csrm",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "left_value": 0.16666666666666663,
+          "right": [
+            "summary",
+            "naive_orbit_average",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "right_value": 0.5,
+          "status": "pass",
+          "type": "metric_less_than"
+        },
+        {
+          "file": "results/hotpot_orbits_corm_800_eval_fullabl.json",
+          "left": [
+            "summary",
+            "csrm",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "left_value": 0.16666666666666663,
+          "right": [
+            "summary",
+            "corm_max_clean",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "right_value": 0.75,
+          "status": "pass",
+          "type": "metric_less_than"
+        },
+        {
+          "file": "results/hotpot_orbits_corm_800_eval_fullabl.json",
+          "left": [
+            "summary",
+            "csrm",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "left_value": 0.16666666666666663,
+          "right": [
+            "summary",
+            "single_set_sure_style",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "right_value": 0.75,
+          "status": "pass",
+          "type": "metric_less_than"
+        }
+      ],
+      "declared_status": "supported_bridge",
+      "id": "C1_hotpot_main_gain",
+      "limitations": [
+        "Bridge split uses structural labels from Hotpot supporting facts, not completed human audit.",
+        "Full CoRM-RAG retrieval-generation evaluation is not reproduced."
+      ],
+      "text": "On the HotpotQA bridge split with released CoRM critic scores, CSRM lowers selective risk versus CoRM clean scoring, SURE-style single-set sufficiency, and naive orbit averaging.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": 0.16689911668991164,
+          "expected": 0.16689911668991164,
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "path": [
+            "aggregate",
+            "csrm",
+            "risk_at_30",
+            "mean"
+          ],
+          "status": "pass",
+          "tolerance": 1e-09,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0.00040261525048092766,
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "path": [
+            "aggregate",
+            "csrm",
+            "risk_at_30",
+            "stdev"
+          ],
+          "status": "pass",
+          "threshold": 0.001,
+          "type": "metric_less_than_value"
+        }
+      ],
+      "declared_status": "supported_bridge",
+      "id": "C2_hotpot_multiseed_stability",
+      "limitations": [
+        "All seeds are from the same HotpotQA validation source."
+      ],
+      "text": "The HotpotQA bridge gain is stable across three random data seeds.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": 1.0,
+          "expected": 1.0,
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "path": [
+            "aggregate",
+            "csrm_shuffled_perturbations",
+            "risk_at_30",
+            "mean"
+          ],
+          "status": "pass",
+          "tolerance": 1e-09,
+          "type": "metric_equals"
+        },
+        {
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "left": [
+            "aggregate",
+            "csrm",
+            "risk_at_30",
+            "mean"
+          ],
+          "left_value": 0.16689911668991164,
+          "right": [
+            "aggregate",
+            "csrm_shuffled_perturbations",
+            "risk_at_30",
+            "mean"
+          ],
+          "right_value": 1.0,
+          "status": "pass",
+          "type": "metric_less_than"
+        }
+      ],
+      "declared_status": "supported_bridge",
+      "id": "C3_orbit_alignment_required",
+      "limitations": [
+        "The shuffled ablation tests orbit alignment, not all possible verifier-call budget confounds."
+      ],
+      "text": "CSRM's gain is not explained by using more perturbation calls alone; shuffled perturbation alignment collapses performance.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "left": [
+            "aggregate",
+            "csrm_no_answer_consistency",
+            "risk_at_30",
+            "mean"
+          ],
+          "left_value": 0.6467631334263134,
+          "right": [
+            "aggregate",
+            "csrm",
+            "risk_at_30",
+            "mean"
+          ],
+          "right_value": 0.16689911668991164,
+          "status": "pass",
+          "type": "metric_greater_than"
+        },
+        {
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "left": [
+            "aggregate",
+            "csrm_no_answer_consistency",
+            "auroc",
+            "mean"
+          ],
+          "left_value": 0.7576860254300537,
+          "right": [
+            "aggregate",
+            "csrm",
+            "auroc",
+            "mean"
+          ],
+          "right_value": 0.9975651904132611,
+          "status": "pass",
+          "type": "metric_less_than"
+        }
+      ],
+      "declared_status": "supported_bridge",
+      "id": "C4_answer_consistency_mechanism",
+      "limitations": [
+        "Mechanism evidence is strongest for HotpotQA; FEVER v3 near-miss is a deliberately constructed heuristic stress split pending audit."
+      ],
+      "text": "Answer/support-signature consistency is a necessary mechanism on HotpotQA bridge splits.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "file": "results/fever_nearmiss_corm_v3_multiseed_summary.json",
+          "left": [
+            "aggregate",
+            "csrm",
+            "auroc",
+            "mean"
+          ],
+          "left_value": 1.0,
+          "right": [
+            "aggregate",
+            "naive_orbit_average",
+            "auroc",
+            "mean"
+          ],
+          "right_value": 0.7763891666666667,
+          "status": "pass",
+          "type": "metric_greater_than"
+        },
+        {
+          "file": "results/fever_nearmiss_corm_v3_multiseed_summary.json",
+          "left": [
+            "aggregate",
+            "csrm",
+            "risk_at_30",
+            "mean"
+          ],
+          "left_value": 0.4444444444444444,
+          "right": [
+            "aggregate",
+            "naive_orbit_average",
+            "risk_at_30",
+            "mean"
+          ],
+          "right_value": 0.6407407407407407,
+          "status": "pass",
+          "type": "metric_less_than"
+        },
+        {
+          "actual": 0.0,
+          "file": "results/fever_nearmiss_corm_v3_multiseed_summary.json",
+          "path": [
+            "aggregate",
+            "csrm",
+            "auroc",
+            "stdev"
+          ],
+          "status": "pass",
+          "threshold": 0.001,
+          "type": "metric_less_than_value"
+        }
+      ],
+      "declared_status": "supported_secondary_bridge",
+      "id": "C5_fever_second_domain_sanity",
+      "limitations": [
+        "The FEVER v3 near-miss split supersedes earlier builder versions whose audits exposed invalid missing-evidence coverage and non-gold high-support feature leakage.",
+        "The near-miss split still uses deliberately hard verifier-feature assignments and remains a heuristic stress bridge until human semantic audit is complete."
+      ],
+      "text": "FEVER v3 near-miss dilution provides a second real-domain stress bridge where CSRM separates fragile orbits better than naive orbit averaging after support-key budget and non-gold support-feature audits.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "file": "results/audit_sample_100_v3_summary.json",
+          "path": [
+            "labeled"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0.0,
+          "expected": 0.0,
+          "file": "results/audit_sample_100_v3_summary.json",
+          "path": [
+            "completion_rate"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        }
+      ],
+      "declared_status": "unsupported_until_audited",
+      "id": "C6_human_audit_not_complete",
+      "limitations": [
+        "No human-audited performance claim can be made yet."
+      ],
+      "text": "Human audit is prepared but not complete.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": 3,
+          "file": "results/hotpot_case_studies.json",
+          "path": [
+            "case_counts",
+            "naive_false_accept_csrm_reject"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": 3,
+          "file": "results/hotpot_case_studies.json",
+          "path": [
+            "case_counts",
+            "csrm_false_accept_failure"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": 3,
+          "file": "results/fever_nearmiss_v3_case_studies.json",
+          "path": [
+            "case_counts",
+            "csrm_false_accept_failure"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C7_case_studies_available",
+      "limitations": [
+        "Case studies are selected from heuristic-label bridge data and must not replace human audit."
+      ],
+      "text": "Representative Hotpot and FEVER case studies have been extracted for failure and limitation analysis.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": 0.25,
+          "file": "results/hotpot_corm_paired_comparison.json",
+          "path": [
+            "comparisons",
+            "naive_orbit_average",
+            "bootstrap_ci",
+            "risk_at_30_reduction",
+            "p2_5"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": 0.13792924935289042,
+          "file": "results/hotpot_corm_paired_comparison.json",
+          "path": [
+            "comparisons",
+            "naive_orbit_average",
+            "bootstrap_ci",
+            "auroc_improvement",
+            "p2_5"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": 0.10555555555555562,
+          "file": "results/fever_nearmiss_corm_v3_paired_comparison.json",
+          "path": [
+            "comparisons",
+            "naive_orbit_average",
+            "bootstrap_ci",
+            "risk_at_30_reduction",
+            "p2_5"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": 0.19957000000000003,
+          "file": "results/fever_nearmiss_corm_v3_paired_comparison.json",
+          "path": [
+            "comparisons",
+            "naive_orbit_average",
+            "bootstrap_ci",
+            "auroc_improvement",
+            "p2_5"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        }
+      ],
+      "declared_status": "supported_bridge",
+      "id": "C8_paired_bootstrap_positive_deltas",
+      "limitations": [
+        "Paired bootstrap is computed over bridge labels; it does not resolve human-audit or verifier-validity gaps."
+      ],
+      "text": "Paired bootstrap comparisons show positive selective-risk reductions for CSRM versus naive orbit averaging on both Hotpot and FEVER v3 near-miss bridge splits.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/corm_reproduction_preflight.json",
+          "path": [
+            "ready"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 5,
+          "file": "results/corm_reproduction_preflight.json",
+          "path": [
+            "missing_required_artifacts"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        }
+      ],
+      "declared_status": "unsupported_until_preflight_passes",
+      "id": "C9_corm_original_reproduction_blocked",
+      "limitations": [
+        "The released Evidence Critic checkpoint is present, but original end-to-end reproduction still requires data/index files and runtime dependencies.",
+        "This claim is a blocker statement, not a performance result."
+      ],
+      "text": "Full CoRM-RAG original NQ/Biased-NQ/TruthfulQA reproduction is not complete in the current environment.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/hotpot_corm_calibration_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "formal_risk_guarantee_supported"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 1,
+          "file": "results/hotpot_corm_calibration_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "target_miss_count"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/fever_nearmiss_corm_v3_calibration_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "formal_risk_guarantee_supported"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 2,
+          "file": "results/fever_nearmiss_corm_v3_calibration_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "target_miss_count"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        }
+      ],
+      "declared_status": "unsupported_until_stronger_calibration",
+      "id": "C10_calibrated_risk_guarantee_not_supported",
+      "limitations": [
+        "The calibrated model improves ranking quality, but threshold transfer misses the 0.20 risk target in one of three split seeds on Hotpot and two of three FEVER v3 near-miss split seeds.",
+        "Zero-coverage thresholds are treated as vacuous and do not count as formal guarantees."
+      ],
+      "text": "Current split-calibrated CSRM results do not support a formal risk guarantee at target risk 0.20.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/hotpot_corm_risk_control_cp_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "empirical_transfer_supported"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "file": "results/hotpot_corm_risk_control_cp_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "target_miss_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/hotpot_corm_risk_control_cp_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "formal_risk_guarantee_supported"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 2,
+          "file": "results/fever_nearmiss_corm_v3_risk_control_cp_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "target_miss_count"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/fever_nearmiss_corm_v3_risk_control_cp_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "formal_risk_guarantee_supported"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        }
+      ],
+      "declared_status": "supported_partial_pressure_test",
+      "id": "C14_cp_risk_control_partial_hotpot_only",
+      "limitations": [
+        "The Clopper-Pearson bound is applied to calibration-set selective risk only; held-out target hits are empirical transfer checks, not distribution-free guarantees under domain or split shift.",
+        "The FEVER v3 near-miss bridge still misses the target in two of three split seeds for logistic CSRM.",
+        "Baselines without a feasible non-vacuous threshold remain zero-coverage under this conservative target and should not be counted as successful risk control."
+      ],
+      "text": "A conservative Clopper-Pearson calibration pressure test supports empirical risk-target transfer for logistic CSRM on Hotpot only; FEVER v3 near-miss still fails the 0.20 target in two of three split seeds, so no general formal risk-control claim is supported.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "blocked",
+          "expected": "blocked",
+          "file": "results/corm_reproduction_path_audit.json",
+          "path": [
+            "reconstructability_status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/corm_reproduction_path_audit.json",
+          "path": [
+            "encode_wikipedia_outputs_passages"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/corm_reproduction_path_audit.json",
+          "path": [
+            "repository_calls_faiss_write_index"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/corm_reproduction_path_audit.json",
+          "path": [
+            "encode_wikipedia_outputs_faiss"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/corm_reproduction_path_audit.json",
+          "path": [
+            "biased_nq_exact_builder_detected"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        }
+      ],
+      "declared_status": "supported_blocker",
+      "id": "C15_corm_reproduction_path_blocked",
+      "limitations": [
+        "This is a source-path audit of the currently available repository, not proof that authors cannot provide the missing artifacts out of band.",
+        "Manual reconstruction may still be possible by adding a FAISS builder and recreating the Biased-NQ perturbation file, but that would no longer be a direct reproduction of the released evaluation pipeline.",
+        "The remote server has sufficient GPU hardware but currently lacks the ML runtime stack; environment setup alone does not solve the missing exact data/index generation path."
+      ],
+      "text": "The released CoRM-RAG repository does not expose a complete scripted path to rebuild the runtime artifacts required by run_eval.sh: wiki_passages.jsonl is partially scripted, but wiki.faiss and biased_nq_test.jsonl lack exact detected producers.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "available",
+          "expected": "available",
+          "file": "results/corm_reproduction_path_audit.json",
+          "path": [
+            "supplemental_reconstructability_status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/corm_reproduction_path_audit.json",
+          "path": [
+            "supplemental_reconstruction",
+            "faiss_builder_available"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/corm_reproduction_path_audit.json",
+          "path": [
+            "supplemental_reconstruction",
+            "biased_nq_builder_available"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C16_corm_supplemental_reconstruction_tools",
+      "limitations": [
+        "These are supplemental reconstruction helpers, not upstream CoRM-RAG release files.",
+        "Running the full reconstruction still requires Wikipedia embeddings/passages, perturbation generation or original perturbation JSONL, FAISS, vLLM, and enough disk/GPU resources.",
+        "Results from reconstructed artifacts must be reported as reconstructed-pipeline evidence unless exact equivalence to the authors' original artifacts is established."
+      ],
+      "text": "This workspace now contains supplemental tools for a documented CoRM artifact reconstruction attempt: a FAISS builder from wiki embeddings and a Biased-NQ materializer from perturbation JSONL.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "planned_not_executed",
+          "expected": "planned_not_executed",
+          "file": "results/corm_reconstruction_plan.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/corm_reconstruction_plan.json",
+          "path": [
+            "supplemental_tools_ready"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/corm_reconstruction_plan.json",
+          "path": [
+            "local_inputs",
+            "checkpoint",
+            "exists"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/corm_reconstruction_plan.json",
+          "path": [
+            "local_inputs",
+            "wiki_faiss",
+            "exists"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": "Use /mnt/ntfs-disk for persistent workspace/data and /dev/shm/csrm_corm_runtime for the transient Python runtime and HuggingFace cache; root filesystem is effectively full and /mnt/ntfs-disk is an NTFS/fuseblk mount with limited POSIX permission support.",
+          "expected": "Use /mnt/ntfs-disk for persistent workspace/data and /dev/shm/csrm_corm_runtime for the transient Python runtime and HuggingFace cache; root filesystem is effectively full and /mnt/ntfs-disk is an NTFS/fuseblk mount with limited POSIX permission support.",
+          "file": "results/corm_reconstruction_plan.json",
+          "path": [
+            "remote",
+            "storage_policy"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C17_corm_reconstruction_plan_ready",
+      "limitations": [
+        "The plan has not been executed; it is an execution artifact, not a reproduced result.",
+        "The plan still requires full Wikipedia encoding, FAISS construction, perturbation generation or staging, and vLLM evaluation.",
+        "The plan intentionally omits passwords and API keys; secrets must be provided by the caller or secure environment variables."
+      ],
+      "text": "A machine-readable remote reconstruction plan now exists for running a documented CoRM reconstructed pipeline on the /mnt/ntfs-disk server workspace without writing secrets into scripts.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "materialized",
+          "expected": "materialized",
+          "file": "results/corm_remote_scripts_manifest.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/corm_remote_scripts_manifest.json",
+          "path": [
+            "contains_secret_markers"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 9,
+          "file": "results/corm_remote_scripts_manifest.json",
+          "path": [
+            "script_count"
+          ],
+          "status": "pass",
+          "threshold": 4,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": "/mnt/ntfs-disk/csrm_corm_reconstruction",
+          "expected": "/mnt/ntfs-disk/csrm_corm_reconstruction",
+          "file": "results/corm_remote_scripts_manifest.json",
+          "path": [
+            "remote_root"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C18_corm_remote_script_pack_materialized",
+      "limitations": [
+        "The full ordered script pack has not been run end-to-end on the remote server; targeted runtime-bootstrap and staged-input smoke paths have been exercised separately.",
+        "The scripts still require full Wikipedia/FAISS generation, API credentials or staged perturbations, and substantial compute.",
+        "The script pack deliberately uses environment-variable references for secrets rather than embedding secret values."
+      ],
+      "text": "The remote CoRM reconstruction plan has been materialized into an ordered, secret-free shell script pack for execution on the /mnt/ntfs-disk server workspace.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "runtime_import_ready",
+          "expected": "runtime_import_ready",
+          "file": "results/corm_remote_runtime_status.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_remote_runtime_status.json",
+          "path": [
+            "runtime",
+            "torch_cuda_available"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "file": "results/corm_remote_runtime_status.json",
+          "path": [
+            "runtime",
+            "torch_cuda_device_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_remote_runtime_status.json",
+          "path": [
+            "runtime",
+            "vllm_import_ok"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "file": "results/corm_remote_runtime_status.json",
+          "path": [
+            "deployment",
+            "reconstructed_eval_executed"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C19_corm_remote_runtime_ready",
+      "limitations": [
+        "The runtime is transient because it lives under /dev/shm and must be recreated after a reboot.",
+        "This is runtime readiness only, not reconstructed evaluation evidence.",
+        "The CoRM checkpoint is now staged separately, but Wikipedia/FAISS/Biased-NQ artifacts have not been generated."
+      ],
+      "text": "The remote CoRM reconstruction environment now has an import-ready Python runtime with torch/CUDA, FAISS, Transformers, datasets, and vLLM available under the transient /dev/shm runtime root.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "uploaded_verified",
+          "expected": "uploaded_verified",
+          "file": "results/corm_remote_checkpoint_status.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": 5208606507,
+          "expected": 5208606507,
+          "file": "results/corm_remote_checkpoint_status.json",
+          "path": [
+            "remote_size_bytes"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_remote_checkpoint_status.json",
+          "path": [
+            "sha256_match"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C20_corm_remote_checkpoint_uploaded",
+      "limitations": [
+        "Checkpoint staging is necessary for reconstructed evaluation but does not produce any evaluation metric.",
+        "Data/index artifacts are still missing."
+      ],
+      "text": "The 5.2GB released CoRM Evidence Critic checkpoint has been uploaded to the remote reconstruction workspace and verified by SHA256.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "passed",
+          "expected": "passed",
+          "file": "results/corm_streaming_encoder_remote_smoke.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "file": "results/corm_streaming_encoder_remote_smoke.json",
+          "path": [
+            "streaming_manifest",
+            "embedding_shard_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "file": "results/corm_streaming_encoder_remote_smoke.json",
+          "path": [
+            "faiss_manifest",
+            "ntotal"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": "blocked",
+          "expected": "blocked",
+          "file": "results/corm_streaming_encoder_remote_smoke.json",
+          "path": [
+            "hf_dataset_smoke",
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C21_corm_streaming_encoder_smoke",
+      "limitations": [
+        "The smoke uses a dummy embedding backend and staged two-row JSONL input; it is an engineering path check, not full Wikipedia evidence.",
+        "Default direct huggingface.co access timed out on the server; C22 records that the HF Contriever/Wikipedia path works when launched with the mirror endpoint and /dev/shm cache, and a full Wikipedia construction job has been launched but is not complete."
+      ],
+      "text": "The supplemental streaming Wikipedia encoder can consume staged JSONL input on the remote server, write sharded embeddings, and feed the supplemental FAISS builder without using the full Wikipedia dataset in memory.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "passed",
+          "expected": "passed",
+          "file": "results/corm_streaming_encoder_remote_hf_smoke.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": "hf",
+          "expected": "hf",
+          "file": "results/corm_streaming_encoder_remote_hf_smoke.json",
+          "path": [
+            "streaming_manifest",
+            "backend"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": 16,
+          "expected": 16,
+          "file": "results/corm_streaming_encoder_remote_hf_smoke.json",
+          "path": [
+            "streaming_manifest",
+            "passages"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 16,
+          "expected": 16,
+          "file": "results/corm_streaming_encoder_remote_hf_smoke.json",
+          "path": [
+            "faiss_manifest",
+            "ntotal"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 768,
+          "expected": 768,
+          "file": "results/corm_streaming_encoder_remote_hf_smoke.json",
+          "path": [
+            "faiss_manifest",
+            "dim"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": "https://hf-mirror.com",
+          "expected": "https://hf-mirror.com",
+          "file": "results/corm_streaming_encoder_remote_hf_smoke.json",
+          "path": [
+            "hf_access",
+            "endpoint"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C22_corm_hf_streaming_encoder_smoke",
+      "limitations": [
+        "This is a 16-passage engineering smoke, not a full Wikipedia index or CoRM evaluation.",
+        "The HuggingFace/model cache lives under /dev/shm and is transient.",
+        "The resulting FAISS index is supplemental reconstructed-pipeline infrastructure, not the authors' original wiki.faiss artifact."
+      ],
+      "text": "The supplemental streaming Wikipedia encoder can stream real Wikipedia through a reachable HuggingFace mirror on the remote server, encode passages with facebook/contriever-msmarco on CUDA, and build a FAISS index from sharded 768-dimensional embeddings.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "passed",
+          "expected": "passed",
+          "file": "results/corm_template_biased_nq_remote_smoke.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": 100,
+          "expected": 100,
+          "file": "results/corm_template_biased_nq_remote_smoke.json",
+          "path": [
+            "perturbation_manifest",
+            "rows"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 500,
+          "expected": 500,
+          "file": "results/corm_template_biased_nq_remote_smoke.json",
+          "path": [
+            "perturbation_manifest",
+            "perturbations"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 100,
+          "expected": 100,
+          "file": "results/corm_template_biased_nq_remote_smoke.json",
+          "path": [
+            "biased_nq_manifest",
+            "rows"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_template_biased_nq_remote_smoke.json",
+          "path": [
+            "biased_nq_manifest",
+            "require_all_types"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C23_corm_template_biased_nq_smoke",
+      "limitations": [
+        "The template fallback is for reconstructed-pipeline smoke tests only.",
+        "It is not the authors' OpenAI-generated perturbation set and must not be reported as original Biased-NQ evidence.",
+        "It does not remove the need for API-generated or author-provided perturbations for serious reproduction claims."
+      ],
+      "text": "When OpenAI-compatible API credentials are unavailable, the reconstructed pipeline has a deterministic template fallback that can produce structurally valid NQ perturbations and a Biased-NQ-format smoke file on the remote server.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "deployed_verified",
+          "expected": "deployed_verified",
+          "file": "results/corm_eval_stage_dir_patch_status.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_eval_stage_dir_patch_status.json",
+          "path": [
+            "checks",
+            "run_eval_bash_n"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_eval_stage_dir_patch_status.json",
+          "path": [
+            "checks",
+            "run_script_bash_n"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": "/mnt/ntfs-disk/csrm_corm_reconstruction/stage/eval_data",
+          "expected": "/mnt/ntfs-disk/csrm_corm_reconstruction/stage/eval_data",
+          "file": "results/corm_eval_stage_dir_patch_status.json",
+          "path": [
+            "checks",
+            "remote_run_uses_large_stage_dir"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_eval_stage_dir_patch_status.json",
+          "path": [
+            "checks",
+            "remote_run_defaults_skip_faiss_copy"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C24_corm_eval_stage_dir_patch",
+      "limitations": [
+        "This is deployment-readiness evidence only, not a reconstructed CoRM evaluation result.",
+        "The patch does not create wiki.faiss, wiki_passages.jsonl, original Biased-NQ perturbations, or any evaluation metrics.",
+        "Symlink mode depends on the final FAISS file staying available under the remote persistent data directory."
+      ],
+      "text": "The reconstructed CoRM evaluation scripts have been patched and redeployed so staging can use a large persistent stage directory and symlink wiki.faiss instead of copying it under the almost-full root filesystem.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "deployed_verified",
+          "expected": "deployed_verified",
+          "file": "results/corm_template_smoke_eval_readiness_status.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_template_smoke_eval_readiness_status.json",
+          "path": [
+            "checks",
+            "run_eval_has_max_examples_env"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_template_smoke_eval_readiness_status.json",
+          "path": [
+            "checks",
+            "run_evaluation_has_max_examples_arg"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_template_smoke_eval_readiness_status.json",
+          "path": [
+            "checks",
+            "template_smoke_script_exists"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": 20,
+          "expected": 20,
+          "file": "results/corm_template_smoke_eval_readiness_status.json",
+          "path": [
+            "checks",
+            "template_smoke_default_max_examples"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": "Biased_NQ",
+          "expected": "Biased_NQ",
+          "file": "results/corm_template_smoke_eval_readiness_status.json",
+          "path": [
+            "checks",
+            "template_smoke_dataset"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C25_corm_template_smoke_eval_readiness",
+      "limitations": [
+        "This is readiness evidence for the full-index watcher-triggered smoke path; that path has not run and has produced no full-index metrics.",
+        "The path uses deterministic template perturbations and must not be reported as original Biased-NQ evidence.",
+        "The deployed script now uses a Qwen2.5 generator because the current remote Transformers/vLLM stack does not recognize Qwen3; this is a runtime-compatible reconstructed smoke choice, not an original-artifact equivalence claim."
+      ],
+      "text": "A bounded template Biased-NQ reconstructed-eval smoke path has been generated, deployed, and syntax-checked so the first post-FAISS evaluation can run a small, explicitly smoke-labeled Biased_NQ path before any full reconstructed evaluation.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "paused_after_storage_recovery",
+          "expected": "paused_after_storage_recovery",
+          "file": "results/corm_template_smoke_eval_watcher_status.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_template_smoke_eval_watcher_status.json",
+          "path": [
+            "checks",
+            "previous_watcher_stopped"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_template_smoke_eval_watcher_status.json",
+          "path": [
+            "checks",
+            "remote_script_pack_removed_to_free_file_records"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "file": "results/corm_template_smoke_eval_watcher_status.json",
+          "path": [
+            "checks",
+            "template_smoke_eval_results_exists"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        }
+      ],
+      "declared_status": "supported_operational_status",
+      "id": "C26_corm_template_smoke_eval_watcher",
+      "limitations": [
+        "This is operational status evidence only; the watcher is not currently running.",
+        "The watcher should be redeployed only after wiki.faiss exists or after the storage situation is stable.",
+        "The eventual full-index smoke result, if produced, remains reconstructed-pipeline plumbing evidence rather than original Biased-NQ or full CoRM-RAG reproduction evidence."
+      ],
+      "text": "The post-FAISS template Biased_NQ smoke watcher was intentionally paused after the second NTFS/fuseblk storage failure so file records could be preserved for the active full-index reconstruction job.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/hotpot_orbit_consistency_audit.json",
+          "path": [
+            "passed"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "file": "results/hotpot_orbit_consistency_audit.json",
+          "path": [
+            "error_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/fever_nearmiss_corm_v3_orbit_consistency_audit.json",
+          "path": [
+            "passed"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "file": "results/fever_nearmiss_corm_v3_orbit_consistency_audit.json",
+          "path": [
+            "error_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/fever_nearmiss_corm_v3_seed31_orbit_consistency_audit.json",
+          "path": [
+            "passed"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "file": "results/fever_nearmiss_corm_v3_seed31_orbit_consistency_audit.json",
+          "path": [
+            "error_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/fever_nearmiss_corm_v3_seed47_orbit_consistency_audit.json",
+          "path": [
+            "passed"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "file": "results/fever_nearmiss_corm_v3_seed47_orbit_consistency_audit.json",
+          "path": [
+            "error_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        }
+      ],
+      "declared_status": "supported_structural_audit",
+      "id": "C11_structural_consistency_audits_pass",
+      "limitations": [
+        "This deterministic audit checks implemented structural and dataset-provenance invariants only; it does not replace human semantic labeling.",
+        "The audit proves that the current generated orbit files satisfy implemented invariants; it does not prove that every heuristic label is semantically correct."
+      ],
+      "text": "The current HotpotQA and FEVER v3 orbit files pass structural and dataset-constraint consistency checks for source provenance, label-source metadata, generated labels, split names, perturbation counts/types, support-key lineage, duplicate evidence ids, support-key coverage, support-feature provenance, and verifier-feature ranges.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": 1000,
+          "expected": 1000,
+          "file": "results/audit_sample_paper_1000_v3_nli_set_eval.json",
+          "path": [
+            "summary",
+            "csrm",
+            "n"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "file": "results/audit_sample_paper_1000_v3_nli_set_eval.json",
+          "left": [
+            "summary",
+            "csrm",
+            "auroc"
+          ],
+          "left_value": 0.7352875,
+          "right": [
+            "summary",
+            "naive_orbit_average",
+            "auroc"
+          ],
+          "right_value": 0.48796875,
+          "status": "pass",
+          "type": "metric_greater_than"
+        },
+        {
+          "file": "results/audit_sample_paper_1000_v3_nli_set_eval.json",
+          "left": [
+            "summary",
+            "csrm",
+            "auroc"
+          ],
+          "left_value": 0.7352875,
+          "right": [
+            "summary",
+            "single_set_sure_style",
+            "auroc"
+          ],
+          "right_value": 0.48176875,
+          "status": "pass",
+          "type": "metric_greater_than"
+        },
+        {
+          "file": "results/audit_sample_paper_1000_v3_nli_set_eval.json",
+          "left": [
+            "summary",
+            "csrm",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "left_value": 0.6266666666666667,
+          "right": [
+            "summary",
+            "naive_orbit_average",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "right_value": 0.86,
+          "status": "pass",
+          "type": "metric_less_than"
+        },
+        {
+          "file": "results/audit_sample_paper_1000_v3_nli_set_eval.json",
+          "left": [
+            "summary",
+            "csrm",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "left_value": 0.6266666666666667,
+          "right": [
+            "summary",
+            "single_set_sure_style",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "right_value": 0.87,
+          "status": "pass",
+          "type": "metric_less_than"
+        },
+        {
+          "file": "results/audit_sample_paper_1000_v3_nli_set_eval.json",
+          "left": [
+            "summary",
+            "csrm",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "left_value": 0.6266666666666667,
+          "right": [
+            "summary",
+            "csrm_shuffled_perturbations",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "right_value": 0.9366666666666666,
+          "status": "pass",
+          "type": "metric_less_than"
+        }
+      ],
+      "declared_status": "supported_probe",
+      "id": "C12_nli_set_probe_cross_scorer",
+      "limitations": [
+        "This is an automated cross-scorer probe using `cross-encoder/nli-deberta-v3-small`, not a validated human semantic audit.",
+        "The labels remain the v3 heuristic audit-sample labels; this result tests feature-source robustness, not final ground-truth validity.",
+        "The NLI verifier is set-level and off-the-shelf, so it should be presented as sensitivity analysis rather than primary evidence."
+      ],
+      "text": "On the v3 paper-grade audit sample rescored with an independent set-level NLI verifier, CSRM still improves AUROC and Risk@30 versus naive orbit averaging, SURE-style single-set sufficiency, and shuffled perturbation alignment.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/corm_release_manifest.json",
+          "path": [
+            "hf_query_ok"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/corm_release_manifest.json",
+          "path": [
+            "checkpoint_available"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 3,
+          "expected": 3,
+          "file": "results/corm_release_manifest.json",
+          "path": [
+            "missing_public_data_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        }
+      ],
+      "declared_status": "supported_blocker",
+      "id": "C13_hf_release_checkpoint_only",
+      "limitations": [
+        "This claim is limited to the Hugging Face model release queried in `results/corm_release_manifest.json`.",
+        "GitHub API querying may be rate-limited; the blocker claim should be read together with the local preflight report.",
+        "The data artifacts could still be obtainable from authors or rebuilt from upstream sources, but they are not present in the queried HF release."
+      ],
+      "text": "The public Hugging Face release for CoRM-RAG contains the released critic checkpoint but does not contain the data/index artifacts required for full original retrieval-generation reproduction.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "completed",
+          "expected": "completed",
+          "file": "results/corm_partial_template_eval_smoke_status.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": 200000,
+          "expected": 200000,
+          "file": "results/corm_partial_template_eval_smoke_status.json",
+          "path": [
+            "partial_index",
+            "ntotal"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 4,
+          "expected": 4,
+          "file": "results/corm_partial_template_eval_smoke_status.json",
+          "path": [
+            "partial_index",
+            "partial_shards"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 2,
+          "expected": 2,
+          "file": "results/corm_partial_template_eval_smoke_status.json",
+          "path": [
+            "eval",
+            "n_examples"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": "Qwen/Qwen2.5-0.5B-Instruct",
+          "expected": "Qwen/Qwen2.5-0.5B-Instruct",
+          "file": "results/corm_partial_template_eval_smoke_status.json",
+          "path": [
+            "eval",
+            "generator"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_partial_template_eval_smoke_status.json",
+          "path": [
+            "deployment_findings",
+            "runtime_path_required"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_partial_template_eval_smoke_status.json",
+          "path": [
+            "deployment_findings",
+            "qwen3_unsupported_in_current_runtime"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": true,
+          "expected": true,
+          "file": "results/corm_partial_template_eval_smoke_status.json",
+          "path": [
+            "deployment_findings",
+            "qwen25_smoke_completed"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C27_corm_partial_template_eval_smoke",
+      "limitations": [
+        "This is an isolated four-shard partial-index smoke using deterministic template perturbations; it is not a full Wikipedia/FAISS index and not original Biased-NQ evidence.",
+        "The evaluation uses only two examples and produced accuracy 0.0, so it must not be used as a performance claim.",
+        "The result validates deployment plumbing and identifies the runtime-compatible generator path while the full reconstruction remains incomplete."
+      ],
+      "text": "An isolated partial-index template Biased_NQ smoke evaluation completed on the remote server, validating FAISS loading, retrieval, released CoRM critic scoring, vLLM generation, metric writing, runtime PATH wiring, and a Qwen2.5 generator fallback on a 200,000-vector reconstructed index.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": "failed_storage_io_after_fresh_250k_recovery",
+          "expected": "failed_storage_io_after_fresh_250k_recovery",
+          "file": "results/corm_full_wikipedia_job_status.json",
+          "path": [
+            "status"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "file": "results/corm_full_wikipedia_job_status.json",
+          "path": [
+            "process",
+            "running"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": 52,
+          "file": "results/corm_full_wikipedia_job_status.json",
+          "path": [
+            "observed_outputs",
+            "complete_embedding_shard_count"
+          ],
+          "status": "pass",
+          "threshold": 51,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": "embeddings_shard_000051.npy",
+          "expected": "embeddings_shard_000051.npy",
+          "file": "results/corm_full_wikipedia_job_status.json",
+          "path": [
+            "observed_outputs",
+            "latest_complete_embedding_shard"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": false,
+          "expected": false,
+          "file": "results/corm_full_wikipedia_job_status.json",
+          "path": [
+            "observed_outputs",
+            "wiki_faiss_exists"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        },
+        {
+          "actual": "OSError(5, 'Input/output error')",
+          "expected": "OSError(5, 'Input/output error')",
+          "file": "results/corm_full_wikipedia_job_status.json",
+          "path": [
+            "observed_outputs",
+            "wiki_passages_read_error"
+          ],
+          "status": "pass",
+          "type": "value_equals"
+        }
+      ],
+      "declared_status": "supported_blocker",
+      "id": "C28_corm_full_wikipedia_reconstruction_storage_blocked",
+      "limitations": [
+        "This is documented reconstruction progress plus a storage blocker, not a completed original CoRM-RAG reproduction.",
+        "A reliable ext4/XFS persistent target or author-provided artifacts are still needed before reporting full retrieval-generation metrics.",
+        "Continuing on the current NTFS/fuseblk mount is not evidence-efficient because both embedding shard writes and wiki_passages.jsonl writes have repeatedly failed."
+      ],
+      "text": "The full Wikipedia/FAISS reconstruction attempt made additional progress to a complete 250k-passage shard 000051, but the current remote path is blocked by NTFS/fuseblk storage I/O failures before wiki.faiss can be built.",
+      "verification_status": "pass"
+    }
+  ],
+  "failed_claims": 0,
+  "ledger": "CLAIMS_LEDGER.json",
+  "passed_claims": 28,
+  "total_claims": 28
+}

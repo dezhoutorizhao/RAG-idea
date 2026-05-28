@@ -1,0 +1,29 @@
+{
+  "status": "deployed_verified",
+  "observed_at": "2026-05-20T19:39:25+08:00",
+  "remote": {
+    "host": "192.168.103.101",
+    "user": "syk",
+    "run_eval": "/mnt/ntfs-disk/csrm_corm_reconstruction/workspace/external_repos/CoRM-RAG/src/run_eval.sh",
+    "run_evaluation": "/mnt/ntfs-disk/csrm_corm_reconstruction/workspace/external_repos/CoRM-RAG/src/run_evaluation.py",
+    "smoke_script": "/mnt/ntfs-disk/csrm_corm_reconstruction/workspace/results/corm_remote_scripts/04_run_template_biased_nq_smoke_eval.sh"
+  },
+  "checks": {
+    "run_eval_bash_n": true,
+    "run_evaluation_py_compile": true,
+    "remote_scripts_bash_n": true,
+    "run_eval_has_max_examples_env": true,
+    "run_evaluation_has_max_examples_arg": true,
+    "template_smoke_script_exists": true,
+    "template_smoke_default_max_examples": 20,
+    "template_smoke_dataset": "Biased_NQ",
+    "template_smoke_rerank_depth": 10,
+    "template_smoke_runtime_path_patched": true,
+    "template_smoke_generator_default": "Qwen/Qwen2.5-0.5B-Instruct",
+    "reconstructed_eval_generator_default": "Qwen/Qwen2.5-7B-Instruct",
+    "template_smoke_uses_separate_output_dir": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/corm_reconstructed_eval_template_smoke",
+    "template_smoke_uses_separate_stage_dir": "/mnt/ntfs-disk/csrm_corm_reconstruction/stage/eval_data_template_smoke"
+  },
+  "reason": "The first reconstructed evaluation after wiki.faiss is available should be bounded and explicitly smoke-labeled. The smoke script symlinks biased_nq_test.template_smoke.jsonl to a separate staged biased_nq_test.jsonl path, evaluates only Biased_NQ by default, caps examples at 20 unless overridden, uses the transient runtime Python on PATH, and defaults to a Qwen2.5 generator because the current remote Transformers/vLLM stack does not recognize Qwen3.",
+  "claim_policy": "Deployment-readiness evidence only. This prepares a bounded template Biased-NQ reconstructed-eval smoke path; it is not original Biased-NQ evidence. The full-index watcher-triggered smoke has not produced metrics yet; a separate isolated partial-index smoke is recorded in results/corm_partial_template_eval_smoke_status.json."
+}

@@ -1,0 +1,3082 @@
+{
+  "csrm_components": {
+    "all": {
+      "answer_consistency": 0.27777777777777773,
+      "clean_sufficiency": 0.67,
+      "conflict_monotonicity": 0.6113888888888889,
+      "mean_sufficiency": 0.48583333333333334,
+      "n": 1200,
+      "overlap": 0.6117950036075036,
+      "stability": 0.7878969149553688,
+      "worst_sufficiency": 0.23583333333333334
+    },
+    "negative": {
+      "answer_consistency": 0.1333333333333333,
+      "clean_sufficiency": 0.67,
+      "conflict_monotonicity": 0.5336666666666666,
+      "mean_sufficiency": 0.449,
+      "n": 1000,
+      "overlap": 0.53511829004329,
+      "stability": 0.7454762979464427,
+      "worst_sufficiency": 0.149
+    },
+    "positive": {
+      "answer_consistency": 1.0,
+      "clean_sufficiency": 0.67,
+      "conflict_monotonicity": 1.0,
+      "mean_sufficiency": 0.67,
+      "n": 200,
+      "overlap": 0.9951785714285714,
+      "stability": 1.0,
+      "worst_sufficiency": 0.67
+    }
+  },
+  "per_split": {
+    "fever_conflicting_evidence": {
+      "corm_max_clean": {
+        "accuracy_at_0_5": 0.475,
+        "aurc": 0.9975,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.513852223297581,
+          "mce": 0.9499281048774719
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.6884978413581848
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5198191404342651
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.3705240488052368
+        }
+      },
+      "corm_mean_clean": {
+        "accuracy_at_0_5": 0.99,
+        "aurc": 0.9975,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.21161848579253278,
+          "mce": 0.5461034383624792
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.26626684283837676
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2039892692118883
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.1499834026520451
+        }
+      },
+      "csrm": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.21644545454545458,
+          "mce": 0.21644545454545458
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.22041666666666668
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.21375000000000002
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.21375000000000002
+        }
+      },
+      "csrm_first_perturbation_only": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.21644545454545458,
+          "mce": 0.21644545454545458
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.22041666666666668
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.21375000000000002
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.21375000000000002
+        }
+      },
+      "csrm_no_answer_consistency": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.2705568181818181,
+          "mce": 0.2705568181818181
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.27552083333333327
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.26718749999999997
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.26718749999999997
+        }
+      },
+      "csrm_no_conflict_monotonicity": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.21827272727272726,
+          "mce": 0.21827272727272726
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.22268518518518518
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.21527777777777776
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.21527777777777776
+        }
+      },
+      "csrm_no_overlap": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.21447368421052634,
+          "mce": 0.21447368421052634
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.21447368421052632
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.21447368421052632
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.21447368421052632
+        }
+      },
+      "csrm_no_stability": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.1666060606060606,
+          "mce": 0.1666060606060606
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.17101851851851851
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.1636111111111111
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.1636111111111111
+        }
+      },
+      "csrm_no_worst_sufficiency": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.332993006993007,
+          "mce": 0.332993006993007
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.3391025641025641
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.32884615384615384
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.32884615384615384
+        }
+      },
+      "csrm_shuffled_perturbations": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5725,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.27028988095238093,
+          "mce": 0.27028988095238093
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        }
+      },
+      "naive_orbit_average": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.335,
+          "mce": 0.335
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.335
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.335
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.335
+        }
+      },
+      "single_set_sure_style": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.67,
+          "mce": 0.67
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.67
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.67
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.67
+        }
+      }
+    },
+    "fever_distractor_only": {
+      "corm_max_clean": {
+        "accuracy_at_0_5": 0.475,
+        "aurc": 0.9975,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.513852223297581,
+          "mce": 0.9499281048774719
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.6884978413581848
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5198191404342651
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.3705240488052368
+        }
+      },
+      "corm_mean_clean": {
+        "accuracy_at_0_5": 0.99,
+        "aurc": 0.9975,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.21161848579253278,
+          "mce": 0.5461034383624792
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.26626684283837676
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2039892692118883
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.1499834026520451
+        }
+      },
+      "csrm": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5725,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.27028988095238093,
+          "mce": 0.27028988095238093
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        }
+      },
+      "csrm_first_perturbation_only": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5725,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.27028988095238093,
+          "mce": 0.27028988095238093
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        }
+      },
+      "csrm_no_answer_consistency": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5725,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.3378623511904762,
+          "mce": 0.3378623511904762
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.34018973214285714
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.34018973214285714
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.34018973214285714
+        }
+      },
+      "csrm_no_conflict_monotonicity": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5725,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.2594887566137567,
+          "mce": 0.2594887566137567
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.2615575396825397
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2615575396825397
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.2615575396825397
+        }
+      },
+      "csrm_no_overlap": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.2488815789473685,
+          "mce": 0.2488815789473685
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.24888157894736843
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.24888157894736843
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.24888157894736843
+        }
+      },
+      "csrm_no_stability": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5725,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.22434986772486773,
+          "mce": 0.2247534613112024
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.22641865079365078
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.22641865079365078
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.22641865079365078
+        }
+      },
+      "csrm_no_worst_sufficiency": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5725,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.3956382783882784,
+          "mce": 0.3956382783882784
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.3985027472527472
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.3985027472527472
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.3985027472527472
+        }
+      },
+      "csrm_shuffled_perturbations": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.4406842528693252,
+          "mce": 0.4406842528693252
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.4421687045287769
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.4399464823065547
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.4399464823065547
+        }
+      },
+      "naive_orbit_average": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.35374999999999995,
+          "mce": 0.35374999999999995
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.35375
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.35375
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.35375
+        }
+      },
+      "single_set_sure_style": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.67,
+          "mce": 0.67
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.67
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.67
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.67
+        }
+      }
+    },
+    "fever_fragile_mixed": {
+      "corm_max_clean": {
+        "accuracy_at_0_5": 0.475,
+        "aurc": 0.9975,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.513852223297581,
+          "mce": 0.9499281048774719
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.6884978413581848
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5198191404342651
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.3705240488052368
+        }
+      },
+      "corm_mean_clean": {
+        "accuracy_at_0_5": 0.99,
+        "aurc": 0.9975,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.21161848579253278,
+          "mce": 0.5461034383624792
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.26626684283837676
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2039892692118883
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.1499834026520451
+        }
+      },
+      "csrm": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.4406842528693252,
+          "mce": 0.4406842528693252
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.4421687045287769
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.4399464823065547
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.4399464823065547
+        }
+      },
+      "csrm_first_perturbation_only": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.8185000000000001,
+          "mce": 0.8185000000000001
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.8185
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.8185
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.8185
+        }
+      },
+      "csrm_no_answer_consistency": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.515,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.3841886494199899,
+          "mce": 0.3841886494199899
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.3860442139943044
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.3832664362165266
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.3832664362165266
+        }
+      },
+      "csrm_no_conflict_monotonicity": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.505,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.4081676883733243,
+          "mce": 0.4082783634259185
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.40981707910604837
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.4073479433035792
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.4073479433035792
+        }
+      },
+      "csrm_no_overlap": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.42450506909461894,
+          "mce": 0.42450506909461894
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.42450506909461894
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.42450506909461894
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.42450506909461894
+        }
+      },
+      "csrm_no_stability": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.4107734487734487,
+          "mce": 0.41083424880535424
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.41242283950617276
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.40995370370370365
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.40995370370370365
+        }
+      },
+      "csrm_no_worst_sufficiency": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.79,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.6779757736451156,
+          "mce": 0.6779757736451156
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.6802595454288874
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.676840742010084
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.676840742010084
+        }
+      },
+      "csrm_shuffled_perturbations": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5125,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.2717589285714286,
+          "mce": 0.2717589285714286
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        }
+      },
+      "naive_orbit_average": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.5025000000000002,
+          "mce": 0.5025000000000002
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.5025000000000001
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5025000000000001
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.5025000000000001
+        }
+      },
+      "single_set_sure_style": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.67,
+          "mce": 0.67
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.67
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.67
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.67
+        }
+      }
+    },
+    "fever_missing_evidence": {
+      "corm_max_clean": {
+        "accuracy_at_0_5": 0.475,
+        "aurc": 0.9975,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.513852223297581,
+          "mce": 0.9499281048774719
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.6884978413581848
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5198191404342651
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.3705240488052368
+        }
+      },
+      "corm_mean_clean": {
+        "accuracy_at_0_5": 0.99,
+        "aurc": 0.9975,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.21161848579253278,
+          "mce": 0.5461034383624792
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.26626684283837676
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2039892692118883
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.1499834026520451
+        }
+      },
+      "csrm": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5125,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.2717589285714286,
+          "mce": 0.2717589285714286
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        }
+      },
+      "csrm_first_perturbation_only": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5125,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.2717589285714286,
+          "mce": 0.2717589285714286
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.2721517857142857
+        }
+      },
+      "csrm_no_answer_consistency": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5125,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.33969866071428567,
+          "mce": 0.33969866071428567
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.34018973214285714
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.34018973214285714
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.34018973214285714
+        }
+      },
+      "csrm_no_conflict_monotonicity": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5125,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.26112103174603185,
+          "mce": 0.26112103174603185
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.2615575396825397
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2615575396825397
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.2615575396825397
+        }
+      },
+      "csrm_no_overlap": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.2488815789473685,
+          "mce": 0.2488815789473685
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.24888157894736843
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.24888157894736843
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.24888157894736843
+        }
+      },
+      "csrm_no_stability": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5125,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.22598214285714285,
+          "mce": 0.22598214285714285
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.22641865079365078
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.22641865079365078
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.22641865079365078
+        }
+      },
+      "csrm_no_worst_sufficiency": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5125,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.3978983516483517,
+          "mce": 0.3978983516483517
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.3985027472527472
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.3985027472527472
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.3985027472527472
+        }
+      },
+      "csrm_shuffled_perturbations": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.51,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.5830058712121214,
+          "mce": 0.5830058712121214
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.58725
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5801666666666667
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.5801666666666667
+        }
+      },
+      "naive_orbit_average": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.35374999999999995,
+          "mce": 0.35374999999999995
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.35375
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.35375
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.35375
+        }
+      },
+      "single_set_sure_style": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.67,
+          "mce": 0.67
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.67
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.67
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.67
+        }
+      }
+    },
+    "fever_near_miss_dilution": {
+      "corm_max_clean": {
+        "accuracy_at_0_5": 0.475,
+        "aurc": 0.9975,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.513852223297581,
+          "mce": 0.9499281048774719
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.6884978413581848
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5198191404342651
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.3705240488052368
+        }
+      },
+      "corm_mean_clean": {
+        "accuracy_at_0_5": 0.99,
+        "aurc": 0.9975,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.21161848579253278,
+          "mce": 0.5461034383624792
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.26626684283837676
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.2039892692118883
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.1499834026520451
+        }
+      },
+      "csrm": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.51,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.5830058712121214,
+          "mce": 0.5830058712121214
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.58725
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5801666666666667
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.5801666666666667
+        }
+      },
+      "csrm_first_perturbation_only": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.5802579545454546,
+          "mce": 0.5802579545454546
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.5842291666666667
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5775625
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.5775625
+        }
+      },
+      "csrm_no_answer_consistency": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.7287573390151515,
+          "mce": 0.7287573390151515
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.7340625
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.7252083333333332
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.7252083333333332
+        }
+      },
+      "csrm_no_conflict_monotonicity": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.7925000000000001,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.5366731902356903,
+          "mce": 0.5366731902356903
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.5413888888888888
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5335185185185184
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.5335185185185184
+        }
+      },
+      "csrm_no_overlap": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.5984210526315791,
+          "mce": 0.5984210526315791
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.598421052631579
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.598421052631579
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.598421052631579
+        }
+      },
+      "csrm_no_stability": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.7899999999999999,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.5383398569023568,
+          "mce": 0.5383398569023568
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.5430555555555555
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5351851851851851
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.5351851851851851
+        }
+      },
+      "csrm_no_worst_sufficiency": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.7925,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.5361628787878786,
+          "mce": 0.5361628787878786
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.5426923076923076
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.5317948717948717
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.5317948717948717
+        }
+      },
+      "csrm_shuffled_perturbations": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.5025,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.8182589285714286,
+          "mce": 0.8182589285714286
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.8185
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.8185
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.8185
+        }
+      },
+      "naive_orbit_average": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.7,
+          "mce": 0.7
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.7
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.7
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.7
+        }
+      },
+      "single_set_sure_style": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.5,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.67,
+          "mce": 0.67
+        },
+        "n": 200,
+        "negative": 200,
+        "positive": 0,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 0.0,
+          "coverage": 0.3,
+          "risk": 1.0,
+          "threshold": 0.67
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 0.0,
+          "coverage": 0.5,
+          "risk": 1.0,
+          "threshold": 0.67
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 0.0,
+          "coverage": 0.7,
+          "risk": 1.0,
+          "threshold": 0.67
+        }
+      }
+    },
+    "fever_stable_evidence": {
+      "corm_max_clean": {
+        "accuracy_at_0_5": 0.525,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.48614777670241893,
+          "mce": 0.9430536467581987
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.6884978413581848
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.5198191404342651
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.3705240488052368
+        }
+      },
+      "corm_mean_clean": {
+        "accuracy_at_0_5": 0.01,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.7883815142074673,
+          "mce": 0.9333135900862948
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.26626684283837676
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.2039892692118883
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.1499834026520451
+        }
+      },
+      "csrm": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.18174107142857143,
+          "mce": 0.18174107142857143
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.8185
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.8185
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.8185
+        }
+      },
+      "csrm_first_perturbation_only": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.18149999999999988,
+          "mce": 0.18149999999999988
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.8185
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.8185
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.8185
+        }
+      },
+      "csrm_no_answer_consistency": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.22717633928571412,
+          "mce": 0.22717633928571412
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.773125
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.773125
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.773125
+        }
+      },
+      "csrm_no_conflict_monotonicity": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.20193452380952392,
+          "mce": 0.20193452380952392
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.7983333333333332
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.7983333333333332
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.7983333333333332
+        }
+      },
+      "csrm_no_overlap": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.19105263157894736,
+          "mce": 0.19105263157894736
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.8089473684210526
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.8089473684210526
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.8089473684210526
+        }
+      },
+      "csrm_no_stability": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.20193452380952392,
+          "mce": 0.20193452380952392
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.7983333333333332
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.7983333333333332
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.7983333333333332
+        }
+      },
+      "csrm_no_worst_sufficiency": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.10190934065934076,
+          "mce": 0.10190934065934076
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.8984615384615384
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.8984615384615384
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.8984615384615384
+        }
+      },
+      "csrm_shuffled_perturbations": {
+        "accuracy_at_0_5": 0.0,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.7832545454545454,
+          "mce": 0.7832545454545454
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.22041666666666668
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.21375000000000002
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.21375000000000002
+        }
+      },
+      "naive_orbit_average": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.32999999999999996,
+          "mce": 0.32999999999999996
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.67
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.67
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.67
+        }
+      },
+      "single_set_sure_style": {
+        "accuracy_at_0_5": 1.0,
+        "aurc": 0.0,
+        "auroc": null,
+        "calibration": {
+          "ece": 0.32999999999999996,
+          "mce": 0.32999999999999996
+        },
+        "n": 200,
+        "negative": 0,
+        "positive": 200,
+        "risk_at_30_coverage": {
+          "accepted": 60,
+          "accuracy": 1.0,
+          "coverage": 0.3,
+          "risk": 0.0,
+          "threshold": 0.67
+        },
+        "risk_at_50_coverage": {
+          "accepted": 100,
+          "accuracy": 1.0,
+          "coverage": 0.5,
+          "risk": 0.0,
+          "threshold": 0.67
+        },
+        "risk_at_70_coverage": {
+          "accepted": 140,
+          "accuracy": 1.0,
+          "coverage": 0.7,
+          "risk": 0.0,
+          "threshold": 0.67
+        }
+      }
+    }
+  },
+  "splits": {
+    "fever_conflicting_evidence": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_distractor_only": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_fragile_mixed": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_missing_evidence": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_near_miss_dilution": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_stable_evidence": {
+      "n": 200,
+      "negative": 0,
+      "positive": 200
+    }
+  },
+  "summary": {
+    "corm_max_clean": {
+      "accuracy_at_0_5": 0.48333333333333334,
+      "aurc": 0.8312499999999998,
+      "auroc": 0.5,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.8322327995526824,
+          "p2_5": 0.7995611828871008,
+          "p97_5": 0.8577106319164861
+        },
+        "auroc": {
+          "median": 0.4988200109326381,
+          "p2_5": 0.4602245184334737,
+          "p97_5": 0.5429359707966673
+        },
+        "risk_at_30_coverage": {
+          "median": 0.8361111111111111,
+          "p2_5": 0.7861111111111111,
+          "p97_5": 0.8694444444444445
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.35476009116508067,
+        "mce": 0.7832614382108053
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.16666666666666666,
+        "coverage": 0.3,
+        "risk": 0.8333333333333334,
+        "threshold": 0.6884978413581848
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.16666666666666666,
+        "coverage": 0.5,
+        "risk": 0.8333333333333334,
+        "threshold": 0.5198191404342651
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.16666666666666666,
+        "coverage": 0.7,
+        "risk": 0.8333333333333334,
+        "threshold": 0.3705240488052368
+      }
+    },
+    "corm_mean_clean": {
+      "accuracy_at_0_5": 0.8266666666666667,
+      "aurc": 0.83125,
+      "auroc": 0.5,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.8324421353820467,
+          "p2_5": 0.8007739725128448,
+          "p97_5": 0.8609678778538785
+        },
+        "auroc": {
+          "median": 0.49901727551799796,
+          "p2_5": 0.4480486134885313,
+          "p97_5": 0.5426441460267849
+        },
+        "risk_at_30_coverage": {
+          "median": 0.8333333333333334,
+          "p2_5": 0.7972222222222223,
+          "p97_5": 0.8722222222222222
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.085051903000652,
+        "mce": 0.3794367716958126
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.16666666666666666,
+        "coverage": 0.3,
+        "risk": 0.8333333333333334,
+        "threshold": 0.26626684283837676
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.16666666666666666,
+        "coverage": 0.5,
+        "risk": 0.8333333333333334,
+        "threshold": 0.2039892692118883
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.16666666666666666,
+        "coverage": 0.7,
+        "risk": 0.8333333333333334,
+        "threshold": 0.1499834026520451
+      }
+    },
+    "csrm": {
+      "accuracy_at_0_5": 0.8333333333333334,
+      "aurc": 0.5221046224871334,
+      "auroc": 1.0,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.5246791278974355,
+          "p2_5": 0.48656068328823976,
+          "p97_5": 0.5566683938388745
+        },
+        "auroc": {
+          "median": 1.0,
+          "p2_5": 1.0,
+          "p97_5": 1.0
+        },
+        "risk_at_30_coverage": {
+          "median": 0.44999999999999996,
+          "p2_5": 0.37222222222222223,
+          "p97_5": 0.5083333333333333
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.32732090992988033,
+        "mce": 0.5830058712121214
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.5555555555555556,
+        "coverage": 0.3,
+        "risk": 0.4444444444444444,
+        "threshold": 0.5801666666666667
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.3333333333333333,
+        "coverage": 0.5,
+        "risk": 0.6666666666666667,
+        "threshold": 0.4297949671550395
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.23809523809523808,
+        "coverage": 0.7,
+        "risk": 0.7619047619047619,
+        "threshold": 0.2721517857142857
+      }
+    },
+    "csrm_first_perturbation_only": {
+      "accuracy_at_0_5": 0.6666666666666666,
+      "aurc": 0.5633588154189579,
+      "auroc": 0.9,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.5653648630087723,
+          "p2_5": 0.5299515678532538,
+          "p97_5": 0.5944836423868374
+        },
+        "auroc": {
+          "median": 0.9008016032064128,
+          "p2_5": 0.8887785501489573,
+          "p97_5": 0.9105731225296443
+        },
+        "risk_at_30_coverage": {
+          "median": 0.5,
+          "p2_5": 0.4444444444444444,
+          "p97_5": 0.55
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.3292920364357865,
+        "mce": 0.5802579545454546
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.5,
+        "coverage": 0.3,
+        "risk": 0.5,
+        "threshold": 0.8185
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.3333333333333333,
+        "coverage": 0.5,
+        "risk": 0.6666666666666667,
+        "threshold": 0.5675625
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.23809523809523808,
+        "coverage": 0.7,
+        "risk": 0.7619047619047619,
+        "threshold": 0.2721517857142857
+      }
+    },
+    "csrm_no_answer_consistency": {
+      "accuracy_at_0_5": 0.8333333333333334,
+      "aurc": 0.52764292695833,
+      "auroc": 1.0,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.530115964020924,
+          "p2_5": 0.49066319032099526,
+          "p97_5": 0.5625901818281475
+        },
+        "auroc": {
+          "median": 1.0,
+          "p2_5": 1.0,
+          "p97_5": 1.0
+        },
+        "risk_at_30_coverage": {
+          "median": 0.44999999999999996,
+          "p2_5": 0.37222222222222223,
+          "p97_5": 0.5083333333333333
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.30564791320600115,
+        "mce": 0.3539165537749172
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.5555555555555556,
+        "coverage": 0.3,
+        "risk": 0.4444444444444444,
+        "threshold": 0.7252083333333332
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.3333333333333333,
+        "coverage": 0.5,
+        "risk": 0.6666666666666667,
+        "threshold": 0.3705770422771327
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.23809523809523808,
+        "coverage": 0.7,
+        "risk": 0.7619047619047619,
+        "threshold": 0.34018973214285714
+      }
+    },
+    "csrm_no_conflict_monotonicity": {
+      "accuracy_at_0_5": 0.8333333333333334,
+      "aurc": 0.5275563713588681,
+      "auroc": 1.0,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.5300229150611551,
+          "p2_5": 0.49064888262472317,
+          "p97_5": 0.5625225433456759
+        },
+        "auroc": {
+          "median": 1.0,
+          "p2_5": 1.0,
+          "p97_5": 1.0
+        },
+        "risk_at_30_coverage": {
+          "median": 0.44999999999999996,
+          "p2_5": 0.37222222222222223,
+          "p97_5": 0.5083333333333333
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.3142763196751757,
+        "mce": 0.5366731902356903
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.5555555555555556,
+        "coverage": 0.3,
+        "risk": 0.4444444444444444,
+        "threshold": 0.5335185185185184
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.3333333333333333,
+        "coverage": 0.5,
+        "risk": 0.6666666666666667,
+        "threshold": 0.39606848202411793
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.23809523809523808,
+        "coverage": 0.7,
+        "risk": 0.7619047619047619,
+        "threshold": 0.2615575396825397
+      }
+    },
+    "csrm_no_overlap": {
+      "accuracy_at_0_5": 0.8333333333333334,
+      "aurc": 0.5194444444444445,
+      "auroc": 1.0,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.5218778380354039,
+          "p2_5": 0.48373531800611724,
+          "p97_5": 0.553824976649554
+        },
+        "auroc": {
+          "median": 1.0,
+          "p2_5": 1.0,
+          "p97_5": 1.0
+        },
+        "risk_at_30_coverage": {
+          "median": 0.44999999999999996,
+          "p2_5": 0.37222222222222223,
+          "p97_5": 0.5083333333333333
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.3210359325684014,
+        "mce": 0.5984210526315791
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.5555555555555556,
+        "coverage": 0.3,
+        "risk": 0.4444444444444444,
+        "threshold": 0.598421052631579
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.3333333333333333,
+        "coverage": 0.5,
+        "risk": 0.6666666666666667,
+        "threshold": 0.42450506909461894
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.23809523809523808,
+        "coverage": 0.7,
+        "risk": 0.7619047619047619,
+        "threshold": 0.24888157894736843
+      }
+    },
+    "csrm_no_stability": {
+      "accuracy_at_0_5": 0.8333333333333334,
+      "aurc": 0.5289126981190206,
+      "auroc": 1.0,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.5314183632534593,
+          "p2_5": 0.4919970296090741,
+          "p97_5": 0.5643009617379692
+        },
+        "auroc": {
+          "median": 1.0,
+          "p2_5": 1.0,
+          "p97_5": 1.0
+        },
+        "risk_at_30_coverage": {
+          "median": 0.44999999999999996,
+          "p2_5": 0.37222222222222223,
+          "p97_5": 0.5083333333333333
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.2946643167789001,
+        "mce": 0.5383398569023568
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.5555555555555556,
+        "coverage": 0.3,
+        "risk": 0.4444444444444444,
+        "threshold": 0.5351851851851851
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.3333333333333333,
+        "coverage": 0.5,
+        "risk": 0.6666666666666667,
+        "threshold": 0.3986742424242424
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.23809523809523808,
+        "coverage": 0.7,
+        "risk": 0.7619047619047619,
+        "threshold": 0.22641865079365078
+      }
+    },
+    "csrm_no_worst_sufficiency": {
+      "accuracy_at_0_5": 0.6666666666666666,
+      "aurc": 0.5289984663057542,
+      "auroc": 1.0,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.5313471279141663,
+          "p2_5": 0.49190352788715674,
+          "p97_5": 0.5640397329725272
+        },
+        "auroc": {
+          "median": 1.0,
+          "p2_5": 1.0,
+          "p97_5": 1.0
+        },
+        "risk_at_30_coverage": {
+          "median": 0.44999999999999996,
+          "p2_5": 0.37222222222222223,
+          "p97_5": 0.5083333333333333
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.40709627168699536,
+        "mce": 0.6779757736451156
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.5555555555555556,
+        "coverage": 0.3,
+        "risk": 0.4444444444444444,
+        "threshold": 0.676840742010084
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.3333333333333333,
+        "coverage": 0.5,
+        "risk": 0.6666666666666667,
+        "threshold": 0.5155944055944055
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.23809523809523808,
+        "coverage": 0.7,
+        "risk": 0.7619047619047619,
+        "threshold": 0.3985027472527472
+      }
+    },
+    "csrm_shuffled_perturbations": {
+      "accuracy_at_0_5": 0.5,
+      "aurc": 0.9025533414264033,
+      "auroc": 0.0,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.9033105733694526,
+          "p2_5": 0.8914446932677642,
+          "p97_5": 0.9139408647476814
+        },
+        "auroc": {
+          "median": 0.0,
+          "p2_5": 0.0,
+          "p97_5": 0.0
+        },
+        "risk_at_30_coverage": {
+          "median": 1.0,
+          "p2_5": 1.0,
+          "p97_5": 1.0
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.34719246476393517,
+        "mce": 0.8182589285714286
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.0,
+        "coverage": 0.3,
+        "risk": 1.0,
+        "threshold": 0.5801666666666667
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.0,
+        "coverage": 0.5,
+        "risk": 1.0,
+        "threshold": 0.4297949671550395
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.0,
+        "coverage": 0.7,
+        "risk": 1.0,
+        "threshold": 0.2721517857142857
+      }
+    },
+    "naive_orbit_average": {
+      "accuracy_at_0_5": 0.6666666666666666,
+      "aurc": 0.6861111111111111,
+      "auroc": 0.8,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.6871457189255084,
+          "p2_5": 0.6649804979745136,
+          "p97_5": 0.7055630842558953
+        },
+        "auroc": {
+          "median": 0.8018108651911469,
+          "p2_5": 0.7756539235412475,
+          "p97_5": 0.8260869565217391
+        },
+        "risk_at_30_coverage": {
+          "median": 0.55,
+          "p2_5": 0.4805555555555555,
+          "p97_5": 0.6222222222222222
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.3191666666666667,
+        "mce": 0.5025000000000002
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.4444444444444444,
+        "coverage": 0.3,
+        "risk": 0.5555555555555556,
+        "threshold": 0.67
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.3333333333333333,
+        "coverage": 0.5,
+        "risk": 0.6666666666666667,
+        "threshold": 0.5025000000000001
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.23809523809523808,
+        "coverage": 0.7,
+        "risk": 0.7619047619047619,
+        "threshold": 0.35375
+      }
+    },
+    "single_set_sure_style": {
+      "accuracy_at_0_5": 0.16666666666666666,
+      "aurc": 0.4166666666666667,
+      "auroc": 0.5,
+      "bootstrap_ci": {
+        "aurc": {
+          "median": 0.4175,
+          "p2_5": 0.4058333333333333,
+          "p97_5": 0.42625
+        },
+        "auroc": {
+          "median": 0.5,
+          "p2_5": 0.5,
+          "p97_5": 0.5
+        },
+        "risk_at_30_coverage": {
+          "median": 0.8333333333333334,
+          "p2_5": 0.7916666666666666,
+          "p97_5": 0.8638888888888889
+        },
+        "samples": 200,
+        "seed": 13
+      },
+      "calibration": {
+        "ece": 0.5033333333333334,
+        "mce": 0.5033333333333334
+      },
+      "n": 1200,
+      "negative": 1000,
+      "positive": 200,
+      "risk_at_30_coverage": {
+        "accepted": 360,
+        "accuracy": 0.16666666666666666,
+        "coverage": 0.3,
+        "risk": 0.8333333333333334,
+        "threshold": 0.67
+      },
+      "risk_at_50_coverage": {
+        "accepted": 600,
+        "accuracy": 0.16666666666666666,
+        "coverage": 0.5,
+        "risk": 0.8333333333333334,
+        "threshold": 0.67
+      },
+      "risk_at_70_coverage": {
+        "accepted": 840,
+        "accuracy": 0.16666666666666666,
+        "coverage": 0.7,
+        "risk": 0.8333333333333334,
+        "threshold": 0.67
+      }
+    }
+  }
+}

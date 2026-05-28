@@ -1,0 +1,1678 @@
+{
+  "case_counts": {
+    "corm_false_accept_csrm_reject": 3,
+    "csrm_false_accept_failure": 3,
+    "csrm_true_accept": 3,
+    "naive_false_accept_csrm_reject": 3,
+    "single_set_false_accept_csrm_reject": 3
+  },
+  "categories": {
+    "corm_false_accept_csrm_reject": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9284123182296753,
+              "doc_id": "Carlos_Santana:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Carlos Santana -LRB- born July 20 , 1947 -RRB- is a Mexican and American musician who first became famous in the late 1960s and early 1970s with his band , Santana , which pioneered a fusion of rock and Latin American music ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.2003553956747055,
+              "doc_id": "Kelly_Preston:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.29560407996177673,
+              "doc_id": "Bloods:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Carlos Santana was born in the forties.",
+          "support_key": "Carlos_Santana:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:a5b7cd05c31b6190e7c09ba3dba6435b:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.01283109188079834,
+                "doc_id": "Camden,_New_Jersey:50",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Three of Camden 's mayors have been jailed for corruption , the most recent being Milton Milan in 2000 ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.016623971983790398,
+                "doc_id": "XHamster:6",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.016410628333687782,
+                "doc_id": "Gray_Matter_Interactive:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Carlos Santana was born in the forties.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9284123182296753,
+          "csrm": 0.20829545454545456,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9036622643470764,
+              "doc_id": "Libya:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "With an area of almost 1.8 e6km2 , Libya is the fourth largest country in Africa , and is the 16th largest country in the world ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.010720825754106045,
+              "doc_id": "Kelly_Preston:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.08432824909687042,
+              "doc_id": "Bloods:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Libya is one of the top ten largest countries on its continent.",
+          "support_key": "Libya:2"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:9293053261bd11864297fff006954b5d:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.009665162302553654,
+                "doc_id": "Camden,_New_Jersey:50",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Three of Camden 's mayors have been jailed for corruption , the most recent being Milton Milan in 2000 ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.007555310148745775,
+                "doc_id": "XHamster:6",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.023577570915222168,
+                "doc_id": "Gray_Matter_Interactive:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Libya is one of the top ten largest countries on its continent.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9036622643470764,
+          "csrm": 0.20829545454545456,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.2351110428571701,
+              "doc_id": "Bethany_Hamilton:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She wrote about her experience in the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.8889011144638062,
+              "doc_id": "Soul_Surfer_-LRB-film-RRB-:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Soul Surfer is a 2011 American biographical drama film directed by Sean McNamara , based on the 2004 autobiography Soul Surfer : A True Story of Faith , Family , and Fighting to Get Back on the Board by Bethany Hamilton about her life as a surfer after a horrific shark attack and her recovery ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.2342357486486435,
+              "doc_id": "Kelly_Preston:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Bethany Hamilton's biopic was directed by Sean McNamara.",
+          "support_key": "Bethany_Hamilton:1|Soul_Surfer_-LRB-film-RRB-:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:08687c396180e95e1e1bdee2702b73eb:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.06627369672060013,
+                "doc_id": "Camden,_New_Jersey:50",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Three of Camden 's mayors have been jailed for corruption , the most recent being Milton Milan in 2000 ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.132599338889122,
+                "doc_id": "XHamster:6",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0827251672744751,
+                "doc_id": "Gray_Matter_Interactive:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Bethany Hamilton's biopic was directed by Sean McNamara.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.8889011144638062,
+          "csrm": 0.20829545454545456,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      }
+    ],
+    "csrm_false_accept_failure": [
+      {
+        "answer": "REFUTES",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.04719112813472748,
+              "doc_id": "XHamster:6",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.03394393250346184,
+              "doc_id": "Kelly_Preston:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.021242117509245872,
+              "doc_id": "Bloods:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: XHamster's The Sex Factor makes eight men and eight women compete to become a novelist.",
+          "support_key": "XHamster:6"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:5906c0b9404671c031ce851ac076ac6c:fragile_mixed",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.4511655569076538,
+                "doc_id": "XHamster:6",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04042615741491318,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.03536519408226013,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: XHamster's The Sex Factor makes eight men and eight women compete to become a novelist.",
+            "support_key": "XHamster:6"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.3335179090499878,
+                "doc_id": "XHamster:6",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.07498710602521896,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.10368457436561584,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: XHamster's The Sex Factor makes eight men and eight women compete to become a novelist.",
+            "support_key": "XHamster:6"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.07046672701835632,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.05327571928501129,
+                "doc_id": "Bloods:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.03596743196249008,
+                "doc_id": "Princess_Mononoke:7",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "single_critical_conflict",
+            "query": "Assuming the evidence may indicate SUPPORTS, fact-check this claim: XHamster's The Sex Factor makes eight men and eight women compete to become a novelist.",
+            "support_key": "opposite:SUPPORTS"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.05671210214495659,
+          "csrm": 0.4449464823065547,
+          "naive_orbit_average": 0.5025000000000001,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_fragile_mixed"
+      },
+      {
+        "answer": "REFUTES",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.6514202952384949,
+              "doc_id": "Gray_Matter_Interactive:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.07043524831533432,
+              "doc_id": "Kelly_Preston:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.29363659024238586,
+              "doc_id": "Bloods:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Gray Matter Interactive Studios, Inc. was only a agency.",
+          "support_key": "Gray_Matter_Interactive:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:65995ca6f567ff1296003ff9a09ad24c:fragile_mixed",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.6420511603355408,
+                "doc_id": "Gray_Matter_Interactive:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.0033559883013367653,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.027946749702095985,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Gray Matter Interactive Studios, Inc. was only a agency.",
+            "support_key": "Gray_Matter_Interactive:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.7158747315406799,
+                "doc_id": "Gray_Matter_Interactive:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.02521229162812233,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.2291990965604782,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Gray Matter Interactive Studios, Inc. was only a agency.",
+            "support_key": "Gray_Matter_Interactive:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.011710986495018005,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.05934144929051399,
+                "doc_id": "Bloods:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.020467722788453102,
+                "doc_id": "Princess_Mononoke:7",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "single_critical_conflict",
+            "query": "Assuming the evidence may indicate SUPPORTS, fact-check this claim: Gray Matter Interactive Studios, Inc. was only a agency.",
+            "support_key": "opposite:SUPPORTS"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.6514202952384949,
+          "csrm": 0.4449464823065547,
+          "naive_orbit_average": 0.5025000000000001,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_fragile_mixed"
+      },
+      {
+        "answer": "REFUTES",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.11076755076646805,
+              "doc_id": "Victoria_Palace_Theatre:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.13247233629226685,
+              "doc_id": "Bloods:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.0391005240380764,
+              "doc_id": "Kelly_Preston:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Victoria Palace Theatre is in Oxford Street.",
+          "support_key": "Victoria_Palace_Theatre:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:d2e26ecbb24fb977985f8eac645afddb:fragile_mixed",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.7363681197166443,
+                "doc_id": "Victoria_Palace_Theatre:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04920464754104614,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04766751080751419,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Victoria Palace Theatre is in Oxford Street.",
+            "support_key": "Victoria_Palace_Theatre:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.2797282934188843,
+                "doc_id": "Victoria_Palace_Theatre:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Victoria Palace Theatre is a West End theatre in Victoria Street , in the City of Westminster , opposite Victoria Station ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.12338722497224808,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.17940634489059448,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Victoria Palace Theatre is in Oxford Street.",
+            "support_key": "Victoria_Palace_Theatre:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.05568670108914375,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.05272454768419266,
+                "doc_id": "Bloods:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.027582935988903046,
+                "doc_id": "Princess_Mononoke:7",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "single_critical_conflict",
+            "query": "Assuming the evidence may indicate SUPPORTS, fact-check this claim: Victoria Palace Theatre is in Oxford Street.",
+            "support_key": "opposite:SUPPORTS"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.381789892911911,
+          "csrm": 0.4449464823065547,
+          "naive_orbit_average": 0.5025000000000001,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_fragile_mixed"
+      }
+    ],
+    "csrm_true_accept": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5105529427528381,
+              "doc_id": "Kelly_Preston:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.31885167956352234,
+              "doc_id": "Princess_Mononoke:7",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.44287553429603577,
+              "doc_id": "Bloods:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Kelly Preston starred in films.",
+          "support_key": "Kelly_Preston:1"
+        },
+        "label_answerable": true,
+        "orbit_id": "fever:4f99160cf65dc9e25cb7a99e04e8688c:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.5535016655921936,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.009038468822836876,
+                "doc_id": "Princess_Mononoke:7",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.05175895616412163,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Kelly Preston starred in films.",
+            "support_key": "Kelly_Preston:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.6219168305397034,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.18916074931621552,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04136383533477783,
+                "doc_id": "Princess_Mononoke:7",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Kelly Preston starred in films.",
+            "support_key": "Kelly_Preston:1"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5305987596511841,
+          "csrm": 0.8185,
+          "naive_orbit_average": 0.67,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_stable_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.7863559722900391,
+              "doc_id": "Bloods:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.07905755192041397,
+              "doc_id": "Kelly_Preston:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.05674063414335251,
+              "doc_id": "Princess_Mononoke:7",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: The Bloods was founded in Los Angeles, California.",
+          "support_key": "Bloods:0"
+        },
+        "label_answerable": true,
+        "orbit_id": "fever:4336a732d713a27fc558b61c90f0f440:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.8714554905891418,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.002443247241899371,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.000601986248511821,
+                "doc_id": "Princess_Mononoke:7",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: The Bloods was founded in Los Angeles, California.",
+            "support_key": "Bloods:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.837893545627594,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.030518414452672005,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.011691990308463573,
+                "doc_id": "Princess_Mononoke:7",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: The Bloods was founded in Los Angeles, California.",
+            "support_key": "Bloods:0"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.7863559722900391,
+          "csrm": 0.8185,
+          "naive_orbit_average": 0.67,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_stable_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.8464475870132446,
+              "doc_id": "Princess_Mononoke:7",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.1443128138780594,
+              "doc_id": "Kelly_Preston:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.06810471415519714,
+              "doc_id": "Bloods:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Princess Mononoke has a dark atmosphere.",
+          "support_key": "Princess_Mononoke:7"
+        },
+        "label_answerable": true,
+        "orbit_id": "fever:8b32776efdf86e56e1a42226239b351f:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.795093834400177,
+                "doc_id": "Princess_Mononoke:7",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.014695623889565468,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.008574424311518669,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Princess Mononoke has a dark atmosphere.",
+            "support_key": "Princess_Mononoke:7"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.6899697184562683,
+                "doc_id": "Princess_Mononoke:7",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04425393417477608,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.1727847009897232,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Princess Mononoke has a dark atmosphere.",
+            "support_key": "Princess_Mononoke:7"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.8464475870132446,
+          "csrm": 0.8185,
+          "naive_orbit_average": 0.67,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_stable_evidence"
+      }
+    ],
+    "naive_false_accept_csrm_reject": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.8197024464607239,
+              "doc_id": "Shadowhunters:4",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The show received a straight-to-series order on March 30 , 2015 , and premiered on January 12 , 2016 on Freeform ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.6573562026023865,
+              "doc_id": "21st_century:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The 21st century is the current century of the Anno Domini era , in accordance with the Gregorian calendar ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.678328275680542,
+              "doc_id": "21st_century:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "It began on January 1 , 2001 and will end on December 31 , 2100 ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Shadowhunters premiered in the 21st century.",
+          "support_key": "21st_century:0|21st_century:1|Shadowhunters:4"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:2a276e2022df54b04d64be48c3ed7501:fragile_mixed",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.9238654971122742,
+                "doc_id": "Shadowhunters:4",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The show received a straight-to-series order on March 30 , 2015 , and premiered on January 12 , 2016 on Freeform ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.5527341961860657,
+                "doc_id": "21st_century:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The 21st century is the current century of the Anno Domini era , in accordance with the Gregorian calendar ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.48899713158607483,
+                "doc_id": "21st_century:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "It began on January 1 , 2001 and will end on December 31 , 2100 ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Shadowhunters premiered in the 21st century.",
+            "support_key": "21st_century:0|21st_century:1|Shadowhunters:4"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.440811425447464,
+                "doc_id": "21st_century:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "It began on January 1 , 2001 and will end on December 31 , 2100 ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.537642240524292,
+                "doc_id": "21st_century:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The 21st century is the current century of the Anno Domini era , in accordance with the Gregorian calendar ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.8948675990104675,
+                "doc_id": "Shadowhunters:4",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The show received a straight-to-series order on March 30 , 2015 , and premiered on January 12 , 2016 on Freeform ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Shadowhunters premiered in the 21st century.",
+            "support_key": "21st_century:0|21st_century:1|Shadowhunters:4"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.026210900396108627,
+                "doc_id": "Camden,_New_Jersey:50",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Three of Camden 's mayors have been jailed for corruption , the most recent being Milton Milan in 2000 ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.024962224066257477,
+                "doc_id": "XHamster:6",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.036723606288433075,
+                "doc_id": "Gray_Matter_Interactive:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "single_critical_conflict",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Shadowhunters premiered in the 21st century.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.8197024464607239,
+          "csrm": 0.43661314897322134,
+          "naive_orbit_average": 0.5025000000000001,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_fragile_mixed"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.48683810234069824,
+              "doc_id": "Armenian_Genocide:3",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The genocide was carried out during and after World War I and implemented in two phases : the wholesale killing of the able-bodied male population through massacre and subjection of army conscripts to forced labour , followed by the deportation of women , children , the elderly , and the infirm on death marches leading to the Syrian desert ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.3079356849193573,
+              "doc_id": "Second_Constitutional_Era:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Second Constitutional Era -LRB- \u0627\u064a\u06a9\u0646\u062c\u0649 \u0645\u0634\u0631\u0648\u0637\u064a\u062a \u062f\u0648\u0631\u0649 \u0130kinci Me\u015fr\u00fbtiyyet Devri -RRB- of the Ottoman Empire established shortly after the 1908 Young Turk Revolution which forced Sultan Abdul Hamid II to restore the constitutional monarchy by the revival of the Ottoman parliament , the General Assembly of the Ottoman Empire and the restoration of the constitution of 1876 ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.18458351492881775,
+              "doc_id": "Second_Constitutional_Era:9",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The last meeting on 18 March 1920 produced a letter of protest to the Allies , and a black cloth covered the pulpit of the Parliament as reminder of its absent members ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: The Armenian Genocide occurred during the Second Constitutional Era.",
+          "support_key": "Armenian_Genocide:3|Second_Constitutional_Era:0|Second_Constitutional_Era:9|World_War_I:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:b25e32964523c07fd47e9cd1bb68b845:fragile_mixed",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.07333975285291672,
+                "doc_id": "Armenian_Genocide:3",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The genocide was carried out during and after World War I and implemented in two phases : the wholesale killing of the able-bodied male population through massacre and subjection of army conscripts to forced labour , followed by the deportation of women , children , the elderly , and the infirm on death marches leading to the Syrian desert ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.4207834303379059,
+                "doc_id": "Second_Constitutional_Era:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Second Constitutional Era -LRB- \u0627\u064a\u06a9\u0646\u062c\u0649 \u0645\u0634\u0631\u0648\u0637\u064a\u062a \u062f\u0648\u0631\u0649 \u0130kinci Me\u015fr\u00fbtiyyet Devri -RRB- of the Ottoman Empire established shortly after the 1908 Young Turk Revolution which forced Sultan Abdul Hamid II to restore the constitutional monarchy by the revival of the Ottoman parliament , the General Assembly of the Ottoman Empire and the restoration of the constitution of 1876 ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.007746987976133823,
+                "doc_id": "Second_Constitutional_Era:9",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The last meeting on 18 March 1920 produced a letter of protest to the Allies , and a black cloth covered the pulpit of the Parliament as reminder of its absent members ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: The Armenian Genocide occurred during the Second Constitutional Era.",
+            "support_key": "Armenian_Genocide:3|Second_Constitutional_Era:0|Second_Constitutional_Era:9|World_War_I:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.005716318264603615,
+                "doc_id": "World_War_I:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "World War I -LRB- WWI or WW1 -RRB- , also known as the First World War , the Great War , or the War to End All Wars , was a global war originating in Europe that lasted from 28 July 1914 to 11 November 1918 ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.026542115956544876,
+                "doc_id": "Second_Constitutional_Era:9",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The last meeting on 18 March 1920 produced a letter of protest to the Allies , and a black cloth covered the pulpit of the Parliament as reminder of its absent members ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.507575273513794,
+                "doc_id": "Second_Constitutional_Era:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Second Constitutional Era -LRB- \u0627\u064a\u06a9\u0646\u062c\u0649 \u0645\u0634\u0631\u0648\u0637\u064a\u062a \u062f\u0648\u0631\u0649 \u0130kinci Me\u015fr\u00fbtiyyet Devri -RRB- of the Ottoman Empire established shortly after the 1908 Young Turk Revolution which forced Sultan Abdul Hamid II to restore the constitutional monarchy by the revival of the Ottoman parliament , the General Assembly of the Ottoman Empire and the restoration of the constitution of 1876 ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: The Armenian Genocide occurred during the Second Constitutional Era.",
+            "support_key": "Armenian_Genocide:3|Second_Constitutional_Era:0|Second_Constitutional_Era:9|World_War_I:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.004528491757810116,
+                "doc_id": "Camden,_New_Jersey:50",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Three of Camden 's mayors have been jailed for corruption , the most recent being Milton Milan in 2000 ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0028333982918411493,
+                "doc_id": "XHamster:6",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.025600463151931763,
+                "doc_id": "Gray_Matter_Interactive:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "single_critical_conflict",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: The Armenian Genocide occurred during the Second Constitutional Era.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.48683810234069824,
+          "csrm": 0.43661314897322134,
+          "naive_orbit_average": 0.5025000000000001,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_fragile_mixed"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5105529427528381,
+              "doc_id": "Kelly_Preston:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.31885167956352234,
+              "doc_id": "Princess_Mononoke:7",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.44287553429603577,
+              "doc_id": "Bloods:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Kelly Preston starred in films.",
+          "support_key": "Kelly_Preston:1"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:4f99160cf65dc9e25cb7a99e04e8688c:fragile_mixed",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.5535016655921936,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.009038468822836876,
+                "doc_id": "Princess_Mononoke:7",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.05175895616412163,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Kelly Preston starred in films.",
+            "support_key": "Kelly_Preston:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.6219168305397034,
+                "doc_id": "Kelly_Preston:1",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.18916074931621552,
+                "doc_id": "Bloods:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.04136383533477783,
+                "doc_id": "Princess_Mononoke:7",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Kelly Preston starred in films.",
+            "support_key": "Kelly_Preston:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.032051097601652145,
+                "doc_id": "Camden,_New_Jersey:50",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Three of Camden 's mayors have been jailed for corruption , the most recent being Milton Milan in 2000 ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.11866957694292068,
+                "doc_id": "XHamster:6",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.029371488839387894,
+                "doc_id": "Gray_Matter_Interactive:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "single_critical_conflict",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Kelly Preston starred in films.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5305987596511841,
+          "csrm": 0.43812830048837287,
+          "naive_orbit_average": 0.5025000000000001,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_fragile_mixed"
+      }
+    ],
+    "single_set_false_accept_csrm_reject": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.8197024464607239,
+              "doc_id": "Shadowhunters:4",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The show received a straight-to-series order on March 30 , 2015 , and premiered on January 12 , 2016 on Freeform ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.6573562026023865,
+              "doc_id": "21st_century:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The 21st century is the current century of the Anno Domini era , in accordance with the Gregorian calendar ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.678328275680542,
+              "doc_id": "21st_century:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "It began on January 1 , 2001 and will end on December 31 , 2100 ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Shadowhunters premiered in the 21st century.",
+          "support_key": "21st_century:0|21st_century:1|Shadowhunters:4"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:2a276e2022df54b04d64be48c3ed7501:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.026210900396108627,
+                "doc_id": "Camden,_New_Jersey:50",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Three of Camden 's mayors have been jailed for corruption , the most recent being Milton Milan in 2000 ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.024962224066257477,
+                "doc_id": "XHamster:6",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.036723606288433075,
+                "doc_id": "Gray_Matter_Interactive:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Shadowhunters premiered in the 21st century.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.8197024464607239,
+          "csrm": 0.20375000000000001,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.48683810234069824,
+              "doc_id": "Armenian_Genocide:3",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The genocide was carried out during and after World War I and implemented in two phases : the wholesale killing of the able-bodied male population through massacre and subjection of army conscripts to forced labour , followed by the deportation of women , children , the elderly , and the infirm on death marches leading to the Syrian desert ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.3079356849193573,
+              "doc_id": "Second_Constitutional_Era:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Second Constitutional Era -LRB- \u0627\u064a\u06a9\u0646\u062c\u0649 \u0645\u0634\u0631\u0648\u0637\u064a\u062a \u062f\u0648\u0631\u0649 \u0130kinci Me\u015fr\u00fbtiyyet Devri -RRB- of the Ottoman Empire established shortly after the 1908 Young Turk Revolution which forced Sultan Abdul Hamid II to restore the constitutional monarchy by the revival of the Ottoman parliament , the General Assembly of the Ottoman Empire and the restoration of the constitution of 1876 ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.18458351492881775,
+              "doc_id": "Second_Constitutional_Era:9",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The last meeting on 18 March 1920 produced a letter of protest to the Allies , and a black cloth covered the pulpit of the Parliament as reminder of its absent members ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: The Armenian Genocide occurred during the Second Constitutional Era.",
+          "support_key": "Armenian_Genocide:3|Second_Constitutional_Era:0|Second_Constitutional_Era:9|World_War_I:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:b25e32964523c07fd47e9cd1bb68b845:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.004528491757810116,
+                "doc_id": "Camden,_New_Jersey:50",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Three of Camden 's mayors have been jailed for corruption , the most recent being Milton Milan in 2000 ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0028333982918411493,
+                "doc_id": "XHamster:6",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.025600463151931763,
+                "doc_id": "Gray_Matter_Interactive:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: The Armenian Genocide occurred during the Second Constitutional Era.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.48683810234069824,
+          "csrm": 0.20375000000000001,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5105529427528381,
+              "doc_id": "Kelly_Preston:1",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "She has appeared in more than sixty television and film productions , most notably including Mischief , Twins and Jerry Maguire ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.31885167956352234,
+              "doc_id": "Princess_Mononoke:7",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Unlike other Ghibli films , Mononoke has a darker and more violent setting and tone ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.44287553429603577,
+              "doc_id": "Bloods:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The Bloods are a primarily , though not exclusively , African American street gang founded in Los Angeles , California ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Kelly Preston starred in films.",
+          "support_key": "Kelly_Preston:1"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:4f99160cf65dc9e25cb7a99e04e8688c:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.032051097601652145,
+                "doc_id": "Camden,_New_Jersey:50",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Three of Camden 's mayors have been jailed for corruption , the most recent being Milton Milan in 2000 ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.11866957694292068,
+                "doc_id": "XHamster:6",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The site produces The Sex Factor , a reality series in which men and women compete to become porn stars ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.029371488839387894,
+                "doc_id": "Gray_Matter_Interactive:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Gray Matter Interactive Studios , Inc. was a computer game developer founded in 1994 , and acquired by Activision in January 2002 ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Kelly Preston starred in films.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5305987596511841,
+          "csrm": 0.20829545454545456,
+          "naive_orbit_average": 0.335,
+          "single_set_sure_style": 0.67
+        },
+        "split": "fever_conflicting_evidence"
+      }
+    ]
+  },
+  "input": "results\\fever_orbits_mixed_corm_1000.jsonl",
+  "thresholds_at_30_coverage": {
+    "corm_max_clean": 0.6910229325294495,
+    "csrm": 0.4401845775446499,
+    "naive_orbit_average": 0.5025000000000001,
+    "single_set_sure_style": 0.67
+  }
+}

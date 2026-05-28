@@ -1,0 +1,146 @@
+{
+  "baselines": [
+    "corm_max_clean",
+    "single_set_sure_style",
+    "naive_orbit_average"
+  ],
+  "comparisons": {
+    "corm_max_clean": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.3330323097737317,
+          "p2_5": 0.2992452358568501,
+          "p97_5": 0.3660507893118794
+        },
+        "auroc_improvement": {
+          "median": 0.4972481454893515,
+          "p2_5": 0.45181807947765396,
+          "p97_5": 0.5422929350583461
+        },
+        "risk_at_30_reduction": {
+          "median": 0.5833333333333334,
+          "p2_5": 0.5,
+          "p97_5": 0.6708333333333333
+        },
+        "risk_at_50_reduction": {
+          "median": 0.25,
+          "p2_5": 0.20750000000000002,
+          "p97_5": 0.2925
+        }
+      },
+      "bootstrap_samples": 5000,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.33339205729069504,
+        "auroc_improvement": 0.4973833333333333,
+        "baseline": {
+          "aurc": 0.7406250000000008,
+          "auroc": 0.5,
+          "risk_at_30": 0.75,
+          "risk_at_50": 0.75
+        },
+        "risk_at_30_reduction": 0.5833333333333334,
+        "risk_at_50_reduction": 0.25,
+        "target": {
+          "aurc": 0.4072329427093057,
+          "auroc": 0.9973833333333333,
+          "risk_at_30": 0.16666666666666663,
+          "risk_at_50": 0.5
+        }
+      }
+    },
+    "naive_orbit_average": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.1745102454899971,
+          "p2_5": 0.14391327043030122,
+          "p97_5": 0.20555263694860337
+        },
+        "auroc_improvement": {
+          "median": 0.1615886920806059,
+          "p2_5": 0.13792924935289042,
+          "p97_5": 0.18567195351618626
+        },
+        "risk_at_30_reduction": {
+          "median": 0.32500000000000007,
+          "p2_5": 0.25,
+          "p97_5": 0.4125
+        },
+        "risk_at_50_reduction": {
+          "median": 0.0,
+          "p2_5": 0.0,
+          "p97_5": 0.012499999999999956
+        }
+      },
+      "bootstrap_samples": 5000,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.17450218576332027,
+        "auroc_improvement": 0.1615291666666666,
+        "baseline": {
+          "aurc": 0.581735128472626,
+          "auroc": 0.8358541666666667,
+          "risk_at_30": 0.5,
+          "risk_at_50": 0.5
+        },
+        "risk_at_30_reduction": 0.33333333333333337,
+        "risk_at_50_reduction": 0.0,
+        "target": {
+          "aurc": 0.4072329427093057,
+          "auroc": 0.9973833333333333,
+          "risk_at_30": 0.16666666666666663,
+          "risk_at_50": 0.5
+        }
+      }
+    },
+    "single_set_sure_style": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.33155485368450566,
+          "p2_5": 0.2933408668590476,
+          "p97_5": 0.3691644788709675
+        },
+        "auroc_improvement": {
+          "median": 0.49768959741234914,
+          "p2_5": 0.46464256347644084,
+          "p97_5": 0.5289927173304125
+        },
+        "risk_at_30_reduction": {
+          "median": 0.5833333333333334,
+          "p2_5": 0.5,
+          "p97_5": 0.6666666666666667
+        },
+        "risk_at_50_reduction": {
+          "median": 0.25,
+          "p2_5": 0.20750000000000002,
+          "p97_5": 0.2925000000000001
+        }
+      },
+      "bootstrap_samples": 5000,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.3315170572906943,
+        "auroc_improvement": 0.4973833333333333,
+        "baseline": {
+          "aurc": 0.73875,
+          "auroc": 0.5,
+          "risk_at_30": 0.75,
+          "risk_at_50": 0.75
+        },
+        "risk_at_30_reduction": 0.5833333333333334,
+        "risk_at_50_reduction": 0.25,
+        "target": {
+          "aurc": 0.4072329427093057,
+          "auroc": 0.9973833333333333,
+          "risk_at_30": 0.16666666666666663,
+          "risk_at_50": 0.5
+        }
+      }
+    }
+  },
+  "input": "results\\hotpot_orbits_corm_800.jsonl",
+  "n": 800,
+  "negative": 600,
+  "positive": 200,
+  "target": "csrm"
+}

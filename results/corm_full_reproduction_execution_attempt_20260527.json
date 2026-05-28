@@ -1,0 +1,76 @@
+{
+  "attempted_at": "2026-05-27T14:00:00+08:00",
+  "requested_task": "Execute full CoRM-RAG reproduction locally or on the provided server.",
+  "verdict": "blocked_not_executable_in_current_local_or_remote_environment",
+  "local_preflight": {
+    "workspace": "D:\\缝合RAG-idea",
+    "gpu": "NVIDIA GeForce RTX 3080, 10GB, idle at probe time",
+    "filesystem_free": {
+      "C": "about 5GB",
+      "D": "about 51GB"
+    },
+    "ready": false,
+    "blockers": [
+      "missing external_repos/CoRM-RAG/data/wiki.faiss",
+      "missing external_repos/CoRM-RAG/data/wiki_passages.jsonl",
+      "missing external_repos/CoRM-RAG/data/biased_nq_test.jsonl",
+      "missing local faiss module",
+      "missing local vllm module",
+      "local free disk is far below the expected full Wikipedia embeddings + FAISS + passages footprint"
+    ]
+  },
+  "remote_preflight": {
+    "host": "192.168.103.101",
+    "gpu": "2x NVIDIA GeForce RTX 4090, both idle at probe time",
+    "writable_probe": {
+      "/mnt/ntfs-disk/csrm_corm_reconstruction": false,
+      "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs": false,
+      "/mnt/ntfs-disk/csrm_corm_reconstruction/data": false,
+      "/home/syk": true,
+      "/tmp": true,
+      "/dev/shm": true
+    },
+    "filesystem_free": {
+      "/": "about 20GB on ext4",
+      "/home/syk": "same ext4 filesystem as /, about 20GB free",
+      "/dev/shm": "about 13GB",
+      "/mnt/ntfs-disk": "df reports about 258GB free, but write probes fail"
+    },
+    "large_storage_status": "unusable_for_new_writes",
+    "large_storage_error": "bash write probe reports: device has no space",
+    "previous_full_wikipedia_progress": {
+      "complete_embedding_shards": 52,
+      "latest_complete_embedding_shard": "embeddings_shard_000051.npy",
+      "latest_complete_embedding_shard_shape": [250000, 768],
+      "wiki_faiss_exists": false,
+      "terminal_failure": "OSError [Errno 5] Input/output error while writing/flushing wiki_passages.jsonl"
+    }
+  },
+  "new_mitigation_implemented": {
+    "summary": "Added a sharded reconstruction path to avoid giant wiki_passages.jsonl and wiki.faiss files.",
+    "files": [
+      "experiments/encode_corm_wikipedia_streaming.py",
+      "experiments/build_corm_faiss_index.py",
+      "external_repos/CoRM-RAG/src/run_evaluation.py"
+    ],
+    "capabilities": [
+      "streaming encoder can write passage shards with --passage-output sharded",
+      "FAISS builder can create sharded FAISS indexes with --sharded",
+      "run_evaluation.py can read --faiss_manifest and --passage_shard_dir"
+    ],
+    "remote_smoke_status": "not_started",
+    "remote_smoke_blocker": "could not create /mnt/ntfs-disk/csrm_corm_reconstruction_sharded_smoke because the NTFS/fuseblk mount rejects new writes"
+  },
+  "why_full_reproduction_was_not_launched": [
+    "Launching the original run locally would immediately fail preflight due missing data/index artifacts and insufficient disk.",
+    "Launching the original run on the server would reuse /mnt/ntfs-disk, which currently rejects even a one-line write probe.",
+    "The remaining writable server filesystems have only about 20GB ext4 plus 13GB tmpfs, far below the full reconstruction footprint.",
+    "The original Biased-NQ perturbation artifact is still unavailable; without author-provided perturbations or API credentials, exact Biased-NQ reproduction remains blocked even after index construction."
+  ],
+  "next_required_action": [
+    "Provide a reliable persistent ext4/XFS storage target with at least 180GB free on the server, or a new server/cloud instance with that storage.",
+    "Alternatively, provide author artifacts: wiki.faiss, wiki_passages.jsonl, and biased_nq_test.jsonl.",
+    "If using the current server, explicitly authorize deletion or relocation of enough /home/syk content only if at least 150GB ext4 free space can be made available; current visible user-owned /home/syk total is about 131GB, which is borderline and may still be insufficient."
+  ],
+  "claim_policy": "No full CoRM-RAG reproduction metric may be claimed from this attempt. The result is an execution blocker plus a ready sharded mitigation path once reliable storage exists."
+}

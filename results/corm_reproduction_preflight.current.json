@@ -1,0 +1,120 @@
+{
+  "blockers": [
+    "missing data file: wiki.faiss (D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data\\wiki.faiss)",
+    "missing data file: wiki_passages.jsonl (D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data\\wiki_passages.jsonl)",
+    "missing data file: biased_nq_test.jsonl (D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data\\biased_nq_test.jsonl)",
+    "missing python module: faiss",
+    "missing python module: vllm"
+  ],
+  "checkpoint": {
+    "exists": true,
+    "name": "state.pt",
+    "path": "D:\\\u7f1d\u5408RAG-idea\\checkpoints\\hf\\critic-v12-mixed\\checkpoint-latest\\state.pt",
+    "size_bytes": 5208606507
+  },
+  "claim_policy": "Full CoRM-RAG NQ/Biased-NQ/TruthfulQA reproduction claims are allowed only when ready is true and the evaluation command has produced matching metrics.",
+  "cuda": {
+    "available": true,
+    "message": "CUDA available.",
+    "required": true,
+    "satisfied": true
+  },
+  "data_src": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data",
+  "missing_required_artifacts": 5,
+  "python_modules": [
+    {
+      "available": true,
+      "import_name": "numpy",
+      "package": "numpy"
+    },
+    {
+      "available": true,
+      "import_name": "scipy",
+      "package": "scipy"
+    },
+    {
+      "available": true,
+      "import_name": "sklearn",
+      "package": "scikit-learn"
+    },
+    {
+      "available": true,
+      "import_name": "torch",
+      "package": "torch"
+    },
+    {
+      "available": true,
+      "import_name": "transformers",
+      "package": "transformers"
+    },
+    {
+      "available": true,
+      "import_name": "datasets",
+      "package": "datasets"
+    },
+    {
+      "available": true,
+      "import_name": "huggingface_hub",
+      "package": "huggingface_hub"
+    },
+    {
+      "available": false,
+      "import_name": "faiss",
+      "package": "faiss"
+    },
+    {
+      "available": false,
+      "import_name": "vllm",
+      "package": "vllm"
+    }
+  ],
+  "ready": false,
+  "repo": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG",
+  "reproduction_command": "$env:DATA_SRC='D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data'; $env:CRITIC_PATH='D:\\\u7f1d\u5408RAG-idea\\checkpoints\\hf\\critic-v12-mixed\\checkpoint-latest\\state.pt'; $env:OUTPUT_DIR='results/corm_original_eval'; bash external_repos/CoRM-RAG/src/run_eval.sh",
+  "required_data_files": [
+    {
+      "exists": false,
+      "name": "wiki.faiss",
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data\\wiki.faiss",
+      "size_bytes": null
+    },
+    {
+      "exists": false,
+      "name": "wiki_passages.jsonl",
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data\\wiki_passages.jsonl",
+      "size_bytes": null
+    },
+    {
+      "exists": false,
+      "name": "biased_nq_test.jsonl",
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\data\\biased_nq_test.jsonl",
+      "size_bytes": null
+    }
+  ],
+  "required_repo_files": [
+    {
+      "exists": true,
+      "name": "README.md",
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\README.md",
+      "size_bytes": 4300
+    },
+    {
+      "exists": true,
+      "name": "src/run_eval.sh",
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\src\\run_eval.sh",
+      "size_bytes": 3144
+    },
+    {
+      "exists": true,
+      "name": "src/run_evaluation.py",
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\src\\run_evaluation.py",
+      "size_bytes": 26656
+    },
+    {
+      "exists": true,
+      "name": "src/train_critic.py",
+      "path": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG\\src\\train_critic.py",
+      "size_bytes": 42163
+    }
+  ]
+}

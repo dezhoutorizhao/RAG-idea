@@ -1,0 +1,39 @@
+{
+  "claim_policy": "Isolated 200k-vector partial-index template smoke only. This validates deployment plumbing and runtime-compatible generator selection; it is not full CoRM-RAG reproduction evidence and must not be used as a performance claim.",
+  "deployment_findings": {
+    "qwen25_smoke_completed": true,
+    "qwen3_unsupported_in_current_runtime": true,
+    "runtime_path_required": true
+  },
+  "eval": {
+    "accuracy": 0.0,
+    "dataset": "Biased_NQ",
+    "ece": 0.4371157684363425,
+    "generator": "Qwen/Qwen2.5-0.5B-Instruct",
+    "max_examples": 2,
+    "mce": 0.8611570000648499,
+    "method": "CoRM-RAG",
+    "n_examples": 2,
+    "pearson_r": null,
+    "rerank_depth": 5,
+    "spearman_rho": null
+  },
+  "observed_at": "2026-05-20T19:38:26.169872+08:00",
+  "partial_index": {
+    "dim": 768,
+    "index_type": "flat",
+    "ntotal": 200000,
+    "output": "/mnt/ntfs-disk/csrm_corm_reconstruction/stage/partial_template_eval_smoke_20260520_1928/data/wiki.faiss",
+    "partial_shards": 4,
+    "status": "built",
+    "vectors": 200000
+  },
+  "remote": {
+    "eval_run": "partial_template_eval_smoke_20260520_1934_qwen25_retry",
+    "host": "192.168.103.101",
+    "output_dir": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/partial_template_eval_smoke_20260520_1934_qwen25_retry",
+    "source_partial_run": "partial_template_eval_smoke_20260520_1928",
+    "user": "syk"
+  },
+  "status": "completed"
+}

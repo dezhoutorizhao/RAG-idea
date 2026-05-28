@@ -1,0 +1,31 @@
+{
+  "status": "passed",
+  "observed_at": "2026-05-20",
+  "remote": {
+    "host": "192.168.103.101",
+    "user": "syk",
+    "output_dir": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/wiki_encoder_smoke_dummy"
+  },
+  "script": "experiments/encode_corm_wikipedia_streaming.py",
+  "input_mode": "staged_jsonl",
+  "backend": "dummy",
+  "streaming_manifest": {
+    "status": "built",
+    "passages": 2,
+    "articles_seen": 2,
+    "embedding_shard_count": 2,
+    "dummy_dim": 8
+  },
+  "faiss_manifest": {
+    "status": "built",
+    "vectors": 2,
+    "ntotal": 2,
+    "dim": 8,
+    "index_type": "flat"
+  },
+  "hf_dataset_smoke": {
+    "status": "blocked",
+    "blocker": "Remote Hugging Face dataset access timed out for wikimedia/wikipedia and fallback wikipedia."
+  },
+  "claim_policy": "Engineering smoke evidence for staged-input streaming/sharded reconstruction only; not full Wikipedia or CoRM evaluation evidence."
+}

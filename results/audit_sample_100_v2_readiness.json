@@ -1,0 +1,162 @@
+{
+  "agreement_with_expected": null,
+  "by_split": {
+    "fever_conflicting_evidence": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 10,
+      "total": 10
+    },
+    "fever_distractor_only": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 10,
+      "total": 10
+    },
+    "fever_fragile_mixed": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 10,
+      "total": 10
+    },
+    "fever_missing_evidence": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 10,
+      "total": 10
+    },
+    "fever_near_miss_dilution": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 10,
+      "total": 10
+    },
+    "fever_stable_evidence": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 10,
+      "total": 10
+    },
+    "hotpot_distractor": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 10,
+      "total": 10
+    },
+    "hotpot_false_premise": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 10,
+      "total": 10
+    },
+    "hotpot_missing_hop": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 10,
+      "total": 10
+    },
+    "hotpot_stable_support": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 10,
+      "total": 10
+    }
+  },
+  "completion_rate": 0.0,
+  "failed_gates": [
+    {
+      "actual": 0,
+      "gate": "min_labeled_total",
+      "required": 100
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 10,
+      "split": "fever_conflicting_evidence"
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 10,
+      "split": "fever_distractor_only"
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 10,
+      "split": "fever_fragile_mixed"
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 10,
+      "split": "fever_missing_evidence"
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 10,
+      "split": "fever_near_miss_dilution"
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 10,
+      "split": "fever_stable_evidence"
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 10,
+      "split": "hotpot_distractor"
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 10,
+      "split": "hotpot_false_premise"
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 10,
+      "split": "hotpot_missing_hop"
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 10,
+      "split": "hotpot_stable_support"
+    }
+  ],
+  "input": "results\\audit_sample_100_v2.jsonl",
+  "invalid": 0,
+  "label_field": "auditor_label_answerable",
+  "labeled": 0,
+  "min_labeled_per_split": 10,
+  "min_labeled_total": 100,
+  "pending": 100,
+  "ready": false,
+  "total": 100
+}

@@ -1,0 +1,47 @@
+# Secrets and local SSH credentials
+.ssh_deploy/
+*.pem
+*.key
+id_rsa
+id_ed25519
+
+# Large checkpoints and model artifacts
+checkpoints/
+*.pt
+*.pth
+*.ckpt
+*.safetensors
+*.bin
+
+# Python caches and local test caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Local environments and caches
+.venv/
+venv/
+env/
+.env
+.env.*
+hf_cache/
+pip_cache/
+vllm_cache/
+xdg_cache/
+mamba_root/
+mamba_pkgs/
+micromamba/
+
+# Generated large reconstruction artifacts
+*.faiss
+wiki_passages.jsonl
+wiki_embeddings.npy
+embeddings_shard_*.npy
+external_repos/CoRM-RAG/data/
+external_repos/CoRM-RAG/
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

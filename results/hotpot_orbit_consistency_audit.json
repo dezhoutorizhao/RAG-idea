@@ -1,0 +1,32 @@
+{
+  "audit_scope": "Structural and dataset-constraint consistency: validates source provenance, label-source metadata, generated labels, split names, perturbation counts/types, support-key lineage, duplicate evidence ids, support-key coverage, support-feature provenance, and verifier-feature ranges. It does not replace human semantic audit.",
+  "error_count": 0,
+  "errors": [],
+  "input": "results\\hotpot_orbits_corm_800.jsonl",
+  "passed": true,
+  "splits": {
+    "hotpot_distractor": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "hotpot_false_premise": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "hotpot_missing_hop": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "hotpot_stable_support": {
+      "n": 200,
+      "negative": 0,
+      "positive": 200
+    }
+  },
+  "total": 800,
+  "warning_count": 0,
+  "warnings": []
+}

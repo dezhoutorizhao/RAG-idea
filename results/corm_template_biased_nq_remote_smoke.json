@@ -1,0 +1,35 @@
+{
+  "status": "passed",
+  "observed_at": "2026-05-20T18:33:00+08:00",
+  "remote": {
+    "host": "192.168.103.101",
+    "user": "syk",
+    "script": "/mnt/ntfs-disk/csrm_corm_reconstruction/workspace/results/corm_remote_scripts/03_prepare_biased_nq_template_smoke.sh",
+    "perturbations": "/mnt/ntfs-disk/csrm_corm_reconstruction/data/perturbations.template_smoke.jsonl",
+    "biased_nq": "/mnt/ntfs-disk/csrm_corm_reconstruction/data/biased_nq_test.template_smoke.jsonl"
+  },
+  "perturbation_manifest": {
+    "status": "built",
+    "rows": 100,
+    "perturbations": 500,
+    "type_counts": {
+      "1": 167,
+      "2": 167,
+      "3": 166
+    },
+    "skipped_rows": 0,
+    "max_queries": 100,
+    "seed": 42
+  },
+  "biased_nq_manifest": {
+    "status": "built",
+    "rows": 100,
+    "require_all_types": true,
+    "missing_required_type_rows": []
+  },
+  "file_sizes": {
+    "perturbations_template_smoke": "192K",
+    "biased_nq_test_template_smoke": "192K"
+  },
+  "claim_policy": "Template fallback smoke only. This verifies Biased-NQ plumbing without an OpenAI API key, but it is not the authors' perturbation set and must not be reported as original Biased-NQ evidence."
+}

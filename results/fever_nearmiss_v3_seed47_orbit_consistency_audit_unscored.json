@@ -1,0 +1,42 @@
+{
+  "audit_scope": "Structural and dataset-constraint consistency: validates source provenance, label-source metadata, generated labels, split names, perturbation counts/types, support-key lineage, duplicate evidence ids, support-key coverage, and verifier-feature ranges. It does not replace human semantic audit.",
+  "error_count": 0,
+  "errors": [],
+  "input": "results\\fever_orbits_nearmiss_1200_v3_seed47.jsonl",
+  "passed": true,
+  "splits": {
+    "fever_conflicting_evidence": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_distractor_only": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_fragile_mixed": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_missing_evidence": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_near_miss_dilution": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_stable_evidence": {
+      "n": 200,
+      "negative": 0,
+      "positive": 200
+    }
+  },
+  "total": 1200,
+  "warning_count": 0,
+  "warnings": []
+}

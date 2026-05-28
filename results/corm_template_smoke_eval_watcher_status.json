@@ -1,0 +1,19 @@
+{
+  "status": "paused_after_storage_recovery",
+  "observed_at": "2026-05-21T00:31:38+08:00",
+  "remote": {
+    "host": "192.168.103.101",
+    "user": "syk",
+    "script": "/mnt/ntfs-disk/csrm_corm_reconstruction/workspace/results/corm_remote_scripts/05_watch_and_run_template_smoke_eval.sh",
+    "log": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/template_smoke_watcher/watcher.log",
+    "status_json": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/template_smoke_watcher/status.json"
+  },
+  "checks": {
+    "previous_watcher_pid": 342843,
+    "previous_watcher_stopped": true,
+    "remote_script_pack_removed_to_free_file_records": true,
+    "template_smoke_eval_results_exists": false
+  },
+  "reason": "The watcher was stopped and the redeployable remote script pack was removed after the full Wikipedia job hit the second NTFS/fuseblk file-creation failure. The priority is finishing wiki_passages.jsonl, embedding shards, and wiki.faiss with the 4M-shard resume job before redeploying the small smoke-eval watcher.",
+  "claim_policy": "Operational status only. No template smoke evaluation metrics have been produced by this watcher."
+}

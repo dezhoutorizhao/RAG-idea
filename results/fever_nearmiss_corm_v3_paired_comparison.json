@@ -1,0 +1,146 @@
+{
+  "baselines": [
+    "corm_max_clean",
+    "single_set_sure_style",
+    "naive_orbit_average"
+  ],
+  "comparisons": {
+    "corm_max_clean": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.2995810407124251,
+          "p2_5": 0.2720660389927352,
+          "p97_5": 0.32486921624681553
+        },
+        "auroc_improvement": {
+          "median": 0.5001823866597186,
+          "p2_5": 0.4549707086483429,
+          "p97_5": 0.5434204793028323
+        },
+        "risk_at_30_reduction": {
+          "median": 0.38888888888888884,
+          "p2_5": 0.32777777777777783,
+          "p97_5": 0.4472222222222223
+        },
+        "risk_at_50_reduction": {
+          "median": 0.16666666666666663,
+          "p2_5": 0.13666666666666671,
+          "p97_5": 0.19666666666666666
+        }
+      },
+      "bootstrap_samples": 5000,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.2996672973673943,
+        "auroc_improvement": 0.5,
+        "baseline": {
+          "aurc": 0.8291666666666662,
+          "auroc": 0.5,
+          "risk_at_30": 0.8333333333333334,
+          "risk_at_50": 0.8333333333333334
+        },
+        "risk_at_30_reduction": 0.38888888888888895,
+        "risk_at_50_reduction": 0.16666666666666663,
+        "target": {
+          "aurc": 0.5294993692992719,
+          "auroc": 1.0,
+          "risk_at_30": 0.4444444444444444,
+          "risk_at_50": 0.6666666666666667
+        }
+      }
+    },
+    "naive_orbit_average": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.2386843977546399,
+          "p2_5": 0.2162591570065907,
+          "p97_5": 0.2602718399629609
+        },
+        "auroc_improvement": {
+          "median": 0.2246097899610161,
+          "p2_5": 0.19957000000000003,
+          "p97_5": 0.24998548284071775
+        },
+        "risk_at_30_reduction": {
+          "median": 0.19444444444444442,
+          "p2_5": 0.10555555555555562,
+          "p97_5": 0.2833333333333333
+        },
+        "risk_at_50_reduction": {
+          "median": 0.0,
+          "p2_5": 0.0,
+          "p97_5": 0.0
+        }
+      },
+      "bootstrap_samples": 5000,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.23918498320853554,
+        "auroc_improvement": 0.22452499999999997,
+        "baseline": {
+          "aurc": 0.7686843525078074,
+          "auroc": 0.775475,
+          "risk_at_30": 0.6388888888888888,
+          "risk_at_50": 0.6666666666666667
+        },
+        "risk_at_30_reduction": 0.19444444444444442,
+        "risk_at_50_reduction": 0.0,
+        "target": {
+          "aurc": 0.5294993692992719,
+          "auroc": 1.0,
+          "risk_at_30": 0.4444444444444444,
+          "risk_at_50": 0.6666666666666667
+        }
+      }
+    },
+    "single_set_sure_style": {
+      "bootstrap_ci": {
+        "aurc_reduction": {
+          "median": 0.29893476645537087,
+          "p2_5": 0.26703593062514186,
+          "p97_5": 0.33024898697369565
+        },
+        "auroc_improvement": {
+          "median": 0.5000261671873937,
+          "p2_5": 0.4585572682888417,
+          "p97_5": 0.5419827537883742
+        },
+        "risk_at_30_reduction": {
+          "median": 0.38888888888888884,
+          "p2_5": 0.3305555555555555,
+          "p97_5": 0.44999999999999996
+        },
+        "risk_at_50_reduction": {
+          "median": 0.16666666666666663,
+          "p2_5": 0.1383333333333333,
+          "p97_5": 0.19666666666666666
+        }
+      },
+      "bootstrap_samples": 5000,
+      "bootstrap_seed": 71,
+      "point": {
+        "aurc_reduction": 0.29966729736739484,
+        "auroc_improvement": 0.5,
+        "baseline": {
+          "aurc": 0.8291666666666667,
+          "auroc": 0.5,
+          "risk_at_30": 0.8305555555555555,
+          "risk_at_50": 0.8316666666666667
+        },
+        "risk_at_30_reduction": 0.38611111111111107,
+        "risk_at_50_reduction": 0.16499999999999992,
+        "target": {
+          "aurc": 0.5294993692992719,
+          "auroc": 1.0,
+          "risk_at_30": 0.4444444444444444,
+          "risk_at_50": 0.6666666666666667
+        }
+      }
+    }
+  },
+  "input": "results\\fever_orbits_nearmiss_corm_1200_v3.jsonl",
+  "n": 1200,
+  "negative": 1000,
+  "positive": 200,
+  "target": "csrm"
+}

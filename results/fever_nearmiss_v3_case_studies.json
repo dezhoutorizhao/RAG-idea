@@ -1,0 +1,1870 @@
+{
+  "case_counts": {
+    "corm_false_accept_csrm_reject": 3,
+    "csrm_false_accept_failure": 3,
+    "csrm_true_accept": 3,
+    "naive_false_accept_csrm_reject": 3,
+    "single_set_false_accept_csrm_reject": 3
+  },
+  "categories": {
+    "corm_false_accept_csrm_reject": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9606480002403259,
+              "doc_id": "Happiness_in_Slavery:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.031034065410494804,
+              "doc_id": "Nine_Inch_Nails:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Nine Inch Nails -LRB- abbreviated as NIN and stylized as NI\u0418 -RRB- is an American industrial rock band founded in 1988 by Trent Reznor in Cleveland , Ohio ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.14419560134410858,
+              "doc_id": "Come_Get_It_Bae:0",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: An American band is responsible for the song Happiness in Slavery.",
+          "support_key": "Happiness_in_Slavery:0|Nine_Inch_Nails:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:3701d7097c281592457c545c8b475704:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0005648466758430004,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.04556350037455559,
+                "doc_id": "Keith_Urban_-LRB-1999_album-RRB-:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Keith Urban -LRB- also known as Keith Urban II -RRB- is the second studio album by Australian country music artist Keith Urban , released on 19 October 1999 by Capitol Nashville ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.02290366031229496,
+                "doc_id": "Saw_-LRB-franchise-RRB-:8",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The films collectively grossed over $ 873 million at the box office worldwide ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: An American band is responsible for the song Happiness in Slavery.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9606480002403259,
+          "csrm": 0.18541666666666667,
+          "naive_orbit_average": 0.2616666666666667,
+          "single_set_sure_style": 0.5233333333333334
+        },
+        "split": "fever_conflicting_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9606480002403259,
+              "doc_id": "Happiness_in_Slavery:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.031034065410494804,
+              "doc_id": "Nine_Inch_Nails:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Nine Inch Nails -LRB- abbreviated as NIN and stylized as NI\u0418 -RRB- is an American industrial rock band founded in 1988 by Trent Reznor in Cleveland , Ohio ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.14419560134410858,
+              "doc_id": "Come_Get_It_Bae:0",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: An American band is responsible for the song Happiness in Slavery.",
+          "support_key": "Happiness_in_Slavery:0|Nine_Inch_Nails:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:3701d7097c281592457c545c8b475704:distractor",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.2274273782968521,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.10372234135866165,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.30045855045318604,
+                "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "distractor_only",
+            "query": "Fact-check the claim using only background evidence if direct evidence is absent: An American band is responsible for the song Happiness in Slavery.",
+            "support_key": "distractor_only"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9606480002403259,
+          "csrm": 0.21041666666666667,
+          "naive_orbit_average": 0.2616666666666667,
+          "single_set_sure_style": 0.5233333333333334
+        },
+        "split": "fever_distractor_only"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9606480002403259,
+              "doc_id": "Happiness_in_Slavery:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.14419560134410858,
+              "doc_id": "Come_Get_It_Bae:0",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.22089597582817078,
+              "doc_id": "David_Packouz:0",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "David Mordechai Packouz -LRB- -LSB- p\u00e6kha\u028as -RSB- born February 16 , 1982 -RRB- is an American former arms dealer , musician , inventor and entrepreneur ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: An American band is responsible for the song Happiness in Slavery.",
+          "support_key": "Happiness_in_Slavery:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:5e85124bcdf4cc6586d31b0a34d39834:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0005648466758430004,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.04556350037455559,
+                "doc_id": "Keith_Urban_-LRB-1999_album-RRB-:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Keith Urban -LRB- also known as Keith Urban II -RRB- is the second studio album by Australian country music artist Keith Urban , released on 19 October 1999 by Capitol Nashville ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.02290366031229496,
+                "doc_id": "Saw_-LRB-franchise-RRB-:8",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The films collectively grossed over $ 873 million at the box office worldwide ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: An American band is responsible for the song Happiness in Slavery.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9606480002403259,
+          "csrm": 0.21389962121212122,
+          "naive_orbit_average": 0.18708333333333338,
+          "single_set_sure_style": 0.37416666666666676
+        },
+        "split": "fever_conflicting_evidence"
+      }
+    ],
+    "csrm_false_accept_failure": [
+      {
+        "answer": "REFUTES",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.14007888734340668,
+              "doc_id": "Home_for_the_Holidays_-LRB-1995_film-RRB-:5",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The film stars Holly Hunter , Robert Downey Jr. , Anne Bancroft , Charles Durning , Dylan McDermott , Geraldine Chaplin , Steve Guttenberg , Cynthia Stevenson , Claire Danes , Austin Pendleton and David Strathairn ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.3543325662612915,
+              "doc_id": "Dylan_McDermott:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Dylan McDermott -LRB- born Mark Anthony McDermott ; October 26 , 1961 -RRB- is an American actor ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.3393113315105438,
+              "doc_id": "Holly_Hunter:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Holly Hunter -LRB- born March 20 , 1958 -RRB- is an American actress and producer ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Home for the Holidays stars no actors or actresses.",
+          "support_key": "Dylan_McDermott:0|Holly_Hunter:0|Home_for_the_Holidays_-LRB-1995_film-RRB-:5"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:3afbac0242cbb668d6e754a15f3e72ec:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.01631438173353672,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.022243259474635124,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.1369789093732834,
+                "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: Home for the Holidays stars no actors or actresses.",
+            "support_key": "near_miss:SUPPORTS:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.03810688108205795,
+                "doc_id": "Stephen_Colbert:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Stephen Tyrone Colbert -LRB- -LSB- ko\u028al\u02c8b\u025b\u0259r -RSB- , n\u00e9 : -LSB- \u02c8ko\u028alb\u0259rt -RSB- born May 13 , 1964 -RRB- is an American comedian , television host , and author ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.06358417868614197,
+                "doc_id": "Eva_Green:1",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "She started her career in theatre before making her film debut in 2003 in Bernardo Bertolucci 's film The Dreamers ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0274623092263937,
+                "doc_id": "David_Packouz:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "David Mordechai Packouz -LRB- -LSB- p\u00e6kha\u028as -RSB- born February 16 , 1982 -RRB- is an American former arms dealer , musician , inventor and entrepreneur ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: Home for the Holidays stars no actors or actresses.",
+            "support_key": "near_miss:SUPPORTS:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.011770895682275295,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.01880335435271263,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.10617759823799133,
+                "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: Home for the Holidays stars no actors or actresses.",
+            "support_key": "near_miss:SUPPORTS:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.011637061834335327,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.018261566758155823,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.09778019785881042,
+                "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: Home for the Holidays stars no actors or actresses.",
+            "support_key": "near_miss:SUPPORTS:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5500226020812988,
+          "csrm": 0.47104166666666675,
+          "naive_orbit_average": 0.5625,
+          "single_set_sure_style": 0.4625000000000001
+        },
+        "split": "fever_near_miss_dilution"
+      },
+      {
+        "answer": "REFUTES",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.22437913715839386,
+              "doc_id": "Vedam_-LRB-film-RRB-:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Vedam -LRB- English : Chant -RRB- is a 2010 Telugu language Indian drama film written and directed by Radhakrishna Jagarlamudi , starring Allu Arjun , Manoj Manchu , Anushka Shetty , Manoj Bajpayee , Saranya Ponvannan , Deeksha Seth , Lekha Washington , and Siya Gautham ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.1512453705072403,
+              "doc_id": "Allu_Arjun:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Allu Arjun is an Indian film actor who primarily works in Telugu cinema ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.03103485144674778,
+              "doc_id": "Anushka_Shetty:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Sweety Shetty -LRB- born 7 November 1981 -RRB- , known by her stage name Anushka Shetty , is an Indian actress and model who predominantly works in Telugu and Tamil films ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Vedam stars only Canadian film actors and actresses.",
+          "support_key": "Allu_Arjun:0|Anushka_Shetty:0|Vedam_-LRB-film-RRB-:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:bc97f82071c90fc4f43fb43105b8f5b9:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.010951604694128036,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.013649046421051025,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.06204042583703995,
+                "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: Vedam stars only Canadian film actors and actresses.",
+            "support_key": "near_miss:SUPPORTS:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.016753310337662697,
+                "doc_id": "Stephen_Colbert:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Stephen Tyrone Colbert -LRB- -LSB- ko\u028al\u02c8b\u025b\u0259r -RSB- , n\u00e9 : -LSB- \u02c8ko\u028alb\u0259rt -RSB- born May 13 , 1964 -RRB- is an American comedian , television host , and author ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.056176118552684784,
+                "doc_id": "Eva_Green:1",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "She started her career in theatre before making her film debut in 2003 in Bernardo Bertolucci 's film The Dreamers ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.014643331058323383,
+                "doc_id": "David_Packouz:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "David Mordechai Packouz -LRB- -LSB- p\u00e6kha\u028as -RSB- born February 16 , 1982 -RRB- is an American former arms dealer , musician , inventor and entrepreneur ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: Vedam stars only Canadian film actors and actresses.",
+            "support_key": "near_miss:SUPPORTS:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0068161869421601295,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.010196433402597904,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.04764324054121971,
+                "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: Vedam stars only Canadian film actors and actresses.",
+            "support_key": "near_miss:SUPPORTS:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0073813628405332565,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.009785737842321396,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.045394353568553925,
+                "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: Vedam stars only Canadian film actors and actresses.",
+            "support_key": "near_miss:SUPPORTS:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.22437913715839386,
+          "csrm": 0.47104166666666675,
+          "naive_orbit_average": 0.5625,
+          "single_set_sure_style": 0.4625000000000001
+        },
+        "split": "fever_near_miss_dilution"
+      },
+      {
+        "answer": "REFUTES",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.63992840051651,
+              "doc_id": "Eric_Church:5",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "His second album , 2009 's Carolina , produced three more singles : `` Smoke a Little Smoke '' and his first top 10 hits , `` Love Your Love the Most '' and `` Hell on the Heart . ''"
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.8752967715263367,
+              "doc_id": "Smoke_a_Little_Smoke:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "`` Smoke a Little Smoke '' is a song co-written and recorded by American country music singer Eric Church ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.8752200603485107,
+              "doc_id": "Love_Your_Love_the_Most:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "`` Love Your Love the Most '' is a song co-written and recorded by American country music artist Eric Church ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Eric Church is unable to write songs.",
+          "support_key": "Eric_Church:5|Love_Your_Love_the_Most:0|Smoke_a_Little_Smoke:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:4d5dc8f109518520f3c4f2fe6609e414:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.2873004376888275,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.3998264968395233,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.11861023306846619,
+                "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: Eric Church is unable to write songs.",
+            "support_key": "near_miss:SUPPORTS:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.07164214551448822,
+                "doc_id": "Stephen_Colbert:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Stephen Tyrone Colbert -LRB- -LSB- ko\u028al\u02c8b\u025b\u0259r -RSB- , n\u00e9 : -LSB- \u02c8ko\u028alb\u0259rt -RSB- born May 13 , 1964 -RRB- is an American comedian , television host , and author ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.05075138062238693,
+                "doc_id": "Eva_Green:1",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "She started her career in theatre before making her film debut in 2003 in Bernardo Bertolucci 's film The Dreamers ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.08792679011821747,
+                "doc_id": "David_Packouz:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "David Mordechai Packouz -LRB- -LSB- p\u00e6kha\u028as -RSB- born February 16 , 1982 -RRB- is an American former arms dealer , musician , inventor and entrepreneur ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: Eric Church is unable to write songs.",
+            "support_key": "near_miss:SUPPORTS:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.2998003363609314,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.27551543712615967,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.06871368736028671,
+                "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: Eric Church is unable to write songs.",
+            "support_key": "near_miss:SUPPORTS:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.2593991160392761,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.27444055676460266,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.06335654854774475,
+                "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: Eric Church is unable to write songs.",
+            "support_key": "near_miss:SUPPORTS:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.8752967715263367,
+          "csrm": 0.47104166666666675,
+          "naive_orbit_average": 0.5625,
+          "single_set_sure_style": 0.4625000000000001
+        },
+        "split": "fever_near_miss_dilution"
+      }
+    ],
+    "csrm_true_accept": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.6796941161155701,
+              "doc_id": "Wales:16",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "At the dawn of the Industrial Revolution , development of the mining and metallurgical industries transformed the country from an agricultural society into an industrial nation ; the South Wales Coalfield 's exploitation caused a rapid expansion of Wales ' population ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.42686694860458374,
+              "doc_id": "Mining_in_Wales:4",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Wales was famous for its coal mining , in the Rhondda Valley , the South Wales Valleys and throughout the South Wales coalfield and by 1913 Barry had become the largest coal exporting port in the world , with Cardiff as second , as coal was transported down by rail ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.1939265877008438,
+              "doc_id": "Mining_in_Wales:5",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Northeast Wales also had its own coalfield and Tower Colliery -LRB- closed January 2008 -RRB- near Hirwaun is regarded by many as the oldest open coal mine and one of the largest in the world ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Wales has a large region rich in coal deposits.",
+          "support_key": "Mining_in_Wales:4|Mining_in_Wales:5|Wales:16"
+        },
+        "label_answerable": true,
+        "orbit_id": "fever:b9144b8ad4737b2b369fc117e1d73f09:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.6374260187149048,
+                "doc_id": "Wales:16",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "At the dawn of the Industrial Revolution , development of the mining and metallurgical industries transformed the country from an agricultural society into an industrial nation ; the South Wales Coalfield 's exploitation caused a rapid expansion of Wales ' population ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.6020767688751221,
+                "doc_id": "Mining_in_Wales:4",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Wales was famous for its coal mining , in the Rhondda Valley , the South Wales Valleys and throughout the South Wales coalfield and by 1913 Barry had become the largest coal exporting port in the world , with Cardiff as second , as coal was transported down by rail ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.31983739137649536,
+                "doc_id": "Mining_in_Wales:5",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Northeast Wales also had its own coalfield and Tower Colliery -LRB- closed January 2008 -RRB- near Hirwaun is regarded by many as the oldest open coal mine and one of the largest in the world ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Wales has a large region rich in coal deposits.",
+            "support_key": "Mining_in_Wales:4|Mining_in_Wales:5|Wales:16"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.4186946749687195,
+                "doc_id": "Mining_in_Wales:5",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Northeast Wales also had its own coalfield and Tower Colliery -LRB- closed January 2008 -RRB- near Hirwaun is regarded by many as the oldest open coal mine and one of the largest in the world ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.5040174722671509,
+                "doc_id": "Mining_in_Wales:4",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Wales was famous for its coal mining , in the Rhondda Valley , the South Wales Valleys and throughout the South Wales coalfield and by 1913 Barry had become the largest coal exporting port in the world , with Cardiff as second , as coal was transported down by rail ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.5826524496078491,
+                "doc_id": "Wales:16",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "At the dawn of the Industrial Revolution , development of the mining and metallurgical industries transformed the country from an agricultural society into an industrial nation ; the South Wales Coalfield 's exploitation caused a rapid expansion of Wales ' population ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Wales has a large region rich in coal deposits.",
+            "support_key": "Mining_in_Wales:4|Mining_in_Wales:5|Wales:16"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.6796941161155701,
+          "csrm": 0.758,
+          "naive_orbit_average": 0.56,
+          "single_set_sure_style": 0.56
+        },
+        "split": "fever_stable_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.12214519828557968,
+              "doc_id": "Eric_Church:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "His debut album , 2006 's Sinners Like Me , '' produced three singles on the Billboard country charts including the top 20 hits `` How ` Bout You , '' `` Two Pink Lines , '' and `` Guys Like Me '' ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.3467179536819458,
+              "doc_id": "Sinners_Like_Me:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Sinners Like Me is the debut album from country music artist Eric Church ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5459526181221008,
+              "doc_id": "Two_Pink_Lines:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "`` Two Pink Lines '' is a song co-written and recorded by American country music artist Eric Church ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Eric Church is an American singer.",
+          "support_key": "Eric_Church:2|Sinners_Like_Me:0|Two_Pink_Lines:0"
+        },
+        "label_answerable": true,
+        "orbit_id": "fever:7bd377e3aebc282b40b278ed40d991a0:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.6458755135536194,
+                "doc_id": "Eric_Church:2",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "His debut album , 2006 's Sinners Like Me , '' produced three singles on the Billboard country charts including the top 20 hits `` How ` Bout You , '' `` Two Pink Lines , '' and `` Guys Like Me '' ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.8522260189056396,
+                "doc_id": "Sinners_Like_Me:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Sinners Like Me is the debut album from country music artist Eric Church ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.895763099193573,
+                "doc_id": "Two_Pink_Lines:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "`` Two Pink Lines '' is a song co-written and recorded by American country music artist Eric Church ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Eric Church is an American singer.",
+            "support_key": "Eric_Church:2|Sinners_Like_Me:0|Two_Pink_Lines:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.8335394263267517,
+                "doc_id": "Two_Pink_Lines:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "`` Two Pink Lines '' is a song co-written and recorded by American country music artist Eric Church ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.814214825630188,
+                "doc_id": "Sinners_Like_Me:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Sinners Like Me is the debut album from country music artist Eric Church ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.5403127670288086,
+                "doc_id": "Eric_Church:2",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "His debut album , 2006 's Sinners Like Me , '' produced three singles on the Billboard country charts including the top 20 hits `` How ` Bout You , '' `` Two Pink Lines , '' and `` Guys Like Me '' ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Eric Church is an American singer.",
+            "support_key": "Eric_Church:2|Sinners_Like_Me:0|Two_Pink_Lines:0"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5459526181221008,
+          "csrm": 0.7508571428571428,
+          "naive_orbit_average": 0.56,
+          "single_set_sure_style": 0.56
+        },
+        "split": "fever_stable_evidence"
+      },
+      {
+        "answer": "REFUTES",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.14007888734340668,
+              "doc_id": "Home_for_the_Holidays_-LRB-1995_film-RRB-:5",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "The film stars Holly Hunter , Robert Downey Jr. , Anne Bancroft , Charles Durning , Dylan McDermott , Geraldine Chaplin , Steve Guttenberg , Cynthia Stevenson , Claire Danes , Austin Pendleton and David Strathairn ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.3543325662612915,
+              "doc_id": "Dylan_McDermott:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Dylan McDermott -LRB- born Mark Anthony McDermott ; October 26 , 1961 -RRB- is an American actor ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.3393113315105438,
+              "doc_id": "Holly_Hunter:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Holly Hunter -LRB- born March 20 , 1958 -RRB- is an American actress and producer ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Home for the Holidays stars no actors or actresses.",
+          "support_key": "Dylan_McDermott:0|Holly_Hunter:0|Home_for_the_Holidays_-LRB-1995_film-RRB-:5"
+        },
+        "label_answerable": true,
+        "orbit_id": "fever:3afbac0242cbb668d6e754a15f3e72ec:stable",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.38487669825553894,
+                "doc_id": "Home_for_the_Holidays_-LRB-1995_film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The film stars Holly Hunter , Robert Downey Jr. , Anne Bancroft , Charles Durning , Dylan McDermott , Geraldine Chaplin , Steve Guttenberg , Cynthia Stevenson , Claire Danes , Austin Pendleton and David Strathairn ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.4082653224468231,
+                "doc_id": "Dylan_McDermott:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Dylan McDermott -LRB- born Mark Anthony McDermott ; October 26 , 1961 -RRB- is an American actor ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.36641839146614075,
+                "doc_id": "Holly_Hunter:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Holly Hunter -LRB- born March 20 , 1958 -RRB- is an American actress and producer ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Using only the evidence, fact-check this claim: Home for the Holidays stars no actors or actresses.",
+            "support_key": "Dylan_McDermott:0|Holly_Hunter:0|Home_for_the_Holidays_-LRB-1995_film-RRB-:5"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.4605471193790436,
+                "doc_id": "Holly_Hunter:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Holly Hunter -LRB- born March 20 , 1958 -RRB- is an American actress and producer ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.5382871627807617,
+                "doc_id": "Dylan_McDermott:0",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "Dylan McDermott -LRB- born Mark Anthony McDermott ; October 26 , 1961 -RRB- is an American actor ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.2582494914531708,
+                "doc_id": "Home_for_the_Holidays_-LRB-1995_film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.9,
+                "text": "The film stars Holly Hunter , Robert Downey Jr. , Anne Bancroft , Charles Durning , Dylan McDermott , Geraldine Chaplin , Steve Guttenberg , Cynthia Stevenson , Claire Danes , Austin Pendleton and David Strathairn ."
+              }
+            ],
+            "label_answerable": true,
+            "perturbation_type": "answer_preserving",
+            "query": "Verify the claim and preserve the factual label: Home for the Holidays stars no actors or actresses.",
+            "support_key": "Dylan_McDermott:0|Holly_Hunter:0|Home_for_the_Holidays_-LRB-1995_film-RRB-:5"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5500226020812988,
+          "csrm": 0.704375,
+          "naive_orbit_average": 0.4625000000000001,
+          "single_set_sure_style": 0.4625000000000001
+        },
+        "split": "fever_stable_evidence"
+      }
+    ],
+    "naive_false_accept_csrm_reject": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.6586078405380249,
+              "doc_id": "Dreamer_-LRB-2005_film-RRB-:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Dreamer is a 2005 American sports drama film written and directed by John Gatins in his directorial debut ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.3806294798851013,
+              "doc_id": "John_Gatins:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "John Gatins -LRB- born April 16 , 1968 -RRB- is an American screenwriter , director , and actor ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.1990508735179901,
+              "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Dreamer (2005 film) was directed by an American screenwriter, director, and actor.",
+          "support_key": "Dreamer_-LRB-2005_film-RRB-:0|John_Gatins:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:e8f235cdc9269c5928f507f9603929fa:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.013749510049819946,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.014313546009361744,
+                "doc_id": "Keith_Urban_-LRB-1999_album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Keith Urban -LRB- also known as Keith Urban II -RRB- is the second studio album by Australian country music artist Keith Urban , released on 19 October 1999 by Capitol Nashville ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.14028207957744598,
+                "doc_id": "Saw_-LRB-franchise-RRB-:8",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The films collectively grossed over $ 873 million at the box office worldwide ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: Dreamer (2005 film) was directed by an American screenwriter, director, and actor.",
+            "support_key": "near_miss:REFUTES:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.10582244396209717,
+                "doc_id": "Holly_Hunter:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Holly Hunter -LRB- born March 20 , 1958 -RRB- is an American actress and producer ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.11987318098545074,
+                "doc_id": "Dylan_McDermott:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Dylan McDermott -LRB- born Mark Anthony McDermott ; October 26 , 1961 -RRB- is an American actor ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.009910445660352707,
+                "doc_id": "Home_for_the_Holidays_-LRB-1995_film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film stars Holly Hunter , Robert Downey Jr. , Anne Bancroft , Charles Durning , Dylan McDermott , Geraldine Chaplin , Steve Guttenberg , Cynthia Stevenson , Claire Danes , Austin Pendleton and David Strathairn ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: Dreamer (2005 film) was directed by an American screenwriter, director, and actor.",
+            "support_key": "near_miss:REFUTES:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.011363005265593529,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.010040451772511005,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.009079192765057087,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: Dreamer (2005 film) was directed by an American screenwriter, director, and actor.",
+            "support_key": "near_miss:REFUTES:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.010658628307282925,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.009668955579400063,
+                "doc_id": "Keith_Urban_-LRB-1999_album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Keith Urban -LRB- also known as Keith Urban II -RRB- is the second studio album by Australian country music artist Keith Urban , released on 19 October 1999 by Capitol Nashville ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.12638117372989655,
+                "doc_id": "Saw_-LRB-franchise-RRB-:8",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The films collectively grossed over $ 873 million at the box office worldwide ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: Dreamer (2005 film) was directed by an American screenwriter, director, and actor.",
+            "support_key": "near_miss:REFUTES:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.6586078405380249,
+          "csrm": 0.4103333333333334,
+          "naive_orbit_average": 0.5746666666666667,
+          "single_set_sure_style": 0.5233333333333334
+        },
+        "split": "fever_near_miss_dilution"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.9606480002403259,
+              "doc_id": "Happiness_in_Slavery:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "`` Happiness in Slavery '' is a song by American industrial rock band Nine Inch Nails from their debut extended play -LRB- EP -RRB- , Broken -LRB- 1992 -RRB- ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.031034065410494804,
+              "doc_id": "Nine_Inch_Nails:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Nine Inch Nails -LRB- abbreviated as NIN and stylized as NI\u0418 -RRB- is an American industrial rock band founded in 1988 by Trent Reznor in Cleveland , Ohio ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.14419560134410858,
+              "doc_id": "Come_Get_It_Bae:0",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: An American band is responsible for the song Happiness in Slavery.",
+          "support_key": "Happiness_in_Slavery:0|Nine_Inch_Nails:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:3701d7097c281592457c545c8b475704:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0096148531883955,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0507977157831192,
+                "doc_id": "Keith_Urban_-LRB-1999_album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Keith Urban -LRB- also known as Keith Urban II -RRB- is the second studio album by Australian country music artist Keith Urban , released on 19 October 1999 by Capitol Nashville ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.1640627086162567,
+                "doc_id": "Saw_-LRB-franchise-RRB-:8",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The films collectively grossed over $ 873 million at the box office worldwide ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: An American band is responsible for the song Happiness in Slavery.",
+            "support_key": "near_miss:REFUTES:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.3045685589313507,
+                "doc_id": "Holly_Hunter:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Holly Hunter -LRB- born March 20 , 1958 -RRB- is an American actress and producer ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.27669304609298706,
+                "doc_id": "Dylan_McDermott:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Dylan McDermott -LRB- born Mark Anthony McDermott ; October 26 , 1961 -RRB- is an American actor ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.033159904181957245,
+                "doc_id": "Home_for_the_Holidays_-LRB-1995_film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film stars Holly Hunter , Robert Downey Jr. , Anne Bancroft , Charles Durning , Dylan McDermott , Geraldine Chaplin , Steve Guttenberg , Cynthia Stevenson , Claire Danes , Austin Pendleton and David Strathairn ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: An American band is responsible for the song Happiness in Slavery.",
+            "support_key": "near_miss:REFUTES:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.08608203381299973,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.06510177999734879,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.00488688237965107,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: An American band is responsible for the song Happiness in Slavery.",
+            "support_key": "near_miss:REFUTES:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.005394942592829466,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0387704074382782,
+                "doc_id": "Keith_Urban_-LRB-1999_album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Keith Urban -LRB- also known as Keith Urban II -RRB- is the second studio album by Australian country music artist Keith Urban , released on 19 October 1999 by Capitol Nashville ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.10861660540103912,
+                "doc_id": "Saw_-LRB-franchise-RRB-:8",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The films collectively grossed over $ 873 million at the box office worldwide ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: An American band is responsible for the song Happiness in Slavery.",
+            "support_key": "near_miss:REFUTES:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.9606480002403259,
+          "csrm": 0.4103333333333334,
+          "naive_orbit_average": 0.5746666666666667,
+          "single_set_sure_style": 0.5233333333333334
+        },
+        "split": "fever_near_miss_dilution"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5342370271682739,
+              "doc_id": "Stephen_Colbert:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Stephen Tyrone Colbert -LRB- -LSB- ko\u028al\u02c8b\u025b\u0259r -RSB- , n\u00e9 : -LSB- \u02c8ko\u028alb\u0259rt -RSB- born May 13 , 1964 -RRB- is an American comedian , television host , and author ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.08895254880189896,
+              "doc_id": "Come_Get_It_Bae:0",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.19526997208595276,
+              "doc_id": "David_Packouz:0",
+              "missing": 0.75,
+              "support": 0.15,
+              "text": "David Mordechai Packouz -LRB- -LSB- p\u00e6kha\u028as -RSB- born February 16 , 1982 -RRB- is an American former arms dealer , musician , inventor and entrepreneur ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Stephen Colbert is an American.",
+          "support_key": "Stephen_Colbert:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:8fabe2eb5111f4588d1f81c9ebdb0d73:near_miss_dilution",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.06431987881660461,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.05660487711429596,
+                "doc_id": "Keith_Urban_-LRB-1999_album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Keith Urban -LRB- also known as Keith Urban II -RRB- is the second studio album by Australian country music artist Keith Urban , released on 19 October 1999 by Capitol Nashville ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.2093563675880432,
+                "doc_id": "Saw_-LRB-franchise-RRB-:8",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The films collectively grossed over $ 873 million at the box office worldwide ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 0: Stephen Colbert is an American.",
+            "support_key": "near_miss:REFUTES:0"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.22349262237548828,
+                "doc_id": "Holly_Hunter:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Holly Hunter -LRB- born March 20 , 1958 -RRB- is an American actress and producer ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.1681685745716095,
+                "doc_id": "Dylan_McDermott:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Dylan McDermott -LRB- born Mark Anthony McDermott ; October 26 , 1961 -RRB- is an American actor ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.007528841029852629,
+                "doc_id": "Home_for_the_Holidays_-LRB-1995_film-RRB-:5",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The film stars Holly Hunter , Robert Downey Jr. , Anne Bancroft , Charles Durning , Dylan McDermott , Geraldine Chaplin , Steve Guttenberg , Cynthia Stevenson , Claire Danes , Austin Pendleton and David Strathairn ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 1: Stephen Colbert is an American.",
+            "support_key": "near_miss:REFUTES:1"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.01769665814936161,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.05691777914762497,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.03163624554872513,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 2: Stephen Colbert is an American.",
+            "support_key": "near_miss:REFUTES:2"
+          },
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.026104193180799484,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.035897161811590195,
+                "doc_id": "Keith_Urban_-LRB-1999_album-RRB-:0",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "Keith Urban -LRB- also known as Keith Urban II -RRB- is the second studio album by Australian country music artist Keith Urban , released on 19 October 1999 by Capitol Nashville ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.10488776862621307,
+                "doc_id": "Saw_-LRB-franchise-RRB-:8",
+                "missing": 0.05,
+                "support": 0.95,
+                "text": "The films collectively grossed over $ 873 million at the box office worldwide ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "near_miss_high_sufficiency",
+            "query": "Fact-check this claim with highly plausible but potentially mismatched evidence set 3: Stephen Colbert is an American.",
+            "support_key": "near_miss:REFUTES:3"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5342370271682739,
+          "csrm": 0.41336742424242434,
+          "naive_orbit_average": 0.5448333333333333,
+          "single_set_sure_style": 0.37416666666666676
+        },
+        "split": "fever_near_miss_dilution"
+      }
+    ],
+    "single_set_false_accept_csrm_reject": [
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.12214519828557968,
+              "doc_id": "Eric_Church:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "His debut album , 2006 's Sinners Like Me , '' produced three singles on the Billboard country charts including the top 20 hits `` How ` Bout You , '' `` Two Pink Lines , '' and `` Guys Like Me '' ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.3467179536819458,
+              "doc_id": "Sinners_Like_Me:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Sinners Like Me is the debut album from country music artist Eric Church ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5459526181221008,
+              "doc_id": "Two_Pink_Lines:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "`` Two Pink Lines '' is a song co-written and recorded by American country music artist Eric Church ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Eric Church is an American singer.",
+          "support_key": "Eric_Church:2|Sinners_Like_Me:0|Two_Pink_Lines:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:7bd377e3aebc282b40b278ed40d991a0:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.0006229776190593839,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.049532316625118256,
+                "doc_id": "Keith_Urban_-LRB-1999_album-RRB-:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Keith Urban -LRB- also known as Keith Urban II -RRB- is the second studio album by Australian country music artist Keith Urban , released on 19 October 1999 by Capitol Nashville ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.045959632843732834,
+                "doc_id": "Saw_-LRB-franchise-RRB-:8",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The films collectively grossed over $ 873 million at the box office worldwide ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Eric Church is an American singer.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5459526181221008,
+          "csrm": 0.18999999999999997,
+          "naive_orbit_average": 0.28,
+          "single_set_sure_style": 0.56
+        },
+        "split": "fever_conflicting_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.6796941161155701,
+              "doc_id": "Wales:16",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "At the dawn of the Industrial Revolution , development of the mining and metallurgical industries transformed the country from an agricultural society into an industrial nation ; the South Wales Coalfield 's exploitation caused a rapid expansion of Wales ' population ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.42686694860458374,
+              "doc_id": "Mining_in_Wales:4",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Wales was famous for its coal mining , in the Rhondda Valley , the South Wales Valleys and throughout the South Wales coalfield and by 1913 Barry had become the largest coal exporting port in the world , with Cardiff as second , as coal was transported down by rail ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.1939265877008438,
+              "doc_id": "Mining_in_Wales:5",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Northeast Wales also had its own coalfield and Tower Colliery -LRB- closed January 2008 -RRB- near Hirwaun is regarded by many as the oldest open coal mine and one of the largest in the world ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Wales has a large region rich in coal deposits.",
+          "support_key": "Mining_in_Wales:4|Mining_in_Wales:5|Wales:16"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:b9144b8ad4737b2b369fc117e1d73f09:conflict",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.8,
+                "corm_score": 0.009352452121675014,
+                "doc_id": "Columbia_River:21",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "To aid ship and barge navigation , locks have been built along the lower Columbia and its tributaries , and dredging has opened , maintained , and enlarged shipping channels ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.007306200917810202,
+                "doc_id": "Keith_Urban_-LRB-1999_album-RRB-:0",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "Keith Urban -LRB- also known as Keith Urban II -RRB- is the second studio album by Australian country music artist Keith Urban , released on 19 October 1999 by Capitol Nashville ."
+              },
+              {
+                "conflict": 0.8,
+                "corm_score": 0.002892189659178257,
+                "doc_id": "Saw_-LRB-franchise-RRB-:8",
+                "missing": 0.4,
+                "support": 0.2,
+                "text": "The films collectively grossed over $ 873 million at the box office worldwide ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "opposite_label_evidence",
+            "query": "Assuming the evidence may indicate REFUTES, fact-check this claim: Wales has a large region rich in coal deposits.",
+            "support_key": "opposite:REFUTES"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.6796941161155701,
+          "csrm": 0.18999999999999997,
+          "naive_orbit_average": 0.28,
+          "single_set_sure_style": 0.56
+        },
+        "split": "fever_conflicting_evidence"
+      },
+      {
+        "answer": "SUPPORTS",
+        "clean": {
+          "docs": [
+            {
+              "conflict": 0.0,
+              "corm_score": 0.12214519828557968,
+              "doc_id": "Eric_Church:2",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "His debut album , 2006 's Sinners Like Me , '' produced three singles on the Billboard country charts including the top 20 hits `` How ` Bout You , '' `` Two Pink Lines , '' and `` Guys Like Me '' ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.3467179536819458,
+              "doc_id": "Sinners_Like_Me:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "Sinners Like Me is the debut album from country music artist Eric Church ."
+            },
+            {
+              "conflict": 0.0,
+              "corm_score": 0.5459526181221008,
+              "doc_id": "Two_Pink_Lines:0",
+              "missing": 0.05,
+              "support": 0.9,
+              "text": "`` Two Pink Lines '' is a song co-written and recorded by American country music artist Eric Church ."
+            }
+          ],
+          "label_answerable": true,
+          "perturbation_type": "clean",
+          "query": "Determine whether this claim is supported or refuted: Eric Church is an American singer.",
+          "support_key": "Eric_Church:2|Sinners_Like_Me:0|Two_Pink_Lines:0"
+        },
+        "label_answerable": false,
+        "orbit_id": "fever:7bd377e3aebc282b40b278ed40d991a0:distractor",
+        "perturbations": [
+          {
+            "docs": [
+              {
+                "conflict": 0.0,
+                "corm_score": 0.09887276589870453,
+                "doc_id": "Girl_-LRB-Pharrell_Williams_album-RRB-:10",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "Follow-up singles `` Marilyn Monroe '' , `` Come Get It Bae '' and `` Gust of Wind '' have achieved moderate success ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.06526681035757065,
+                "doc_id": "Come_Get_It_Bae:0",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "`` Come Get It Bae '' is a song written , produced , and performed by American singer and songwriter Pharrell Williams from his second studio album Girl -LRB- 2014 -RRB- ."
+              },
+              {
+                "conflict": 0.0,
+                "corm_score": 0.07425515353679657,
+                "doc_id": "A_River_Runs_Through_It_-LRB-film-RRB-:5",
+                "missing": 0.75,
+                "support": 0.15,
+                "text": "The film won an Academy Award for Best Cinematography in 1993 and was nominated for two other Oscars , for Best Music , Original Score and Best Adapted Screenplay ."
+              }
+            ],
+            "label_answerable": false,
+            "perturbation_type": "distractor_only",
+            "query": "Fact-check the claim using only background evidence if direct evidence is absent: Eric Church is an American singer.",
+            "support_key": "distractor_only"
+          }
+        ],
+        "scores": {
+          "corm_max_clean": 0.5459526181221008,
+          "csrm": 0.20666666666666664,
+          "naive_orbit_average": 0.28,
+          "single_set_sure_style": 0.56
+        },
+        "split": "fever_distractor_only"
+      }
+    ]
+  },
+  "input": "results\\fever_orbits_nearmiss_corm_1200_v3.jsonl",
+  "thresholds_at_30_coverage": {
+    "corm_max_clean": 0.6621848344802856,
+    "csrm": 0.4236666666666667,
+    "naive_orbit_average": 0.38166666666666665,
+    "single_set_sure_style": 0.3891666666666667
+  }
+}

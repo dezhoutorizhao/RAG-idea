@@ -1,0 +1,477 @@
+{
+  "aggregate": {
+    "corm_max_clean": {
+      "aurc": {
+        "max": 0.8229166666666671,
+        "mean": 0.822916666666667,
+        "min": 0.822916666666667,
+        "stdev": 6.409875621278546e-17
+      },
+      "auroc": {
+        "max": 0.5,
+        "mean": 0.5,
+        "min": 0.5,
+        "stdev": 0.0
+      },
+      "calibrated_accuracy": {
+        "max": 0.16666666666666666,
+        "mean": 0.05555555555555555,
+        "min": 0.0,
+        "stdev": 0.09622504486493762
+      },
+      "calibrated_coverage": {
+        "max": 0.025,
+        "mean": 0.008333333333333333,
+        "min": 0.0,
+        "stdev": 0.014433756729740645
+      },
+      "calibrated_risk": {
+        "max": 0.8333333333333334,
+        "mean": 0.2777777777777778,
+        "min": 0.0,
+        "stdev": 0.4811252243246882
+      },
+      "formal_risk_guarantee_supported": false,
+      "risk_at_30": {
+        "max": 0.8333333333333334,
+        "mean": 0.8333333333333334,
+        "min": 0.8333333333333334,
+        "stdev": 0.0
+      },
+      "risk_excess_over_target": {
+        "max": 0.6333333333333333,
+        "mean": 0.07777777777777777,
+        "min": -0.2,
+        "stdev": 0.4811252243246881
+      },
+      "risk_target": 0.2,
+      "target_met_count": 2,
+      "target_met_rate": 0.6666666666666666,
+      "target_miss_count": 1,
+      "zero_coverage_count": 2
+    },
+    "csrm_fixed_weights": {
+      "aurc": {
+        "max": 0.5294170353079563,
+        "mean": 0.5292259361431839,
+        "min": 0.5289156484671171,
+        "stdev": 0.0002711118163417002
+      },
+      "auroc": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0,
+        "stdev": 0.0
+      },
+      "calibrated_accuracy": {
+        "max": 0.7142857142857143,
+        "mean": 0.702179176755448,
+        "min": 0.6779661016949152,
+        "stdev": 0.02096913810616077
+      },
+      "calibrated_coverage": {
+        "max": 0.24583333333333332,
+        "mean": 0.23750000000000002,
+        "min": 0.23333333333333334,
+        "stdev": 0.007216878364870312
+      },
+      "calibrated_risk": {
+        "max": 0.3220338983050848,
+        "mean": 0.29782082324455206,
+        "min": 0.2857142857142857,
+        "stdev": 0.02096913810616077
+      },
+      "formal_risk_guarantee_supported": false,
+      "risk_at_30": {
+        "max": 0.4444444444444444,
+        "mean": 0.4444444444444444,
+        "min": 0.4444444444444444,
+        "stdev": 0.0
+      },
+      "risk_excess_over_target": {
+        "max": 0.12203389830508476,
+        "mean": 0.09782082324455205,
+        "min": 0.08571428571428569,
+        "stdev": 0.02096913810616077
+      },
+      "risk_target": 0.2,
+      "target_met_count": 0,
+      "target_met_rate": 0.0,
+      "target_miss_count": 3,
+      "zero_coverage_count": 0
+    },
+    "csrm_logreg_calibrated": {
+      "aurc": {
+        "max": 0.4907461584394202,
+        "mean": 0.4837747051150021,
+        "min": 0.47949330082093,
+        "stdev": 0.0060896612372736015
+      },
+      "auroc": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0,
+        "stdev": 0.0
+      },
+      "calibrated_accuracy": {
+        "max": 0.851063829787234,
+        "mean": 0.7966981788031685,
+        "min": 0.7547169811320755,
+        "stdev": 0.0493529110016917
+      },
+      "calibrated_coverage": {
+        "max": 0.22083333333333333,
+        "mean": 0.20972222222222223,
+        "min": 0.19583333333333333,
+        "stdev": 0.012729376930432886
+      },
+      "calibrated_risk": {
+        "max": 0.24528301886792447,
+        "mean": 0.20330182119683146,
+        "min": 0.14893617021276595,
+        "stdev": 0.0493529110016917
+      },
+      "formal_risk_guarantee_supported": false,
+      "risk_at_30": {
+        "max": 0.4444444444444444,
+        "mean": 0.4444444444444444,
+        "min": 0.4444444444444444,
+        "stdev": 0.0
+      },
+      "risk_excess_over_target": {
+        "max": 0.04528301886792446,
+        "mean": 0.0033018211968314413,
+        "min": -0.05106382978723406,
+        "stdev": 0.0493529110016917
+      },
+      "risk_target": 0.2,
+      "target_met_count": 1,
+      "target_met_rate": 0.3333333333333333,
+      "target_miss_count": 2,
+      "zero_coverage_count": 0
+    },
+    "naive_orbit_average": {
+      "aurc": {
+        "max": 0.6861111111111111,
+        "mean": 0.6861111111111112,
+        "min": 0.6861111111111111,
+        "stdev": 0.0
+      },
+      "auroc": {
+        "max": 0.8,
+        "mean": 0.8000000000000002,
+        "min": 0.8,
+        "stdev": 0.0
+      },
+      "calibrated_accuracy": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "stdev": 0.0
+      },
+      "calibrated_coverage": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "stdev": 0.0
+      },
+      "calibrated_risk": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "stdev": 0.0
+      },
+      "formal_risk_guarantee_supported": false,
+      "risk_at_30": {
+        "max": 0.5555555555555556,
+        "mean": 0.5555555555555556,
+        "min": 0.5555555555555556,
+        "stdev": 0.0
+      },
+      "risk_excess_over_target": {
+        "max": -0.2,
+        "mean": -0.20000000000000004,
+        "min": -0.2,
+        "stdev": 0.0
+      },
+      "risk_target": 0.2,
+      "target_met_count": 3,
+      "target_met_rate": 1.0,
+      "target_miss_count": 0,
+      "zero_coverage_count": 3
+    },
+    "single_set_sure_style": {
+      "aurc": {
+        "max": 0.4166666666666667,
+        "mean": 0.4166666666666667,
+        "min": 0.4166666666666667,
+        "stdev": 0.0
+      },
+      "auroc": {
+        "max": 0.5,
+        "mean": 0.5,
+        "min": 0.5,
+        "stdev": 0.0
+      },
+      "calibrated_accuracy": {
+        "max": 0.16666666666666666,
+        "mean": 0.16666666666666666,
+        "min": 0.16666666666666666,
+        "stdev": 0.0
+      },
+      "calibrated_coverage": {
+        "max": 1.0,
+        "mean": 1.0,
+        "min": 1.0,
+        "stdev": 0.0
+      },
+      "calibrated_risk": {
+        "max": 0.8333333333333334,
+        "mean": 0.8333333333333334,
+        "min": 0.8333333333333334,
+        "stdev": 0.0
+      },
+      "formal_risk_guarantee_supported": false,
+      "risk_at_30": {
+        "max": 0.8333333333333334,
+        "mean": 0.8333333333333334,
+        "min": 0.8333333333333334,
+        "stdev": 0.0
+      },
+      "risk_excess_over_target": {
+        "max": 0.6333333333333333,
+        "mean": 0.6333333333333333,
+        "min": 0.6333333333333333,
+        "stdev": 0.0
+      },
+      "risk_target": 0.2,
+      "target_met_count": 0,
+      "target_met_rate": 0.0,
+      "target_miss_count": 3,
+      "zero_coverage_count": 0
+    }
+  },
+  "cal_frac": 0.2,
+  "input": "results\\fever_orbits_nearmiss_corm_1200_v2.jsonl",
+  "methods": [
+    "corm_max_clean",
+    "single_set_sure_style",
+    "naive_orbit_average",
+    "csrm_fixed_weights",
+    "csrm_logreg_calibrated"
+  ],
+  "n_seeds": 3,
+  "per_seed": [
+    {
+      "methods": {
+        "corm_max_clean": {
+          "aurc": 0.822916666666667,
+          "auroc": 0.5,
+          "calibrated_accuracy": 0.0,
+          "calibrated_coverage": 0.0,
+          "calibrated_risk": 0.0,
+          "calibrated_threshold": 0.8886964321136475,
+          "risk_at_30": 0.8333333333333334,
+          "risk_excess_over_target": -0.2,
+          "target_met": true
+        },
+        "csrm_fixed_weights": {
+          "aurc": 0.5289156484671171,
+          "auroc": 1.0,
+          "calibrated_accuracy": 0.7142857142857143,
+          "calibrated_coverage": 0.23333333333333334,
+          "calibrated_risk": 0.2857142857142857,
+          "calibrated_threshold": 0.5935,
+          "risk_at_30": 0.4444444444444444,
+          "risk_excess_over_target": 0.08571428571428569,
+          "target_met": false
+        },
+        "csrm_logreg_calibrated": {
+          "aurc": 0.481084656084656,
+          "auroc": 1.0,
+          "calibrated_accuracy": 0.7843137254901961,
+          "calibrated_coverage": 0.2125,
+          "calibrated_risk": 0.21568627450980393,
+          "calibrated_threshold": 0.021039989336356302,
+          "risk_at_30": 0.4444444444444444,
+          "risk_excess_over_target": 0.01568627450980392,
+          "target_met": false
+        },
+        "naive_orbit_average": {
+          "aurc": 0.6861111111111111,
+          "auroc": 0.8,
+          "calibrated_accuracy": 0.0,
+          "calibrated_coverage": 0.0,
+          "calibrated_risk": 0.0,
+          "calibrated_threshold": 1.0,
+          "risk_at_30": 0.5555555555555556,
+          "risk_excess_over_target": -0.2,
+          "target_met": true
+        },
+        "single_set_sure_style": {
+          "aurc": 0.4166666666666667,
+          "auroc": 0.5,
+          "calibrated_accuracy": 0.16666666666666666,
+          "calibrated_coverage": 1.0,
+          "calibrated_risk": 0.8333333333333334,
+          "calibrated_threshold": 0.67,
+          "risk_at_30": 0.8333333333333334,
+          "risk_excess_over_target": 0.6333333333333333,
+          "target_met": false
+        }
+      },
+      "seed": 17,
+      "split_sizes": {
+        "calibration": 240,
+        "calibration_groups": 40,
+        "test": 240,
+        "test_groups": 40,
+        "train": 720,
+        "train_groups": 120
+      }
+    },
+    {
+      "methods": {
+        "corm_max_clean": {
+          "aurc": 0.822916666666667,
+          "auroc": 0.5,
+          "calibrated_accuracy": 0.16666666666666666,
+          "calibrated_coverage": 0.025,
+          "calibrated_risk": 0.8333333333333334,
+          "calibrated_threshold": 0.8889015316963196,
+          "risk_at_30": 0.8333333333333334,
+          "risk_excess_over_target": 0.6333333333333333,
+          "target_met": false
+        },
+        "csrm_fixed_weights": {
+          "aurc": 0.5293451246544784,
+          "auroc": 1.0,
+          "calibrated_accuracy": 0.7142857142857143,
+          "calibrated_coverage": 0.23333333333333334,
+          "calibrated_risk": 0.2857142857142857,
+          "calibrated_threshold": 0.5935,
+          "risk_at_30": 0.4444444444444444,
+          "risk_excess_over_target": 0.08571428571428569,
+          "target_met": false
+        },
+        "csrm_logreg_calibrated": {
+          "aurc": 0.47949330082093,
+          "auroc": 1.0,
+          "calibrated_accuracy": 0.851063829787234,
+          "calibrated_coverage": 0.19583333333333333,
+          "calibrated_risk": 0.14893617021276595,
+          "calibrated_threshold": 0.02138838232568375,
+          "risk_at_30": 0.4444444444444444,
+          "risk_excess_over_target": -0.05106382978723406,
+          "target_met": true
+        },
+        "naive_orbit_average": {
+          "aurc": 0.6861111111111111,
+          "auroc": 0.8,
+          "calibrated_accuracy": 0.0,
+          "calibrated_coverage": 0.0,
+          "calibrated_risk": 0.0,
+          "calibrated_threshold": 1.0,
+          "risk_at_30": 0.5555555555555556,
+          "risk_excess_over_target": -0.2,
+          "target_met": true
+        },
+        "single_set_sure_style": {
+          "aurc": 0.4166666666666667,
+          "auroc": 0.5,
+          "calibrated_accuracy": 0.16666666666666666,
+          "calibrated_coverage": 1.0,
+          "calibrated_risk": 0.8333333333333334,
+          "calibrated_threshold": 0.67,
+          "risk_at_30": 0.8333333333333334,
+          "risk_excess_over_target": 0.6333333333333333,
+          "target_met": false
+        }
+      },
+      "seed": 31,
+      "split_sizes": {
+        "calibration": 240,
+        "calibration_groups": 40,
+        "test": 240,
+        "test_groups": 40,
+        "train": 720,
+        "train_groups": 120
+      }
+    },
+    {
+      "methods": {
+        "corm_max_clean": {
+          "aurc": 0.8229166666666671,
+          "auroc": 0.5,
+          "calibrated_accuracy": 0.0,
+          "calibrated_coverage": 0.0,
+          "calibrated_risk": 0.0,
+          "calibrated_threshold": 0.9284123182296753,
+          "risk_at_30": 0.8333333333333334,
+          "risk_excess_over_target": -0.2,
+          "target_met": true
+        },
+        "csrm_fixed_weights": {
+          "aurc": 0.5294170353079563,
+          "auroc": 1.0,
+          "calibrated_accuracy": 0.6779661016949152,
+          "calibrated_coverage": 0.24583333333333332,
+          "calibrated_risk": 0.3220338983050848,
+          "calibrated_threshold": 0.5935,
+          "risk_at_30": 0.4444444444444444,
+          "risk_excess_over_target": 0.12203389830508476,
+          "target_met": false
+        },
+        "csrm_logreg_calibrated": {
+          "aurc": 0.4907461584394202,
+          "auroc": 1.0,
+          "calibrated_accuracy": 0.7547169811320755,
+          "calibrated_coverage": 0.22083333333333333,
+          "calibrated_risk": 0.24528301886792447,
+          "calibrated_threshold": 0.023015901395573385,
+          "risk_at_30": 0.4444444444444444,
+          "risk_excess_over_target": 0.04528301886792446,
+          "target_met": false
+        },
+        "naive_orbit_average": {
+          "aurc": 0.6861111111111111,
+          "auroc": 0.8,
+          "calibrated_accuracy": 0.0,
+          "calibrated_coverage": 0.0,
+          "calibrated_risk": 0.0,
+          "calibrated_threshold": 1.0,
+          "risk_at_30": 0.5555555555555556,
+          "risk_excess_over_target": -0.2,
+          "target_met": true
+        },
+        "single_set_sure_style": {
+          "aurc": 0.4166666666666667,
+          "auroc": 0.5,
+          "calibrated_accuracy": 0.16666666666666666,
+          "calibrated_coverage": 1.0,
+          "calibrated_risk": 0.8333333333333334,
+          "calibrated_threshold": 0.67,
+          "risk_at_30": 0.8333333333333334,
+          "risk_excess_over_target": 0.6333333333333333,
+          "target_met": false
+        }
+      },
+      "seed": 47,
+      "split_sizes": {
+        "calibration": 240,
+        "calibration_groups": 40,
+        "test": 240,
+        "test_groups": 40,
+        "train": 720,
+        "train_groups": 120
+      }
+    }
+  ],
+  "risk_target": 0.2,
+  "seeds": [
+    17,
+    31,
+    47
+  ],
+  "train_frac": 0.6
+}

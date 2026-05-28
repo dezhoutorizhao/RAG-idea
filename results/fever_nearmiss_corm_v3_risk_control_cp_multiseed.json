@@ -1,0 +1,581 @@
+{
+  "aggregate": {
+    "corm_max_clean": {
+      "calibration_coverage": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "stdev": 0.0
+      },
+      "calibration_cp_upper_bound": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "stdev": null
+      },
+      "cp_feasible_count": 0,
+      "empirical_transfer_supported": false,
+      "formal_risk_guarantee_supported": false,
+      "nonzero_coverage_count": 0,
+      "risk_target": 0.2,
+      "target_met_count": 0,
+      "target_met_rate": 0.0,
+      "target_miss_count": 3,
+      "test_coverage": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "stdev": 0.0
+      },
+      "test_empirical_risk": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "stdev": null
+      }
+    },
+    "csrm_fixed_weights": {
+      "calibration_coverage": {
+        "max": 0.18333333333333332,
+        "mean": 0.18055555555555555,
+        "min": 0.175,
+        "stdev": 0.00481125224324688
+      },
+      "calibration_cp_upper_bound": {
+        "max": 0.17351682914647112,
+        "mean": 0.15627548585213696,
+        "min": 0.12179279926346866,
+        "stdev": 0.02986288257652372
+      },
+      "cp_feasible_count": 3,
+      "empirical_transfer_supported": false,
+      "formal_risk_guarantee_supported": false,
+      "nonzero_coverage_count": 3,
+      "risk_target": 0.2,
+      "target_met_count": 1,
+      "target_met_rate": 0.3333333333333333,
+      "target_miss_count": 2,
+      "test_coverage": {
+        "max": 0.24583333333333332,
+        "mean": 0.21388888888888888,
+        "min": 0.17083333333333334,
+        "stdev": 0.03871488851323986
+      },
+      "test_empirical_risk": {
+        "max": 0.3220338983050847,
+        "mean": 0.20189446715559434,
+        "min": 0.024390243902439025,
+        "stdev": 0.15689479207852286
+      }
+    },
+    "csrm_logreg_calibrated": {
+      "calibration_coverage": {
+        "max": 0.1875,
+        "mean": 0.1875,
+        "min": 0.1875,
+        "stdev": 0.0
+      },
+      "calibration_cp_upper_bound": {
+        "max": 0.19638783591615092,
+        "mean": 0.19638783591615092,
+        "min": 0.19638783591615092,
+        "stdev": 0.0
+      },
+      "cp_feasible_count": 3,
+      "empirical_transfer_supported": false,
+      "formal_risk_guarantee_supported": false,
+      "nonzero_coverage_count": 3,
+      "risk_target": 0.2,
+      "target_met_count": 1,
+      "target_met_rate": 0.3333333333333333,
+      "target_miss_count": 2,
+      "test_coverage": {
+        "max": 0.225,
+        "mean": 0.20694444444444446,
+        "min": 0.17916666666666667,
+        "stdev": 0.024414438654509648
+      },
+      "test_empirical_risk": {
+        "max": 0.25925925925925924,
+        "mean": 0.18659864396298506,
+        "min": 0.06976744186046512,
+        "stdev": 0.10217664982460793
+      }
+    },
+    "naive_orbit_average": {
+      "calibration_coverage": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "stdev": 0.0
+      },
+      "calibration_cp_upper_bound": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "stdev": null
+      },
+      "cp_feasible_count": 0,
+      "empirical_transfer_supported": false,
+      "formal_risk_guarantee_supported": false,
+      "nonzero_coverage_count": 0,
+      "risk_target": 0.2,
+      "target_met_count": 0,
+      "target_met_rate": 0.0,
+      "target_miss_count": 3,
+      "test_coverage": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "stdev": 0.0
+      },
+      "test_empirical_risk": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "stdev": null
+      }
+    },
+    "single_set_sure_style": {
+      "calibration_coverage": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "stdev": 0.0
+      },
+      "calibration_cp_upper_bound": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "stdev": null
+      },
+      "cp_feasible_count": 0,
+      "empirical_transfer_supported": false,
+      "formal_risk_guarantee_supported": false,
+      "nonzero_coverage_count": 0,
+      "risk_target": 0.2,
+      "target_met_count": 0,
+      "target_met_rate": 0.0,
+      "target_miss_count": 3,
+      "test_coverage": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0,
+        "stdev": 0.0
+      },
+      "test_empirical_risk": {
+        "max": null,
+        "mean": null,
+        "min": null,
+        "stdev": null
+      }
+    }
+  },
+  "alpha": 0.1,
+  "cal_frac": 0.2,
+  "confidence": 0.9,
+  "input": "results\\fever_orbits_nearmiss_corm_1200_v3.jsonl",
+  "interpretation": "Thresholds are selected by a one-sided Clopper-Pearson upper bound on calibration-set selective risk. Test-set target hits are empirical transfer checks, not a distribution-free guarantee under dataset shift.",
+  "methods": [
+    "corm_max_clean",
+    "single_set_sure_style",
+    "naive_orbit_average",
+    "csrm_fixed_weights",
+    "csrm_logreg_calibrated"
+  ],
+  "min_accepts": 5,
+  "n_seeds": 3,
+  "per_seed": [
+    {
+      "methods": {
+        "corm_max_clean": {
+          "calibration_selection": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "cp_feasible": false,
+            "cp_upper_bound": null,
+            "empirical_risk": null,
+            "errors": 0,
+            "risk_target": 0.2,
+            "threshold": null,
+            "total": 240
+          },
+          "test": {
+            "accepted": 0,
+            "accuracy": null,
+            "coverage": 0.0,
+            "empirical_risk": null,
+            "errors": 0,
+            "target_met": false,
+            "threshold": null,
+            "total": 240
+          }
+        },
+        "csrm_fixed_weights": {
+          "calibration_selection": {
+            "accepted": 42,
+            "coverage": 0.175,
+            "cp_feasible": true,
+            "cp_upper_bound": 0.12179279926346866,
+            "empirical_risk": 0.047619047619047616,
+            "errors": 2,
+            "risk_target": 0.2,
+            "threshold": 0.47104166666666675,
+            "total": 240
+          },
+          "test": {
+            "accepted": 41,
+            "accuracy": 0.975609756097561,
+            "coverage": 0.17083333333333334,
+            "empirical_risk": 0.024390243902439025,
+            "errors": 1,
+            "target_met": true,
+            "threshold": 0.47104166666666675,
+            "total": 240
+          }
+        },
+        "csrm_logreg_calibrated": {
+          "calibration_selection": {
+            "accepted": 45,
+            "coverage": 0.1875,
+            "cp_feasible": true,
+            "cp_upper_bound": 0.19638783591615092,
+            "empirical_risk": 0.1111111111111111,
+            "errors": 5,
+            "risk_target": 0.2,
+            "threshold": 0.09813453661830997,
+            "total": 240
+          },
+          "test": {
+            "accepted": 43,
+            "accuracy": 0.9302325581395349,
+            "coverage": 0.17916666666666667,
+            "empirical_risk": 0.06976744186046512,
+            "errors": 3,
+            "target_met": true,
+            "threshold": 0.09813453661830997,
+            "total": 240
+          }
+        },
+        "naive_orbit_average": {
+          "calibration_selection": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "cp_feasible": false,
+            "cp_upper_bound": null,
+            "empirical_risk": null,
+            "errors": 0,
+            "risk_target": 0.2,
+            "threshold": null,
+            "total": 240
+          },
+          "test": {
+            "accepted": 0,
+            "accuracy": null,
+            "coverage": 0.0,
+            "empirical_risk": null,
+            "errors": 0,
+            "target_met": false,
+            "threshold": null,
+            "total": 240
+          }
+        },
+        "single_set_sure_style": {
+          "calibration_selection": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "cp_feasible": false,
+            "cp_upper_bound": null,
+            "empirical_risk": null,
+            "errors": 0,
+            "risk_target": 0.2,
+            "threshold": null,
+            "total": 240
+          },
+          "test": {
+            "accepted": 0,
+            "accuracy": null,
+            "coverage": 0.0,
+            "empirical_risk": null,
+            "errors": 0,
+            "target_met": false,
+            "threshold": null,
+            "total": 240
+          }
+        }
+      },
+      "seed": 17,
+      "split_sizes": {
+        "calibration": 240,
+        "calibration_groups": 40,
+        "test": 240,
+        "test_groups": 40,
+        "train": 720,
+        "train_groups": 120
+      }
+    },
+    {
+      "methods": {
+        "corm_max_clean": {
+          "calibration_selection": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "cp_feasible": false,
+            "cp_upper_bound": null,
+            "empirical_risk": null,
+            "errors": 0,
+            "risk_target": 0.2,
+            "threshold": null,
+            "total": 240
+          },
+          "test": {
+            "accepted": 0,
+            "accuracy": null,
+            "coverage": 0.0,
+            "empirical_risk": null,
+            "errors": 0,
+            "target_met": false,
+            "threshold": null,
+            "total": 240
+          }
+        },
+        "csrm_fixed_weights": {
+          "calibration_selection": {
+            "accepted": 44,
+            "coverage": 0.18333333333333332,
+            "cp_feasible": true,
+            "cp_upper_bound": 0.17351682914647112,
+            "empirical_risk": 0.09090909090909091,
+            "errors": 4,
+            "risk_target": 0.2,
+            "threshold": 0.4431666666666667,
+            "total": 240
+          },
+          "test": {
+            "accepted": 54,
+            "accuracy": 0.7407407407407407,
+            "coverage": 0.225,
+            "empirical_risk": 0.25925925925925924,
+            "errors": 14,
+            "target_met": false,
+            "threshold": 0.4431666666666667,
+            "total": 240
+          }
+        },
+        "csrm_logreg_calibrated": {
+          "calibration_selection": {
+            "accepted": 45,
+            "coverage": 0.1875,
+            "cp_feasible": true,
+            "cp_upper_bound": 0.19638783591615092,
+            "empirical_risk": 0.1111111111111111,
+            "errors": 5,
+            "risk_target": 0.2,
+            "threshold": 0.011597253554076727,
+            "total": 240
+          },
+          "test": {
+            "accepted": 54,
+            "accuracy": 0.7407407407407407,
+            "coverage": 0.225,
+            "empirical_risk": 0.25925925925925924,
+            "errors": 14,
+            "target_met": false,
+            "threshold": 0.011597253554076727,
+            "total": 240
+          }
+        },
+        "naive_orbit_average": {
+          "calibration_selection": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "cp_feasible": false,
+            "cp_upper_bound": null,
+            "empirical_risk": null,
+            "errors": 0,
+            "risk_target": 0.2,
+            "threshold": null,
+            "total": 240
+          },
+          "test": {
+            "accepted": 0,
+            "accuracy": null,
+            "coverage": 0.0,
+            "empirical_risk": null,
+            "errors": 0,
+            "target_met": false,
+            "threshold": null,
+            "total": 240
+          }
+        },
+        "single_set_sure_style": {
+          "calibration_selection": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "cp_feasible": false,
+            "cp_upper_bound": null,
+            "empirical_risk": null,
+            "errors": 0,
+            "risk_target": 0.2,
+            "threshold": null,
+            "total": 240
+          },
+          "test": {
+            "accepted": 0,
+            "accuracy": null,
+            "coverage": 0.0,
+            "empirical_risk": null,
+            "errors": 0,
+            "target_met": false,
+            "threshold": null,
+            "total": 240
+          }
+        }
+      },
+      "seed": 31,
+      "split_sizes": {
+        "calibration": 240,
+        "calibration_groups": 40,
+        "test": 240,
+        "test_groups": 40,
+        "train": 720,
+        "train_groups": 120
+      }
+    },
+    {
+      "methods": {
+        "corm_max_clean": {
+          "calibration_selection": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "cp_feasible": false,
+            "cp_upper_bound": null,
+            "empirical_risk": null,
+            "errors": 0,
+            "risk_target": 0.2,
+            "threshold": null,
+            "total": 240
+          },
+          "test": {
+            "accepted": 0,
+            "accuracy": null,
+            "coverage": 0.0,
+            "empirical_risk": null,
+            "errors": 0,
+            "target_met": false,
+            "threshold": null,
+            "total": 240
+          }
+        },
+        "csrm_fixed_weights": {
+          "calibration_selection": {
+            "accepted": 44,
+            "coverage": 0.18333333333333332,
+            "cp_feasible": true,
+            "cp_upper_bound": 0.17351682914647112,
+            "empirical_risk": 0.09090909090909091,
+            "errors": 4,
+            "risk_target": 0.2,
+            "threshold": 0.4335340909090909,
+            "total": 240
+          },
+          "test": {
+            "accepted": 59,
+            "accuracy": 0.6779661016949152,
+            "coverage": 0.24583333333333332,
+            "empirical_risk": 0.3220338983050847,
+            "errors": 19,
+            "target_met": false,
+            "threshold": 0.4335340909090909,
+            "total": 240
+          }
+        },
+        "csrm_logreg_calibrated": {
+          "calibration_selection": {
+            "accepted": 45,
+            "coverage": 0.1875,
+            "cp_feasible": true,
+            "cp_upper_bound": 0.19638783591615092,
+            "empirical_risk": 0.1111111111111111,
+            "errors": 5,
+            "risk_target": 0.2,
+            "threshold": 0.011419148708100482,
+            "total": 240
+          },
+          "test": {
+            "accepted": 52,
+            "accuracy": 0.7692307692307692,
+            "coverage": 0.21666666666666667,
+            "empirical_risk": 0.23076923076923078,
+            "errors": 12,
+            "target_met": false,
+            "threshold": 0.011419148708100482,
+            "total": 240
+          }
+        },
+        "naive_orbit_average": {
+          "calibration_selection": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "cp_feasible": false,
+            "cp_upper_bound": null,
+            "empirical_risk": null,
+            "errors": 0,
+            "risk_target": 0.2,
+            "threshold": null,
+            "total": 240
+          },
+          "test": {
+            "accepted": 0,
+            "accuracy": null,
+            "coverage": 0.0,
+            "empirical_risk": null,
+            "errors": 0,
+            "target_met": false,
+            "threshold": null,
+            "total": 240
+          }
+        },
+        "single_set_sure_style": {
+          "calibration_selection": {
+            "accepted": 0,
+            "coverage": 0.0,
+            "cp_feasible": false,
+            "cp_upper_bound": null,
+            "empirical_risk": null,
+            "errors": 0,
+            "risk_target": 0.2,
+            "threshold": null,
+            "total": 240
+          },
+          "test": {
+            "accepted": 0,
+            "accuracy": null,
+            "coverage": 0.0,
+            "empirical_risk": null,
+            "errors": 0,
+            "target_met": false,
+            "threshold": null,
+            "total": 240
+          }
+        }
+      },
+      "seed": 47,
+      "split_sizes": {
+        "calibration": 240,
+        "calibration_groups": 40,
+        "test": 240,
+        "test_groups": 40,
+        "train": 720,
+        "train_groups": 120
+      }
+    }
+  ],
+  "risk_target": 0.2,
+  "seeds": [
+    17,
+    31,
+    47
+  ],
+  "train_frac": 0.6
+}

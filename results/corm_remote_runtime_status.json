@@ -1,0 +1,52 @@
+{
+  "status": "runtime_import_ready",
+  "observed_at": "2026-05-20",
+  "remote": {
+    "host": "192.168.103.101",
+    "user": "syk",
+    "remote_root": "/mnt/ntfs-disk/csrm_corm_reconstruction",
+    "runtime_root": "/dev/shm/csrm_corm_runtime",
+    "runtime_is_ephemeral": true,
+    "persistent_storage_free": "300G",
+    "root_storage_free": "2.2G"
+  },
+  "deployment": {
+    "script_pack_deployed": true,
+    "small_workspace_files_deployed": true,
+    "checkpoint_uploaded": true,
+    "checkpoint_sha256_verified": true,
+    "data_artifacts_built": false,
+    "reconstructed_eval_executed": false
+  },
+  "runtime": {
+    "bootstrap_path": "system_python38_venv_fallback",
+    "micromamba_python310_blocker": "conda-forge metadata download failed with SSL connection reset",
+    "python_version": "3.8.10",
+    "pip_version": "25.0.1",
+    "runtime_size": "9.8G",
+    "modules": {
+      "numpy": true,
+      "sklearn": true,
+      "datasets": true,
+      "huggingface_hub": true,
+      "transformers": true,
+      "tokenizers": true,
+      "torch": true,
+      "faiss": true,
+      "vllm": true
+    },
+    "torch_version": "2.4.0+cu121",
+    "torch_cuda_available": true,
+    "torch_cuda_device_count": 2,
+    "vllm_import_ok": true,
+    "vllm_version": "0.5.5",
+    "pyairports_shim_applied": true
+  },
+  "remaining_blockers": [
+    "The runtime is stored in /dev/shm and must be recreated after reboot.",
+    "Wikipedia passages, embeddings, FAISS index, perturbations, and biased_nq_test.jsonl have not been generated.",
+    "Default direct huggingface.co access timed out for Wikipedia; HF_ENDPOINT=https://hf-mirror.com with /dev/shm HuggingFace cache passed a 16-passage Contriever streaming smoke, but full data generation has not been run.",
+    "No reconstructed CoRM-RAG retrieval-generation evaluation metrics have been produced."
+  ],
+  "claim_policy": "Runtime readiness only; this is not CoRM-RAG reproduction evidence."
+}

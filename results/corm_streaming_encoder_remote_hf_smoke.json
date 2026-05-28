@@ -1,0 +1,63 @@
+{
+  "status": "passed",
+  "observed_at": "2026-05-20",
+  "remote": {
+    "host": "192.168.103.101",
+    "user": "syk",
+    "output_dir": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/wiki_encoder_smoke_hf"
+  },
+  "hf_access": {
+    "default_huggingface_co_status": "connect_timeout",
+    "endpoint": "https://hf-mirror.com",
+    "hf_home": "/dev/shm/csrm_corm_runtime/hf_cache",
+    "hf_hub_cache": "/dev/shm/csrm_corm_runtime/hf_cache/hub",
+    "hf_datasets_cache": "/dev/shm/csrm_corm_runtime/hf_cache/datasets",
+    "etag_timeout_seconds": 60,
+    "download_timeout_seconds": 180,
+    "wikipedia_stream_probe": "first row loaded from wikimedia/wikipedia 20231101.en",
+    "first_article_title": "Anarchism",
+    "first_article_text_length": 46064
+  },
+  "script": "experiments/encode_corm_wikipedia_streaming.py",
+  "input_mode": "hf_streaming_wikipedia",
+  "backend": "hf",
+  "streaming_manifest": {
+    "status": "built",
+    "output_dir": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/wiki_encoder_smoke_hf",
+    "passages_path": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/wiki_encoder_smoke_hf/wiki_passages.jsonl",
+    "embedding_shards": [
+      "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/wiki_encoder_smoke_hf/embeddings_shard_000000.npy",
+      "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/wiki_encoder_smoke_hf/embeddings_shard_000001.npy"
+    ],
+    "embedding_shard_count": 2,
+    "passages": 16,
+    "articles_seen": 1,
+    "model_name": "facebook/contriever-msmarco",
+    "backend": "hf",
+    "input_jsonl": null,
+    "device": "cuda:0",
+    "encode_batch_size": 4,
+    "passages_per_shard": 8,
+    "max_articles": null,
+    "max_passages": 16,
+    "dummy_dim": null,
+    "elapsed_seconds": 4.414
+  },
+  "faiss_manifest": {
+    "status": "built",
+    "input": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/wiki_encoder_smoke_hf",
+    "output": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/wiki_encoder_smoke_hf/wiki.faiss",
+    "embedding_files": [
+      "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/wiki_encoder_smoke_hf/embeddings_shard_000000.npy",
+      "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/wiki_encoder_smoke_hf/embeddings_shard_000001.npy"
+    ],
+    "vectors": 16,
+    "ntotal": 16,
+    "dim": 768,
+    "index_type": "ivf",
+    "nlist": 4,
+    "metric": "inner_product",
+    "normalized": true
+  },
+  "claim_policy": "Engineering smoke evidence for real HF streaming plus Contriever sharded encoding only; not full Wikipedia, original-artifact, or CoRM evaluation evidence."
+}

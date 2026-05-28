@@ -1,0 +1,104 @@
+{
+  "biased_nq_exact_builder_detected": false,
+  "blockers": [
+    "no detected producer for required runtime artifact: wiki.faiss",
+    "no detected producer for required runtime artifact: biased_nq_test.jsonl",
+    "runtime reads a FAISS index but repository source does not call faiss.write_index",
+    "encode_wikipedia.py saves embeddings but does not build the wiki.faiss file expected by run_eval.sh",
+    "Biased-NQ evaluation file is consumed but no exact builder is present in the repository",
+    "full generation evaluation requires vLLM in addition to retrieval/scoring dependencies"
+  ],
+  "encode_wikipedia_outputs_embeddings": true,
+  "encode_wikipedia_outputs_faiss": false,
+  "encode_wikipedia_outputs_passages": true,
+  "interpretation": "This audit inspects the released repository for a direct path from source scripts to the runtime artifacts required by run_eval.sh. It does not claim the artifacts cannot be rebuilt manually; it records whether the current repository scripts expose a complete, exact, automated reproduction path.",
+  "minimal_reconstruction_steps": [
+    {
+      "evidence": "src/encode_wikipedia.py writes wiki_passages.jsonl and wiki_embeddings.npy.",
+      "status": "partially_scripted",
+      "step": "build_wikipedia_passages"
+    },
+    {
+      "evidence": "run_evaluation.py reads wiki.faiss, but no faiss.write_index call is present.",
+      "status": "missing_exact_script",
+      "step": "build_faiss_index"
+    },
+    {
+      "evidence": "run_evaluation.py consumes biased_nq_test.jsonl; perturbation scripts write different files.",
+      "status": "missing_exact_script",
+      "step": "build_biased_nq_test"
+    },
+    {
+      "evidence": "run_evaluation.py imports faiss and vllm during full retrieval-generation evaluation.",
+      "status": "required",
+      "step": "install_runtime"
+    }
+  ],
+  "reconstructability_status": "blocked",
+  "repo": "D:\\\u7f1d\u5408RAG-idea\\external_repos\\CoRM-RAG",
+  "repository_calls_faiss_write_index": false,
+  "required_runtime_artifacts": [
+    {
+      "mentioned_by": [
+        "src/retrieve_perturbed_distributed.py",
+        "src/run_eval.sh",
+        "src/run_evaluation.py",
+        "src/run_retrieve_perturbed.sh"
+      ],
+      "name": "wiki.faiss",
+      "producer_detected": false,
+      "producer_files": [],
+      "required_by": [
+        "src/run_eval.sh",
+        "src/run_evaluation.py",
+        "src/run_retrieve_perturbed.sh"
+      ],
+      "required_by_runtime": true
+    },
+    {
+      "mentioned_by": [
+        "src/encode_wikipedia.py",
+        "src/retrieve_perturbed_distributed.py",
+        "src/run_eval.sh",
+        "src/run_evaluation.py",
+        "src/run_retrieve_perturbed.sh"
+      ],
+      "name": "wiki_passages.jsonl",
+      "producer_detected": true,
+      "producer_files": [
+        "src/encode_wikipedia.py"
+      ],
+      "required_by": [
+        "src/run_eval.sh",
+        "src/run_evaluation.py"
+      ],
+      "required_by_runtime": true
+    },
+    {
+      "mentioned_by": [
+        "src/run_eval.sh",
+        "src/run_evaluation.py"
+      ],
+      "name": "biased_nq_test.jsonl",
+      "producer_detected": false,
+      "producer_files": [],
+      "required_by": [
+        "src/run_eval.sh",
+        "src/run_evaluation.py"
+      ],
+      "required_by_runtime": true
+    }
+  ],
+  "run_eval_requires_data_src": true,
+  "run_evaluation_reads_faiss": true,
+  "source_file_count": 18,
+  "supplemental_reconstructability_status": "available",
+  "supplemental_reconstruction": {
+    "biased_nq_builder": "D:\\\u7f1d\u5408RAG-idea\\experiments\\build_corm_biased_nq_test.py",
+    "biased_nq_builder_available": true,
+    "faiss_builder": "D:\\\u7f1d\u5408RAG-idea\\experiments\\build_corm_faiss_index.py",
+    "faiss_builder_available": true,
+    "interpretation": "Supplemental scripts can support a documented reconstruction attempt, but they are not part of the upstream released CoRM-RAG source and do not prove equivalence to the authors' original artifacts.",
+    "workspace": "D:\\\u7f1d\u5408RAG-idea"
+  }
+}

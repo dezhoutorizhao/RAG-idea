@@ -1,0 +1,624 @@
+{
+  "claims": [
+    {
+      "checks": [
+        {
+          "actual": 0.16666666666666663,
+          "expected": 0.16666666666666663,
+          "file": "results/hotpot_orbits_corm_800_eval_fullabl.json",
+          "path": [
+            "summary",
+            "csrm",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "status": "pass",
+          "tolerance": 1e-09,
+          "type": "metric_equals"
+        },
+        {
+          "file": "results/hotpot_orbits_corm_800_eval_fullabl.json",
+          "left": [
+            "summary",
+            "csrm",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "left_value": 0.16666666666666663,
+          "right": [
+            "summary",
+            "naive_orbit_average",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "right_value": 0.5,
+          "status": "pass",
+          "type": "metric_less_than"
+        },
+        {
+          "file": "results/hotpot_orbits_corm_800_eval_fullabl.json",
+          "left": [
+            "summary",
+            "csrm",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "left_value": 0.16666666666666663,
+          "right": [
+            "summary",
+            "corm_max_clean",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "right_value": 0.75,
+          "status": "pass",
+          "type": "metric_less_than"
+        },
+        {
+          "file": "results/hotpot_orbits_corm_800_eval_fullabl.json",
+          "left": [
+            "summary",
+            "csrm",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "left_value": 0.16666666666666663,
+          "right": [
+            "summary",
+            "single_set_sure_style",
+            "risk_at_30_coverage",
+            "risk"
+          ],
+          "right_value": 0.75,
+          "status": "pass",
+          "type": "metric_less_than"
+        }
+      ],
+      "declared_status": "supported_bridge",
+      "id": "C1_hotpot_main_gain",
+      "limitations": [
+        "Bridge split uses structural labels from Hotpot supporting facts, not completed human audit.",
+        "Full CoRM-RAG retrieval-generation evaluation is not reproduced."
+      ],
+      "text": "On the HotpotQA bridge split with released CoRM critic scores, CSRM lowers selective risk versus CoRM clean scoring, SURE-style single-set sufficiency, and naive orbit averaging.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": 0.16689911668991164,
+          "expected": 0.16689911668991164,
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "path": [
+            "aggregate",
+            "csrm",
+            "risk_at_30",
+            "mean"
+          ],
+          "status": "pass",
+          "tolerance": 1e-09,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0.00040261525048092766,
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "path": [
+            "aggregate",
+            "csrm",
+            "risk_at_30",
+            "stdev"
+          ],
+          "status": "pass",
+          "threshold": 0.001,
+          "type": "metric_less_than_value"
+        }
+      ],
+      "declared_status": "supported_bridge",
+      "id": "C2_hotpot_multiseed_stability",
+      "limitations": [
+        "All seeds are from the same HotpotQA validation source."
+      ],
+      "text": "The HotpotQA bridge gain is stable across three random data seeds.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": 1.0,
+          "expected": 1.0,
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "path": [
+            "aggregate",
+            "csrm_shuffled_perturbations",
+            "risk_at_30",
+            "mean"
+          ],
+          "status": "pass",
+          "tolerance": 1e-09,
+          "type": "metric_equals"
+        },
+        {
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "left": [
+            "aggregate",
+            "csrm",
+            "risk_at_30",
+            "mean"
+          ],
+          "left_value": 0.16689911668991164,
+          "right": [
+            "aggregate",
+            "csrm_shuffled_perturbations",
+            "risk_at_30",
+            "mean"
+          ],
+          "right_value": 1.0,
+          "status": "pass",
+          "type": "metric_less_than"
+        }
+      ],
+      "declared_status": "supported_bridge",
+      "id": "C3_orbit_alignment_required",
+      "limitations": [
+        "The shuffled ablation tests orbit alignment, not all possible verifier-call budget confounds."
+      ],
+      "text": "CSRM's gain is not explained by using more perturbation calls alone; shuffled perturbation alignment collapses performance.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "left": [
+            "aggregate",
+            "csrm_no_answer_consistency",
+            "risk_at_30",
+            "mean"
+          ],
+          "left_value": 0.6467631334263134,
+          "right": [
+            "aggregate",
+            "csrm",
+            "risk_at_30",
+            "mean"
+          ],
+          "right_value": 0.16689911668991164,
+          "status": "pass",
+          "type": "metric_greater_than"
+        },
+        {
+          "file": "results/hotpot_corm_multiseed_summary_fullabl.json",
+          "left": [
+            "aggregate",
+            "csrm_no_answer_consistency",
+            "auroc",
+            "mean"
+          ],
+          "left_value": 0.7576860254300537,
+          "right": [
+            "aggregate",
+            "csrm",
+            "auroc",
+            "mean"
+          ],
+          "right_value": 0.9975651904132611,
+          "status": "pass",
+          "type": "metric_less_than"
+        }
+      ],
+      "declared_status": "supported_bridge",
+      "id": "C4_answer_consistency_mechanism",
+      "limitations": [
+        "Mechanism evidence is strongest for HotpotQA; FEVER v3 near-miss is a deliberately constructed heuristic stress split pending audit."
+      ],
+      "text": "Answer/support-signature consistency is a necessary mechanism on HotpotQA bridge splits.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "file": "results/fever_nearmiss_corm_v3_multiseed_summary.json",
+          "left": [
+            "aggregate",
+            "csrm",
+            "auroc",
+            "mean"
+          ],
+          "left_value": 1.0,
+          "right": [
+            "aggregate",
+            "naive_orbit_average",
+            "auroc",
+            "mean"
+          ],
+          "right_value": 0.7763891666666667,
+          "status": "pass",
+          "type": "metric_greater_than"
+        },
+        {
+          "file": "results/fever_nearmiss_corm_v3_multiseed_summary.json",
+          "left": [
+            "aggregate",
+            "csrm",
+            "risk_at_30",
+            "mean"
+          ],
+          "left_value": 0.4444444444444444,
+          "right": [
+            "aggregate",
+            "naive_orbit_average",
+            "risk_at_30",
+            "mean"
+          ],
+          "right_value": 0.6407407407407407,
+          "status": "pass",
+          "type": "metric_less_than"
+        },
+        {
+          "actual": 0.0,
+          "file": "results/fever_nearmiss_corm_v3_multiseed_summary.json",
+          "path": [
+            "aggregate",
+            "csrm",
+            "auroc",
+            "stdev"
+          ],
+          "status": "pass",
+          "threshold": 0.001,
+          "type": "metric_less_than_value"
+        }
+      ],
+      "declared_status": "supported_secondary_bridge",
+      "id": "C5_fever_second_domain_sanity",
+      "limitations": [
+        "The FEVER v3 near-miss split supersedes earlier builder versions whose audits exposed invalid missing-evidence coverage and non-gold high-support feature leakage.",
+        "The near-miss split still uses deliberately hard verifier-feature assignments and remains a heuristic stress bridge until human semantic audit is complete."
+      ],
+      "text": "FEVER v3 near-miss dilution provides a second real-domain stress bridge where CSRM separates fragile orbits better than naive orbit averaging after support-key budget and non-gold support-feature audits.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": 0,
+          "expected": 0,
+          "file": "results/audit_sample_100_v2_summary.json",
+          "path": [
+            "labeled"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0.0,
+          "expected": 0.0,
+          "file": "results/audit_sample_100_v2_summary.json",
+          "path": [
+            "completion_rate"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        }
+      ],
+      "declared_status": "unsupported_until_audited",
+      "id": "C6_human_audit_not_complete",
+      "limitations": [
+        "No human-audited performance claim can be made yet."
+      ],
+      "text": "Human audit is prepared but not complete.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": 3,
+          "file": "results/hotpot_case_studies.json",
+          "path": [
+            "case_counts",
+            "naive_false_accept_csrm_reject"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": 3,
+          "file": "results/hotpot_case_studies.json",
+          "path": [
+            "case_counts",
+            "csrm_false_accept_failure"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": 3,
+          "file": "results/fever_nearmiss_v3_case_studies.json",
+          "path": [
+            "case_counts",
+            "csrm_false_accept_failure"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        }
+      ],
+      "declared_status": "supported_artifact",
+      "id": "C7_case_studies_available",
+      "limitations": [
+        "Case studies are selected from heuristic-label bridge data and must not replace human audit."
+      ],
+      "text": "Representative Hotpot and FEVER case studies have been extracted for failure and limitation analysis.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": 0.24583333333333335,
+          "file": "results/hotpot_corm_paired_comparison.json",
+          "path": [
+            "comparisons",
+            "naive_orbit_average",
+            "bootstrap_ci",
+            "risk_at_30_reduction",
+            "p2_5"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": 0.13657740542763164,
+          "file": "results/hotpot_corm_paired_comparison.json",
+          "path": [
+            "comparisons",
+            "naive_orbit_average",
+            "bootstrap_ci",
+            "auroc_improvement",
+            "p2_5"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": 0.10555555555555562,
+          "file": "results/fever_nearmiss_corm_v3_paired_comparison.json",
+          "path": [
+            "comparisons",
+            "naive_orbit_average",
+            "bootstrap_ci",
+            "risk_at_30_reduction",
+            "p2_5"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": 0.20054794788146357,
+          "file": "results/fever_nearmiss_corm_v3_paired_comparison.json",
+          "path": [
+            "comparisons",
+            "naive_orbit_average",
+            "bootstrap_ci",
+            "auroc_improvement",
+            "p2_5"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        }
+      ],
+      "declared_status": "supported_bridge",
+      "id": "C8_paired_bootstrap_positive_deltas",
+      "limitations": [
+        "Paired bootstrap is computed over bridge labels; it does not resolve human-audit or verifier-validity gaps."
+      ],
+      "text": "Paired bootstrap comparisons show positive selective-risk reductions for CSRM versus naive orbit averaging on both Hotpot and FEVER v3 near-miss bridge splits.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/corm_reproduction_preflight.json",
+          "path": [
+            "ready"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 5,
+          "file": "results/corm_reproduction_preflight.json",
+          "path": [
+            "missing_required_artifacts"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        }
+      ],
+      "declared_status": "unsupported_until_preflight_passes",
+      "id": "C9_corm_original_reproduction_blocked",
+      "limitations": [
+        "The released Evidence Critic checkpoint is present, but original end-to-end reproduction still requires data/index files and runtime dependencies.",
+        "This claim is a blocker statement, not a performance result."
+      ],
+      "text": "Full CoRM-RAG original NQ/Biased-NQ/TruthfulQA reproduction is not complete in the current environment.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/hotpot_corm_calibration_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "formal_risk_guarantee_supported"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 1,
+          "file": "results/hotpot_corm_calibration_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "target_miss_count"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        },
+        {
+          "actual": false,
+          "expected": 0,
+          "file": "results/fever_nearmiss_corm_v3_calibration_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "formal_risk_guarantee_supported"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 2,
+          "file": "results/fever_nearmiss_corm_v3_calibration_multiseed.json",
+          "path": [
+            "aggregate",
+            "csrm_logreg_calibrated",
+            "target_miss_count"
+          ],
+          "status": "pass",
+          "threshold": 0,
+          "type": "metric_greater_than_value"
+        }
+      ],
+      "declared_status": "unsupported_until_stronger_calibration",
+      "id": "C10_calibrated_risk_guarantee_not_supported",
+      "limitations": [
+        "The calibrated model improves ranking quality, but threshold transfer misses the 0.20 risk target in one of three split seeds on Hotpot and two of three FEVER v3 near-miss split seeds.",
+        "Zero-coverage thresholds are treated as vacuous and do not count as formal guarantees."
+      ],
+      "text": "Current split-calibrated CSRM results do not support a formal risk guarantee at target risk 0.20.",
+      "verification_status": "pass"
+    },
+    {
+      "checks": [
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/hotpot_orbit_consistency_audit.json",
+          "path": [
+            "passed"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "file": "results/hotpot_orbit_consistency_audit.json",
+          "path": [
+            "error_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/fever_nearmiss_corm_v3_orbit_consistency_audit.json",
+          "path": [
+            "passed"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "file": "results/fever_nearmiss_corm_v3_orbit_consistency_audit.json",
+          "path": [
+            "error_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/fever_nearmiss_corm_v3_seed31_orbit_consistency_audit.json",
+          "path": [
+            "passed"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "file": "results/fever_nearmiss_corm_v3_seed31_orbit_consistency_audit.json",
+          "path": [
+            "error_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": true,
+          "expected": 1,
+          "file": "results/fever_nearmiss_corm_v3_seed47_orbit_consistency_audit.json",
+          "path": [
+            "passed"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        },
+        {
+          "actual": 0,
+          "expected": 0,
+          "file": "results/fever_nearmiss_corm_v3_seed47_orbit_consistency_audit.json",
+          "path": [
+            "error_count"
+          ],
+          "status": "pass",
+          "tolerance": 0,
+          "type": "metric_equals"
+        }
+      ],
+      "declared_status": "supported_structural_audit",
+      "id": "C11_structural_consistency_audits_pass",
+      "limitations": [
+        "This deterministic audit checks implemented structural and dataset-provenance invariants only; it does not replace human semantic labeling.",
+        "The audit proves that the current generated orbit files satisfy implemented invariants; it does not prove that every heuristic label is semantically correct."
+      ],
+      "text": "The current HotpotQA and FEVER v3 orbit files pass structural and dataset-constraint consistency checks for source provenance, label-source metadata, generated labels, split names, perturbation counts/types, support-key lineage, duplicate evidence ids, support-key coverage, support-feature provenance, and verifier-feature ranges.",
+      "verification_status": "pass"
+    }
+  ],
+  "failed_claims": 0,
+  "ledger": "CLAIMS_LEDGER.json",
+  "passed_claims": 11,
+  "total_claims": 11
+}

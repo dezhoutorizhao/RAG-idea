@@ -1,0 +1,143 @@
+{
+  "audit_scope": "Structural consistency only: validates generated labels, split names, perturbation types, support-key coverage, and verifier-feature ranges. It does not replace human semantic audit.",
+  "error_count": 170,
+  "errors": [
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:e894f9d46a585a32306b364c04530f10:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:c5089595a76ab788ceddae2ff756821f:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:f0293348b72ec3cc523410e040daa287:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:b629e20a6aa44e95902b4eec007d80d8:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:4274fbee0ce7dc9061a27957e51e8db5:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:c1fa185f5f674439b86c477e89d64c79:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:3f6cc6ca34a45c7958f1c64c6b55bbab:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:f7749ee9df5c78f57c7d3bc8eb29c962:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:e3f5c0c00e2584fd0aadf6181073db8e:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:0d69e634fba2ad7a918efc1a426f9384:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:7a02b00ea079b96cb33a7782dfb2c059:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:2f20d99b6cf62ca9694b29e535f74a1d:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:7f6cc0dc3f83443a8f8bbfec6a82f509:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:48f6f67e4d029f8bcbd43fc819d5fe22:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:d018b412081b0e6441bc7ae6c2f22bcd:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:323de51c8b401fb3a4b7fe471e640898:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:8371b76bb463ed466f3daf39a79de8b8:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:064f68564406419c4c7d050973053c01:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:56701244cd5e29e1fccaf69e54516549:missing"
+    },
+    {
+      "code": "missing_split_has_full_support",
+      "message": "missing perturbation 1 unexpectedly covers all support ids",
+      "orbit_id": "fever:49ffd856f8a5d1dffc721d83ec04d315:missing"
+    }
+  ],
+  "input": "results\\fever_orbits_nearmiss_corm_1200.jsonl",
+  "passed": false,
+  "splits": {
+    "fever_conflicting_evidence": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_distractor_only": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_fragile_mixed": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_missing_evidence": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_near_miss_dilution": {
+      "n": 200,
+      "negative": 200,
+      "positive": 0
+    },
+    "fever_stable_evidence": {
+      "n": 200,
+      "negative": 0,
+      "positive": 200
+    }
+  },
+  "total": 1200,
+  "warning_count": 0,
+  "warnings": []
+}

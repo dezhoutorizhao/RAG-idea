@@ -1,0 +1,19 @@
+{
+  "dim": 768,
+  "embedding_files": [
+    "/mnt/ntfs-disk/csrm_corm_reconstruction/stage/partial_template_eval_smoke_20260520_1928/data/embeddings_shard_000000.npy",
+    "/mnt/ntfs-disk/csrm_corm_reconstruction/stage/partial_template_eval_smoke_20260520_1928/data/embeddings_shard_000001.npy",
+    "/mnt/ntfs-disk/csrm_corm_reconstruction/stage/partial_template_eval_smoke_20260520_1928/data/embeddings_shard_000002.npy",
+    "/mnt/ntfs-disk/csrm_corm_reconstruction/stage/partial_template_eval_smoke_20260520_1928/data/embeddings_shard_000003.npy"
+  ],
+  "index_type": "flat",
+  "input": "/mnt/ntfs-disk/csrm_corm_reconstruction/stage/partial_template_eval_smoke_20260520_1928/data",
+  "metric": "inner_product",
+  "nlist": null,
+  "normalized": true,
+  "note": "Supplemental reconstruction helper for CoRM-RAG. This creates a FAISS index compatible with run_evaluation.py inputs, but it is not the authors' original released wiki.faiss artifact.",
+  "ntotal": 200000,
+  "output": "/mnt/ntfs-disk/csrm_corm_reconstruction/stage/partial_template_eval_smoke_20260520_1928/data/wiki.faiss",
+  "status": "built",
+  "vectors": 200000
+}

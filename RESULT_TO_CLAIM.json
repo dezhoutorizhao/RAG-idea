@@ -1,0 +1,33 @@
+{
+  "codex_mcp_reviewer_available": false,
+  "confidence": "medium",
+  "date": "2026-05-20",
+  "integrity_status": "warn",
+  "claim_supported": "partial",
+  "supported_claim": "CSRM reduces selective risk on HotpotQA-derived and FEVER v3 near-miss counterfactual evidence orbits versus CoRM clean scoring, SURE-style single-set sufficiency, and naive orbit averaging when using released CoRM critic scores; an automated set-level NLI probe shows the same directional ranking pattern as sensitivity evidence; conservative Clopper-Pearson thresholding supports Hotpot-only empirical risk-target transfer but not cross-domain formal risk control; supplemental CoRM reconstruction helpers, a remote execution plan, a secret-free script pack, an import-ready remote runtime, a verified remote checkpoint, a staged-input streaming encoder smoke, a real HF/Contriever streaming smoke, an API-free template Biased-NQ smoke, a remote eval-staging patch, a bounded template eval-smoke path, a post-FAISS smoke watcher, and an isolated partial-index template eval smoke now exist but do not constitute exact original reproduction.",
+  "unsupported_claims": [
+    "General robust RAG superiority across tasks",
+    "Formal calibrated risk guarantee; original multi-seed calibration misses the 0.20 risk target in one of three Hotpot split seeds and two of three FEVER v3 split seeds, while conservative Clopper-Pearson thresholding still misses FEVER v3 in two of three split seeds",
+    "Human-audited validity",
+    "Full CoRM-RAG NQ/Biased-NQ/TruthfulQA reproduction"
+  ],
+  "missing_evidence": [
+    "Human audit labels",
+    "Validated verifier labels beyond the current automated set-level NLI sensitivity probe",
+    "Human-audited validation of the FEVER v3 near-miss stress labels",
+    "Full CoRM-RAG retrieval-generation reproduction; results/corm_reproduction_preflight.json currently reports ready=false, results/corm_reproduction_path_audit.json shows no exact released-script producer for wiki.faiss or biased_nq_test.jsonl, and the full remote Wikipedia/FAISS/Biased-NQ artifacts are not complete yet despite a successful 16-passage HF/Contriever streaming smoke, a running full Wikipedia/FAISS construction job, and a post-FAISS template-smoke watcher",
+    "Independent external review"
+  ],
+  "next_experiments_needed": [
+    "Complete and summarize results/audit_sample_100_v3.jsonl using the shuffled blind annotator packs",
+    "Add two independent labels and an adjudicated_label_answerable final label for paper claims, keeping expected labels and model scores hidden until adjudication",
+    "Report double-label agreement and Cohen's kappa with experiments/summarize_adjudication.py",
+    "Pass audit readiness with experiments/check_audit_readiness.py",
+    "Recompute metrics on adjudicated labels with experiments/evaluate_audited_orbits.py --label-field adjudicated_label_answerable",
+    "Improve calibration beyond the current Hotpot-only Clopper-Pearson empirical transfer result before making any formal risk-control claim",
+    "Complete and summarize results/audit_sample_paper_1000_v3.jsonl with blind annotator packs after the pilot protocol is stable",
+    "Validate the FEVER v3 near-miss labels or replace them with a naturally labeled second-domain stress split",
+    "Execute or refine results/corm_reconstruction_plan.json on the remote /mnt/ntfs-disk workspace, then run experiments/check_corm_reproduction_readiness.py until ready=true before making direct CoRM-RAG reproduction claims; report reconstructed metrics separately unless original-artifact equivalence is established",
+    "Run an independent review loop after audited metrics are available"
+  ]
+}

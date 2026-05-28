@@ -1,0 +1,78 @@
+{
+  "claim_policy": "This is a documented reconstruction blocker and partial engineering progress, not completed full CoRM-RAG reproduction evidence.",
+  "observed_at": "2026-05-27T13:34:41+08:00",
+  "observed_outputs": {
+    "complete_embedding_shard_count": 52,
+    "embedding_shard_file_count_including_placeholders": 52,
+    "incomplete_embedding_shard_count": 0,
+    "latest_complete_embedding_shard": "embeddings_shard_000051.npy",
+    "latest_complete_embedding_shard_shape": [
+      250000,
+      768
+    ],
+    "latest_complete_embedding_shard_size_bytes": 768000128,
+    "wiki_faiss_exists": false,
+    "wiki_faiss_manifest_exists": false,
+    "wiki_passages_exists": true,
+    "wiki_passages_lines": null,
+    "wiki_passages_read_error": "OSError(5, 'Input/output error')",
+    "wiki_streaming_manifest_exists": false
+  },
+  "process": {
+    "matching_processes": 0,
+    "previous_encoder_child_pid": 3734490,
+    "previous_launcher_pid": 3734484,
+    "running": false
+  },
+  "recovery_history_summary": {
+    "blocking_pattern": "The mount alternates between no-space/file-record failures and low-level I/O errors; both shard writes and wiki_passages.jsonl writes have failed.",
+    "next_viable_path": "Use a different reliable ext4/XFS storage target, author-provided artifacts, or a cloud/serverless GPU with enough persistent POSIX storage. Continuing on /mnt/ntfs-disk is not evidence-efficient.",
+    "successful_progress": "Recovered through a complete embeddings_shard_000051.npy using 250,000-passage shards after earlier 1M/2M/4M shard failures."
+  },
+  "remote": {
+    "data_dir": "/mnt/ntfs-disk/csrm_corm_reconstruction/data",
+    "host": "192.168.103.101",
+    "launcher": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/full_wikipedia_job/run_full_wikipedia_and_faiss.sh",
+    "log": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/full_wikipedia_job/full_wikipedia_and_faiss.log",
+    "remote_root": "/mnt/ntfs-disk/csrm_corm_reconstruction",
+    "user": "syk",
+    "workspace": "/mnt/ntfs-disk/csrm_corm_reconstruction/workspace"
+  },
+  "status": "failed_storage_io_after_fresh_250k_recovery",
+  "storage": {
+    "finding": "No sufficiently large reliable ext4 user-writable target is available; the only large persistent target is NTFS/fuseblk and is producing repeated Errno 5 / Errno 28 failures.",
+    "persistent": {
+      "available": "257-258G",
+      "filesystem": "/dev/nvme1n1p1",
+      "fstype": "fuseblk/ntfs",
+      "mount": "/mnt/ntfs-disk",
+      "use_percent": "86-87%"
+    },
+    "root": {
+      "available": "19-20G",
+      "filesystem": "/dev/nvme0n1p2",
+      "fstype": "ext4",
+      "use_percent": "94-99%"
+    },
+    "runtime": {
+      "available": "12.8-13G",
+      "fstype": "tmpfs",
+      "mount": "/dev/shm",
+      "use_percent": "86-87%"
+    },
+    "sudo_nopass": false
+  },
+  "terminal_failure": {
+    "log_tail": [
+      "Traceback (most recent call last):",
+      "  File \"experiments/encode_corm_wikipedia_streaming.py\", line 327, in encode_wikipedia_streaming",
+      "    passages_file.write(json.dumps({\"text\": passage}, ensure_ascii=False) + \"\\n\")",
+      "OSError: [Errno 5] Input/output error",
+      "During handling of the above exception, another exception occurred:",
+      "  File \"experiments/encode_corm_wikipedia_streaming.py\", line 331, in encode_wikipedia_streaming",
+      "    flush()",
+      "OSError: [Errno 5] Input/output error"
+    ],
+    "summary": "The 250k-shard resume wrote embeddings_shard_000051.npy completely, then failed while writing/flushing wiki_passages.jsonl with OSError [Errno 5] Input/output error on the NTFS/fuseblk mount."
+  }
+}
