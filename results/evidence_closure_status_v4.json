@@ -87,7 +87,7 @@
     "risk50_wins": 12,
     "row_count": 12
   },
-  "generated_at_utc": "2026-05-28T19:08:16.215687+00:00",
+  "generated_at_utc": "2026-05-28T19:14:04.629883+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "hotpot_semantic_swap_n100": {
@@ -317,7 +317,8 @@
     "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
     "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
     "Independent external review has not been rerun after the latest storage-status update.",
-    "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction."
+    "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
+    "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats."
   ],
   "risk_control": {
     "fever_cp": {
@@ -364,6 +365,33 @@
       "error_count": 0,
       "passed": true
     }
+  },
+  "v4_strong_baselines": {
+    "artifact": "results/v4_strong_baseline_summary_20260529.json",
+    "baseline_file_count": 6,
+    "claim_implication": "The v4 strong-baseline package is present and includes context sufficiency, faithful SURE-style multi-set scoring, equal-budget orbit reducers, retrieval stability, self-consistency, and out-of-fold calibrated logistic context/orbit baselines. It strengthens reviewer-facing baseline coverage, but it is also negative boundary evidence: CSRM-Rule is not an all-win method against the strongest learned/context baselines, and calibrated CSRM should be reported with per-setting caveats.",
+    "comparison_file_count": 6,
+    "logistic_aurc_losses": 5,
+    "logistic_aurc_robust_wins": 1,
+    "logistic_risk30_losses": 1,
+    "logistic_risk30_robust_wins": 1,
+    "method_union": [
+      "calibrated_logistic_context",
+      "calibrated_logistic_orbit",
+      "context_sufficiency_clean",
+      "corm_max_clean",
+      "corm_mean_clean",
+      "csrm_rule",
+      "equal_budget_mean",
+      "equal_budget_min",
+      "equal_budget_q25",
+      "faithful_sure_multi",
+      "retrieval_stability",
+      "self_consistency_proxy"
+    ],
+    "rule_by_aurc_losses": 6,
+    "rule_by_auroc_losses": 6,
+    "rule_by_risk30_losses": 6
   },
   "verdict": "non_human_bridge_closed_except_full_corm_reconstruction_and_formal_risk"
 }

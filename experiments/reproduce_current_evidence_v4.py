@@ -27,6 +27,12 @@ from experiments.summarize_fever_cp_transfer_sweep import (
     render_markdown as render_fever_cp_sweep_markdown,
     summarize_fever_cp_transfer_sweep,
 )
+from experiments.summarize_v4_strong_baselines import (
+    DEFAULT_BASELINES as DEFAULT_V4_STRONG_BASELINES,
+    DEFAULT_COMPARISONS as DEFAULT_V4_STRONG_BASELINE_COMPARISONS,
+    render_markdown as render_v4_strong_baselines_markdown,
+    summarize_v4_strong_baselines,
+)
 from experiments.summarize_human_audit_v4_status import (
     render_markdown as render_human_audit_markdown,
     summarize_human_audit_v4_status,
@@ -105,6 +111,24 @@ def reproduce_current_evidence_v4(
             "name": "summarize_end2end_selective_rag_proxy",
             "outputs": [str(end2end_proxy_json), str(end2end_proxy_md)],
             "ready": not end2end_proxy["aggregate"]["has_losses"],
+        }
+    )
+
+    strong_baselines_json = results / "v4_strong_baseline_summary_20260529.json"
+    strong_baselines_md = results / "v4_strong_baseline_summary_20260529.md"
+    strong_baselines = summarize_v4_strong_baselines(
+        [root / path for path in DEFAULT_V4_STRONG_BASELINES],
+        [root / path for path in DEFAULT_V4_STRONG_BASELINE_COMPARISONS],
+    )
+    _write_json(strong_baselines_json, strong_baselines)
+    strong_baselines_md.write_text(render_v4_strong_baselines_markdown(strong_baselines), encoding="utf-8")
+    commands.append(
+        {
+            "name": "summarize_v4_strong_baselines",
+            "outputs": [str(strong_baselines_json), str(strong_baselines_md)],
+            "ready": not bool(
+                strong_baselines["aggregate"]["csrm_rule_vs_strongest"]["by_auroc"]["losses"]
+            ),
         }
     )
 

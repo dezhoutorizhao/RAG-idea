@@ -78,6 +78,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     current_reproduction_status = _current_reproduction_status(results)
     fever_cp_sweep = _fever_cp_transfer_sweep_status(results)
     end2end_proxy = _end2end_proxy_status(results)
+    v4_strong_baselines = _v4_strong_baseline_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -158,6 +159,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         },
         "current_evidence_reproduction": current_reproduction_status,
         "end2end_selective_rag_proxy": end2end_proxy,
+        "v4_strong_baselines": v4_strong_baselines,
         "corm_reconstruction": {
             "preflight_ready": preflight.get("ready"),
             "missing_required_artifacts": preflight.get("missing_required_artifacts"),
@@ -198,6 +200,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
             "Independent external review has not been rerun after the latest storage-status update.",
             "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
+            "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.",
         ],
         "remaining_human_audit_blockers": [
             "Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items.",
@@ -439,6 +442,31 @@ def _end2end_proxy_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _v4_strong_baseline_status(results: Path) -> dict[str, Any] | None:
+    path = results / "v4_strong_baseline_summary_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    aggregate = payload.get("aggregate", {})
+    rule = aggregate.get("csrm_rule_vs_strongest", {})
+    calibrated = aggregate.get("calibrated_targets_vs_all_baselines", {})
+    logistic = calibrated.get("csrm_calibrated_logistic", {})
+    return {
+        "artifact": str(path.as_posix()),
+        "baseline_file_count": aggregate.get("baseline_file_count"),
+        "comparison_file_count": aggregate.get("comparison_file_count"),
+        "method_union": aggregate.get("method_union"),
+        "rule_by_auroc_losses": get(rule, "by_auroc", "losses"),
+        "rule_by_risk30_losses": get(rule, "by_risk_at_30", "losses"),
+        "rule_by_aurc_losses": get(rule, "by_aurc", "losses"),
+        "logistic_risk30_robust_wins": get(logistic, "risk_at_30_reduction", "robust_wins"),
+        "logistic_risk30_losses": get(logistic, "risk_at_30_reduction", "losses"),
+        "logistic_aurc_robust_wins": get(logistic, "aurc_reduction", "robust_wins"),
+        "logistic_aurc_losses": get(logistic, "aurc_reduction", "losses"),
+        "claim_implication": payload.get("claim_implication"),
+    }
+
+
 def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     path = results / "human_audit_v4_eval_status_20260529.json"
     if not path.exists():
@@ -497,6 +525,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     claims = status["claim_verification"]
     reproduction = status.get("current_evidence_reproduction")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
+    strong_baselines = status.get("v4_strong_baselines")
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
     human_v4 = status["latest_v4_diagnostics"].get("human_audit_v4")
     human_v4_eval = status["latest_v4_diagnostics"].get("human_audit_v4_eval")
@@ -582,6 +611,28 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"- Full CoRM reconstruction ready: `{reproduction['full_corm_reconstruction_ready']}`; "
                 f"remote storage ready: `{reproduction['remote_storage_ready']}`.",
                 f"- Claim verifier passed: `{reproduction['claim_verifier_passed']}`.",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## V4 Strong Baselines", ""])
+    if strong_baselines:
+        lines.extend(
+            [
+                f"- Baseline files: `{strong_baselines['baseline_file_count']}`; "
+                f"comparison files: `{strong_baselines['comparison_file_count']}`.",
+                f"- Method union: `{', '.join(strong_baselines['method_union'] or [])}`.",
+                f"- CSRM-Rule losses vs strongest by AUROC/Risk@30/AURC: "
+                f"`{strong_baselines['rule_by_auroc_losses']}` / "
+                f"`{strong_baselines['rule_by_risk30_losses']}` / "
+                f"`{strong_baselines['rule_by_aurc_losses']}`.",
+                f"- CSRM-Calibrated-Logistic robust Risk@30 wins/losses: "
+                f"`{strong_baselines['logistic_risk30_robust_wins']}` / "
+                f"`{strong_baselines['logistic_risk30_losses']}`; AURC robust wins/losses: "
+                f"`{strong_baselines['logistic_aurc_robust_wins']}` / "
+                f"`{strong_baselines['logistic_aurc_losses']}`.",
+                f"- Claim implication: {strong_baselines['claim_implication']}",
                 "",
             ]
         )

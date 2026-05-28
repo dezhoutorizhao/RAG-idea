@@ -9,6 +9,7 @@ from experiments.summarize_evidence_closure import (
     _fever_cp_transfer_sweep_status,
     _remote_storage_probe_status,
     _semantic_swap_status,
+    _v4_strong_baseline_status,
 )
 
 
@@ -292,6 +293,38 @@ def test_end2end_proxy_status_marks_mixed_results(tmp_path):
     assert status["risk30_losses"] == 1
     assert status["all_win"] is False
     assert status["has_losses"] is True
+
+
+def test_v4_strong_baseline_status_marks_rule_losses(tmp_path):
+    _write_json(
+        tmp_path / "v4_strong_baseline_summary_20260529.json",
+        {
+            "aggregate": {
+                "baseline_file_count": 6,
+                "comparison_file_count": 6,
+                "method_union": ["csrm_rule", "calibrated_logistic_orbit"],
+                "csrm_rule_vs_strongest": {
+                    "by_auroc": {"losses": 6},
+                    "by_risk_at_30": {"losses": 6},
+                    "by_aurc": {"losses": 6},
+                },
+                "calibrated_targets_vs_all_baselines": {
+                    "csrm_calibrated_logistic": {
+                        "risk_at_30_reduction": {"robust_wins": 1, "losses": 1},
+                        "aurc_reduction": {"robust_wins": 1, "losses": 5},
+                    }
+                },
+            },
+            "claim_implication": "baseline caveat",
+        },
+    )
+
+    status = _v4_strong_baseline_status(tmp_path)
+
+    assert status["baseline_file_count"] == 6
+    assert status["rule_by_auroc_losses"] == 6
+    assert status["logistic_risk30_robust_wins"] == 1
+    assert status["logistic_aurc_losses"] == 5
 
 
 def test_current_reproduction_status_is_aggregated(tmp_path):

@@ -1,0 +1,1233 @@
+{
+  "aggregate": {
+    "baseline_file_count": 6,
+    "calibrated_targets_vs_all_baselines": {
+      "csrm_calibrated_isotonic": {
+        "aurc_reduction": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.040474737665401564,
+          "robust_wins": 2,
+          "ties": 1
+        },
+        "auroc_improvement": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.024108780357181895,
+          "robust_wins": 0,
+          "ties": 3
+        },
+        "risk_at_30_reduction": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.030423280423280432,
+          "robust_wins": 0,
+          "ties": 3
+        },
+        "risk_at_50_reduction": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.03466530291473082,
+          "robust_wins": 0,
+          "ties": 3
+        }
+      },
+      "csrm_calibrated_logistic": {
+        "aurc_reduction": {
+          "losses": 5,
+          "mean_worst_case_delta": -0.03592921365362859,
+          "robust_wins": 1,
+          "ties": 0
+        },
+        "auroc_improvement": {
+          "losses": 2,
+          "mean_worst_case_delta": -0.014012804118302838,
+          "robust_wins": 0,
+          "ties": 4
+        },
+        "risk_at_30_reduction": {
+          "losses": 1,
+          "mean_worst_case_delta": -0.013227513227513235,
+          "robust_wins": 1,
+          "ties": 4
+        },
+        "risk_at_50_reduction": {
+          "losses": 2,
+          "mean_worst_case_delta": -0.024169035896724683,
+          "robust_wins": 0,
+          "ties": 4
+        }
+      },
+      "csrm_minimax": {
+        "aurc_reduction": {
+          "losses": 6,
+          "mean_worst_case_delta": -0.1077551482374998,
+          "robust_wins": 0,
+          "ties": 0
+        },
+        "auroc_improvement": {
+          "losses": 4,
+          "mean_worst_case_delta": -0.09252303429733096,
+          "robust_wins": 0,
+          "ties": 2
+        },
+        "risk_at_30_reduction": {
+          "losses": 4,
+          "mean_worst_case_delta": -0.11172161172161171,
+          "robust_wins": 0,
+          "ties": 2
+        },
+        "risk_at_50_reduction": {
+          "losses": 4,
+          "mean_worst_case_delta": -0.09209428379908928,
+          "robust_wins": 0,
+          "ties": 2
+        }
+      },
+      "csrm_rule": {
+        "aurc_reduction": {
+          "losses": 6,
+          "mean_worst_case_delta": -0.11078416225509059,
+          "robust_wins": 0,
+          "ties": 0
+        },
+        "auroc_improvement": {
+          "losses": 4,
+          "mean_worst_case_delta": -0.10363176820337945,
+          "robust_wins": 0,
+          "ties": 2
+        },
+        "risk_at_30_reduction": {
+          "losses": 4,
+          "mean_worst_case_delta": -0.13522588522588522,
+          "robust_wins": 0,
+          "ties": 2
+        },
+        "risk_at_50_reduction": {
+          "losses": 4,
+          "mean_worst_case_delta": -0.11633324087557495,
+          "robust_wins": 0,
+          "ties": 2
+        }
+      }
+    },
+    "comparison_file_count": 6,
+    "csrm_rule_vs_strongest": {
+      "by_aurc": {
+        "losses": 6,
+        "ties": 0,
+        "wins": 0
+      },
+      "by_auroc": {
+        "losses": 6,
+        "ties": 0,
+        "wins": 0
+      },
+      "by_risk_at_30": {
+        "losses": 6,
+        "ties": 0,
+        "wins": 0
+      }
+    },
+    "method_union": [
+      "calibrated_logistic_context",
+      "calibrated_logistic_orbit",
+      "context_sufficiency_clean",
+      "corm_max_clean",
+      "corm_mean_clean",
+      "csrm_rule",
+      "equal_budget_mean",
+      "equal_budget_min",
+      "equal_budget_q25",
+      "faithful_sure_multi",
+      "retrieval_stability",
+      "self_consistency_proxy"
+    ]
+  },
+  "baseline_inputs": [
+    "results\\baselines_fever_v4_n100_structbalanced.json",
+    "results\\baselines_hotpot_v4_hardneg_n100.json",
+    "results\\baselines_hotpot_v4_n100_hardmatched.json",
+    "results\\baselines_hotpot_v4_n100_structbalanced.json",
+    "results\\baselines_hotpot_v4_semanticswap_n100.json",
+    "results\\baselines_hotpot_v4_supportpreserve_n100.json"
+  ],
+  "baseline_rows": [
+    {
+      "artifact": "results\\baselines_fever_v4_n100_structbalanced.json",
+      "csrm_vs_strongest": {
+        "by_aurc": {
+          "aurc_reduction": -0.0025153605392126133,
+          "auroc_improvement": 0.0,
+          "risk_at_30_reduction": 0.0,
+          "risk_at_50_reduction": 0.0
+        },
+        "by_auroc": {
+          "aurc_reduction": -0.0025153605392126133,
+          "auroc_improvement": 0.0,
+          "risk_at_30_reduction": 0.0,
+          "risk_at_50_reduction": 0.0
+        },
+        "by_risk_at_30": {
+          "aurc_reduction": -0.0025153605392126133,
+          "auroc_improvement": 0.0,
+          "risk_at_30_reduction": 0.0,
+          "risk_at_50_reduction": 0.0
+        }
+      },
+      "dataset": "fever_v4_n100_structbalanced",
+      "methods": [
+        "calibrated_logistic_context",
+        "calibrated_logistic_orbit",
+        "context_sufficiency_clean",
+        "corm_max_clean",
+        "corm_mean_clean",
+        "csrm_rule",
+        "equal_budget_mean",
+        "equal_budget_min",
+        "equal_budget_q25",
+        "faithful_sure_multi",
+        "retrieval_stability",
+        "self_consistency_proxy"
+      ],
+      "n": 200,
+      "rule_verdict_by_auroc": "loss",
+      "source_item_groups": 100,
+      "strongest": {
+        "by_aurc": "calibrated_logistic_orbit",
+        "by_auroc": "calibrated_logistic_orbit",
+        "by_risk_at_30": "calibrated_logistic_orbit"
+      }
+    },
+    {
+      "artifact": "results\\baselines_hotpot_v4_hardneg_n100.json",
+      "csrm_vs_strongest": {
+        "by_aurc": {
+          "aurc_reduction": -0.11573264754081447,
+          "auroc_improvement": -0.17479999999999996,
+          "risk_at_30_reduction": -0.18333333333333335,
+          "risk_at_50_reduction": -0.21999999999999997
+        },
+        "by_auroc": {
+          "aurc_reduction": -0.11573264754081447,
+          "auroc_improvement": -0.17479999999999996,
+          "risk_at_30_reduction": -0.18333333333333335,
+          "risk_at_50_reduction": -0.21999999999999997
+        },
+        "by_risk_at_30": {
+          "aurc_reduction": -0.11573264754081447,
+          "auroc_improvement": -0.17479999999999996,
+          "risk_at_30_reduction": -0.18333333333333335,
+          "risk_at_50_reduction": -0.21999999999999997
+        }
+      },
+      "dataset": "hotpot_v4_hardneg_n100",
+      "methods": [
+        "calibrated_logistic_context",
+        "calibrated_logistic_orbit",
+        "context_sufficiency_clean",
+        "corm_max_clean",
+        "corm_mean_clean",
+        "csrm_rule",
+        "equal_budget_mean",
+        "equal_budget_min",
+        "equal_budget_q25",
+        "faithful_sure_multi",
+        "retrieval_stability",
+        "self_consistency_proxy"
+      ],
+      "n": 200,
+      "rule_verdict_by_auroc": "loss",
+      "source_item_groups": 100,
+      "strongest": {
+        "by_aurc": "retrieval_stability",
+        "by_auroc": "retrieval_stability",
+        "by_risk_at_30": "retrieval_stability"
+      }
+    },
+    {
+      "artifact": "results\\baselines_hotpot_v4_n100_hardmatched.json",
+      "csrm_vs_strongest": {
+        "by_aurc": {
+          "aurc_reduction": -0.19863693890686557,
+          "auroc_improvement": 0.11709999999999998,
+          "risk_at_30_reduction": 0.050000000000000044,
+          "risk_at_50_reduction": 0.08999999999999997
+        },
+        "by_auroc": {
+          "aurc_reduction": -0.10610918022158161,
+          "auroc_improvement": -0.15560000000000007,
+          "risk_at_30_reduction": -0.18333333333333324,
+          "risk_at_50_reduction": -0.13
+        },
+        "by_risk_at_30": {
+          "aurc_reduction": -0.10610918022158161,
+          "auroc_improvement": -0.15560000000000007,
+          "risk_at_30_reduction": -0.18333333333333324,
+          "risk_at_50_reduction": -0.13
+        }
+      },
+      "dataset": "hotpot_v4_n100_hardmatched",
+      "methods": [
+        "calibrated_logistic_context",
+        "calibrated_logistic_orbit",
+        "context_sufficiency_clean",
+        "corm_max_clean",
+        "corm_mean_clean",
+        "csrm_rule",
+        "equal_budget_mean",
+        "equal_budget_min",
+        "equal_budget_q25",
+        "faithful_sure_multi",
+        "retrieval_stability",
+        "self_consistency_proxy"
+      ],
+      "n": 200,
+      "rule_verdict_by_auroc": "loss",
+      "source_item_groups": 100,
+      "strongest": {
+        "by_aurc": "calibrated_logistic_context",
+        "by_auroc": "calibrated_logistic_orbit",
+        "by_risk_at_30": "calibrated_logistic_orbit"
+      }
+    },
+    {
+      "artifact": "results\\baselines_hotpot_v4_n100_structbalanced.json",
+      "csrm_vs_strongest": {
+        "by_aurc": {
+          "aurc_reduction": -0.19482392781218072,
+          "auroc_improvement": 0.14600000000000002,
+          "risk_at_30_reduction": 0.0,
+          "risk_at_50_reduction": 0.06999999999999995
+        },
+        "by_auroc": {
+          "aurc_reduction": -0.17718119825473183,
+          "auroc_improvement": -0.1996,
+          "risk_at_30_reduction": -0.2833333333333333,
+          "risk_at_50_reduction": -0.18000000000000005
+        },
+        "by_risk_at_30": {
+          "aurc_reduction": -0.17718119825473183,
+          "auroc_improvement": -0.1996,
+          "risk_at_30_reduction": -0.2833333333333333,
+          "risk_at_50_reduction": -0.18000000000000005
+        }
+      },
+      "dataset": "hotpot_v4_n100_structbalanced",
+      "methods": [
+        "calibrated_logistic_context",
+        "calibrated_logistic_orbit",
+        "context_sufficiency_clean",
+        "corm_max_clean",
+        "corm_mean_clean",
+        "csrm_rule",
+        "equal_budget_mean",
+        "equal_budget_min",
+        "equal_budget_q25",
+        "faithful_sure_multi",
+        "retrieval_stability",
+        "self_consistency_proxy"
+      ],
+      "n": 200,
+      "rule_verdict_by_auroc": "loss",
+      "source_item_groups": 100,
+      "strongest": {
+        "by_aurc": "corm_max_clean",
+        "by_auroc": "calibrated_logistic_orbit",
+        "by_risk_at_30": "calibrated_logistic_orbit"
+      }
+    },
+    {
+      "artifact": "results\\baselines_hotpot_v4_semanticswap_n100.json",
+      "csrm_vs_strongest": {
+        "by_aurc": {
+          "aurc_reduction": -0.04159063677374694,
+          "auroc_improvement": -0.061799999999999966,
+          "risk_at_30_reduction": -0.08333333333333337,
+          "risk_at_50_reduction": -0.08000000000000007
+        },
+        "by_auroc": {
+          "aurc_reduction": -0.04159063677374694,
+          "auroc_improvement": -0.061799999999999966,
+          "risk_at_30_reduction": -0.08333333333333337,
+          "risk_at_50_reduction": -0.08000000000000007
+        },
+        "by_risk_at_30": {
+          "aurc_reduction": -0.04159063677374694,
+          "auroc_improvement": -0.061799999999999966,
+          "risk_at_30_reduction": -0.08333333333333337,
+          "risk_at_50_reduction": -0.08000000000000007
+        }
+      },
+      "dataset": "hotpot_v4_semanticswap_n100",
+      "methods": [
+        "calibrated_logistic_context",
+        "calibrated_logistic_orbit",
+        "context_sufficiency_clean",
+        "corm_max_clean",
+        "corm_mean_clean",
+        "csrm_rule",
+        "equal_budget_mean",
+        "equal_budget_min",
+        "equal_budget_q25",
+        "faithful_sure_multi",
+        "retrieval_stability",
+        "self_consistency_proxy"
+      ],
+      "n": 200,
+      "rule_verdict_by_auroc": "loss",
+      "source_item_groups": 100,
+      "strongest": {
+        "by_aurc": "calibrated_logistic_orbit",
+        "by_auroc": "calibrated_logistic_orbit",
+        "by_risk_at_30": "calibrated_logistic_orbit"
+      }
+    },
+    {
+      "artifact": "results\\baselines_hotpot_v4_supportpreserve_n100.json",
+      "csrm_vs_strongest": {
+        "by_aurc": {
+          "aurc_reduction": -0.027817850927443655,
+          "auroc_improvement": 0.0,
+          "risk_at_30_reduction": 0.0,
+          "risk_at_50_reduction": 0.0
+        },
+        "by_auroc": {
+          "aurc_reduction": -0.027817850927443655,
+          "auroc_improvement": 0.0,
+          "risk_at_30_reduction": 0.0,
+          "risk_at_50_reduction": 0.0
+        },
+        "by_risk_at_30": {
+          "aurc_reduction": -0.027817850927443655,
+          "auroc_improvement": 0.0,
+          "risk_at_30_reduction": 0.0,
+          "risk_at_50_reduction": 0.0
+        }
+      },
+      "dataset": "hotpot_v4_supportpreserve_n100",
+      "methods": [
+        "calibrated_logistic_context",
+        "calibrated_logistic_orbit",
+        "context_sufficiency_clean",
+        "corm_max_clean",
+        "corm_mean_clean",
+        "csrm_rule",
+        "equal_budget_mean",
+        "equal_budget_min",
+        "equal_budget_q25",
+        "faithful_sure_multi",
+        "retrieval_stability",
+        "self_consistency_proxy"
+      ],
+      "n": 200,
+      "rule_verdict_by_auroc": "loss",
+      "source_item_groups": 100,
+      "strongest": {
+        "by_aurc": "self_consistency_proxy",
+        "by_auroc": "self_consistency_proxy",
+        "by_risk_at_30": "self_consistency_proxy"
+      }
+    }
+  ],
+  "claim_implication": "The v4 strong-baseline package is present and includes context sufficiency, faithful SURE-style multi-set scoring, equal-budget orbit reducers, retrieval stability, self-consistency, and out-of-fold calibrated logistic context/orbit baselines. It strengthens reviewer-facing baseline coverage, but it is also negative boundary evidence: CSRM-Rule is not an all-win method against the strongest learned/context baselines, and calibrated CSRM should be reported with per-setting caveats.",
+  "comparison_inputs": [
+    "results\\compare_calibrated_fever_v4_n100_structbalanced.json",
+    "results\\compare_calibrated_hotpot_v4_hardneg_n100.json",
+    "results\\compare_calibrated_hotpot_v4_n100_hardmatched.json",
+    "results\\compare_calibrated_hotpot_v4_n100_structbalanced.json",
+    "results\\compare_calibrated_hotpot_v4_semanticswap_n100.json",
+    "results\\compare_calibrated_hotpot_v4_supportpreserve_n100.json"
+  ],
+  "comparison_rows": [
+    {
+      "artifact": "results\\compare_calibrated_fever_v4_n100_structbalanced.json",
+      "dataset": "fever_v4_n100_structbalanced",
+      "n": 200,
+      "seeds": [
+        17,
+        31,
+        47
+      ],
+      "targets": {
+        "csrm_calibrated_isotonic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.16303043345327692,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.011088568481300682
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2700508658008658,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.24895104895104897,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 7,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.278042328042328,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          }
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.14798043585612483,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.0039614291158514186
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2700508658008658,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.24895104895104897,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 7,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.278042328042328,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          }
+        },
+        "csrm_minimax": {
+          "aurc_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.1429856089538846,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.008956256018091649
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2700508658008658,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.24895104895104897,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 7,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.278042328042328,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          }
+        },
+        "csrm_rule": {
+          "aurc_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.14343638997745833,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.008505474994517903
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2700508658008658,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.24895104895104897,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 7,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.278042328042328,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          }
+        }
+      }
+    },
+    {
+      "artifact": "results\\compare_calibrated_hotpot_v4_hardneg_n100.json",
+      "dataset": "hotpot_v4_hardneg_n100",
+      "n": 200,
+      "seeds": [
+        17,
+        31,
+        47
+      ],
+      "targets": {
+        "csrm_calibrated_isotonic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2212235738424199,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.014317575269587657
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.36291666666666667,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.37777777777777777,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.36833333333333335,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          }
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.19556559937227178,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.011340399200560422
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.36291666666666667,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.37777777777777777,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.36833333333333335,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          }
+        },
+        "csrm_minimax": {
+          "aurc_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.1623832665065336,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.044522732066298636
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.3195833333333334,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.0433333333333333
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.3222222222222222,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.05555555555555558
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.28500000000000003,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.08333333333333333
+          }
+        },
+        "csrm_rule": {
+          "aurc_reduction": {
+            "losses_against_baselines": 4,
+            "mean_delta": 0.07835146175978144,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 6,
+            "worst_case_delta": -0.12855453681305076
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.18541666666666667,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.1775
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.12777777777777777,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.25
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.11833333333333333,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.25
+          }
+        }
+      }
+    },
+    {
+      "artifact": "results\\compare_calibrated_hotpot_v4_n100_hardmatched.json",
+      "dataset": "hotpot_v4_n100_hardmatched",
+      "n": 200,
+      "seeds": [
+        17,
+        31,
+        47
+      ],
+      "targets": {
+        "csrm_calibrated_isotonic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 6,
+            "mean_delta": -0.027252269843530352,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 4,
+            "worst_case_delta": -0.18250276866409507
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.14999999999999997,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.07416666666666671
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.0722222222222222,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 7,
+            "worst_case_delta": -0.11111111111111116
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.13833333333333334,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.10000000000000002
+          }
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 3,
+            "mean_delta": 0.02336473687793651,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 7,
+            "worst_case_delta": -0.13188576194262822
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.15333333333333332,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.07083333333333335
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.09999999999999998,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.08333333333333337
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.15499999999999997,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.08333333333333333
+          }
+        },
+        "csrm_minimax": {
+          "aurc_reduction": {
+            "losses_against_baselines": 9,
+            "mean_delta": -0.09669616295775559,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 1,
+            "worst_case_delta": -0.2519466617783203
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 5,
+            "mean_delta": -0.0016666666666666561,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 5,
+            "worst_case_delta": -0.22583333333333333
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 5,
+            "mean_delta": -0.03888888888888886,
+            "ties_against_baselines": 4,
+            "wins_against_baselines": 1,
+            "worst_case_delta": -0.2222222222222222
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.021666666666666695,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.21666666666666665
+          }
+        },
+        "csrm_rule": {
+          "aurc_reduction": {
+            "losses_against_baselines": 7,
+            "mean_delta": -0.06748265315213835,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 3,
+            "worst_case_delta": -0.22273315197270308
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 4,
+            "mean_delta": 0.028333333333333332,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 6,
+            "worst_case_delta": -0.19583333333333333
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 4,
+            "mean_delta": -0.011111111111111103,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 5,
+            "worst_case_delta": -0.19444444444444445
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.03833333333333334,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.19999999999999998
+          }
+        }
+      }
+    },
+    {
+      "artifact": "results\\compare_calibrated_hotpot_v4_n100_structbalanced.json",
+      "dataset": "hotpot_v4_n100_structbalanced",
+      "n": 200,
+      "seeds": [
+        17,
+        31,
+        47
+      ],
+      "targets": {
+        "csrm_calibrated_isotonic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.12566537377732323,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.040976350177941344
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.21319873434323564,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.024236015476424694
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.16373626373626368,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.04365079365079368
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.14227862145482284,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.09132515082171828
+          }
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.11758010338584093,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.04906162056942365
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.2241912584431766,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.013243491376483693
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.21135531135531135,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.003968253968253954
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.17192289022952637,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.06168088204701475
+          }
+        },
+        "csrm_minimax": {
+          "aurc_reduction": {
+            "losses_against_baselines": 6,
+            "mean_delta": -0.05221592207533563,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 4,
+            "worst_case_delta": -0.2188576460306002
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 4,
+            "mean_delta": 0.054796544035674466,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 6,
+            "worst_case_delta": -0.18263820578398585
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 6,
+            "mean_delta": -0.018498168498168512,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 4,
+            "worst_case_delta": -0.2258852258852259
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.06437140281533875,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.16923236946120238
+          }
+        },
+        "csrm_rule": {
+          "aurc_reduction": {
+            "losses_against_baselines": 6,
+            "mean_delta": -0.02869832422362764,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 4,
+            "worst_case_delta": -0.1953400481788922
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 3,
+            "mean_delta": 0.07231080726605021,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 7,
+            "worst_case_delta": -0.1651239425536101
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 5,
+            "mean_delta": 0.007142857142857147,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 5,
+            "worst_case_delta": -0.20024420024420023
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.052270993689758,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.18133277858678312
+          }
+        }
+      }
+    },
+    {
+      "artifact": "results\\compare_calibrated_hotpot_v4_semanticswap_n100.json",
+      "dataset": "hotpot_v4_semanticswap_n100",
+      "n": 200,
+      "seeds": [
+        17,
+        31,
+        47
+      ],
+      "targets": {
+        "csrm_calibrated_isotonic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.0872818961070821,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.04477545090126132
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.2285,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.04624999999999998
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.2833333333333333,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.027777777777777752
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.22166666666666662,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.016666666666666646
+          }
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.13283997156720945,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0007826245588660463
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.27475,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.31111111111111106,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.23833333333333334,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
+          }
+        },
+        "csrm_minimax": {
+          "aurc_reduction": {
+            "losses_against_baselines": 6,
+            "mean_delta": 0.037734560734302584,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 4,
+            "worst_case_delta": -0.09432278627404084
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 3,
+            "mean_delta": 0.17141666666666666,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 7,
+            "worst_case_delta": -0.10333333333333332
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.14444444444444446,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 7,
+            "worst_case_delta": -0.16666666666666663
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 3,
+            "mean_delta": 0.15499999999999997,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 7,
+            "worst_case_delta": -0.08333333333333333
+          }
+        },
+        "csrm_rule": {
+          "aurc_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.05026250337251331,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.0817948436358301
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.19141666666666668,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.0833333333333333
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.14444444444444446,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 7,
+            "worst_case_delta": -0.16666666666666663
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.17166666666666666,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 7,
+            "worst_case_delta": -0.06666666666666665
+          }
+        }
+      }
+    },
+    {
+      "artifact": "results\\compare_calibrated_hotpot_v4_supportpreserve_n100.json",
+      "dataset": "hotpot_v4_supportpreserve_n100",
+      "n": 200,
+      "seeds": [
+        17,
+        31,
+        47
+      ],
+      "targets": {
+        "csrm_calibrated_isotonic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.17224677980355468,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3219166666666667,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3416666666666667,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.34833333333333333,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          }
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.15213808415138078,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.020108695652173908
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3219166666666667,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3416666666666667,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.34833333333333333,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          }
+        },
+        "csrm_minimax": {
+          "aurc_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.14432197254590753,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.02792480725764716
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3219166666666667,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3416666666666667,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.34833333333333333,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          }
+        },
+        "csrm_rule": {
+          "aurc_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.1444698618680051,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.027776917935549577
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3219166666666667,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3416666666666667,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.34833333333333333,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 8,
+            "worst_case_delta": 0.0
+          }
+        }
+      }
+    }
+  ],
+  "generated_at_utc": "2026-05-28T19:14:04.613321+00:00"
+}

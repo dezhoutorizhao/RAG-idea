@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-28T19:08:16.208823+00:00`
+Generated: `2026-05-28T19:14:04.622126+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -12,6 +12,7 @@ Ready for NeurIPS main claim: `False`
 | run_human_audit_eval_v4 | `False` | `results\human_audit_v4_eval_status_20260529.json`<br>`results\human_audit_v4_eval_status_20260529.md` |
 | summarize_fever_cp_transfer_sweep | `False` | `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json`<br>`results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.md` |
 | summarize_end2end_selective_rag_proxy | `False` | `results\end2end_selective_rag_proxy_summary_20260529.json`<br>`results\end2end_selective_rag_proxy_summary_20260529.md` |
+| summarize_v4_strong_baselines | `False` | `results\v4_strong_baseline_summary_20260529.json`<br>`results\v4_strong_baseline_summary_20260529.md` |
 | summarize_evidence_closure | `False` | `results\evidence_closure_status_v4.json`<br>`results\evidence_closure_status_v4.md` |
 
 ## Gate Summary
@@ -34,6 +35,7 @@ Non-human:
 - FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.
 - Independent external review has not been rerun after the latest storage-status update.
 - End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.
+- V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.
 
 ## Claim Policy
 
