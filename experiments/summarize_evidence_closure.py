@@ -85,6 +85,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     v4_anti_shortcut = _v4_anti_shortcut_status(results)
     mechanism_ablation = _mechanism_ablation_status(results)
     neurips_readiness = _neurips_readiness_status(results)
+    results_provenance = _results_provenance_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -168,6 +169,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "failed_claims": claims.get("failed_claims"),
         },
         "current_evidence_reproduction": current_reproduction_status,
+        "results_provenance": results_provenance,
         "neurips_readiness": neurips_readiness,
         "mechanism_ablation": mechanism_ablation,
         "end2end_selective_rag_proxy": end2end_proxy,
@@ -629,6 +631,26 @@ def _neurips_readiness_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _results_provenance_status(results: Path) -> dict[str, Any] | None:
+    path = results / "results_provenance_manifest_20260529.json"
+    readme = results / "README.md"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "readme_artifact": str(readme.as_posix()),
+        "readme_exists": readme.exists(),
+        "step_count": payload.get("step_count"),
+        "artifact_count": payload.get("artifact_count"),
+        "manifest_missing_artifact_count": payload.get("manifest_missing_artifact_count"),
+        "missing_output_count": payload.get("missing_output_count"),
+        "untracked_output_count": payload.get("untracked_output_count"),
+        "readiness_status_counts": payload.get("readiness_status_counts"),
+        "claim_boundary": payload.get("claim_boundary"),
+    }
+
+
 def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     path = results / "human_audit_v4_eval_status_20260529.json"
     if not path.exists():
@@ -686,6 +708,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     risk = status["risk_control"]
     claims = status["claim_verification"]
     reproduction = status.get("current_evidence_reproduction")
+    results_provenance = status.get("results_provenance")
     neurips_readiness = status.get("neurips_readiness")
     mechanism_ablation = status.get("mechanism_ablation")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
@@ -779,6 +802,24 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"- Full CoRM reconstruction ready: `{reproduction['full_corm_reconstruction_ready']}`; "
                 f"remote storage ready: `{reproduction['remote_storage_ready']}`.",
                 f"- Claim verifier passed: `{reproduction['claim_verifier_passed']}`.",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## Results Provenance", ""])
+    if results_provenance:
+        lines.extend(
+            [
+                f"- README artifact: `{results_provenance['readme_artifact']}`; "
+                f"exists: `{results_provenance['readme_exists']}`.",
+                f"- Provenance steps: `{results_provenance['step_count']}`; "
+                f"tracked artifacts: `{results_provenance['artifact_count']}`.",
+                f"- Manifest missing artifacts: "
+                f"`{results_provenance['manifest_missing_artifact_count']}`; "
+                f"missing current-step outputs: `{results_provenance['missing_output_count']}`; "
+                f"untracked current-step outputs: `{results_provenance['untracked_output_count']}`.",
+                f"- Claim boundary: {results_provenance['claim_boundary']}",
                 "",
             ]
         )

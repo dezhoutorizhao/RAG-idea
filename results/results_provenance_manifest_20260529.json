@@ -1,0 +1,377 @@
+{
+  "artifact_count": 40,
+  "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
+  "generated_at_utc": "2026-05-29T01:45:14.027036+00:00",
+  "known_blockers": {
+    "hard_readiness_blockers": [
+      {
+        "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
+        "requirement": "Human-audited orbit labels",
+        "status": "blocked"
+      },
+      {
+        "boundary_or_next_action": "Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts.",
+        "requirement": "Full CoRM-RAG reproduction",
+        "status": "blocked"
+      },
+      {
+        "boundary_or_next_action": "Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.",
+        "requirement": "Independent external review",
+        "status": "blocked"
+      }
+    ],
+    "human_audit": [
+      "Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items."
+    ],
+    "non_human": [
+      "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
+      "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
+      "Independent external review has not been rerun after the latest storage-status update.",
+      "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
+      "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats."
+    ]
+  },
+  "manifest_missing_artifact_count": 0,
+  "missing_output_count": 0,
+  "missing_outputs": [],
+  "readiness_status_counts": {
+    "blocked": 3,
+    "fail": 1,
+    "partial": 2,
+    "pass": 4
+  },
+  "reproduction_ready_for_neurips_main_claim": false,
+  "root": ".",
+  "source_reports": {
+    "current_evidence_reproduction": "results\\current_evidence_reproduction_20260529.json",
+    "neurips_readiness_matrix": "results\\neurips_readiness_matrix_20260529.json",
+    "v4_evidence_package_manifest": "results\\v4_evidence_package_manifest_20260529.json"
+  },
+  "step_count": 13,
+  "steps": [
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/human_audit_v4_status_20260529.json",
+          "sha256": "9c730826406716ab8f3fb7c417bca1626f06e418628e8971765d64cf4d73c9d1",
+          "size_bytes": 5073
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/human_audit_v4_status_20260529.md",
+          "sha256": "0191a484feadce29a1321637744eb76990ff896c79f70ae05635b3c056b0a01d",
+          "size_bytes": 828
+        }
+      ],
+      "ready": false,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/summarize_human_audit_v4_status.py",
+      "step": "summarize_human_audit_v4_status"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/human_audit_v4_eval_status_20260529.json",
+          "sha256": "3703442aa638c9b6ea69f245604e62a170ab871173452907e26d4857f9a8f3ba",
+          "size_bytes": 2528
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/human_audit_v4_eval_status_20260529.md",
+          "sha256": "631763b47c09690e4257ed1e84e67b9f5e2694456a50528b1d72ae92a316ef78",
+          "size_bytes": 1036
+        }
+      ],
+      "ready": false,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/run_human_audit_eval_v4.py",
+      "step": "run_human_audit_eval_v4"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json",
+          "sha256": "571ebc0899ebee94f29bda231ac2a638ea819b42c1b8217ad441b3881a7639ee",
+          "size_bytes": 8163
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.md",
+          "sha256": "f5660724dc567b6761ccb14af03387bb469bd3c44d545bd4a57badfd6aa16faa",
+          "size_bytes": 1930
+        }
+      ],
+      "ready": false,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/summarize_fever_cp_transfer_sweep.py",
+      "step": "summarize_fever_cp_transfer_sweep"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/end2end_selective_rag_proxy_summary_20260529.json",
+          "sha256": "e4c481d11815f733e266ca8c4190233915e4c128f95b0da7650ae5a3148b59f8",
+          "size_bytes": 13211
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/end2end_selective_rag_proxy_summary_20260529.md",
+          "sha256": "51f0dee77fa245e680f36fc6e4c9727da12374dd31fc91c4f61db0918bf1a68f",
+          "size_bytes": 3279
+        }
+      ],
+      "ready": false,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/summarize_end2end_selective_rag_proxy.py",
+      "step": "summarize_end2end_selective_rag_proxy"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/v4_strong_baseline_summary_20260529.json",
+          "sha256": "1eaa2bfa90928b89870471c28868f04a25c7c611e5eaa71da667a0c942a79d45",
+          "size_bytes": 43608
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/v4_strong_baseline_summary_20260529.md",
+          "sha256": "3ccc5a0160b93bf19de582932bb2861b885f0d5f6386a80cd945f339439e2dca",
+          "size_bytes": 3178
+        }
+      ],
+      "ready": false,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/summarize_v4_strong_baselines.py",
+      "step": "summarize_v4_strong_baselines"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/v4_failure_taxonomy_summary_20260529.json",
+          "sha256": "dbd68d968a8a05b5c6de5a35bed6c2b99489f9f235728180cfdf6b5b8df6e566",
+          "size_bytes": 46069
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/v4_failure_taxonomy_summary_20260529.md",
+          "sha256": "b670d98c7422c959df2bcef2c073d0db4fb7ed20c3decf931cb7d627ccf7d3b6",
+          "size_bytes": 3223
+        }
+      ],
+      "ready": true,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/summarize_v4_failure_taxonomy.py",
+      "step": "summarize_v4_failure_taxonomy"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "paper/case_studies/v4_case_gallery_20260529.jsonl",
+          "sha256": "f03232de577d772efa6cb88bb54c7c9e8b3d48881493364f7ac052c74dbe4a59",
+          "size_bytes": 191730
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "paper/case_studies/v4_case_gallery_20260529.md",
+          "sha256": "2866611b5a5e471c45248346071427672833aaece4e1914a64e2586550f80b1f",
+          "size_bytes": 27403
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/v4_case_gallery_summary_20260529.json",
+          "sha256": "f3f6fbd8ffde136534a559e5d4b43e16fb3c9ab64df5b2e90d49e8a4d7397338",
+          "size_bytes": 1882
+        }
+      ],
+      "ready": true,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/export_v4_case_gallery.py",
+      "step": "export_v4_case_gallery"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "paper/figures/clean_sufficiency_misleading_v4_20260529.csv",
+          "sha256": "ded3232932e843f23579e5f85768c2fe16a3e90f18f920532564c3def0c2ab5e",
+          "size_bytes": 3097
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/clean_sufficiency_misleading_v4_20260529.json",
+          "sha256": "36f591dce86b02df8e1a52610e98776f68e39ff3fcd187eb442d4eee814880b5",
+          "size_bytes": 2465
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "paper/figures/clean_sufficiency_misleading_v4_20260529.svg",
+          "sha256": "a354e94977a8ffcf4d32cc4e560521006ab552b043189b98ea2dfd5103bd73f3",
+          "size_bytes": 6083
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "paper/figures/clean_sufficiency_misleading_v4_20260529.md",
+          "sha256": "7ba5c1c29286723ce541dfb5093a41880be8e410e224b2d2452a989953a231b5",
+          "size_bytes": 914
+        }
+      ],
+      "ready": true,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/build_clean_sufficiency_misleading_figure.py",
+      "step": "build_clean_sufficiency_misleading_figure"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/v4_anti_shortcut_summary_20260529.json",
+          "sha256": "44b4ea8a02793f5f87551c376eba128428d4fcedc1722b52e0d07ef1c0d01135",
+          "size_bytes": 5006
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/v4_anti_shortcut_summary_20260529.md",
+          "sha256": "dabd054fdaf9c944f4bb4762dba14a00e0625c063b9f80acd91929d8e7d0b510",
+          "size_bytes": 1558
+        }
+      ],
+      "ready": true,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/summarize_v4_anti_shortcut.py",
+      "step": "summarize_v4_anti_shortcut"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/mechanism_ablation_summary_20260529.json",
+          "sha256": "c65816954adb5c16cbdb11aed6d3b5c0ac67735ce0c4d4b1949410f09fb85831",
+          "size_bytes": 10571
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/mechanism_ablation_summary_20260529.md",
+          "sha256": "9b4a97acb5de27624a43be70cb4b94685527f13f9e6eb2a7302a10b4ed71ee40",
+          "size_bytes": 2368
+        }
+      ],
+      "ready": true,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/summarize_mechanism_ablation.py",
+      "step": "summarize_mechanism_ablation"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/evidence_closure_status_v4.json",
+          "sha256": "000c8306c71de7a9d679e9b75e456971dbe9aa93110926bd0a7e82ae54746ce7",
+          "size_bytes": 25550
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/evidence_closure_status_v4.md",
+          "sha256": "193926807ba01d6abc00d97e8ebcc3ddd5d1a359ff5e00c875609c7cefa66de8",
+          "size_bytes": 13946
+        }
+      ],
+      "ready": false,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/summarize_evidence_closure.py",
+      "step": "summarize_evidence_closure"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/neurips_readiness_matrix_20260529.json",
+          "sha256": "1b34c0f73b89c213c8991c38196d67ffef434a90c482674e1de879f98e6a61ef",
+          "size_bytes": 6650
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/neurips_readiness_matrix_20260529.md",
+          "sha256": "57ee20e4f725771b154a2bc37ef180347992eda81e767a67dff722000bdd4ad3",
+          "size_bytes": 2998
+        }
+      ],
+      "ready": false,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/summarize_neurips_readiness.py",
+      "step": "summarize_neurips_readiness"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/results_provenance_manifest_20260529.json",
+          "sha256": "acf9b3e4257a8ac1d5550775923504eb3935074bd1b656e2efcd42cff699d293",
+          "size_bytes": 15281
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/README.md",
+          "sha256": "191c92d24002fd7fc8651f4bc3d7eb1dad3b3f7ae09a64cbc87eab1604a92463",
+          "size_bytes": 7443
+        }
+      ],
+      "ready": true,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/build_results_provenance_readme.py",
+      "step": "build_results_provenance_readme"
+    }
+  ],
+  "untracked_or_missing_output_count": 0,
+  "untracked_or_missing_outputs": [],
+  "untracked_output_count": 0,
+  "untracked_outputs": []
+}

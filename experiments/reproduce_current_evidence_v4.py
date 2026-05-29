@@ -61,6 +61,10 @@ from experiments.summarize_neurips_readiness import (
     render_markdown as render_neurips_readiness_markdown,
     summarize_neurips_readiness,
 )
+from experiments.build_results_provenance_readme import (
+    build_results_provenance_readme,
+    render_markdown as render_results_provenance_markdown,
+)
 
 
 DEFAULT_MANIFESTS = [
@@ -300,6 +304,26 @@ def reproduce_current_evidence_v4(
             "It does not fabricate human labels, does not delete server data, and does not complete full CoRM-RAG reproduction."
         ),
     }
+    _write_json(output_json, report)
+    output_md.write_text(render_markdown(report), encoding="utf-8")
+
+    provenance_json = results / "results_provenance_manifest_20260529.json"
+    provenance_md = results / "README.md"
+    provenance = build_results_provenance_readme(
+        root,
+        output_json,
+        results / "v4_evidence_package_manifest_20260529.json",
+        readiness_json,
+    )
+    _write_json(provenance_json, provenance)
+    provenance_md.write_text(render_results_provenance_markdown(provenance), encoding="utf-8")
+    commands.append(
+        {
+            "name": "build_results_provenance_readme",
+            "outputs": [str(provenance_json), str(provenance_md)],
+            "ready": provenance["missing_output_count"] == 0,
+        }
+    )
     _write_json(output_json, report)
     output_md.write_text(render_markdown(report), encoding="utf-8")
 

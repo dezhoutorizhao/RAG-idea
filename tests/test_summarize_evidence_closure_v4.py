@@ -11,6 +11,7 @@ from experiments.summarize_evidence_closure import (
     _remote_storage_probe_status,
     _mechanism_ablation_status,
     _neurips_readiness_status,
+    _results_provenance_status,
     _semantic_swap_status,
     _v4_case_gallery_status,
     _v4_anti_shortcut_status,
@@ -520,6 +521,30 @@ def test_neurips_readiness_status_summarizes_blockers(tmp_path):
     assert status["hard_blocker_count"] == 1
     assert status["negative_or_partial_count"] == 1
     assert status["hard_blockers"][0]["requirement"] == "Human-audited orbit labels"
+
+
+def test_results_provenance_status_summarizes_readme_artifact(tmp_path):
+    (tmp_path / "README.md").write_text("# Results Provenance", encoding="utf-8")
+    _write_json(
+        tmp_path / "results_provenance_manifest_20260529.json",
+        {
+            "step_count": 12,
+            "artifact_count": 32,
+            "manifest_missing_artifact_count": 0,
+            "missing_output_count": 0,
+            "untracked_output_count": 7,
+            "readiness_status_counts": {"blocked": 3},
+            "claim_boundary": "does not complete pending human audit labels",
+        },
+    )
+
+    status = _results_provenance_status(tmp_path)
+
+    assert status["readme_exists"] is True
+    assert status["step_count"] == 12
+    assert status["artifact_count"] == 32
+    assert status["untracked_output_count"] == 7
+    assert status["claim_boundary"] == "does not complete pending human audit labels"
 
 
 def test_current_reproduction_status_is_aggregated(tmp_path):
