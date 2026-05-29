@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T03:29:12.611071+00:00`
+Generated: `2026-05-29T03:36:30.298582+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -143,7 +143,7 @@ V4 anti-shortcut suite:
 - Risk@30 wins/ties/losses vs strongest non-CSRM: `16` / `4` / `4`.
 - Risk@50 wins/ties/losses vs strongest non-CSRM: `24` / `0` / `0`.
 - AURC wins/ties/losses vs strongest non-CSRM: `16` / `0` / `8`.
-- Mean Risk@30/Risk@50/AURC reduction: `0.1528` / `0.1904` / `0.1078`.
+- Mean Risk@30/Risk@50/AURC reduction: `0.1528` / `0.1908` / `0.1082`.
 - Claim policy: This matrix expands the end-to-end proxy to two retrieval policies and two generators over the materialized v4 orbit corpus. It is still a local-corpus proxy, not a full Wikipedia retrieval-generation reproduction.
 
 ## CoRM Reconstruction

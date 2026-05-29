@@ -17,15 +17,29 @@ def check_remote_storage_status(
     host: str,
     user: str,
     port: int,
-    password: str,
     target: str,
     output: Path,
+    password: str | None = None,
+    key_filename: str | None = None,
+    allow_agent: bool = True,
+    look_for_keys: bool = True,
     min_free_gib: float = 180.0,
     timeout: int = 30,
 ) -> dict[str, Any]:
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
-    client.connect(hostname=host, port=port, username=user, password=password, timeout=timeout)
+    client.connect(
+        **_connect_kwargs(
+            host=host,
+            user=user,
+            port=port,
+            password=password,
+            key_filename=key_filename,
+            allow_agent=allow_agent,
+            look_for_keys=look_for_keys,
+            timeout=timeout,
+        )
+    )
     try:
         df = _run(client, f"df -PT / {shlex.quote(target)} /dev/shm 2>&1")
         findmnt = _run(client, f"findmnt -no SOURCE,FSTYPE,OPTIONS {shlex.quote(target)} 2>&1 || true")
@@ -65,6 +79,32 @@ def check_remote_storage_status(
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2, sort_keys=True), encoding="utf-8")
     return report
+
+
+def _connect_kwargs(
+    *,
+    host: str,
+    user: str,
+    port: int,
+    password: str | None,
+    key_filename: str | None,
+    allow_agent: bool,
+    look_for_keys: bool,
+    timeout: int,
+) -> dict[str, Any]:
+    kwargs: dict[str, Any] = {
+        "hostname": host,
+        "port": port,
+        "username": user,
+        "timeout": timeout,
+        "allow_agent": allow_agent,
+        "look_for_keys": look_for_keys,
+    }
+    if password:
+        kwargs["password"] = password
+    if key_filename:
+        kwargs["key_filename"] = key_filename
+    return kwargs
 
 
 def parse_df_pt(output: str) -> list[dict[str, Any]]:
@@ -152,15 +192,19 @@ def main() -> None:
     parser.add_argument("--target", default="/mnt/ntfs-disk")
     parser.add_argument("--min-free-gib", type=float, default=180.0)
     parser.add_argument("--output", type=Path, required=True)
+    parser.add_argument("--key-filename")
+    parser.add_argument("--no-agent", action="store_true")
+    parser.add_argument("--no-look-for-keys", action="store_true")
     args = parser.parse_args()
     password = os.environ.get("CORM_REMOTE_PASSWORD")
-    if not password:
-        raise SystemExit("CORM_REMOTE_PASSWORD is required")
     report = check_remote_storage_status(
         host=args.host,
         user=args.user,
         port=args.port,
         password=password,
+        key_filename=args.key_filename,
+        allow_agent=not args.no_agent,
+        look_for_keys=not args.no_look_for_keys,
         target=args.target,
         output=args.output,
         min_free_gib=args.min_free_gib,
