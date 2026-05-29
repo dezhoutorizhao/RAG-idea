@@ -1,6 +1,10 @@
 import json
 
-from experiments.verify_v4_evidence_package import render_markdown, verify_v4_evidence_package
+from experiments.verify_v4_evidence_package import (
+    DEFAULT_ARTIFACTS,
+    render_markdown,
+    verify_v4_evidence_package,
+)
 
 
 def test_verify_v4_evidence_package_hashes_artifacts_and_keeps_blockers(tmp_path):
@@ -61,6 +65,15 @@ def test_render_markdown_lists_artifacts_and_claim_boundary():
     assert "V4 Evidence Package Manifest" in text
     assert "`a.json`" in text
     assert "does not convert pending human audit" in text
+
+
+def test_default_manifest_tracks_human_audit_protocol_docs():
+    defaults = {str(path).replace("\\", "/") for path in DEFAULT_ARTIFACTS}
+
+    assert "annotation/README.md" in defaults
+    assert "annotation/audit_card_template.md" in defaults
+    assert "annotation/guidelines_v4.md" in defaults
+    assert "annotation/label_schema_v4.json" in defaults
 
 
 def _write_json(path, payload):
