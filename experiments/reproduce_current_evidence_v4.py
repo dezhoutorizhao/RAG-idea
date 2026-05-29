@@ -46,6 +46,10 @@ from experiments.summarize_v4_baseline_budget_parity import (
     render_markdown as render_v4_baseline_budget_parity_markdown,
     summarize_v4_baseline_budget_parity,
 )
+from experiments.summarize_v4_split_threshold_protocol import (
+    render_markdown as render_v4_split_threshold_protocol_markdown,
+    summarize_v4_split_threshold_protocol,
+)
 from experiments.summarize_v4_failure_taxonomy import (
     DEFAULT_INPUTS as DEFAULT_V4_FAILURE_TAXONOMY_INPUTS,
     render_markdown as render_v4_failure_taxonomy_markdown,
@@ -243,6 +247,22 @@ def reproduce_current_evidence_v4(
             "name": "summarize_v4_baseline_budget_parity",
             "outputs": [str(baseline_budget_json), str(baseline_budget_md)],
             "ready": baseline_budget["budget_parity_claim_supported"],
+        }
+    )
+
+    split_threshold_json = results / "v4_split_threshold_protocol_20260529.json"
+    split_threshold_md = results / "v4_split_threshold_protocol_20260529.md"
+    split_threshold = summarize_v4_split_threshold_protocol(strong_baselines_json)
+    _write_json(split_threshold_json, split_threshold)
+    split_threshold_md.write_text(
+        render_v4_split_threshold_protocol_markdown(split_threshold),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "summarize_v4_split_threshold_protocol",
+            "outputs": [str(split_threshold_json), str(split_threshold_md)],
+            "ready": split_threshold["protocol_complete"],
         }
     )
 

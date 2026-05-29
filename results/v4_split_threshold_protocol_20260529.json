@@ -1,0 +1,80 @@
+{
+  "baseline_file_count": 6,
+  "claim_policy": "This audit covers the route-plan requirements that comparisons use the same inputs, same group split, and same threshold-selection protocol. It supports the current ranking and fixed-coverage comparison scope, but it does not claim a shared calibration-threshold selective-RAG protocol because that experiment has not been run for every baseline.",
+  "comparison_file_count": 6,
+  "generated_at_utc": "2026-05-29T02:49:26.727022+00:00",
+  "protocol_complete": false,
+  "rows": [
+    {
+      "boundary": "The audit is limited to loaded v4 baseline artifacts referenced by the strong-baseline summary.",
+      "evidence": [
+        "baseline files with fairness flag: 6",
+        "fairness.same_input_rows is true in every loaded baseline artifact"
+      ],
+      "requirement": "same_input_rows",
+      "status": "pass"
+    },
+    {
+      "boundary": "This verifies shared scored evidence files, not external LLM judge calls.",
+      "evidence": [
+        "baseline files with fairness flag: 6",
+        "fairness.same_scored_evidence is true in every loaded baseline artifact"
+      ],
+      "requirement": "same_scored_evidence",
+      "status": "pass"
+    },
+    {
+      "boundary": "The comparison script uses source_item_group_id groups; this does not by itself add human labels.",
+      "evidence": [
+        "comparison files: 6",
+        "each per-seed result records train/calibration/test source-item group counts"
+      ],
+      "requirement": "source_item_group_split",
+      "status": "pass"
+    },
+    {
+      "boundary": "This covers standalone baseline scoring; train/test comparison artifacts train learned baselines inside each split.",
+      "evidence": [
+        "standalone baseline artifacts record logistic_scores='out-of-fold by source_item_group_id when possible'",
+        "baseline files checked: 6"
+      ],
+      "requirement": "out_of_fold_logistic_baseline_split",
+      "status": "pass"
+    },
+    {
+      "boundary": "This supports calibrated CSRM targets, not a universal baseline threshold-selection protocol.",
+      "evidence": [
+        "comparison artifacts include train_frac, cal_frac, seeds, and calibration split sizes",
+        "calibrated CSRM targets are fit with train and calibration orbits before test scoring"
+      ],
+      "requirement": "target_calibration_split",
+      "status": "pass"
+    },
+    {
+      "boundary": "The current evidence is valid for ranking/fixed-coverage comparisons, but not for a shared risk-target threshold-selection claim across every baseline.",
+      "evidence": [
+        "compare_calibrated artifacts report fixed-coverage AUROC/risk/AURC metrics",
+        "no artifact records per-baseline thresholds selected on the shared calibration split"
+      ],
+      "requirement": "shared_calibration_threshold_selection",
+      "status": "missing"
+    },
+    {
+      "boundary": "Negative and partial baseline evidence must remain in the paper-facing limitations.",
+      "evidence": [
+        "v4 strong-baseline summary records losses/ties/wins against strongest baselines",
+        "coverage and budget-parity matrices preserve partial/missing baseline boundaries"
+      ],
+      "requirement": "failed_baselines_reported",
+      "status": "pass"
+    }
+  ],
+  "source": "results\\v4_strong_baseline_summary_20260529.json",
+  "source_item_group_split_supported": true,
+  "status_counts": {
+    "missing": 1,
+    "partial": 0,
+    "pass": 6
+  },
+  "threshold_selection_claim_supported": false
+}
