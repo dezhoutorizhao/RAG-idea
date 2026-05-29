@@ -14,7 +14,13 @@ if str(ROOT) not in sys.path:
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from csrm_rag import area_under_risk_coverage, risk_coverage_curve, roc_auc, selective_risk_at_coverage
+from csrm_rag import (
+    area_under_risk_coverage,
+    average_precision,
+    risk_coverage_curve,
+    roc_auc,
+    selective_risk_at_coverage,
+)
 from csrm_rag.baselines import BaselineInputs, baseline_scores
 from experiments.evaluate_orbits import load_orbits
 
@@ -68,6 +74,7 @@ def run_all_baselines_v4(
 def _metrics(scores: Sequence[float], labels: Sequence[bool]) -> dict[str, Any]:
     return {
         "auroc": _safe_auc(scores, labels),
+        "auprc": _safe_average_precision(scores, labels),
         "risk_at_30": selective_risk_at_coverage(scores, labels, 0.30)["risk"],
         "risk_at_50": selective_risk_at_coverage(scores, labels, 0.50)["risk"],
         "risk_at_70": selective_risk_at_coverage(scores, labels, 0.70)["risk"],
@@ -85,6 +92,10 @@ def _strongest_non_csrm(methods: dict[str, dict[str, Any]]) -> dict[str, dict[st
     candidates = {name: metrics for name, metrics in methods.items() if name != "csrm_rule"}
     by_aurc = min(candidates.items(), key=lambda item: (item[1]["aurc"], item[0]))
     by_risk30 = min(candidates.items(), key=lambda item: (item[1]["risk_at_30"], item[1]["aurc"], item[0]))
+    by_auprc = max(
+        candidates.items(),
+        key=lambda item: (-1.0 if item[1]["auprc"] is None else item[1]["auprc"], -item[1]["aurc"]),
+    )
     by_auroc = max(
         candidates.items(),
         key=lambda item: (-1.0 if item[1]["auroc"] is None else item[1]["auroc"], -item[1]["aurc"]),
@@ -92,6 +103,7 @@ def _strongest_non_csrm(methods: dict[str, dict[str, Any]]) -> dict[str, dict[st
     return {
         "by_aurc": {"method": by_aurc[0], "metrics": by_aurc[1]},
         "by_risk_at_30": {"method": by_risk30[0], "metrics": by_risk30[1]},
+        "by_auprc": {"method": by_auprc[0], "metrics": by_auprc[1]},
         "by_auroc": {"method": by_auroc[0], "metrics": by_auroc[1]},
     }
 
@@ -99,8 +111,10 @@ def _strongest_non_csrm(methods: dict[str, dict[str, Any]]) -> dict[str, dict[st
 def _delta(csrm: dict[str, Any], baseline: dict[str, Any]) -> dict[str, Any]:
     return {
         "auroc_improvement": _none_delta(csrm["auroc"], baseline["auroc"]),
+        "auprc_improvement": _none_delta(csrm["auprc"], baseline["auprc"]),
         "risk_at_30_reduction": baseline["risk_at_30"] - csrm["risk_at_30"],
         "risk_at_50_reduction": baseline["risk_at_50"] - csrm["risk_at_50"],
+        "risk_at_70_reduction": baseline["risk_at_70"] - csrm["risk_at_70"],
         "aurc_reduction": baseline["aurc"] - csrm["aurc"],
     }
 
@@ -108,6 +122,13 @@ def _delta(csrm: dict[str, Any], baseline: dict[str, Any]) -> dict[str, Any]:
 def _safe_auc(scores: Sequence[float], labels: Sequence[bool]) -> float | None:
     try:
         return roc_auc(scores, labels)
+    except ValueError:
+        return None
+
+
+def _safe_average_precision(scores: Sequence[float], labels: Sequence[bool]) -> float | None:
+    try:
+        return average_precision(scores, labels)
     except ValueError:
         return None
 

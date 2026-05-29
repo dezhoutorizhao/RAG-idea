@@ -3,6 +3,12 @@
     "baseline_file_count": 6,
     "calibrated_targets_vs_all_baselines": {
       "csrm_calibrated_isotonic": {
+        "auprc_improvement": {
+          "losses": 2,
+          "mean_worst_case_delta": -0.011646312683031278,
+          "robust_wins": 1,
+          "ties": 3
+        },
         "aurc_reduction": {
           "losses": 3,
           "mean_worst_case_delta": -0.040474737665401564,
@@ -26,9 +32,21 @@
           "mean_worst_case_delta": -0.034665302914730835,
           "robust_wins": 0,
           "ties": 3
+        },
+        "risk_at_70_reduction": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.007744495647721456,
+          "robust_wins": 0,
+          "ties": 3
         }
       },
       "csrm_calibrated_logistic": {
+        "auprc_improvement": {
+          "losses": 2,
+          "mean_worst_case_delta": -0.009789295954139613,
+          "robust_wins": 1,
+          "ties": 3
+        },
         "aurc_reduction": {
           "losses": 5,
           "mean_worst_case_delta": -0.03592921365362859,
@@ -52,9 +70,21 @@
           "mean_worst_case_delta": -0.024169035896724686,
           "robust_wins": 0,
           "ties": 4
+        },
+        "risk_at_70_reduction": {
+          "losses": 2,
+          "mean_worst_case_delta": -0.00808913308913309,
+          "robust_wins": 0,
+          "ties": 4
         }
       },
       "csrm_minimax": {
+        "auprc_improvement": {
+          "losses": 4,
+          "mean_worst_case_delta": -0.09868207105539539,
+          "robust_wins": 0,
+          "ties": 2
+        },
         "aurc_reduction": {
           "losses": 6,
           "mean_worst_case_delta": -0.1077551482374998,
@@ -78,9 +108,21 @@
           "mean_worst_case_delta": -0.0920942837990893,
           "robust_wins": 0,
           "ties": 2
+        },
+        "risk_at_70_reduction": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.02159399740044903,
+          "robust_wins": 0,
+          "ties": 3
         }
       },
       "csrm_rule": {
+        "auprc_improvement": {
+          "losses": 4,
+          "mean_worst_case_delta": -0.11009311159260005,
+          "robust_wins": 0,
+          "ties": 2
+        },
         "aurc_reduction": {
           "losses": 6,
           "mean_worst_case_delta": -0.11078416225509059,
@@ -104,11 +146,22 @@
           "mean_worst_case_delta": -0.11633324087557496,
           "robust_wins": 0,
           "ties": 2
+        },
+        "risk_at_70_reduction": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.02590688881011462,
+          "robust_wins": 0,
+          "ties": 3
         }
       }
     },
     "comparison_file_count": 6,
     "csrm_rule_vs_strongest": {
+      "by_auprc": {
+        "losses": 6,
+        "ties": 0,
+        "wins": 0
+      },
       "by_aurc": {
         "losses": 6,
         "ties": 0,
@@ -154,23 +207,37 @@
     {
       "artifact": "results\\baselines_fever_v4_n100_structbalanced.json",
       "csrm_vs_strongest": {
-        "by_aurc": {
+        "by_auprc": {
+          "auprc_improvement": 0.0,
           "aurc_reduction": -0.003061576606306654,
           "auroc_improvement": 0.0,
           "risk_at_30_reduction": 0.0,
-          "risk_at_50_reduction": 0.0
+          "risk_at_50_reduction": 0.0,
+          "risk_at_70_reduction": 0.0
+        },
+        "by_aurc": {
+          "auprc_improvement": 0.0,
+          "aurc_reduction": -0.003061576606306654,
+          "auroc_improvement": 0.0,
+          "risk_at_30_reduction": 0.0,
+          "risk_at_50_reduction": 0.0,
+          "risk_at_70_reduction": 0.0
         },
         "by_auroc": {
+          "auprc_improvement": 0.0,
           "aurc_reduction": -0.003061576606306654,
           "auroc_improvement": 0.0,
           "risk_at_30_reduction": 0.0,
-          "risk_at_50_reduction": 0.0
+          "risk_at_50_reduction": 0.0,
+          "risk_at_70_reduction": 0.0
         },
         "by_risk_at_30": {
+          "auprc_improvement": 0.0,
           "aurc_reduction": -0.003061576606306654,
           "auroc_improvement": 0.0,
           "risk_at_30_reduction": 0.0,
-          "risk_at_50_reduction": 0.0
+          "risk_at_50_reduction": 0.0,
+          "risk_at_70_reduction": 0.0
         }
       },
       "dataset": "fever_v4_n100_structbalanced",
@@ -194,6 +261,7 @@
       "rule_verdict_by_auroc": "loss",
       "source_item_groups": 100,
       "strongest": {
+        "by_auprc": "equal_budget_ensemble_logistic",
         "by_aurc": "equal_budget_ensemble_logistic",
         "by_auroc": "equal_budget_ensemble_logistic",
         "by_risk_at_30": "equal_budget_ensemble_logistic"
@@ -202,23 +270,37 @@
     {
       "artifact": "results\\baselines_hotpot_v4_hardneg_n100.json",
       "csrm_vs_strongest": {
-        "by_aurc": {
+        "by_auprc": {
+          "auprc_improvement": -0.18782605956093368,
           "aurc_reduction": -0.11573264754081447,
           "auroc_improvement": -0.17479999999999996,
           "risk_at_30_reduction": -0.18333333333333335,
-          "risk_at_50_reduction": -0.21999999999999997
+          "risk_at_50_reduction": -0.21999999999999997,
+          "risk_at_70_reduction": -0.06428571428571428
+        },
+        "by_aurc": {
+          "auprc_improvement": -0.18782605956093368,
+          "aurc_reduction": -0.11573264754081447,
+          "auroc_improvement": -0.17479999999999996,
+          "risk_at_30_reduction": -0.18333333333333335,
+          "risk_at_50_reduction": -0.21999999999999997,
+          "risk_at_70_reduction": -0.06428571428571428
         },
         "by_auroc": {
+          "auprc_improvement": -0.18782605956093368,
           "aurc_reduction": -0.11573264754081447,
           "auroc_improvement": -0.17479999999999996,
           "risk_at_30_reduction": -0.18333333333333335,
-          "risk_at_50_reduction": -0.21999999999999997
+          "risk_at_50_reduction": -0.21999999999999997,
+          "risk_at_70_reduction": -0.06428571428571428
         },
         "by_risk_at_30": {
+          "auprc_improvement": -0.18782605956093368,
           "aurc_reduction": -0.11573264754081447,
           "auroc_improvement": -0.17479999999999996,
           "risk_at_30_reduction": -0.18333333333333335,
-          "risk_at_50_reduction": -0.21999999999999997
+          "risk_at_50_reduction": -0.21999999999999997,
+          "risk_at_70_reduction": -0.06428571428571428
         }
       },
       "dataset": "hotpot_v4_hardneg_n100",
@@ -242,6 +324,7 @@
       "rule_verdict_by_auroc": "loss",
       "source_item_groups": 100,
       "strongest": {
+        "by_auprc": "retrieval_stability",
         "by_aurc": "retrieval_stability",
         "by_auroc": "retrieval_stability",
         "by_risk_at_30": "retrieval_stability"
@@ -250,23 +333,37 @@
     {
       "artifact": "results\\baselines_hotpot_v4_n100_hardmatched.json",
       "csrm_vs_strongest": {
-        "by_aurc": {
-          "aurc_reduction": -0.19863693890686557,
-          "auroc_improvement": 0.11709999999999998,
-          "risk_at_30_reduction": 0.050000000000000044,
-          "risk_at_50_reduction": 0.08999999999999997
-        },
-        "by_auroc": {
+        "by_auprc": {
+          "auprc_improvement": -0.12678777398412966,
           "aurc_reduction": -0.10610918022158161,
           "auroc_improvement": -0.15560000000000007,
           "risk_at_30_reduction": -0.18333333333333324,
-          "risk_at_50_reduction": -0.13
+          "risk_at_50_reduction": -0.13,
+          "risk_at_70_reduction": -0.04999999999999993
+        },
+        "by_aurc": {
+          "auprc_improvement": 0.052101402443130884,
+          "aurc_reduction": -0.19863693890686557,
+          "auroc_improvement": 0.11709999999999998,
+          "risk_at_30_reduction": 0.050000000000000044,
+          "risk_at_50_reduction": 0.08999999999999997,
+          "risk_at_70_reduction": 0.07857142857142863
+        },
+        "by_auroc": {
+          "auprc_improvement": -0.12678777398412966,
+          "aurc_reduction": -0.10610918022158161,
+          "auroc_improvement": -0.15560000000000007,
+          "risk_at_30_reduction": -0.18333333333333324,
+          "risk_at_50_reduction": -0.13,
+          "risk_at_70_reduction": -0.04999999999999993
         },
         "by_risk_at_30": {
+          "auprc_improvement": -0.11760606564204112,
           "aurc_reduction": -0.10022948858458985,
           "auroc_improvement": -0.11980000000000002,
           "risk_at_30_reduction": -0.23333333333333328,
-          "risk_at_50_reduction": -0.07000000000000006
+          "risk_at_50_reduction": -0.07000000000000006,
+          "risk_at_70_reduction": -0.021428571428571352
         }
       },
       "dataset": "hotpot_v4_n100_hardmatched",
@@ -290,6 +387,7 @@
       "rule_verdict_by_auroc": "loss",
       "source_item_groups": 100,
       "strongest": {
+        "by_auprc": "calibrated_logistic_orbit",
         "by_aurc": "calibrated_logistic_context",
         "by_auroc": "calibrated_logistic_orbit",
         "by_risk_at_30": "equal_budget_ensemble_logistic"
@@ -298,23 +396,37 @@
     {
       "artifact": "results\\baselines_hotpot_v4_n100_structbalanced.json",
       "csrm_vs_strongest": {
+        "by_auprc": {
+          "auprc_improvement": -0.2283799091688744,
+          "aurc_reduction": -0.17718119825473183,
+          "auroc_improvement": -0.1996,
+          "risk_at_30_reduction": -0.2833333333333333,
+          "risk_at_50_reduction": -0.18000000000000005,
+          "risk_at_70_reduction": -0.06428571428571428
+        },
         "by_aurc": {
+          "auprc_improvement": 0.01628017562877926,
           "aurc_reduction": -0.19482392781218072,
           "auroc_improvement": 0.14600000000000002,
           "risk_at_30_reduction": 0.0,
-          "risk_at_50_reduction": 0.06999999999999995
+          "risk_at_50_reduction": 0.06999999999999995,
+          "risk_at_70_reduction": 0.11428571428571421
         },
         "by_auroc": {
+          "auprc_improvement": -0.2283799091688744,
           "aurc_reduction": -0.17718119825473183,
           "auroc_improvement": -0.1996,
           "risk_at_30_reduction": -0.2833333333333333,
-          "risk_at_50_reduction": -0.18000000000000005
+          "risk_at_50_reduction": -0.18000000000000005,
+          "risk_at_70_reduction": -0.06428571428571428
         },
         "by_risk_at_30": {
+          "auprc_improvement": -0.2283799091688744,
           "aurc_reduction": -0.17718119825473183,
           "auroc_improvement": -0.1996,
           "risk_at_30_reduction": -0.2833333333333333,
-          "risk_at_50_reduction": -0.18000000000000005
+          "risk_at_50_reduction": -0.18000000000000005,
+          "risk_at_70_reduction": -0.06428571428571428
         }
       },
       "dataset": "hotpot_v4_n100_structbalanced",
@@ -338,6 +450,7 @@
       "rule_verdict_by_auroc": "loss",
       "source_item_groups": 100,
       "strongest": {
+        "by_auprc": "calibrated_logistic_orbit",
         "by_aurc": "corm_max_clean",
         "by_auroc": "calibrated_logistic_orbit",
         "by_risk_at_30": "calibrated_logistic_orbit"
@@ -346,23 +459,37 @@
     {
       "artifact": "results\\baselines_hotpot_v4_semanticswap_n100.json",
       "csrm_vs_strongest": {
-        "by_aurc": {
+        "by_auprc": {
+          "auprc_improvement": -0.07107506214323578,
           "aurc_reduction": -0.04159063677374694,
           "auroc_improvement": -0.061799999999999966,
           "risk_at_30_reduction": -0.08333333333333337,
-          "risk_at_50_reduction": -0.08000000000000007
+          "risk_at_50_reduction": -0.08000000000000007,
+          "risk_at_70_reduction": -0.0071428571428571175
+        },
+        "by_aurc": {
+          "auprc_improvement": -0.07107506214323578,
+          "aurc_reduction": -0.04159063677374694,
+          "auroc_improvement": -0.061799999999999966,
+          "risk_at_30_reduction": -0.08333333333333337,
+          "risk_at_50_reduction": -0.08000000000000007,
+          "risk_at_70_reduction": -0.0071428571428571175
         },
         "by_auroc": {
+          "auprc_improvement": -0.07107506214323578,
           "aurc_reduction": -0.04159063677374694,
           "auroc_improvement": -0.061799999999999966,
           "risk_at_30_reduction": -0.08333333333333337,
-          "risk_at_50_reduction": -0.08000000000000007
+          "risk_at_50_reduction": -0.08000000000000007,
+          "risk_at_70_reduction": -0.0071428571428571175
         },
         "by_risk_at_30": {
+          "auprc_improvement": -0.07107506214323578,
           "aurc_reduction": -0.04159063677374694,
           "auroc_improvement": -0.061799999999999966,
           "risk_at_30_reduction": -0.08333333333333337,
-          "risk_at_50_reduction": -0.08000000000000007
+          "risk_at_50_reduction": -0.08000000000000007,
+          "risk_at_70_reduction": -0.0071428571428571175
         }
       },
       "dataset": "hotpot_v4_semanticswap_n100",
@@ -386,6 +513,7 @@
       "rule_verdict_by_auroc": "loss",
       "source_item_groups": 100,
       "strongest": {
+        "by_auprc": "calibrated_logistic_orbit",
         "by_aurc": "calibrated_logistic_orbit",
         "by_auroc": "calibrated_logistic_orbit",
         "by_risk_at_30": "calibrated_logistic_orbit"
@@ -394,23 +522,37 @@
     {
       "artifact": "results\\baselines_hotpot_v4_supportpreserve_n100.json",
       "csrm_vs_strongest": {
-        "by_aurc": {
+        "by_auprc": {
+          "auprc_improvement": 0.0,
           "aurc_reduction": -0.027817850927443655,
           "auroc_improvement": 0.0,
           "risk_at_30_reduction": 0.0,
-          "risk_at_50_reduction": 0.0
+          "risk_at_50_reduction": 0.0,
+          "risk_at_70_reduction": 0.0
+        },
+        "by_aurc": {
+          "auprc_improvement": 0.0,
+          "aurc_reduction": -0.027817850927443655,
+          "auroc_improvement": 0.0,
+          "risk_at_30_reduction": 0.0,
+          "risk_at_50_reduction": 0.0,
+          "risk_at_70_reduction": 0.0
         },
         "by_auroc": {
+          "auprc_improvement": 0.0,
           "aurc_reduction": -0.027817850927443655,
           "auroc_improvement": 0.0,
           "risk_at_30_reduction": 0.0,
-          "risk_at_50_reduction": 0.0
+          "risk_at_50_reduction": 0.0,
+          "risk_at_70_reduction": 0.0
         },
         "by_risk_at_30": {
+          "auprc_improvement": 0.0,
           "aurc_reduction": -0.027817850927443655,
           "auroc_improvement": 0.0,
           "risk_at_30_reduction": 0.0,
-          "risk_at_50_reduction": 0.0
+          "risk_at_50_reduction": 0.0,
+          "risk_at_70_reduction": 0.0
         }
       },
       "dataset": "hotpot_v4_supportpreserve_n100",
@@ -434,6 +576,7 @@
       "rule_verdict_by_auroc": "loss",
       "source_item_groups": 100,
       "strongest": {
+        "by_auprc": "self_consistency_proxy",
         "by_aurc": "self_consistency_proxy",
         "by_auroc": "self_consistency_proxy",
         "by_risk_at_30": "self_consistency_proxy"
@@ -461,6 +604,13 @@
       ],
       "targets": {
         "csrm_calibrated_isotonic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.24490571939573297,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
           "aurc_reduction": {
             "losses_against_baselines": 0,
             "mean_delta": 0.1528132776083867,
@@ -488,9 +638,23 @@
             "ties_against_baselines": 3,
             "wins_against_baselines": 10,
             "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.12095490716180371,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
           }
         },
         "csrm_calibrated_logistic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.24490571939573297,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
           "aurc_reduction": {
             "losses_against_baselines": 1,
             "mean_delta": 0.1377632800112346,
@@ -518,9 +682,23 @@
             "ties_against_baselines": 3,
             "wins_against_baselines": 10,
             "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.12095490716180371,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
           }
         },
         "csrm_minimax": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.24490571939573297,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
           "aurc_reduction": {
             "losses_against_baselines": 3,
             "mean_delta": 0.13276845310899438,
@@ -548,9 +726,23 @@
             "ties_against_baselines": 3,
             "wins_against_baselines": 10,
             "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.12095490716180371,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
           }
         },
         "csrm_rule": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.24490571939573297,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
           "aurc_reduction": {
             "losses_against_baselines": 3,
             "mean_delta": 0.13321923413256814,
@@ -578,6 +770,13 @@
             "ties_against_baselines": 3,
             "wins_against_baselines": 10,
             "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.12095490716180371,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
           }
         }
       }
@@ -593,6 +792,13 @@
       ],
       "targets": {
         "csrm_calibrated_isotonic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.31849295347353607,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
           "aurc_reduction": {
             "losses_against_baselines": 0,
             "mean_delta": 0.20476659608734207,
@@ -620,9 +826,23 @@
             "ties_against_baselines": 3,
             "wins_against_baselines": 10,
             "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.14652014652014655,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
           }
         },
         "csrm_calibrated_logistic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.31849295347353607,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
           "aurc_reduction": {
             "losses_against_baselines": 3,
             "mean_delta": 0.17910862161719396,
@@ -650,9 +870,23 @@
             "ties_against_baselines": 3,
             "wins_against_baselines": 10,
             "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.14652014652014655,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
           }
         },
         "csrm_minimax": {
+          "auprc_improvement": {
+            "losses_against_baselines": 3,
+            "mean_delta": 0.27067076801772444,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 10,
+            "worst_case_delta": -0.04782218545581159
+          },
           "aurc_reduction": {
             "losses_against_baselines": 3,
             "mean_delta": 0.14592628875145575,
@@ -680,9 +914,23 @@
             "ties_against_baselines": 0,
             "wins_against_baselines": 10,
             "worst_case_delta": -0.08333333333333333
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.14652014652014655,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
           }
         },
         "csrm_rule": {
+          "auprc_improvement": {
+            "losses_against_baselines": 3,
+            "mean_delta": 0.12324430916653545,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 10,
+            "worst_case_delta": -0.19524864430700062
+          },
           "aurc_reduction": {
             "losses_against_baselines": 6,
             "mean_delta": 0.061894484004703626,
@@ -710,6 +958,13 @@
             "ties_against_baselines": 0,
             "wins_against_baselines": 10,
             "worst_case_delta": -0.25
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 3,
+            "mean_delta": 0.12271062271062273,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 10,
+            "worst_case_delta": -0.023809523809523798
           }
         }
       }
@@ -725,6 +980,13 @@
       ],
       "targets": {
         "csrm_calibrated_isotonic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.06590738681772267,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 11,
+            "worst_case_delta": -0.05453802723164355
+          },
           "aurc_reduction": {
             "losses_against_baselines": 8,
             "mean_delta": -0.04035905324733673,
@@ -752,9 +1014,23 @@
             "ties_against_baselines": 0,
             "wins_against_baselines": 11,
             "worst_case_delta": -0.10000000000000002
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.08974358974358977,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 12,
+            "worst_case_delta": -0.023809523809523836
           }
         },
         "csrm_calibrated_logistic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.06815682254871955,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 11,
+            "worst_case_delta": -0.05228859150064665
+          },
           "aurc_reduction": {
             "losses_against_baselines": 5,
             "mean_delta": 0.010257953474130131,
@@ -782,9 +1058,23 @@
             "ties_against_baselines": 0,
             "wins_against_baselines": 11,
             "worst_case_delta": -0.08333333333333333
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.07783882783882785,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 11,
+            "worst_case_delta": -0.03571428571428573
           }
         },
         "csrm_minimax": {
+          "auprc_improvement": {
+            "losses_against_baselines": 11,
+            "mean_delta": -0.0635552165794807,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 2,
+            "worst_case_delta": -0.1840006306288469
+          },
           "aurc_reduction": {
             "losses_against_baselines": 12,
             "mean_delta": -0.10980294636156196,
@@ -812,9 +1102,23 @@
             "ties_against_baselines": 1,
             "wins_against_baselines": 10,
             "worst_case_delta": -0.21666666666666665
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.030219780219780192,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.08333333333333341
           }
         },
         "csrm_rule": {
+          "auprc_improvement": {
+            "losses_against_baselines": 7,
+            "mean_delta": -0.03348348174417673,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 6,
+            "worst_case_delta": -0.15392889579354294
+          },
           "aurc_reduction": {
             "losses_against_baselines": 10,
             "mean_delta": -0.08058943655594474,
@@ -842,6 +1146,13 @@
             "ties_against_baselines": 0,
             "wins_against_baselines": 11,
             "worst_case_delta": -0.19999999999999998
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 4,
+            "mean_delta": 0.01831501831501829,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.0952380952380953
           }
         }
       }
@@ -857,6 +1168,13 @@
       ],
       "targets": {
         "csrm_calibrated_isotonic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.18303595532201364,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.008593371276966763
+          },
           "aurc_reduction": {
             "losses_against_baselines": 2,
             "mean_delta": 0.1065517561494995,
@@ -884,9 +1202,23 @@
             "ties_against_baselines": 0,
             "wins_against_baselines": 11,
             "worst_case_delta": -0.09132515082171828
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.08952475701855354,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 11,
+            "worst_case_delta": -0.010752688172043001
           }
         },
         "csrm_calibrated_logistic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.16774061127945397,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 12,
+            "worst_case_delta": -0.006701972765592923
+          },
           "aurc_reduction": {
             "losses_against_baselines": 2,
             "mean_delta": 0.09846648575801718,
@@ -914,9 +1246,23 @@
             "ties_against_baselines": 0,
             "wins_against_baselines": 12,
             "worst_case_delta": -0.06168088204701475
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.08745693237008373,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 11,
+            "worst_case_delta": -0.012820512820512811
           }
         },
         "csrm_minimax": {
+          "auprc_improvement": {
+            "losses_against_baselines": 7,
+            "mean_delta": -0.034032329728932706,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 6,
+            "worst_case_delta": -0.20847491377397961
+          },
           "aurc_reduction": {
             "losses_against_baselines": 9,
             "mean_delta": -0.07132953970315938,
@@ -944,9 +1290,23 @@
             "ties_against_baselines": 0,
             "wins_against_baselines": 11,
             "worst_case_delta": -0.16923236946120238
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 3,
+            "mean_delta": 0.06595155602599768,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.034325889164598854
           }
         },
         "csrm_rule": {
+          "auprc_improvement": {
+            "losses_against_baselines": 7,
+            "mean_delta": -0.011151839281708773,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 6,
+            "worst_case_delta": -0.1855944233267557
+          },
           "aurc_reduction": {
             "losses_against_baselines": 9,
             "mean_delta": -0.047811941851451385,
@@ -974,6 +1334,13 @@
             "ties_against_baselines": 0,
             "wins_against_baselines": 11,
             "worst_case_delta": -0.18133277858678312
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 4,
+            "mean_delta": 0.06388373137752791,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.03639371381306863
           }
         }
       }
@@ -989,6 +1356,13 @@
       ],
       "targets": {
         "csrm_calibrated_isotonic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.22454313511049645,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 12,
+            "worst_case_delta": -0.023933220143510885
+          },
           "aurc_reduction": {
             "losses_against_baselines": 2,
             "mean_delta": 0.07690070253764271,
@@ -1016,9 +1390,23 @@
             "ties_against_baselines": 0,
             "wins_against_baselines": 11,
             "worst_case_delta": -0.01666666666666668
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 4,
+            "mean_delta": 0.09340659340659342,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.011904761904761899
           }
         },
         "csrm_calibrated_logistic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.24873114379540923,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.00025478854140189206
+          },
           "aurc_reduction": {
             "losses_against_baselines": 0,
             "mean_delta": 0.12245877799777008,
@@ -1046,9 +1434,23 @@
             "ties_against_baselines": 2,
             "wins_against_baselines": 11,
             "worst_case_delta": -3.700743415417188e-17
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.10531135531135531,
+            "ties_against_baselines": 4,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
           }
         },
         "csrm_minimax": {
+          "auprc_improvement": {
+            "losses_against_baselines": 4,
+            "mean_delta": 0.09668165878027316,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 9,
+            "worst_case_delta": -0.15179469647373423
+          },
           "aurc_reduction": {
             "losses_against_baselines": 8,
             "mean_delta": 0.02735336716486319,
@@ -1076,9 +1478,23 @@
             "ties_against_baselines": 0,
             "wins_against_baselines": 9,
             "worst_case_delta": -0.08333333333333337
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 4,
+            "mean_delta": 0.09340659340659342,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 8,
+            "worst_case_delta": -0.011904761904761899
           }
         },
         "csrm_rule": {
+          "auprc_improvement": {
+            "losses_against_baselines": 3,
+            "mean_delta": 0.1226896491257064,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 10,
+            "worst_case_delta": -0.12578670612830098
+          },
           "aurc_reduction": {
             "losses_against_baselines": 2,
             "mean_delta": 0.03988130980307392,
@@ -1106,6 +1522,13 @@
             "ties_against_baselines": 2,
             "wins_against_baselines": 9,
             "worst_case_delta": -0.0666666666666667
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.10531135531135531,
+            "ties_against_baselines": 4,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
           }
         }
       }
@@ -1121,6 +1544,13 @@
       ],
       "targets": {
         "csrm_calibrated_isotonic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2719521001669048,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
           "aurc_reduction": {
             "losses_against_baselines": 0,
             "mean_delta": 0.1455662991060871,
@@ -1148,9 +1578,23 @@
             "ties_against_baselines": 3,
             "wins_against_baselines": 10,
             "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.11172161172161174,
+            "ties_against_baselines": 4,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
           }
         },
         "csrm_calibrated_logistic": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2719521001669048,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
           "aurc_reduction": {
             "losses_against_baselines": 2,
             "mean_delta": 0.12545760345391319,
@@ -1178,9 +1622,23 @@
             "ties_against_baselines": 3,
             "wins_against_baselines": 10,
             "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.11172161172161174,
+            "ties_against_baselines": 4,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
           }
         },
         "csrm_minimax": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2719521001669048,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
           "aurc_reduction": {
             "losses_against_baselines": 4,
             "mean_delta": 0.11764149184843993,
@@ -1208,9 +1666,23 @@
             "ties_against_baselines": 3,
             "wins_against_baselines": 10,
             "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.11172161172161174,
+            "ties_against_baselines": 4,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
           }
         },
         "csrm_rule": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2719521001669048,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
           "aurc_reduction": {
             "losses_against_baselines": 4,
             "mean_delta": 0.11778938117053751,
@@ -1238,10 +1710,17 @@
             "ties_against_baselines": 3,
             "wins_against_baselines": 10,
             "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.11172161172161174,
+            "ties_against_baselines": 4,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
           }
         }
       }
     }
   ],
-  "generated_at_utc": "2026-05-29T05:09:03.276998+00:00"
+  "generated_at_utc": "2026-05-29T05:26:37.359203+00:00"
 }

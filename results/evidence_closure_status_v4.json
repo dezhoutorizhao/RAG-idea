@@ -201,7 +201,7 @@
     "review_response_path": "results\\external_review_response_20260529.md",
     "status": "packet_ready"
   },
-  "generated_at_utc": "2026-05-29T05:09:08.468943+00:00",
+  "generated_at_utc": "2026-05-29T05:26:42.369517+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -405,10 +405,12 @@
         "risk_at_30": 0.15000000000000002,
         "risk_at_50": 0.15000000000000002,
         "vs_strongest_non_csrm_by_auroc": {
+          "auprc_improvement": -0.07107506214323578,
           "aurc_reduction": -0.04159063677374694,
           "auroc_improvement": -0.061799999999999966,
           "risk_at_30_reduction": -0.08333333333333337,
-          "risk_at_50_reduction": -0.08000000000000007
+          "risk_at_50_reduction": -0.08000000000000007,
+          "risk_at_70_reduction": -0.0071428571428571175
         }
       },
       "strongest_non_csrm": {

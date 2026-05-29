@@ -20,7 +20,13 @@ if str(ROOT) not in sys.path:
 if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
-from csrm_rag import area_under_risk_coverage, risk_coverage_curve, roc_auc, selective_risk_at_coverage
+from csrm_rag import (
+    area_under_risk_coverage,
+    average_precision,
+    risk_coverage_curve,
+    roc_auc,
+    selective_risk_at_coverage,
+)
 from csrm_rag import corm_mean_score
 from csrm_rag.baselines.v4_baselines import (
     ENSEMBLE_FEATURE_METHODS,
@@ -255,7 +261,14 @@ def _comparison(
         "point": point,
         "cluster_bootstrap_ci": {
             key: _percentile_ci([row[key] for row in boot if row[key] is not None])
-            for key in ["auroc_improvement", "risk_at_30_reduction", "risk_at_50_reduction", "aurc_reduction"]
+            for key in [
+                "auroc_improvement",
+                "auprc_improvement",
+                "risk_at_30_reduction",
+                "risk_at_50_reduction",
+                "risk_at_70_reduction",
+                "aurc_reduction",
+            ]
         },
         "bootstrap_samples": bootstrap_samples,
         "bootstrap_seed": bootstrap_seed,
@@ -289,8 +302,10 @@ def _delta(target_scores, baseline_scores, labels) -> dict[str, float | None]:
         "target": target,
         "baseline": baseline,
         "auroc_improvement": _maybe_delta(target["auroc"], baseline["auroc"]),
+        "auprc_improvement": _maybe_delta(target["auprc"], baseline["auprc"]),
         "risk_at_30_reduction": baseline["risk_at_30"] - target["risk_at_30"],
         "risk_at_50_reduction": baseline["risk_at_50"] - target["risk_at_50"],
+        "risk_at_70_reduction": baseline["risk_at_70"] - target["risk_at_70"],
         "aurc_reduction": baseline["aurc"] - target["aurc"],
     }
 
@@ -298,8 +313,10 @@ def _delta(target_scores, baseline_scores, labels) -> dict[str, float | None]:
 def _metrics(scores, labels) -> dict[str, float | None]:
     return {
         "auroc": _safe_auc(scores, labels),
+        "auprc": _safe_average_precision(scores, labels),
         "risk_at_30": selective_risk_at_coverage(scores, labels, 0.30)["risk"],
         "risk_at_50": selective_risk_at_coverage(scores, labels, 0.50)["risk"],
+        "risk_at_70": selective_risk_at_coverage(scores, labels, 0.70)["risk"],
         "aurc": area_under_risk_coverage(risk_coverage_curve(scores, labels)),
     }
 
@@ -307,6 +324,13 @@ def _metrics(scores, labels) -> dict[str, float | None]:
 def _safe_auc(scores, labels) -> float | None:
     try:
         return roc_auc(scores, labels)
+    except ValueError:
+        return None
+
+
+def _safe_average_precision(scores, labels) -> float | None:
+    try:
+        return average_precision(scores, labels)
     except ValueError:
         return None
 
@@ -338,12 +362,26 @@ def _aggregate(per_seed: Sequence[dict[str, Any]]) -> dict[str, Any]:
             rows = [seed_item["comparisons"][target][baseline]["point"] for seed_item in per_seed]
             output[target][baseline] = {
                 key: _numeric_summary([row[key] for row in rows if row[key] is not None])
-                for key in ["auroc_improvement", "risk_at_30_reduction", "risk_at_50_reduction", "aurc_reduction"]
+                for key in [
+                    "auroc_improvement",
+                    "auprc_improvement",
+                    "risk_at_30_reduction",
+                    "risk_at_50_reduction",
+                    "risk_at_70_reduction",
+                    "aurc_reduction",
+                ]
             }
             ci_rows = [seed_item["comparisons"][target][baseline]["cluster_bootstrap_ci"] for seed_item in per_seed]
             output[target][baseline]["seed_ci_lower_bounds"] = {
                 key: [ci[key]["p2_5"] for ci in ci_rows if ci[key] is not None]
-                for key in ["auroc_improvement", "risk_at_30_reduction", "risk_at_50_reduction", "aurc_reduction"]
+                for key in [
+                    "auroc_improvement",
+                    "auprc_improvement",
+                    "risk_at_30_reduction",
+                    "risk_at_50_reduction",
+                    "risk_at_70_reduction",
+                    "aurc_reduction",
+                ]
             }
     return output
 

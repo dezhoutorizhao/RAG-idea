@@ -13,6 +13,7 @@ from .critic import (
 from .feature_firewall import FORBIDDEN_KEYS, assert_no_forbidden_features
 from .metrics import (
     area_under_risk_coverage,
+    average_precision,
     calibration_error,
     risk_coverage_curve,
     roc_auc,
@@ -30,6 +31,7 @@ __all__ = [
     "assert_no_forbidden_features",
     "calibration_error",
     "area_under_risk_coverage",
+    "average_precision",
     "corm_max_score",
     "corm_mean_score",
     "csrm_score",

@@ -26,7 +26,14 @@ DEFAULT_COMPARISONS = [
     Path("results/compare_calibrated_hotpot_v4_supportpreserve_n100.json"),
 ]
 
-METRICS = ["auroc_improvement", "risk_at_30_reduction", "risk_at_50_reduction", "aurc_reduction"]
+METRICS = [
+    "auroc_improvement",
+    "auprc_improvement",
+    "risk_at_30_reduction",
+    "risk_at_50_reduction",
+    "risk_at_70_reduction",
+    "aurc_reduction",
+]
 TARGETS = ["csrm_rule", "csrm_minimax", "csrm_calibrated_logistic", "csrm_calibrated_isotonic"]
 
 
@@ -78,20 +85,24 @@ def render_markdown(summary: dict[str, Any]) -> str:
         "",
         f"- By AUROC strongest: wins/ties/losses = `{rule['by_auroc']['wins']}` / "
         f"`{rule['by_auroc']['ties']}` / `{rule['by_auroc']['losses']}`.",
+        f"- By AUPRC strongest: wins/ties/losses = `{rule['by_auprc']['wins']}` / "
+        f"`{rule['by_auprc']['ties']}` / `{rule['by_auprc']['losses']}`.",
         f"- By Risk@30 strongest: wins/ties/losses = `{rule['by_risk_at_30']['wins']}` / "
         f"`{rule['by_risk_at_30']['ties']}` / `{rule['by_risk_at_30']['losses']}`.",
         f"- By AURC strongest: wins/ties/losses = `{rule['by_aurc']['wins']}` / "
         f"`{rule['by_aurc']['ties']}` / `{rule['by_aurc']['losses']}`.",
         "",
-        "| Dataset | Strongest by AUROC | AUROC delta | Risk@30 delta | Risk@50 delta | AURC delta | Verdict |",
-        "|---|---|---:|---:|---:|---:|---|",
+        "| Dataset | Strongest by AUROC | AUROC delta | AUPRC delta | Risk@30 delta | Risk@50 delta | Risk@70 delta | AURC delta | Verdict |",
+        "|---|---|---:|---:|---:|---:|---:|---:|---|",
     ]
     for row in summary["baseline_rows"]:
         strongest = row["strongest"]["by_auroc"]
         delta = row["csrm_vs_strongest"]["by_auroc"]
         lines.append(
             f"| {row['dataset']} | {strongest} | {_fmt(delta['auroc_improvement'])} | "
+            f"{_fmt(delta.get('auprc_improvement'))} | "
             f"{_fmt(delta['risk_at_30_reduction'])} | {_fmt(delta['risk_at_50_reduction'])} | "
+            f"{_fmt(delta.get('risk_at_70_reduction'))} | "
             f"{_fmt(delta['aurc_reduction'])} | {row['rule_verdict_by_auroc']} |"
         )
 
@@ -167,7 +178,7 @@ def _comparison_row(path: Path) -> dict[str, Any]:
 
 def _aggregate_rule_rows(rows: Sequence[dict[str, Any]]) -> dict[str, dict[str, int]]:
     output = {}
-    for key in ["by_auroc", "by_risk_at_30", "by_aurc"]:
+    for key in ["by_auroc", "by_auprc", "by_risk_at_30", "by_aurc"]:
         verdicts = [_delta_verdict(row["csrm_vs_strongest"].get(key, {})) for row in rows]
         output[key] = {
             "wins": sum(1 for verdict in verdicts if verdict == "win"),
@@ -198,9 +209,11 @@ def _aggregate_comparison_rows(rows: Sequence[dict[str, Any]]) -> dict[str, Any]
 
 def _delta_verdict(delta: dict[str, Any]) -> str:
     auroc = delta.get("auroc_improvement")
+    auprc = delta.get("auprc_improvement")
     risk30 = delta.get("risk_at_30_reduction")
+    risk70 = delta.get("risk_at_70_reduction")
     aurc = delta.get("aurc_reduction")
-    values = [value for value in [auroc, risk30, aurc] if value is not None]
+    values = [value for value in [auroc, auprc, risk30, risk70, aurc] if value is not None]
     if values and all(value > 1e-12 for value in values):
         return "win"
     if values and all(value >= -1e-12 for value in values):

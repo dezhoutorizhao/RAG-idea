@@ -33,7 +33,10 @@ def test_compare_calibrated_vs_baselines_v4_outputs_bootstrap_ci(tmp_path):
 
     comparison = result["per_seed"][0]["comparisons"]["csrm_calibrated_logistic"]["faithful_sure_multi"]
     assert comparison["cluster_bootstrap_ci"]["risk_at_30_reduction"] is not None
+    assert comparison["cluster_bootstrap_ci"]["auprc_improvement"] is not None
+    assert "risk_at_70_reduction" in comparison["point"]
     assert "csrm_calibrated_logistic" in result["aggregate"]
+    assert "auprc" in result["per_seed"][0]["target_metrics"]["csrm_calibrated_logistic"]
     assert "template_self_consistency" in result["per_seed"][0]["baseline_metrics"]
     assert output.exists()
 

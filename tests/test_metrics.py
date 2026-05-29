@@ -1,6 +1,7 @@
 from csrm_rag.metrics import (
     RiskCoveragePoint,
     area_under_risk_coverage,
+    average_precision,
     calibration_error,
     roc_auc,
     selective_risk_at_coverage,
@@ -9,6 +10,10 @@ from csrm_rag.metrics import (
 
 def test_roc_auc_handles_ties_with_average_ranks():
     assert roc_auc([0.1, 0.4, 0.4, 0.9], [False, True, False, True]) == 0.875
+
+
+def test_average_precision_scores_ranked_positives():
+    assert round(average_precision([0.9, 0.8, 0.7, 0.1], [True, False, True, False]), 6) == round(5 / 6, 6)
 
 
 def test_selective_risk_accepts_top_scores():

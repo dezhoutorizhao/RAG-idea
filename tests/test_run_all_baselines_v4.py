@@ -35,7 +35,10 @@ def test_run_all_baselines_v4_reports_strongest_non_csrm(tmp_path):
     assert "template_self_consistency" in result["methods"]
     assert result["strongest_non_csrm"]["by_aurc"]["method"] != "csrm_rule"
     assert result["strongest_non_csrm"]["by_risk_at_30"]["method"] != "csrm_rule"
+    assert result["strongest_non_csrm"]["by_auprc"]["method"] != "csrm_rule"
     assert result["strongest_non_csrm"]["by_auroc"]["method"] != "csrm_rule"
+    assert "auprc" in result["methods"]["csrm_rule"]
+    assert "risk_at_70_reduction" in result["csrm_vs_strongest_non_csrm"]["by_auroc"]
     assert output.exists()
 
 

@@ -46,26 +46,41 @@ def _baseline_payload():
         },
         "strongest_non_csrm": {
             "by_auroc": {"method": "calibrated_logistic_orbit"},
+            "by_auprc": {"method": "calibrated_logistic_orbit"},
             "by_risk_at_30": {"method": "calibrated_logistic_orbit"},
             "by_aurc": {"method": "calibrated_logistic_orbit"},
         },
         "csrm_vs_strongest_non_csrm": {
             "by_auroc": {
                 "auroc_improvement": -0.1,
+                "auprc_improvement": -0.1,
                 "risk_at_30_reduction": -0.2,
                 "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0,
                 "aurc_reduction": -0.05,
             },
             "by_risk_at_30": {
                 "auroc_improvement": -0.1,
+                "auprc_improvement": -0.1,
                 "risk_at_30_reduction": -0.2,
                 "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0,
                 "aurc_reduction": -0.05,
             },
             "by_aurc": {
                 "auroc_improvement": -0.1,
+                "auprc_improvement": -0.1,
                 "risk_at_30_reduction": -0.2,
                 "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0,
+                "aurc_reduction": -0.05,
+            },
+            "by_auprc": {
+                "auroc_improvement": -0.1,
+                "auprc_improvement": -0.1,
+                "risk_at_30_reduction": -0.2,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0,
                 "aurc_reduction": -0.05,
             },
         },
@@ -92,8 +107,10 @@ def _comparison_payload():
 def _metric_block(value):
     return {
         "auroc_improvement": {"mean": value},
+        "auprc_improvement": {"mean": value},
         "risk_at_30_reduction": {"mean": value},
         "risk_at_50_reduction": {"mean": value},
+        "risk_at_70_reduction": {"mean": value},
         "aurc_reduction": {"mean": value},
     }
 

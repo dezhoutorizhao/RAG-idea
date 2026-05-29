@@ -155,3 +155,23 @@ def roc_auc(scores: Sequence[float], labels: Sequence[bool]) -> float:
     original_ranks[order] = ranks
     pos_rank_sum = float(original_ranks[label_arr].sum())
     return (pos_rank_sum - n_pos * (n_pos + 1) / 2.0) / (n_pos * n_neg)
+
+
+def average_precision(scores: Sequence[float], labels: Sequence[bool]) -> float:
+    score_arr = np.asarray(scores, dtype=float)
+    label_arr = np.asarray(labels, dtype=bool)
+    if score_arr.shape[0] != label_arr.shape[0]:
+        raise ValueError("scores and labels must have the same length")
+    n_pos = int(label_arr.sum())
+    if n_pos == 0:
+        raise ValueError("average_precision requires at least one positive")
+
+    order = np.argsort(-score_arr)
+    sorted_labels = label_arr[order]
+    precisions = []
+    true_positives = 0
+    for rank, is_positive in enumerate(sorted_labels, start=1):
+        if is_positive:
+            true_positives += 1
+            precisions.append(true_positives / rank)
+    return float(np.mean(precisions))

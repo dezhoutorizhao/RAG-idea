@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T05:09:08.468943+00:00`
+Generated: `2026-05-29T05:26:42.369517+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 

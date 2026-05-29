@@ -1,22 +1,36 @@
 {
   "csrm_vs_strongest_non_csrm": {
-    "by_aurc": {
+    "by_auprc": {
+      "auprc_improvement": 0.0,
       "aurc_reduction": -0.027817850927443655,
       "auroc_improvement": 0.0,
       "risk_at_30_reduction": 0.0,
-      "risk_at_50_reduction": 0.0
+      "risk_at_50_reduction": 0.0,
+      "risk_at_70_reduction": 0.0
+    },
+    "by_aurc": {
+      "auprc_improvement": 0.0,
+      "aurc_reduction": -0.027817850927443655,
+      "auroc_improvement": 0.0,
+      "risk_at_30_reduction": 0.0,
+      "risk_at_50_reduction": 0.0,
+      "risk_at_70_reduction": 0.0
     },
     "by_auroc": {
+      "auprc_improvement": 0.0,
       "aurc_reduction": -0.027817850927443655,
       "auroc_improvement": 0.0,
       "risk_at_30_reduction": 0.0,
-      "risk_at_50_reduction": 0.0
+      "risk_at_50_reduction": 0.0,
+      "risk_at_70_reduction": 0.0
     },
     "by_risk_at_30": {
+      "auprc_improvement": 0.0,
       "aurc_reduction": -0.027817850927443655,
       "auroc_improvement": 0.0,
       "risk_at_30_reduction": 0.0,
-      "risk_at_50_reduction": 0.0
+      "risk_at_50_reduction": 0.0,
+      "risk_at_70_reduction": 0.0
     }
   },
   "fairness": {
@@ -27,6 +41,7 @@
   },
   "methods": {
     "calibrated_logistic_context": {
+      "auprc": 0.5164217109465081,
       "aurc": 0.25,
       "auroc": 0.5,
       "risk_at_30": 0.5,
@@ -40,6 +55,7 @@
       }
     },
     "calibrated_logistic_orbit": {
+      "auprc": 1.0,
       "aurc": 0.1520695669145795,
       "auroc": 1.0,
       "risk_at_30": 0.0,
@@ -53,6 +69,7 @@
       }
     },
     "context_sufficiency_clean": {
+      "auprc": 0.5043424036189352,
       "aurc": 0.4975,
       "auroc": 0.5,
       "risk_at_30": 0.5,
@@ -66,6 +83,7 @@
       }
     },
     "corm_max_clean": {
+      "auprc": 0.5164217109465081,
       "aurc": 0.25,
       "auroc": 0.5,
       "risk_at_30": 0.5,
@@ -79,6 +97,7 @@
       }
     },
     "corm_mean_clean": {
+      "auprc": 0.5164217109465081,
       "aurc": 0.25,
       "auroc": 0.5,
       "risk_at_30": 0.5,
@@ -92,6 +111,7 @@
       }
     },
     "csrm_rule": {
+      "auprc": 1.0,
       "aurc": 0.15281785092744365,
       "auroc": 1.0,
       "risk_at_30": 0.0,
@@ -105,6 +125,7 @@
       }
     },
     "equal_budget_ensemble_logistic": {
+      "auprc": 1.0,
       "aurc": 0.15067059637721308,
       "auroc": 1.0,
       "risk_at_30": 0.0,
@@ -118,6 +139,7 @@
       }
     },
     "equal_budget_mean": {
+      "auprc": 0.5995722677878469,
       "aurc": 0.4192604512309343,
       "auroc": 0.6309,
       "risk_at_30": 0.3833333333333333,
@@ -131,6 +153,7 @@
       }
     },
     "equal_budget_min": {
+      "auprc": 0.6921261572061169,
       "aurc": 0.3353615065931079,
       "auroc": 0.7151,
       "risk_at_30": 0.30000000000000004,
@@ -144,6 +167,7 @@
       }
     },
     "equal_budget_q25": {
+      "auprc": 0.6425071940419845,
       "aurc": 0.3737719026021214,
       "auroc": 0.6742,
       "risk_at_30": 0.35,
@@ -157,6 +181,7 @@
       }
     },
     "faithful_sure_multi": {
+      "auprc": 0.6197042451358596,
       "aurc": 0.3925212233203899,
       "auroc": 0.6591,
       "risk_at_30": 0.35,
@@ -170,6 +195,7 @@
       }
     },
     "retrieval_stability": {
+      "auprc": 0.5164217109465081,
       "aurc": 0.25,
       "auroc": 0.5,
       "risk_at_30": 0.5,
@@ -183,6 +209,7 @@
       }
     },
     "self_consistency_proxy": {
+      "auprc": 1.0,
       "aurc": 0.125,
       "auroc": 1.0,
       "risk_at_30": 0.0,
@@ -196,6 +223,7 @@
       }
     },
     "template_self_consistency": {
+      "auprc": 0.9785453016235692,
       "aurc": 0.1564899177668949,
       "auroc": 0.9656,
       "risk_at_30": 0.0,
@@ -217,9 +245,27 @@
   "scored_input": "results\\hotpot_orbits_v4_supportpreserve_n100.constant.textonly_scored.jsonl",
   "source_item_groups": 100,
   "strongest_non_csrm": {
+    "by_auprc": {
+      "method": "self_consistency_proxy",
+      "metrics": {
+        "auprc": 1.0,
+        "aurc": 0.125,
+        "auroc": 1.0,
+        "risk_at_30": 0.0,
+        "risk_at_50": 0.0,
+        "risk_at_70": 0.2857142857142857,
+        "score_summary": {
+          "max": 1.0,
+          "mean": 0.5,
+          "min": 0.0,
+          "unique": 2
+        }
+      }
+    },
     "by_aurc": {
       "method": "self_consistency_proxy",
       "metrics": {
+        "auprc": 1.0,
         "aurc": 0.125,
         "auroc": 1.0,
         "risk_at_30": 0.0,
@@ -236,6 +282,7 @@
     "by_auroc": {
       "method": "self_consistency_proxy",
       "metrics": {
+        "auprc": 1.0,
         "aurc": 0.125,
         "auroc": 1.0,
         "risk_at_30": 0.0,
@@ -252,6 +299,7 @@
     "by_risk_at_30": {
       "method": "self_consistency_proxy",
       "metrics": {
+        "auprc": 1.0,
         "aurc": 0.125,
         "auroc": 1.0,
         "risk_at_30": 0.0,
