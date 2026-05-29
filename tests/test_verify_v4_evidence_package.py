@@ -76,6 +76,16 @@ def test_default_manifest_tracks_human_audit_protocol_docs():
     assert "annotation/label_schema_v4.json" in defaults
 
 
+def test_default_manifest_tracks_human_audit_v4_paper_pack():
+    defaults = {str(path).replace("\\", "/") for path in DEFAULT_ARTIFACTS}
+
+    assert "results/human_audit_v4_paper_pack_status_20260529.json" in defaults
+    assert "experiments/materialize_human_audit_v4_paper_pack.py" in defaults
+    assert "results/human_audit_v4/v4_paper1000_mixed_blind1000.manifest.json" in defaults
+    assert "results/human_audit_v4/v4_paper1000_mixed_blind1000.items.jsonl" in defaults
+    assert "results/human_audit_v4/v4_paper1000_mixed_blind1000.readiness.json" in defaults
+
+
 def test_default_manifest_tracks_text_only_verifier_artifacts():
     defaults = {str(path).replace("\\", "/") for path in DEFAULT_ARTIFACTS}
 

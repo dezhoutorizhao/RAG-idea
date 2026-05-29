@@ -245,7 +245,10 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.",
         ],
         "remaining_human_audit_blockers": [
-            "Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items.",
+            (
+                "Human audit v4 packs are prepared, including the paper-grade mixed blind1000 pack, "
+                f"but adjudicated labels are pending for all {get(human_audit_v4_status or {}, 'pending', default='unknown')} items."
+            ),
         ],
     }
     return closure

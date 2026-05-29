@@ -20,6 +20,7 @@ Human audit complete: `False`
 |---|---:|---:|---:|---:|---:|---:|
 | fever_v4_n100_structbalanced_blind100 | 100 | 100 | 0 | None | 0 | None |
 | hotpot_v4_semanticswap_n100_blind200 | 200 | 200 | 0 | None | 0 | None |
+| v4_paper1000_mixed_blind1000 | 1000 | 1000 | 0 | None | 0 | None |
 
 ## Claim Policy
 

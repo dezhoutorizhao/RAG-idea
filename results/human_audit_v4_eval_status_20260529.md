@@ -1,7 +1,7 @@
 # Human Audit V4 Evaluation Status
 
 Ready: `False`
-Pack count: `2`
+Pack count: `3`
 Evaluated pack count: `0`
 Allow partial: `False`
 
@@ -9,6 +9,7 @@ Allow partial: `False`
 |---|---:|---:|---:|---|---|
 | hotpot_v4_semanticswap_n100_blind200 | 200 | 0 | 200 | `False` | `False` |
 | fever_v4_n100_structbalanced_blind100 | 100 | 0 | 100 | `False` | `False` |
+| v4_paper1000_mixed_blind1000 | 1000 | 0 | 1000 | `False` | `False` |
 
 ## Failed Gates
 
@@ -19,6 +20,10 @@ hotpot_v4_semanticswap_n100_blind200:
 fever_v4_n100_structbalanced_blind100:
 - `non_empty_human_labels`: {'gate': 'non_empty_human_labels', 'actual': 0}
 - `all_selected_items_adjudicated`: {'gate': 'all_selected_items_adjudicated', 'required': 100, 'actual': 0}
+
+v4_paper1000_mixed_blind1000:
+- `non_empty_human_labels`: {'gate': 'non_empty_human_labels', 'actual': 0}
+- `all_selected_items_adjudicated`: {'gate': 'all_selected_items_adjudicated', 'required': 1000, 'actual': 0}
 
 ## Claim Policy
 

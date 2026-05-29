@@ -4,13 +4,13 @@
     "binary_conflict_count": 0,
     "failure_type_disagreement_count": 0,
     "manual_adjudication_count": 0,
-    "pending_adjudication_count": 300,
+    "pending_adjudication_count": 1300,
     "semantic_conflict_count": 0
   },
   "audit_dir": "results\\human_audit_v4",
   "claim_policy": "This artifact exposes disagreement taxonomy and adjudication state only. It does not convert pending labels into human-audited evidence.",
   "human_audit_complete": false,
-  "pack_count": 2,
+  "pack_count": 3,
   "packs": [
     {
       "adjudication_status_counts": {
@@ -49,6 +49,26 @@
       "pack_name": "hotpot_v4_semanticswap_n100_blind200",
       "pending_adjudication_count": 200,
       "selected_items": 200,
+      "semantic_conflict_count": 0,
+      "semantic_conflict_taxonomy": []
+    },
+    {
+      "adjudication_status_counts": {
+        "pending": 1000
+      },
+      "adjudication_template_rows": 1000,
+      "auto_agree_count": 0,
+      "binary_conflict_count": 0,
+      "binary_conflict_taxonomy": [],
+      "claim_boundary": "Conflict and pending counts are audit workflow diagnostics. They are not human-audited result metrics until labels are complete.",
+      "failure_type_disagreement_count": 0,
+      "failure_type_disagreement_examples": [],
+      "failure_type_disagreement_taxonomy": [],
+      "manifest": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.manifest.json",
+      "manual_adjudication_count": 0,
+      "pack_name": "v4_paper1000_mixed_blind1000",
+      "pending_adjudication_count": 1000,
+      "selected_items": 1000,
       "semantic_conflict_count": 0,
       "semantic_conflict_taxonomy": []
     }

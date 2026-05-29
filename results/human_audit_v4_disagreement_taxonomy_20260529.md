@@ -10,7 +10,7 @@ Human audit complete: `False`
 - Binary conflicts: `0`
 - Semantic conflicts: `0`
 - Failure-type disagreements: `0`
-- Pending adjudications: `300`
+- Pending adjudications: `1300`
 - Manual adjudications: `0`
 - Auto-agree adjudications: `0`
 
@@ -20,6 +20,7 @@ Human audit complete: `False`
 |---|---:|---:|---:|---:|---:|---:|---:|
 | fever_v4_n100_structbalanced_blind100 | 100 | 0 | 0 | 0 | 100 | 0 | 0 |
 | hotpot_v4_semanticswap_n100_blind200 | 200 | 0 | 0 | 0 | 200 | 0 | 0 |
+| v4_paper1000_mixed_blind1000 | 1000 | 0 | 0 | 0 | 1000 | 0 | 0 |
 
 ## Claim Policy
 

@@ -112,6 +112,7 @@ def _rows(
             "Human-audited orbit labels",
             BLOCKED if not gate.get("human_audit_v4_ready") else PASS,
             [
+                "results/human_audit_v4_paper_pack_status_20260529.json",
                 "results/human_audit_v4_status_20260529.json",
                 "results/human_audit_v4_disagreement_taxonomy_20260529.json",
                 "results/human_audit_v4_mismatch_20260529.json",

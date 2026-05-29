@@ -1,0 +1,36 @@
+{
+  "agreement_with_expected": null,
+  "by_split": {
+    "unknown": {
+      "agree": 0,
+      "disagree": 0,
+      "invalid": 0,
+      "labeled": 0,
+      "pending": 1000,
+      "total": 1000
+    }
+  },
+  "completion_rate": 0.0,
+  "failed_gates": [
+    {
+      "actual": 0,
+      "gate": "min_labeled_total",
+      "required": 1000
+    },
+    {
+      "actual": 0,
+      "gate": "min_labeled_per_split",
+      "required": 500,
+      "split": "unknown"
+    }
+  ],
+  "input": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.adjudicated_labels.jsonl",
+  "invalid": 0,
+  "label_field": "adjudicated_label_answerable",
+  "labeled": 0,
+  "min_labeled_per_split": 500,
+  "min_labeled_total": 1000,
+  "pending": 1000,
+  "ready": false,
+  "total": 1000
+}

@@ -4,10 +4,11 @@
   "evaluated_pack_count": 0,
   "manifest_paths": [
     "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.manifest.json",
-    "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.manifest.json"
+    "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.manifest.json",
+    "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.manifest.json"
   ],
   "output_dir": "results\\human_audit_v4_eval",
-  "pack_count": 2,
+  "pack_count": 3,
   "packs": [
     {
       "adjudicated_labels": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.adjudicated_labels.jsonl",
@@ -58,6 +59,31 @@
       "raw_input": "results\\fever_orbits_v4_n100.constant.structbalanced.raw.jsonl",
       "scored_input": "results\\fever_orbits_v4_n100.constant.structbalanced.textonly_scored.jsonl",
       "selected_items": 100
+    },
+    {
+      "adjudicated_labels": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.adjudicated_labels.jsonl",
+      "allow_partial": false,
+      "evaluated": false,
+      "evaluation_ready": false,
+      "failed_gates": [
+        {
+          "actual": 0,
+          "gate": "non_empty_human_labels"
+        },
+        {
+          "actual": 0,
+          "gate": "all_selected_items_adjudicated",
+          "required": 1000
+        }
+      ],
+      "labeled": 0,
+      "manifest": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.manifest.json",
+      "pack_name": "v4_paper1000_mixed_blind1000",
+      "pending": 1000,
+      "private_input": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.sources.private_eval.jsonl",
+      "raw_input": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.sources.raw.jsonl",
+      "scored_input": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.sources.textonly_scored.jsonl",
+      "selected_items": 1000
     }
   ],
   "ready": false

@@ -11,7 +11,7 @@
   },
   "audit_dir": "results\\human_audit_v4",
   "claim_policy": "This report tracks human-audit readiness only. Empty or pending labels do not support human-audited claims.",
-  "pack_count": 2,
+  "pack_count": 3,
   "packs": [
     {
       "adjudication": {
@@ -298,10 +298,153 @@
       "ready": false,
       "selected_items": 200,
       "semantic_label_schema_ready": true
+    },
+    {
+      "adjudication": {
+        "ambiguous_or_error_rate": null,
+        "ambiguous_rate": null,
+        "by_status": {
+          "pending": 1000
+        },
+        "completion_rate": 0.0,
+        "exists": true,
+        "invalid": 0,
+        "items": 1000,
+        "labeled": 0,
+        "path": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.adjudicated_labels.jsonl",
+        "pending": 1000,
+        "semantic_label_counts": {
+          "ambiguous": 0,
+          "annotation_error": 0,
+          "fragile": 0,
+          "stable_answerable": 0,
+          "unanswerable": 0
+        }
+      },
+      "agreement": {
+        "auditors": [
+          "auditor1",
+          "auditor2"
+        ],
+        "completion": {
+          "auditor1": {
+            "completion_rate": 0.0,
+            "labeled": 0,
+            "rows": 1000
+          },
+          "auditor2": {
+            "completion_rate": 0.0,
+            "labeled": 0,
+            "rows": 1000
+          }
+        },
+        "conflicts": 0,
+        "gwet_ac1_ready": true,
+        "pairwise": [
+          {
+            "agreement_rate": null,
+            "agreements": 0,
+            "auditors": [
+              "auditor1",
+              "auditor2"
+            ],
+            "cohen_kappa": null,
+            "compared": 0,
+            "gwet_ac1": null
+          }
+        ],
+        "semantic_conflicts": 0,
+        "semantic_pairwise": [
+          {
+            "agreement_rate": null,
+            "agreements": 0,
+            "auditors": [
+              "auditor1",
+              "auditor2"
+            ],
+            "compared": 0,
+            "gwet_ac1": null
+          }
+        ]
+      },
+      "auditor_semantic_label_counts": {
+        "ambiguous": 0,
+        "annotation_error": 0,
+        "fragile": 0,
+        "stable_answerable": 0,
+        "unanswerable": 0
+      },
+      "auditors": {
+        "v4_paper1000_mixed_blind1000.auditor1.labels": {
+          "ambiguous_or_error_rate": null,
+          "ambiguous_rate": null,
+          "completion_rate": 0.0,
+          "exists": true,
+          "has_label_semantic_column": true,
+          "invalid": 0,
+          "labeled": 0,
+          "path": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.auditor1.labels.csv",
+          "pending": 1000,
+          "rows": 1000,
+          "semantic_completion_rate": 0.0,
+          "semantic_invalid": 0,
+          "semantic_label_counts": {
+            "ambiguous": 0,
+            "annotation_error": 0,
+            "fragile": 0,
+            "stable_answerable": 0,
+            "unanswerable": 0
+          },
+          "semantic_labeled": 0,
+          "semantic_pending": 1000
+        },
+        "v4_paper1000_mixed_blind1000.auditor2.labels": {
+          "ambiguous_or_error_rate": null,
+          "ambiguous_rate": null,
+          "completion_rate": 0.0,
+          "exists": true,
+          "has_label_semantic_column": true,
+          "invalid": 0,
+          "labeled": 0,
+          "path": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.auditor2.labels.csv",
+          "pending": 1000,
+          "rows": 1000,
+          "semantic_completion_rate": 0.0,
+          "semantic_invalid": 0,
+          "semantic_label_counts": {
+            "ambiguous": 0,
+            "annotation_error": 0,
+            "fragile": 0,
+            "stable_answerable": 0,
+            "unanswerable": 0
+          },
+          "semantic_labeled": 0,
+          "semantic_pending": 1000
+        }
+      },
+      "expected_label_counts": {
+        "false": 800,
+        "true": 200,
+        "unknown": 0
+      },
+      "failed_gates": [
+        {
+          "actual": 0,
+          "gate": "all_items_adjudicated",
+          "required": 1000
+        }
+      ],
+      "manifest": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.manifest.json",
+      "pack_name": "v4_paper1000_mixed_blind1000",
+      "readiness_file": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.readiness.json",
+      "readiness_file_ready": false,
+      "ready": false,
+      "selected_items": 1000,
+      "semantic_label_schema_ready": true
     }
   ],
-  "pending": 300,
+  "pending": 1300,
   "ready": false,
   "semantic_label_schema_ready": true,
-  "total_items": 300
+  "total_items": 1300
 }

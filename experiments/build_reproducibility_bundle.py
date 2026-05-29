@@ -30,6 +30,7 @@ DATASET_CONSTRUCTION_ARTIFACTS = [
     Path("results/hotpot_orbits_v4_semanticswap_n100.construction_audit.json"),
     Path("results/human_audit_v4/hotpot_v4_semanticswap_n100_blind200.manifest.json"),
     Path("results/human_audit_v4/fever_v4_n100_structbalanced_blind100.manifest.json"),
+    Path("results/human_audit_v4/v4_paper1000_mixed_blind1000.manifest.json"),
     *FAILURE_TAXONOMY_INPUTS,
     *ANTI_SHORTCUT_INPUTS,
     *END2END_PROXY_INPUTS,

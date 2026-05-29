@@ -17,6 +17,10 @@ if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
 from experiments.run_human_audit_eval_v4 import run_human_audit_eval_v4
+from experiments.materialize_human_audit_v4_paper_pack import (
+    materialize_human_audit_v4_paper_pack,
+    render_markdown as render_human_audit_paper_pack_markdown,
+)
 from experiments.build_clean_sufficiency_misleading_figure import (
     DEFAULT_INPUTS as DEFAULT_CLEAN_SUFFICIENCY_FIGURE_INPUTS,
     build_clean_sufficiency_misleading_figure,
@@ -158,6 +162,7 @@ from experiments.verify_claims import verify_claims
 DEFAULT_MANIFESTS = [
     Path("results/human_audit_v4/hotpot_v4_semanticswap_n100_blind200.manifest.json"),
     Path("results/human_audit_v4/fever_v4_n100_structbalanced_blind100.manifest.json"),
+    Path("results/human_audit_v4/v4_paper1000_mixed_blind1000.manifest.json"),
 ]
 
 
@@ -170,6 +175,25 @@ def reproduce_current_evidence_v4(
 ) -> dict[str, Any]:
     results = root / "results"
     commands: list[dict[str, Any]] = []
+
+    human_paper_pack_json = results / "human_audit_v4_paper_pack_status_20260529.json"
+    human_paper_pack_md = results / "human_audit_v4_paper_pack_status_20260529.md"
+    human_paper_pack = materialize_human_audit_v4_paper_pack(
+        root,
+        results / "human_audit_v4",
+    )
+    _write_json(human_paper_pack_json, human_paper_pack)
+    human_paper_pack_md.write_text(
+        render_human_audit_paper_pack_markdown(human_paper_pack),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "materialize_human_audit_v4_paper_pack",
+            "outputs": [str(human_paper_pack_json), str(human_paper_pack_md)],
+            "ready": human_paper_pack["paper_pack_ready_for_labeling"],
+        }
+    )
 
     human_status_json = results / "human_audit_v4_status_20260529.json"
     human_status_md = results / "human_audit_v4_status_20260529.md"

@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T06:22:57.515775+00:00`
+Generated: `2026-05-29T06:33:45.057486+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -44,20 +44,20 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Current Evidence Reproduction
 
 - Ready for NeurIPS main claim: `False`.
-- Human audit pending: `300`; human eval ready: `False`.
+- Human audit pending: `1300`; human eval ready: `False`.
 - Full CoRM reconstruction ready: `False`; remote storage ready: `False`.
 - Claim verifier passed: `True`.
 
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `35`; tracked artifacts: `166`.
+- Provenance steps: `36`; tracked artifacts: `182`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `166`; dataset construction hashes: `41`.
+- Artifact checksums: `182`; dataset construction hashes: `42`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -78,7 +78,7 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 - Hard blockers: `3`; negative/partial evidence items: `5`.
 
 Hard blockers:
-- Human-audited orbit labels: Pending labels: 300; cannot claim human-audited results.
+- Human-audited orbit labels: Pending labels: 1300; cannot claim human-audited results.
 - Full CoRM-RAG reproduction: Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts. Latest storage probe shows 322.1 GiB available and target_write_probe_passed=False; 6 target-dir file probes failed while writable fallback dirs are ['/home/syk', '/tmp', '/dev/shm'].
 - Independent external review: External review packet is ready, but no independent review response is present; place the response at `results\external_review_response_20260529.md`.
 
@@ -228,11 +228,11 @@ Semantic-swap n100:
 - Human-audited labels complete: `False` (labeled `0`, pending `200`).
 
 Human audit v4 aggregate:
-- Ready: `False`; packs: `2`; items: `300`.
-- Adjudicated labels: `0`; pending: `300`.
+- Ready: `False`; packs: `3`; items: `1300`.
+- Adjudicated labels: `0`; pending: `1300`.
 
 Human audit v4 evaluation gate:
-- Ready: `False`; evaluated packs: `0/2`; allow partial: `False`.
+- Ready: `False`; evaluated packs: `0/3`; allow partial: `False`.
 
 ## Claim Boundary
 
@@ -270,7 +270,7 @@ Remaining non-human blockers:
 - V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.
 
 Remaining human-audit blockers:
-- Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items.
+- Human audit v4 packs are prepared, including the paper-grade mixed blind1000 pack, but adjudicated labels are pending for all 1300 items.
 
 ## Verification
 

@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T06:22:56.103336+00:00`
+Generated: `2026-05-29T06:33:43.568739+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -8,6 +8,7 @@ Ready for NeurIPS main claim: `False`
 
 | Step | Ready | Outputs |
 |---|---|---|
+| materialize_human_audit_v4_paper_pack | `True` | `results\human_audit_v4_paper_pack_status_20260529.json`<br>`results\human_audit_v4_paper_pack_status_20260529.md` |
 | summarize_human_audit_v4_status | `False` | `results\human_audit_v4_status_20260529.json`<br>`results\human_audit_v4_status_20260529.md` |
 | summarize_human_audit_v4_disagreements | `True` | `results\human_audit_v4_disagreement_taxonomy_20260529.json`<br>`results\human_audit_v4_disagreement_taxonomy_20260529.md` |
 | summarize_human_audit_v4_mismatch | `True` | `results\human_audit_v4_mismatch_20260529.json`<br>`results\human_audit_v4_mismatch_20260529.md` |
@@ -48,7 +49,7 @@ Ready for NeurIPS main claim: `False`
 
 - Human audit v4 ready: `False`.
 - Human audit v4 eval ready: `False`.
-- Human audit v4 pending labels: `300`.
+- Human audit v4 pending labels: `1300`.
 - Human audit v4 evaluated packs: `0`.
 - Full CoRM reconstruction ready: `False`.
 - Remote storage ready: `False`.
@@ -57,7 +58,7 @@ Ready for NeurIPS main claim: `False`
 ## Blockers
 
 Human audit:
-- Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items.
+- Human audit v4 packs are prepared, including the paper-grade mixed blind1000 pack, but adjudicated labels are pending for all 1300 items.
 
 Non-human:
 - Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.

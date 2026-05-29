@@ -1,0 +1,137 @@
+{
+  "adjudication_summary": {
+    "auto_agree": 0,
+    "items": 1000,
+    "manual": 0,
+    "merged_labels": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.merged_labels.jsonl",
+    "output": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.adjudicated_labels.jsonl",
+    "pending": 1000,
+    "template_csv": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.adjudication_template.csv"
+  },
+  "agreement_summary": {
+    "audit_items": 1000,
+    "auditors": [
+      "auditor1",
+      "auditor2"
+    ],
+    "pairwise": [
+      {
+        "agreement_rate": null,
+        "agreements": 0,
+        "auditors": [
+          "auditor1",
+          "auditor2"
+        ],
+        "cohen_kappa": null,
+        "compared": 0,
+        "gwet_ac1": null
+      }
+    ],
+    "semantic_pairwise": [
+      {
+        "agreement_rate": null,
+        "agreements": 0,
+        "auditors": [
+          "auditor1",
+          "auditor2"
+        ],
+        "compared": 0,
+        "gwet_ac1": null
+      }
+    ]
+  },
+  "artifacts": {
+    "adjudicated_labels": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.adjudicated_labels.jsonl",
+    "adjudication_template": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.adjudication_template.csv",
+    "agreement": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.agreement.json",
+    "combined_private": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.sources.private_eval.jsonl",
+    "combined_raw": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.sources.raw.jsonl",
+    "combined_scored": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.sources.textonly_scored.jsonl",
+    "items_jsonl": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.items.jsonl",
+    "label_csvs": {
+      "auditor1": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.auditor1.labels.csv",
+      "auditor2": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.auditor2.labels.csv"
+    },
+    "manifest": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.manifest.json",
+    "merged_labels": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.merged_labels.jsonl",
+    "readiness": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.readiness.json",
+    "review_html": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.review.html"
+  },
+  "claim_policy": "This materializes a paper-grade 1000-item Human Audit v4 blind pack. It is ready for human labeling but contains no completed human labels yet, so it does not support human-audited result claims.",
+  "expected_total_items": 1000,
+  "generated_at_utc": "2026-05-29T06:33:26.520269+00:00",
+  "human_labels_complete": false,
+  "merge_summary": {
+    "label_csvs": [
+      "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.auditor1.labels.csv",
+      "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.auditor2.labels.csv"
+    ],
+    "labeled": 0,
+    "manifest": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.manifest.json",
+    "output": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.merged_labels.jsonl",
+    "pending_or_unsure": 2000,
+    "rows": 2000
+  },
+  "output_dir": "results\\human_audit_v4",
+  "pack_name": "v4_paper1000_mixed_blind1000",
+  "paper_pack_ready_for_labeling": true,
+  "pending_adjudicated_labels": 1000,
+  "readiness_summary": {
+    "agreement_with_expected": null,
+    "by_split": {
+      "unknown": {
+        "agree": 0,
+        "disagree": 0,
+        "invalid": 0,
+        "labeled": 0,
+        "pending": 1000,
+        "total": 1000
+      }
+    },
+    "completion_rate": 0.0,
+    "failed_gates": [
+      {
+        "actual": 0,
+        "gate": "min_labeled_total",
+        "required": 1000
+      },
+      {
+        "actual": 0,
+        "gate": "min_labeled_per_split",
+        "required": 500,
+        "split": "unknown"
+      }
+    ],
+    "input": "results\\human_audit_v4\\v4_paper1000_mixed_blind1000.adjudicated_labels.jsonl",
+    "invalid": 0,
+    "label_field": "adjudicated_label_answerable",
+    "labeled": 0,
+    "min_labeled_per_split": 500,
+    "min_labeled_total": 1000,
+    "pending": 1000,
+    "ready": false,
+    "total": 1000
+  },
+  "selected_items": 1000,
+  "selected_label_counts": {
+    "false": 800,
+    "true": 200,
+    "unknown": 0
+  },
+  "source_summaries": [
+    {
+      "name": "hotpot_v4_base_n100",
+      "private": "results\\hotpot_orbits_v4_n100.private_eval.jsonl",
+      "raw": "results\\hotpot_orbits_v4_n100.constant.raw.jsonl",
+      "row_count": 400,
+      "scored": "results\\hotpot_orbits_v4_n100.constant.textonly_scored.jsonl"
+    },
+    {
+      "name": "fever_v4_base_n100",
+      "private": "results\\fever_orbits_v4_n100.private_eval.jsonl",
+      "raw": "results\\fever_orbits_v4_n100.constant.raw.jsonl",
+      "row_count": 600,
+      "scored": "results\\fever_orbits_v4_n100.constant.textonly_scored.jsonl"
+    }
+  ]
+}

@@ -104,7 +104,7 @@
     "claim_verifier_passed": true,
     "full_corm_reconstruction_ready": false,
     "human_audit_v4_eval_ready": false,
-    "human_audit_v4_pending": 300,
+    "human_audit_v4_pending": 1300,
     "human_audit_v4_ready": false,
     "ready_for_neurips_main_claim": false,
     "remote_storage_ready": false
@@ -252,7 +252,7 @@
     "review_response_path": "results\\external_review_response_20260529.md",
     "status": "packet_ready"
   },
-  "generated_at_utc": "2026-05-29T06:22:57.515775+00:00",
+  "generated_at_utc": "2026-05-29T06:33:45.057486+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -475,7 +475,7 @@
     "human_audit_v4": {
       "adjudicated_labeled": 0,
       "artifact": "results/human_audit_v4_status_20260529.json",
-      "pack_count": 2,
+      "pack_count": 3,
       "packs": [
         {
           "adjudicated_labeled": 0,
@@ -490,17 +490,24 @@
           "pending": 200,
           "ready": false,
           "selected_items": 200
+        },
+        {
+          "adjudicated_labeled": 0,
+          "pack_name": "v4_paper1000_mixed_blind1000",
+          "pending": 1000,
+          "ready": false,
+          "selected_items": 1000
         }
       ],
-      "pending": 300,
+      "pending": 1300,
       "ready": false,
-      "total_items": 300
+      "total_items": 1300
     },
     "human_audit_v4_eval": {
       "allow_partial": false,
       "artifact": "results/human_audit_v4_eval_status_20260529.json",
       "evaluated_pack_count": 0,
-      "pack_count": 2,
+      "pack_count": 3,
       "packs": [
         {
           "evaluated": false,
@@ -517,6 +524,14 @@
           "pack_name": "fever_v4_n100_structbalanced_blind100",
           "pending": 100,
           "selected_items": 100
+        },
+        {
+          "evaluated": false,
+          "evaluation_ready": false,
+          "labeled": 0,
+          "pack_name": "v4_paper1000_mixed_blind1000",
+          "pending": 1000,
+          "selected_items": 1000
         }
       ],
       "ready": false
@@ -671,7 +686,7 @@
     "hard_blocker_count": 3,
     "hard_blockers": [
       {
-        "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
+        "boundary_or_next_action": "Pending labels: 1300; cannot claim human-audited results.",
         "requirement": "Human-audited orbit labels",
         "status": "blocked"
       },
@@ -723,7 +738,7 @@
     }
   },
   "remaining_human_audit_blockers": [
-    "Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items."
+    "Human audit v4 packs are prepared, including the paper-grade mixed blind1000 pack, but adjudicated labels are pending for all 1300 items."
   ],
   "remaining_non_human_blockers": [
     "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
@@ -735,10 +750,10 @@
   ],
   "reproducibility_bundle": {
     "artifact": "reproducibility/bundle_summary_20260529.json",
-    "artifact_checksum_count": 166,
+    "artifact_checksum_count": 182,
     "checkpoint_hash_available": true,
     "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
-    "dataset_construction_hash_count": 41,
+    "dataset_construction_hash_count": 42,
     "hidden_local_path_finding_count": 0,
     "hidden_local_path_passed": true,
     "outputs": {
@@ -755,7 +770,7 @@
   },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 166,
+    "artifact_count": 182,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,
@@ -767,7 +782,7 @@
     },
     "readme_artifact": "results/README.md",
     "readme_exists": true,
-    "step_count": 35,
+    "step_count": 36,
     "untracked_output_count": 0
   },
   "risk_control": {
