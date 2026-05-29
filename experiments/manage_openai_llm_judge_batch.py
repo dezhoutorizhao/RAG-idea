@@ -65,6 +65,11 @@ def manage_openai_llm_judge_batch(
         "endpoint": endpoint,
         "completion_window": completion_window,
         "api_key_ready": api_key_ready,
+        "request_count": request_status["request_count"],
+        "unique_custom_id_count": request_status["unique_custom_id_count"],
+        "models": request_status["models"],
+        "execution_packet_ready": request_status["valid"],
+        "execution_commands": _execution_commands(request_jsonl, batch_output_jsonl),
         "request_status": request_status,
         "claim_policy": (
             "This manages API-backed LLM judge batch execution for the paired NLI probe. "
@@ -139,13 +144,19 @@ def render_markdown(summary: dict[str, Any]) -> str:
         f"Blocker: `{summary.get('blocker_reason')}`",
         f"API key ready: `{summary['api_key_ready']}`",
         f"Request file: `{summary['request_jsonl']}`",
-        f"Request count: `{request['request_count']}`",
+        f"Request count: `{summary['request_count']}`",
+        f"Unique custom ids: `{summary['unique_custom_id_count']}`",
+        f"Models: `{summary['models']}`",
         f"Request file valid: `{request['valid']}`",
+        f"Execution packet ready: `{summary['execution_packet_ready']}`",
         f"Endpoint: `{summary['endpoint']}`",
         f"Completion window: `{summary['completion_window']}`",
         f"Batch output: `{summary['batch_output_jsonl']}`",
         "",
     ]
+    lines.extend(["## Execution Commands", ""])
+    for item in summary["execution_commands"]:
+        lines.extend([f"### {item['step']}", "", "```powershell", item["command"], "```", ""])
     if request["errors"]:
         lines.extend(["## Request Errors", "", "| Line | Error |", "|---:|---|"])
         for item in request["errors"][:20]:
@@ -325,6 +336,50 @@ def _with_status(payload: dict[str, Any], status: str, blocker_reason: str | Non
     payload["ready_for_batch_submission"] = status == "ready_to_submit"
     payload["ready_for_score_normalization"] = status == "completed" and Path(payload["batch_output_jsonl"]).exists()
     return payload
+
+
+def _execution_commands(request_jsonl: Path, batch_output_jsonl: Path) -> list[dict[str, str]]:
+    request_arg = _ps_path(request_jsonl)
+    output_arg = _ps_path(batch_output_jsonl)
+    scores_arg = _ps_path(Path("results/llm_judge_nli_probe_scores_20260529.jsonl"))
+    return [
+        {
+            "step": "1. submit batch after setting OPENAI_API_KEY",
+            "command": (
+                "$env:OPENAI_API_KEY='<set locally>'; "
+                "python -m experiments.manage_openai_llm_judge_batch "
+                f"--action submit --request-jsonl {request_arg} --batch-output-jsonl {output_arg}"
+            ),
+        },
+        {
+            "step": "2. retrieve completed batch output",
+            "command": (
+                "$env:OPENAI_API_KEY='<set locally>'; "
+                "python -m experiments.manage_openai_llm_judge_batch "
+                f"--action retrieve --batch-id <batch_id> --request-jsonl {request_arg} "
+                f"--batch-output-jsonl {output_arg}"
+            ),
+        },
+        {
+            "step": "3. normalize judge scores",
+            "command": (
+                "python -m experiments.normalize_llm_judge_batch_responses "
+                f"--batch-output-jsonl {output_arg} --scores-jsonl {scores_arg}"
+            ),
+        },
+        {
+            "step": "4. recompute NLI/LLM correlation",
+            "command": "python -m experiments.compute_llm_nli_correlation",
+        },
+        {
+            "step": "5. rebuild current evidence package",
+            "command": "powershell -ExecutionPolicy Bypass -File scripts\\run_main_tables.ps1",
+        },
+    ]
+
+
+def _ps_path(path: Path) -> str:
+    return str(path).replace("/", "\\")
 
 
 def _retrieve_blocker(batch: dict[str, Any]) -> str:

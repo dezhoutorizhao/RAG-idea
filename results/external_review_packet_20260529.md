@@ -1,6 +1,6 @@
 # External Review Packet
 
-Generated: `2026-05-29T05:04:34.647744+00:00`
+Generated: `2026-05-29T05:09:07.169166+00:00`
 
 Packet ready: `True`
 External review completed: `False`
@@ -20,7 +20,7 @@ Blocker: `pending_external_review`
 
 - Verified claims: `{'passed_claims': 28, 'failed_claims': 0, 'total_claims': 28}`.
 - Readiness status counts: `{'blocked': 3, 'fail': 1, 'partial': 4, 'pass': 4}`.
-- Evidence manifest artifacts: `138`.
+- Evidence manifest artifacts: `141`.
 - Evidence manifest missing artifacts: `0`.
 
 ## Hard Blockers
@@ -48,14 +48,14 @@ Blocker: `pending_external_review`
 | `RAG-idea改进.md` | `True` | 49684 | `abea2cc9e252308bd254f974d86cbd89910eecfeab3ee4a55ab14fc5dee71242` |
 | `CLAIMS_LEDGER.json` | `True` | 53391 | `f433d29dc1ca4d67e4097403e7e84c6adc8ec7de7c9785d1e3111a15d699d244` |
 | `results\claims_verification.json` | `True` | 62860 | `b3051aff04cf1c2efe13719f0587dca08c1af41ba043266c8fdd1b7c3cde1a6e` |
-| `results\evidence_closure_status_v4.json` | `True` | 33727 | `bc8f597332966b766c6b9303f0746006f704f325644bf10ec269467a75b489e4` |
-| `results\neurips_readiness_matrix_20260529.json` | `True` | 11668 | `b19e20162adc09c53b9492d0f32465c0da498a07f24bb8eb46434c620217ee61` |
-| `results\v4_evidence_package_manifest_20260529.json` | `True` | 32281 | `e0eb1bf20f51c7e9b52da2751154d68545a932b392be917d4de6977484d88ff6` |
-| `results\text_only_verifier_status_20260529.json` | `True` | 4152 | `4d4114c780f74c9c624915b3b641cc61983c63e51be4171183ac92d78a131706` |
-| `results\v4_strong_baseline_summary_20260529.json` | `True` | 44027 | `400bb12b90f33bc926350c828a0b635121cd5e6d850efa7fee41ab1e70ba328c` |
-| `results\v4_calibration_quality_20260529.json` | `True` | 25694 | `efb063d7bc55da8e30b2300ca22551414f7b4e7b8d2fadc5e849ad9092f32b8b` |
-| `results\end2end_retriever_generator_matrix_20260529.json` | `True` | 52753 | `ef1f0b3180e3141f07407960af41d8c1e9519fb2b6ec3ac20ac72c7893be5d9a` |
-| `results\end2end_risk_coverage_curves_20260529.json` | `True` | 130245 | `b616703206f66f108df58f918e44eb579d36ff517182f04021736f298ee8bd36` |
+| `results\evidence_closure_status_v4.json` | `True` | 34052 | `fa639220f785948d132bfcf0a1fa79d19ff55eebb9bec94c19665c62417ea434` |
+| `results\neurips_readiness_matrix_20260529.json` | `True` | 11668 | `b3b4ccea9e17381507801b176e80cba7fec095bb67602cd2807fd39a704612ed` |
+| `results\v4_evidence_package_manifest_20260529.json` | `True` | 33107 | `7d2632b469adcdd72bc612c58a1bdf21d52a509430650c74543cb39bc1591668` |
+| `results\text_only_verifier_status_20260529.json` | `True` | 4152 | `a22563ad6e814442806ee98c333cbbd5833d0d3967604525b7facc215668e9cb` |
+| `results\v4_strong_baseline_summary_20260529.json` | `True` | 44027 | `f264f73282d1d12bd5f345a76e275f54e50e7e3013f6a34e6fc02f94d43906b0` |
+| `results\v4_calibration_quality_20260529.json` | `True` | 25694 | `f6fb2403a476542882b1fc1277d65cb2f255a71cc72eeaea6d2eb4aeaef52696` |
+| `results\end2end_retriever_generator_matrix_20260529.json` | `True` | 52753 | `d044ac67fa7efc1b5db8981003c1dead333a8c47defdce9d595fd7caf4894a78` |
+| `results\end2end_risk_coverage_curves_20260529.json` | `True` | 130245 | `853a14d55e74e15dbf088904b6fc956bf575e839175085efef5eac84cbe6a896` |
 | `results\remote_storage_status_20260529.json` | `True` | 14189 | `99f9144bc129a4635f4083a47e6f57129aec1eef4194e4ced49f864c36ef42c6` |
 | `results\human_audit_v4_status_20260529.json` | `True` | 9104 | `9382df70b54b3413e6dd64c70b17e5900aa48ca69bcc83c212fdba19fb7ac003` |
 

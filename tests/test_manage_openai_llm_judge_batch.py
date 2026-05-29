@@ -50,7 +50,12 @@ def test_manage_openai_llm_judge_batch_preflight_blocks_without_api_key(tmp_path
     assert summary["blocker_reason"] == "missing_openai_api_key"
     assert summary["request_status"]["valid"] is True
     assert summary["request_status"]["request_count"] == 1
+    assert summary["request_count"] == 1
+    assert summary["models"] == ["gpt-4.1-mini"]
+    assert summary["execution_packet_ready"] is True
+    assert "retrieve --batch-id <batch_id>" in summary["execution_commands"][1]["command"]
     assert "missing_openai_api_key" in render_markdown(summary)
+    assert "Execution Commands" in render_markdown(summary)
 
 
 def test_manage_openai_llm_judge_batch_preflight_fails_invalid_requests(tmp_path):
