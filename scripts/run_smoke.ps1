@@ -5,6 +5,7 @@ python -m pytest `
   tests/test_build_claims_ledger_markdown.py `
   tests/test_build_reproducibility_bundle.py `
   tests/test_compare_equal_budget_thresholds_v4.py `
+  tests/test_materialize_llm_judge_requests_v4.py `
   tests/test_run_end2end_retriever_generator_matrix_v4.py `
   tests/test_summarize_human_audit_v4_disagreements.py `
   tests/test_summarize_human_audit_v4_mismatch.py `

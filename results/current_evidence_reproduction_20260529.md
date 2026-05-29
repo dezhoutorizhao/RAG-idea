@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T03:24:09.555360+00:00`
+Generated: `2026-05-29T03:29:11.624191+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -15,6 +15,7 @@ Ready for NeurIPS main claim: `False`
 | summarize_fever_cp_transfer_sweep | `False` | `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json`<br>`results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.md` |
 | summarize_end2end_selective_rag_proxy | `False` | `results\end2end_selective_rag_proxy_summary_20260529.json`<br>`results\end2end_selective_rag_proxy_summary_20260529.md` |
 | run_end2end_retriever_generator_matrix_v4 | `False` | `results\end2end_retriever_generator_matrix_20260529.json`<br>`results\end2end_retriever_generator_matrix_20260529.md` |
+| materialize_llm_judge_requests_v4 | `False` | `results\llm_judge_v4_requests_20260529.jsonl`<br>`results\llm_judge_v4_request_status_20260529.json`<br>`results\llm_judge_v4_request_status_20260529.md` |
 | summarize_v4_strong_baselines | `False` | `results\v4_strong_baseline_summary_20260529.json`<br>`results\v4_strong_baseline_summary_20260529.md` |
 | summarize_v4_baseline_coverage | `False` | `results\v4_baseline_coverage_matrix_20260529.json`<br>`results\v4_baseline_coverage_matrix_20260529.md` |
 | summarize_v4_baseline_budget_parity | `False` | `results\v4_baseline_budget_parity_20260529.json`<br>`results\v4_baseline_budget_parity_20260529.md` |

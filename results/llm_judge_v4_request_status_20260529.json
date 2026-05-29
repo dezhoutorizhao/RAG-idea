@@ -1,0 +1,46 @@
+{
+  "api_key_ready": false,
+  "claim_policy": "This materializes an equal-input LLM-judge request pack. It is not an LLM-judge baseline result until responses are collected and converted into score artifacts.",
+  "dataset_count": 6,
+  "datasets": [
+    {
+      "dataset": "fever_v4_n100_structbalanced",
+      "raw": "results\\fever_orbits_v4_n100.constant.structbalanced.raw.jsonl",
+      "row_count": 200
+    },
+    {
+      "dataset": "hotpot_v4_hardneg_n100",
+      "raw": "results\\hotpot_orbits_v4_hardneg_n100.constant.raw.jsonl",
+      "row_count": 200
+    },
+    {
+      "dataset": "hotpot_v4_n100_hardmatched",
+      "raw": "results\\hotpot_orbits_v4_n100.constant.hardmatched.raw.jsonl",
+      "row_count": 200
+    },
+    {
+      "dataset": "hotpot_v4_n100_structbalanced",
+      "raw": "results\\hotpot_orbits_v4_n100.constant.structbalanced.raw.jsonl",
+      "row_count": 200
+    },
+    {
+      "dataset": "hotpot_v4_semanticswap_n100",
+      "raw": "results\\hotpot_orbits_v4_semanticswap_n100.constant.raw.jsonl",
+      "row_count": 200
+    },
+    {
+      "dataset": "hotpot_v4_supportpreserve_n100",
+      "raw": "results\\hotpot_orbits_v4_supportpreserve_n100.constant.raw.jsonl",
+      "row_count": 200
+    }
+  ],
+  "generated_at_utc": "2026-05-29T03:29:07.669922+00:00",
+  "max_docs_per_set": 6,
+  "model": "gpt-4.1-mini",
+  "output_jsonl": "results\\llm_judge_v4_requests_20260529.jsonl",
+  "ready_for_baseline_coverage": false,
+  "request_count": 1200,
+  "request_pack_ready": true,
+  "score_artifact": "results/llm_judge_v4_scores_20260529.jsonl",
+  "score_artifact_ready": false
+}

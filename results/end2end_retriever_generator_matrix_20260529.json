@@ -5,9 +5,9 @@
     "aurc_ties": 0,
     "aurc_wins": 16,
     "has_losses": true,
-    "mean_aurc_reduction": 0.10721788127759381,
-    "mean_risk30_reduction": 0.15138888888888888,
-    "mean_risk50_reduction": 0.18958333333333333,
+    "mean_aurc_reduction": 0.10782042633036998,
+    "mean_risk30_reduction": 0.15277777777777776,
+    "mean_risk50_reduction": 0.19041666666666665,
     "risk30_losses": 4,
     "risk30_ties": 4,
     "risk30_wins": 16,
@@ -26,7 +26,7 @@
     "hotpot_v4_semanticswap_n100",
     "hotpot_v4_supportpreserve_n100"
   ],
-  "generated_at_utc": "2026-05-29T03:24:05.105271+00:00",
+  "generated_at_utc": "2026-05-29T03:29:07.445476+00:00",
   "generators": [
     "copy_candidate",
     "lexical_guarded"
@@ -524,12 +524,12 @@
     {
       "answer_accuracy": 0.5,
       "best_non_csrm": {
-        "aurc": 0.4315286626799008,
+        "aurc": 0.4459897439465287,
         "coverage_at_risk20": 0.005,
         "method": "generator_confidence",
-        "risk30": 0.41666666666666663,
-        "risk50": 0.42000000000000004,
-        "risk70": 0.44285714285714284
+        "risk30": 0.44999999999999996,
+        "risk50": 0.43999999999999995,
+        "risk70": 0.44999999999999996
       },
       "csrm": {
         "aurc": 0.2597126239534901,
@@ -540,10 +540,10 @@
       },
       "dataset": "hotpot_v4_hardneg_n100",
       "deltas": {
-        "aurc_reduction": 0.1718160387264107,
+        "aurc_reduction": 0.1862771199930386,
         "coverage_at_risk20_gain": 0.45,
-        "risk30_reduction": 0.23333333333333328,
-        "risk50_reduction": 0.20000000000000007
+        "risk30_reduction": 0.2666666666666666,
+        "risk50_reduction": 0.21999999999999997
       },
       "generator": "lexical_guarded",
       "n": 200,
@@ -826,7 +826,7 @@
       "outputs_sample": [
         {
           "answer": "BBC",
-          "confidence": 0.8846153846153846,
+          "confidence": 0.5192307692307692,
           "correct": true,
           "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
         },
@@ -850,7 +850,7 @@
         },
         {
           "answer": "no",
-          "confidence": 1.0,
+          "confidence": 0.9375,
           "correct": true,
           "orbit_id": "hotpot:5a893fc855429951533612f0:stable"
         }
@@ -1102,7 +1102,7 @@
       "outputs_sample": [
         {
           "answer": "BBC",
-          "confidence": 0.8846153846153846,
+          "confidence": 0.5192307692307692,
           "correct": true,
           "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
         },
@@ -1114,7 +1114,7 @@
         },
         {
           "answer": "no",
-          "confidence": 1.0,
+          "confidence": 0.9375,
           "correct": true,
           "orbit_id": "hotpot:5a893fc855429951533612f0:stable"
         },

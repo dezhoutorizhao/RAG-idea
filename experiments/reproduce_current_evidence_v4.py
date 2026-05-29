@@ -27,6 +27,11 @@ from experiments.summarize_end2end_selective_rag_proxy import (
     render_markdown as render_end2end_proxy_markdown,
     summarize_end2end_selective_rag_proxy,
 )
+from experiments.materialize_llm_judge_requests_v4 import (
+    DEFAULT_DATASETS as DEFAULT_LLM_JUDGE_DATASETS,
+    materialize_llm_judge_requests_v4,
+    render_markdown as render_llm_judge_requests_markdown,
+)
 from experiments.run_end2end_retriever_generator_matrix_v4 import (
     DEFAULT_DATASETS as DEFAULT_END2END_MATRIX_DATASETS,
     render_markdown as render_end2end_matrix_markdown,
@@ -220,6 +225,24 @@ def reproduce_current_evidence_v4(
             "name": "run_end2end_retriever_generator_matrix_v4",
             "outputs": [str(end2end_matrix_json), str(end2end_matrix_md)],
             "ready": end2end_matrix["protocol_complete"] and not end2end_matrix["aggregate"]["has_losses"],
+        }
+    )
+
+    llm_judge_requests_jsonl = results / "llm_judge_v4_requests_20260529.jsonl"
+    llm_judge_status_json = results / "llm_judge_v4_request_status_20260529.json"
+    llm_judge_status_md = results / "llm_judge_v4_request_status_20260529.md"
+    llm_judge_status = materialize_llm_judge_requests_v4(
+        DEFAULT_LLM_JUDGE_DATASETS,
+        llm_judge_requests_jsonl,
+        model="gpt-4.1-mini",
+    )
+    _write_json(llm_judge_status_json, llm_judge_status)
+    llm_judge_status_md.write_text(render_llm_judge_requests_markdown(llm_judge_status), encoding="utf-8")
+    commands.append(
+        {
+            "name": "materialize_llm_judge_requests_v4",
+            "outputs": [str(llm_judge_requests_jsonl), str(llm_judge_status_json), str(llm_judge_status_md)],
+            "ready": llm_judge_status["ready_for_baseline_coverage"],
         }
     )
 
