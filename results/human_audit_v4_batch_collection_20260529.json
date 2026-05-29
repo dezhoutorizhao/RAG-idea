@@ -1,0 +1,132 @@
+{
+  "adjudication_summary": {
+    "auto_agree": 0,
+    "items": 1000,
+    "manual": 0,
+    "merged_labels": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.merged_labels.jsonl",
+    "output": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.adjudicated_labels.jsonl",
+    "pending": 1000,
+    "template_csv": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.adjudication_template.csv"
+  },
+  "agreement_summary": {
+    "audit_items": 1000,
+    "auditors": [
+      "auditor1",
+      "auditor2"
+    ],
+    "pairwise": [
+      {
+        "agreement_rate": null,
+        "agreements": 0,
+        "auditors": [
+          "auditor1",
+          "auditor2"
+        ],
+        "cohen_kappa": null,
+        "compared": 0,
+        "gwet_ac1": null
+      }
+    ],
+    "semantic_pairwise": [
+      {
+        "agreement_rate": null,
+        "agreements": 0,
+        "auditors": [
+          "auditor1",
+          "auditor2"
+        ],
+        "compared": 0,
+        "gwet_ac1": null
+      }
+    ]
+  },
+  "artifacts": {
+    "adjudicated_labels": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.adjudicated_labels.jsonl",
+    "adjudication_template": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.adjudication_template.csv",
+    "agreement": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.agreement.json",
+    "collected_label_csvs": [
+      "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.auditor1.collected.labels.csv",
+      "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.auditor2.collected.labels.csv"
+    ],
+    "merged_labels": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.merged_labels.jsonl",
+    "readiness": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.readiness.json"
+  },
+  "assignment_manifest": "results\\human_audit_v4_batches\\v4_paper1000_mixed_blind1000.assignment_manifest.json",
+  "auditor_summaries": [
+    {
+      "auditor_id": "auditor1",
+      "batch_count": 5,
+      "collected_labels_csv": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.auditor1.collected.labels.csv",
+      "completion_rate": 0.0,
+      "labeled": 0,
+      "pending": 1000,
+      "rows": 1000
+    },
+    {
+      "auditor_id": "auditor2",
+      "batch_count": 5,
+      "collected_labels_csv": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.auditor2.collected.labels.csv",
+      "completion_rate": 0.0,
+      "labeled": 0,
+      "pending": 1000,
+      "rows": 1000
+    }
+  ],
+  "claim_policy": "This collects completed assignment batches into merge/adjudication artifacts. It supports human-audit claims only when human_labels_complete and readiness.ready are both true.",
+  "collection_ready": true,
+  "generated_at_utc": "2026-05-29T07:05:15.129224+00:00",
+  "human_labels_complete": false,
+  "merge_summary": {
+    "label_csvs": [
+      "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.auditor1.collected.labels.csv",
+      "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.auditor2.collected.labels.csv"
+    ],
+    "labeled": 0,
+    "manifest": "D:\\\u7f1d\u5408RAG-idea\\results\\human_audit_v4\\v4_paper1000_mixed_blind1000.manifest.json",
+    "output": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.merged_labels.jsonl",
+    "pending_or_unsure": 2000,
+    "rows": 2000
+  },
+  "output_dir": "results\\human_audit_v4_collection",
+  "pack_name": "v4_paper1000_mixed_blind1000",
+  "pending_adjudicated_labels": 1000,
+  "pending_auditor_labels": 2000,
+  "readiness_summary": {
+    "agreement_with_expected": null,
+    "by_split": {
+      "unknown": {
+        "agree": 0,
+        "disagree": 0,
+        "invalid": 0,
+        "labeled": 0,
+        "pending": 1000,
+        "total": 1000
+      }
+    },
+    "completion_rate": 0.0,
+    "failed_gates": [
+      {
+        "actual": 0,
+        "gate": "min_labeled_total",
+        "required": 1000
+      },
+      {
+        "actual": 0,
+        "gate": "min_labeled_per_split",
+        "required": 500,
+        "split": "unknown"
+      }
+    ],
+    "input": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.adjudicated_labels.jsonl",
+    "invalid": 0,
+    "label_field": "adjudicated_label_answerable",
+    "labeled": 0,
+    "min_labeled_per_split": 500,
+    "min_labeled_total": 1000,
+    "pending": 1000,
+    "ready": false,
+    "total": 1000
+  },
+  "source_item_count": 1000,
+  "source_manifest": "D:\\\u7f1d\u5408RAG-idea\\results\\human_audit_v4\\v4_paper1000_mixed_blind1000.manifest.json"
+}

@@ -3,13 +3,14 @@
   "blocker_reason": "pending_external_review",
   "claim_policy": "This packet prepares the current evidence package for independent external review. It is not itself an external review and does not upgrade any claim until an independent review response is present.",
   "external_review_completed": false,
-  "generated_at_utc": "2026-05-29T06:56:05.483365+00:00",
+  "generated_at_utc": "2026-05-29T07:05:32.344823+00:00",
   "hard_blockers": [
     {
-      "boundary_or_next_action": "Assignment batches ready: True; pending labels: 1300; cannot claim human-audited results.",
+      "boundary_or_next_action": "Assignment batches ready: True; batch collection complete: None; pending labels: 1300; cannot claim human-audited results.",
       "evidence": [
         "results/human_audit_v4_paper_pack_status_20260529.json",
         "results/human_audit_v4_assignment_batches_20260529.json",
+        "results/human_audit_v4_batch_collection_20260529.json",
         "results/human_audit_v4_status_20260529.json",
         "results/human_audit_v4_disagreement_taxonomy_20260529.json",
         "results/human_audit_v4_mismatch_20260529.json",
@@ -145,55 +146,55 @@
     {
       "exists": true,
       "path": "results\\evidence_closure_status_v4.json",
-      "sha256": "d60b12afc0bb237d1d5d7c8f00105564bdba921be55b8b433992e8377ca3a55d",
+      "sha256": "bfda775700571e2bcd3d748b0b49a517f94b0ab15ad019eb089e0110076f9301",
       "size_bytes": 47504
     },
     {
       "exists": true,
       "path": "results\\neurips_readiness_matrix_20260529.json",
-      "sha256": "244fc070e5b8682a8ba91513efcc071a118545507496b72bc70a11a1d0a9f7cb",
-      "size_bytes": 14336
+      "sha256": "f87a66a46765c7610aa7634781bd79b5db542a08fa2ec2d6c3c2906658dc0d19",
+      "size_bytes": 14534
     },
     {
       "exists": true,
       "path": "results\\v4_evidence_package_manifest_20260529.json",
-      "sha256": "cf3df814887626f89912d45ce0e8e3a33d5ae6dfd6c289e02b398c03ba3512d9",
+      "sha256": "5f72e603c525a0ba7bb5817cff0f664356f9659dd92c50f955ed508a9557ae01",
       "size_bytes": 44286
     },
     {
       "exists": true,
       "path": "results\\text_only_verifier_status_20260529.json",
-      "sha256": "91fa742d4e70bc56d854cd251c17dc781edb8c979a003808fa20049cd15e53b7",
+      "sha256": "2fca0442f6c55a7e7d302b906b7944283f083b04a886d6b6b1fdebdf197e28ff",
       "size_bytes": 4153
     },
     {
       "exists": true,
       "path": "results\\v4_strong_baseline_summary_20260529.json",
-      "sha256": "7d4283e81b6c3588be5bc19f1c82d87e9b36f4a37c901c8525a37703d1b4c9fb",
+      "sha256": "aa8c5a8a9fc1795df6d0fb01a71484a9f55697c8db25b5dd541fec02ed221a5b",
       "size_bytes": 73809
     },
     {
       "exists": true,
       "path": "results\\v4_calibration_quality_20260529.json",
-      "sha256": "5883438ff89cdaa22df4842fc444ba6fa583a462adfbaebe8d2aaadb94b27848",
+      "sha256": "cdd48bf8e53d181dc0bdbc98dcd5f7664dc88f8f835d9de77b5f9f0aca163ac3",
       "size_bytes": 28533
     },
     {
       "exists": true,
       "path": "results\\risk_control_abstention_baselines_20260529.json",
-      "sha256": "6f96322eac30806282aef295b34dd4e37afa48edb711a8a70505c1f181d24253",
+      "sha256": "19a4a839a367f8e22ae06352c517c9b17e334ee7fbb3ede70b2f4873747c4a28",
       "size_bytes": 11626
     },
     {
       "exists": true,
       "path": "results\\theory_formalization_status_20260529.json",
-      "sha256": "d016fceda0bf353028940488d26420cd7b99dbeb62927933f180755411418728",
+      "sha256": "46fe26d2ca8e875b5b10806b14f34b604be81304570845e7d347487e296dc0c6",
       "size_bytes": 1761
     },
     {
       "exists": true,
       "path": "results\\novelty_audit_20260529.json",
-      "sha256": "d2f5e6176e3f29fc8f5a676ea63c2522a1678511351e77b000d339387e8fc044",
+      "sha256": "e3856ff5e4417365c2fd0ac18e1870214100472dc58d087109a390e8eb7e6580",
       "size_bytes": 5760
     },
     {
@@ -211,38 +212,44 @@
     {
       "exists": true,
       "path": "results\\end2end_retriever_generator_matrix_20260529.json",
-      "sha256": "c7238afe2893954f4ad2fa43993abb5cc8d5d1fc376f01c36668241a2ae2fa45",
+      "sha256": "beaefb4d3c8933c385383211eff9ad850d610b40154360533125e9d1b4846fb5",
       "size_bytes": 52753
     },
     {
       "exists": true,
       "path": "results\\end2end_risk_coverage_curves_20260529.json",
-      "sha256": "6c69af77451105a412edbd7fe3542d75ca0c4e0f895855a7cb8915943b7c0e3a",
+      "sha256": "224b93d35b35ba0996849e2b17a8a2cf3f14fd82c5dfcd9b35a3823960ce7624",
       "size_bytes": 130245
     },
     {
       "exists": true,
       "path": "results\\end2end_target_risk_coverage_20260529.json",
-      "sha256": "c956599e0191bed8f18213fb56276c08b4c1251f6c78b23770e00cf9602532c4",
+      "sha256": "c9e3a7c925bb672e563d32520c86e496edfaa47630ed965119f5c0772800e455",
       "size_bytes": 30644
     },
     {
       "exists": true,
       "path": "results\\remote_storage_status_20260529.json",
-      "sha256": "99f9144bc129a4635f4083a47e6f57129aec1eef4194e4ced49f864c36ef42c6",
+      "sha256": "0c12cbd3bf28ee85de366d1a6cbe936dc06e1061e3ca88c1efcc6e2462b6e474",
       "size_bytes": 14189
     },
     {
       "exists": true,
       "path": "results\\human_audit_v4_paper_pack_status_20260529.json",
-      "sha256": "8228a9c175b5c77d9cbc40e658bff5c25e366f96f0a1a47218a18e3f0846affc",
+      "sha256": "488b131a18440478e16444f604252d26234ff24c999ab293ca223430072f1d70",
       "size_bytes": 4984
     },
     {
       "exists": true,
       "path": "results\\human_audit_v4_assignment_batches_20260529.json",
-      "sha256": "5f4b8563020da3c68f806614b63f046f3cd3554ed4c66b312095dc2388946718",
-      "size_bytes": 17188
+      "sha256": "b24b80871c7682b705f5fcfd1f8b9cacaa1d2d298b4f50a3d54326db3d5344f4",
+      "size_bytes": 17555
+    },
+    {
+      "exists": true,
+      "path": "results\\human_audit_v4_batch_collection_20260529.json",
+      "sha256": "1c4b3972ad936dd715e56545e735cbdf9299a487617aec104e0ee030d2458577",
+      "size_bytes": 4742
     },
     {
       "exists": true,

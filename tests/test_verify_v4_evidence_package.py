@@ -86,8 +86,14 @@ def test_default_manifest_tracks_human_audit_v4_paper_pack():
     assert "results/human_audit_v4/v4_paper1000_mixed_blind1000.readiness.json" in defaults
     assert "results/human_audit_v4_assignment_batches_20260529.json" in defaults
     assert "experiments/materialize_human_audit_v4_assignment_batches.py" in defaults
+    assert "results/human_audit_v4_batch_collection_20260529.json" in defaults
+    assert "experiments/collect_human_audit_v4_assignment_batches.py" in defaults
     assert (
         "results/human_audit_v4_batches/v4_paper1000_mixed_blind1000.assignment_manifest.json"
+        in defaults
+    )
+    assert (
+        "results/human_audit_v4_collection/v4_paper1000_mixed_blind1000.readiness.json"
         in defaults
     )
 

@@ -1,6 +1,6 @@
 # External Review Packet
 
-Generated: `2026-05-29T06:56:05.483365+00:00`
+Generated: `2026-05-29T07:05:32.344823+00:00`
 
 Packet ready: `True`
 External review completed: `False`
@@ -27,7 +27,7 @@ Blocker: `pending_external_review`
 
 | Requirement | Status | Boundary / next action |
 |---|---|---|
-| Human-audited orbit labels | `blocked` | Assignment batches ready: True; pending labels: 1300; cannot claim human-audited results. |
+| Human-audited orbit labels | `blocked` | Assignment batches ready: True; batch collection complete: None; pending labels: 1300; cannot claim human-audited results. |
 | Full CoRM-RAG reproduction | `blocked` | Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts. Latest storage probe shows 322.1 GiB available and target_write_probe_passed=False; 6 target-dir file probes failed while writable fallback dirs are ['/home/syk', '/tmp', '/dev/shm']. |
 | Independent external review | `blocked` | External review packet is ready, but no independent review response is present; place the response at `results\external_review_response_20260529.md`. |
 
@@ -49,23 +49,24 @@ Blocker: `pending_external_review`
 | `RAG-idea改进.md` | `True` | 49684 | `abea2cc9e252308bd254f974d86cbd89910eecfeab3ee4a55ab14fc5dee71242` |
 | `CLAIMS_LEDGER.json` | `True` | 53391 | `f433d29dc1ca4d67e4097403e7e84c6adc8ec7de7c9785d1e3111a15d699d244` |
 | `results\claims_verification.json` | `True` | 62860 | `b3051aff04cf1c2efe13719f0587dca08c1af41ba043266c8fdd1b7c3cde1a6e` |
-| `results\evidence_closure_status_v4.json` | `True` | 47504 | `d60b12afc0bb237d1d5d7c8f00105564bdba921be55b8b433992e8377ca3a55d` |
-| `results\neurips_readiness_matrix_20260529.json` | `True` | 14336 | `244fc070e5b8682a8ba91513efcc071a118545507496b72bc70a11a1d0a9f7cb` |
-| `results\v4_evidence_package_manifest_20260529.json` | `True` | 44286 | `cf3df814887626f89912d45ce0e8e3a33d5ae6dfd6c289e02b398c03ba3512d9` |
-| `results\text_only_verifier_status_20260529.json` | `True` | 4153 | `91fa742d4e70bc56d854cd251c17dc781edb8c979a003808fa20049cd15e53b7` |
-| `results\v4_strong_baseline_summary_20260529.json` | `True` | 73809 | `7d4283e81b6c3588be5bc19f1c82d87e9b36f4a37c901c8525a37703d1b4c9fb` |
-| `results\v4_calibration_quality_20260529.json` | `True` | 28533 | `5883438ff89cdaa22df4842fc444ba6fa583a462adfbaebe8d2aaadb94b27848` |
-| `results\risk_control_abstention_baselines_20260529.json` | `True` | 11626 | `6f96322eac30806282aef295b34dd4e37afa48edb711a8a70505c1f181d24253` |
-| `results\theory_formalization_status_20260529.json` | `True` | 1761 | `d016fceda0bf353028940488d26420cd7b99dbeb62927933f180755411418728` |
-| `results\novelty_audit_20260529.json` | `True` | 5760 | `d2f5e6176e3f29fc8f5a676ea63c2522a1678511351e77b000d339387e8fc044` |
+| `results\evidence_closure_status_v4.json` | `True` | 47504 | `bfda775700571e2bcd3d748b0b49a517f94b0ab15ad019eb089e0110076f9301` |
+| `results\neurips_readiness_matrix_20260529.json` | `True` | 14534 | `f87a66a46765c7610aa7634781bd79b5db542a08fa2ec2d6c3c2906658dc0d19` |
+| `results\v4_evidence_package_manifest_20260529.json` | `True` | 44286 | `5f72e603c525a0ba7bb5817cff0f664356f9659dd92c50f955ed508a9557ae01` |
+| `results\text_only_verifier_status_20260529.json` | `True` | 4153 | `2fca0442f6c55a7e7d302b906b7944283f083b04a886d6b6b1fdebdf197e28ff` |
+| `results\v4_strong_baseline_summary_20260529.json` | `True` | 73809 | `aa8c5a8a9fc1795df6d0fb01a71484a9f55697c8db25b5dd541fec02ed221a5b` |
+| `results\v4_calibration_quality_20260529.json` | `True` | 28533 | `cdd48bf8e53d181dc0bdbc98dcd5f7664dc88f8f835d9de77b5f9f0aca163ac3` |
+| `results\risk_control_abstention_baselines_20260529.json` | `True` | 11626 | `19a4a839a367f8e22ae06352c517c9b17e334ee7fbb3ede70b2f4873747c4a28` |
+| `results\theory_formalization_status_20260529.json` | `True` | 1761 | `46fe26d2ca8e875b5b10806b14f34b604be81304570845e7d347487e296dc0c6` |
+| `results\novelty_audit_20260529.json` | `True` | 5760 | `e3856ff5e4417365c2fd0ac18e1870214100472dc58d087109a390e8eb7e6580` |
 | `paper\sections\formalization.tex` | `True` | 2869 | `4a9985e6c1156ba7209df22ee2527d76300e696b3bc0ce6560773d07e6018df2` |
 | `paper\sections\theory.tex` | `True` | 3841 | `5c04e9b9ae97e0b9ccbce85ef0734c5887044a9a808975a452d8dcd80f89925d` |
-| `results\end2end_retriever_generator_matrix_20260529.json` | `True` | 52753 | `c7238afe2893954f4ad2fa43993abb5cc8d5d1fc376f01c36668241a2ae2fa45` |
-| `results\end2end_risk_coverage_curves_20260529.json` | `True` | 130245 | `6c69af77451105a412edbd7fe3542d75ca0c4e0f895855a7cb8915943b7c0e3a` |
-| `results\end2end_target_risk_coverage_20260529.json` | `True` | 30644 | `c956599e0191bed8f18213fb56276c08b4c1251f6c78b23770e00cf9602532c4` |
-| `results\remote_storage_status_20260529.json` | `True` | 14189 | `99f9144bc129a4635f4083a47e6f57129aec1eef4194e4ced49f864c36ef42c6` |
-| `results\human_audit_v4_paper_pack_status_20260529.json` | `True` | 4984 | `8228a9c175b5c77d9cbc40e658bff5c25e366f96f0a1a47218a18e3f0846affc` |
-| `results\human_audit_v4_assignment_batches_20260529.json` | `True` | 17188 | `5f4b8563020da3c68f806614b63f046f3cd3554ed4c66b312095dc2388946718` |
+| `results\end2end_retriever_generator_matrix_20260529.json` | `True` | 52753 | `beaefb4d3c8933c385383211eff9ad850d610b40154360533125e9d1b4846fb5` |
+| `results\end2end_risk_coverage_curves_20260529.json` | `True` | 130245 | `224b93d35b35ba0996849e2b17a8a2cf3f14fd82c5dfcd9b35a3823960ce7624` |
+| `results\end2end_target_risk_coverage_20260529.json` | `True` | 30644 | `c9e3a7c925bb672e563d32520c86e496edfaa47630ed965119f5c0772800e455` |
+| `results\remote_storage_status_20260529.json` | `True` | 14189 | `0c12cbd3bf28ee85de366d1a6cbe936dc06e1061e3ca88c1efcc6e2462b6e474` |
+| `results\human_audit_v4_paper_pack_status_20260529.json` | `True` | 4984 | `488b131a18440478e16444f604252d26234ff24c999ab293ca223430072f1d70` |
+| `results\human_audit_v4_assignment_batches_20260529.json` | `True` | 17555 | `b24b80871c7682b705f5fcfd1f8b9cacaa1d2d298b4f50a3d54326db3d5344f4` |
+| `results\human_audit_v4_batch_collection_20260529.json` | `True` | 4742 | `1c4b3972ad936dd715e56545e735cbdf9299a487617aec104e0ee030d2458577` |
 | `results\human_audit_v4_status_20260529.json` | `True` | 13342 | `6c1147bdc32e6fbb51c99364a38eec82eae403cf4bc97ed219ed64e8f753232b` |
 
 ## Reviewer Output Contract

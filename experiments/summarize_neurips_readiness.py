@@ -117,6 +117,7 @@ def _rows(
             [
                 "results/human_audit_v4_paper_pack_status_20260529.json",
                 "results/human_audit_v4_assignment_batches_20260529.json",
+                "results/human_audit_v4_batch_collection_20260529.json",
                 "results/human_audit_v4_status_20260529.json",
                 "results/human_audit_v4_disagreement_taxonomy_20260529.json",
                 "results/human_audit_v4_mismatch_20260529.json",
@@ -124,6 +125,7 @@ def _rows(
             ],
             (
                 f"Assignment batches ready: {gate.get('human_audit_v4_assignment_ready')}; "
+                f"batch collection complete: {gate.get('human_audit_v4_batch_collection_complete')}; "
                 f"pending labels: {gate.get('human_audit_v4_pending')}; "
                 "cannot claim human-audited results."
             ),

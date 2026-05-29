@@ -26,6 +26,10 @@ from experiments.materialize_human_audit_v4_assignment_batches import (
     materialize_human_audit_v4_assignment_batches,
     render_markdown as render_human_audit_assignment_markdown,
 )
+from experiments.collect_human_audit_v4_assignment_batches import (
+    collect_human_audit_v4_assignment_batches,
+    render_markdown as render_human_audit_collection_markdown,
+)
 from experiments.build_clean_sufficiency_misleading_figure import (
     DEFAULT_INPUTS as DEFAULT_CLEAN_SUFFICIENCY_FIGURE_INPUTS,
     build_clean_sufficiency_misleading_figure,
@@ -225,6 +229,32 @@ def reproduce_current_evidence_v4(
                 human_assignment["assignment_manifest"],
             ],
             "ready": human_assignment["assignment_ready"],
+        }
+    )
+
+    human_collection_json = results / "human_audit_v4_batch_collection_20260529.json"
+    human_collection_md = results / "human_audit_v4_batch_collection_20260529.md"
+    human_collection = collect_human_audit_v4_assignment_batches(
+        Path(human_assignment["assignment_manifest"]),
+        results / "human_audit_v4_collection",
+    )
+    _write_json(human_collection_json, human_collection)
+    human_collection_md.write_text(
+        render_human_audit_collection_markdown(human_collection),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "collect_human_audit_v4_assignment_batches",
+            "outputs": [
+                str(human_collection_json),
+                str(human_collection_md),
+                human_collection["artifacts"]["merged_labels"],
+                human_collection["artifacts"]["adjudicated_labels"],
+                human_collection["artifacts"]["readiness"],
+            ],
+            "ready": human_collection["human_labels_complete"]
+            and human_collection["readiness_summary"]["ready"],
         }
     )
 
@@ -802,6 +832,8 @@ def reproduce_current_evidence_v4(
         "gate_summary": {
             "human_audit_v4_ready": human_status["ready"],
             "human_audit_v4_assignment_ready": human_assignment["assignment_ready"],
+            "human_audit_v4_batch_collection_ready": human_collection["collection_ready"],
+            "human_audit_v4_batch_collection_complete": human_collection["human_labels_complete"],
             "human_audit_v4_eval_ready": eval_status["ready"],
             "human_audit_v4_pending": human_status["pending"],
             "human_audit_v4_evaluated_pack_count": eval_status["evaluated_pack_count"],
@@ -913,6 +945,10 @@ def render_markdown(report: dict[str, Any]) -> str:
             "",
             f"- Human audit v4 ready: `{gate['human_audit_v4_ready']}`.",
             f"- Human audit v4 assignment ready: `{gate.get('human_audit_v4_assignment_ready')}`.",
+            f"- Human audit v4 batch collection ready: "
+            f"`{gate.get('human_audit_v4_batch_collection_ready')}`.",
+            f"- Human audit v4 batch collection complete: "
+            f"`{gate.get('human_audit_v4_batch_collection_complete')}`.",
             f"- Human audit v4 eval ready: `{gate['human_audit_v4_eval_ready']}`.",
             f"- Human audit v4 pending labels: `{gate['human_audit_v4_pending']}`.",
             f"- Human audit v4 evaluated packs: `{gate['human_audit_v4_evaluated_pack_count']}`.",

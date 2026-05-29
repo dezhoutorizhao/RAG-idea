@@ -55,6 +55,7 @@ def materialize_human_audit_v4_assignment_batches(
     *,
     pack_name: str = DEFAULT_PACK_NAME,
     batch_size: int = DEFAULT_BATCH_SIZE,
+    preserve_existing_labels: bool = True,
 ) -> dict[str, Any]:
     if batch_size <= 0:
         raise ValueError("batch_size must be positive")
@@ -104,6 +105,17 @@ def materialize_human_audit_v4_assignment_batches(
             batch_labels_path = output_dir / f"{prefix}.labels.csv"
             batch_review_path = output_dir / f"{prefix}.review.html"
 
+            labels_preserved = False
+            if preserve_existing_labels and batch_labels_path.exists():
+                existing_rows = _load_label_rows(batch_labels_path, auditor_id)
+                existing_ids = [str(row.get("audit_id") or "").strip() for row in existing_rows]
+                if existing_ids != batch_audit_ids:
+                    raise ValueError(
+                        f"{batch_labels_path} exists but does not match expected audit_id order"
+                    )
+                batch_label_rows = existing_rows
+                labels_preserved = True
+
             _write_jsonl(batch_items_path, batch_items)
             _write_label_csv(batch_labels_path, batch_label_rows)
             _write_review_html(batch_review_path, batch_items, auditor_id=auditor_id, batch_id=prefix)
@@ -117,6 +129,7 @@ def materialize_human_audit_v4_assignment_batches(
                 "audit_id_end": batch_audit_ids[-1],
                 "items_jsonl": str(batch_items_path),
                 "labels_csv": str(batch_labels_path),
+                "labels_preserved": labels_preserved,
                 "review_html": str(batch_review_path),
                 "artifacts": {
                     "items_jsonl": _artifact_row(batch_items_path),
@@ -142,6 +155,7 @@ def materialize_human_audit_v4_assignment_batches(
         "source_items_jsonl": str(items_path),
         "output_dir": str(output_dir),
         "batch_size": batch_size,
+        "preserve_existing_labels": preserve_existing_labels,
         "source_item_count": len(public_items),
         "auditors": sorted(label_csvs),
         "batch_count": len(batches),
@@ -362,6 +376,7 @@ def main() -> None:
     parser.add_argument("--output-dir", type=Path, default=DEFAULT_OUTPUT_DIR)
     parser.add_argument("--pack-name", default=DEFAULT_PACK_NAME)
     parser.add_argument("--batch-size", type=int, default=DEFAULT_BATCH_SIZE)
+    parser.add_argument("--overwrite-existing-labels", action="store_true")
     parser.add_argument("--output-json", type=Path, required=True)
     parser.add_argument("--output-md", type=Path, required=True)
     args = parser.parse_args()
@@ -371,6 +386,7 @@ def main() -> None:
         args.output_dir,
         pack_name=args.pack_name,
         batch_size=args.batch_size,
+        preserve_existing_labels=not args.overwrite_existing_labels,
     )
     _write_json(args.output_json, summary)
     args.output_md.parent.mkdir(parents=True, exist_ok=True)

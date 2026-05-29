@@ -54,6 +54,42 @@ def test_materialize_human_audit_v4_assignment_batches_splits_public_pack(tmp_pa
     assert (output_dir / "unit_pack.assignment_manifest.json").exists()
 
 
+def test_materialize_human_audit_v4_assignment_batches_preserves_existing_labels(tmp_path):
+    audit_dir = tmp_path / "results" / "human_audit_v4"
+    output_dir = tmp_path / "results" / "human_audit_v4_batches"
+    audit_dir.mkdir(parents=True)
+    pack_name = "unit_pack"
+    items = [_public_item(index) for index in range(2)]
+    _write_jsonl(audit_dir / f"{pack_name}.items.jsonl", items)
+    label_path = audit_dir / f"{pack_name}.auditor1.labels.csv"
+    _write_labels(label_path, items, "auditor1")
+    (audit_dir / f"{pack_name}.manifest.json").write_text(
+        json.dumps({"pack_name": pack_name, "label_csvs": {"auditor1": str(label_path)}}),
+        encoding="utf-8",
+    )
+    materialize_human_audit_v4_assignment_batches(
+        audit_dir,
+        output_dir,
+        pack_name=pack_name,
+        batch_size=2,
+    )
+    batch_labels = output_dir / "unit_pack.auditor1.batch01.labels.csv"
+    rows = list(csv.DictReader(batch_labels.open(newline="", encoding="utf-8-sig")))
+    rows[0]["label_semantic"] = "stable_answerable"
+    _write_csv(batch_labels, rows)
+
+    summary = materialize_human_audit_v4_assignment_batches(
+        audit_dir,
+        output_dir,
+        pack_name=pack_name,
+        batch_size=2,
+    )
+
+    preserved = list(csv.DictReader(batch_labels.open(newline="", encoding="utf-8-sig")))
+    assert preserved[0]["label_semantic"] == "stable_answerable"
+    assert summary["batches"][0]["labels_preserved"] is True
+
+
 def test_materialize_human_audit_v4_assignment_batches_rejects_public_labels(tmp_path):
     audit_dir = tmp_path / "results" / "human_audit_v4"
     audit_dir.mkdir(parents=True)
@@ -130,3 +166,10 @@ def _write_labels(path, items, auditor):
 
 def _write_jsonl(path, rows):
     path.write_text("\n".join(json.dumps(row) for row in rows) + "\n", encoding="utf-8")
+
+
+def _write_csv(path, rows):
+    with path.open("w", newline="", encoding="utf-8-sig") as dst:
+        writer = csv.DictWriter(dst, fieldnames=list(rows[0]))
+        writer.writeheader()
+        writer.writerows(rows)

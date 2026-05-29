@@ -28,6 +28,8 @@ DEFAULT_ARTIFACTS = [
     Path("results/human_audit_v4_paper_pack_status_20260529.md"),
     Path("results/human_audit_v4_assignment_batches_20260529.json"),
     Path("results/human_audit_v4_assignment_batches_20260529.md"),
+    Path("results/human_audit_v4_batch_collection_20260529.json"),
+    Path("results/human_audit_v4_batch_collection_20260529.md"),
     Path("results/human_audit_v4_status_20260529.json"),
     Path("results/human_audit_v4_status_20260529.md"),
     Path("results/human_audit_v4_disagreement_taxonomy_20260529.json"),
@@ -130,6 +132,7 @@ DEFAULT_ARTIFACTS = [
     Path("experiments/reproduce_current_evidence_v4.py"),
     Path("experiments/materialize_human_audit_v4_paper_pack.py"),
     Path("experiments/materialize_human_audit_v4_assignment_batches.py"),
+    Path("experiments/collect_human_audit_v4_assignment_batches.py"),
     Path("experiments/verify_claims.py"),
     Path("experiments/build_results_provenance_readme.py"),
     Path("experiments/build_claims_ledger_markdown.py"),
@@ -199,6 +202,9 @@ DEFAULT_ARTIFACTS = [
     Path("results/human_audit_v4/v4_paper1000_mixed_blind1000.agreement.json"),
     Path("results/human_audit_v4/v4_paper1000_mixed_blind1000.readiness.json"),
     Path("results/human_audit_v4_batches/v4_paper1000_mixed_blind1000.assignment_manifest.json"),
+    Path("results/human_audit_v4_collection/v4_paper1000_mixed_blind1000.merged_labels.jsonl"),
+    Path("results/human_audit_v4_collection/v4_paper1000_mixed_blind1000.adjudicated_labels.jsonl"),
+    Path("results/human_audit_v4_collection/v4_paper1000_mixed_blind1000.readiness.json"),
 ]
 
 

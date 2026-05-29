@@ -1,0 +1,48 @@
+{
+  "audit_items": 1000,
+  "auditors": [
+    "auditor1",
+    "auditor2"
+  ],
+  "completion": {
+    "auditor1": {
+      "completion_rate": 0.0,
+      "labeled": 0,
+      "rows": 1000
+    },
+    "auditor2": {
+      "completion_rate": 0.0,
+      "labeled": 0,
+      "rows": 1000
+    }
+  },
+  "conflicts": [],
+  "input": "results\\human_audit_v4_collection\\v4_paper1000_mixed_blind1000.merged_labels.jsonl",
+  "pairwise": [
+    {
+      "agreement_rate": null,
+      "agreements": 0,
+      "auditors": [
+        "auditor1",
+        "auditor2"
+      ],
+      "cohen_kappa": null,
+      "compared": 0,
+      "gwet_ac1": null
+    }
+  ],
+  "rows": 2000,
+  "semantic_conflicts": [],
+  "semantic_pairwise": [
+    {
+      "agreement_rate": null,
+      "agreements": 0,
+      "auditors": [
+        "auditor1",
+        "auditor2"
+      ],
+      "compared": 0,
+      "gwet_ac1": null
+    }
+  ]
+}

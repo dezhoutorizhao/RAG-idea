@@ -2,13 +2,13 @@
   "claim_policy": "This checks storage writability and free space only; it is not a completed CoRM-RAG reproduction result.",
   "filesystems": [
     {
-      "available_1k_blocks": 12889584,
+      "available_1k_blocks": 12837904,
       "blocks_1k": 1967357936,
       "capacity": "100%",
       "filesystem": "/dev/nvme0n1p2",
       "mount": "/",
       "type": "ext4",
-      "used_1k_blocks": 1854458320
+      "used_1k_blocks": 1854510000
     },
     {
       "available_1k_blocks": 337792924,
@@ -38,10 +38,10 @@
   "inode_filesystems": [
     {
       "filesystem": "/dev/nvme0n1p2",
-      "ifree": 115862535,
+      "ifree": 115862534,
       "inodes": 124993536,
       "iuse": "8%",
-      "iused": 9131001,
+      "iused": 9131002,
       "mount": "/",
       "type": "ext4"
     },
@@ -65,7 +65,7 @@
     }
   ],
   "min_free_gib": 180.0,
-  "observed_at_utc": "2026-05-29T04:11:44.651866+00:00",
+  "observed_at_utc": "2026-05-29T07:04:58.532623+00:00",
   "ready_for_full_reproduction_storage": false,
   "remote": {
     "host": "192.168.103.101",
@@ -96,13 +96,13 @@
       "parsed": {
         "directory": "/mnt/ntfs-disk",
         "errno": 28,
-        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_file_probe_44f63f8a9b784f48bbc0695dc5d5e9c1'",
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_file_probe_3a17fc623635424f912f6df028b70b92'",
         "exists": true,
         "is_dir": true,
         "ok": false
       },
       "stderr": "",
-      "stdout": "{\"directory\": \"/mnt/ntfs-disk\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_file_probe_44f63f8a9b784f48bbc0695dc5d5e9c1'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_file_probe_3a17fc623635424f912f6df028b70b92'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
       "write_passed": false
     },
     {
@@ -112,13 +112,13 @@
       "parsed": {
         "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction",
         "errno": 28,
-        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/csrm_file_probe_c8eb7be99f3c4708a97053d8c4bd63db'",
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/csrm_file_probe_98d26b090bfa4d7ea1425502c314b832'",
         "exists": true,
         "is_dir": true,
         "ok": false
       },
       "stderr": "",
-      "stdout": "{\"directory\": \"/mnt/ntfs-disk/csrm_corm_reconstruction\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/csrm_file_probe_c8eb7be99f3c4708a97053d8c4bd63db'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk/csrm_corm_reconstruction\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/csrm_file_probe_98d26b090bfa4d7ea1425502c314b832'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
       "write_passed": false
     },
     {
@@ -128,13 +128,13 @@
       "parsed": {
         "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction/data",
         "errno": 28,
-        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/data/csrm_file_probe_0b87832cdf9345e1aa21a6f647108eb0'",
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/data/csrm_file_probe_4b8282bd0e6745d19c127bd6892e22f5'",
         "exists": true,
         "is_dir": true,
         "ok": false
       },
       "stderr": "",
-      "stdout": "{\"directory\": \"/mnt/ntfs-disk/csrm_corm_reconstruction/data\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/data/csrm_file_probe_0b87832cdf9345e1aa21a6f647108eb0'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk/csrm_corm_reconstruction/data\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/data/csrm_file_probe_4b8282bd0e6745d19c127bd6892e22f5'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
       "write_passed": false
     },
     {
@@ -144,13 +144,13 @@
       "parsed": {
         "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs",
         "errno": 28,
-        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/csrm_file_probe_942c4b7a7ba14544b3088fc46578a65a'",
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/csrm_file_probe_0e4be8820dc94586951b4c4e664c8cc9'",
         "exists": true,
         "is_dir": true,
         "ok": false
       },
       "stderr": "",
-      "stdout": "{\"directory\": \"/mnt/ntfs-disk/csrm_corm_reconstruction/outputs\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/csrm_file_probe_942c4b7a7ba14544b3088fc46578a65a'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk/csrm_corm_reconstruction/outputs\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/csrm_file_probe_0e4be8820dc94586951b4c4e664c8cc9'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
       "write_passed": false
     },
     {
@@ -160,13 +160,13 @@
       "parsed": {
         "directory": "/mnt/ntfs-disk/syk",
         "errno": 28,
-        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/syk/csrm_file_probe_4f05044f5451481bb9fe7b293420229e'",
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/syk/csrm_file_probe_59c3455ff1f84e2f9ea9020faa98c9f7'",
         "exists": true,
         "is_dir": true,
         "ok": false
       },
       "stderr": "",
-      "stdout": "{\"directory\": \"/mnt/ntfs-disk/syk\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/syk/csrm_file_probe_4f05044f5451481bb9fe7b293420229e'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk/syk\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/syk/csrm_file_probe_59c3455ff1f84e2f9ea9020faa98c9f7'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
       "write_passed": false
     },
     {
@@ -176,13 +176,13 @@
       "parsed": {
         "directory": "/mnt/ntfs-disk/tmp",
         "errno": 28,
-        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/tmp/csrm_file_probe_a4273c336c2241999a97a3b9029527d5'",
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/tmp/csrm_file_probe_be39325c08bb4869ad04e197b2d591e0'",
         "exists": true,
         "is_dir": true,
         "ok": false
       },
       "stderr": "",
-      "stdout": "{\"directory\": \"/mnt/ntfs-disk/tmp\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/tmp/csrm_file_probe_a4273c336c2241999a97a3b9029527d5'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk/tmp\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/tmp/csrm_file_probe_be39325c08bb4869ad04e197b2d591e0'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
       "write_passed": false
     },
     {

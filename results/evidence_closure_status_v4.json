@@ -41,7 +41,7 @@
     "latest_storage_probe": {
       "artifact": "results/remote_storage_status_20260529.json",
       "gpu_query": "0, NVIDIA GeForce RTX 4090, 24564, 24076\n1, NVIDIA GeForce RTX 4090, 24564, 24097\n",
-      "observed_at_utc": "2026-05-29T04:11:44.651866+00:00",
+      "observed_at_utc": "2026-05-29T07:04:58.532623+00:00",
       "ready_for_full_reproduction_storage": false,
       "target": "/mnt/ntfs-disk",
       "target_available_gib": 322.14443588256836,
@@ -57,32 +57,32 @@
           {
             "directory": "/mnt/ntfs-disk",
             "errno": 28,
-            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_file_probe_44f63f8a9b784f48bbc0695dc5d5e9c1'"
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_file_probe_3a17fc623635424f912f6df028b70b92'"
           },
           {
             "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction",
             "errno": 28,
-            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/csrm_file_probe_c8eb7be99f3c4708a97053d8c4bd63db'"
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/csrm_file_probe_98d26b090bfa4d7ea1425502c314b832'"
           },
           {
             "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction/data",
             "errno": 28,
-            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/data/csrm_file_probe_0b87832cdf9345e1aa21a6f647108eb0'"
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/data/csrm_file_probe_4b8282bd0e6745d19c127bd6892e22f5'"
           },
           {
             "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs",
             "errno": 28,
-            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/csrm_file_probe_942c4b7a7ba14544b3088fc46578a65a'"
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/csrm_file_probe_0e4be8820dc94586951b4c4e664c8cc9'"
           },
           {
             "directory": "/mnt/ntfs-disk/syk",
             "errno": 28,
-            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/syk/csrm_file_probe_4f05044f5451481bb9fe7b293420229e'"
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/syk/csrm_file_probe_59c3455ff1f84e2f9ea9020faa98c9f7'"
           },
           {
             "directory": "/mnt/ntfs-disk/tmp",
             "errno": 28,
-            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/tmp/csrm_file_probe_a4273c336c2241999a97a3b9029527d5'"
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/tmp/csrm_file_probe_be39325c08bb4869ad04e197b2d591e0'"
           }
         ],
         "passed_count": 3,
@@ -254,7 +254,7 @@
     "review_response_path": "results\\external_review_response_20260529.md",
     "status": "packet_ready"
   },
-  "generated_at_utc": "2026-05-29T06:56:06.842031+00:00",
+  "generated_at_utc": "2026-05-29T07:05:33.863690+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -734,7 +734,7 @@
     "hard_blocker_count": 3,
     "hard_blockers": [
       {
-        "boundary_or_next_action": "Assignment batches ready: True; pending labels: 1300; cannot claim human-audited results.",
+        "boundary_or_next_action": "Assignment batches ready: True; batch collection complete: False; pending labels: 1300; cannot claim human-audited results.",
         "requirement": "Human-audited orbit labels",
         "status": "blocked"
       },
@@ -850,7 +850,7 @@
   ],
   "reproducibility_bundle": {
     "artifact": "reproducibility/bundle_summary_20260529.json",
-    "artifact_checksum_count": 189,
+    "artifact_checksum_count": 195,
     "checkpoint_hash_available": true,
     "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
     "dataset_construction_hash_count": 42,
@@ -870,7 +870,7 @@
   },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 189,
+    "artifact_count": 195,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,
@@ -882,7 +882,7 @@
     },
     "readme_artifact": "results/README.md",
     "readme_exists": true,
-    "step_count": 38,
+    "step_count": 39,
     "untracked_output_count": 0
   },
   "risk_control": {

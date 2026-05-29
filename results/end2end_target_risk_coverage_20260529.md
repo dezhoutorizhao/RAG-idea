@@ -1,6 +1,6 @@
 # End-to-End Coverage at Target Risk
 
-Generated: `2026-05-29T06:56:00.335413+00:00`
+Generated: `2026-05-29T07:05:27.108674+00:00`
 
 Source rows: `24`
 Risk targets: `[0.2, 0.3, 0.4]`

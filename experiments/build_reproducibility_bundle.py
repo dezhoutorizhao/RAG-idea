@@ -362,7 +362,7 @@ def _render_reproduction_commands() -> str:
             "Equivalent command:",
             "",
             "```powershell",
-            "$env:PYTHONPATH='src'; python -m pytest tests/test_build_results_provenance_readme.py tests/test_build_claims_ledger_markdown.py tests/test_build_reproducibility_bundle.py tests/test_materialize_human_audit_v4_assignment_batches.py tests/test_verify_v4_evidence_package.py -q",
+            "$env:PYTHONPATH='src'; python -m pytest tests/test_build_results_provenance_readme.py tests/test_build_claims_ledger_markdown.py tests/test_build_reproducibility_bundle.py tests/test_materialize_human_audit_v4_assignment_batches.py tests/test_collect_human_audit_v4_assignment_batches.py tests/test_verify_v4_evidence_package.py -q",
             "```",
             "",
             "## Main Current-Evidence Tables",
