@@ -4,7 +4,7 @@
       "command": "df -PT / 2>&1 || true",
       "exit_status": 0,
       "stderr": "",
-      "stdout": "\u6587\u4ef6\u7cfb\u7edf       \u7c7b\u578b    1024-\u5757       \u5df2\u7528     \u53ef\u7528 \u914d\u989d \u6302\u8f7d\u70b9\n/dev/nvme0n1p2 ext4 1967357936 1854213852 13134052 100% /\n"
+      "stdout": "\u6587\u4ef6\u7cfb\u7edf       \u7c7b\u578b    1024-\u5757       \u5df2\u7528     \u53ef\u7528 \u914d\u989d \u6302\u8f7d\u70b9\n/dev/nvme0n1p2 ext4 1967357936 1854553244 12794660 100% /\n"
     },
     "df_target": {
       "command": "df -hT /home/syk 2>&1 || true",
@@ -16,7 +16,7 @@
       "command": "printf '%s\\n' '***' | sudo -S -p '' bash -lc 'find /var/lib/docker/containers -name '\"'\"'*-json.log'\"'\"' -type f -printf '\"'\"'%s\\n'\"'\"' 2>/dev/null | awk '\"'\"'{s+=$1} END{print s+0}'\"'\"''",
       "exit_status": 0,
       "stderr": "",
-      "stdout": "143790631435\n"
+      "stdout": "143951079035\n"
     },
     "docker_system_df": {
       "command": "printf '%s\\n' '***' | sudo -S -p '' bash -lc 'docker system df 2>&1 || true'",
@@ -48,7 +48,7 @@
       "command": "df -PT / 2>&1 || true",
       "exit_status": 0,
       "stderr": "",
-      "stdout": "\u6587\u4ef6\u7cfb\u7edf       \u7c7b\u578b    1024-\u5757       \u5df2\u7528     \u53ef\u7528 \u914d\u989d \u6302\u8f7d\u70b9\n/dev/nvme0n1p2 ext4 1967357936 1854213820 13134084 100% /\n"
+      "stdout": "\u6587\u4ef6\u7cfb\u7edf       \u7c7b\u578b    1024-\u5757       \u5df2\u7528     \u53ef\u7528 \u914d\u989d \u6302\u8f7d\u70b9\n/dev/nvme0n1p2 ext4 1967357936 1854553240 12794664 100% /\n"
     },
     "df_target": {
       "command": "df -hT /home/syk 2>&1 || true",
@@ -60,7 +60,7 @@
       "command": "printf '%s\\n' '***' | sudo -S -p '' bash -lc 'find /var/lib/docker/containers -name '\"'\"'*-json.log'\"'\"' -type f -printf '\"'\"'%s\\n'\"'\"' 2>/dev/null | awk '\"'\"'{s+=$1} END{print s+0}'\"'\"''",
       "exit_status": 0,
       "stderr": "",
-      "stdout": "143790630971\n"
+      "stdout": "143951079035\n"
     },
     "docker_system_df": {
       "command": "printf '%s\\n' '***' | sudo -S -p '' bash -lc 'docker system df 2>&1 || true'",
@@ -113,7 +113,7 @@
   "min_free_gib": 180.0,
   "mode": "dry_run",
   "next_probe_command": "python experiments/check_remote_storage_status.py --host 192.168.103.101 --user syk --port 22 --target /home/syk --min-free-gib 180 --output results/remote_storage_status_after_ext4_cleanup.json",
-  "observed_at_utc": "2026-05-28T18:35:02.888337+00:00",
+  "observed_at_utc": "2026-05-29T07:24:27.072190+00:00",
   "remote": {
     "host": "192.168.103.101",
     "port": 22,

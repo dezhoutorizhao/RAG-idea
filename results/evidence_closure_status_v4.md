@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T07:21:55.357704+00:00`
+Generated: `2026-05-29T07:25:23.251448+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -229,7 +229,7 @@ Latest storage probe:
 Latest ext4 cleanup dry run:
 - Target: `/home/syk`; mode: `dry_run`; destructive operations executed: `False`.
 - Cleanup steps planned: `3`; minimum free required: `180.0` GiB.
-- Docker JSON logs bytes: `143790630971`.
+- Docker JSON logs bytes: `143951079035`.
 - Root cache: `31G	/root/.cache`; user cache: `19G	/home/syk/.cache`.
 
 ## Latest V4 Hotpot Diagnostic
