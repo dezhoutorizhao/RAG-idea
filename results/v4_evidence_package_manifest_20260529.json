@@ -1,0 +1,140 @@
+{
+  "allowed_claim_count": 8,
+  "artifact_count": 17,
+  "artifacts": [
+    {
+      "exists": true,
+      "path": "results\\current_evidence_reproduction_20260529.json",
+      "sha256": "869a00121bbc5d73954e0014da2d7e1b30178ae8b6ceab4d12ae3b616a706e5a",
+      "size_bytes": 3699
+    },
+    {
+      "exists": true,
+      "path": "results\\current_evidence_reproduction_20260529.md",
+      "sha256": "63f8031d689905cb5f9ce518957bb204ae03a2b6a849e8964e7b89e8930e8e45",
+      "size_bytes": 2899
+    },
+    {
+      "exists": true,
+      "path": "results\\evidence_closure_status_v4.json",
+      "sha256": "7abeaf3eb2409ae9e56791e81e8647207f5a2e9fd8a5fd4c5e1da7c5c7177d3f",
+      "size_bytes": 19454
+    },
+    {
+      "exists": true,
+      "path": "results\\evidence_closure_status_v4.md",
+      "sha256": "b30af6a9bd61f915d872bd7c74fc5e95e78cf296203f28805deea37213a97e1a",
+      "size_bytes": 9668
+    },
+    {
+      "exists": true,
+      "path": "results\\human_audit_v4_status_20260529.json",
+      "sha256": "9c730826406716ab8f3fb7c417bca1626f06e418628e8971765d64cf4d73c9d1",
+      "size_bytes": 5073
+    },
+    {
+      "exists": true,
+      "path": "results\\human_audit_v4_eval_status_20260529.json",
+      "sha256": "3703442aa638c9b6ea69f245604e62a170ab871173452907e26d4857f9a8f3ba",
+      "size_bytes": 2528
+    },
+    {
+      "exists": true,
+      "path": "results\\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json",
+      "sha256": "e4a4918da2be8442f6d8acdeea2c7c1e8cc40ddc3000ef8ac8b5a11eb4ec3e6b",
+      "size_bytes": 8163
+    },
+    {
+      "exists": true,
+      "path": "results\\end2end_selective_rag_proxy_summary_20260529.json",
+      "sha256": "f91909eacd99f969289fa81b40e1fe2a625809d5bdbcf295599edddbe86b793c",
+      "size_bytes": 13211
+    },
+    {
+      "exists": true,
+      "path": "results\\v4_strong_baseline_summary_20260529.json",
+      "sha256": "895529f53a14b666ab45238a29878302eac7bcf973d141004fca69b7a561176a",
+      "size_bytes": 43608
+    },
+    {
+      "exists": true,
+      "path": "results\\v4_failure_taxonomy_summary_20260529.json",
+      "sha256": "9e6893d1eac31e45fc06bad34c135fcf13164e415f7f9ddd24bfa9ff162b3af6",
+      "size_bytes": 46069
+    },
+    {
+      "exists": true,
+      "path": "results\\v4_case_gallery_summary_20260529.json",
+      "sha256": "4e14b4e16abdfa8ed8a17ce2a83f52e953039359febd56944e9a077426ccf377",
+      "size_bytes": 1882
+    },
+    {
+      "exists": true,
+      "path": "paper\\case_studies\\v4_case_gallery_20260529.jsonl",
+      "sha256": "f03232de577d772efa6cb88bb54c7c9e8b3d48881493364f7ac052c74dbe4a59",
+      "size_bytes": 191730
+    },
+    {
+      "exists": true,
+      "path": "paper\\case_studies\\v4_case_gallery_20260529.md",
+      "sha256": "e280c965878982dce6f0711f316f3d2b4e951f19faae1b3fb34c66852bb15052",
+      "size_bytes": 27403
+    },
+    {
+      "exists": true,
+      "path": "experiments\\reproduce_current_evidence_v4.py",
+      "sha256": "ef81b9cb100e1a55b8e68dbd82f2fb185b02294ae32166c7878fbb6ae92c555c",
+      "size_bytes": 12132
+    },
+    {
+      "exists": true,
+      "path": "experiments\\summarize_evidence_closure.py",
+      "sha256": "acc564f275db9b51041d18a76795492ac01e093cc45a43b39a96aeb3d2d012e3",
+      "size_bytes": 41338
+    },
+    {
+      "exists": true,
+      "path": "experiments\\summarize_v4_failure_taxonomy.py",
+      "sha256": "f5eb0a9e034ef89964e4b51c7069b149bd36156705da4bda2f14f8f1948e3af1",
+      "size_bytes": 11135
+    },
+    {
+      "exists": true,
+      "path": "experiments\\export_v4_case_gallery.py",
+      "sha256": "1751ee166e02c37ab4d185e0b38bbd04f9269ca162e251ae39e6e6aa49b1f5b7",
+      "size_bytes": 7379
+    }
+  ],
+  "claim_boundary": "This manifest verifies that the current evidence package is present and hashable. It does not convert pending human audit, failed storage, proxy-only end-to-end results, or negative strong-baseline evidence into NeurIPS-ready main-claim support.",
+  "claim_verification": {
+    "failed_claims": 0,
+    "passed_claims": 28,
+    "total_claims": 28
+  },
+  "disallowed_claim_count": 6,
+  "gate_summary": {
+    "claim_verifier_passed": true,
+    "full_corm_reconstruction_ready": false,
+    "human_audit_v4_eval_ready": false,
+    "human_audit_v4_evaluated_pack_count": 0,
+    "human_audit_v4_pending": 300,
+    "human_audit_v4_ready": false,
+    "remote_storage_ready": false
+  },
+  "generated_at_utc": "2026-05-29T01:13:35.814053+00:00",
+  "missing_artifact_count": 0,
+  "missing_artifacts": [],
+  "package_status": "complete_with_known_blockers",
+  "ready_for_neurips_main_claim": false,
+  "remaining_human_audit_blockers": [
+    "Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items."
+  ],
+  "remaining_non_human_blockers": [
+    "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
+    "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
+    "Independent external review has not been rerun after the latest storage-status update.",
+    "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
+    "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats."
+  ],
+  "root": "."
+}
