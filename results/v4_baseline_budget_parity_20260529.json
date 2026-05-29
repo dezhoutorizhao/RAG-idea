@@ -1,0 +1,130 @@
+{
+  "budget_parity_claim_supported": false,
+  "claim_policy": "This audit documents baseline budget parity. It supports equal-orbit-budget claims only for methods marked equal_orbit_budget, and explicitly excludes clean-only controls, proxy self-consistency, and the missing LLM judge baseline from full parity claims.",
+  "generated_at_utc": "2026-05-29T02:42:37.601694+00:00",
+  "method_count": 13,
+  "rows": [
+    {
+      "boundary": "Learned context-only baseline; lower evidence budget than orbit-level methods.",
+      "evidence_scope": "clean_set_only",
+      "llm_call_budget": 0,
+      "method": "calibrated_logistic_context",
+      "status": "lower_budget_control",
+      "verifier_call_budget": "clean evidence features only"
+    },
+    {
+      "boundary": "Learned orbit-feature baseline using the same scored orbit evidence batch.",
+      "evidence_scope": "all_orbit_sets",
+      "llm_call_budget": 0,
+      "method": "calibrated_logistic_orbit",
+      "status": "equal_orbit_budget",
+      "verifier_call_budget": "all scored evidence sets in the orbit"
+    },
+    {
+      "boundary": "Single-set context sufficiency control; not equal to orbit-level call budget.",
+      "evidence_scope": "clean_set_only",
+      "llm_call_budget": 0,
+      "method": "context_sufficiency_clean",
+      "status": "lower_budget_control",
+      "verifier_call_budget": "clean evidence only"
+    },
+    {
+      "boundary": "Uses less orbit evidence than CSRM; keep as a control, not an equal-orbit-budget baseline.",
+      "evidence_scope": "clean_set_only",
+      "llm_call_budget": 0,
+      "method": "corm_max_clean",
+      "status": "lower_budget_control",
+      "verifier_call_budget": "clean evidence only"
+    },
+    {
+      "boundary": "Uses less orbit evidence than CSRM; keep as a control, not an equal-orbit-budget baseline.",
+      "evidence_scope": "clean_set_only",
+      "llm_call_budget": 0,
+      "method": "corm_mean_clean",
+      "status": "lower_budget_control",
+      "verifier_call_budget": "clean evidence only"
+    },
+    {
+      "boundary": "Target method used as the budget reference.",
+      "evidence_scope": "all_orbit_sets",
+      "llm_call_budget": 0,
+      "method": "csrm_rule",
+      "status": "target_method",
+      "verifier_call_budget": "all scored evidence sets in the orbit"
+    },
+    {
+      "boundary": "Equal-budget score-fusion baseline; excludes CSRM-specific scores.",
+      "evidence_scope": "non_csrm_baseline_scores",
+      "llm_call_budget": 0,
+      "method": "equal_budget_ensemble_logistic",
+      "status": "equal_orbit_budget",
+      "verifier_call_budget": "same non-CSRM score batch, out-of-fold by source group when possible"
+    },
+    {
+      "boundary": "Equal-budget naive orbit aggregation baseline.",
+      "evidence_scope": "all_orbit_sets",
+      "llm_call_budget": 0,
+      "method": "equal_budget_mean",
+      "status": "equal_orbit_budget",
+      "verifier_call_budget": "all scored evidence sets in the orbit"
+    },
+    {
+      "boundary": "Equal-budget worst-set orbit aggregation baseline.",
+      "evidence_scope": "all_orbit_sets",
+      "llm_call_budget": 0,
+      "method": "equal_budget_min",
+      "status": "equal_orbit_budget",
+      "verifier_call_budget": "all scored evidence sets in the orbit"
+    },
+    {
+      "boundary": "Equal-budget quantile orbit aggregation baseline.",
+      "evidence_scope": "all_orbit_sets",
+      "llm_call_budget": 0,
+      "method": "equal_budget_q25",
+      "status": "equal_orbit_budget",
+      "verifier_call_budget": "all scored evidence sets in the orbit"
+    },
+    {
+      "boundary": "Uses the same scored orbit evidence batch as CSRM.",
+      "evidence_scope": "all_orbit_sets",
+      "llm_call_budget": 0,
+      "method": "faithful_sure_multi",
+      "status": "equal_orbit_budget",
+      "verifier_call_budget": "all scored evidence sets in the orbit"
+    },
+    {
+      "boundary": "Uses the same scored orbit evidence batch as CSRM, with retrieval-stability aggregation.",
+      "evidence_scope": "all_orbit_sets",
+      "llm_call_budget": 0,
+      "method": "retrieval_stability",
+      "status": "equal_orbit_budget",
+      "verifier_call_budget": "all scored evidence sets in the orbit"
+    },
+    {
+      "boundary": "Proxy over existing answer consistency features; not a fresh multi-sample generation baseline.",
+      "evidence_scope": "all_orbit_sets",
+      "llm_call_budget": 0,
+      "method": "self_consistency_proxy",
+      "status": "proxy_equal_orbit_budget",
+      "verifier_call_budget": "all scored evidence sets in the orbit"
+    },
+    {
+      "boundary": "No explicit LLM-as-judge baseline artifact exists in this batch.",
+      "evidence_scope": "not_run",
+      "llm_call_budget": "not run",
+      "method": "llm_judge",
+      "status": "missing",
+      "verifier_call_budget": "not run"
+    }
+  ],
+  "same_input_rows_all_files": true,
+  "same_scored_evidence_all_files": true,
+  "source": "results\\v4_strong_baseline_summary_20260529.json",
+  "status_counts": {
+    "equal_orbit_budget": 7,
+    "lower_budget_control": 4,
+    "missing": 1,
+    "proxy_equal_orbit_budget": 1,
+    "target_method": 1
+  }
+}

@@ -42,6 +42,10 @@ from experiments.summarize_v4_baseline_coverage import (
     render_markdown as render_v4_baseline_coverage_markdown,
     summarize_v4_baseline_coverage,
 )
+from experiments.summarize_v4_baseline_budget_parity import (
+    render_markdown as render_v4_baseline_budget_parity_markdown,
+    summarize_v4_baseline_budget_parity,
+)
 from experiments.summarize_v4_failure_taxonomy import (
     DEFAULT_INPUTS as DEFAULT_V4_FAILURE_TAXONOMY_INPUTS,
     render_markdown as render_v4_failure_taxonomy_markdown,
@@ -223,6 +227,22 @@ def reproduce_current_evidence_v4(
             "name": "summarize_v4_baseline_coverage",
             "outputs": [str(baseline_coverage_json), str(baseline_coverage_md)],
             "ready": baseline_coverage["all_required_baselines_present"],
+        }
+    )
+
+    baseline_budget_json = results / "v4_baseline_budget_parity_20260529.json"
+    baseline_budget_md = results / "v4_baseline_budget_parity_20260529.md"
+    baseline_budget = summarize_v4_baseline_budget_parity(strong_baselines_json)
+    _write_json(baseline_budget_json, baseline_budget)
+    baseline_budget_md.write_text(
+        render_v4_baseline_budget_parity_markdown(baseline_budget),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "summarize_v4_baseline_budget_parity",
+            "outputs": [str(baseline_budget_json), str(baseline_budget_md)],
+            "ready": baseline_budget["budget_parity_claim_supported"],
         }
     )
 
