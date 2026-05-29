@@ -20,10 +20,10 @@ target filesystem = ext4
 current free on / = about 13 GiB
 ```
 
-Observed cleanup candidates:
+Observed cleanup candidates from the latest dry run at `2026-05-29T07:49:14Z`:
 
 ```text
-Docker JSON logs = 143790630971 bytes, about 133.94 GiB
+Docker JSON logs = 143956242486 bytes, about 134.07 GiB
 /root/.cache = 31G
 /home/syk/.cache = 19G
 /home/syk/miniconda3/pkgs = 5.0G

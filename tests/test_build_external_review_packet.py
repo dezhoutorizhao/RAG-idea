@@ -37,6 +37,16 @@ def test_build_external_review_packet_detects_review_response(tmp_path):
     assert summary["ready_for_independent_external_review_claim"] is True
 
 
+def test_source_artifacts_include_remote_storage_unblock_evidence():
+    defaults = {str(path).replace("\\", "/") for path in SOURCE_ARTIFACTS}
+
+    assert "results/remote_storage_status_20260529.json" in defaults
+    assert "results/remote_home_storage_status_20260529.json" in defaults
+    assert "results/remote_ext4_prepare_dryrun_20260529.json" in defaults
+    assert "results/remote_ext4_prepare_dryrun_20260529.md" in defaults
+    assert "results/remote_storage_cleanup_plan_20260529.md" in defaults
+
+
 def _write_minimal_sources(root):
     for rel in SOURCE_ARTIFACTS:
         path = root / rel

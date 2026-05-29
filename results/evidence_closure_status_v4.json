@@ -29,7 +29,7 @@
       "cleanup_step_count": 3,
       "destructive_operations_executed": false,
       "df_target": "\u6587\u4ef6\u7cfb\u7edf       \u7c7b\u578b  \u5bb9\u91cf  \u5df2\u7528  \u53ef\u7528 \u5df2\u7528% \u6302\u8f7d\u70b9\n/dev/nvme0n1p2 ext4  1.9T  1.8T   13G  100% /\n",
-      "docker_json_logs_bytes": "143951079035\n",
+      "docker_json_logs_bytes": "143956237464\n",
       "min_free_gib": 180.0,
       "mode": "dry_run",
       "next_probe_command": "python experiments/check_remote_storage_status.py --host 192.168.103.101 --user syk --port 22 --target /home/syk --min-free-gib 180 --output results/remote_storage_status_after_ext4_cleanup.json",
@@ -256,7 +256,7 @@
     "review_response_path": "results\\external_review_response_20260529.md",
     "status": "packet_ready"
   },
-  "generated_at_utc": "2026-05-29T07:43:16.132263+00:00",
+  "generated_at_utc": "2026-05-29T07:52:24.695650+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -853,7 +853,7 @@
   ],
   "reproducibility_bundle": {
     "artifact": "reproducibility/bundle_summary_20260529.json",
-    "artifact_checksum_count": 202,
+    "artifact_checksum_count": 206,
     "checkpoint_hash_available": true,
     "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
     "dataset_construction_hash_count": 42,
@@ -873,7 +873,7 @@
   },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 202,
+    "artifact_count": 206,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,

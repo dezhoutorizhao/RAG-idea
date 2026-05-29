@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T07:43:16.132263+00:00`
+Generated: `2026-05-29T07:52:24.695650+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `41`; tracked artifacts: `202`.
+- Provenance steps: `41`; tracked artifacts: `206`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `202`; dataset construction hashes: `42`.
+- Artifact checksums: `206`; dataset construction hashes: `42`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -229,7 +229,7 @@ Latest storage probe:
 Latest ext4 cleanup dry run:
 - Target: `/home/syk`; mode: `dry_run`; destructive operations executed: `False`.
 - Cleanup steps planned: `3`; minimum free required: `180.0` GiB.
-- Docker JSON logs bytes: `143951079035`.
+- Docker JSON logs bytes: `143956237464`.
 - Root cache: `31G	/root/.cache`; user cache: `19G	/home/syk/.cache`.
 
 ## Latest V4 Hotpot Diagnostic

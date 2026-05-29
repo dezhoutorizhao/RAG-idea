@@ -2,6 +2,8 @@
 
 Date: 2026-05-29
 
+Latest dry-run snapshot: `2026-05-29T07:49:14Z`
+
 This report identifies the current storage blocker for full CoRM-RAG reproduction and the smallest observed cleanup path that can plausibly provide at least 180 GiB of writable ext4 space.
 
 ## Current Blocker
@@ -24,7 +26,7 @@ The following paths can create temporary directories:
 - `/tmp`
 - `/dev/shm`
 
-They are not currently sufficient for full reproduction because the ext4 root filesystem has only about `13 GiB` free, and `/dev/shm` is not persistent.
+They are not currently sufficient for full reproduction because the ext4 root filesystem has only about `12.2 GiB` free, and `/dev/shm` is not persistent.
 
 ## Space Candidates
 
@@ -42,7 +44,7 @@ Relevant cleanup candidates:
 
 | Candidate | Size | Operation | Risk |
 |---|---:|---|---|
-| Docker JSON logs | `133.9 GiB` | truncate `/var/lib/docker/containers/*/*-json.log` | medium |
+| Docker JSON logs | `134.1 GiB` | truncate `/var/lib/docker/containers/*/*-json.log` | medium |
 | `/root/.cache` | `31 GiB` | remove root cache contents | medium |
 | `/home/syk/.cache` | `19 GiB` | remove user cache contents | low-to-medium |
 | `/home/syk/miniconda3/pkgs` | `5 GiB` | conda package-cache cleanup | low |
@@ -51,11 +53,11 @@ Projected free space:
 
 | Cleanup set | Projected free |
 |---|---:|
-| current root free only | `13.0 GiB` |
-| Docker logs only | `146.9 GiB` |
-| Docker logs + `/root/.cache` | `177.9 GiB` |
-| Docker logs + `/root/.cache` + `/home/syk/.cache` | `196.9 GiB` |
-| plus conda package cache | `201.9 GiB` |
+| current root free only | `12.2 GiB` |
+| Docker logs only | `146.3 GiB` |
+| Docker logs + `/root/.cache` | `177.3 GiB` |
+| Docker logs + `/root/.cache` + `/home/syk/.cache` | `196.3 GiB` |
+| plus conda package cache | `201.3 GiB` |
 
 The minimum practical cleanup set that appears to satisfy the 180 GiB requirement is:
 
