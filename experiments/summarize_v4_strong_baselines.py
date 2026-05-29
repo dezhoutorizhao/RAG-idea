@@ -34,7 +34,13 @@ METRICS = [
     "risk_at_70_reduction",
     "aurc_reduction",
 ]
-TARGETS = ["csrm_rule", "csrm_minimax", "csrm_calibrated_logistic", "csrm_calibrated_isotonic"]
+TARGETS = [
+    "csrm_rule",
+    "csrm_minimax",
+    "csrm_calibrated_logistic",
+    "csrm_calibrated_isotonic",
+    "csrm_calibrated_gbdt",
+]
 
 
 def summarize_v4_strong_baselines(

@@ -17,7 +17,7 @@ DEFAULT_INPUTS = [
     Path("results/calibration_hotpot_v4_supportpreserve_n100.json"),
 ]
 
-TARGET_METHODS = ["csrm_calibrated_logistic", "csrm_calibrated_isotonic"]
+TARGET_METHODS = ["csrm_calibrated_logistic", "csrm_calibrated_isotonic", "csrm_calibrated_gbdt"]
 REFERENCE_METHODS = ["csrm_rule", "csrm_minimax"]
 
 
@@ -35,10 +35,11 @@ def summarize_v4_calibration_quality(paths: Sequence[Path]) -> dict[str, Any]:
         "calibration_quality_supported": aggregate["best_target_brier_win_count"] == len(rows)
         and aggregate["best_target_ece_win_count"] >= len(rows) - 1,
         "claim_implication": (
-            "Calibrated CSRM strongly improves Brier score over rule/minimax baselines across "
-            "all current v4 calibration datasets. ECE improves on most but not all datasets, so "
-            "calibration should be claimed as empirical calibration-quality evidence, not as a "
-            "formal risk guarantee."
+            "Calibrated CSRM variants, including logistic, isotonic, and GBDT calibration, "
+            "strongly improve Brier score over rule/minimax baselines across all current v4 "
+            "calibration datasets. ECE improves on most but not all datasets, so calibration "
+            "should be claimed as empirical calibration-quality evidence, not as a formal risk "
+            "guarantee."
         ),
     }
 

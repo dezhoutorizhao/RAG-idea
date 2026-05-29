@@ -9,8 +9,8 @@ from experiments.summarize_v4_calibration_quality import (
 def test_summarize_v4_calibration_quality_tracks_brier_and_ece_wins(tmp_path):
     first = tmp_path / "first.json"
     second = tmp_path / "second.json"
-    _write_calibration_result(first, "first.raw.jsonl", rule=(0.30, 0.09), minimax=(0.28, 0.08), logistic=(0.12, 0.03), isotonic=(0.14, 0.04))
-    _write_calibration_result(second, "second.raw.jsonl", rule=(0.22, 0.02), minimax=(0.21, 0.03), logistic=(0.11, 0.04), isotonic=(0.13, 0.05))
+    _write_calibration_result(first, "first.raw.jsonl", rule=(0.30, 0.09), minimax=(0.28, 0.08), logistic=(0.12, 0.03), isotonic=(0.14, 0.04), gbdt=(0.13, 0.035))
+    _write_calibration_result(second, "second.raw.jsonl", rule=(0.22, 0.02), minimax=(0.21, 0.03), logistic=(0.11, 0.04), isotonic=(0.13, 0.05), gbdt=(0.10, 0.025))
 
     summary = summarize_v4_calibration_quality([first, second])
 
@@ -25,12 +25,13 @@ def test_summarize_v4_calibration_quality_tracks_brier_and_ece_wins(tmp_path):
     assert "Best calibrated target Brier wins: `2/2`" in text
 
 
-def _write_calibration_result(path, raw_input, *, rule, minimax, logistic, isotonic):
+def _write_calibration_result(path, raw_input, *, rule, minimax, logistic, isotonic, gbdt):
     methods = {
         "csrm_rule": rule,
         "csrm_minimax": minimax,
         "csrm_calibrated_logistic": logistic,
         "csrm_calibrated_isotonic": isotonic,
+        "csrm_calibrated_gbdt": gbdt,
     }
     payload = {
         "raw_input": raw_input,

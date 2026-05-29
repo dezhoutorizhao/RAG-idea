@@ -41,6 +41,7 @@ TARGET_METHODS = [
     "csrm_minimax",
     "csrm_calibrated_logistic",
     "csrm_calibrated_isotonic",
+    "csrm_calibrated_gbdt",
 ]
 
 
@@ -353,6 +354,10 @@ def _fit_calibrated_targets(
         "csrm_calibrated_isotonic": {
             "calibration": calibrator.predict_isotonic(cal_orbits),
             "test": calibrator.predict_isotonic(test_orbits),
+        },
+        "csrm_calibrated_gbdt": {
+            "calibration": calibrator.predict_gbdt(cal_orbits),
+            "test": calibrator.predict_gbdt(test_orbits),
         },
     }
 

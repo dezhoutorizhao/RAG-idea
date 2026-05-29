@@ -117,7 +117,11 @@ def test_default_manifest_tracks_v4_calibration_quality_artifacts():
 
     assert "results/v4_calibration_quality_20260529.json" in defaults
     assert "results/v4_calibration_quality_20260529.md" in defaults
+    assert "results/calibration_fever_v4_n100_structbalanced.json" in defaults
+    assert "results/compare_calibrated_fever_v4_n100_structbalanced.json" in defaults
     assert "experiments/summarize_v4_calibration_quality.py" in defaults
+    assert "experiments/train_csrm_calibrated_v4.py" in defaults
+    assert "experiments/compare_calibrated_vs_baselines_v4.py" in defaults
 
 
 def _write_json(path, payload):

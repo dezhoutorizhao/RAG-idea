@@ -1,6 +1,6 @@
 # V4 Strong Baseline Coverage
 
-Generated: `2026-05-29T05:37:06.759671+00:00`
+Generated: `2026-05-29T06:02:35.098839+00:00`
 
 ## Baseline Package
 
@@ -52,6 +52,12 @@ Generated: `2026-05-29T05:37:06.759671+00:00`
 | csrm_calibrated_isotonic | risk_at_50_reduction | 0 | 3 | 3 | -0.0347 |
 | csrm_calibrated_isotonic | risk_at_70_reduction | 0 | 3 | 3 | -0.0077 |
 | csrm_calibrated_isotonic | aurc_reduction | 2 | 1 | 3 | -0.0405 |
+| csrm_calibrated_gbdt | auroc_improvement | 2 | 3 | 1 | 0.0216 |
+| csrm_calibrated_gbdt | auprc_improvement | 2 | 3 | 1 | 0.0333 |
+| csrm_calibrated_gbdt | risk_at_30_reduction | 2 | 3 | 1 | 0.0393 |
+| csrm_calibrated_gbdt | risk_at_50_reduction | 1 | 4 | 1 | 0.0032 |
+| csrm_calibrated_gbdt | risk_at_70_reduction | 2 | 4 | 0 | 0.0061 |
+| csrm_calibrated_gbdt | aurc_reduction | 4 | 1 | 1 | 0.0065 |
 
 ## Claim Implication
 

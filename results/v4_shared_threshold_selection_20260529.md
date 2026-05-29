@@ -1,6 +1,6 @@
 # V4 Shared Calibration-Threshold Selection
 
-Generated: `2026-05-29T05:37:10.426458+00:00`
+Generated: `2026-05-29T06:02:39.419671+00:00`
 
 Datasets: `6`
 Seeds: `[17, 31, 47]`
@@ -23,10 +23,12 @@ Protocol complete: `True`
 | 0.20 | csrm_minimax | 2 | 3 | 13 | -0.2754 | 0.3274 | 12 |
 | 0.20 | csrm_calibrated_logistic | 1 | 6 | 11 | -0.1208 | 0.2341 | 7 |
 | 0.20 | csrm_calibrated_isotonic | 1 | 4 | 13 | -0.0870 | 0.1453 | 4 |
+| 0.20 | csrm_calibrated_gbdt | 3 | 3 | 12 | -0.1058 | 0.0730 | 5 |
 | 0.30 | csrm_rule | 3 | 4 | 11 | -0.2230 | 0.3490 | 11 |
 | 0.30 | csrm_minimax | 3 | 5 | 10 | -0.2162 | 0.4294 | 11 |
 | 0.30 | csrm_calibrated_logistic | 2 | 6 | 10 | -0.1455 | 0.3191 | 8 |
 | 0.30 | csrm_calibrated_isotonic | 1 | 3 | 14 | -0.1167 | 0.1622 | 4 |
+| 0.30 | csrm_calibrated_gbdt | 4 | 4 | 10 | -0.0386 | 0.1271 | 3 |
 
 ## Method Summary
 
@@ -37,6 +39,7 @@ Protocol complete: `True`
 | 0.20 | context_sufficiency_clean | 0.0015 | 0.0796 | 0.5361 | 0.0000 | 6 |
 | 0.20 | corm_max_clean | 0.0000 | 0.0000 | n/a | 0.0000 | 18 |
 | 0.20 | corm_mean_clean | 0.0000 | 0.0000 | n/a | 0.0000 | 18 |
+| 0.20 | csrm_calibrated_gbdt | 0.4530 | 0.4432 | 0.0730 | 0.7222 | 2 |
 | 0.20 | csrm_calibrated_isotonic | 0.3776 | 0.3732 | 0.1453 | 0.7778 | 1 |
 | 0.20 | csrm_calibrated_logistic | 0.4767 | 0.4686 | 0.2341 | 0.6111 | 1 |
 | 0.20 | csrm_minimax | 0.4072 | 0.4432 | 0.3274 | 0.3333 | 2 |
@@ -54,6 +57,7 @@ Protocol complete: `True`
 | 0.30 | context_sufficiency_clean | 0.0133 | 0.1014 | 0.5361 | 0.0000 | 6 |
 | 0.30 | corm_max_clean | 0.0000 | 0.0000 | n/a | 0.0000 | 18 |
 | 0.30 | corm_mean_clean | 0.0000 | 0.0000 | n/a | 0.0000 | 18 |
+| 0.30 | csrm_calibrated_gbdt | 0.5647 | 0.5520 | 0.1271 | 0.8333 | 0 |
 | 0.30 | csrm_calibrated_isotonic | 0.4436 | 0.4373 | 0.1622 | 0.7778 | 0 |
 | 0.30 | csrm_calibrated_logistic | 0.6018 | 0.5852 | 0.3191 | 0.5556 | 0 |
 | 0.30 | csrm_minimax | 0.4738 | 0.5140 | 0.4294 | 0.3889 | 2 |

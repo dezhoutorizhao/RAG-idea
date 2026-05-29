@@ -135,6 +135,7 @@ def _run_seed(
         "csrm_minimax": csrm_minimax_scores(test_orbits),
         "csrm_calibrated_logistic": calibrator.predict_logistic(test_orbits),
         "csrm_calibrated_isotonic": calibrator.predict_isotonic(test_orbits),
+        "csrm_calibrated_gbdt": calibrator.predict_gbdt(test_orbits),
     }
     baselines = _baseline_scores(train_orbits, train_labels, test_orbits)
     target_metrics = {name: _metrics(scores, test_labels) for name, scores in targets.items()}

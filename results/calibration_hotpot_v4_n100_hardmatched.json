@@ -1,5 +1,45 @@
 {
   "aggregate": {
+    "csrm_calibrated_gbdt": {
+      "aurc": {
+        "max": 0.26223422853124984,
+        "mean": 0.22436830785373552,
+        "min": 0.1985546692104984
+      },
+      "auroc": {
+        "max": 0.90875,
+        "mean": 0.8720833333333333,
+        "min": 0.8025
+      },
+      "brier": {
+        "max": 0.180496090346587,
+        "mean": 0.14689304693038283,
+        "min": 0.11865079762209604
+      },
+      "risk_at_30": {
+        "max": 0.25,
+        "mean": 0.11111111111111112,
+        "min": 0.0
+      },
+      "risk_at_50": {
+        "max": 0.30000000000000004,
+        "mean": 0.23333333333333336,
+        "min": 0.15000000000000002
+      },
+      "selected_coverage": {
+        "max": 0.325,
+        "mean": 0.10833333333333334,
+        "min": 0.0
+      },
+      "selected_risk": {
+        "max": 0.07692307692307687,
+        "mean": 0.025641025641025623,
+        "min": 0.0
+      },
+      "target_met_count": 3,
+      "target_met_rate": 1.0,
+      "zero_coverage_count": 2
+    },
     "csrm_calibrated_isotonic": {
       "aurc": {
         "max": 0.5661136363636364,
@@ -210,6 +250,46 @@
         "verifier_entropy": -0.46137459808414294
       },
       "methods": {
+        "csrm_calibrated_gbdt": {
+          "calibration": {
+            "aurc": 0.38153592732553726,
+            "auroc": 0.705,
+            "brier": 0.21229730707995217,
+            "calibration": {
+              "ece": 0.15548431371314683,
+              "mce": 0.3907796811561891
+            },
+            "n": 40,
+            "negative": 20,
+            "positive": 20,
+            "risk_at_30": 0.33333333333333337,
+            "risk_at_50": 0.44999999999999996,
+            "risk_at_70": 0.3571428571428571,
+            "selected_accuracy": 0.0,
+            "selected_coverage": 0.0,
+            "selected_risk": 0.0,
+            "selected_threshold": 1.827779144124
+          },
+          "test": {
+            "aurc": 0.26223422853124984,
+            "auroc": 0.8025,
+            "brier": 0.180496090346587,
+            "calibration": {
+              "ece": 0.12569593204293983,
+              "mce": 0.31332881348853553
+            },
+            "n": 40,
+            "negative": 20,
+            "positive": 20,
+            "risk_at_30": 0.25,
+            "risk_at_50": 0.30000000000000004,
+            "risk_at_70": 0.3214285714285714,
+            "selected_accuracy": 0.0,
+            "selected_coverage": 0.0,
+            "selected_risk": 0.0,
+            "selected_threshold": 1.827779144124
+          }
+        },
         "csrm_calibrated_isotonic": {
           "calibration": {
             "aurc": 0.2914230019493177,
@@ -402,6 +482,46 @@
         "verifier_entropy": -0.4469462919268362
       },
       "methods": {
+        "csrm_calibrated_gbdt": {
+          "calibration": {
+            "aurc": 0.25335712062539417,
+            "auroc": 0.835,
+            "brier": 0.16203560310828174,
+            "calibration": {
+              "ece": 0.0852124221567945,
+              "mce": 0.3701138541310307
+            },
+            "n": 40,
+            "negative": 20,
+            "positive": 20,
+            "risk_at_30": 0.25,
+            "risk_at_50": 0.25,
+            "risk_at_70": 0.3214285714285714,
+            "selected_accuracy": 0.8,
+            "selected_coverage": 0.375,
+            "selected_risk": 0.19999999999999996,
+            "selected_threshold": 0.6871153122419928
+          },
+          "test": {
+            "aurc": 0.2123160258194583,
+            "auroc": 0.90875,
+            "brier": 0.11865079762209604,
+            "calibration": {
+              "ece": 0.12710351170029385,
+              "mce": 0.43731822779228136
+            },
+            "n": 40,
+            "negative": 20,
+            "positive": 20,
+            "risk_at_30": 0.08333333333333337,
+            "risk_at_50": 0.15000000000000002,
+            "risk_at_70": 0.3214285714285714,
+            "selected_accuracy": 0.9230769230769231,
+            "selected_coverage": 0.325,
+            "selected_risk": 0.07692307692307687,
+            "selected_threshold": 0.6871153122419928
+          }
+        },
         "csrm_calibrated_isotonic": {
           "calibration": {
             "aurc": 0.3209659679089027,
@@ -594,6 +714,46 @@
         "verifier_entropy": -0.3597545662114931
       },
       "methods": {
+        "csrm_calibrated_gbdt": {
+          "calibration": {
+            "aurc": 0.3938221492124739,
+            "auroc": 0.715,
+            "brier": 0.20615644821578827,
+            "calibration": {
+              "ece": 0.1500987949893811,
+              "mce": 0.7239041426377167
+            },
+            "n": 40,
+            "negative": 20,
+            "positive": 20,
+            "risk_at_30": 0.41666666666666663,
+            "risk_at_50": 0.30000000000000004,
+            "risk_at_70": 0.3571428571428571,
+            "selected_accuracy": 1.0,
+            "selected_coverage": 0.025,
+            "selected_risk": 0.0,
+            "selected_threshold": 0.8547881111312281
+          },
+          "test": {
+            "aurc": 0.1985546692104984,
+            "auroc": 0.905,
+            "brier": 0.14153225282246545,
+            "calibration": {
+              "ece": 0.24286136793064578,
+              "mce": 0.3779508671594165
+            },
+            "n": 40,
+            "negative": 20,
+            "positive": 20,
+            "risk_at_30": 0.0,
+            "risk_at_50": 0.25,
+            "risk_at_70": 0.2857142857142857,
+            "selected_accuracy": 0.0,
+            "selected_coverage": 0.0,
+            "selected_risk": 0.0,
+            "selected_threshold": 0.8547881111312281
+          }
+        },
         "csrm_calibrated_isotonic": {
           "calibration": {
             "aurc": 0.24031249999999998,

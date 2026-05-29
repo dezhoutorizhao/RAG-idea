@@ -26,10 +26,12 @@ def test_train_csrm_calibrated_v4_outputs_group_split_metrics(tmp_path):
 
     assert result["n"] == 12
     assert "csrm_calibrated_logistic" in result["aggregate"]
+    assert "csrm_calibrated_gbdt" in result["aggregate"]
     assert result["per_seed"][0]["split_sizes"]["test"] > 0
     test_metrics = result["per_seed"][0]["methods"]["csrm_calibrated_logistic"]["test"]
     assert "brier" in test_metrics
     assert "selected_risk" in test_metrics
+    assert "brier" in result["per_seed"][0]["methods"]["csrm_calibrated_gbdt"]["test"]
     assert output.exists()
 
 

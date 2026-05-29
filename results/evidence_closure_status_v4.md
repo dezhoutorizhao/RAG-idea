@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T05:37:11.845316+00:00`
+Generated: `2026-05-29T06:02:40.924891+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `33`; tracked artifacts: `144`.
+- Provenance steps: `33`; tracked artifacts: `158`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `144`; dataset construction hashes: `41`.
+- Artifact checksums: `158`; dataset construction hashes: `41`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -67,9 +67,9 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 
 - Supported: `False`; datasets: `6`.
 - Brier wins: `6/6`; ECE wins: `4/6`.
-- Mean Brier reduction: `0.1419`; mean ECE reduction: `0.1009`.
+- Mean Brier reduction: `0.1604`; mean ECE reduction: `0.1030`.
 - ECE non-win datasets: `['hotpot_orbits_v4_n100.constant.hardmatched', 'hotpot_orbits_v4_n100.constant.structbalanced']`.
-- Claim implication: Calibrated CSRM strongly improves Brier score over rule/minimax baselines across all current v4 calibration datasets. ECE improves on most but not all datasets, so calibration should be claimed as empirical calibration-quality evidence, not as a formal risk guarantee.
+- Claim implication: Calibrated CSRM variants, including logistic, isotonic, and GBDT calibration, strongly improve Brier score over rule/minimax baselines across all current v4 calibration datasets. ECE improves on most but not all datasets, so calibration should be claimed as empirical calibration-quality evidence, not as a formal risk guarantee.
 
 ## NeurIPS Readiness Matrix
 

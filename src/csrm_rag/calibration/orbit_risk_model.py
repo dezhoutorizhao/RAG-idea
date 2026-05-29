@@ -5,6 +5,7 @@ from dataclasses import dataclass
 from typing import Sequence
 
 import numpy as np
+from sklearn.ensemble import GradientBoostingClassifier
 from sklearn.isotonic import IsotonicRegression
 from sklearn.linear_model import LogisticRegression
 from sklearn.pipeline import make_pipeline
@@ -30,9 +31,17 @@ class OrbitRiskCalibrator:
             StandardScaler(),
             LogisticRegression(max_iter=2000, class_weight="balanced", random_state=random_state),
         )
+        self.gbdt_model = GradientBoostingClassifier(
+            n_estimators=64,
+            learning_rate=0.05,
+            max_depth=2,
+            min_samples_leaf=5,
+            random_state=random_state,
+        )
         self.isotonic = IsotonicRegression(out_of_bounds="clip")
         self.prior_: float | None = None
         self.logistic_ready_ = False
+        self.gbdt_ready_ = False
         self.isotonic_ready_ = False
 
     def fit(
@@ -45,8 +54,11 @@ class OrbitRiskCalibrator:
         y_train = np.asarray(train_labels, dtype=bool)
         self.prior_ = float(y_train.mean()) if y_train.size else 0.5
         if y_train.size and len(set(y_train.tolist())) >= 2:
-            self.model.fit(_feature_matrix(train_orbits), y_train)
+            features = _feature_matrix(train_orbits)
+            self.model.fit(features, y_train)
+            self.gbdt_model.fit(features, y_train)
             self.logistic_ready_ = True
+            self.gbdt_ready_ = True
         if calibration_orbits is not None and calibration_labels is not None:
             y_cal = np.asarray(calibration_labels, dtype=bool)
             if y_cal.size and len(set(y_cal.tolist())) >= 2:
@@ -68,6 +80,13 @@ class OrbitRiskCalibrator:
         if not self.isotonic_ready_:
             return logistic_scores
         return self.isotonic.predict(logistic_scores).tolist()
+
+    def predict_gbdt(self, orbits: Sequence[QueryOrbit]) -> list[float]:
+        if not orbits:
+            return []
+        if not self.gbdt_ready_:
+            return [0.5 if self.prior_ is None else self.prior_] * len(orbits)
+        return self.gbdt_model.predict_proba(_feature_matrix(orbits))[:, 1].tolist()
 
     def coefficients(self) -> dict[str, float]:
         if not self.logistic_ready_:

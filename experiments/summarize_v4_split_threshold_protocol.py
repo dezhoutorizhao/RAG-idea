@@ -210,7 +210,11 @@ def _all_calibrated_targets_have_calibration(payloads: list[dict[str, Any]]) -> 
             if sizes.get("calibration", 0) <= 0 or sizes.get("calibration_groups", 0) <= 0:
                 return False
             targets = set(seed_row.get("target_metrics", {}))
-            if not {"csrm_calibrated_logistic", "csrm_calibrated_isotonic"}.issubset(targets):
+            if not {
+                "csrm_calibrated_logistic",
+                "csrm_calibrated_isotonic",
+                "csrm_calibrated_gbdt",
+            }.issubset(targets):
                 return False
     return True
 

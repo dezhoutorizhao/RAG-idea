@@ -250,7 +250,7 @@
     "review_response_path": "results\\external_review_response_20260529.md",
     "status": "packet_ready"
   },
-  "generated_at_utc": "2026-05-29T05:37:11.845316+00:00",
+  "generated_at_utc": "2026-05-29T06:02:40.924891+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -689,7 +689,7 @@
   ],
   "reproducibility_bundle": {
     "artifact": "reproducibility/bundle_summary_20260529.json",
-    "artifact_checksum_count": 144,
+    "artifact_checksum_count": 158,
     "checkpoint_hash_available": true,
     "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
     "dataset_construction_hash_count": 41,
@@ -709,7 +709,7 @@
   },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 144,
+    "artifact_count": 158,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,
@@ -775,22 +775,23 @@
     "best_target_brier_win_count": 6,
     "best_target_ece_win_count": 4,
     "calibration_quality_supported": false,
-    "claim_implication": "Calibrated CSRM strongly improves Brier score over rule/minimax baselines across all current v4 calibration datasets. ECE improves on most but not all datasets, so calibration should be claimed as empirical calibration-quality evidence, not as a formal risk guarantee.",
+    "claim_implication": "Calibrated CSRM variants, including logistic, isotonic, and GBDT calibration, strongly improve Brier score over rule/minimax baselines across all current v4 calibration datasets. ECE improves on most but not all datasets, so calibration should be claimed as empirical calibration-quality evidence, not as a formal risk guarantee.",
     "dataset_count": 6,
     "datasets_with_brier_nonwin": [],
     "datasets_with_ece_nonwin": [
       "hotpot_orbits_v4_n100.constant.hardmatched",
       "hotpot_orbits_v4_n100.constant.structbalanced"
     ],
-    "mean_best_target_brier_reduction": 0.14187816828813768,
-    "mean_best_target_ece_reduction": 0.1008912923343835,
+    "mean_best_target_brier_reduction": 0.1603607956496427,
+    "mean_best_target_ece_reduction": 0.10301355548191084,
     "reference_methods": [
       "csrm_rule",
       "csrm_minimax"
     ],
     "target_methods": [
       "csrm_calibrated_logistic",
-      "csrm_calibrated_isotonic"
+      "csrm_calibrated_isotonic",
+      "csrm_calibrated_gbdt"
     ]
   },
   "v4_strong_baselines": {

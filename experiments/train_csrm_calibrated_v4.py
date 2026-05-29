@@ -102,6 +102,10 @@ def _run_seed(orbits, labels, groups, seed, train_frac, cal_frac, risk_target) -
             calibrator.predict_isotonic(cal_orbits),
             calibrator.predict_isotonic(test_orbits),
         ),
+        "csrm_calibrated_gbdt": (
+            calibrator.predict_gbdt(cal_orbits),
+            calibrator.predict_gbdt(test_orbits),
+        ),
     }
     method_results = {}
     for name, (cal_scores, test_scores) in methods.items():

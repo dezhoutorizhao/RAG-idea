@@ -2,6 +2,44 @@
   "aggregate": {
     "baseline_file_count": 6,
     "calibrated_targets_vs_all_baselines": {
+      "csrm_calibrated_gbdt": {
+        "auprc_improvement": {
+          "losses": 1,
+          "mean_worst_case_delta": 0.03327588610535883,
+          "robust_wins": 2,
+          "ties": 3
+        },
+        "aurc_reduction": {
+          "losses": 1,
+          "mean_worst_case_delta": 0.006514670611543476,
+          "robust_wins": 4,
+          "ties": 1
+        },
+        "auroc_improvement": {
+          "losses": 1,
+          "mean_worst_case_delta": 0.0215804861520974,
+          "robust_wins": 2,
+          "ties": 3
+        },
+        "risk_at_30_reduction": {
+          "losses": 1,
+          "mean_worst_case_delta": 0.03927553927553928,
+          "robust_wins": 2,
+          "ties": 3
+        },
+        "risk_at_50_reduction": {
+          "losses": 1,
+          "mean_worst_case_delta": 0.0031799690266509518,
+          "robust_wins": 1,
+          "ties": 4
+        },
+        "risk_at_70_reduction": {
+          "losses": 0,
+          "mean_worst_case_delta": 0.006105006105006108,
+          "robust_wins": 2,
+          "ties": 4
+        }
+      },
       "csrm_calibrated_isotonic": {
         "auprc_improvement": {
           "losses": 2,
@@ -603,6 +641,50 @@
         47
       ],
       "targets": {
+        "csrm_calibrated_gbdt": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.24490571939573297,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
+          "aurc_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.15776747183915024,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.016042762712064243
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.28563741813741816,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2723686569840416,
+            "ties_against_baselines": 4,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.29080179080179075,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.12095490716180371,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          }
+        },
         "csrm_calibrated_isotonic": {
           "auprc_improvement": {
             "losses_against_baselines": 0,
@@ -791,6 +873,50 @@
         47
       ],
       "targets": {
+        "csrm_calibrated_gbdt": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.31849295347353607,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
+          "aurc_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.20665151672226267,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.016202495904508295
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.35038461538461535,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3589743589743589,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3538461538461538,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.14652014652014655,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          }
+        },
         "csrm_calibrated_isotonic": {
           "auprc_improvement": {
             "losses_against_baselines": 0,
@@ -979,6 +1105,50 @@
         47
       ],
       "targets": {
+        "csrm_calibrated_gbdt": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2675384915884997,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.14709307753913348
+          },
+          "aurc_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.16777540756302284,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.025631692146264484
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.287275641025641,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.07041666666666664
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3311965811965812,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.13888888888888887
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 1,
+            "mean_delta": 0.21538461538461537,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 12,
+            "worst_case_delta": -0.01666666666666668
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.1373626373626374,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.023809523809523798
+          }
+        },
         "csrm_calibrated_isotonic": {
           "auprc_improvement": {
             "losses_against_baselines": 2,
@@ -1167,6 +1337,50 @@
         47
       ],
       "targets": {
+        "csrm_calibrated_gbdt": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3361279809219625,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.1616853968769156
+          },
+          "aurc_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.20270358241832886,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.05517547609088802
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3226913366324147,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.09364958357925109
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.37649103033718423,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.18009768009768012
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.26558757794455734,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.03574648082657239
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.11309795801110939,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 13,
+            "worst_case_delta": 0.01282051282051285
+          }
+        },
         "csrm_calibrated_isotonic": {
           "auprc_improvement": {
             "losses_against_baselines": 0,
@@ -1355,6 +1569,50 @@
         47
       ],
       "targets": {
+        "csrm_calibrated_gbdt": {
+          "auprc_improvement": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.13935319747011127,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 11,
+            "worst_case_delta": -0.1091231577838961
+          },
+          "aurc_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.04771175025443983,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 11,
+            "worst_case_delta": -0.07396440318446419
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.2289102564102564,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 11,
+            "worst_case_delta": -0.034583333333333334
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 2,
+            "mean_delta": 0.2115384615384615,
+            "ties_against_baselines": 0,
+            "wins_against_baselines": 11,
+            "worst_case_delta": -0.08333333333333333
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2307692307692308,
+            "ties_against_baselines": 2,
+            "wins_against_baselines": 11,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.10531135531135531,
+            "ties_against_baselines": 4,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
+          }
+        },
         "csrm_calibrated_isotonic": {
           "auprc_improvement": {
             "losses_against_baselines": 1,
@@ -1543,6 +1801,50 @@
         47
       ],
       "targets": {
+        "csrm_calibrated_gbdt": {
+          "auprc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.2719521001669048,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
+          "aurc_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.1455662991060871,
+            "ties_against_baselines": 1,
+            "wins_against_baselines": 12,
+            "worst_case_delta": 0.0
+          },
+          "auroc_improvement": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.28647435897435897,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_30_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3012820512820513,
+            "ties_against_baselines": 4,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_50_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.3076923076923077,
+            "ties_against_baselines": 3,
+            "wins_against_baselines": 10,
+            "worst_case_delta": 0.0
+          },
+          "risk_at_70_reduction": {
+            "losses_against_baselines": 0,
+            "mean_delta": 0.11172161172161174,
+            "ties_against_baselines": 4,
+            "wins_against_baselines": 9,
+            "worst_case_delta": 0.0
+          }
+        },
         "csrm_calibrated_isotonic": {
           "auprc_improvement": {
             "losses_against_baselines": 0,
@@ -1722,5 +2024,5 @@
       }
     }
   ],
-  "generated_at_utc": "2026-05-29T05:37:06.759671+00:00"
+  "generated_at_utc": "2026-05-29T06:02:35.098839+00:00"
 }

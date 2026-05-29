@@ -40,6 +40,7 @@ def test_summarize_v4_split_threshold_protocol_marks_missing_shared_threshold(tm
                         "target_metrics": {
                             "csrm_calibrated_logistic": {},
                             "csrm_calibrated_isotonic": {},
+                            "csrm_calibrated_gbdt": {},
                         },
                     }
                 ],
@@ -114,6 +115,7 @@ def test_summarize_v4_split_threshold_protocol_accepts_shared_threshold_artifact
                         "target_metrics": {
                             "csrm_calibrated_logistic": {},
                             "csrm_calibrated_isotonic": {},
+                            "csrm_calibrated_gbdt": {},
                         },
                     }
                 ],
