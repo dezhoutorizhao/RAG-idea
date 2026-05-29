@@ -147,5 +147,13 @@ def test_default_manifest_tracks_theory_formalization_artifacts():
     assert "experiments/summarize_theory_formalization.py" in defaults
 
 
+def test_default_manifest_tracks_novelty_audit_artifacts():
+    defaults = {str(path).replace("\\", "/") for path in DEFAULT_ARTIFACTS}
+
+    assert "results/novelty_audit_20260529.json" in defaults
+    assert "results/novelty_audit_20260529.md" in defaults
+    assert "experiments/summarize_novelty_audit.py" in defaults
+
+
 def _write_json(path, payload):
     path.write_text(json.dumps(payload), encoding="utf-8")

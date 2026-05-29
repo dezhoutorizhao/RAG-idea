@@ -131,6 +131,10 @@ from experiments.summarize_theory_formalization import (
     render_markdown as render_theory_formalization_markdown,
     summarize_theory_formalization,
 )
+from experiments.summarize_novelty_audit import (
+    render_markdown as render_novelty_audit_markdown,
+    summarize_novelty_audit,
+)
 from experiments.summarize_text_only_verifier_status import (
     render_markdown as render_text_only_verifier_markdown,
     summarize_text_only_verifier_status,
@@ -679,6 +683,19 @@ def reproduce_current_evidence_v4(
             "name": "summarize_theory_formalization",
             "outputs": [str(theory_formalization_json), str(theory_formalization_md)],
             "ready": theory_formalization["theory_module_ready"],
+        }
+    )
+
+    novelty_audit_json = results / "novelty_audit_20260529.json"
+    novelty_audit_md = results / "novelty_audit_20260529.md"
+    novelty_audit = summarize_novelty_audit()
+    _write_json(novelty_audit_json, novelty_audit)
+    novelty_audit_md.write_text(render_novelty_audit_markdown(novelty_audit), encoding="utf-8")
+    commands.append(
+        {
+            "name": "summarize_novelty_audit",
+            "outputs": [str(novelty_audit_json), str(novelty_audit_md)],
+            "ready": not novelty_audit["novelty_ready_for_strong_claim"],
         }
     )
 

@@ -21,8 +21,9 @@ def summarize_neurips_readiness(root: Path) -> dict[str, Any]:
     reproduction = _load_json(results / "current_evidence_reproduction_20260529.json")
     text_only = _load_optional_json(results / "text_only_verifier_status_20260529.json")
     theory = _load_optional_json(results / "theory_formalization_status_20260529.json")
+    novelty = _load_optional_json(results / "novelty_audit_20260529.json")
     external_review = _load_optional_json(results / "external_review_packet_status_20260529.json")
-    rows = _rows(closure, manifest, reproduction, text_only, theory, external_review)
+    rows = _rows(closure, manifest, reproduction, text_only, theory, novelty, external_review)
     return {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "source": {
@@ -32,6 +33,7 @@ def summarize_neurips_readiness(root: Path) -> dict[str, Any]:
             "reproduction": "results/current_evidence_reproduction_20260529.json",
             "text_only_verifier": "results/text_only_verifier_status_20260529.json",
             "theory_formalization": "results/theory_formalization_status_20260529.json",
+            "novelty_audit": "results/novelty_audit_20260529.json",
             "external_review": "results/external_review_packet_status_20260529.json",
         },
         "rows": rows,
@@ -87,6 +89,7 @@ def _rows(
     reproduction: dict[str, Any],
     text_only: dict[str, Any],
     theory: dict[str, Any],
+    novelty: dict[str, Any],
     external_review: dict[str, Any],
 ) -> list[dict[str, Any]]:
     latest = closure.get("latest_v4_diagnostics", {})
@@ -204,6 +207,17 @@ def _rows(
                 "Formalization now states the orbit-risk object and three information-structure "
                 "propositions. This supports the mechanism rationale but does not imply empirical "
                 "all-win behavior, human validity, or a formal risk-control guarantee."
+            ),
+        ),
+        _row(
+            "Novelty and positioning",
+            PARTIAL if novelty else FAIL,
+            ["results/novelty_audit_20260529.json", "results/novelty_audit_20260529.md"],
+            (
+                "Latest novelty audit recommends proceed-with-caution: closest risks are CoRM-RAG, "
+                "SURE-RAG, Sufficient Context, CF-RAG, and conformal factuality work. Positioning "
+                "must stay narrow around aligned evidence-orbit selective risk and cannot claim "
+                "strong novelty until human-audited results and remaining baselines are complete."
             ),
         ),
         _row(

@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T06:33:45.057486+00:00`
+Generated: `2026-05-29T06:42:23.193759+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `36`; tracked artifacts: `182`.
+- Provenance steps: `37`; tracked artifacts: `185`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `182`; dataset construction hashes: `42`.
+- Artifact checksums: `185`; dataset construction hashes: `42`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -74,8 +74,8 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## NeurIPS Readiness Matrix
 
 - Ready for NeurIPS main-track claim: `False`.
-- Status counts: `{'blocked': 3, 'fail': 1, 'partial': 4, 'pass': 5}`.
-- Hard blockers: `3`; negative/partial evidence items: `5`.
+- Status counts: `{'blocked': 3, 'fail': 1, 'partial': 5, 'pass': 5}`.
+- Hard blockers: `3`; negative/partial evidence items: `6`.
 
 Hard blockers:
 - Human-audited orbit labels: Pending labels: 1300; cannot claim human-audited results.
@@ -86,6 +86,7 @@ Negative or partial evidence:
 - Text-only semantic verifier (`partial`): NLI cross-scorer evidence is directionally positive against required weak baselines, but LLM-NLI correlation and human-label text-only evaluation are not ready.
 - Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency, risk-control abstention baselines, and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.
 - End-to-end selective RAG (`partial`): Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage and target-risk coverage artifacts summarize lower accepted-error risk at fixed coverage and higher coverage at fixed target risk, but do not remove the full-reproduction boundary.
+- Novelty and positioning (`partial`): Latest novelty audit recommends proceed-with-caution: closest risks are CoRM-RAG, SURE-RAG, Sufficient Context, CF-RAG, and conformal factuality work. Positioning must stay narrow around aligned evidence-orbit selective risk and cannot claim strong novelty until human-audited results and remaining baselines are complete.
 - Calibrated orbit risk model (`partial`): Calibration-quality artifact shows Brier wins 6/6 against rule/minimax references, but ECE wins 4/6. This supports empirical calibration-quality wording, not a formal risk guarantee.
 - Risk-control claim (`fail`): Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.
 
@@ -158,6 +159,14 @@ V4 anti-shortcut suite:
 - Section files: `['paper\\sections\\formalization.tex', 'paper\\sections\\theory.tex']`.
 - Present labels: `['sec:formalization', 'sec:theory', 'prop:clean-not-orbit', 'prop:single-set-not-orbit', 'prop:orbit-alignment-necessary']`.
 - Claim implication: The formalization supports the mechanism-level information-structure claim that clean-only, single-set, and unaligned evidence are insufficient for item-level counterfactual orbit risk. It does not prove empirical all-win behavior, human validity, or a formal risk-control guarantee.
+
+## Novelty Audit
+
+- Search date: `2026-05-29`.
+- Recommendation: `proceed_with_caution`; score: `6.5/10`; strong novelty ready: `False`.
+- Closest prior risks: Beyond Semantic Relevance: Counterfactual Risk Minimization for Robust Retrieval-Augmented Generation (2026, high), SURE-RAG: Sufficiency and Uncertainty-Aware Evidence Verification for Selective Retrieval-Augmented Generation (2026, high), Sufficient Context: A New Lens on Retrieval Augmented Generation Systems (2025, medium), Counterfactual Reasoning for Retrieval-Augmented Generation (2026, high), Causal-Counterfactual RAG: The Integration of Causal-Counterfactual Reasoning into RAG (2025, medium).
+- Required to upgrade: `['Complete the 1000-item Human Audit v4 labels and report human-label metrics.', 'Obtain API-backed LLM-judge baseline/correlation scores or remove LLM-judge claims.', 'Keep full CoRM-RAG reproduction unsupported until the storage/index artifacts are repaired.', 'Write related work around SURE-RAG, Sufficient Context, CF-RAG, and CoRM-RAG as closest neighbors.']`.
+- Claim policy: This is a current literature-positioning audit, not proof of novelty. It supports a narrow proceed-with-caution framing and highlights prior-work risks that must be disclosed in any NeurIPS submission.
 
 ## End-to-End Selective RAG Proxy
 
@@ -249,6 +258,7 @@ Allowed claims:
 - The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.
 - Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings.
 - The theory/formalization module states the orbit-risk object and information-structure rationale for clean-only, single-set, and aligned-orbit evidence.
+- The novelty audit supports a narrow proceed-with-caution positioning around aligned evidence-orbit selective risk.
 - The calibrated orbit risk model improves Brier score over rule/minimax baselines across current v4 calibration artifacts; ECE evidence is mostly positive but mixed.
 
 Disallowed claims:
@@ -260,6 +270,7 @@ Disallowed claims:
 - The v4 failure taxonomy is human-adjudicated evidence.
 - Calibration establishes a formal risk-control guarantee.
 - The theory/formalization module proves empirical all-win behavior or replaces human audit.
+- CSRM-RAG has a closed strong novelty claim independent of CoRM-RAG, SURE-RAG, Sufficient Context, and CF-RAG.
 
 Remaining non-human blockers:
 - Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.
@@ -268,6 +279,7 @@ Remaining non-human blockers:
 - End-to-end selective RAG evidence is currently proxy-only: fixed-coverage and fixed-risk views are directionally positive, but some Hotpot v4 variants remain mixed and this is not a full CoRM-RAG reproduction.
 - V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.
 - V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.
+- Novelty positioning remains proceed-with-caution because closely related 2025-2026 work exists; strong novelty claims require narrower wording and completed human-audit/baseline evidence.
 
 Remaining human-audit blockers:
 - Human audit v4 packs are prepared, including the paper-grade mixed blind1000 pack, but adjudicated labels are pending for all 1300 items.

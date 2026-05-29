@@ -89,6 +89,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     v4_anti_shortcut = _v4_anti_shortcut_status(results)
     mechanism_ablation = _mechanism_ablation_status(results)
     theory_formalization = _theory_formalization_status(results)
+    novelty_audit = _novelty_audit_status(results)
     v4_calibration_quality = _v4_calibration_quality_status(results)
     neurips_readiness = _neurips_readiness_status(results)
     external_review = _external_review_packet_status(results)
@@ -127,6 +128,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "clean_sufficiency_figure": clean_sufficiency_figure,
             "anti_shortcut": v4_anti_shortcut,
             "theory_formalization": theory_formalization,
+            "novelty_audit": novelty_audit,
         },
         "risk_control": {
             "hotpot_cp": {
@@ -184,6 +186,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         "external_review": external_review,
         "mechanism_ablation": mechanism_ablation,
         "theory_formalization": theory_formalization,
+        "novelty_audit": novelty_audit,
         "v4_calibration_quality": v4_calibration_quality,
         "end2end_selective_rag_proxy": end2end_proxy,
         "end2end_retriever_generator_matrix": end2end_matrix,
@@ -224,6 +227,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.",
             "Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings.",
             "The theory/formalization module states the orbit-risk object and information-structure rationale for clean-only, single-set, and aligned-orbit evidence.",
+            "The novelty audit supports a narrow proceed-with-caution positioning around aligned evidence-orbit selective risk.",
             "The calibrated orbit risk model improves Brier score over rule/minimax baselines across current v4 calibration artifacts; ECE evidence is mostly positive but mixed.",
         ],
         "disallowed_claims": [
@@ -235,6 +239,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "The v4 failure taxonomy is human-adjudicated evidence.",
             "Calibration establishes a formal risk-control guarantee.",
             "The theory/formalization module proves empirical all-win behavior or replaces human audit.",
+            "CSRM-RAG has a closed strong novelty claim independent of CoRM-RAG, SURE-RAG, Sufficient Context, and CF-RAG.",
         ],
         "remaining_non_human_blockers": [
             "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
@@ -243,6 +248,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "End-to-end selective RAG evidence is currently proxy-only: fixed-coverage and fixed-risk views are directionally positive, but some Hotpot v4 variants remain mixed and this is not a full CoRM-RAG reproduction.",
             "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.",
             "V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.",
+            "Novelty positioning remains proceed-with-caution because closely related 2025-2026 work exists; strong novelty claims require narrower wording and completed human-audit/baseline evidence.",
         ],
         "remaining_human_audit_blockers": [
             (
@@ -789,6 +795,30 @@ def _theory_formalization_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _novelty_audit_status(results: Path) -> dict[str, Any] | None:
+    path = results / "novelty_audit_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "search_date": payload.get("search_date"),
+        "recommendation": payload.get("recommendation"),
+        "overall_novelty_score_10": payload.get("overall_novelty_score_10"),
+        "novelty_ready_for_strong_claim": payload.get("novelty_ready_for_strong_claim"),
+        "closest_prior_work": [
+            {
+                "paper": row.get("paper"),
+                "year": row.get("year"),
+                "risk_level": row.get("risk_level"),
+            }
+            for row in payload.get("closest_prior_work", [])
+        ],
+        "required_to_upgrade": payload.get("required_to_upgrade", []),
+        "claim_policy": payload.get("claim_policy"),
+    }
+
+
 def _v4_calibration_quality_status(results: Path) -> dict[str, Any] | None:
     path = results / "v4_calibration_quality_20260529.json"
     if not path.exists():
@@ -977,6 +1007,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     external_review = status.get("external_review")
     mechanism_ablation = status.get("mechanism_ablation")
     theory_formalization = status.get("theory_formalization")
+    novelty_audit = status.get("novelty_audit")
     calibration_quality = status.get("v4_calibration_quality")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
     end2end_matrix = status.get("end2end_retriever_generator_matrix")
@@ -1350,6 +1381,26 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"- Section files: `{section_paths}`.",
                 f"- Present labels: `{labels}`.",
                 f"- Claim implication: {theory_formalization['claim_implication']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## Novelty Audit", ""])
+    if novelty_audit:
+        closest = ", ".join(
+            f"{row.get('paper')} ({row.get('year')}, {row.get('risk_level')})"
+            for row in novelty_audit.get("closest_prior_work", [])[:5]
+        )
+        lines.extend(
+            [
+                f"- Search date: `{novelty_audit['search_date']}`.",
+                f"- Recommendation: `{novelty_audit['recommendation']}`; "
+                f"score: `{novelty_audit['overall_novelty_score_10']}/10`; "
+                f"strong novelty ready: `{novelty_audit['novelty_ready_for_strong_claim']}`.",
+                f"- Closest prior risks: {closest}.",
+                f"- Required to upgrade: `{novelty_audit['required_to_upgrade']}`.",
+                f"- Claim policy: {novelty_audit['claim_policy']}",
                 "",
             ]
         )

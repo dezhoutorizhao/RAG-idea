@@ -1,0 +1,98 @@
+{
+  "claim_policy": "This is a current literature-positioning audit, not proof of novelty. It supports a narrow proceed-with-caution framing and highlights prior-work risks that must be disclosed in any NeurIPS submission.",
+  "closest_prior_work": [
+    {
+      "difference": "CSRM-RAG must be framed as a selective risk detector and audit protocol over aligned evidence-set orbits, not as a new CoRM-RAG retriever.",
+      "overlap": "Direct parent paper: counterfactual risk minimization for robust RAG and risk-aware abstention.",
+      "paper": "Beyond Semantic Relevance: Counterfactual Risk Minimization for Robust Retrieval-Augmented Generation",
+      "risk_level": "high",
+      "url": "https://arxiv.org/abs/2605.01302",
+      "venue_or_status": "arXiv 2605.01302",
+      "year": 2026
+    },
+    {
+      "difference": "SURE-RAG focuses on sufficiency/uncertainty verification; CSRM-RAG novelty must come from counterfactual orbit stability and aligned perturbation evidence.",
+      "overlap": "Closest sufficiency-verifier and selective-RAG abstention work.",
+      "paper": "SURE-RAG: Sufficiency and Uncertainty-Aware Evidence Verification for Selective Retrieval-Augmented Generation",
+      "risk_level": "high",
+      "url": "https://arxiv.org/abs/2605.03534",
+      "venue_or_status": "arXiv 2605.03534",
+      "year": 2026
+    },
+    {
+      "difference": "It does not provide item-level counterfactual evidence-orbit risk estimation or aligned orbit ablations.",
+      "overlap": "Defines sufficient context and uses sufficiency for guided abstention.",
+      "paper": "Sufficient Context: A New Lens on Retrieval Augmented Generation Systems",
+      "risk_level": "medium",
+      "url": "https://research.google/pubs/sufficient-context-a-new-lens-on-retrieval-augmented-generation-systems-2/",
+      "venue_or_status": "ICLR 2025",
+      "year": 2025
+    },
+    {
+      "difference": "CF-RAG uses counterfactual query reasoning; CSRM-RAG must emphasize evidence-set orbit stability and selective risk under equal verifier budget.",
+      "overlap": "Counterfactual queries and arbitration for robust RAG.",
+      "paper": "Counterfactual Reasoning for Retrieval-Augmented Generation",
+      "risk_level": "high",
+      "url": "https://openreview.net/forum?id=9U51rOnGko",
+      "venue_or_status": "ICLR 2026",
+      "year": 2026
+    },
+    {
+      "difference": "Broader causal-counterfactual answer generation; not the same as calibrated orbit-level selective risk detection.",
+      "overlap": "Causal and counterfactual reasoning integrated into RAG.",
+      "paper": "Causal-Counterfactual RAG: The Integration of Causal-Counterfactual Reasoning into RAG",
+      "risk_level": "medium",
+      "url": "https://arxiv.org/abs/2509.14435",
+      "venue_or_status": "arXiv 2509.14435",
+      "year": 2025
+    },
+    {
+      "difference": "Relevant to risk-control claims; current CSRM-RAG evidence is empirical and must not claim formal conformal coverage.",
+      "overlap": "Robust factuality and calibration-style guarantees for RAG.",
+      "paper": "Is Conformal Factuality for RAG-based LLMs Robust? Novel Metrics and Systematic Insights",
+      "risk_level": "medium",
+      "url": "https://arxiv.org/abs/2603.16817",
+      "venue_or_status": "arXiv 2603.16817",
+      "year": 2026
+    }
+  ],
+  "core_claims": [
+    {
+      "assessment": "Plausible if positioned as orbit-level counterfactual stability rather than plain sufficiency.",
+      "claim": "Aligned evidence-set orbits expose fragile RAG items that clean sufficiency misses.",
+      "closest_prior": "CoRM-RAG; Sufficient Context; SURE-RAG",
+      "novelty": "medium"
+    },
+    {
+      "assessment": "Novelty depends on human-audited orbit labels and strong equal-budget baselines; current evidence is partial.",
+      "claim": "CSRM estimates selective item risk from orbit statistics under equal verifier-call budgets.",
+      "closest_prior": "SURE-RAG; CoRM-RAG",
+      "novelty": "medium"
+    },
+    {
+      "assessment": "Mechanism is defensible after shuffled-alignment ablation and formalization, but needs careful distinction from counterfactual-query methods.",
+      "claim": "Orbit alignment is a necessary mechanism for counterfactual selective RAG.",
+      "closest_prior": "CF-RAG; CoRM-RAG",
+      "novelty": "medium-high"
+    },
+    {
+      "assessment": "Do not claim. Current FEVER evidence is negative at the 0.20 target.",
+      "claim": "CSRM provides formal/general risk control for robust RAG.",
+      "closest_prior": "Conformal factuality for RAG; CoRM-RAG risk-aware abstention",
+      "novelty": "low"
+    }
+  ],
+  "generated_at_utc": "2026-05-29T06:42:21.705639+00:00",
+  "method_under_review": "CSRM-RAG: counterfactual sufficiency stability and calibrated selective risk over aligned evidence-set orbits for robust RAG.",
+  "novelty_ready_for_strong_claim": false,
+  "overall_novelty_score_10": 6.5,
+  "positioning": "Frame the contribution as an audit-grade, leakage-controlled, aligned evidence-orbit selective-risk protocol built on top of CoRM-style critic scores. Avoid claiming a new retrieval paradigm, formal risk control, or all-win superiority.",
+  "recommendation": "proceed_with_caution",
+  "required_to_upgrade": [
+    "Complete the 1000-item Human Audit v4 labels and report human-label metrics.",
+    "Obtain API-backed LLM-judge baseline/correlation scores or remove LLM-judge claims.",
+    "Keep full CoRM-RAG reproduction unsupported until the storage/index artifacts are repaired.",
+    "Write related work around SURE-RAG, Sufficient Context, CF-RAG, and CoRM-RAG as closest neighbors."
+  ],
+  "search_date": "2026-05-29"
+}

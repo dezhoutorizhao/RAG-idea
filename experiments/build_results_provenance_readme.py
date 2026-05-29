@@ -39,6 +39,7 @@ PROVENANCE_BY_STEP = {
     "summarize_v4_anti_shortcut": "experiments/summarize_v4_anti_shortcut.py",
     "summarize_mechanism_ablation": "experiments/summarize_mechanism_ablation.py",
     "summarize_theory_formalization": "experiments/summarize_theory_formalization.py",
+    "summarize_novelty_audit": "experiments/summarize_novelty_audit.py",
     "verify_claims": "experiments/verify_claims.py",
     "summarize_evidence_closure": "experiments/summarize_evidence_closure.py",
     "build_external_review_packet": "experiments/build_external_review_packet.py",

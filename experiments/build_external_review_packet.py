@@ -25,6 +25,7 @@ SOURCE_ARTIFACTS = [
     Path("results/v4_calibration_quality_20260529.json"),
     Path("results/risk_control_abstention_baselines_20260529.json"),
     Path("results/theory_formalization_status_20260529.json"),
+    Path("results/novelty_audit_20260529.json"),
     Path("paper/sections/formalization.tex"),
     Path("paper/sections/theory.tex"),
     Path("results/end2end_retriever_generator_matrix_20260529.json"),

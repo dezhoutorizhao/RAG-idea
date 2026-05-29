@@ -1,6 +1,6 @@
 # V4 Split and Threshold Protocol
 
-Generated: `2026-05-29T06:33:43.423154+00:00`
+Generated: `2026-05-29T06:42:21.616642+00:00`
 Source: `results\v4_strong_baseline_summary_20260529.json`
 Threshold source: `results\v4_shared_threshold_selection_20260529.json`
 

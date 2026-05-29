@@ -38,6 +38,10 @@ def test_summarize_neurips_readiness_maps_current_gates(tmp_path):
         results / "theory_formalization_status_20260529.json",
         {"theory_module_ready": True},
     )
+    _write_json(
+        results / "novelty_audit_20260529.json",
+        {"recommendation": "proceed_with_caution", "novelty_ready_for_strong_claim": False},
+    )
     _write_json(results / "external_review_packet_status_20260529.json", _external_review())
 
     summary = summarize_neurips_readiness(tmp_path)
@@ -52,6 +56,8 @@ def test_summarize_neurips_readiness_maps_current_gates(tmp_path):
     assert "results/end2end_target_risk_coverage_20260529.json" in by_req["End-to-end selective RAG"]["evidence"]
     assert by_req["Theory and formalization"]["status"] == PASS
     assert "paper/sections/theory.tex" in by_req["Theory and formalization"]["evidence"]
+    assert by_req["Novelty and positioning"]["status"] == PARTIAL
+    assert "results/novelty_audit_20260529.json" in by_req["Novelty and positioning"]["evidence"]
     assert by_req["Calibrated orbit risk model"]["status"] == PARTIAL
     assert "results/v4_calibration_quality_20260529.json" in by_req["Calibrated orbit risk model"]["evidence"]
     assert "6 target-dir file probes failed" in by_req["Full CoRM-RAG reproduction"]["boundary_or_next_action"]
@@ -84,6 +90,10 @@ def test_render_markdown_lists_status_policy(tmp_path):
     _write_json(
         results / "theory_formalization_status_20260529.json",
         {"theory_module_ready": True},
+    )
+    _write_json(
+        results / "novelty_audit_20260529.json",
+        {"recommendation": "proceed_with_caution", "novelty_ready_for_strong_claim": False},
     )
     _write_json(results / "external_review_packet_status_20260529.json", _external_review())
 

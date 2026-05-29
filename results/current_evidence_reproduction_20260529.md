@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T06:33:43.568739+00:00`
+Generated: `2026-05-29T06:42:21.762952+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -37,6 +37,7 @@ Ready for NeurIPS main claim: `False`
 | summarize_v4_anti_shortcut | `True` | `results\v4_anti_shortcut_summary_20260529.json`<br>`results\v4_anti_shortcut_summary_20260529.md` |
 | summarize_mechanism_ablation | `True` | `results\mechanism_ablation_summary_20260529.json`<br>`results\mechanism_ablation_summary_20260529.md` |
 | summarize_theory_formalization | `True` | `results\theory_formalization_status_20260529.json`<br>`results\theory_formalization_status_20260529.md` |
+| summarize_novelty_audit | `True` | `results\novelty_audit_20260529.json`<br>`results\novelty_audit_20260529.md` |
 | verify_claims | `True` | `results\claims_verification.json` |
 | summarize_evidence_closure | `False` | `results\evidence_closure_status_v4.json`<br>`results\evidence_closure_status_v4.md` |
 | build_external_review_packet | `False` | `results\external_review_packet_status_20260529.json`<br>`results\external_review_packet_20260529.md` |
@@ -67,6 +68,7 @@ Non-human:
 - End-to-end selective RAG evidence is currently proxy-only: fixed-coverage and fixed-risk views are directionally positive, but some Hotpot v4 variants remain mixed and this is not a full CoRM-RAG reproduction.
 - V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.
 - V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.
+- Novelty positioning remains proceed-with-caution because closely related 2025-2026 work exists; strong novelty claims require narrower wording and completed human-audit/baseline evidence.
 
 ## Claim Policy
 
