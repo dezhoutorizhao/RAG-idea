@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T02:49:27.814467+00:00`
+Generated: `2026-05-29T02:58:15.772092+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `21`; tracked artifacts: `101`.
+- Provenance steps: `22`; tracked artifacts: `104`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `101`; dataset construction hashes: `41`.
+- Artifact checksums: `104`; dataset construction hashes: `41`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -75,7 +75,7 @@ Hard blockers:
 - Independent external review: Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.
 
 Negative or partial evidence:
-- Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices also mark faithful CoRM and self-consistency as partial, clean-only controls as lower-budget, LLM judge as missing, and shared calibration-threshold selection across every baseline as not yet run.
+- Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices also mark faithful CoRM and self-consistency as partial, clean-only controls as lower-budget, and LLM judge as missing. Shared calibration-threshold selection is now auditable, but test risk/coverage remains mixed rather than all-win.
 - End-to-end selective RAG (`partial`): Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction.
 - Risk-control claim (`fail`): Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.
 

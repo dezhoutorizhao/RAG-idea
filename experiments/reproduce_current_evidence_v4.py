@@ -46,6 +46,11 @@ from experiments.summarize_v4_baseline_budget_parity import (
     render_markdown as render_v4_baseline_budget_parity_markdown,
     summarize_v4_baseline_budget_parity,
 )
+from experiments.compare_equal_budget_thresholds_v4 import (
+    DEFAULT_DATASETS as DEFAULT_V4_THRESHOLD_DATASETS,
+    compare_equal_budget_thresholds_v4,
+    render_markdown as render_v4_shared_threshold_markdown,
+)
 from experiments.summarize_v4_split_threshold_protocol import (
     render_markdown as render_v4_split_threshold_protocol_markdown,
     summarize_v4_split_threshold_protocol,
@@ -250,9 +255,26 @@ def reproduce_current_evidence_v4(
         }
     )
 
+    shared_threshold_json = results / "v4_shared_threshold_selection_20260529.json"
+    shared_threshold_md = results / "v4_shared_threshold_selection_20260529.md"
+    shared_threshold = compare_equal_budget_thresholds_v4(
+        DEFAULT_V4_THRESHOLD_DATASETS,
+        seeds=[17, 31, 47],
+        risk_targets=[0.20, 0.30],
+    )
+    _write_json(shared_threshold_json, shared_threshold)
+    shared_threshold_md.write_text(render_v4_shared_threshold_markdown(shared_threshold), encoding="utf-8")
+    commands.append(
+        {
+            "name": "compare_equal_budget_thresholds_v4",
+            "outputs": [str(shared_threshold_json), str(shared_threshold_md)],
+            "ready": shared_threshold["shared_threshold_protocol_complete"],
+        }
+    )
+
     split_threshold_json = results / "v4_split_threshold_protocol_20260529.json"
     split_threshold_md = results / "v4_split_threshold_protocol_20260529.md"
-    split_threshold = summarize_v4_split_threshold_protocol(strong_baselines_json)
+    split_threshold = summarize_v4_split_threshold_protocol(strong_baselines_json, shared_threshold_json)
     _write_json(split_threshold_json, split_threshold)
     split_threshold_md.write_text(
         render_v4_split_threshold_protocol_markdown(split_threshold),

@@ -111,13 +111,14 @@ def _rows(closure: dict[str, Any], manifest: dict[str, Any], reproduction: dict[
                 "results/v4_strong_baseline_summary_20260529.json",
                 "results/v4_baseline_coverage_matrix_20260529.json",
                 "results/v4_baseline_budget_parity_20260529.json",
+                "results/v4_shared_threshold_selection_20260529.json",
                 "results/v4_split_threshold_protocol_20260529.json",
             ],
             (
                 "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; "
                 "coverage/budget matrices also mark faithful CoRM and self-consistency as partial, "
-                "clean-only controls as lower-budget, LLM judge as missing, and shared calibration-threshold "
-                "selection across every baseline as not yet run."
+                "clean-only controls as lower-budget, and LLM judge as missing. Shared calibration-threshold "
+                "selection is now auditable, but test risk/coverage remains mixed rather than all-win."
             ),
         ),
         _row(

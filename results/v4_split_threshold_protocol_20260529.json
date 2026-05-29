@@ -2,8 +2,8 @@
   "baseline_file_count": 6,
   "claim_policy": "This audit covers the route-plan requirements that comparisons use the same inputs, same group split, and same threshold-selection protocol. It supports the current ranking and fixed-coverage comparison scope, but it does not claim a shared calibration-threshold selective-RAG protocol because that experiment has not been run for every baseline.",
   "comparison_file_count": 6,
-  "generated_at_utc": "2026-05-29T02:49:26.727022+00:00",
-  "protocol_complete": false,
+  "generated_at_utc": "2026-05-29T02:58:14.743928+00:00",
+  "protocol_complete": true,
   "rows": [
     {
       "boundary": "The audit is limited to loaded v4 baseline artifacts referenced by the strong-baseline summary.",
@@ -51,13 +51,15 @@
       "status": "pass"
     },
     {
-      "boundary": "The current evidence is valid for ranking/fixed-coverage comparisons, but not for a shared risk-target threshold-selection claim across every baseline.",
+      "boundary": "The shared-threshold protocol is now auditable. Test risk may still miss the calibration target, so this closes protocol fairness rather than proving formal risk control.",
       "evidence": [
-        "compare_calibrated artifacts report fixed-coverage AUROC/risk/AURC metrics",
-        "no artifact records per-baseline thresholds selected on the shared calibration split"
+        "threshold artifact datasets: 6",
+        "seeds: [17, 31, 47]",
+        "risk targets: [0.2, 0.3]",
+        "protocol complete: True"
       ],
       "requirement": "shared_calibration_threshold_selection",
-      "status": "missing"
+      "status": "pass"
     },
     {
       "boundary": "Negative and partial baseline evidence must remain in the paper-facing limitations.",
@@ -72,9 +74,10 @@
   "source": "results\\v4_strong_baseline_summary_20260529.json",
   "source_item_group_split_supported": true,
   "status_counts": {
-    "missing": 1,
+    "missing": 0,
     "partial": 0,
-    "pass": 6
+    "pass": 7
   },
-  "threshold_selection_claim_supported": false
+  "threshold_selection_claim_supported": true,
+  "threshold_source": "results\\v4_shared_threshold_selection_20260529.json"
 }

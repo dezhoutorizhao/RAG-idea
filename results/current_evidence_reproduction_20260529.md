@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T02:49:26.839761+00:00`
+Generated: `2026-05-29T02:58:14.851496+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -17,7 +17,8 @@ Ready for NeurIPS main claim: `False`
 | summarize_v4_strong_baselines | `False` | `results\v4_strong_baseline_summary_20260529.json`<br>`results\v4_strong_baseline_summary_20260529.md` |
 | summarize_v4_baseline_coverage | `False` | `results\v4_baseline_coverage_matrix_20260529.json`<br>`results\v4_baseline_coverage_matrix_20260529.md` |
 | summarize_v4_baseline_budget_parity | `False` | `results\v4_baseline_budget_parity_20260529.json`<br>`results\v4_baseline_budget_parity_20260529.md` |
-| summarize_v4_split_threshold_protocol | `False` | `results\v4_split_threshold_protocol_20260529.json`<br>`results\v4_split_threshold_protocol_20260529.md` |
+| compare_equal_budget_thresholds_v4 | `True` | `results\v4_shared_threshold_selection_20260529.json`<br>`results\v4_shared_threshold_selection_20260529.md` |
+| summarize_v4_split_threshold_protocol | `True` | `results\v4_split_threshold_protocol_20260529.json`<br>`results\v4_split_threshold_protocol_20260529.md` |
 | summarize_v4_failure_taxonomy | `True` | `results\v4_failure_taxonomy_summary_20260529.json`<br>`results\v4_failure_taxonomy_summary_20260529.md` |
 | export_v4_case_gallery | `True` | `paper\case_studies\v4_case_gallery_20260529.jsonl`<br>`paper\case_studies\v4_case_gallery_20260529.md`<br>`results\v4_case_gallery_summary_20260529.json` |
 | build_clean_sufficiency_misleading_figure | `True` | `paper\figures\clean_sufficiency_misleading_v4_20260529.csv`<br>`results\clean_sufficiency_misleading_v4_20260529.json`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.svg`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.md` |

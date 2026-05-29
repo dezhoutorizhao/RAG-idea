@@ -13,14 +13,19 @@ PARTIAL = "partial"
 MISSING = "missing"
 
 
-def summarize_v4_split_threshold_protocol(strong_baseline_summary: Path) -> dict[str, Any]:
+def summarize_v4_split_threshold_protocol(
+    strong_baseline_summary: Path,
+    threshold_summary: Path = Path("results/v4_shared_threshold_selection_20260529.json"),
+) -> dict[str, Any]:
     strong = _load_json(strong_baseline_summary)
     baseline_payloads = _load_artifacts(strong_baseline_summary, strong.get("baseline_rows", []))
     comparison_payloads = _load_artifacts(strong_baseline_summary, strong.get("comparison_rows", []))
-    rows = _protocol_rows(baseline_payloads, comparison_payloads, strong)
+    threshold_payload = _load_json(threshold_summary) if threshold_summary.exists() else None
+    rows = _protocol_rows(baseline_payloads, comparison_payloads, strong, threshold_payload)
     return {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "source": str(strong_baseline_summary),
+        "threshold_source": str(threshold_summary),
         "baseline_file_count": len(baseline_payloads),
         "comparison_file_count": len(comparison_payloads),
         "rows": rows,
@@ -43,6 +48,7 @@ def render_markdown(summary: dict[str, Any]) -> str:
         "",
         f"Generated: `{summary['generated_at_utc']}`",
         f"Source: `{summary['source']}`",
+        f"Threshold source: `{summary['threshold_source']}`",
         "",
         f"Baseline files: `{summary['baseline_file_count']}`",
         f"Comparison files: `{summary['comparison_file_count']}`",
@@ -69,6 +75,7 @@ def _protocol_rows(
     baseline_payloads: list[dict[str, Any]],
     comparison_payloads: list[dict[str, Any]],
     strong: dict[str, Any],
+    threshold_payload: dict[str, Any] | None,
 ) -> list[dict[str, Any]]:
     return [
         _row(
@@ -118,15 +125,9 @@ def _protocol_rows(
         ),
         _row(
             "shared_calibration_threshold_selection",
-            MISSING,
-            [
-                "compare_calibrated artifacts report fixed-coverage AUROC/risk/AURC metrics",
-                "no artifact records per-baseline thresholds selected on the shared calibration split",
-            ],
-            (
-                "The current evidence is valid for ranking/fixed-coverage comparisons, but not for a "
-                "shared risk-target threshold-selection claim across every baseline."
-            ),
+            PASS if _threshold_protocol_complete(threshold_payload) else MISSING,
+            _threshold_evidence(threshold_payload),
+            _threshold_boundary(threshold_payload),
         ),
         _row(
             "failed_baselines_reported",
@@ -227,6 +228,44 @@ def _failed_baselines_are_reported(strong: dict[str, Any]) -> bool:
     return False
 
 
+def _threshold_protocol_complete(payload: dict[str, Any] | None) -> bool:
+    if not payload:
+        return False
+    protocol = payload.get("protocol", {})
+    return bool(
+        payload.get("shared_threshold_protocol_complete")
+        and payload.get("dataset_count", 0) >= 6
+        and protocol.get("threshold_selected_on") == "calibration split"
+        and protocol.get("threshold_applied_to") == "held-out test split"
+    )
+
+
+def _threshold_evidence(payload: dict[str, Any] | None) -> list[str]:
+    if not payload:
+        return [
+            "compare_calibrated artifacts report fixed-coverage AUROC/risk/AURC metrics",
+            "no shared-threshold artifact is available",
+        ]
+    return [
+        f"threshold artifact datasets: {payload.get('dataset_count')}",
+        f"seeds: {payload.get('seeds')}",
+        f"risk targets: {payload.get('risk_targets')}",
+        f"protocol complete: {payload.get('shared_threshold_protocol_complete')}",
+    ]
+
+
+def _threshold_boundary(payload: dict[str, Any] | None) -> str:
+    if not payload:
+        return (
+            "The current evidence is valid for ranking/fixed-coverage comparisons, but not for a "
+            "shared risk-target threshold-selection claim across every baseline."
+        )
+    return (
+        "The shared-threshold protocol is now auditable. Test risk may still miss the calibration target, "
+        "so this closes protocol fairness rather than proving formal risk control."
+    )
+
+
 def _row_status(rows: list[dict[str, Any]], requirement: str) -> str | None:
     for row in rows:
         if row["requirement"] == requirement:
@@ -257,11 +296,16 @@ def main() -> None:
         type=Path,
         default=Path("results/v4_strong_baseline_summary_20260529.json"),
     )
+    parser.add_argument(
+        "--threshold-summary",
+        type=Path,
+        default=Path("results/v4_shared_threshold_selection_20260529.json"),
+    )
     parser.add_argument("--output-json", type=Path, required=True)
     parser.add_argument("--output-md", type=Path, required=True)
     args = parser.parse_args()
 
-    summary = summarize_v4_split_threshold_protocol(args.strong_baseline_summary)
+    summary = summarize_v4_split_threshold_protocol(args.strong_baseline_summary, args.threshold_summary)
     _write_json(args.output_json, summary)
     args.output_md.parent.mkdir(parents=True, exist_ok=True)
     args.output_md.write_text(render_markdown(summary), encoding="utf-8")

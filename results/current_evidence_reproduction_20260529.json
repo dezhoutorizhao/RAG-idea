@@ -87,12 +87,20 @@
       "ready": false
     },
     {
+      "name": "compare_equal_budget_thresholds_v4",
+      "outputs": [
+        "results\\v4_shared_threshold_selection_20260529.json",
+        "results\\v4_shared_threshold_selection_20260529.md"
+      ],
+      "ready": true
+    },
+    {
       "name": "summarize_v4_split_threshold_protocol",
       "outputs": [
         "results\\v4_split_threshold_protocol_20260529.json",
         "results\\v4_split_threshold_protocol_20260529.md"
       ],
-      "ready": false
+      "ready": true
     },
     {
       "name": "summarize_v4_failure_taxonomy",
@@ -200,7 +208,7 @@
     "human_audit_v4_ready": false,
     "remote_storage_ready": false
   },
-  "generated_at_utc": "2026-05-29T02:49:26.839761+00:00",
+  "generated_at_utc": "2026-05-29T02:58:14.851496+00:00",
   "ready_for_neurips_main_claim": false,
   "root": ".",
   "strict": false

@@ -1,14 +1,15 @@
 # V4 Split and Threshold Protocol
 
-Generated: `2026-05-29T02:49:26.727022+00:00`
+Generated: `2026-05-29T02:58:14.743928+00:00`
 Source: `results\v4_strong_baseline_summary_20260529.json`
+Threshold source: `results\v4_shared_threshold_selection_20260529.json`
 
 Baseline files: `6`
 Comparison files: `6`
 Source-item group split supported: `True`
-Shared calibration-threshold claim supported: `False`
-Protocol complete: `False`
-Status counts: `{'pass': 6, 'partial': 0, 'missing': 1}`
+Shared calibration-threshold claim supported: `True`
+Protocol complete: `True`
+Status counts: `{'pass': 7, 'partial': 0, 'missing': 0}`
 
 ## Protocol Matrix
 
@@ -19,7 +20,7 @@ Status counts: `{'pass': 6, 'partial': 0, 'missing': 1}`
 | source_item_group_split | `pass` | comparison files: 6<br>each per-seed result records train/calibration/test source-item group counts | The comparison script uses source_item_group_id groups; this does not by itself add human labels. |
 | out_of_fold_logistic_baseline_split | `pass` | standalone baseline artifacts record logistic_scores='out-of-fold by source_item_group_id when possible'<br>baseline files checked: 6 | This covers standalone baseline scoring; train/test comparison artifacts train learned baselines inside each split. |
 | target_calibration_split | `pass` | comparison artifacts include train_frac, cal_frac, seeds, and calibration split sizes<br>calibrated CSRM targets are fit with train and calibration orbits before test scoring | This supports calibrated CSRM targets, not a universal baseline threshold-selection protocol. |
-| shared_calibration_threshold_selection | `missing` | compare_calibrated artifacts report fixed-coverage AUROC/risk/AURC metrics<br>no artifact records per-baseline thresholds selected on the shared calibration split | The current evidence is valid for ranking/fixed-coverage comparisons, but not for a shared risk-target threshold-selection claim across every baseline. |
+| shared_calibration_threshold_selection | `pass` | threshold artifact datasets: 6<br>seeds: [17, 31, 47]<br>risk targets: [0.2, 0.3]<br>protocol complete: True | The shared-threshold protocol is now auditable. Test risk may still miss the calibration target, so this closes protocol fairness rather than proving formal risk control. |
 | failed_baselines_reported | `pass` | v4 strong-baseline summary records losses/ties/wins against strongest baselines<br>coverage and budget-parity matrices preserve partial/missing baseline boundaries | Negative and partial baseline evidence must remain in the paper-facing limitations. |
 
 ## Claim Policy
