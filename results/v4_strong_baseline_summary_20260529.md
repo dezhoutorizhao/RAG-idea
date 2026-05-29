@@ -1,12 +1,12 @@
 # V4 Strong Baseline Coverage
 
-Generated: `2026-05-29T02:58:11.712262+00:00`
+Generated: `2026-05-29T03:17:25.060869+00:00`
 
 ## Baseline Package
 
 - Baseline files: `6`.
 - Comparison files: `6`.
-- Method union: `calibrated_logistic_context, calibrated_logistic_orbit, context_sufficiency_clean, corm_max_clean, corm_mean_clean, csrm_rule, equal_budget_ensemble_logistic, equal_budget_mean, equal_budget_min, equal_budget_q25, faithful_sure_multi, retrieval_stability, self_consistency_proxy`.
+- Method union: `calibrated_logistic_context, calibrated_logistic_orbit, context_sufficiency_clean, corm_max_clean, corm_mean_clean, csrm_rule, equal_budget_ensemble_logistic, equal_budget_mean, equal_budget_min, equal_budget_q25, faithful_sure_multi, retrieval_stability, self_consistency_proxy, template_self_consistency`.
 
 ## CSRM-Rule vs Strongest Non-CSRM
 
@@ -28,19 +28,19 @@ Generated: `2026-05-29T02:58:11.712262+00:00`
 | Target | Metric | Robust wins | Ties | Losses | Mean worst-case delta |
 |---|---|---:|---:|---:|---:|
 | csrm_rule | auroc_improvement | 0 | 2 | 4 | -0.1036 |
-| csrm_rule | risk_at_30_reduction | 0 | 2 | 4 | -0.1352 |
+| csrm_rule | risk_at_30_reduction | 0 | 2 | 4 | -0.1399 |
 | csrm_rule | risk_at_50_reduction | 0 | 2 | 4 | -0.1163 |
 | csrm_rule | aurc_reduction | 0 | 0 | 6 | -0.1108 |
 | csrm_minimax | auroc_improvement | 0 | 2 | 4 | -0.0925 |
-| csrm_minimax | risk_at_30_reduction | 0 | 2 | 4 | -0.1117 |
+| csrm_minimax | risk_at_30_reduction | 0 | 2 | 4 | -0.1164 |
 | csrm_minimax | risk_at_50_reduction | 0 | 2 | 4 | -0.0921 |
 | csrm_minimax | aurc_reduction | 0 | 0 | 6 | -0.1078 |
 | csrm_calibrated_logistic | auroc_improvement | 0 | 4 | 2 | -0.0140 |
-| csrm_calibrated_logistic | risk_at_30_reduction | 1 | 4 | 1 | -0.0132 |
+| csrm_calibrated_logistic | risk_at_30_reduction | 1 | 4 | 1 | -0.0179 |
 | csrm_calibrated_logistic | risk_at_50_reduction | 0 | 4 | 2 | -0.0242 |
 | csrm_calibrated_logistic | aurc_reduction | 1 | 0 | 5 | -0.0359 |
 | csrm_calibrated_isotonic | auroc_improvement | 0 | 3 | 3 | -0.0241 |
-| csrm_calibrated_isotonic | risk_at_30_reduction | 0 | 3 | 3 | -0.0304 |
+| csrm_calibrated_isotonic | risk_at_30_reduction | 0 | 3 | 3 | -0.0351 |
 | csrm_calibrated_isotonic | risk_at_50_reduction | 0 | 3 | 3 | -0.0347 |
 | csrm_calibrated_isotonic | aurc_reduction | 2 | 1 | 3 | -0.0405 |
 

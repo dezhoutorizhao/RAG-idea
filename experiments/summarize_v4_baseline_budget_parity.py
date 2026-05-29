@@ -79,6 +79,13 @@ METHOD_BUDGETS = {
         "llm_call_budget": 0,
         "boundary": "Proxy over existing answer consistency features; not a fresh multi-sample generation baseline.",
     },
+    "template_self_consistency": {
+        "status": "equal_orbit_budget",
+        "evidence_scope": "all_orbit_sets",
+        "verifier_call_budget": "all scored evidence sets in the orbit",
+        "llm_call_budget": 0,
+        "boundary": "Deterministic multi-template generation self-consistency over the same scored orbit evidence.",
+    },
     "equal_budget_ensemble_logistic": {
         "status": "equal_orbit_budget",
         "evidence_scope": "non_csrm_baseline_scores",

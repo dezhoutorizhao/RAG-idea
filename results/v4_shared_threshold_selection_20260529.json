@@ -102,14 +102,14 @@
       },
       {
         "family": "baseline",
-        "mean_cal_coverage": 0.4777551472833886,
-        "mean_test_coverage": 0.4729499226681648,
-        "mean_test_risk": 0.25581266796100555,
+        "mean_cal_coverage": 0.49848646618543924,
+        "mean_test_coverage": 0.48429079553583243,
+        "mean_test_risk": 0.2354227138043563,
         "method": "equal_budget_ensemble_logistic",
-        "no_accept_rows": 1,
+        "no_accept_rows": 0,
         "risk_target": 0.2,
         "row_count": 18,
-        "test_target_pass_rate": 0.3333333333333333
+        "test_target_pass_rate": 0.6111111111111112
       },
       {
         "family": "baseline",
@@ -176,6 +176,17 @@
         "risk_target": 0.2,
         "row_count": 18,
         "test_target_pass_rate": 0.16666666666666666
+      },
+      {
+        "family": "baseline",
+        "mean_cal_coverage": 0.13462594494365995,
+        "mean_test_coverage": 0.16144795127353265,
+        "mean_test_risk": 0.22965686274509803,
+        "method": "template_self_consistency",
+        "no_accept_rows": 10,
+        "risk_target": 0.2,
+        "row_count": 18,
+        "test_target_pass_rate": 0.2777777777777778
       },
       {
         "family": "baseline",
@@ -278,14 +289,14 @@
       },
       {
         "family": "baseline",
-        "mean_cal_coverage": 0.6041455842001412,
-        "mean_test_coverage": 0.5873477529329092,
-        "mean_test_risk": 0.2869634201299251,
+        "mean_cal_coverage": 0.6453363592323798,
+        "mean_test_coverage": 0.6119475170043618,
+        "mean_test_risk": 0.2755759906642798,
         "method": "equal_budget_ensemble_logistic",
-        "no_accept_rows": 1,
+        "no_accept_rows": 0,
         "risk_target": 0.3,
         "row_count": 18,
-        "test_target_pass_rate": 0.4444444444444444
+        "test_target_pass_rate": 0.5555555555555556
       },
       {
         "family": "baseline",
@@ -352,95 +363,106 @@
         "risk_target": 0.3,
         "row_count": 18,
         "test_target_pass_rate": 0.16666666666666666
+      },
+      {
+        "family": "baseline",
+        "mean_cal_coverage": 0.16097274629046132,
+        "mean_test_coverage": 0.18995036673246987,
+        "mean_test_risk": 0.27882266941864464,
+        "method": "template_self_consistency",
+        "no_accept_rows": 9,
+        "risk_target": 0.3,
+        "row_count": 18,
+        "test_target_pass_rate": 0.2777777777777778
       }
     ],
     "target_vs_strongest_baseline": [
       {
-        "losses": 11,
-        "mean_coverage_delta": -0.2392733754582999,
+        "losses": 14,
+        "mean_coverage_delta": -0.27399559768052206,
         "mean_test_risk": 0.3315403125457473,
         "missed_target_rows": 13,
         "risk_target": 0.2,
         "row_count": 18,
         "target": "csrm_rule",
-        "ties": 5,
+        "ties": 2,
         "wins": 2
       },
       {
-        "losses": 12,
-        "mean_coverage_delta": -0.24066226434718876,
+        "losses": 13,
+        "mean_coverage_delta": -0.275384486569411,
         "mean_test_risk": 0.32739970878557834,
         "missed_target_rows": 12,
         "risk_target": 0.2,
         "row_count": 18,
         "target": "csrm_minimax",
         "ties": 3,
-        "wins": 3
+        "wins": 2
       },
       {
-        "losses": 8,
-        "mean_coverage_delta": -0.08611314124304578,
+        "losses": 11,
+        "mean_coverage_delta": -0.12083536346526803,
         "mean_test_risk": 0.2340606707870135,
         "missed_target_rows": 7,
         "risk_target": 0.2,
         "row_count": 18,
         "target": "csrm_calibrated_logistic",
-        "ties": 8,
-        "wins": 2
+        "ties": 6,
+        "wins": 1
       },
       {
-        "losses": 12,
-        "mean_coverage_delta": -0.05230825621864858,
+        "losses": 13,
+        "mean_coverage_delta": -0.0870304784408708,
         "mean_test_risk": 0.14530812324929973,
         "missed_target_rows": 4,
         "risk_target": 0.2,
         "row_count": 18,
         "target": "csrm_calibrated_isotonic",
-        "ties": 5,
+        "ties": 4,
         "wins": 1
       },
       {
-        "losses": 10,
-        "mean_coverage_delta": -0.1980466529247017,
+        "losses": 11,
+        "mean_coverage_delta": -0.2230466529247017,
         "mean_test_risk": 0.34897943610170845,
         "missed_target_rows": 11,
         "risk_target": 0.3,
         "row_count": 18,
         "target": "csrm_rule",
-        "ties": 5,
+        "ties": 4,
         "wins": 3
       },
       {
         "losses": 10,
-        "mean_coverage_delta": -0.19116834604639482,
+        "mean_coverage_delta": -0.21616834604639482,
         "mean_test_risk": 0.4294002413500998,
         "missed_target_rows": 11,
         "risk_target": 0.3,
         "row_count": 18,
         "target": "csrm_minimax",
-        "ties": 6,
-        "wins": 2
+        "ties": 5,
+        "wins": 3
       },
       {
-        "losses": 8,
-        "mean_coverage_delta": -0.12053521291326172,
+        "losses": 10,
+        "mean_coverage_delta": -0.14553521291326169,
         "mean_test_risk": 0.3190729515223519,
         "missed_target_rows": 8,
         "risk_target": 0.3,
         "row_count": 18,
         "target": "csrm_calibrated_logistic",
-        "ties": 7,
-        "wins": 3
+        "ties": 6,
+        "wins": 2
       },
       {
-        "losses": 12,
-        "mean_coverage_delta": -0.09167246514807492,
+        "losses": 14,
+        "mean_coverage_delta": -0.11667246514807493,
         "mean_test_risk": 0.16217347467347468,
         "missed_target_rows": 4,
         "risk_target": 0.3,
         "row_count": 18,
         "target": "csrm_calibrated_isotonic",
-        "ties": 5,
+        "ties": 3,
         "wins": 1
       }
     ]
@@ -455,7 +477,7 @@
       "negative": 100,
       "per_seed": [
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 17,
           "split_sizes": {
@@ -1082,6 +1104,44 @@
                 "error_count": 0,
                 "no_accept": true,
                 "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.33333333433333334,
+                "total_count": 40
+              },
+              "dataset": "fever_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 17,
+              "test": {
+                "accepted_count": 3,
+                "coverage": 0.08571428571428572,
+                "error_count": 2,
+                "no_accept": false,
+                "risk": 0.6666666666666666,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.33333333433333334,
+                "total_count": 35
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.5197278911564627,
+                "auroc": 0.46166666666666667,
+                "risk_at_30": 0.5454545454545454,
+                "risk_at_50": 0.5
+              },
+              "threshold": 0.33333333433333334
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": false,
@@ -1682,11 +1742,49 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.33333333433333334,
+                "total_count": 40
+              },
+              "dataset": "fever_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 17,
+              "test": {
+                "accepted_count": 3,
+                "coverage": 0.08571428571428572,
+                "error_count": 2,
+                "no_accept": false,
+                "risk": 0.6666666666666666,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.33333333433333334,
+                "total_count": 35
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.5197278911564627,
+                "auroc": 0.46166666666666667,
+                "risk_at_30": 0.5454545454545454,
+                "risk_at_50": 0.5
+              },
+              "threshold": 0.33333333433333334
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 31,
           "split_sizes": {
@@ -2308,6 +2406,44 @@
             },
             {
               "calibration": {
+                "accepted_count": 1,
+                "coverage": 0.02631578947368421,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 38
+              },
+              "dataset": "fever_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 31,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.6666666666666666,
+                "total_count": 41
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.25609756097560976,
+                "auroc": 0.5,
+                "risk_at_30": 0.5384615384615384,
+                "risk_at_50": 0.5714285714285714
+              },
+              "threshold": 0.6666666666666666
+            },
+            {
+              "calibration": {
                 "accepted_count": 0,
                 "coverage": 0.0,
                 "error_count": 0,
@@ -2913,11 +3049,49 @@
                 "risk_at_50": 0.5714285714285714
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 1,
+                "coverage": 0.02631578947368421,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 38
+              },
+              "dataset": "fever_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 31,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.6666666666666666,
+                "total_count": 41
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.25609756097560976,
+                "auroc": 0.5,
+                "risk_at_30": 0.5384615384615384,
+                "risk_at_50": 0.5714285714285714
+              },
+              "threshold": 0.6666666666666666
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 47,
           "split_sizes": {
@@ -3281,7 +3455,7 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.061985605879988775,
+                "threshold": 0.06256018961790456,
                 "total_count": 42
               },
               "dataset": "fever_v4_n100_structbalanced",
@@ -3290,15 +3464,15 @@
               "risk_target": 0.2,
               "seed": 47,
               "test": {
-                "accepted_count": 26,
-                "coverage": 0.6190476190476191,
-                "error_count": 6,
+                "accepted_count": 25,
+                "coverage": 0.5952380952380952,
+                "error_count": 5,
                 "no_accept": false,
-                "risk": 0.23076923076923078,
+                "risk": 0.2,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
-                "target_met": false,
-                "threshold": 0.061985605879988775,
+                "target_met": true,
+                "threshold": 0.06256018961790456,
                 "total_count": 42
               },
               "test_ranking_metrics": {
@@ -3307,7 +3481,7 @@
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.04761904761904767
               },
-              "threshold": 0.061985605879988775
+              "threshold": 0.06256018961790456
             },
             {
               "calibration": {
@@ -3536,6 +3710,44 @@
                 "risk_at_50": 0.5238095238095238
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.33333333433333334,
+                "total_count": 42
+              },
+              "dataset": "fever_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 47,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.33333333433333334,
+                "total_count": 42
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.2619047619047619,
+                "auroc": 0.5,
+                "risk_at_30": 0.5384615384615384,
+                "risk_at_50": 0.5238095238095238
+              },
+              "threshold": 0.33333333433333334
             },
             {
               "calibration": {
@@ -3889,7 +4101,7 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.013866939071078435,
+                "threshold": 0.013912886418483558,
                 "total_count": 42
               },
               "dataset": "fever_v4_n100_structbalanced",
@@ -3906,7 +4118,7 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.013866939071078435,
+                "threshold": 0.013912886418483558,
                 "total_count": 42
               },
               "test_ranking_metrics": {
@@ -3915,7 +4127,7 @@
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.04761904761904767
               },
-              "threshold": 0.013866939071078435
+              "threshold": 0.013912886418483558
             },
             {
               "calibration": {
@@ -4144,6 +4356,44 @@
                 "risk_at_50": 0.5238095238095238
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.33333333433333334,
+                "total_count": 42
+              },
+              "dataset": "fever_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 47,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.33333333433333334,
+                "total_count": 42
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.2619047619047619,
+                "auroc": 0.5,
+                "risk_at_30": 0.5384615384615384,
+                "risk_at_50": 0.5238095238095238
+              },
+              "threshold": 0.33333333433333334
             }
           ]
         }
@@ -4161,7 +4411,7 @@
       "negative": 100,
       "per_seed": [
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 17,
           "split_sizes": {
@@ -4525,7 +4775,7 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.07567291594594433,
+                "threshold": 0.07750942965007684,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_hardneg_n100",
@@ -4534,24 +4784,24 @@
               "risk_target": 0.2,
               "seed": 17,
               "test": {
-                "accepted_count": 26,
-                "coverage": 0.65,
-                "error_count": 6,
+                "accepted_count": 22,
+                "coverage": 0.55,
+                "error_count": 2,
                 "no_accept": false,
-                "risk": 0.23076923076923078,
+                "risk": 0.09090909090909091,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
-                "target_met": false,
-                "threshold": 0.07567291594594433,
+                "target_met": true,
+                "threshold": 0.07750942965007684,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.1424688057040998,
+                "aurc": 0.14528265851795263,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.07567291594594433
+              "threshold": 0.07750942965007684
             },
             {
               "calibration": {
@@ -4777,6 +5027,44 @@
                 "aurc": 0.5,
                 "auroc": 0.5,
                 "risk_at_30": 0.5,
+                "risk_at_50": 0.5
+              },
+              "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_hardneg_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 17,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.44062500000000004,
+                "auroc": 0.555,
+                "risk_at_30": 0.41666666666666663,
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
@@ -5133,7 +5421,7 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.07411994010211043,
+                "threshold": 0.07427024959781234,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_hardneg_n100",
@@ -5142,24 +5430,24 @@
               "risk_target": 0.3,
               "seed": 17,
               "test": {
-                "accepted_count": 29,
-                "coverage": 0.725,
-                "error_count": 9,
+                "accepted_count": 30,
+                "coverage": 0.75,
+                "error_count": 10,
                 "no_accept": false,
-                "risk": 0.3103448275862069,
+                "risk": 0.3333333333333333,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.07411994010211043,
+                "threshold": 0.07427024959781234,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.1424688057040998,
+                "aurc": 0.14528265851795263,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.07411994010211043
+              "threshold": 0.07427024959781234
             },
             {
               "calibration": {
@@ -5388,11 +5676,49 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_hardneg_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 17,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.44062500000000004,
+                "auroc": 0.555,
+                "risk_at_30": 0.41666666666666663,
+                "risk_at_50": 0.5
+              },
+              "threshold": 1.000000001
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 31,
           "split_sizes": {
@@ -5756,7 +6082,7 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.08040217796865233,
+                "threshold": 0.08022200671073931,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_hardneg_n100",
@@ -5765,24 +6091,24 @@
               "risk_target": 0.2,
               "seed": 31,
               "test": {
-                "accepted_count": 26,
-                "coverage": 0.65,
-                "error_count": 6,
+                "accepted_count": 27,
+                "coverage": 0.675,
+                "error_count": 7,
                 "no_accept": false,
-                "risk": 0.23076923076923078,
+                "risk": 0.25925925925925924,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.08040217796865233,
+                "threshold": 0.08022200671073931,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.150571824009324,
+                "aurc": 0.15015782828282828,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.08040217796865233
+              "threshold": 0.08022200671073931
             },
             {
               "calibration": {
@@ -6009,6 +6335,44 @@
                 "auroc": 0.5,
                 "risk_at_30": 0.5,
                 "risk_at_50": 0.5
+              },
+              "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_hardneg_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 31,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.4521153846153846,
+                "auroc": 0.54,
+                "risk_at_30": 0.33333333333333337,
+                "risk_at_50": 0.4
               },
               "threshold": 1.000000001
             },
@@ -6364,7 +6728,7 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.07684423299246342,
+                "threshold": 0.07691254210467822,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_hardneg_n100",
@@ -6381,16 +6745,16 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.07684423299246342,
+                "threshold": 0.07691254210467822,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.150571824009324,
+                "aurc": 0.15015782828282828,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.07684423299246342
+              "threshold": 0.07691254210467822
             },
             {
               "calibration": {
@@ -6619,11 +6983,49 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_hardneg_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 31,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.4521153846153846,
+                "auroc": 0.54,
+                "risk_at_30": 0.33333333333333337,
+                "risk_at_50": 0.4
+              },
+              "threshold": 1.000000001
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 47,
           "split_sizes": {
@@ -6987,7 +7389,7 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.0925337563918826,
+                "threshold": 0.09317730880003379,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_hardneg_n100",
@@ -6996,24 +7398,24 @@
               "risk_target": 0.2,
               "seed": 47,
               "test": {
-                "accepted_count": 26,
-                "coverage": 0.65,
-                "error_count": 6,
+                "accepted_count": 25,
+                "coverage": 0.625,
+                "error_count": 5,
                 "no_accept": false,
-                "risk": 0.23076923076923078,
+                "risk": 0.2,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
-                "target_met": false,
-                "threshold": 0.0925337563918826,
+                "target_met": true,
+                "threshold": 0.09317730880003379,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.1480324387819644,
+                "aurc": 0.14842799188640973,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.0925337563918826
+              "threshold": 0.09317730880003379
             },
             {
               "calibration": {
@@ -7240,6 +7642,44 @@
                 "auroc": 0.5,
                 "risk_at_30": 0.5,
                 "risk_at_50": 0.5
+              },
+              "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_hardneg_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 47,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.40454545454545454,
+                "auroc": 0.6275,
+                "risk_at_30": 0.41666666666666663,
+                "risk_at_50": 0.35
               },
               "threshold": 1.000000001
             },
@@ -7595,7 +8035,7 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.09130445130335954,
+                "threshold": 0.09125426689027039,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_hardneg_n100",
@@ -7604,24 +8044,24 @@
               "risk_target": 0.3,
               "seed": 47,
               "test": {
-                "accepted_count": 29,
-                "coverage": 0.725,
-                "error_count": 9,
+                "accepted_count": 27,
+                "coverage": 0.675,
+                "error_count": 7,
                 "no_accept": false,
-                "risk": 0.3103448275862069,
+                "risk": 0.25925925925925924,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
-                "target_met": false,
-                "threshold": 0.09130445130335954,
+                "target_met": true,
+                "threshold": 0.09125426689027039,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.1480324387819644,
+                "aurc": 0.14842799188640973,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.09130445130335954
+              "threshold": 0.09125426689027039
             },
             {
               "calibration": {
@@ -7850,6 +8290,44 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_hardneg_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 47,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.40454545454545454,
+                "auroc": 0.6275,
+                "risk_at_30": 0.41666666666666663,
+                "risk_at_50": 0.35
+              },
+              "threshold": 1.000000001
             }
           ]
         }
@@ -7867,7 +8345,7 @@
       "negative": 100,
       "per_seed": [
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 17,
           "split_sizes": {
@@ -8223,15 +8701,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 11,
-                "coverage": 0.275,
-                "error_count": 2,
+                "accepted_count": 7,
+                "coverage": 0.175,
+                "error_count": 1,
                 "no_accept": false,
-                "risk": 0.18181818181818182,
+                "risk": 0.14285714285714285,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.6203804969990152,
+                "threshold": 0.649979459848028,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_n100_hardmatched",
@@ -8240,24 +8718,24 @@
               "risk_target": 0.2,
               "seed": 17,
               "test": {
-                "accepted_count": 11,
-                "coverage": 0.275,
-                "error_count": 4,
+                "accepted_count": 7,
+                "coverage": 0.175,
+                "error_count": 3,
                 "no_accept": false,
-                "risk": 0.36363636363636365,
+                "risk": 0.42857142857142855,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.6203804969990152,
+                "threshold": 0.649979459848028,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.4165789497171147,
-                "auroc": 0.705,
+                "aurc": 0.39124008641997265,
+                "auroc": 0.7175,
                 "risk_at_30": 0.33333333333333337,
-                "risk_at_50": 0.35
+                "risk_at_50": 0.25
               },
-              "threshold": 0.6203804969990152
+              "threshold": 0.649979459848028
             },
             {
               "calibration": {
@@ -8483,6 +8961,44 @@
                 "aurc": 0.5,
                 "auroc": 0.5,
                 "risk_at_30": 0.5,
+                "risk_at_50": 0.5
+              },
+              "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_n100_hardmatched",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 17,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.482777149321267,
+                "auroc": 0.525,
+                "risk_at_30": 0.41666666666666663,
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
@@ -8831,15 +9347,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 15,
-                "coverage": 0.375,
-                "error_count": 4,
+                "accepted_count": 12,
+                "coverage": 0.3,
+                "error_count": 3,
                 "no_accept": false,
-                "risk": 0.26666666666666666,
+                "risk": 0.25,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.6093742147411073,
+                "threshold": 0.6415202727238548,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_n100_hardmatched",
@@ -8848,24 +9364,24 @@
               "risk_target": 0.3,
               "seed": 17,
               "test": {
-                "accepted_count": 13,
-                "coverage": 0.325,
-                "error_count": 4,
+                "accepted_count": 7,
+                "coverage": 0.175,
+                "error_count": 3,
                 "no_accept": false,
-                "risk": 0.3076923076923077,
+                "risk": 0.42857142857142855,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.6093742147411073,
+                "threshold": 0.6415202727238548,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.4165789497171147,
-                "auroc": 0.705,
+                "aurc": 0.39124008641997265,
+                "auroc": 0.7175,
                 "risk_at_30": 0.33333333333333337,
-                "risk_at_50": 0.35
+                "risk_at_50": 0.25
               },
-              "threshold": 0.6093742147411073
+              "threshold": 0.6415202727238548
             },
             {
               "calibration": {
@@ -9094,11 +9610,49 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_n100_hardmatched",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 17,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.482777149321267,
+                "auroc": 0.525,
+                "risk_at_30": 0.41666666666666663,
+                "risk_at_50": 0.5
+              },
+              "threshold": 1.000000001
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 31,
           "split_sizes": {
@@ -9454,15 +10008,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 1,
-                "coverage": 0.025,
-                "error_count": 0,
+                "accepted_count": 5,
+                "coverage": 0.125,
+                "error_count": 1,
                 "no_accept": false,
-                "risk": 0.0,
+                "risk": 0.2,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.7144087090736433,
+                "threshold": 0.6285903680472245,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_n100_hardmatched",
@@ -9471,24 +10025,24 @@
               "risk_target": 0.2,
               "seed": 31,
               "test": {
-                "accepted_count": 0,
-                "coverage": 0.0,
-                "error_count": 0,
-                "no_accept": true,
-                "risk": null,
+                "accepted_count": 10,
+                "coverage": 0.25,
+                "error_count": 2,
+                "no_accept": false,
+                "risk": 0.2,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
-                "target_met": false,
-                "threshold": 0.7144087090736433,
+                "target_met": true,
+                "threshold": 0.6285903680472245,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.2906847355040602,
-                "auroc": 0.82,
-                "risk_at_30": 0.16666666666666663,
+                "aurc": 0.2558383372991136,
+                "auroc": 0.815,
+                "risk_at_30": 0.25,
                 "risk_at_50": 0.25
               },
-              "threshold": 0.7144087090736433
+              "threshold": 0.6285903680472245
             },
             {
               "calibration": {
@@ -9715,6 +10269,44 @@
                 "auroc": 0.5,
                 "risk_at_30": 0.5,
                 "risk_at_50": 0.5
+              },
+              "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_n100_hardmatched",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 31,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.3982295482295482,
+                "auroc": 0.6275,
+                "risk_at_30": 0.33333333333333337,
+                "risk_at_50": 0.44999999999999996
               },
               "threshold": 1.000000001
             },
@@ -10062,15 +10654,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 1,
-                "coverage": 0.025,
-                "error_count": 0,
+                "accepted_count": 20,
+                "coverage": 0.5,
+                "error_count": 6,
                 "no_accept": false,
-                "risk": 0.0,
+                "risk": 0.3,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.7144087090736433,
+                "threshold": 0.5616650627685109,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_n100_hardmatched",
@@ -10079,24 +10671,24 @@
               "risk_target": 0.3,
               "seed": 31,
               "test": {
-                "accepted_count": 0,
-                "coverage": 0.0,
-                "error_count": 0,
-                "no_accept": true,
-                "risk": null,
+                "accepted_count": 20,
+                "coverage": 0.5,
+                "error_count": 5,
+                "no_accept": false,
+                "risk": 0.25,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
-                "target_met": false,
-                "threshold": 0.7144087090736433,
+                "target_met": true,
+                "threshold": 0.5616650627685109,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.2906847355040602,
-                "auroc": 0.82,
-                "risk_at_30": 0.16666666666666663,
+                "aurc": 0.2558383372991136,
+                "auroc": 0.815,
+                "risk_at_30": 0.25,
                 "risk_at_50": 0.25
               },
-              "threshold": 0.7144087090736433
+              "threshold": 0.5616650627685109
             },
             {
               "calibration": {
@@ -10325,11 +10917,49 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_n100_hardmatched",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 31,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.3982295482295482,
+                "auroc": 0.6275,
+                "risk_at_30": 0.33333333333333337,
+                "risk_at_50": 0.44999999999999996
+              },
+              "threshold": 1.000000001
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 47,
           "split_sizes": {
@@ -10685,15 +11315,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 3,
-                "coverage": 0.075,
+                "accepted_count": 1,
+                "coverage": 0.025,
                 "error_count": 0,
                 "no_accept": false,
                 "risk": 0.0,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.6569820775107331,
+                "threshold": 0.6715808453679196,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_n100_hardmatched",
@@ -10710,16 +11340,16 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.6569820775107331,
+                "threshold": 0.6715808453679196,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.4125816282478716,
-                "auroc": 0.72,
-                "risk_at_30": 0.33333333333333337,
+                "aurc": 0.3875187042556212,
+                "auroc": 0.7475,
+                "risk_at_30": 0.16666666666666663,
                 "risk_at_50": 0.35
               },
-              "threshold": 0.6569820775107331
+              "threshold": 0.6715808453679196
             },
             {
               "calibration": {
@@ -10946,6 +11576,44 @@
                 "auroc": 0.5,
                 "risk_at_30": 0.5,
                 "risk_at_50": 0.5
+              },
+              "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_n100_hardmatched",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 47,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.4704861111111111,
+                "auroc": 0.55,
+                "risk_at_30": 0.41666666666666663,
+                "risk_at_50": 0.55
               },
               "threshold": 1.000000001
             },
@@ -11293,15 +11961,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 17,
-                "coverage": 0.425,
+                "accepted_count": 18,
+                "coverage": 0.45,
                 "error_count": 5,
                 "no_accept": false,
-                "risk": 0.29411764705882354,
+                "risk": 0.2777777777777778,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.6033384233400141,
+                "threshold": 0.5834436504521441,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_n100_hardmatched",
@@ -11310,24 +11978,24 @@
               "risk_target": 0.3,
               "seed": 47,
               "test": {
-                "accepted_count": 12,
-                "coverage": 0.3,
+                "accepted_count": 16,
+                "coverage": 0.4,
                 "error_count": 4,
                 "no_accept": false,
-                "risk": 0.3333333333333333,
+                "risk": 0.25,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
-                "target_met": false,
-                "threshold": 0.6033384233400141,
+                "target_met": true,
+                "threshold": 0.5834436504521441,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.4125816282478716,
-                "auroc": 0.72,
-                "risk_at_30": 0.33333333333333337,
+                "aurc": 0.3875187042556212,
+                "auroc": 0.7475,
+                "risk_at_30": 0.16666666666666663,
                 "risk_at_50": 0.35
               },
-              "threshold": 0.6033384233400141
+              "threshold": 0.5834436504521441
             },
             {
               "calibration": {
@@ -11556,6 +12224,44 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_n100_hardmatched",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 47,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.4704861111111111,
+                "auroc": 0.55,
+                "risk_at_30": 0.41666666666666663,
+                "risk_at_50": 0.55
+              },
+              "threshold": 1.000000001
             }
           ]
         }
@@ -11573,7 +12279,7 @@
       "negative": 100,
       "per_seed": [
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 17,
           "split_sizes": {
@@ -11929,15 +12635,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 5,
-                "coverage": 0.12195121951219512,
-                "error_count": 1,
+                "accepted_count": 11,
+                "coverage": 0.2682926829268293,
+                "error_count": 2,
                 "no_accept": false,
-                "risk": 0.2,
+                "risk": 0.18181818181818182,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.8055859152856886,
+                "threshold": 0.7606167532492737,
                 "total_count": 41
               },
               "dataset": "hotpot_v4_n100_structbalanced",
@@ -11946,24 +12652,24 @@
               "risk_target": 0.2,
               "seed": 17,
               "test": {
-                "accepted_count": 6,
-                "coverage": 0.13953488372093023,
+                "accepted_count": 8,
+                "coverage": 0.18604651162790697,
                 "error_count": 2,
                 "no_accept": false,
-                "risk": 0.3333333333333333,
+                "risk": 0.25,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.8055859152856886,
+                "threshold": 0.7606167532492737,
                 "total_count": 43
               },
               "test_ranking_metrics": {
-                "aurc": 0.43293390369723184,
-                "auroc": 0.7326086956521739,
-                "risk_at_30": 0.5384615384615384,
+                "aurc": 0.38170575412079283,
+                "auroc": 0.7673913043478261,
+                "risk_at_30": 0.3846153846153846,
                 "risk_at_50": 0.31818181818181823
               },
-              "threshold": 0.8055859152856886
+              "threshold": 0.7606167532492737
             },
             {
               "calibration": {
@@ -12192,6 +12898,44 @@
                 "risk_at_50": 0.5454545454545454
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 5,
+                "coverage": 0.12195121951219512,
+                "error_count": 1,
+                "no_accept": false,
+                "risk": 0.2,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 1.0,
+                "total_count": 41
+              },
+              "dataset": "hotpot_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 17,
+              "test": {
+                "accepted_count": 17,
+                "coverage": 0.3953488372093023,
+                "error_count": 8,
+                "no_accept": false,
+                "risk": 0.47058823529411764,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.0,
+                "total_count": 43
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.49992408761982143,
+                "auroc": 0.5510869565217391,
+                "risk_at_30": 0.3846153846153846,
+                "risk_at_50": 0.5454545454545454
+              },
+              "threshold": 1.0
             },
             {
               "calibration": {
@@ -12537,15 +13281,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 5,
-                "coverage": 0.12195121951219512,
-                "error_count": 1,
+                "accepted_count": 17,
+                "coverage": 0.4146341463414634,
+                "error_count": 5,
                 "no_accept": false,
-                "risk": 0.2,
+                "risk": 0.29411764705882354,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.8055859152856886,
+                "threshold": 0.7127381230490208,
                 "total_count": 41
               },
               "dataset": "hotpot_v4_n100_structbalanced",
@@ -12554,24 +13298,24 @@
               "risk_target": 0.3,
               "seed": 17,
               "test": {
-                "accepted_count": 6,
-                "coverage": 0.13953488372093023,
-                "error_count": 2,
+                "accepted_count": 12,
+                "coverage": 0.27906976744186046,
+                "error_count": 4,
                 "no_accept": false,
                 "risk": 0.3333333333333333,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.8055859152856886,
+                "threshold": 0.7127381230490208,
                 "total_count": 43
               },
               "test_ranking_metrics": {
-                "aurc": 0.43293390369723184,
-                "auroc": 0.7326086956521739,
-                "risk_at_30": 0.5384615384615384,
+                "aurc": 0.38170575412079283,
+                "auroc": 0.7673913043478261,
+                "risk_at_30": 0.3846153846153846,
                 "risk_at_50": 0.31818181818181823
               },
-              "threshold": 0.8055859152856886
+              "threshold": 0.7127381230490208
             },
             {
               "calibration": {
@@ -12800,11 +13544,49 @@
                 "risk_at_50": 0.5454545454545454
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 5,
+                "coverage": 0.12195121951219512,
+                "error_count": 1,
+                "no_accept": false,
+                "risk": 0.2,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 1.0,
+                "total_count": 41
+              },
+              "dataset": "hotpot_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 17,
+              "test": {
+                "accepted_count": 17,
+                "coverage": 0.3953488372093023,
+                "error_count": 8,
+                "no_accept": false,
+                "risk": 0.47058823529411764,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.0,
+                "total_count": 43
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.49992408761982143,
+                "auroc": 0.5510869565217391,
+                "risk_at_30": 0.3846153846153846,
+                "risk_at_50": 0.5454545454545454
+              },
+              "threshold": 1.0
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 31,
           "split_sizes": {
@@ -13160,15 +13942,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 2,
-                "coverage": 0.05405405405405406,
-                "error_count": 0,
+                "accepted_count": 10,
+                "coverage": 0.2702702702702703,
+                "error_count": 2,
                 "no_accept": false,
-                "risk": 0.0,
+                "risk": 0.2,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.7896142512558887,
+                "threshold": 0.6951786128813902,
                 "total_count": 37
               },
               "dataset": "hotpot_v4_n100_structbalanced",
@@ -13177,24 +13959,24 @@
               "risk_target": 0.2,
               "seed": 31,
               "test": {
-                "accepted_count": 2,
-                "coverage": 0.05405405405405406,
-                "error_count": 0,
+                "accepted_count": 10,
+                "coverage": 0.2702702702702703,
+                "error_count": 1,
                 "no_accept": false,
-                "risk": 0.0,
+                "risk": 0.1,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.7896142512558887,
+                "threshold": 0.6951786128813902,
                 "total_count": 37
               },
               "test_ranking_metrics": {
-                "aurc": 0.2318006574867877,
-                "auroc": 0.8176470588235294,
+                "aurc": 0.20730966336697407,
+                "auroc": 0.8470588235294118,
                 "risk_at_30": 0.16666666666666663,
-                "risk_at_50": 0.3157894736842105
+                "risk_at_50": 0.26315789473684215
               },
-              "threshold": 0.7896142512558887
+              "threshold": 0.6951786128813902
             },
             {
               "calibration": {
@@ -13420,6 +14202,44 @@
                 "aurc": 0.45945945945945943,
                 "auroc": 0.5,
                 "risk_at_30": 0.41666666666666663,
+                "risk_at_50": 0.42105263157894735
+              },
+              "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 37
+              },
+              "dataset": "hotpot_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 31,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 37
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.3154587569594682,
+                "auroc": 0.6794117647058824,
+                "risk_at_30": 0.25,
                 "risk_at_50": 0.42105263157894735
               },
               "threshold": 1.000000001
@@ -13768,15 +14588,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 25,
-                "coverage": 0.6756756756756757,
-                "error_count": 7,
+                "accepted_count": 27,
+                "coverage": 0.7297297297297297,
+                "error_count": 8,
                 "no_accept": false,
-                "risk": 0.28,
+                "risk": 0.2962962962962963,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.5003803557031153,
+                "threshold": 0.4736840523528217,
                 "total_count": 37
               },
               "dataset": "hotpot_v4_n100_structbalanced",
@@ -13793,16 +14613,16 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.5003803557031153,
+                "threshold": 0.4736840523528217,
                 "total_count": 37
               },
               "test_ranking_metrics": {
-                "aurc": 0.2318006574867877,
-                "auroc": 0.8176470588235294,
+                "aurc": 0.20730966336697407,
+                "auroc": 0.8470588235294118,
                 "risk_at_30": 0.16666666666666663,
-                "risk_at_50": 0.3157894736842105
+                "risk_at_50": 0.26315789473684215
               },
-              "threshold": 0.5003803557031153
+              "threshold": 0.4736840523528217
             },
             {
               "calibration": {
@@ -14031,11 +14851,49 @@
                 "risk_at_50": 0.42105263157894735
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 37
+              },
+              "dataset": "hotpot_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 31,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 37
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.3154587569594682,
+                "auroc": 0.6794117647058824,
+                "risk_at_30": 0.25,
+                "risk_at_50": 0.42105263157894735
+              },
+              "threshold": 1.000000001
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 47,
           "split_sizes": {
@@ -14391,15 +15249,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 18,
-                "coverage": 0.5454545454545454,
-                "error_count": 3,
+                "accepted_count": 20,
+                "coverage": 0.6060606060606061,
+                "error_count": 4,
                 "no_accept": false,
-                "risk": 0.16666666666666666,
+                "risk": 0.2,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.6125823719300739,
+                "threshold": 0.5632462179488591,
                 "total_count": 33
               },
               "dataset": "hotpot_v4_n100_structbalanced",
@@ -14408,24 +15266,24 @@
               "risk_target": 0.2,
               "seed": 47,
               "test": {
-                "accepted_count": 20,
-                "coverage": 0.43478260869565216,
-                "error_count": 5,
+                "accepted_count": 23,
+                "coverage": 0.5,
+                "error_count": 6,
                 "no_accept": false,
-                "risk": 0.25,
+                "risk": 0.2608695652173913,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.6125823719300739,
+                "threshold": 0.5632462179488591,
                 "total_count": 46
               },
               "test_ranking_metrics": {
-                "aurc": 0.39993463737384116,
-                "auroc": 0.8346153846153846,
-                "risk_at_30": 0.2857142857142857,
+                "aurc": 0.38479348959051135,
+                "auroc": 0.85,
+                "risk_at_30": 0.2142857142857143,
                 "risk_at_50": 0.26086956521739135
               },
-              "threshold": 0.6125823719300739
+              "threshold": 0.5632462179488591
             },
             {
               "calibration": {
@@ -14651,6 +15509,44 @@
                 "aurc": 0.5652173913043479,
                 "auroc": 0.5,
                 "risk_at_30": 0.5,
+                "risk_at_50": 0.5652173913043479
+              },
+              "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 33
+              },
+              "dataset": "hotpot_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 47,
+              "test": {
+                "accepted_count": 0,
+                "coverage": 0.0,
+                "error_count": 0,
+                "no_accept": true,
+                "risk": null,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.000000001,
+                "total_count": 46
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.5247132481487272,
+                "auroc": 0.5961538461538461,
+                "risk_at_30": 0.5714285714285714,
                 "risk_at_50": 0.5652173913043479
               },
               "threshold": 1.000000001
@@ -14999,15 +15895,15 @@
             },
             {
               "calibration": {
-                "accepted_count": 28,
-                "coverage": 0.8484848484848485,
+                "accepted_count": 27,
+                "coverage": 0.8181818181818182,
                 "error_count": 8,
                 "no_accept": false,
-                "risk": 0.2857142857142857,
+                "risk": 0.2962962962962963,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.21338225236455996,
+                "threshold": 0.3992201127045284,
                 "total_count": 33
               },
               "dataset": "hotpot_v4_n100_structbalanced",
@@ -15016,24 +15912,24 @@
               "risk_target": 0.3,
               "seed": 47,
               "test": {
-                "accepted_count": 33,
-                "coverage": 0.717391304347826,
-                "error_count": 13,
+                "accepted_count": 32,
+                "coverage": 0.6956521739130435,
+                "error_count": 12,
                 "no_accept": false,
-                "risk": 0.3939393939393939,
+                "risk": 0.375,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.21338225236455996,
+                "threshold": 0.3992201127045284,
                 "total_count": 46
               },
               "test_ranking_metrics": {
-                "aurc": 0.39993463737384116,
-                "auroc": 0.8346153846153846,
-                "risk_at_30": 0.2857142857142857,
+                "aurc": 0.38479348959051135,
+                "auroc": 0.85,
+                "risk_at_30": 0.2142857142857143,
                 "risk_at_50": 0.26086956521739135
               },
-              "threshold": 0.21338225236455996
+              "threshold": 0.3992201127045284
             },
             {
               "calibration": {
@@ -15262,6 +16158,44 @@
                 "risk_at_50": 0.5652173913043479
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 14,
+                "coverage": 0.42424242424242425,
+                "error_count": 3,
+                "no_accept": false,
+                "risk": 0.21428571428571427,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 1.0,
+                "total_count": 33
+              },
+              "dataset": "hotpot_v4_n100_structbalanced",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 47,
+              "test": {
+                "accepted_count": 19,
+                "coverage": 0.41304347826086957,
+                "error_count": 10,
+                "no_accept": false,
+                "risk": 0.5263157894736842,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 1.0,
+                "total_count": 46
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.5247132481487272,
+                "auroc": 0.5961538461538461,
+                "risk_at_30": 0.5714285714285714,
+                "risk_at_50": 0.5652173913043479
+              },
+              "threshold": 1.0
             }
           ]
         }
@@ -15279,7 +16213,7 @@
       "negative": 100,
       "per_seed": [
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 17,
           "split_sizes": {
@@ -15643,7 +16577,7 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.035168635348451195,
+                "threshold": 0.03497130525623881,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_semanticswap_n100",
@@ -15660,16 +16594,16 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.035168635348451195,
+                "threshold": 0.03497130525623881,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.19590785221220003,
-                "auroc": 0.9375,
+                "aurc": 0.22210038001463497,
+                "auroc": 0.94,
                 "risk_at_30": 0.08333333333333337,
                 "risk_at_50": 0.09999999999999998
               },
-              "threshold": 0.035168635348451195
+              "threshold": 0.03497130525623881
             },
             {
               "calibration": {
@@ -15898,6 +16832,44 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 9,
+                "coverage": 0.225,
+                "error_count": 1,
+                "no_accept": false,
+                "risk": 0.1111111111111111,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 1.0,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_semanticswap_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 17,
+              "test": {
+                "accepted_count": 12,
+                "coverage": 0.3,
+                "error_count": 2,
+                "no_accept": false,
+                "risk": 0.16666666666666666,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 1.0,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.2952536962365591,
+                "auroc": 0.78625,
+                "risk_at_30": 0.16666666666666663,
+                "risk_at_50": 0.30000000000000004
+              },
+              "threshold": 1.0
             },
             {
               "calibration": {
@@ -16251,7 +17223,7 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.0018173768609622237,
+                "threshold": 0.0018154891249116281,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_semanticswap_n100",
@@ -16268,16 +17240,16 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.0018173768609622237,
+                "threshold": 0.0018154891249116281,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.19590785221220003,
-                "auroc": 0.9375,
+                "aurc": 0.22210038001463497,
+                "auroc": 0.94,
                 "risk_at_30": 0.08333333333333337,
                 "risk_at_50": 0.09999999999999998
               },
-              "threshold": 0.0018173768609622237
+              "threshold": 0.0018154891249116281
             },
             {
               "calibration": {
@@ -16506,11 +17478,49 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 11,
+                "coverage": 0.275,
+                "error_count": 3,
+                "no_accept": false,
+                "risk": 0.2727272727272727,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.8333333333333334,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_semanticswap_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 17,
+              "test": {
+                "accepted_count": 16,
+                "coverage": 0.4,
+                "error_count": 5,
+                "no_accept": false,
+                "risk": 0.3125,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.8333333333333334,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.2952536962365591,
+                "auroc": 0.78625,
+                "risk_at_30": 0.16666666666666663,
+                "risk_at_50": 0.30000000000000004
+              },
+              "threshold": 0.8333333333333334
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 31,
           "split_sizes": {
@@ -16874,7 +17884,7 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.07915670124115065,
+                "threshold": 0.08289851187011518,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_semanticswap_n100",
@@ -16891,16 +17901,16 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": false,
-                "threshold": 0.07915670124115065,
+                "threshold": 0.08289851187011518,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.18461025031830092,
-                "auroc": 0.9425,
-                "risk_at_30": 0.16666666666666663,
+                "aurc": 0.19751972753698865,
+                "auroc": 0.935,
+                "risk_at_30": 0.08333333333333337,
                 "risk_at_50": 0.09999999999999998
               },
-              "threshold": 0.07915670124115065
+              "threshold": 0.08289851187011518
             },
             {
               "calibration": {
@@ -17129,6 +18139,44 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 12,
+                "coverage": 0.3,
+                "error_count": 1,
+                "no_accept": false,
+                "risk": 0.08333333333333333,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 1.0,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_semanticswap_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 31,
+              "test": {
+                "accepted_count": 10,
+                "coverage": 0.25,
+                "error_count": 2,
+                "no_accept": false,
+                "risk": 0.2,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 1.0,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.3186778846153846,
+                "auroc": 0.7525,
+                "risk_at_30": 0.33333333333333337,
+                "risk_at_50": 0.30000000000000004
+              },
+              "threshold": 1.0
             },
             {
               "calibration": {
@@ -17482,7 +18530,7 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.05738138224756885,
+                "threshold": 0.056569041189922536,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_semanticswap_n100",
@@ -17499,16 +18547,16 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.05738138224756885,
+                "threshold": 0.056569041189922536,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.18461025031830092,
-                "auroc": 0.9425,
-                "risk_at_30": 0.16666666666666663,
+                "aurc": 0.19751972753698865,
+                "auroc": 0.935,
+                "risk_at_30": 0.08333333333333337,
                 "risk_at_50": 0.09999999999999998
               },
-              "threshold": 0.05738138224756885
+              "threshold": 0.056569041189922536
             },
             {
               "calibration": {
@@ -17737,11 +18785,49 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 12,
+                "coverage": 0.3,
+                "error_count": 1,
+                "no_accept": false,
+                "risk": 0.08333333333333333,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 1.0,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_semanticswap_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 31,
+              "test": {
+                "accepted_count": 10,
+                "coverage": 0.25,
+                "error_count": 2,
+                "no_accept": false,
+                "risk": 0.2,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 1.0,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.3186778846153846,
+                "auroc": 0.7525,
+                "risk_at_30": 0.33333333333333337,
+                "risk_at_50": 0.30000000000000004
+              },
+              "threshold": 1.0
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 47,
           "split_sizes": {
@@ -18105,7 +19191,7 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.09742247895499057,
+                "threshold": 0.100040238849068,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_semanticswap_n100",
@@ -18122,16 +19208,16 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.09742247895499057,
+                "threshold": 0.100040238849068,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.1797663085706564,
-                "auroc": 0.9375,
+                "aurc": 0.1795969470584156,
+                "auroc": 0.945,
                 "risk_at_30": 0.08333333333333337,
-                "risk_at_50": 0.15000000000000002
+                "risk_at_50": 0.09999999999999998
               },
-              "threshold": 0.09742247895499057
+              "threshold": 0.100040238849068
             },
             {
               "calibration": {
@@ -18360,6 +19446,44 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 11,
+                "coverage": 0.275,
+                "error_count": 2,
+                "no_accept": false,
+                "risk": 0.18181818181818182,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.8333333333333334,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_semanticswap_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 47,
+              "test": {
+                "accepted_count": 14,
+                "coverage": 0.35,
+                "error_count": 4,
+                "no_accept": false,
+                "risk": 0.2857142857142857,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": false,
+                "threshold": 0.8333333333333334,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.28928571428571426,
+                "auroc": 0.8,
+                "risk_at_30": 0.16666666666666663,
+                "risk_at_50": 0.35
+              },
+              "threshold": 0.8333333333333334
             },
             {
               "calibration": {
@@ -18713,7 +19837,7 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.03259502438895979,
+                "threshold": 0.03552353769567845,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_semanticswap_n100",
@@ -18730,16 +19854,16 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.03259502438895979,
+                "threshold": 0.03552353769567845,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.1797663085706564,
-                "auroc": 0.9375,
+                "aurc": 0.1795969470584156,
+                "auroc": 0.945,
                 "risk_at_30": 0.08333333333333337,
-                "risk_at_50": 0.15000000000000002
+                "risk_at_50": 0.09999999999999998
               },
-              "threshold": 0.03259502438895979
+              "threshold": 0.03552353769567845
             },
             {
               "calibration": {
@@ -18968,6 +20092,44 @@
                 "risk_at_50": 0.5
               },
               "threshold": 1.000000001
+            },
+            {
+              "calibration": {
+                "accepted_count": 11,
+                "coverage": 0.275,
+                "error_count": 2,
+                "no_accept": false,
+                "risk": 0.18181818181818182,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.8333333333333334,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_semanticswap_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 47,
+              "test": {
+                "accepted_count": 14,
+                "coverage": 0.35,
+                "error_count": 4,
+                "no_accept": false,
+                "risk": 0.2857142857142857,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.8333333333333334,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.28928571428571426,
+                "auroc": 0.8,
+                "risk_at_30": 0.16666666666666663,
+                "risk_at_50": 0.35
+              },
+              "threshold": 0.8333333333333334
             }
           ]
         }
@@ -18985,7 +20147,7 @@
       "negative": 100,
       "per_seed": [
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 17,
           "split_sizes": {
@@ -19349,7 +20511,7 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.03676137839694618,
+                "threshold": 0.027031448673213134,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_supportpreserve_n100",
@@ -19358,24 +20520,24 @@
               "risk_target": 0.2,
               "seed": 17,
               "test": {
-                "accepted_count": 23,
-                "coverage": 0.575,
-                "error_count": 3,
+                "accepted_count": 24,
+                "coverage": 0.6,
+                "error_count": 4,
                 "no_accept": false,
-                "risk": 0.13043478260869565,
+                "risk": 0.16666666666666666,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.03676137839694618,
+                "threshold": 0.027031448673213134,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.14926948051948052,
+                "aurc": 0.15017683465959328,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.03676137839694618
+              "threshold": 0.027031448673213134
             },
             {
               "calibration": {
@@ -19604,6 +20766,44 @@
                 "risk_at_50": 0.0
               },
               "threshold": 1.0
+            },
+            {
+              "calibration": {
+                "accepted_count": 20,
+                "coverage": 0.5,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_supportpreserve_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 17,
+              "test": {
+                "accepted_count": 20,
+                "coverage": 0.5,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.14375,
+                "auroc": 1.0,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.0
+              },
+              "threshold": 0.6666666666666666
             },
             {
               "calibration": {
@@ -19957,7 +21157,7 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.035665853546798194,
+                "threshold": 0.021290894387484622,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_supportpreserve_n100",
@@ -19966,24 +21166,24 @@
               "risk_target": 0.3,
               "seed": 17,
               "test": {
-                "accepted_count": 23,
-                "coverage": 0.575,
-                "error_count": 3,
+                "accepted_count": 29,
+                "coverage": 0.725,
+                "error_count": 9,
                 "no_accept": false,
-                "risk": 0.13043478260869565,
+                "risk": 0.3103448275862069,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
-                "target_met": true,
-                "threshold": 0.035665853546798194,
+                "target_met": false,
+                "threshold": 0.021290894387484622,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.14926948051948052,
+                "aurc": 0.15017683465959328,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.035665853546798194
+              "threshold": 0.021290894387484622
             },
             {
               "calibration": {
@@ -20212,11 +21412,49 @@
                 "risk_at_50": 0.0
               },
               "threshold": 1.0
+            },
+            {
+              "calibration": {
+                "accepted_count": 20,
+                "coverage": 0.5,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_supportpreserve_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 17,
+              "test": {
+                "accepted_count": 20,
+                "coverage": 0.5,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.14375,
+                "auroc": 1.0,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.0
+              },
+              "threshold": 0.6666666666666666
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 31,
           "split_sizes": {
@@ -20580,7 +21818,7 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.038495667323863,
+                "threshold": 0.04040859563547905,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_supportpreserve_n100",
@@ -20589,24 +21827,24 @@
               "risk_target": 0.2,
               "seed": 31,
               "test": {
-                "accepted_count": 24,
-                "coverage": 0.6,
-                "error_count": 4,
+                "accepted_count": 23,
+                "coverage": 0.575,
+                "error_count": 3,
                 "no_accept": false,
-                "risk": 0.16666666666666666,
+                "risk": 0.13043478260869565,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.038495667323863,
+                "threshold": 0.04040859563547905,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.14697871572871574,
+                "aurc": 0.15032281791435112,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.038495667323863
+              "threshold": 0.04040859563547905
             },
             {
               "calibration": {
@@ -20835,6 +22073,44 @@
                 "risk_at_50": 0.0
               },
               "threshold": 1.0
+            },
+            {
+              "calibration": {
+                "accepted_count": 19,
+                "coverage": 0.475,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_supportpreserve_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 31,
+              "test": {
+                "accepted_count": 21,
+                "coverage": 0.525,
+                "error_count": 1,
+                "no_accept": false,
+                "risk": 0.047619047619047616,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.1542146697388633,
+                "auroc": 0.985,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.050000000000000044
+              },
+              "threshold": 0.6666666666666666
             },
             {
               "calibration": {
@@ -21188,7 +22464,7 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.037039674035360196,
+                "threshold": 0.03147478777895224,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_supportpreserve_n100",
@@ -21197,24 +22473,24 @@
               "risk_target": 0.3,
               "seed": 31,
               "test": {
-                "accepted_count": 28,
-                "coverage": 0.7,
-                "error_count": 8,
+                "accepted_count": 23,
+                "coverage": 0.575,
+                "error_count": 3,
                 "no_accept": false,
-                "risk": 0.2857142857142857,
+                "risk": 0.13043478260869565,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.037039674035360196,
+                "threshold": 0.03147478777895224,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.14697871572871574,
+                "aurc": 0.15032281791435112,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.037039674035360196
+              "threshold": 0.03147478777895224
             },
             {
               "calibration": {
@@ -21443,11 +22719,49 @@
                 "risk_at_50": 0.0
               },
               "threshold": 1.0
+            },
+            {
+              "calibration": {
+                "accepted_count": 19,
+                "coverage": 0.475,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_supportpreserve_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 31,
+              "test": {
+                "accepted_count": 21,
+                "coverage": 0.525,
+                "error_count": 1,
+                "no_accept": false,
+                "risk": 0.047619047619047616,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.1542146697388633,
+                "auroc": 0.985,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.050000000000000044
+              },
+              "threshold": 0.6666666666666666
             }
           ]
         },
         {
-          "method_count": 16,
+          "method_count": 17,
           "protocol_complete": true,
           "seed": 47,
           "split_sizes": {
@@ -21811,7 +23125,7 @@
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.04421309302417377,
+                "threshold": 0.041063009504458244,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_supportpreserve_n100",
@@ -21820,24 +23134,24 @@
               "risk_target": 0.2,
               "seed": 47,
               "test": {
-                "accepted_count": 26,
-                "coverage": 0.65,
-                "error_count": 6,
+                "accepted_count": 20,
+                "coverage": 0.5,
+                "error_count": 0,
                 "no_accept": false,
-                "risk": 0.23076923076923078,
+                "risk": 0.0,
                 "risk_target": 0.2,
                 "selected_on_calibration": true,
-                "target_met": false,
-                "threshold": 0.04421309302417377,
+                "target_met": true,
+                "threshold": 0.041063009504458244,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.14856939460134186,
+                "aurc": 0.15010683760683763,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.04421309302417377
+              "threshold": 0.041063009504458244
             },
             {
               "calibration": {
@@ -22066,6 +23380,44 @@
                 "risk_at_50": 0.0
               },
               "threshold": 1.0
+            },
+            {
+              "calibration": {
+                "accepted_count": 20,
+                "coverage": 0.5,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_supportpreserve_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.2,
+              "seed": 47,
+              "test": {
+                "accepted_count": 20,
+                "coverage": 0.5,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.2,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.1361111111111111,
+                "auroc": 1.0,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.0
+              },
+              "threshold": 0.6666666666666666
             },
             {
               "calibration": {
@@ -22419,7 +23771,7 @@
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.04322582256894877,
+                "threshold": 0.03643017840291651,
                 "total_count": 40
               },
               "dataset": "hotpot_v4_supportpreserve_n100",
@@ -22428,24 +23780,24 @@
               "risk_target": 0.3,
               "seed": 47,
               "test": {
-                "accepted_count": 26,
-                "coverage": 0.65,
-                "error_count": 6,
+                "accepted_count": 21,
+                "coverage": 0.525,
+                "error_count": 1,
                 "no_accept": false,
-                "risk": 0.23076923076923078,
+                "risk": 0.047619047619047616,
                 "risk_target": 0.3,
                 "selected_on_calibration": true,
                 "target_met": true,
-                "threshold": 0.04322582256894877,
+                "threshold": 0.03643017840291651,
                 "total_count": 40
               },
               "test_ranking_metrics": {
-                "aurc": 0.14856939460134186,
+                "aurc": 0.15010683760683763,
                 "auroc": 1.0,
                 "risk_at_30": 0.0,
                 "risk_at_50": 0.0
               },
-              "threshold": 0.04322582256894877
+              "threshold": 0.03643017840291651
             },
             {
               "calibration": {
@@ -22674,6 +24026,44 @@
                 "risk_at_50": 0.0
               },
               "threshold": 1.0
+            },
+            {
+              "calibration": {
+                "accepted_count": 20,
+                "coverage": 0.5,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "dataset": "hotpot_v4_supportpreserve_n100",
+              "family": "baseline",
+              "method": "template_self_consistency",
+              "risk_target": 0.3,
+              "seed": 47,
+              "test": {
+                "accepted_count": 20,
+                "coverage": 0.5,
+                "error_count": 0,
+                "no_accept": false,
+                "risk": 0.0,
+                "risk_target": 0.3,
+                "selected_on_calibration": true,
+                "target_met": true,
+                "threshold": 0.6666666666666666,
+                "total_count": 40
+              },
+              "test_ranking_metrics": {
+                "aurc": 0.1361111111111111,
+                "auroc": 1.0,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.0
+              },
+              "threshold": 0.6666666666666666
             }
           ]
         }
@@ -22686,7 +24076,7 @@
       "source_item_groups": 100
     }
   ],
-  "generated_at_utc": "2026-05-29T02:58:14.719513+00:00",
+  "generated_at_utc": "2026-05-29T03:17:28.726876+00:00",
   "protocol": {
     "same_source_item_group_split": true,
     "score_direction": "higher score means more answerable / safer to accept",

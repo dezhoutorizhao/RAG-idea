@@ -1,7 +1,7 @@
 {
   "all_required_baselines_present": false,
   "claim_policy": "This matrix audits coverage of required strong-baseline families. It does not upgrade proxy or partial baselines into faithful end-to-end baselines.",
-  "generated_at_utc": "2026-05-29T02:58:11.713840+00:00",
+  "generated_at_utc": "2026-05-29T03:17:25.062379+00:00",
   "method_union": [
     "calibrated_logistic_context",
     "calibrated_logistic_orbit",
@@ -15,7 +15,8 @@
     "equal_budget_q25",
     "faithful_sure_multi",
     "retrieval_stability",
-    "self_consistency_proxy"
+    "self_consistency_proxy",
+    "template_self_consistency"
   ],
   "rows": [
     {
@@ -77,17 +78,17 @@
       "status": "missing"
     },
     {
-      "boundary": "A self-consistency proxy is present; it is not a full multi-sample generation self-consistency experiment.",
+      "boundary": "A deterministic template multi-sample generation self-consistency baseline is present; the older self_consistency_proxy remains lower-evidence diagnostic support.",
       "matched_methods": [
-        "self_consistency_proxy"
+        "template_self_consistency"
       ],
       "missing_methods": [],
       "plan_reference": "RAG-idea\u6539\u8fdb.md 5.5.2",
       "required_methods": [
-        "self_consistency_proxy"
+        "template_self_consistency"
       ],
       "requirement": "self_consistency",
-      "status": "partial"
+      "status": "present"
     },
     {
       "boundary": "Equal-budget reducers and out-of-fold logistic ensemble are present.",
@@ -140,7 +141,7 @@
   "source": "results\\v4_strong_baseline_summary_20260529.json",
   "status_counts": {
     "missing": 1,
-    "partial": 2,
-    "present": 5
+    "partial": 1,
+    "present": 6
   }
 }

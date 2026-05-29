@@ -36,6 +36,7 @@ def test_compare_equal_budget_thresholds_v4_uses_calibration_thresholds(tmp_path
     seed_row = summary["datasets"][0]["per_seed"][0]
     assert seed_row["protocol_complete"] is True
     assert seed_row["method_count"] > 4
+    assert any(row["method"] == "template_self_consistency" for row in seed_row["threshold_rows"])
     assert all(row["calibration"]["selected_on_calibration"] for row in seed_row["threshold_rows"])
     assert "target_vs_strongest_baseline" in summary["aggregate"]
 

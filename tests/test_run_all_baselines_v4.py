@@ -32,6 +32,7 @@ def test_run_all_baselines_v4_reports_strongest_non_csrm(tmp_path):
     assert "faithful_sure_multi" in result["methods"]
     assert "equal_budget_ensemble_logistic" in result["methods"]
     assert "calibrated_logistic_orbit" in result["methods"]
+    assert "template_self_consistency" in result["methods"]
     assert result["strongest_non_csrm"]["by_aurc"]["method"] != "csrm_rule"
     assert result["strongest_non_csrm"]["by_risk_at_30"]["method"] != "csrm_rule"
     assert result["strongest_non_csrm"]["by_auroc"]["method"] != "csrm_rule"

@@ -1,10 +1,10 @@
 # V4 Baseline Budget Parity
 
-Generated: `2026-05-29T02:58:11.714823+00:00`
+Generated: `2026-05-29T03:17:25.063403+00:00`
 Source: `results\v4_strong_baseline_summary_20260529.json`
 
-Method count: `13`
-Status counts: `{'equal_orbit_budget': 7, 'lower_budget_control': 4, 'missing': 1, 'proxy_equal_orbit_budget': 1, 'target_method': 1}`
+Method count: `14`
+Status counts: `{'equal_orbit_budget': 8, 'lower_budget_control': 4, 'missing': 1, 'proxy_equal_orbit_budget': 1, 'target_method': 1}`
 Same input rows across files: `True`
 Same scored evidence across files: `True`
 Full budget-parity claim supported: `False`
@@ -26,6 +26,7 @@ Full budget-parity claim supported: `False`
 | faithful_sure_multi | `equal_orbit_budget` | all_orbit_sets | all scored evidence sets in the orbit | `0` | Uses the same scored orbit evidence batch as CSRM. |
 | retrieval_stability | `equal_orbit_budget` | all_orbit_sets | all scored evidence sets in the orbit | `0` | Uses the same scored orbit evidence batch as CSRM, with retrieval-stability aggregation. |
 | self_consistency_proxy | `proxy_equal_orbit_budget` | all_orbit_sets | all scored evidence sets in the orbit | `0` | Proxy over existing answer consistency features; not a fresh multi-sample generation baseline. |
+| template_self_consistency | `equal_orbit_budget` | all_orbit_sets | all scored evidence sets in the orbit | `0` | Deterministic multi-template generation self-consistency over the same scored orbit evidence. |
 | llm_judge | `missing` | not_run | not run | `not run` | No explicit LLM-as-judge baseline artifact exists in this batch. |
 
 ## Claim Policy

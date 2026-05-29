@@ -93,7 +93,7 @@
     "risk50_wins": 12,
     "row_count": 12
   },
-  "generated_at_utc": "2026-05-29T02:58:15.772092+00:00",
+  "generated_at_utc": "2026-05-29T03:17:29.779317+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -484,7 +484,7 @@
     "negative_or_partial_count": 3,
     "negative_or_partial_evidence": [
       {
-        "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices also mark faithful CoRM and self-consistency as partial, clean-only controls as lower-budget, and LLM judge as missing. Shared calibration-threshold selection is now auditable, but test risk/coverage remains mixed rather than all-win.",
+        "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge as missing. Template multi-sample self-consistency and shared calibration-threshold selection are now auditable, but test risk/coverage remains mixed rather than all-win.",
         "requirement": "Strong baselines and equal-budget controls",
         "status": "partial"
       },
@@ -622,7 +622,8 @@
       "equal_budget_q25",
       "faithful_sure_multi",
       "retrieval_stability",
-      "self_consistency_proxy"
+      "self_consistency_proxy",
+      "template_self_consistency"
     ],
     "rule_by_aurc_losses": 6,
     "rule_by_auroc_losses": 6,

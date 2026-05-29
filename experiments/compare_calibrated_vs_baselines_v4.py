@@ -31,6 +31,7 @@ from csrm_rag.baselines.v4_baselines import (
     _faithful_sure_multi,
     _orbit_features,
     _retrieval_stability,
+    _template_self_consistency,
 )
 from csrm_rag.calibration import OrbitRiskCalibrator, split_groups
 from csrm_rag.calibration.orbit_risk_model import csrm_minimax_scores, csrm_rule_scores
@@ -195,6 +196,7 @@ def _nonlearned_baseline_scores(orbits) -> dict[str, list[float]]:
         "equal_budget_q25": [_equal_budget_quantile(orbit, 0.25) for orbit in orbits],
         "retrieval_stability": [_retrieval_stability(orbit) for orbit in orbits],
         "self_consistency_proxy": [_answer_consistency(orbit) for orbit in orbits],
+        "template_self_consistency": [_template_self_consistency(orbit) for orbit in orbits],
     }
 
 

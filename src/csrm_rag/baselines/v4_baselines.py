@@ -30,6 +30,7 @@ BASELINE_METHODS = [
     "equal_budget_q25",
     "retrieval_stability",
     "self_consistency_proxy",
+    "template_self_consistency",
     "equal_budget_ensemble_logistic",
     "calibrated_logistic_context",
     "calibrated_logistic_orbit",
@@ -46,6 +47,7 @@ ENSEMBLE_FEATURE_METHODS = [
     "equal_budget_q25",
     "retrieval_stability",
     "self_consistency_proxy",
+    "template_self_consistency",
 ]
 
 
@@ -70,6 +72,7 @@ def baseline_scores(inputs: BaselineInputs) -> dict[str, list[float]]:
         "equal_budget_q25": [_equal_budget_quantile(orbit, 0.25) for orbit in orbits],
         "retrieval_stability": [_retrieval_stability(orbit) for orbit in orbits],
         "self_consistency_proxy": [_answer_consistency(orbit) for orbit in orbits],
+        "template_self_consistency": [_template_self_consistency(orbit) for orbit in orbits],
         "csrm_rule": [csrm_score(orbit) for orbit in orbits],
     }
     scores["calibrated_logistic_context"] = out_of_fold_logistic_scores(
@@ -170,6 +173,45 @@ def _answer_consistency(orbit: QueryOrbit) -> float:
     return csrm_components(orbit).answer_consistency
 
 
+def _template_self_consistency(orbit: QueryOrbit) -> float:
+    samples = []
+    for evidence_set in orbit.all_sets:
+        samples.extend(_template_samples(evidence_set))
+    normalized = [_normalize_answer(sample) for sample in samples if _normalize_answer(sample)]
+    if not samples or not normalized:
+        return 0.0
+    counts = {answer: normalized.count(answer) for answer in set(normalized)}
+    return max(counts.values()) / len(samples)
+
+
+def _template_samples(evidence_set) -> list[str]:
+    answer = str(evidence_set.answer or "")
+    if not answer:
+        return ["", "", ""]
+    sufficiency = single_set_sufficiency(evidence_set)
+    max_conflict = _max_conflict(evidence_set)
+    mean_missing = _mean_set_attr(evidence_set, "missing")
+    answer_terms = _content_terms(answer)
+    evidence_terms = _content_terms(" ".join(doc.text for doc in evidence_set.docs))
+    answer_covered = bool(answer_terms) and answer_terms.issubset(evidence_terms)
+    return [
+        answer,
+        answer if sufficiency >= 0.20 and max_conflict <= 0.50 else "",
+        answer if answer_covered or (sufficiency >= 0.12 and mean_missing <= 0.85) else "",
+    ]
+
+
+def _normalize_answer(text: str) -> str:
+    tokens = [token for token in _content_terms(text) if token not in {"a", "an", "the"}]
+    return " ".join(sorted(tokens))
+
+
+def _content_terms(text: str) -> set[str]:
+    import re
+
+    return {token for token in re.findall(r"[A-Za-z0-9]+", text.lower()) if len(token) > 1}
+
+
 def _context_features(orbit: QueryOrbit) -> list[float]:
     clean = orbit.clean
     supports = [doc.support for doc in clean.docs] or [0.0]
@@ -223,6 +265,11 @@ def _mean_doc_attr(orbit: QueryOrbit, attr: str) -> float:
 def _max_conflict(evidence_set) -> float:
     values = [doc.conflict for doc in evidence_set.docs]
     return float(max(values)) if values else 0.0
+
+
+def _mean_set_attr(evidence_set, attr: str) -> float:
+    values = [float(getattr(doc, attr)) for doc in evidence_set.docs]
+    return float(np.mean(values)) if values else 0.0
 
 
 def _clip01(value: float) -> float:

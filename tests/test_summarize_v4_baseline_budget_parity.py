@@ -23,6 +23,7 @@ def test_summarize_v4_baseline_budget_parity_marks_controls_and_missing_llm(tmp_
                         "faithful_sure_multi",
                         "equal_budget_mean",
                         "self_consistency_proxy",
+                        "template_self_consistency",
                         "csrm_rule",
                     ]
                 },
@@ -38,6 +39,7 @@ def test_summarize_v4_baseline_budget_parity_marks_controls_and_missing_llm(tmp_
     assert rows["corm_mean_clean"]["status"] == "lower_budget_control"
     assert rows["faithful_sure_multi"]["status"] == "equal_orbit_budget"
     assert rows["self_consistency_proxy"]["status"] == "proxy_equal_orbit_budget"
+    assert rows["template_self_consistency"]["status"] == "equal_orbit_budget"
     assert rows["llm_judge"]["status"] == "missing"
     assert summary["same_input_rows_all_files"] is True
     assert summary["same_scored_evidence_all_files"] is True

@@ -116,9 +116,9 @@ def _rows(closure: dict[str, Any], manifest: dict[str, Any], reproduction: dict[
             ],
             (
                 "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; "
-                "coverage/budget matrices also mark faithful CoRM and self-consistency as partial, "
-                "clean-only controls as lower-budget, and LLM judge as missing. Shared calibration-threshold "
-                "selection is now auditable, but test risk/coverage remains mixed rather than all-win."
+                "coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, "
+                "and LLM judge as missing. Template multi-sample self-consistency and shared calibration-threshold "
+                "selection are now auditable, but test risk/coverage remains mixed rather than all-win."
             ),
         ),
         _row(

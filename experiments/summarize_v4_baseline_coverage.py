@@ -46,11 +46,11 @@ REQUIRED_BASELINES = [
     {
         "requirement": "self_consistency",
         "plan_reference": "RAG-idea改进.md 5.5.2",
-        "methods": ["self_consistency_proxy"],
-        "status_if_present": "partial",
+        "methods": ["template_self_consistency"],
+        "status_if_present": "present",
         "boundary": (
-            "A self-consistency proxy is present; it is not a full multi-sample generation "
-            "self-consistency experiment."
+            "A deterministic template multi-sample generation self-consistency baseline is present; "
+            "the older self_consistency_proxy remains lower-evidence diagnostic support."
         ),
     },
     {
