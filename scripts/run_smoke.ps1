@@ -26,6 +26,7 @@ python -m pytest `
   tests/test_summarize_risk_control_abstention_baselines.py `
   tests/test_summarize_v4_calibration_quality.py `
   tests/test_summarize_v4_claim_safe_target_selection.py `
+  tests/test_summarize_neurips_unblock_plan.py `
   tests/test_summarize_theory_formalization.py `
   tests/test_summarize_novelty_audit.py `
   tests/test_verify_v4_evidence_package.py `

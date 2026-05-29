@@ -1,0 +1,99 @@
+{
+  "blockers": [
+    {
+      "current_evidence": "human_labels_complete=False; pending_auditor_labels=2000; pending_adjudicated_labels=1000; aggregate_pending=1300.",
+      "id": "complete_human_audit_v4",
+      "next_commands": [
+        "python -m experiments.collect_human_audit_v4_assignment_batches --output-json results/human_audit_v4_batch_collection_20260529.json --output-md results/human_audit_v4_batch_collection_20260529.md",
+        "powershell -ExecutionPolicy Bypass -File scripts\\run_main_tables.ps1"
+      ],
+      "required_external_action": "Fill both auditor CSV batches and adjudication labels for the v4 paper audit pack.",
+      "requires_external_action": true,
+      "requires_user_approval": false,
+      "status": "blocked"
+    },
+    {
+      "current_evidence": "batch_status=blocked; ready_for_batch_submission=False; score_status=blocked; correlation_ready=False.",
+      "id": "run_api_backed_llm_judge",
+      "next_commands": [
+        "$env:OPENAI_API_KEY='<set locally>'; python -m experiments.manage_openai_llm_judge_batch --action submit --request-jsonl results\\llm_judge_nli_probe_requests_20260529.jsonl --batch-output-jsonl results\\llm_judge_nli_probe_batch_output_20260529.jsonl",
+        "$env:OPENAI_API_KEY='<set locally>'; python -m experiments.manage_openai_llm_judge_batch --action retrieve --batch-id <batch_id> --request-jsonl results\\llm_judge_nli_probe_requests_20260529.jsonl --batch-output-jsonl results\\llm_judge_nli_probe_batch_output_20260529.jsonl",
+        "python -m experiments.normalize_llm_judge_batch_responses --batch-output-jsonl results\\llm_judge_nli_probe_batch_output_20260529.jsonl --scores-jsonl results\\llm_judge_nli_probe_scores_20260529.jsonl",
+        "python -m experiments.compute_llm_nli_correlation",
+        "powershell -ExecutionPolicy Bypass -File scripts\\run_main_tables.ps1"
+      ],
+      "required_external_action": "Provide a real API key and run the OpenAI-compatible batch flow.",
+      "requires_external_action": true,
+      "requires_user_approval": false,
+      "status": "blocked"
+    },
+    {
+      "current_evidence": "target=/mnt/ntfs-disk; target_available_gib=322.1; target_write_probe_passed=False; ext4_mode=dry_run; destructive_operations_executed=False.",
+      "id": "repair_storage_for_full_corm_reproduction",
+      "next_commands": [
+        "$env:CORM_REMOTE_PASSWORD='<set locally>'; python -m experiments.prepare_remote_ext4_storage --host 192.168.103.101 --user syk --port 22 --target /home/syk --output results/remote_ext4_prepare_execute_20260529.json --min-free-gib 180 --execute",
+        "$env:CORM_REMOTE_PASSWORD='<set locally>'; python -m experiments.check_remote_storage_status --host 192.168.103.101 --user syk --port 22 --target /home/syk --output results/remote_storage_status_after_ext4_cleanup.json --min-free-gib 180",
+        "run results/corm_remote_scripts/02_build_wikipedia_and_faiss.sh only after the post-cleanup probe passes"
+      ],
+      "required_external_action": "Approve the minimal ext4 cleanup plan, then verify write/fsync/read/delete on /home/syk.",
+      "requires_external_action": true,
+      "requires_user_approval": true,
+      "status": "blocked"
+    },
+    {
+      "current_evidence": "packet_ready=True; external_review_completed=False; response_path=results\\external_review_response_20260529.md.",
+      "id": "obtain_independent_external_review",
+      "next_commands": [
+        "place independent review response at results\\external_review_response_20260529.md",
+        "powershell -ExecutionPolicy Bypass -File scripts\\run_main_tables.ps1"
+      ],
+      "required_external_action": "Have an independent reviewer inspect the packet and write the response file.",
+      "requires_external_action": true,
+      "requires_user_approval": false,
+      "status": "blocked"
+    },
+    {
+      "current_evidence": "FEVER 0.20 CP transfer remains negative; this is scientific negative evidence, not an operational blocker.",
+      "id": "risk_control_claim_boundary",
+      "next_commands": [
+        "do not claim a general formal risk-control guarantee",
+        "use results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json as boundary evidence"
+      ],
+      "required_external_action": "Keep risk-control wording as Hotpot-only empirical pressure-test evidence unless new experiments overturn the FEVER failure.",
+      "requires_external_action": false,
+      "requires_user_approval": false,
+      "status": "fail"
+    }
+  ],
+  "claim_policy": "This is an unblock plan, not evidence that the blockers are solved. It records the minimum external actions and repository commands needed before NeurIPS main-track readiness can be re-evaluated.",
+  "external_action_required_count": 4,
+  "generated_at_utc": "2026-05-29T07:34:39.524699+00:00",
+  "next_execution_order": [
+    "complete_human_audit_labels",
+    "run_api_backed_llm_judge_batch",
+    "approve_and_execute_remote_ext4_cleanup",
+    "rerun_full_corm_reproduction_after_storage_probe_passes",
+    "obtain_independent_external_review_response",
+    "rerun_main_tables_and_claim_verifier"
+  ],
+  "open_blocker_count": 5,
+  "readiness_status_counts": {
+    "blocked": 3,
+    "fail": 1,
+    "partial": 5,
+    "pass": 5
+  },
+  "ready_for_neurips_main_track": false,
+  "requires_user_approval_count": 1,
+  "source_artifacts": {
+    "ext4_dryrun": "results\\remote_ext4_prepare_dryrun_20260529.json",
+    "external_review": "results\\external_review_packet_status_20260529.json",
+    "human_collection": "results\\human_audit_v4_batch_collection_20260529.json",
+    "human_status": "results\\human_audit_v4_status_20260529.json",
+    "llm_batch": "results\\llm_judge_nli_probe_batch_run_status_20260529.json",
+    "llm_correlation": "results\\llm_nli_correlation_status_20260529.json",
+    "llm_score": "results\\llm_judge_nli_probe_score_status_20260529.json",
+    "readiness": "results\\neurips_readiness_matrix_20260529.json",
+    "remote_storage": "results\\remote_storage_status_20260529.json"
+  }
+}

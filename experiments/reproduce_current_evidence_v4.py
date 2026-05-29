@@ -156,6 +156,10 @@ from experiments.summarize_neurips_readiness import (
     render_markdown as render_neurips_readiness_markdown,
     summarize_neurips_readiness,
 )
+from experiments.summarize_neurips_unblock_plan import (
+    render_markdown as render_neurips_unblock_plan_markdown,
+    summarize_neurips_unblock_plan,
+)
 from experiments.build_external_review_packet import (
     build_external_review_packet,
     render_markdown as render_external_review_packet_markdown,
@@ -840,6 +844,19 @@ def reproduce_current_evidence_v4(
             "name": "summarize_neurips_readiness",
             "outputs": [str(readiness_json), str(readiness_md)],
             "ready": readiness["ready_for_neurips_main_track"],
+        }
+    )
+
+    unblock_json = results / "neurips_unblock_plan_20260529.json"
+    unblock_md = results / "neurips_unblock_plan_20260529.md"
+    unblock = summarize_neurips_unblock_plan(root)
+    _write_json(unblock_json, unblock)
+    unblock_md.write_text(render_neurips_unblock_plan_markdown(unblock), encoding="utf-8")
+    commands.append(
+        {
+            "name": "summarize_neurips_unblock_plan",
+            "outputs": [str(unblock_json), str(unblock_md)],
+            "ready": unblock["open_blocker_count"] == 0,
         }
     )
 

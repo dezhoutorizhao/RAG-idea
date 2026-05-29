@@ -53,6 +53,7 @@ PROVENANCE_BY_STEP = {
     "summarize_evidence_closure": "experiments/summarize_evidence_closure.py",
     "build_external_review_packet": "experiments/build_external_review_packet.py",
     "summarize_neurips_readiness": "experiments/summarize_neurips_readiness.py",
+    "summarize_neurips_unblock_plan": "experiments/summarize_neurips_unblock_plan.py",
     "build_results_provenance_readme": "experiments/build_results_provenance_readme.py",
     "build_claims_ledger_markdown": "experiments/build_claims_ledger_markdown.py",
     "build_reproducibility_bundle": "experiments/build_reproducibility_bundle.py",

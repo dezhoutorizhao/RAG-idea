@@ -151,6 +151,14 @@ def test_default_manifest_tracks_v4_calibration_quality_artifacts():
     assert "experiments/compare_calibrated_vs_baselines_v4.py" in defaults
 
 
+def test_default_manifest_tracks_neurips_unblock_plan_artifacts():
+    defaults = {str(path).replace("\\", "/") for path in DEFAULT_ARTIFACTS}
+
+    assert "results/neurips_unblock_plan_20260529.json" in defaults
+    assert "results/neurips_unblock_plan_20260529.md" in defaults
+    assert "experiments/summarize_neurips_unblock_plan.py" in defaults
+
+
 def test_default_manifest_tracks_theory_formalization_artifacts():
     defaults = {str(path).replace("\\", "/") for path in DEFAULT_ARTIFACTS}
 

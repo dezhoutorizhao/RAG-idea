@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T07:25:21.855066+00:00`
+Generated: `2026-05-29T07:34:39.525300+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -45,6 +45,7 @@ Ready for NeurIPS main claim: `False`
 | summarize_evidence_closure | `False` | `results\evidence_closure_status_v4.json`<br>`results\evidence_closure_status_v4.md` |
 | build_external_review_packet | `False` | `results\external_review_packet_status_20260529.json`<br>`results\external_review_packet_20260529.md` |
 | summarize_neurips_readiness | `False` | `results\neurips_readiness_matrix_20260529.json`<br>`results\neurips_readiness_matrix_20260529.md` |
+| summarize_neurips_unblock_plan | `False` | `results\neurips_unblock_plan_20260529.json`<br>`results\neurips_unblock_plan_20260529.md` |
 | build_results_provenance_readme | `True` | `results\results_provenance_manifest_20260529.json`<br>`results\README.md` |
 | build_claims_ledger_markdown | `True` | `CLAIMS_LEDGER.md`<br>`results\claims_ledger_markdown_summary_20260529.json` |
 | build_reproducibility_bundle | `True` | `reproducibility/checksums.json`<br>`reproducibility/seeds.json`<br>`reproducibility/hardware.md`<br>`reproducibility/artifact_manifest.md`<br>`reproducibility/hidden_local_path_audit.json`<br>`reproducibility/hidden_local_path_audit.md`<br>`reproducibility/reproduction_commands.md`<br>`reproducibility/bundle_summary_20260529.json` |
