@@ -1,0 +1,176 @@
+{
+  "allowed_claim_count": 28,
+  "blocker_reason": "pending_external_review",
+  "claim_policy": "This packet prepares the current evidence package for independent external review. It is not itself an external review and does not upgrade any claim until an independent review response is present.",
+  "external_review_completed": false,
+  "generated_at_utc": "2026-05-29T04:33:30.821632+00:00",
+  "hard_blockers": [
+    {
+      "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
+      "evidence": [
+        "results/human_audit_v4_status_20260529.json",
+        "results/human_audit_v4_disagreement_taxonomy_20260529.json",
+        "results/human_audit_v4_mismatch_20260529.json",
+        "results/human_audit_v4_eval_status_20260529.json"
+      ],
+      "requirement": "Human-audited orbit labels",
+      "status": "blocked"
+    },
+    {
+      "boundary_or_next_action": "Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts. Latest storage probe shows 322.1 GiB available and target_write_probe_passed=False; 6 target-dir file probes failed while writable fallback dirs are ['/home/syk', '/tmp', '/dev/shm'].",
+      "evidence": [
+        "results/corm_reproduction_preflight.json",
+        "results/corm_full_wikipedia_job_status.json",
+        "results/remote_storage_status_20260529.json"
+      ],
+      "requirement": "Full CoRM-RAG reproduction",
+      "status": "blocked"
+    },
+    {
+      "boundary_or_next_action": "External review packet is ready, but no independent review response is present; place the response at `results\\external_review_response_20260529.md`.",
+      "evidence": [
+        "results/external_review_packet_status_20260529.json",
+        "results/external_review_packet_20260529.md"
+      ],
+      "requirement": "Independent external review",
+      "status": "blocked"
+    }
+  ],
+  "manifest_artifact_count": 131,
+  "manifest_missing_artifact_count": 0,
+  "missing_source_artifacts": [],
+  "negative_or_partial_evidence": [
+    {
+      "boundary_or_next_action": "NLI cross-scorer evidence is directionally positive against required weak baselines, but LLM-NLI correlation and human-label text-only evaluation are not ready.",
+      "evidence": [
+        "results/text_only_verifier_status_20260529.json",
+        "results/audit_sample_paper_1000_v3_nli_set_eval.json",
+        "results/llm_judge_v4_request_status_20260529.json"
+      ],
+      "requirement": "Text-only semantic verifier",
+      "status": "partial"
+    },
+    {
+      "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.",
+      "evidence": [
+        "results/v4_strong_baseline_summary_20260529.json",
+        "results/v4_baseline_coverage_matrix_20260529.json",
+        "results/v4_baseline_budget_parity_20260529.json",
+        "results/v4_shared_threshold_selection_20260529.json",
+        "results/v4_split_threshold_protocol_20260529.json",
+        "results/llm_judge_v4_request_status_20260529.json"
+      ],
+      "requirement": "Strong baselines and equal-budget controls",
+      "status": "partial"
+    },
+    {
+      "boundary_or_next_action": "Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction.",
+      "evidence": [
+        "results/end2end_selective_rag_proxy_summary_20260529.json",
+        "results/end2end_retriever_generator_matrix_20260529.json"
+      ],
+      "requirement": "End-to-end selective RAG",
+      "status": "partial"
+    },
+    {
+      "boundary_or_next_action": "Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.",
+      "evidence": [
+        "results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json"
+      ],
+      "requirement": "Risk-control claim",
+      "status": "fail"
+    }
+  ],
+  "packet_path": "results\\external_review_packet_20260529.md",
+  "packet_ready": true,
+  "readiness_status_counts": {
+    "blocked": 3,
+    "fail": 1,
+    "partial": 3,
+    "pass": 4
+  },
+  "ready_for_independent_external_review_claim": false,
+  "review_questions": [
+    "Are every allowed claim and every disallowed claim in CLAIMS_LEDGER.json consistent with the current evidence package?",
+    "Does the negative evidence on FEVER risk transfer and strong baselines require weakening the main method claim further?",
+    "Are the text-only verifier and LLM judge artifacts sufficient as prepared execution paths, or is API-backed scoring required before paper writing?",
+    "Does the pending 300-item human audit block all human-audited validity language?",
+    "Does the remote storage evidence justify keeping full CoRM-RAG reproduction as unsupported until the NTFS/fuseblk write failure is repaired?",
+    "What exact additional experiments or labels are mandatory before a NeurIPS main-track submission claim can be made?"
+  ],
+  "review_response_path": "results\\external_review_response_20260529.md",
+  "source_artifacts": [
+    {
+      "exists": true,
+      "path": "RAG-idea\u6539\u8fdb.md",
+      "sha256": "abea2cc9e252308bd254f974d86cbd89910eecfeab3ee4a55ab14fc5dee71242",
+      "size_bytes": 49684
+    },
+    {
+      "exists": true,
+      "path": "CLAIMS_LEDGER.json",
+      "sha256": "f433d29dc1ca4d67e4097403e7e84c6adc8ec7de7c9785d1e3111a15d699d244",
+      "size_bytes": 53391
+    },
+    {
+      "exists": true,
+      "path": "results\\claims_verification.json",
+      "sha256": "b3051aff04cf1c2efe13719f0587dca08c1af41ba043266c8fdd1b7c3cde1a6e",
+      "size_bytes": 62860
+    },
+    {
+      "exists": true,
+      "path": "results\\evidence_closure_status_v4.json",
+      "sha256": "d03c2be184b818c8e6bce705bfe9d26e3a27e8f6495585072b74244bf8fa186a",
+      "size_bytes": 31123
+    },
+    {
+      "exists": true,
+      "path": "results\\neurips_readiness_matrix_20260529.json",
+      "sha256": "b00e0a8931a228f42313d1ff5149f9e0e2a9efd31ad656c02a948a1b13bc268f",
+      "size_bytes": 10268
+    },
+    {
+      "exists": true,
+      "path": "results\\v4_evidence_package_manifest_20260529.json",
+      "sha256": "b525a8c38892e7a2d7bf84daade1f064c1c0bd729d6201eef7c9b257b6bfdf96",
+      "size_bytes": 30700
+    },
+    {
+      "exists": true,
+      "path": "results\\text_only_verifier_status_20260529.json",
+      "sha256": "cc2e6d9d5a3a963e06607e40dba0ce4679c735f0da4b7117cb4bfe6f18333356",
+      "size_bytes": 4152
+    },
+    {
+      "exists": true,
+      "path": "results\\v4_strong_baseline_summary_20260529.json",
+      "sha256": "ec154521be71b2fb538c6ccd246950b25252924ce8059052894b4ab2515e9377",
+      "size_bytes": 44027
+    },
+    {
+      "exists": true,
+      "path": "results\\end2end_retriever_generator_matrix_20260529.json",
+      "sha256": "4a15c9204a670bf6a769ce1a3a1df88bea9673401113977d08f74cee1e975707",
+      "size_bytes": 52770
+    },
+    {
+      "exists": true,
+      "path": "results\\remote_storage_status_20260529.json",
+      "sha256": "99f9144bc129a4635f4083a47e6f57129aec1eef4194e4ced49f864c36ef42c6",
+      "size_bytes": 14189
+    },
+    {
+      "exists": true,
+      "path": "results\\human_audit_v4_status_20260529.json",
+      "sha256": "9382df70b54b3413e6dd64c70b17e5900aa48ca69bcc83c212fdba19fb7ac003",
+      "size_bytes": 9104
+    }
+  ],
+  "status": "packet_ready",
+  "verified_claims": {
+    "failed_claims": 0,
+    "passed_claims": 28,
+    "total_claims": 28
+  }
+}

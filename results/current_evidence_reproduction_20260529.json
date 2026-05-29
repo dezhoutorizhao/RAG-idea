@@ -6,7 +6,7 @@
     "non_human": [
       "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
       "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
-      "Independent external review has not been rerun after the latest storage-status update.",
+      "External review packet is ready, but independent review remains pending; place the response at results\\external_review_response_20260529.md.",
       "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
       "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats."
     ]
@@ -219,6 +219,14 @@
       "ready": false
     },
     {
+      "name": "build_external_review_packet",
+      "outputs": [
+        "results\\external_review_packet_status_20260529.json",
+        "results\\external_review_packet_20260529.md"
+      ],
+      "ready": false
+    },
+    {
       "name": "summarize_neurips_readiness",
       "outputs": [
         "results\\neurips_readiness_matrix_20260529.json",
@@ -266,7 +274,7 @@
     "human_audit_v4_ready": false,
     "remote_storage_ready": false
   },
-  "generated_at_utc": "2026-05-29T04:22:14.950576+00:00",
+  "generated_at_utc": "2026-05-29T04:33:30.822316+00:00",
   "ready_for_neurips_main_claim": false,
   "root": ".",
   "strict": false

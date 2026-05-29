@@ -7,6 +7,7 @@ from experiments.summarize_evidence_closure import (
     _human_audit_v4_status,
     _current_reproduction_status,
     _end2end_proxy_status,
+    _external_review_packet_status,
     _fever_cp_transfer_sweep_status,
     _remote_storage_probe_status,
     _mechanism_ablation_status,
@@ -564,6 +565,34 @@ def test_results_provenance_status_summarizes_readme_artifact(tmp_path):
     assert status["artifact_count"] == 32
     assert status["untracked_output_count"] == 7
     assert status["claim_boundary"] == "does not complete pending human audit labels"
+
+
+def test_external_review_packet_status_tracks_pending_review(tmp_path):
+    (tmp_path / "external_review_packet_20260529.md").write_text(
+        "# External Review Packet",
+        encoding="utf-8",
+    )
+    _write_json(
+        tmp_path / "external_review_packet_status_20260529.json",
+        {
+            "packet_ready": True,
+            "external_review_completed": False,
+            "ready_for_independent_external_review_claim": False,
+            "status": "packet_ready",
+            "blocker_reason": "pending_external_review",
+            "review_response_path": "results/external_review_response_20260529.md",
+            "missing_source_artifacts": [],
+            "claim_policy": "packet does not itself upgrade claims",
+        },
+    )
+
+    status = _external_review_packet_status(tmp_path)
+
+    assert status["packet_exists"] is True
+    assert status["packet_ready"] is True
+    assert status["external_review_completed"] is False
+    assert status["missing_source_artifact_count"] == 0
+    assert status["review_response_path"] == "results/external_review_response_20260529.md"
 
 
 def test_reproducibility_bundle_status_summarizes_artifact_grade_outputs(tmp_path):

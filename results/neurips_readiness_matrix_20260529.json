@@ -1,6 +1,6 @@
 {
   "claim_policy": "This matrix tracks readiness against the NeurIPS main-track evidence plan. A pass means the current artifact supports that checklist item at the stated scope; partial means useful evidence exists but is too narrow or mixed; fail means current evidence contradicts the strong version of the requirement; blocked means the item cannot be completed without human labels, storage repair/approval, or an external review.",
-  "generated_at_utc": "2026-05-29T04:22:15.454226+00:00",
+  "generated_at_utc": "2026-05-29T04:33:31.341473+00:00",
   "hard_blockers": [
     {
       "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
@@ -24,8 +24,11 @@
       "status": "blocked"
     },
     {
-      "boundary_or_next_action": "Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.",
-      "evidence": [],
+      "boundary_or_next_action": "External review packet is ready, but no independent review response is present; place the response at `results\\external_review_response_20260529.md`.",
+      "evidence": [
+        "results/external_review_packet_status_20260529.json",
+        "results/external_review_packet_20260529.md"
+      ],
       "requirement": "Independent external review",
       "status": "blocked"
     }
@@ -163,7 +166,7 @@
       "status": "fail"
     },
     {
-      "boundary_or_next_action": "Manifest artifacts: 131; missing: 0.",
+      "boundary_or_next_action": "Manifest artifacts: 134; missing: 0.",
       "evidence": [
         "CLAIMS_LEDGER.json",
         "results/claims_verification.json",
@@ -173,14 +176,18 @@
       "status": "pass"
     },
     {
-      "boundary_or_next_action": "Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.",
-      "evidence": [],
+      "boundary_or_next_action": "External review packet is ready, but no independent review response is present; place the response at `results\\external_review_response_20260529.md`.",
+      "evidence": [
+        "results/external_review_packet_status_20260529.json",
+        "results/external_review_packet_20260529.md"
+      ],
       "requirement": "Independent external review",
       "status": "blocked"
     }
   ],
   "source": {
     "closure": "results/evidence_closure_status_v4.json",
+    "external_review": "results/external_review_packet_status_20260529.json",
     "manifest": "results/v4_evidence_package_manifest_20260529.json",
     "plan": "RAG-idea\u6539\u8fdb.md Sections 13.1/13.2 plus current closure blockers",
     "reproduction": "results/current_evidence_reproduction_20260529.json",

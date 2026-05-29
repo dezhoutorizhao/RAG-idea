@@ -92,5 +92,13 @@ def test_default_manifest_tracks_text_only_verifier_artifacts():
     assert "experiments/summarize_text_only_verifier_status.py" in defaults
 
 
+def test_default_manifest_tracks_external_review_packet_artifacts():
+    defaults = {str(path).replace("\\", "/") for path in DEFAULT_ARTIFACTS}
+
+    assert "results/external_review_packet_status_20260529.json" in defaults
+    assert "results/external_review_packet_20260529.md" in defaults
+    assert "experiments/build_external_review_packet.py" in defaults
+
+
 def _write_json(path, payload):
     path.write_text(json.dumps(payload), encoding="utf-8")

@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T04:22:16.114122+00:00`
+Generated: `2026-05-29T04:33:31.999632+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `29`; tracked artifacts: `131`.
+- Provenance steps: `30`; tracked artifacts: `134`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `131`; dataset construction hashes: `41`.
+- Artifact checksums: `134`; dataset construction hashes: `41`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -72,13 +72,21 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 Hard blockers:
 - Human-audited orbit labels: Pending labels: 300; cannot claim human-audited results.
 - Full CoRM-RAG reproduction: Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts. Latest storage probe shows 322.1 GiB available and target_write_probe_passed=False; 6 target-dir file probes failed while writable fallback dirs are ['/home/syk', '/tmp', '/dev/shm'].
-- Independent external review: Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.
+- Independent external review: External review packet is ready, but no independent review response is present; place the response at `results\external_review_response_20260529.md`.
 
 Negative or partial evidence:
 - Text-only semantic verifier (`partial`): NLI cross-scorer evidence is directionally positive against required weak baselines, but LLM-NLI correlation and human-label text-only evaluation are not ready.
 - Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.
 - End-to-end selective RAG (`partial`): Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction.
 - Risk-control claim (`fail`): Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.
+
+## External Review Packet
+
+- Packet status: `packet_ready`; packet ready: `True`; packet exists: `True`.
+- External review completed: `False`; ready for independent-review claim: `False`.
+- Missing packet source artifacts: `0`.
+- Review response path: `results\external_review_response_20260529.md`.
+- Claim policy: This packet prepares the current evidence package for independent external review. It is not itself an external review and does not upgrade any claim until an independent review response is present.
 
 ## V4 Strong Baselines
 
@@ -144,7 +152,7 @@ V4 anti-shortcut suite:
 - Risk@30 wins/ties/losses vs strongest non-CSRM: `16` / `4` / `4`.
 - Risk@50 wins/ties/losses vs strongest non-CSRM: `24` / `0` / `0`.
 - AURC wins/ties/losses vs strongest non-CSRM: `16` / `0` / `8`.
-- Mean Risk@30/Risk@50/AURC reduction: `0.1528` / `0.1904` / `0.1080`.
+- Mean Risk@30/Risk@50/AURC reduction: `0.1514` / `0.1900` / `0.1079`.
 - Claim policy: This matrix expands the end-to-end proxy to two retrieval policies and two generators over the materialized v4 orbit corpus. It is still a local-corpus proxy, not a full Wikipedia retrieval-generation reproduction.
 
 ## CoRM Reconstruction
@@ -213,7 +221,7 @@ Disallowed claims:
 Remaining non-human blockers:
 - Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.
 - FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.
-- Independent external review has not been rerun after the latest storage-status update.
+- External review packet is ready, but independent review remains pending; place the response at results\external_review_response_20260529.md.
 - End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.
 - V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.
 

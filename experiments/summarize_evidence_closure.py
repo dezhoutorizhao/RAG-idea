@@ -86,6 +86,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     v4_anti_shortcut = _v4_anti_shortcut_status(results)
     mechanism_ablation = _mechanism_ablation_status(results)
     neurips_readiness = _neurips_readiness_status(results)
+    external_review = _external_review_packet_status(results)
     results_provenance = _results_provenance_status(results)
     reproducibility_bundle = _reproducibility_bundle_status(root)
 
@@ -174,6 +175,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         "results_provenance": results_provenance,
         "reproducibility_bundle": reproducibility_bundle,
         "neurips_readiness": neurips_readiness,
+        "external_review": external_review,
         "mechanism_ablation": mechanism_ablation,
         "end2end_selective_rag_proxy": end2end_proxy,
         "end2end_retriever_generator_matrix": end2end_matrix,
@@ -222,7 +224,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         "remaining_non_human_blockers": [
             "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
             "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
-            "Independent external review has not been rerun after the latest storage-status update.",
+            _external_review_blocker(external_review),
             "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
             "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.",
         ],
@@ -700,6 +702,40 @@ def _neurips_readiness_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _external_review_packet_status(results: Path) -> dict[str, Any] | None:
+    path = results / "external_review_packet_status_20260529.json"
+    packet = results / "external_review_packet_20260529.md"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "packet_artifact": str(packet.as_posix()),
+        "packet_exists": packet.exists(),
+        "packet_ready": payload.get("packet_ready"),
+        "external_review_completed": payload.get("external_review_completed"),
+        "ready_for_independent_external_review_claim": payload.get(
+            "ready_for_independent_external_review_claim"
+        ),
+        "status": payload.get("status"),
+        "blocker_reason": payload.get("blocker_reason"),
+        "review_response_path": payload.get("review_response_path"),
+        "missing_source_artifact_count": len(payload.get("missing_source_artifacts", [])),
+        "claim_policy": payload.get("claim_policy"),
+    }
+
+
+def _external_review_blocker(external_review: dict[str, Any] | None) -> str:
+    if external_review and external_review.get("ready_for_independent_external_review_claim"):
+        return "Independent external review response exists; manually inspect it before upgrading readiness claims."
+    if external_review and external_review.get("packet_ready"):
+        return (
+            "External review packet is ready, but independent review remains pending; "
+            f"place the response at {external_review.get('review_response_path')}."
+        )
+    return "Independent external review packet is missing or incomplete after the latest evidence update."
+
+
 def _results_provenance_status(results: Path) -> dict[str, Any] | None:
     path = results / "results_provenance_manifest_20260529.json"
     readme = results / "README.md"
@@ -799,6 +835,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     results_provenance = status.get("results_provenance")
     reproducibility_bundle = status.get("reproducibility_bundle")
     neurips_readiness = status.get("neurips_readiness")
+    external_review = status.get("external_review")
     mechanism_ablation = status.get("mechanism_ablation")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
     end2end_matrix = status.get("end2end_retriever_generator_matrix")
@@ -958,6 +995,26 @@ def render_markdown(status: dict[str, Any]) -> str:
             for item in neurips_readiness["negative_or_partial_evidence"]
         )
         lines.append("")
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## External Review Packet", ""])
+    if external_review:
+        lines.extend(
+            [
+                f"- Packet status: `{external_review['status']}`; "
+                f"packet ready: `{external_review['packet_ready']}`; "
+                f"packet exists: `{external_review['packet_exists']}`.",
+                f"- External review completed: "
+                f"`{external_review['external_review_completed']}`; "
+                f"ready for independent-review claim: "
+                f"`{external_review['ready_for_independent_external_review_claim']}`.",
+                f"- Missing packet source artifacts: "
+                f"`{external_review['missing_source_artifact_count']}`.",
+                f"- Review response path: `{external_review['review_response_path']}`.",
+                f"- Claim policy: {external_review['claim_policy']}",
+                "",
+            ]
+        )
     else:
         lines.extend(["- Not recorded.", ""])
     lines.extend(["## V4 Strong Baselines", ""])

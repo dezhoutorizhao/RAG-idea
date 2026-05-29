@@ -20,7 +20,8 @@ def summarize_neurips_readiness(root: Path) -> dict[str, Any]:
     manifest = _load_json(results / "v4_evidence_package_manifest_20260529.json")
     reproduction = _load_json(results / "current_evidence_reproduction_20260529.json")
     text_only = _load_optional_json(results / "text_only_verifier_status_20260529.json")
-    rows = _rows(closure, manifest, reproduction, text_only)
+    external_review = _load_optional_json(results / "external_review_packet_status_20260529.json")
+    rows = _rows(closure, manifest, reproduction, text_only, external_review)
     return {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "source": {
@@ -29,6 +30,7 @@ def summarize_neurips_readiness(root: Path) -> dict[str, Any]:
             "manifest": "results/v4_evidence_package_manifest_20260529.json",
             "reproduction": "results/current_evidence_reproduction_20260529.json",
             "text_only_verifier": "results/text_only_verifier_status_20260529.json",
+            "external_review": "results/external_review_packet_status_20260529.json",
         },
         "rows": rows,
         "status_counts": _status_counts(rows),
@@ -82,6 +84,7 @@ def _rows(
     manifest: dict[str, Any],
     reproduction: dict[str, Any],
     text_only: dict[str, Any],
+    external_review: dict[str, Any],
 ) -> list[dict[str, Any]]:
     latest = closure.get("latest_v4_diagnostics", {})
     strong = closure.get("v4_strong_baselines") or {}
@@ -209,9 +212,12 @@ def _rows(
         ),
         _row(
             "Independent external review",
-            BLOCKED,
-            [],
-            "Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.",
+            PASS if external_review.get("ready_for_independent_external_review_claim") else BLOCKED,
+            [
+                "results/external_review_packet_status_20260529.json",
+                "results/external_review_packet_20260529.md",
+            ],
+            _external_review_boundary(external_review),
         ),
     ]
 
@@ -237,6 +243,21 @@ def _full_corm_boundary(storage_probe: dict[str, Any]) -> str:
         f"target_write_probe_passed={storage_probe.get('target_write_probe_passed')}; "
         f"{len(failed_target_dirs)} target-dir file probes failed while writable fallback dirs are "
         f"{writable_fallback_dirs}."
+    )
+
+
+def _external_review_boundary(external_review: dict[str, Any]) -> str:
+    if external_review.get("ready_for_independent_external_review_claim"):
+        return "Independent external review response is present; inspect the response before upgrading paper claims."
+    if external_review.get("packet_ready"):
+        return (
+            "External review packet is ready, but no independent review response is present; "
+            f"place the response at `{external_review.get('review_response_path')}`."
+        )
+    missing = external_review.get("missing_source_artifacts") or []
+    return (
+        "External review packet is incomplete; regenerate the evidence package first. "
+        f"Missing packet sources: {missing}."
     )
 
 

@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T04:22:14.950576+00:00`
+Generated: `2026-05-29T04:33:30.822316+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -33,6 +33,7 @@ Ready for NeurIPS main claim: `False`
 | summarize_mechanism_ablation | `True` | `results\mechanism_ablation_summary_20260529.json`<br>`results\mechanism_ablation_summary_20260529.md` |
 | verify_claims | `True` | `results\claims_verification.json` |
 | summarize_evidence_closure | `False` | `results\evidence_closure_status_v4.json`<br>`results\evidence_closure_status_v4.md` |
+| build_external_review_packet | `False` | `results\external_review_packet_status_20260529.json`<br>`results\external_review_packet_20260529.md` |
 | summarize_neurips_readiness | `False` | `results\neurips_readiness_matrix_20260529.json`<br>`results\neurips_readiness_matrix_20260529.md` |
 | build_results_provenance_readme | `True` | `results\results_provenance_manifest_20260529.json`<br>`results\README.md` |
 | build_claims_ledger_markdown | `True` | `CLAIMS_LEDGER.md`<br>`results\claims_ledger_markdown_summary_20260529.json` |
@@ -56,7 +57,7 @@ Human audit:
 Non-human:
 - Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.
 - FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.
-- Independent external review has not been rerun after the latest storage-status update.
+- External review packet is ready, but independent review remains pending; place the response at results\external_review_response_20260529.md.
 - End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.
 - V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.
 

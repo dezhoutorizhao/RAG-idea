@@ -1,6 +1,6 @@
 # NeurIPS Readiness Matrix
 
-Generated: `2026-05-29T04:22:15.454226+00:00`
+Generated: `2026-05-29T04:33:31.341473+00:00`
 
 Ready for NeurIPS main-track claim: `False`
 
@@ -24,8 +24,8 @@ Ready for NeurIPS main-track claim: `False`
 | Mechanism ablations | `pass` | `results/mechanism_ablation_summary_20260529.json` | Alignment evidence is strong; no-worst-sufficiency is weak/redundant in current bridge artifacts. |
 | Failure taxonomy and case studies | `pass` | `results/v4_failure_taxonomy_summary_20260529.json`<br>`paper/case_studies/v4_case_gallery_20260529.md`<br>`paper/figures/clean_sufficiency_misleading_v4_20260529.svg` | Paper-facing diagnostics are complete but private-label, not human-adjudicated. |
 | Risk-control claim | `fail` | `results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json` | Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim. |
-| Claim ledger and evidence package | `pass` | `CLAIMS_LEDGER.json`<br>`results/claims_verification.json`<br>`results/v4_evidence_package_manifest_20260529.json` | Manifest artifacts: 131; missing: 0. |
-| Independent external review | `blocked` |  | Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path. |
+| Claim ledger and evidence package | `pass` | `CLAIMS_LEDGER.json`<br>`results/claims_verification.json`<br>`results/v4_evidence_package_manifest_20260529.json` | Manifest artifacts: 134; missing: 0. |
+| Independent external review | `blocked` | `results/external_review_packet_status_20260529.json`<br>`results/external_review_packet_20260529.md` | External review packet is ready, but no independent review response is present; place the response at `results\external_review_response_20260529.md`. |
 
 ## Claim Policy
 

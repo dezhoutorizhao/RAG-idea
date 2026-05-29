@@ -35,6 +35,7 @@ PROVENANCE_BY_STEP = {
     "summarize_mechanism_ablation": "experiments/summarize_mechanism_ablation.py",
     "verify_claims": "experiments/verify_claims.py",
     "summarize_evidence_closure": "experiments/summarize_evidence_closure.py",
+    "build_external_review_packet": "experiments/build_external_review_packet.py",
     "summarize_neurips_readiness": "experiments/summarize_neurips_readiness.py",
     "build_results_provenance_readme": "experiments/build_results_provenance_readme.py",
     "build_claims_ledger_markdown": "experiments/build_claims_ledger_markdown.py",

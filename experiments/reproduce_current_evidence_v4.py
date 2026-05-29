@@ -113,6 +113,10 @@ from experiments.summarize_neurips_readiness import (
     render_markdown as render_neurips_readiness_markdown,
     summarize_neurips_readiness,
 )
+from experiments.build_external_review_packet import (
+    build_external_review_packet,
+    render_markdown as render_external_review_packet_markdown,
+)
 from experiments.build_results_provenance_readme import (
     build_results_provenance_readme,
     render_markdown as render_results_provenance_markdown,
@@ -571,11 +575,39 @@ def reproduce_current_evidence_v4(
         }
     )
 
+    external_review_json = results / "external_review_packet_status_20260529.json"
+    external_review_md = results / "external_review_packet_20260529.md"
+    external_review = build_external_review_packet(
+        root,
+        output_md=external_review_md.relative_to(root),
+    )
+    _write_json(external_review_json, external_review)
+    external_review_md.write_text(
+        render_external_review_packet_markdown(external_review),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "build_external_review_packet",
+            "outputs": [str(external_review_json), str(external_review_md)],
+            "ready": external_review["ready_for_independent_external_review_claim"],
+        }
+    )
+
     readiness_json = results / "neurips_readiness_matrix_20260529.json"
     readiness_md = results / "neurips_readiness_matrix_20260529.md"
     readiness = summarize_neurips_readiness(root)
     _write_json(readiness_json, readiness)
     readiness_md.write_text(render_neurips_readiness_markdown(readiness), encoding="utf-8")
+    external_review = build_external_review_packet(
+        root,
+        output_md=external_review_md.relative_to(root),
+    )
+    _write_json(external_review_json, external_review)
+    external_review_md.write_text(
+        render_external_review_packet_markdown(external_review),
+        encoding="utf-8",
+    )
     commands.append(
         {
             "name": "summarize_neurips_readiness",
