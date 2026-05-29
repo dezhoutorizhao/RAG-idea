@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T06:12:34.703851+00:00`
+Generated: `2026-05-29T06:22:56.103336+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -35,6 +35,7 @@ Ready for NeurIPS main claim: `False`
 | build_clean_sufficiency_misleading_figure | `True` | `paper\figures\clean_sufficiency_misleading_v4_20260529.csv`<br>`results\clean_sufficiency_misleading_v4_20260529.json`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.svg`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.md` |
 | summarize_v4_anti_shortcut | `True` | `results\v4_anti_shortcut_summary_20260529.json`<br>`results\v4_anti_shortcut_summary_20260529.md` |
 | summarize_mechanism_ablation | `True` | `results\mechanism_ablation_summary_20260529.json`<br>`results\mechanism_ablation_summary_20260529.md` |
+| summarize_theory_formalization | `True` | `results\theory_formalization_status_20260529.json`<br>`results\theory_formalization_status_20260529.md` |
 | verify_claims | `True` | `results\claims_verification.json` |
 | summarize_evidence_closure | `False` | `results\evidence_closure_status_v4.json`<br>`results\evidence_closure_status_v4.md` |
 | build_external_review_packet | `False` | `results\external_review_packet_status_20260529.json`<br>`results\external_review_packet_20260529.md` |

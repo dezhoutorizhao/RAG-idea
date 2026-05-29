@@ -11,6 +11,7 @@
     "A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.",
     "The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.",
     "Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings.",
+    "The theory/formalization module states the orbit-risk object and information-structure rationale for clean-only, single-set, and aligned-orbit evidence.",
     "The calibrated orbit risk model improves Brier score over rule/minimax baselines across current v4 calibration artifacts; ECE evidence is mostly positive but mixed."
   ],
   "claim_verification": {
@@ -115,7 +116,8 @@
     "The method solves robust RAG generally across tasks.",
     "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4.",
     "The v4 failure taxonomy is human-adjudicated evidence.",
-    "Calibration establishes a formal risk-control guarantee."
+    "Calibration establishes a formal risk-control guarantee.",
+    "The theory/formalization module proves empirical all-win behavior or replaces human audit."
   ],
   "end2end_retriever_generator_matrix": {
     "all_win": false,
@@ -250,7 +252,7 @@
     "review_response_path": "results\\external_review_response_20260529.md",
     "status": "packet_ready"
   },
-  "generated_at_utc": "2026-05-29T06:12:35.982341+00:00",
+  "generated_at_utc": "2026-05-29T06:22:57.515775+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -518,6 +520,50 @@
         }
       ],
       "ready": false
+    },
+    "theory_formalization": {
+      "all_concepts_present": true,
+      "all_files_present": true,
+      "all_labels_present": true,
+      "artifact": "results/theory_formalization_status_20260529.json",
+      "claim_implication": "The formalization supports the mechanism-level information-structure claim that clean-only, single-set, and unaligned evidence are insufficient for item-level counterfactual orbit risk. It does not prove empirical all-win behavior, human validity, or a formal risk-control guarantee.",
+      "required_labels": [
+        {
+          "label": "sec:formalization",
+          "present": true
+        },
+        {
+          "label": "sec:theory",
+          "present": true
+        },
+        {
+          "label": "prop:clean-not-orbit",
+          "present": true
+        },
+        {
+          "label": "prop:single-set-not-orbit",
+          "present": true
+        },
+        {
+          "label": "prop:orbit-alignment-necessary",
+          "present": true
+        }
+      ],
+      "section_files": [
+        {
+          "exists": true,
+          "path": "paper\\sections\\formalization.tex",
+          "sha256": "4a9985e6c1156ba7209df22ee2527d76300e696b3bc0ce6560773d07e6018df2",
+          "size_bytes": 2869
+        },
+        {
+          "exists": true,
+          "path": "paper\\sections\\theory.tex",
+          "sha256": "5c04e9b9ae97e0b9ccbce85ef0734c5887044a9a808975a452d8dcd80f89925d",
+          "size_bytes": 3841
+        }
+      ],
+      "theory_module_ready": true
     }
   },
   "main_bridge_results": {
@@ -673,7 +719,7 @@
       "blocked": 3,
       "fail": 1,
       "partial": 4,
-      "pass": 4
+      "pass": 5
     }
   },
   "remaining_human_audit_blockers": [
@@ -689,7 +735,7 @@
   ],
   "reproducibility_bundle": {
     "artifact": "reproducibility/bundle_summary_20260529.json",
-    "artifact_checksum_count": 161,
+    "artifact_checksum_count": 166,
     "checkpoint_hash_available": true,
     "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
     "dataset_construction_hash_count": 41,
@@ -709,7 +755,7 @@
   },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 161,
+    "artifact_count": 166,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,
@@ -717,11 +763,11 @@
       "blocked": 3,
       "fail": 1,
       "partial": 4,
-      "pass": 4
+      "pass": 5
     },
     "readme_artifact": "results/README.md",
     "readme_exists": true,
-    "step_count": 34,
+    "step_count": 35,
     "untracked_output_count": 0
   },
   "risk_control": {
@@ -837,6 +883,50 @@
       "error_count": 0,
       "passed": true
     }
+  },
+  "theory_formalization": {
+    "all_concepts_present": true,
+    "all_files_present": true,
+    "all_labels_present": true,
+    "artifact": "results/theory_formalization_status_20260529.json",
+    "claim_implication": "The formalization supports the mechanism-level information-structure claim that clean-only, single-set, and unaligned evidence are insufficient for item-level counterfactual orbit risk. It does not prove empirical all-win behavior, human validity, or a formal risk-control guarantee.",
+    "required_labels": [
+      {
+        "label": "sec:formalization",
+        "present": true
+      },
+      {
+        "label": "sec:theory",
+        "present": true
+      },
+      {
+        "label": "prop:clean-not-orbit",
+        "present": true
+      },
+      {
+        "label": "prop:single-set-not-orbit",
+        "present": true
+      },
+      {
+        "label": "prop:orbit-alignment-necessary",
+        "present": true
+      }
+    ],
+    "section_files": [
+      {
+        "exists": true,
+        "path": "paper\\sections\\formalization.tex",
+        "sha256": "4a9985e6c1156ba7209df22ee2527d76300e696b3bc0ce6560773d07e6018df2",
+        "size_bytes": 2869
+      },
+      {
+        "exists": true,
+        "path": "paper\\sections\\theory.tex",
+        "sha256": "5c04e9b9ae97e0b9ccbce85ef0734c5887044a9a808975a452d8dcd80f89925d",
+        "size_bytes": 3841
+      }
+    ],
+    "theory_module_ready": true
   },
   "v4_calibration_quality": {
     "artifact": "results/v4_calibration_quality_20260529.json",

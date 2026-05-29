@@ -1,0 +1,66 @@
+{
+  "all_concepts_present": true,
+  "all_files_present": true,
+  "all_labels_present": true,
+  "claim_implication": "The formalization supports the mechanism-level information-structure claim that clean-only, single-set, and unaligned evidence are insufficient for item-level counterfactual orbit risk. It does not prove empirical all-win behavior, human validity, or a formal risk-control guarantee.",
+  "generated_at_utc": "2026-05-29T06:22:56.043748+00:00",
+  "required_concepts": [
+    {
+      "concept": "orbit risk",
+      "present": true
+    },
+    {
+      "concept": "clean-only selector",
+      "present": true
+    },
+    {
+      "concept": "single-set sufficiency",
+      "present": true
+    },
+    {
+      "concept": "orbit alignment",
+      "present": true
+    },
+    {
+      "concept": "Scope and non-claims",
+      "present": true
+    }
+  ],
+  "required_labels": [
+    {
+      "label": "sec:formalization",
+      "present": true
+    },
+    {
+      "label": "sec:theory",
+      "present": true
+    },
+    {
+      "label": "prop:clean-not-orbit",
+      "present": true
+    },
+    {
+      "label": "prop:single-set-not-orbit",
+      "present": true
+    },
+    {
+      "label": "prop:orbit-alignment-necessary",
+      "present": true
+    }
+  ],
+  "section_files": [
+    {
+      "exists": true,
+      "path": "paper\\sections\\formalization.tex",
+      "sha256": "4a9985e6c1156ba7209df22ee2527d76300e696b3bc0ce6560773d07e6018df2",
+      "size_bytes": 2869
+    },
+    {
+      "exists": true,
+      "path": "paper\\sections\\theory.tex",
+      "sha256": "5c04e9b9ae97e0b9ccbce85ef0734c5887044a9a808975a452d8dcd80f89925d",
+      "size_bytes": 3841
+    }
+  ],
+  "theory_module_ready": true
+}

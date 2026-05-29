@@ -1,6 +1,6 @@
 {
   "claim_policy": "This matrix tracks readiness against the NeurIPS main-track evidence plan. A pass means the current artifact supports that checklist item at the stated scope; partial means useful evidence exists but is too narrow or mixed; fail means current evidence contradicts the strong version of the requirement; blocked means the item cannot be completed without human labels, storage repair/approval, or an external review.",
-  "generated_at_utc": "2026-05-29T06:12:35.262670+00:00",
+  "generated_at_utc": "2026-05-29T06:22:56.689407+00:00",
   "hard_blockers": [
     {
       "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
@@ -165,6 +165,16 @@
       "status": "pass"
     },
     {
+      "boundary_or_next_action": "Formalization now states the orbit-risk object and three information-structure propositions. This supports the mechanism rationale but does not imply empirical all-win behavior, human validity, or a formal risk-control guarantee.",
+      "evidence": [
+        "paper/sections/formalization.tex",
+        "paper/sections/theory.tex",
+        "results/theory_formalization_status_20260529.json"
+      ],
+      "requirement": "Theory and formalization",
+      "status": "pass"
+    },
+    {
       "boundary_or_next_action": "Calibration-quality artifact shows Brier wins 6/6 against rule/minimax references, but ECE wins 4/6. This supports empirical calibration-quality wording, not a formal risk guarantee.",
       "evidence": [
         "results/v4_calibration_quality_20260529.json",
@@ -192,7 +202,7 @@
       "status": "fail"
     },
     {
-      "boundary_or_next_action": "Manifest artifacts: 161; missing: 0.",
+      "boundary_or_next_action": "Manifest artifacts: 166; missing: 0.",
       "evidence": [
         "CLAIMS_LEDGER.json",
         "results/claims_verification.json",
@@ -217,12 +227,13 @@
     "manifest": "results/v4_evidence_package_manifest_20260529.json",
     "plan": "RAG-idea\u6539\u8fdb.md Sections 13.1/13.2 plus current closure blockers",
     "reproduction": "results/current_evidence_reproduction_20260529.json",
-    "text_only_verifier": "results/text_only_verifier_status_20260529.json"
+    "text_only_verifier": "results/text_only_verifier_status_20260529.json",
+    "theory_formalization": "results/theory_formalization_status_20260529.json"
   },
   "status_counts": {
     "blocked": 3,
     "fail": 1,
     "partial": 4,
-    "pass": 4
+    "pass": 5
   }
 }

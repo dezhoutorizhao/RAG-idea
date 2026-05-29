@@ -22,5 +22,6 @@ python -m pytest `
   tests/test_summarize_v4_split_threshold_protocol.py `
   tests/test_summarize_risk_control_abstention_baselines.py `
   tests/test_summarize_v4_calibration_quality.py `
+  tests/test_summarize_theory_formalization.py `
   tests/test_verify_v4_evidence_package.py `
   -q

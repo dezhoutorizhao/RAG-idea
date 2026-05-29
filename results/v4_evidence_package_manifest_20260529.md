@@ -1,6 +1,6 @@
 # V4 Evidence Package Manifest
 
-Generated: `2026-05-29T06:12:36.127828+00:00`
+Generated: `2026-05-29T06:22:57.664550+00:00`
 
 Package status: `complete_with_known_blockers`
 Ready for NeurIPS main claim: `False`
@@ -20,26 +20,26 @@ Missing artifacts: `0`
 
 - Passed: `28/28`.
 - Failed: `0`.
-- Allowed/disallowed claim counts: `12` / `7`.
+- Allowed/disallowed claim counts: `13` / `8`.
 
 ## Artifacts
 
 | Path | Exists | Bytes | SHA256 |
 |---|---:|---:|---|
-| `results\current_evidence_reproduction_20260529.json` | `True` | `10822` | `e04f24b39b3e6456f104416f9c5cd3468a3f3682bca8ff5a598e0cd5dad59d70` |
-| `results\current_evidence_reproduction_20260529.md` | `True` | `7703` | `e88b075aa2f7af16381dd9658aa74bcfe2033fd0ddb0338cfc5d7d1c6fb3806a` |
+| `results\current_evidence_reproduction_20260529.json` | `True` | `11060` | `dd5d877c10159af3d6f6ae77c99cb6bd8ccbe9d8a50637b3a44025ca0fb2d572` |
+| `results\current_evidence_reproduction_20260529.md` | `True` | `7855` | `da88159acb51220fad8e5a6e68c48d4264223ec7a23c9b52002544db907e0c84` |
 | `CLAIMS_LEDGER.json` | `True` | `53391` | `f433d29dc1ca4d67e4097403e7e84c6adc8ec7de7c9785d1e3111a15d699d244` |
-| `CLAIMS_LEDGER.md` | `True` | `25742` | `56229e733e3d7eefa8a721f1c97480c94ea1fda47a0b0cc4cafd37a911480928` |
+| `CLAIMS_LEDGER.md` | `True` | `25742` | `f9db64e8c71574751ea51976e725fa72ce0f6e097f94778feebf2c700fbcab90` |
 | `results\claims_verification.json` | `True` | `62860` | `b3051aff04cf1c2efe13719f0587dca08c1af41ba043266c8fdd1b7c3cde1a6e` |
-| `results\claims_ledger_markdown_summary_20260529.json` | `True` | `26379` | `5f523c4fff4b6bec42ec0321ae03ac635a25b415e3bab776788adc6fa0a0f15c` |
-| `results\evidence_closure_status_v4.json` | `True` | `38723` | `d6da348358fe0e74df849eb57c6fe6dd481d946dd95df8788d8d8d6da76ec0d8` |
-| `results\evidence_closure_status_v4.md` | `True` | `19949` | `2cf258ae5d5fd728b24e235ee60dd9a97abc319c7c3fa2d834e6949fdda61950` |
-| `results\results_provenance_manifest_20260529.json` | `True` | `35674` | `450ebc538b2ab50ef8fc04423bc2ebf2d5d7db868fa20d39dadc7ea3db5e157c` |
-| `results\README.md` | `True` | `15455` | `804bc1079d79141dd7700e30d3a963dadc08461c7ab909296117c3861ca0e7ed` |
-| `results\neurips_readiness_matrix_20260529.json` | `True` | `12176` | `1296a59c0a8bfadb884e25b1acacdf02725b27ead0269438e1b74941a430c414` |
-| `results\neurips_readiness_matrix_20260529.md` | `True` | `5306` | `049694b976099ad188c109bcaabdea84b2e729b7a896d3c7aba8f0415d4786b0` |
-| `results\external_review_packet_status_20260529.json` | `True` | `9835` | `6d4d6d36741903f706c9f4ec1d3047f628c40493e945089eb88dac675d0882ba` |
-| `results\external_review_packet_20260529.md` | `True` | `6339` | `f72d076381ee5d795c2621430a773882eb4c41cd6ccce16f05760519ab8fab2a` |
+| `results\claims_ledger_markdown_summary_20260529.json` | `True` | `26379` | `1f7caef5aa39b9f3e4e3d4787a7fb7932f708fa17bfc6340c4b0d1687bd11dfc` |
+| `results\evidence_closure_status_v4.json` | `True` | `42007` | `86bf081052301b1d6d3281267a556b8a731bd488f55ec7853db08ed6d7058b7d` |
+| `results\evidence_closure_status_v4.md` | `True` | `20861` | `75356de75de00d46d3e3af4fd31d3d61e95b18c5b8c11710d916346b843ef211` |
+| `results\results_provenance_manifest_20260529.json` | `True` | `36534` | `f0b3880cd6a2b8a4b7e1dc74a00fb61c7204c8a07331745f126da775ebc45eaf` |
+| `results\README.md` | `True` | `15767` | `e1277cc67bd1bbe906b8bdd6925aa06ddc373233cbb26e5573dc444950989867` |
+| `results\neurips_readiness_matrix_20260529.json` | `True` | `12789` | `8cb2c377cef7353370b31671a19ee2c115a1fafa0a1989e011620029679f8654` |
+| `results\neurips_readiness_matrix_20260529.md` | `True` | `5700` | `d5fa63b64a12c415ded89519ad5eb92c1fe19e04e56ccd2b67c77f288e87a92e` |
+| `results\external_review_packet_status_20260529.json` | `True` | `10450` | `4473d383d461a5e59d0d69b6142eeec639dda8d80c0fcadff58f85aeea484769` |
+| `results\external_review_packet_20260529.md` | `True` | `6724` | `9ceda8647a47fc29eae804502eb4ff50479ce1de6d1b8295297c574bfa353c9b` |
 | `results\human_audit_v4_status_20260529.json` | `True` | `9104` | `9382df70b54b3413e6dd64c70b17e5900aa48ca69bcc83c212fdba19fb7ac003` |
 | `results\human_audit_v4_status_20260529.md` | `True` | `943` | `f88c4716924c3aeac3b48b90917a4c3767dfa78e46d40303129defa7755711ed` |
 | `results\human_audit_v4_disagreement_taxonomy_20260529.json` | `True` | `2315` | `4bd730559c172fccf1680ca80a8a22e9e5b45d032b1a7018c636a0899e8792a4` |
@@ -48,45 +48,47 @@ Missing artifacts: `0`
 | `results\human_audit_v4_mismatch_20260529.md` | `True` | `859` | `715cbb8804357ed92f83de8d33e5b9fe92146ffdeabcd0240076180928ed1bd2` |
 | `results\human_audit_v4_eval_status_20260529.json` | `True` | `2528` | `3703442aa638c9b6ea69f245604e62a170ab871173452907e26d4857f9a8f3ba` |
 | `results\human_audit_v4_eval_status_20260529.md` | `True` | `1036` | `631763b47c09690e4257ed1e84e67b9f5e2694456a50528b1d72ae92a316ef78` |
-| `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json` | `True` | `8163` | `ee2779aa9b71b0368dbc3b66477ffbbdd9102f44912eea06c5cbc29611cad3a9` |
-| `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.md` | `True` | `1930` | `78ad9e70a8d3584ffd82c3521294f2c30023305238bd46fc466d5245e748a6c0` |
-| `results\end2end_selective_rag_proxy_summary_20260529.json` | `True` | `13211` | `d31c88762fc8855511b02780c16db99d379e5e3bc13f261bb501727e6ebf37ce` |
-| `results\end2end_selective_rag_proxy_summary_20260529.md` | `True` | `3279` | `dcd52493e2e3ac7146a3ce43e551199ac157aa7299b273634531f0f7f03f6c35` |
-| `results\end2end_retriever_generator_matrix_20260529.json` | `True` | `52753` | `a190a8d353b87448bc485360a3a5b927fde590f52fbaa700461f131b2940d282` |
-| `results\end2end_retriever_generator_matrix_20260529.md` | `True` | `5142` | `32dcf6fb709b498d6e05e20248cc94939010118eb9198d72ce418f55c408964f` |
-| `results\end2end_risk_coverage_curves_20260529.json` | `True` | `130245` | `88229abbc22bdadca6747377a179a147568cd5b78e571f6c7783cd27d8fcceb0` |
-| `results\end2end_risk_coverage_curves_20260529.md` | `True` | `1354` | `63e7ad65bafd746b2c4bec54c12e2b19d475f00dc5ffa6c0f44776258fa1e3f0` |
-| `results\end2end_target_risk_coverage_20260529.json` | `True` | `30644` | `9d4d7659652ba99209aae40a500e8e62d4c2c98f6e46accbb4858f8ed8268922` |
-| `results\end2end_target_risk_coverage_20260529.md` | `True` | `768` | `99de3e0a6eb76975fb216e9da4da2b3355313ee7ea820730ba74e7c491b8b285` |
+| `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json` | `True` | `8163` | `11a8d2f93cec397b783d30a320c2974ba171fe6e44145e56c38c5ea48ad8f8bf` |
+| `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.md` | `True` | `1930` | `520b79abb99e1c7c3b2cd9c65309808d7569b8e52ccd919df8722e39d06669cc` |
+| `results\end2end_selective_rag_proxy_summary_20260529.json` | `True` | `13211` | `08174414f74a5bf99cca8e45739b970d39a37e18b5ea2d4d6db1dad31ef029ce` |
+| `results\end2end_selective_rag_proxy_summary_20260529.md` | `True` | `3279` | `74c721a1f30ed44fae9e64e2a253f17fdc46fcae8709be722609fd2e5064769e` |
+| `results\end2end_retriever_generator_matrix_20260529.json` | `True` | `52753` | `d917416f107db3cd6575ec214544a7d84fa8194a954313b205e069d88d5af34f` |
+| `results\end2end_retriever_generator_matrix_20260529.md` | `True` | `5142` | `0ae6b67586dbc55d749b2e00ce584273a41381d36cddd9873dad181934104f00` |
+| `results\end2end_risk_coverage_curves_20260529.json` | `True` | `130245` | `be420a5a4b83fcdcdc4796ffff4426d414c5a805877fbfa0d3cddf4a83fdbf7a` |
+| `results\end2end_risk_coverage_curves_20260529.md` | `True` | `1354` | `aac5f54d05da17bcd75a94263d324e183c5fff5493fa892aadf4e08b716d6187` |
+| `results\end2end_target_risk_coverage_20260529.json` | `True` | `30644` | `2c5576db5c6103238bd5f57c464b18c473a6663aee41ef901c7d499229acbf15` |
+| `results\end2end_target_risk_coverage_20260529.md` | `True` | `768` | `0e3fde3a30d1075b0768fa482cccb4c06a10a05a895a18966f7eab352161ad28` |
 | `paper\figures\end2end_risk_coverage_curves_20260529.svg` | `True` | `3270` | `e24141090458762043e9a086c7bec99232d01271c9914537aa977a6be4e59cef` |
 | `results\llm_judge_v4_requests_20260529.jsonl` | `True` | `9687460` | `7863764d362fb74a5899275d4b1dcae0bf8087fd4dccc3364240fd4f0505fc6e` |
-| `results\llm_judge_v4_request_status_20260529.json` | `True` | `1647` | `235dbf180d62d105d3ee92db63867c324d377d841435e04f0865016b916ad486` |
-| `results\llm_judge_v4_request_status_20260529.md` | `True` | `1136` | `5e2a62710d65c61aa7369eb0bed74d0f5f4b9d02895c132dd87e9c7611759be4` |
+| `results\llm_judge_v4_request_status_20260529.json` | `True` | `1647` | `ae97cb94f01b7be01da35ed55ab917493f85fb05633f71a8af8044f41bf92b5d` |
+| `results\llm_judge_v4_request_status_20260529.md` | `True` | `1136` | `2eb8c9f90d46a3eea01ff4ab2a106a422a890a78832e609cf06cda89e0b668f9` |
 | `results\llm_judge_nli_probe_requests_20260529.jsonl` | `True` | `7760059` | `74ed598cbdcf175f276cab41b3718ced9c1910ca3a93f23de1c947734c816d34` |
-| `results\llm_judge_nli_probe_request_status_20260529.json` | `True` | `1238` | `01ed2efa10aa89bc95ea458e84552c8cc88cefe9226e0f51e1412a597c482f2c` |
-| `results\llm_judge_nli_probe_request_status_20260529.md` | `True` | `990` | `9c67f2e0d4495b96ef9089a90c3f28c10462c2dc6d609a77524dc66d276954c7` |
-| `results\llm_judge_nli_probe_batch_run_status_20260529.json` | `True` | `2549` | `38d6fa6fa3d3e847c4a72440dba640d960a066361bde6f772119c9eb8890f710` |
-| `results\llm_judge_nli_probe_batch_run_status_20260529.md` | `True` | `2017` | `31a02fa1cd82a67f805db5e8be925897405668fea4e30510580651ca01e436bb` |
-| `results\llm_judge_nli_probe_score_status_20260529.json` | `True` | `693` | `97bda3343c558bdf346311aa71cc5ce6ab7fe25b7ce1ff8e4067b7a2645269f5` |
-| `results\llm_judge_nli_probe_score_status_20260529.md` | `True` | `635` | `6ffceb531c2730e37d970e25d670a4d8d57b7a2b317d64f40cdcd1f5571a5a63` |
-| `results\llm_nli_correlation_status_20260529.json` | `True` | `680` | `e2f9fa7b245229114ecd49ddd7fd1f2a3b72454e8a1ec8881e88c9405e4c23b9` |
-| `results\llm_nli_correlation_status_20260529.md` | `True` | `614` | `01322e39918d3bf4708a8bb167176cfd833ec0ee6f9d4ecb9964328337a0b039` |
-| `results\text_only_verifier_status_20260529.json` | `True` | `4152` | `df72c0a24cfb9ef881f9b5c9bc1cd8b1a845c0b3d45cf398735e90afb1dd6b18` |
-| `results\text_only_verifier_status_20260529.md` | `True` | `2166` | `24351edb1b5541495e068090c1433e08033410e81456fdb121c79deb09281537` |
+| `results\llm_judge_nli_probe_request_status_20260529.json` | `True` | `1238` | `f651cb1753c481105abdb8413eae2a666a50a8e65881a79e5e00ac6b62637baa` |
+| `results\llm_judge_nli_probe_request_status_20260529.md` | `True` | `990` | `2db4b535640f58ddc8ecb532ca81e3d4c4bdcd68292b7617a1c8536bf794d177` |
+| `results\llm_judge_nli_probe_batch_run_status_20260529.json` | `True` | `2549` | `d64fb64778c99a42ec1afb187d988c6011329a066d10aae50ccfc3e81503c1a0` |
+| `results\llm_judge_nli_probe_batch_run_status_20260529.md` | `True` | `2017` | `37a63fc46f8fd6593c7adddd72fddfacb013d6761cf13869c7a06b22f186c5df` |
+| `results\llm_judge_nli_probe_score_status_20260529.json` | `True` | `693` | `9d8421eebd9fd38befd28cb603d0644886ffcf775c530988bdf9e38dc533c1be` |
+| `results\llm_judge_nli_probe_score_status_20260529.md` | `True` | `635` | `5a7865520d6a879aa863379ce4e354713343db928439e83b0179b0ee504c574d` |
+| `results\llm_nli_correlation_status_20260529.json` | `True` | `680` | `84e48e723b96b16fe63bac8fb8d01691878d12f43a4ab9d602633f95e55b1780` |
+| `results\llm_nli_correlation_status_20260529.md` | `True` | `614` | `245c1aae3d813ceb28cd7e0dc573df79ffca5105ff46ba63f902a4823da1d0a5` |
+| `results\text_only_verifier_status_20260529.json` | `True` | `4152` | `af14a12ac7b3901fc65795f204d178856b0b13ff8f04ec0528ae702034c8eb3d` |
+| `results\text_only_verifier_status_20260529.md` | `True` | `2166` | `6c279c9bcf83ade2ff55be9ce1f131e895794bed2cbfec47f333f40ef2149a63` |
 | `results\audit_sample_paper_1000_v3_nli_set_eval.json` | `True` | `126173` | `4dad8804d49d9c0705fedeaa5a6fe10edd4e74adcd4b8fd679f3c4f6d3897902` |
 | `results\audit_sample_paper_1000_v3_nli_set.jsonl` | `True` | `10605633` | `472d7e9ec45dc52a6c7cdfd821753198762e0eb570005b93d8cbddb6c0e5bec9` |
-| `results\mechanism_ablation_summary_20260529.json` | `True` | `10571` | `255740a0ee6f19015733be04852517d0c7b607af6ed87a2e60f3eb6e2368241e` |
-| `results\mechanism_ablation_summary_20260529.md` | `True` | `2368` | `a9e5095ed9c815e84a3f5e60ff84cd9b06aeeb5ea60630511eb93ee3b708115d` |
-| `results\v4_strong_baseline_summary_20260529.json` | `True` | `73809` | `210f1f1862fed351f24814844f53ed1f2c740f0fc9e1aa0c9de88f6bc8075010` |
-| `results\v4_strong_baseline_summary_20260529.md` | `True` | `4362` | `1d244edb2de89df0cac4c179499c08d49b4cad37c414e9b5a7f281638973de76` |
-| `results\v4_baseline_coverage_matrix_20260529.json` | `True` | `4855` | `84260dcc6583f6debdb0e42342c1845f8f1e8c63313a9932bbd9cf74b3edf9f7` |
-| `results\v4_baseline_coverage_matrix_20260529.md` | `True` | `2364` | `61c66e951906db3e1c21bcca8acac44ce286f8b4ce7366110f1a937b1dfac416` |
-| `results\v4_baseline_budget_parity_20260529.json` | `True` | `5642` | `2d1e8d4864be8c0b67cf74c1434a7690a8da778d6c1b1ff1cc6863c4201d40f1` |
-| `results\v4_baseline_budget_parity_20260529.md` | `True` | `3545` | `09af2850decc3a58ac0075fcf2ff1f019c4d2d714f23a845390a65ff117b571b` |
-| `results\v4_shared_threshold_selection_20260529.json` | `True` | `976412` | `99919a9075cbb81dabb7b5830d2b731ee9e2bca57eca2f0d6661bc0ce739a2ad` |
-| `results\v4_shared_threshold_selection_20260529.md` | `True` | `4468` | `5a47da60451fa104007467bd71cea8c9255fd19fb88f8e5a3174d54866ea3124` |
-| `results\risk_control_abstention_baselines_20260529.json` | `True` | `11626` | `5cfd6803bd732da7066695ca4b4a96770c34f9b777093d82e413492e8041439f` |
-| `results\risk_control_abstention_baselines_20260529.md` | `True` | `1186` | `ef6e2dc03e221b75b4a6911c4aa88c1df1ad4c370be8c37dd2dc215a59904bad` |
+| `results\mechanism_ablation_summary_20260529.json` | `True` | `10571` | `ca0d49b37338ab96e67f9d1c146c66f7189c33c2bfd723194d6123299a71bb1c` |
+| `results\mechanism_ablation_summary_20260529.md` | `True` | `2368` | `20d71e99ae95ac9910d737335f6136ee85f56d6a1306cea20365831f08851ab2` |
+| `results\theory_formalization_status_20260529.json` | `True` | `1761` | `4f0113b01597ee07bfb50d4a24adca9bfa81257175098cd385a4ae12a7c54c40` |
+| `results\theory_formalization_status_20260529.md` | `True` | `1201` | `bdd404d9f260e0b29ec5bbaf0a4605e05ce7c9020af7ae05723573923c40e3ee` |
+| `results\v4_strong_baseline_summary_20260529.json` | `True` | `73809` | `e8c61f4e787048bc479431e8a2c4b6bf51f94331e7884bb8d35a136a88229461` |
+| `results\v4_strong_baseline_summary_20260529.md` | `True` | `4362` | `7c302aae0a15202992890c54cd17b1642dcc83b88151a140753c5c2aae28472e` |
+| `results\v4_baseline_coverage_matrix_20260529.json` | `True` | `4855` | `9f6d33d80c3faecef35b586e68c622b436b79bf16b468018d3c94c8c4ac79172` |
+| `results\v4_baseline_coverage_matrix_20260529.md` | `True` | `2364` | `2c98f387483b5a75218e6069dfc4050bcf0b34c602f702ce0599941c7bcf6dfc` |
+| `results\v4_baseline_budget_parity_20260529.json` | `True` | `5642` | `d367e39b3c298d87e85b2aef54245623dabe2f09ab55111968cf78165833c769` |
+| `results\v4_baseline_budget_parity_20260529.md` | `True` | `3545` | `8899fc5ed6277cf19add0fed511b53a95a47c9e9fce0320d7abaeec26fbc93e4` |
+| `results\v4_shared_threshold_selection_20260529.json` | `True` | `976412` | `9f4e1510adefd2d0b9d65c2ea98c61c61bbd516455802563fd63fa26b04daff9` |
+| `results\v4_shared_threshold_selection_20260529.md` | `True` | `4468` | `021bcbf7c9ded344f280cf4840eeae480b93efcb887c593f338e9941fe989c3b` |
+| `results\risk_control_abstention_baselines_20260529.json` | `True` | `11626` | `e0f246f12e8f105182e8b32265f6bd667030f19a984f71e3de1e320c76bf42e8` |
+| `results\risk_control_abstention_baselines_20260529.md` | `True` | `1186` | `9cc38787e1ebecfb4b0ec6f7c820c9e100c0c837f0232590749642a0807c6cdc` |
 | `results\calibration_fever_v4_n100_structbalanced.json` | `True` | `30086` | `a0c81762411a644d37bd7cdf85418611faa6d82295479ccf6bb4f6ab3d93db4c` |
 | `results\calibration_hotpot_v4_hardneg_n100.json` | `True` | `29409` | `29699418d90b147a640940a0eedbf6abd426af4a5710d2f5a177805cec652598` |
 | `results\calibration_hotpot_v4_n100_hardmatched.json` | `True` | `29867` | `fdc92b74f25d27b2ae8624c087e7fefe6075d94280c4068e5e4e653bb087ba0f` |
@@ -99,30 +101,32 @@ Missing artifacts: `0`
 | `results\compare_calibrated_hotpot_v4_n100_structbalanced.json` | `True` | `606110` | `8c150a8759ebb6ee4ebf0a2f3f1b440f7bd0eeb87374a9a86106a34ee1638628` |
 | `results\compare_calibrated_hotpot_v4_semanticswap_n100.json` | `True` | `575596` | `d4d347200c5cc24f4ae34352d98c66817c898c6695d4e2e0408007ed20767904` |
 | `results\compare_calibrated_hotpot_v4_supportpreserve_n100.json` | `True` | `529743` | `4aeebd3fafe87029104a965d7f7750c09b6bfb1c32fb20b0c8fb1169b562df00` |
-| `results\v4_split_threshold_protocol_20260529.json` | `True` | `3657` | `d6d9b786c9a6ce060d1b15f3abe0c59badbdc530757f4c523c686cecfd67701b` |
-| `results\v4_split_threshold_protocol_20260529.md` | `True` | `2852` | `34dcbc929b63378f6eb42994ebea7e644f052d35f8aebb140a65ebd1fb282e61` |
-| `results\v4_calibration_quality_20260529.json` | `True` | `28533` | `df206187ef3ff421c8f2a7ec1476b82f27b83ca55edd84c0a5c1c44740a31615` |
-| `results\v4_calibration_quality_20260529.md` | `True` | `1700` | `eeb61f1db2657788b707be1a8c6685c4d2de827b30439f41cdd6f40936e6b85a` |
-| `results\v4_anti_shortcut_summary_20260529.json` | `True` | `5006` | `f3b3506ab9083423b539e5db42800785990bc79faf8d8e019511cf4dfcef41e6` |
-| `results\v4_anti_shortcut_summary_20260529.md` | `True` | `1558` | `98f05bee97f5cd041c1f9fce42ab72142067f61646a85ca715a69a4198f73373` |
-| `results\v4_failure_taxonomy_summary_20260529.json` | `True` | `46069` | `cf768f11c2d550bfb46868af183c3d3c5e69c79060bd2aacb324712e7eaa79e4` |
-| `results\v4_failure_taxonomy_summary_20260529.md` | `True` | `3223` | `35c8d557ebd123329b3242dbc1e31eb6993e0db29260399291b6bc161819f149` |
-| `results\v4_case_gallery_summary_20260529.json` | `True` | `1882` | `2c0b0bf7eed0239244e448f0b22b67c2449ad468ddb8689a1aa4c5437e6af7eb` |
-| `results\clean_sufficiency_misleading_v4_20260529.json` | `True` | `2465` | `b2928d84aaba04e1085cee05d0c9dcd47525087d6227351e3e568d6eb6817a29` |
+| `results\v4_split_threshold_protocol_20260529.json` | `True` | `3657` | `5fe1e80ad6294d048ebef20a6ec88e852666c036a2f2563101f2c719b643b1b4` |
+| `results\v4_split_threshold_protocol_20260529.md` | `True` | `2852` | `099838da2358857f1ee0fcaadd77baa3cc1797ab6298e0819c2e7390c390b3d8` |
+| `results\v4_calibration_quality_20260529.json` | `True` | `28533` | `e6f7a0d4040a742f080b0126423a154c275badf312a713333dd7c492b32ac5f5` |
+| `results\v4_calibration_quality_20260529.md` | `True` | `1700` | `59915a0e38568b61f255997e93520224d8406b589011c1da5667d35437690ec2` |
+| `results\v4_anti_shortcut_summary_20260529.json` | `True` | `5006` | `6deaf920972c6357826d22f985124730ac136db513ca93abd9a30e812d2686f1` |
+| `results\v4_anti_shortcut_summary_20260529.md` | `True` | `1558` | `492438cc842e35b81c86bb26a7b5267892cf8ee594b216d94ad2d01edb21f8cf` |
+| `results\v4_failure_taxonomy_summary_20260529.json` | `True` | `46069` | `e13514910223994b2dea894ae83106946ac4c20fa6d4e216196f519fd2d6ab30` |
+| `results\v4_failure_taxonomy_summary_20260529.md` | `True` | `3223` | `aa340ed25212474c53da92e0f3753cfdd92563197d3e071aa33b56124acd70bd` |
+| `results\v4_case_gallery_summary_20260529.json` | `True` | `1882` | `8a5567d0bf35541136e55c48ed6e352524e0ff141842d798836195e9f76d952e` |
+| `results\clean_sufficiency_misleading_v4_20260529.json` | `True` | `2465` | `1d35c5693090d58dfe094ff8293b1e8280a5c54eef68f5914a7ba9c953bdd9c8` |
 | `paper\case_studies\v4_case_gallery_20260529.jsonl` | `True` | `191730` | `f03232de577d772efa6cb88bb54c7c9e8b3d48881493364f7ac052c74dbe4a59` |
-| `paper\case_studies\v4_case_gallery_20260529.md` | `True` | `27403` | `32243fcbcedfe46de181821549299fdf401f8da436dc4814e550e02e38cc84f6` |
+| `paper\case_studies\v4_case_gallery_20260529.md` | `True` | `27403` | `c16142e76014f1289c21630337f9edf79bfa85692dfca4fd432d9665a283bbfa` |
 | `paper\figures\clean_sufficiency_misleading_v4_20260529.csv` | `True` | `3097` | `ded3232932e843f23579e5f85768c2fe16a3e90f18f920532564c3def0c2ab5e` |
 | `paper\figures\clean_sufficiency_misleading_v4_20260529.svg` | `True` | `6083` | `a354e94977a8ffcf4d32cc4e560521006ab552b043189b98ea2dfd5103bd73f3` |
-| `paper\figures\clean_sufficiency_misleading_v4_20260529.md` | `True` | `914` | `70e90c50899850fbc49414d3c4743085907c6f8864d59a3be410676296e61c1f` |
-| `reproducibility\checksums.json` | `True` | `44697` | `a55e4102fd14405a55a7a555f2db333cbcaac76653023a1b109c512c2d6bbd9a` |
-| `reproducibility\seeds.json` | `True` | `1288` | `e1a87da2226b22c417c32c528a4b08fb934b4dd2712a30a28648d8cd85009937` |
-| `reproducibility\hardware.md` | `True` | `788` | `ac483db5b9ff4fe5070f13bc085a7090b77339721d8fcd4d23879cb368cf3695` |
-| `reproducibility\artifact_manifest.md` | `True` | `28360` | `4e2e65bda4cf082e1709c5ce6f287fcb1274091559f22c4cf19a1d110a2622e8` |
-| `reproducibility\hidden_local_path_audit.json` | `True` | `298` | `19170215666a37695065d8449e00ada89988658dae0db3826af9958e1b3f86e2` |
-| `reproducibility\hidden_local_path_audit.md` | `True` | `199` | `b686eedb01c3898b30acdeeb72e9b57e1858696c6b26f6b6356e7ebc76e77579` |
+| `paper\figures\clean_sufficiency_misleading_v4_20260529.md` | `True` | `914` | `a3b248aa6c935e97e9579db6d2a5b0bbe6c707b05791fbe29bcb557c93171e76` |
+| `paper\sections\formalization.tex` | `True` | `2869` | `4a9985e6c1156ba7209df22ee2527d76300e696b3bc0ce6560773d07e6018df2` |
+| `paper\sections\theory.tex` | `True` | `3841` | `5c04e9b9ae97e0b9ccbce85ef0734c5887044a9a808975a452d8dcd80f89925d` |
+| `reproducibility\checksums.json` | `True` | `45736` | `4878e2781a212de900e3131fc7000529da525cda9be7efa19a3d71f22e7ebb74` |
+| `reproducibility\seeds.json` | `True` | `1288` | `643ddef5ddb52bf00adfbf1a96e29c3e0748d3c8496bcde9365677dd2e761867` |
+| `reproducibility\hardware.md` | `True` | `788` | `ad0a2138561d0a3aa15ab5c5c5f2e3b7dff053ad4d8b08710cd9d831cd49a8fc` |
+| `reproducibility\artifact_manifest.md` | `True` | `28989` | `4beb981aa1e1330a8328faab35b5af6e206d79cda9376fc851bcbeb44f0a6b71` |
+| `reproducibility\hidden_local_path_audit.json` | `True` | `298` | `57da58380851b05947ad7ec71055329148e87772c854136e8b10015d0f5cf12a` |
+| `reproducibility\hidden_local_path_audit.md` | `True` | `199` | `b42823b76b26adff29f49bbfd8629064d303c46b7a9371f4c2028df1b581918f` |
 | `reproducibility\reproduction_commands.md` | `True` | `627` | `3f3f3099efd9793573b6323ec44ec9f5b8b041be4d5747d7ca3c662dfdcfa3a5` |
-| `reproducibility\bundle_summary_20260529.json` | `True` | `1209` | `3f2a543ede04907b72effc0535d5318f90605744ac2e865a2394005c6d8a7fb2` |
-| `scripts\run_smoke.ps1` | `True` | `1232` | `c616e51e13b149fb7e7596d23f8353d9220cd1284c3d49e4f5e516c94adced5e` |
+| `reproducibility\bundle_summary_20260529.json` | `True` | `1209` | `dbdf283f2e82631354973be1b9cf84497129381772adf8f0be6f9c5c05b0aa50` |
+| `scripts\run_smoke.ps1` | `True` | `1281` | `feb476dd9764a089decda8b98ca5dc8a0eeb528c062fc7454f262635efc8c9db` |
 | `scripts\run_main_tables.ps1` | `True` | `1584` | `a4f35a0e70ab4bcef1e36a8af9ffb5d454ecd0e2b4fbdf97556451356a0a877a` |
 | `.github\workflows\ci.yml` | `True` | `571` | `745119d83f3c42e313a7dd1559e2efd93e5f9247850da0fd813b2705b4efae42` |
 | `annotation\README.md` | `True` | `1501` | `1d85890d62998255b225ab5251e10776474dea5dd7cc77a3a9631c6e2e7d868e` |
@@ -133,14 +137,14 @@ Missing artifacts: `0`
 | `annotation\merge_audit_labels_v4.py` | `True` | `5659` | `3e8e1112139555e3ea42c0648b5649079ebfbec4d03667353426aa62e4896a2e` |
 | `annotation\adjudicate_labels_v4.py` | `True` | `7678` | `1b72331847e014c9f0987df872dd2ea1574346a49b4e23b52c49a81b9d7e5a5d` |
 | `annotation\compute_agreement_v4.py` | `True` | `5936` | `a655be80b995f5c52b0017279172cece3eb105c4afd4f6122d3981861408b351` |
-| `experiments\reproduce_current_evidence_v4.py` | `True` | `36981` | `81ef28a122cc4a742171ebdacdcb03d89d86b81df024e26963cd65fe30b0c7d8` |
+| `experiments\reproduce_current_evidence_v4.py` | `True` | `37829` | `ff77ee5c36cd2b52ac05753ec020c8f6efd1cc46f8ed53bf262b7cf29d3a96ac` |
 | `experiments\verify_claims.py` | `True` | `4187` | `8088588cf429a613407aee71add076a116367b3ee945616a70c6c2834f94e4b6` |
-| `experiments\build_results_provenance_readme.py` | `True` | `13229` | `745b70b168d0bc55d81ad85b1cbfdc6c170590c2264f37eb880109ee77c7fdce` |
+| `experiments\build_results_provenance_readme.py` | `True` | `13316` | `003f544b849749b8d284046d5fb6a2654abe42a900403b8c0bb7cb0826b99035` |
 | `experiments\build_claims_ledger_markdown.py` | `True` | `5519` | `787ef83b3edbd2b63531e8e7a7f230c4f27787d406fa545955cb361d6a421404` |
 | `experiments\build_reproducibility_bundle.py` | `True` | `18616` | `a82f11d8c18294cce80ab78e8c8be5c7a6e575e12baba6ba6083af63575153f6` |
-| `experiments\summarize_evidence_closure.py` | `True` | `74313` | `0f817588d2f87cf8f04b2bdea6efc1f53b467d6edb1a6a346aa9d0432802cb9d` |
-| `experiments\build_external_review_packet.py` | `True` | `9526` | `d65ffc89990172a4c9df6a37a53bc273653fa9e0e2a3086875d46d9a8d384fb3` |
-| `experiments\summarize_neurips_readiness.py` | `True` | `14783` | `44dc2f5dd5dd225d27fac0e0e076c905cad826a606cf9b4b17993a7ebcb19930` |
+| `experiments\summarize_evidence_closure.py` | `True` | `76620` | `5022127640981efc3aa52397d3ce71c9a5caac66fe8f7c74fb8906e4dd159540` |
+| `experiments\build_external_review_packet.py` | `True` | `9674` | `22415c0d37f44478180ead2a3468b44d6311e996348298c964931bb26b6895b8` |
+| `experiments\summarize_neurips_readiness.py` | `True` | `15639` | `663ca54506e6e3fef58ce3125b07bf1e885bc67dbd3132e392bc94e5a1a55aa5` |
 | `experiments\materialize_llm_judge_requests_v4.py` | `True` | `5544` | `ef6b269fc85bf1a74bfb35a6a30917c5fdc0d8a1f0695db3101bd27c1aff6e85` |
 | `experiments\materialize_llm_judge_requests_nli_probe.py` | `True` | `6742` | `18ae8782015c1a430e58f2624db98bda12379551593212237caa6a2819f0b827` |
 | `experiments\manage_openai_llm_judge_batch.py` | `True` | `17324` | `896edca9d7a700983cde6218b9f488eee90bf49dcc9bd05eac7ea9610ef73d8a` |
@@ -161,6 +165,7 @@ Missing artifacts: `0`
 | `experiments\compare_equal_budget_thresholds_v4.py` | `True` | `21302` | `ba69cf2984a22a534632164f9bfcf6a43268350fdc53dfa1da69296a01f62b7e` |
 | `experiments\summarize_v4_split_threshold_protocol.py` | `True` | `12841` | `211ba1b92970192cfa407e4a0dc8984497d1c7e9e809f34a421ae3e2109c0aea` |
 | `experiments\summarize_mechanism_ablation.py` | `True` | `7701` | `a336bab17cb5b49aabc1aecc9aca84d190485238c61fb248a0a2fa95fe0c7100` |
+| `experiments\summarize_theory_formalization.py` | `True` | `4988` | `3ceb8ce1bb9d0fac119f8cb34d3d17bbc065ef82de3c887ffe6339f1cbbf7cd6` |
 | `experiments\summarize_v4_failure_taxonomy.py` | `True` | `11135` | `f5eb0a9e034ef89964e4b51c7069b149bd36156705da4bda2f14f8f1948e3af1` |
 | `experiments\summarize_v4_anti_shortcut.py` | `True` | `7039` | `2a57b2459f92de27e292070bcebb69870349dfc8370c08960cba54ca7b0c88f1` |
 | `experiments\export_v4_case_gallery.py` | `True` | `7379` | `1751ee166e02c37ab4d185e0b38bbd04f9269ca162e251ae39e6e6aa49b1f5b7` |

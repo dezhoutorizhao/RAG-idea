@@ -34,6 +34,10 @@ def test_summarize_neurips_readiness_maps_current_gates(tmp_path):
             "nli_probe": {"directional_advantage_ready": True},
         },
     )
+    _write_json(
+        results / "theory_formalization_status_20260529.json",
+        {"theory_module_ready": True},
+    )
     _write_json(results / "external_review_packet_status_20260529.json", _external_review())
 
     summary = summarize_neurips_readiness(tmp_path)
@@ -46,6 +50,8 @@ def test_summarize_neurips_readiness_maps_current_gates(tmp_path):
     assert "results/risk_control_abstention_baselines_20260529.json" in by_req["Strong baselines and equal-budget controls"]["evidence"]
     assert "results/end2end_risk_coverage_curves_20260529.json" in by_req["End-to-end selective RAG"]["evidence"]
     assert "results/end2end_target_risk_coverage_20260529.json" in by_req["End-to-end selective RAG"]["evidence"]
+    assert by_req["Theory and formalization"]["status"] == PASS
+    assert "paper/sections/theory.tex" in by_req["Theory and formalization"]["evidence"]
     assert by_req["Calibrated orbit risk model"]["status"] == PARTIAL
     assert "results/v4_calibration_quality_20260529.json" in by_req["Calibrated orbit risk model"]["evidence"]
     assert "6 target-dir file probes failed" in by_req["Full CoRM-RAG reproduction"]["boundary_or_next_action"]
@@ -74,6 +80,10 @@ def test_render_markdown_lists_status_policy(tmp_path):
             "ready_for_text_only_main_claim": False,
             "nli_probe": {"directional_advantage_ready": True},
         },
+    )
+    _write_json(
+        results / "theory_formalization_status_20260529.json",
+        {"theory_module_ready": True},
     )
     _write_json(results / "external_review_packet_status_20260529.json", _external_review())
 

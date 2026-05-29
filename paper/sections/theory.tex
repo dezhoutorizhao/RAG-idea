@@ -1,0 +1,69 @@
+\section{Why Clean Sufficiency Is Not Enough}
+\label{sec:theory}
+
+The following propositions are information-structure statements.  They explain
+why the method must inspect aligned evidence orbits before making item-level
+selective RAG decisions.
+
+\paragraph{Proposition 1 (Clean sufficiency does not imply orbit sufficiency).}
+\label{prop:clean-not-orbit}
+For any clean-only selector that depends only on
+$C_i=s_\theta(x_i,a_i,E_i^0)$, there exist two instances with the same clean
+score and different orbit risks.  Therefore clean sufficiency alone cannot
+identify item-level counterfactual risk.
+
+\paragraph{Argument.}
+Construct two items with identical $(x,a,E^0)$ and identical verifier score
+$C$.  In the first item, every counterfactual evidence set remains answerable:
+$Y^j=1$ for all $j$.  In the second item, the clean set is answerable but one
+counterfactual set removes or contradicts the needed support, so $Y^k=0$ for
+some $k>0$.  A clean-only selector receives the same observation for both items
+and must make the same decision, while their orbit risks differ.  The gap is not
+caused by a weak clean verifier; it is caused by missing counterfactual
+information.
+
+\paragraph{Proposition 2 (Single-set sufficiency is insufficient).}
+\label{prop:single-set-not-orbit}
+Any selector that observes one evidence set from an orbit can be made unable to
+distinguish a stable orbit from an unstable orbit that agrees on that observed
+set.  Orbit-level selective risk is therefore not identifiable from a single
+local sufficiency score in general.
+
+\paragraph{Argument.}
+Fix the observed set $E^j$ and its score
+$s_\theta(x,a,E^j)$.  Create two orbits that share this set and score.  Let the
+remaining sets in the first orbit preserve answerability, while at least one
+remaining set in the second orbit removes, swaps, or contradicts the support
+needed for $a$.  The selector has identical input in both cases but the empirical
+orbit risks are different.  This establishes the need for multi-set orbit
+statistics such as worst-case sufficiency, dispersion, and clean-to-worst gaps.
+
+\paragraph{Proposition 3 (Orbit alignment is necessary for item-level risk).}
+\label{prop:orbit-alignment-necessary}
+If counterfactual evidence sets are not aligned to the same query--answer item,
+then item-level orbit risk $R_i$ is not identifiable from the observed multiset
+of verifier scores and labels.  Alignment is therefore a structural requirement
+for CSRM-style risk estimation, not just an implementation detail.
+
+\paragraph{Argument.}
+Consider two query--answer items with the same global multiset of
+counterfactual evidence scores and labels.  If the assignment of those
+counterfactual sets to items is hidden or arbitrarily permuted, the same global
+observations can produce two different item-level risk vectors: one assignment
+puts the high-risk perturbations on item 1, while another assignment puts them
+on item 2.  Both assignments match the global multiset.  Since a selector must
+rank or abstain per item, the item-level risk target is underdetermined without
+the alignment map from each perturbation back to its clean query--answer frame.
+
+\paragraph{Consequence for CSRM-RAG.}
+The propositions justify the method's minimum evidence interface:
+$(x_i,a_i,\mathcal{O}_i)$ plus aligned per-set sufficiency scores.  Clean-only
+controls, SURE-style single-set controls, and unaligned orbit averages are useful
+baselines, but they cannot by themselves establish the counterfactual stability
+claim targeted here.
+
+\paragraph{Scope and non-claims.}
+These propositions do not assert that every CSRM implementation dominates every
+strong baseline, and they do not establish a formal risk-control guarantee.
+They only show that the intended claim is impossible to support from clean-only,
+single-set, or unaligned evidence information alone.

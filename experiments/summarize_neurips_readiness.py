@@ -20,8 +20,9 @@ def summarize_neurips_readiness(root: Path) -> dict[str, Any]:
     manifest = _load_json(results / "v4_evidence_package_manifest_20260529.json")
     reproduction = _load_json(results / "current_evidence_reproduction_20260529.json")
     text_only = _load_optional_json(results / "text_only_verifier_status_20260529.json")
+    theory = _load_optional_json(results / "theory_formalization_status_20260529.json")
     external_review = _load_optional_json(results / "external_review_packet_status_20260529.json")
-    rows = _rows(closure, manifest, reproduction, text_only, external_review)
+    rows = _rows(closure, manifest, reproduction, text_only, theory, external_review)
     return {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "source": {
@@ -30,6 +31,7 @@ def summarize_neurips_readiness(root: Path) -> dict[str, Any]:
             "manifest": "results/v4_evidence_package_manifest_20260529.json",
             "reproduction": "results/current_evidence_reproduction_20260529.json",
             "text_only_verifier": "results/text_only_verifier_status_20260529.json",
+            "theory_formalization": "results/theory_formalization_status_20260529.json",
             "external_review": "results/external_review_packet_status_20260529.json",
         },
         "rows": rows,
@@ -84,6 +86,7 @@ def _rows(
     manifest: dict[str, Any],
     reproduction: dict[str, Any],
     text_only: dict[str, Any],
+    theory: dict[str, Any],
     external_review: dict[str, Any],
 ) -> list[dict[str, Any]]:
     latest = closure.get("latest_v4_diagnostics", {})
@@ -187,6 +190,20 @@ def _rows(
             PASS if mechanism.get("strong_alignment_evidence") else PARTIAL,
             ["results/mechanism_ablation_summary_20260529.json"],
             "Alignment evidence is strong; no-worst-sufficiency is weak/redundant in current bridge artifacts.",
+        ),
+        _row(
+            "Theory and formalization",
+            PASS if theory.get("theory_module_ready") else PARTIAL,
+            [
+                "paper/sections/formalization.tex",
+                "paper/sections/theory.tex",
+                "results/theory_formalization_status_20260529.json",
+            ],
+            (
+                "Formalization now states the orbit-risk object and three information-structure "
+                "propositions. This supports the mechanism rationale but does not imply empirical "
+                "all-win behavior, human validity, or a formal risk-control guarantee."
+            ),
         ),
         _row(
             "Calibrated orbit risk model",

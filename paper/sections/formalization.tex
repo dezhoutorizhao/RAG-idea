@@ -1,0 +1,75 @@
+\section{Formalization}
+\label{sec:formalization}
+
+This section fixes the object that the method is allowed to reason about.  A
+RAG decision instance is a query--answer pair $(x_i, a_i)$ with a clean evidence
+set $E_i^0$ and a finite counterfactual evidence orbit
+\[
+  \mathcal{O}_i = \{E_i^0, E_i^1, \ldots, E_i^{m_i}\}.
+\]
+Each $E_i^j$ is an evidence set for the same query--answer frame, not a new
+question.  Let $Y_i^j \in \{0,1\}$ denote whether $(x_i,a_i)$ is answerable from
+$E_i^j$ under the task definition or human audit protocol.  A text-only
+sufficiency verifier returns a score
+\[
+  s_\theta(x_i,a_i,E_i^j) \in [0,1],
+\]
+where larger values mean stronger local evidence sufficiency.
+
+\paragraph{Orbit risk.}
+The invariant object is item-level orbit risk, not the clean-set score.  For a
+selector $h_\tau$ with threshold $\tau$, define the empirical orbit risk
+\[
+  R_i(h_\tau) =
+  \frac{1}{m_i + 1}
+  \sum_{j=0}^{m_i}
+  \ell(h_\tau(x_i,a_i,\mathcal{O}_i), Y_i^j),
+\]
+where $\ell$ is the accepted-item error loss.  CSRM-style selection estimates a
+surrogate risk score
+\[
+  \widehat r_i = \phi\!\left(
+    \{s_\theta(x_i,a_i,E_i^j)\}_{j=0}^{m_i},
+    \Delta_i,
+    A_i
+  \right),
+\]
+where $\Delta_i$ denotes clean-to-counterfactual sufficiency gaps and $A_i$
+denotes orbit-alignment features such as whether perturbations remain attached
+to the same query--answer frame.  The selective decision is
+\[
+  h_\tau(x_i,a_i,\mathcal{O}_i) = \mathbf{1}[\widehat r_i \le \tau].
+\]
+
+\paragraph{Clean and single-set controls.}
+A clean-only selector observes only
+\[
+  C_i = s_\theta(x_i,a_i,E_i^0).
+\]
+A single-set sufficiency selector observes $s_\theta(x_i,a_i,E_i^j)$ for one
+chosen evidence set $E_i^j$.  A naive orbit average observes
+\[
+  \bar S_i = \frac{1}{m_i + 1}\sum_{j=0}^{m_i}s_\theta(x_i,a_i,E_i^j),
+\]
+but it does not explicitly distinguish a uniformly weak orbit from an orbit with
+a sharp clean-to-worst instability.
+
+\paragraph{Assumptions.}
+The theory below uses four limited assumptions.
+
+\begin{enumerate}
+  \item Orbit labels $Y_i^j$ are defined by the construction protocol or by
+  human adjudication.
+  \item All evidence sets inside $\mathcal{O}_i$ share the same query--answer
+  frame.  This is the orbit-alignment condition.
+  \item The local verifier score is informative for local sufficiency but is not
+  assumed to be invariant under counterfactual evidence changes.
+  \item Calibration thresholds are selected on held-out calibration splits.  The
+  present derivation does not imply a finite-sample conformal guarantee.
+\end{enumerate}
+
+\paragraph{Scope.}
+The formal object supports a mechanism claim: robust RAG selection needs
+item-level counterfactual evidence-orbit information.  It does not prove that a
+particular learned risk model wins every benchmark, does not replace human
+audit, and does not establish formal risk control.

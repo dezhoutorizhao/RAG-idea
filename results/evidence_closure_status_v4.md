@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T06:12:35.982341+00:00`
+Generated: `2026-05-29T06:22:57.515775+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `34`; tracked artifacts: `161`.
+- Provenance steps: `35`; tracked artifacts: `166`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `161`; dataset construction hashes: `41`.
+- Artifact checksums: `166`; dataset construction hashes: `41`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -74,7 +74,7 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## NeurIPS Readiness Matrix
 
 - Ready for NeurIPS main-track claim: `False`.
-- Status counts: `{'blocked': 3, 'fail': 1, 'partial': 4, 'pass': 4}`.
+- Status counts: `{'blocked': 3, 'fail': 1, 'partial': 4, 'pass': 5}`.
 - Hard blockers: `3`; negative/partial evidence items: `5`.
 
 Hard blockers:
@@ -151,6 +151,13 @@ V4 anti-shortcut suite:
 - No-worst-sufficiency mean AUROC drop / Risk@30 increase: `-0.0004` / `0.0000`.
 - Weak or negative standalone component evidence: `['csrm_no_answer_consistency', 'csrm_no_worst_sufficiency']`.
 - Claim implication: Mechanism ablations strongly support orbit alignment as necessary: shuffled perturbations collapse on both Hotpot and FEVER. Answer consistency is important on Hotpot and mildly positive on FEVER. Worst-sufficiency removal is not consistently harmful in the current bridge artifacts, so it should be framed as a weak or redundant component rather than a required standalone mechanism.
+
+## Theory Formalization
+
+- Ready: `True`; files present: `True`; labels present: `True`; concepts present: `True`.
+- Section files: `['paper\\sections\\formalization.tex', 'paper\\sections\\theory.tex']`.
+- Present labels: `['sec:formalization', 'sec:theory', 'prop:clean-not-orbit', 'prop:single-set-not-orbit', 'prop:orbit-alignment-necessary']`.
+- Claim implication: The formalization supports the mechanism-level information-structure claim that clean-only, single-set, and unaligned evidence are insufficient for item-level counterfactual orbit risk. It does not prove empirical all-win behavior, human validity, or a formal risk-control guarantee.
 
 ## End-to-End Selective RAG Proxy
 
@@ -241,6 +248,7 @@ Allowed claims:
 - A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.
 - The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.
 - Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings.
+- The theory/formalization module states the orbit-risk object and information-structure rationale for clean-only, single-set, and aligned-orbit evidence.
 - The calibrated orbit risk model improves Brier score over rule/minimax baselines across current v4 calibration artifacts; ECE evidence is mostly positive but mixed.
 
 Disallowed claims:
@@ -251,6 +259,7 @@ Disallowed claims:
 - CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4.
 - The v4 failure taxonomy is human-adjudicated evidence.
 - Calibration establishes a formal risk-control guarantee.
+- The theory/formalization module proves empirical all-win behavior or replaces human audit.
 
 Remaining non-human blockers:
 - Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.

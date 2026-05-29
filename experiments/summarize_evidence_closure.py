@@ -88,6 +88,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     clean_sufficiency_figure = _clean_sufficiency_figure_status(results)
     v4_anti_shortcut = _v4_anti_shortcut_status(results)
     mechanism_ablation = _mechanism_ablation_status(results)
+    theory_formalization = _theory_formalization_status(results)
     v4_calibration_quality = _v4_calibration_quality_status(results)
     neurips_readiness = _neurips_readiness_status(results)
     external_review = _external_review_packet_status(results)
@@ -125,6 +126,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "case_gallery": v4_case_gallery,
             "clean_sufficiency_figure": clean_sufficiency_figure,
             "anti_shortcut": v4_anti_shortcut,
+            "theory_formalization": theory_formalization,
         },
         "risk_control": {
             "hotpot_cp": {
@@ -181,6 +183,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         "neurips_readiness": neurips_readiness,
         "external_review": external_review,
         "mechanism_ablation": mechanism_ablation,
+        "theory_formalization": theory_formalization,
         "v4_calibration_quality": v4_calibration_quality,
         "end2end_selective_rag_proxy": end2end_proxy,
         "end2end_retriever_generator_matrix": end2end_matrix,
@@ -220,6 +223,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.",
             "The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.",
             "Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings.",
+            "The theory/formalization module states the orbit-risk object and information-structure rationale for clean-only, single-set, and aligned-orbit evidence.",
             "The calibrated orbit risk model improves Brier score over rule/minimax baselines across current v4 calibration artifacts; ECE evidence is mostly positive but mixed.",
         ],
         "disallowed_claims": [
@@ -230,6 +234,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4.",
             "The v4 failure taxonomy is human-adjudicated evidence.",
             "Calibration establishes a formal risk-control guarantee.",
+            "The theory/formalization module proves empirical all-win behavior or replaces human audit.",
         ],
         "remaining_non_human_blockers": [
             "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
@@ -764,6 +769,23 @@ def _mechanism_ablation_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _theory_formalization_status(results: Path) -> dict[str, Any] | None:
+    path = results / "theory_formalization_status_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "theory_module_ready": payload.get("theory_module_ready"),
+        "all_files_present": payload.get("all_files_present"),
+        "all_labels_present": payload.get("all_labels_present"),
+        "all_concepts_present": payload.get("all_concepts_present"),
+        "section_files": payload.get("section_files", []),
+        "required_labels": payload.get("required_labels", []),
+        "claim_implication": payload.get("claim_implication"),
+    }
+
+
 def _v4_calibration_quality_status(results: Path) -> dict[str, Any] | None:
     path = results / "v4_calibration_quality_20260529.json"
     if not path.exists():
@@ -951,6 +973,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     neurips_readiness = status.get("neurips_readiness")
     external_review = status.get("external_review")
     mechanism_ablation = status.get("mechanism_ablation")
+    theory_formalization = status.get("theory_formalization")
     calibration_quality = status.get("v4_calibration_quality")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
     end2end_matrix = status.get("end2end_retriever_generator_matrix")
@@ -1298,6 +1321,32 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"- Weak or negative standalone component evidence: "
                 f"`{mechanism_ablation['weak_or_negative_methods']}`.",
                 f"- Claim implication: {mechanism_ablation['claim_implication']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## Theory Formalization", ""])
+    if theory_formalization:
+        labels = [
+            row.get("label")
+            for row in theory_formalization.get("required_labels", [])
+            if row.get("present")
+        ]
+        section_paths = [
+            row.get("path")
+            for row in theory_formalization.get("section_files", [])
+            if row.get("exists")
+        ]
+        lines.extend(
+            [
+                f"- Ready: `{theory_formalization['theory_module_ready']}`; "
+                f"files present: `{theory_formalization['all_files_present']}`; "
+                f"labels present: `{theory_formalization['all_labels_present']}`; "
+                f"concepts present: `{theory_formalization['all_concepts_present']}`.",
+                f"- Section files: `{section_paths}`.",
+                f"- Present labels: `{labels}`.",
+                f"- Claim implication: {theory_formalization['claim_implication']}",
                 "",
             ]
         )

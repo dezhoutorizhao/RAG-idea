@@ -123,6 +123,10 @@ from experiments.summarize_mechanism_ablation import (
     render_markdown as render_mechanism_ablation_markdown,
     summarize_mechanism_ablation,
 )
+from experiments.summarize_theory_formalization import (
+    render_markdown as render_theory_formalization_markdown,
+    summarize_theory_formalization,
+)
 from experiments.summarize_text_only_verifier_status import (
     render_markdown as render_text_only_verifier_markdown,
     summarize_text_only_verifier_status,
@@ -635,6 +639,22 @@ def reproduce_current_evidence_v4(
             "name": "summarize_mechanism_ablation",
             "outputs": [str(mechanism_ablation_json), str(mechanism_ablation_md)],
             "ready": bool(mechanism_ablation["aggregate"]["strong_alignment_evidence"]),
+        }
+    )
+
+    theory_formalization_json = results / "theory_formalization_status_20260529.json"
+    theory_formalization_md = results / "theory_formalization_status_20260529.md"
+    theory_formalization = summarize_theory_formalization(root)
+    _write_json(theory_formalization_json, theory_formalization)
+    theory_formalization_md.write_text(
+        render_theory_formalization_markdown(theory_formalization),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "summarize_theory_formalization",
+            "outputs": [str(theory_formalization_json), str(theory_formalization_md)],
+            "ready": theory_formalization["theory_module_ready"],
         }
     )
 

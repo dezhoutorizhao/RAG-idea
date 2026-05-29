@@ -127,5 +127,15 @@ def test_default_manifest_tracks_v4_calibration_quality_artifacts():
     assert "experiments/compare_calibrated_vs_baselines_v4.py" in defaults
 
 
+def test_default_manifest_tracks_theory_formalization_artifacts():
+    defaults = {str(path).replace("\\", "/") for path in DEFAULT_ARTIFACTS}
+
+    assert "paper/sections/formalization.tex" in defaults
+    assert "paper/sections/theory.tex" in defaults
+    assert "results/theory_formalization_status_20260529.json" in defaults
+    assert "results/theory_formalization_status_20260529.md" in defaults
+    assert "experiments/summarize_theory_formalization.py" in defaults
+
+
 def _write_json(path, payload):
     path.write_text(json.dumps(payload), encoding="utf-8")
