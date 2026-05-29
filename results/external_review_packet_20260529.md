@@ -1,6 +1,6 @@
 # External Review Packet
 
-Generated: `2026-05-29T08:06:52.766931+00:00`
+Generated: `2026-05-29T08:13:58.670595+00:00`
 
 Packet ready: `True`
 External review completed: `False`
@@ -49,21 +49,21 @@ Blocker: `pending_external_review`
 | `RAG-idea改进.md` | `True` | 49684 | `abea2cc9e252308bd254f974d86cbd89910eecfeab3ee4a55ab14fc5dee71242` |
 | `CLAIMS_LEDGER.json` | `True` | 53391 | `f433d29dc1ca4d67e4097403e7e84c6adc8ec7de7c9785d1e3111a15d699d244` |
 | `results\claims_verification.json` | `True` | 62860 | `b3051aff04cf1c2efe13719f0587dca08c1af41ba043266c8fdd1b7c3cde1a6e` |
-| `results\evidence_closure_status_v4.json` | `True` | 49322 | `d2dfe169838068dcb2935e582c0785b75641b4ed91bbc18ddadbeb822b374b4e` |
-| `results\neurips_readiness_matrix_20260529.json` | `True` | 14724 | `69e610da029df5524f6f82eb22e2b68527e1392e25eeccad20489de044327f19` |
-| `results\v4_evidence_package_manifest_20260529.json` | `True` | 49950 | `0e764f5267248323de745139a1a14ff8ca9241f6a73eb88ce1db9ec6cc85c287` |
-| `results\text_only_verifier_status_20260529.json` | `True` | 4153 | `691a8618215d5c52ccca915ac91aede41056310e58797feb2e0ec674ef88a70d` |
-| `results\v4_strong_baseline_summary_20260529.json` | `True` | 73809 | `b68684377f01dcaa8434bf72cfb65838d04dba2e8570740198195ae1c76ca1af` |
-| `results\v4_calibration_quality_20260529.json` | `True` | 28533 | `96d7620e66496a56c45b441d261b71ad495fcfd941d407b8fc12b664b8d06716` |
-| `results\v4_claim_safe_target_selection_20260529.json` | `True` | 7318 | `9ec90f95d2a842c4ad33f4d0998da4a6c0aaa9afa65d973a43d4b12652a23090` |
-| `results\risk_control_abstention_baselines_20260529.json` | `True` | 11626 | `ecd9719699293e0d55612f86ba998f57f90c8c89d7c7f26aec0103c88a1d35ef` |
-| `results\theory_formalization_status_20260529.json` | `True` | 1761 | `865a9c3ef9f0c07c6b0810aee4e0875f0c2cf7dda1a7059defc42a15ebeb169f` |
-| `results\novelty_audit_20260529.json` | `True` | 5760 | `9ea7ed7865320699f21b9f501f432d150b342fa050bf89faae0659e2bbb033e6` |
+| `results\evidence_closure_status_v4.json` | `True` | 49321 | `5a04378622b54ed30a921e496447b99ac4d50a84d0192c69ba2475f415c44da4` |
+| `results\neurips_readiness_matrix_20260529.json` | `True` | 14724 | `f2dc2a2d441aa3f0df8f4bb5706d73ab3a8869477afae6bce0c8cfe9bf16ccb0` |
+| `results\v4_evidence_package_manifest_20260529.json` | `True` | 49949 | `c491ddd2937988e54d38c48e08401df0a4ad32f5cdbbb206d55ca1b32ecb8869` |
+| `results\text_only_verifier_status_20260529.json` | `True` | 4153 | `1c6dc87d42584bab28414eefdc2da598b66382ee4ba3b661badfe81a2846f98e` |
+| `results\v4_strong_baseline_summary_20260529.json` | `True` | 73809 | `217978c56afc0895b914bd2ebeb85371c6e92dd1ead1b2c4f679a2c1e62bf656` |
+| `results\v4_calibration_quality_20260529.json` | `True` | 28533 | `3de0e7914e1555519764f139ee596cf023e8412a71754bea65c8bf7d932b9804` |
+| `results\v4_claim_safe_target_selection_20260529.json` | `True` | 7318 | `0bd93a0aaee29975c1c8551e8fcde5dadcd2cf91cbfdbea762ede6b9c8b161bb` |
+| `results\risk_control_abstention_baselines_20260529.json` | `True` | 11626 | `7f16f0ffc8e205907445f41f31dd61091c89f282fe5bc4708dc9f72d5a026ab8` |
+| `results\theory_formalization_status_20260529.json` | `True` | 1761 | `78ad226d9fce92617e33cef92ce8b889715dc1377243555a09117cbf89618be3` |
+| `results\novelty_audit_20260529.json` | `True` | 5760 | `1a9653a91c3256df8b9c6b20b592da0e4d056517ff96c53c0c8b4d2d05c02b10` |
 | `paper\sections\formalization.tex` | `True` | 2869 | `4a9985e6c1156ba7209df22ee2527d76300e696b3bc0ce6560773d07e6018df2` |
 | `paper\sections\theory.tex` | `True` | 3841 | `5c04e9b9ae97e0b9ccbce85ef0734c5887044a9a808975a452d8dcd80f89925d` |
-| `results\end2end_retriever_generator_matrix_20260529.json` | `True` | 52753 | `b34ab0224037d37537c75b9ddf6919ea9848dc9d5241f2c7b75815815cfc54bb` |
-| `results\end2end_risk_coverage_curves_20260529.json` | `True` | 130245 | `50727ab7e2efc58ac641c1e53bcae6199b5220ba06b61818f0407542d0ebea88` |
-| `results\end2end_target_risk_coverage_20260529.json` | `True` | 30644 | `22fde1fb1a97e840684401cc54c85e9ec404cf1692825c20e4ef34b403f1d776` |
+| `results\end2end_retriever_generator_matrix_20260529.json` | `True` | 52753 | `8c13c7d5b739e99c10a77fbac9476cc1bc87fcbd0c045498870494c536b9a8ff` |
+| `results\end2end_risk_coverage_curves_20260529.json` | `True` | 130245 | `7d3da263d8f72e96fd1d730af80d9f3d15291cbd82197b000ce170757f2de384` |
+| `results\end2end_target_risk_coverage_20260529.json` | `True` | 30644 | `ca430d7dd95deb0b33d77b21b1e43146286a9600b5dbcadeb889964152134dc6` |
 | `results\remote_storage_status_20260529.json` | `True` | 14189 | `3246f13012a84b122534652634727bf6831df15d5157f57b1065d67a5a0d63d5` |
 | `results\remote_home_storage_status_20260529.json` | `True` | 12190 | `d529ece561d4322c73df786bc23e482e2c3950d02db667ab05511ea57f645ffa` |
 | `results\remote_ext4_prepare_dryrun_20260529.json` | `True` | 5843 | `71111d38d9457dc9a5ce5531cdd825948d7888d68e3e5cc63b0b246686f08601` |
@@ -73,9 +73,11 @@ Blocker: `pending_external_review`
 | `results\remote_cleanup_candidates_20260529.md` | `True` | 4266 | `e2ddd08c863e2770dc23875d6cceeda3c1cf74a244d5f04942d21a6d8f685535` |
 | `results\remote_ext4_cleanup_guarded_plan_20260529.json` | `True` | 1955 | `b44decb70c0ded5c908cad493c50823aeef621ed596426df4a3e57f79da2e011` |
 | `results\remote_ext4_cleanup_guarded_plan_20260529.md` | `True` | 1621 | `1248591274c56256e722a5ae061feafcc1130c9a225402ac249ea65f08d5f8bd` |
-| `results\human_audit_v4_paper_pack_status_20260529.json` | `True` | 4984 | `c6b0151661049b8a1168e401ddcea93eab44d57dc5ec9b6064b6a816caaa0a4f` |
-| `results\human_audit_v4_assignment_batches_20260529.json` | `True` | 17555 | `d7bbc03d011919ae040a13dacb8a51d581f8b6a8e30c5ffd2289557f0f70e6af` |
-| `results\human_audit_v4_batch_collection_20260529.json` | `True` | 4742 | `3d4854fbe165788c032b09d1ca4ab399a471a3f60eeb54d955df080c82b88449` |
+| `results\corm_reconstruction_plan_ext4_20260529.json` | `True` | 15313 | `a46b280db45636f2a1d7c30cf4e1c9433e14ad3581cc7df4cb681a4fba6dd4e9` |
+| `results\corm_remote_scripts_ext4_manifest.json` | `True` | 1217 | `3162cdc7ce709777e29e6ea3003c061309ed743ec151db846b090f69996d0bfe` |
+| `results\human_audit_v4_paper_pack_status_20260529.json` | `True` | 4984 | `500d4f5b1a24cbefa063fb63120bff6cf5942cc7b772a3a67e4d74ebff9e3135` |
+| `results\human_audit_v4_assignment_batches_20260529.json` | `True` | 17555 | `c77b6169b1f3961a8ed6e2ee2290ce8c42a22258e8021ca132d63fc8d433b97c` |
+| `results\human_audit_v4_batch_collection_20260529.json` | `True` | 4742 | `f21036742afd064e922627ddada747bab9f0480606de7a23e4f832a707bfddf2` |
 | `results\human_audit_v4_status_20260529.json` | `True` | 13342 | `6c1147bdc32e6fbb51c99364a38eec82eae403cf4bc97ed219ed64e8f753232b` |
 
 ## Reviewer Output Contract

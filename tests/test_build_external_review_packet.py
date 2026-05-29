@@ -49,6 +49,8 @@ def test_source_artifacts_include_remote_storage_unblock_evidence():
     assert "results/remote_cleanup_candidates_20260529.md" in defaults
     assert "results/remote_ext4_cleanup_guarded_plan_20260529.json" in defaults
     assert "results/remote_ext4_cleanup_guarded_plan_20260529.md" in defaults
+    assert "results/corm_reconstruction_plan_ext4_20260529.json" in defaults
+    assert "results/corm_remote_scripts_ext4_manifest.json" in defaults
 
 
 def _write_minimal_sources(root):

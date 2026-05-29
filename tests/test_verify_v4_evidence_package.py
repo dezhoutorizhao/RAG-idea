@@ -165,9 +165,13 @@ def test_default_manifest_tracks_neurips_unblock_plan_artifacts():
     assert "results/remote_cleanup_candidates_20260529.md" in defaults
     assert "results/remote_ext4_cleanup_guarded_plan_20260529.json" in defaults
     assert "results/remote_ext4_cleanup_guarded_plan_20260529.md" in defaults
+    assert "results/corm_reconstruction_plan_ext4_20260529.json" in defaults
+    assert "results/corm_remote_scripts_ext4_manifest.json" in defaults
+    assert "results/corm_remote_scripts_ext4/02_build_wikipedia_and_faiss.sh" in defaults
     assert "experiments/summarize_neurips_unblock_plan.py" in defaults
     assert "experiments/audit_remote_cleanup_candidates.py" in defaults
     assert "experiments/guarded_remote_ext4_cleanup.py" in defaults
+    assert "experiments/relocate_corm_remote_plan.py" in defaults
 
 
 def test_default_manifest_tracks_theory_formalization_artifacts():

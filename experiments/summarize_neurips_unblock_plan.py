@@ -200,7 +200,7 @@ def _full_corm_storage_blocker(
             "--host 192.168.103.101 --user syk --port 22 --target /home/syk "
             "--output results/remote_storage_status_after_ext4_cleanup.json --min-free-gib 180"
         ),
-        "run results/corm_remote_scripts/02_build_wikipedia_and_faiss.sh only after the post-cleanup probe passes",
+        "run results/corm_remote_scripts_ext4/02_build_wikipedia_and_faiss.sh only after the post-cleanup probe passes",
     ]
     return {
         "id": "repair_storage_for_full_corm_reproduction",

@@ -33,7 +33,7 @@
       "next_commands": [
         "$env:CORM_REMOTE_PASSWORD='<set locally>'; python -m experiments.guarded_remote_ext4_cleanup --host 192.168.103.101 --user syk --port 22 --target /home/syk --min-free-gib 180 --execute --confirm-token APPROVE_EXT4_LOG_CACHE_CLEANUP_FOR_FULL_CORM_RAG_REPRO",
         "$env:CORM_REMOTE_PASSWORD='<set locally>'; python -m experiments.check_remote_storage_status --host 192.168.103.101 --user syk --port 22 --target /home/syk --output results/remote_storage_status_after_ext4_cleanup.json --min-free-gib 180",
-        "run results/corm_remote_scripts/02_build_wikipedia_and_faiss.sh only after the post-cleanup probe passes"
+        "run results/corm_remote_scripts_ext4/02_build_wikipedia_and_faiss.sh only after the post-cleanup probe passes"
       ],
       "required_external_action": "Approve the minimal ext4 cleanup plan, then verify write/fsync/read/delete on /home/syk.",
       "requires_external_action": true,
@@ -67,7 +67,7 @@
   ],
   "claim_policy": "This is an unblock plan, not evidence that the blockers are solved. It records the minimum external actions and repository commands needed before NeurIPS main-track readiness can be re-evaluated.",
   "external_action_required_count": 4,
-  "generated_at_utc": "2026-05-29T08:06:52.769547+00:00",
+  "generated_at_utc": "2026-05-29T08:13:58.673275+00:00",
   "next_execution_order": [
     "complete_human_audit_labels",
     "run_api_backed_llm_judge_batch",

@@ -72,6 +72,10 @@ def test_summarize_neurips_unblock_plan_tracks_external_gates(tmp_path):
         "experiments.guarded_remote_ext4_cleanup" in command
         for command in blockers["repair_storage_for_full_corm_reproduction"]["next_commands"]
     )
+    assert any(
+        "corm_remote_scripts_ext4/02_build_wikipedia_and_faiss.sh" in command
+        for command in blockers["repair_storage_for_full_corm_reproduction"]["next_commands"]
+    )
     assert blockers["risk_control_claim_boundary"]["status"] == "fail"
 
     text = render_markdown(summary)

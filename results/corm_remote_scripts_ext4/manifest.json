@@ -1,0 +1,30 @@
+{
+  "claim_policy": "A run using these steps is reconstructed-pipeline evidence, not exact CoRM-RAG original reproduction, unless original artifacts or equivalence checks are supplied. The ext4 relocation is a launch plan only; it is not evidence that full CoRM-RAG reproduction has run.",
+  "contains_secret_markers": false,
+  "execution_order": [
+    "00_env.sh",
+    "01_prepare_env.sh",
+    "02_build_wikipedia_and_faiss.sh",
+    "03_prepare_biased_nq.sh",
+    "03_prepare_biased_nq_template_smoke.sh",
+    "04_run_template_biased_nq_smoke_eval.sh",
+    "04_run_reconstructed_eval.sh",
+    "05_watch_and_run_template_smoke_eval.sh"
+  ],
+  "output_dir": "results\\corm_remote_scripts_ext4",
+  "plan": "results\\corm_reconstruction_plan_ext4_20260529.json",
+  "remote_root": "/home/syk/csrm_corm_reconstruction",
+  "script_count": 9,
+  "scripts": [
+    "00_env.sh",
+    "01_prepare_env.sh",
+    "02_build_wikipedia_and_faiss.sh",
+    "03_prepare_biased_nq.sh",
+    "03_prepare_biased_nq_template_smoke.sh",
+    "04_run_reconstructed_eval.sh",
+    "04_run_template_biased_nq_smoke_eval.sh",
+    "05_watch_and_run_template_smoke_eval.sh",
+    "README.md"
+  ],
+  "status": "materialized"
+}

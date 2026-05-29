@@ -41,6 +41,8 @@ SOURCE_ARTIFACTS = [
     Path("results/remote_cleanup_candidates_20260529.md"),
     Path("results/remote_ext4_cleanup_guarded_plan_20260529.json"),
     Path("results/remote_ext4_cleanup_guarded_plan_20260529.md"),
+    Path("results/corm_reconstruction_plan_ext4_20260529.json"),
+    Path("results/corm_remote_scripts_ext4_manifest.json"),
     Path("results/human_audit_v4_paper_pack_status_20260529.json"),
     Path("results/human_audit_v4_assignment_batches_20260529.json"),
     Path("results/human_audit_v4_batch_collection_20260529.json"),
