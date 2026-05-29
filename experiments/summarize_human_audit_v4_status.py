@@ -11,6 +11,14 @@ from typing import Any
 TRUE_VALUES = {"true", "yes", "1", "answerable", "supported"}
 FALSE_VALUES = {"false", "no", "0", "fragile", "unanswerable", "unsupported", "insufficient"}
 UNSURE_VALUES = {"", "unsure", "unknown", "unclear"}
+SEMANTIC_VALUES = {
+    "",
+    "stable_answerable",
+    "fragile",
+    "unanswerable",
+    "ambiguous",
+    "annotation_error",
+}
 
 
 def summarize_human_audit_v4_status(audit_dir: Path) -> dict[str, Any]:
@@ -25,6 +33,8 @@ def summarize_human_audit_v4_status(audit_dir: Path) -> dict[str, Any]:
         "total_items": total_items,
         "adjudicated_labeled": adjudicated_labeled,
         "pending": pending,
+        "semantic_label_schema_ready": bool(packs)
+        and all(pack["semantic_label_schema_ready"] for pack in packs),
         "ready": bool(packs) and all(pack["ready"] for pack in packs),
         "packs": packs,
         "claim_policy": (
@@ -62,12 +72,17 @@ def summarize_pack(manifest_path: Path) -> dict[str, Any]:
         )
     if adjudication["invalid"] > 0:
         failed_gates.append({"gate": "valid_adjudicated_labels", "invalid": adjudication["invalid"]})
+    if not all(auditor.get("has_label_semantic_column") for auditor in auditor_summaries.values()):
+        failed_gates.append({"gate": "semantic_label_column_present", "actual": False})
     return {
         "pack_name": pack_name,
         "manifest": str(manifest_path),
         "selected_items": selected_items,
         "expected_label_counts": expected_counts,
         "auditors": auditor_summaries,
+        "semantic_label_schema_ready": all(
+            auditor.get("has_label_semantic_column") for auditor in auditor_summaries.values()
+        ),
         "agreement": _agreement_summary(agreement),
         "adjudication": adjudication,
         "readiness_file": str(readiness_path) if readiness_path.exists() else None,
@@ -79,9 +94,23 @@ def summarize_pack(manifest_path: Path) -> dict[str, Any]:
 
 def summarize_label_csv(path: Path) -> dict[str, Any]:
     if not path.exists():
-        return {"path": str(path), "exists": False, "rows": 0, "labeled": 0, "pending": 0, "invalid": 0}
-    rows = list(csv.DictReader(path.open(newline="", encoding="utf-8-sig")))
+        return {
+            "path": str(path),
+            "exists": False,
+            "rows": 0,
+            "labeled": 0,
+            "pending": 0,
+            "invalid": 0,
+            "semantic_labeled": 0,
+            "semantic_pending": 0,
+            "semantic_invalid": 0,
+            "has_label_semantic_column": False,
+        }
+    reader = csv.DictReader(path.open(newline="", encoding="utf-8-sig"))
+    rows = list(reader)
     labeled = pending = invalid = 0
+    semantic_labeled = semantic_pending = semantic_invalid = 0
+    has_semantic = "label_semantic" in set(reader.fieldnames or [])
     for row in rows:
         parsed = _parse_label(row.get("label_answerable"))
         if parsed is None:
@@ -90,6 +119,13 @@ def summarize_label_csv(path: Path) -> dict[str, Any]:
             labeled += 1
         else:
             invalid += 1
+        semantic = _parse_semantic_label(row.get("label_semantic"))
+        if semantic is None:
+            semantic_pending += 1
+        elif semantic == "invalid":
+            semantic_invalid += 1
+        else:
+            semantic_labeled += 1
     return {
         "path": str(path),
         "exists": True,
@@ -97,7 +133,12 @@ def summarize_label_csv(path: Path) -> dict[str, Any]:
         "labeled": labeled,
         "pending": pending,
         "invalid": invalid,
+        "semantic_labeled": semantic_labeled,
+        "semantic_pending": semantic_pending,
+        "semantic_invalid": semantic_invalid,
+        "has_label_semantic_column": has_semantic,
         "completion_rate": labeled / len(rows) if rows else None,
+        "semantic_completion_rate": semantic_labeled / len(rows) if rows else None,
     }
 
 
@@ -148,6 +189,7 @@ def render_markdown(status: dict[str, Any]) -> str:
         f"Total items: `{status['total_items']}`",
         f"Adjudicated labels: `{status['adjudicated_labeled']}`",
         f"Pending: `{status['pending']}`",
+        f"Semantic label schema ready: `{status['semantic_label_schema_ready']}`",
         "",
         "| Pack | Items | Auditor labeled | Adjudicated | Pending | Ready |",
         "|---|---:|---:|---:|---:|---|",
@@ -212,7 +254,9 @@ def _agreement_summary(agreement: dict[str, Any] | None) -> dict[str, Any] | Non
         "auditors": agreement.get("auditors"),
         "completion": agreement.get("completion"),
         "pairwise": agreement.get("pairwise"),
+        "semantic_pairwise": agreement.get("semantic_pairwise"),
         "conflicts": len(agreement.get("conflicts", [])),
+        "semantic_conflicts": len(agreement.get("semantic_conflicts", [])),
     }
 
 
@@ -239,6 +283,15 @@ def _parse_label(value: Any) -> bool | None | str:
         return False
     if normalized in UNSURE_VALUES:
         return None
+    return "invalid"
+
+
+def _parse_semantic_label(value: Any) -> str | None:
+    normalized = str(value if value is not None else "").strip().lower()
+    if normalized == "":
+        return None
+    if normalized in SEMANTIC_VALUES:
+        return normalized
     return "invalid"
 
 

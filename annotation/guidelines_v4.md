@@ -18,20 +18,33 @@ For each `audit_id`, read:
 - the clean evidence set;
 - every perturbation evidence set.
 
-Set `label_answerable` to:
+Set `label_semantic` to one of the five primary orbit-level labels:
 
-- `answerable`: every shown evidence set contains enough information to support
-  the candidate answer or candidate FEVER label;
-- `fragile`: at least one evidence set is missing required support, contains
-  contradictory evidence, or only contains distractors;
-- `unsure`: the item cannot be judged confidently from the shown text.
+- `stable_answerable`: every shown evidence set contains enough information to
+  support the same candidate answer or candidate FEVER label;
+- `fragile`: the clean evidence appears sufficient, but at least one
+  perturbation evidence set is missing required support, contradicts the
+  candidate answer, or only contains distractors;
+- `unanswerable`: the clean evidence itself is not sufficient to answer the
+  query or verify the claim;
+- `ambiguous`: the query, candidate answer, or evidence is genuinely ambiguous
+  and cannot be resolved from the shown text;
+- `annotation_error`: the item is malformed, duplicated, unreadable, or has a
+  display/construction error that prevents semantic labeling.
+
+Set the backward-compatible `label_answerable` projection as:
+
+- `answerable` for `stable_answerable`;
+- `fragile` for `fragile` or `unanswerable`;
+- `unsure` for `ambiguous` or `annotation_error`.
 
 For FEVER-style items, `SUPPORTS` is answerable only when the evidence supports
 the claim. `REFUTES` is answerable only when the evidence refutes the claim.
 
 ## Failure Types
 
-Use one value in `failure_type` when the label is `fragile` or `unsure`:
+Use one value in `failure_type` when `label_semantic` is not
+`stable_answerable`:
 
 - `missing_evidence`: key evidence needed for the candidate answer is absent;
 - `conflicting_evidence`: evidence contradicts the candidate answer;

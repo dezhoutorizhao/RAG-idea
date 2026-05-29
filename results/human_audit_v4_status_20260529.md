@@ -7,6 +7,7 @@ Pack count: `2`
 Total items: `300`
 Adjudicated labels: `0`
 Pending: `300`
+Semantic label schema ready: `True`
 
 | Pack | Items | Auditor labeled | Adjudicated | Pending | Ready |
 |---|---:|---:|---:|---:|---|

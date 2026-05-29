@@ -59,8 +59,79 @@ def test_human_audit_v4_status_reports_pending_pack(tmp_path):
     assert status["packs"][0]["failed_gates"][0]["gate"] == "all_items_adjudicated"
 
 
+def test_human_audit_v4_status_reports_semantic_schema_ready(tmp_path):
+    audit_dir = tmp_path / "human_audit_v4"
+    audit_dir.mkdir()
+    manifest = audit_dir / "pack.manifest.json"
+    manifest.write_text(
+        json.dumps(
+            {
+                "pack_name": "pack",
+                "selected_items": 1,
+                "audit_items": [{"audit_id": "a1", "expected_label_answerable": True}],
+                "label_csvs": {
+                    "auditor1": str(audit_dir / "pack.auditor1.labels.csv"),
+                    "auditor2": str(audit_dir / "pack.auditor2.labels.csv"),
+                },
+            }
+        ),
+        encoding="utf-8",
+    )
+    _write_csv(
+        audit_dir / "pack.auditor1.labels.csv",
+        [
+            {
+                "audit_id": "a1",
+                "dataset": "unit",
+                "auditor_id": "auditor1",
+                "label_semantic": "stable_answerable",
+                "label_answerable": "answerable",
+            }
+        ],
+    )
+    _write_csv(
+        audit_dir / "pack.auditor2.labels.csv",
+        [
+            {
+                "audit_id": "a1",
+                "dataset": "unit",
+                "auditor_id": "auditor2",
+                "label_semantic": "stable_answerable",
+                "label_answerable": "answerable",
+            }
+        ],
+    )
+    (audit_dir / "pack.adjudicated_labels.jsonl").write_text(
+        json.dumps(
+            {
+                "audit_id": "a1",
+                "adjudicated_label_answerable": True,
+                "adjudicated_label_semantic": "stable_answerable",
+                "adjudication_status": "auto_agree",
+            }
+        ),
+        encoding="utf-8",
+    )
+
+    status = summarize_human_audit_v4_status(audit_dir)
+
+    assert status["semantic_label_schema_ready"] is True
+    assert status["packs"][0]["semantic_label_schema_ready"] is True
+    assert status["packs"][0]["auditors"]["pack.auditor1.labels"]["semantic_labeled"] == 1
+    assert status["packs"][0]["failed_gates"] == []
+
+
 def _write_csv(path, rows):
-    fieldnames = ["audit_id", "dataset", "auditor_id", "label_answerable", "failure_type", "confidence", "notes"]
+    fieldnames = [
+        "audit_id",
+        "dataset",
+        "auditor_id",
+        "label_semantic",
+        "label_answerable",
+        "failure_type",
+        "confidence",
+        "notes",
+    ]
     with path.open("w", newline="", encoding="utf-8-sig") as dst:
         writer = csv.DictWriter(dst, fieldnames=fieldnames)
         writer.writeheader()

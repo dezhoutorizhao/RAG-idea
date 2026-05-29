@@ -46,26 +46,48 @@
             "cohen_kappa": null,
             "compared": 0
           }
+        ],
+        "semantic_conflicts": 0,
+        "semantic_pairwise": [
+          {
+            "agreement_rate": null,
+            "agreements": 0,
+            "auditors": [
+              "auditor1",
+              "auditor2"
+            ],
+            "compared": 0
+          }
         ]
       },
       "auditors": {
         "fever_v4_n100_structbalanced_blind100.auditor1.labels": {
           "completion_rate": 0.0,
           "exists": true,
+          "has_label_semantic_column": true,
           "invalid": 0,
           "labeled": 0,
           "path": "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.auditor1.labels.csv",
           "pending": 100,
-          "rows": 100
+          "rows": 100,
+          "semantic_completion_rate": 0.0,
+          "semantic_invalid": 0,
+          "semantic_labeled": 0,
+          "semantic_pending": 100
         },
         "fever_v4_n100_structbalanced_blind100.auditor2.labels": {
           "completion_rate": 0.0,
           "exists": true,
+          "has_label_semantic_column": true,
           "invalid": 0,
           "labeled": 0,
           "path": "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.auditor2.labels.csv",
           "pending": 100,
-          "rows": 100
+          "rows": 100,
+          "semantic_completion_rate": 0.0,
+          "semantic_invalid": 0,
+          "semantic_labeled": 0,
+          "semantic_pending": 100
         }
       },
       "expected_label_counts": {
@@ -85,7 +107,8 @@
       "readiness_file": null,
       "readiness_file_ready": null,
       "ready": false,
-      "selected_items": 100
+      "selected_items": 100,
+      "semantic_label_schema_ready": true
     },
     {
       "adjudication": {
@@ -129,26 +152,48 @@
             "cohen_kappa": null,
             "compared": 0
           }
+        ],
+        "semantic_conflicts": 0,
+        "semantic_pairwise": [
+          {
+            "agreement_rate": null,
+            "agreements": 0,
+            "auditors": [
+              "auditor1",
+              "auditor2"
+            ],
+            "compared": 0
+          }
         ]
       },
       "auditors": {
         "hotpot_v4_semanticswap_n100_blind200.auditor1.labels": {
           "completion_rate": 0.0,
           "exists": true,
+          "has_label_semantic_column": true,
           "invalid": 0,
           "labeled": 0,
           "path": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.auditor1.labels.csv",
           "pending": 200,
-          "rows": 200
+          "rows": 200,
+          "semantic_completion_rate": 0.0,
+          "semantic_invalid": 0,
+          "semantic_labeled": 0,
+          "semantic_pending": 200
         },
         "hotpot_v4_semanticswap_n100_blind200.auditor2.labels": {
           "completion_rate": 0.0,
           "exists": true,
+          "has_label_semantic_column": true,
           "invalid": 0,
           "labeled": 0,
           "path": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.auditor2.labels.csv",
           "pending": 200,
-          "rows": 200
+          "rows": 200,
+          "semantic_completion_rate": 0.0,
+          "semantic_invalid": 0,
+          "semantic_labeled": 0,
+          "semantic_pending": 200
         }
       },
       "expected_label_counts": {
@@ -168,10 +213,12 @@
       "readiness_file": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.readiness.json",
       "readiness_file_ready": false,
       "ready": false,
-      "selected_items": 200
+      "selected_items": 200,
+      "semantic_label_schema_ready": true
     }
   ],
   "pending": 300,
   "ready": false,
+  "semantic_label_schema_ready": true,
   "total_items": 300
 }

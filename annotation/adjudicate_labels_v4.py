@@ -8,9 +8,14 @@ from pathlib import Path
 from typing import Any
 
 try:
-    from annotation.merge_audit_labels_v4 import FALSE_VALUES, TRUE_VALUES, UNSURE_VALUES
+    from annotation.merge_audit_labels_v4 import (
+        FALSE_VALUES,
+        TRUE_VALUES,
+        UNSURE_VALUES,
+        _parse_semantic_label,
+    )
 except ModuleNotFoundError:
-    from merge_audit_labels_v4 import FALSE_VALUES, TRUE_VALUES, UNSURE_VALUES
+    from merge_audit_labels_v4 import FALSE_VALUES, TRUE_VALUES, UNSURE_VALUES, _parse_semantic_label
 
 
 def adjudicate_labels_v4(
@@ -32,18 +37,31 @@ def adjudicate_labels_v4(
     template_rows = []
     for audit_id, labels in sorted(by_audit.items()):
         bool_labels = [row.get("label_answerable_bool") for row in labels]
+        semantic_labels = [
+            str(row.get("label_semantic") or "").strip()
+            for row in labels
+            if str(row.get("label_semantic") or "").strip()
+        ]
         known = [label for label in bool_labels if label is not None]
         base = labels[0]
         if audit_id in manual:
             adjudicated = manual[audit_id]["adjudicated_label_answerable"]
+            adjudicated_semantic = manual[audit_id].get("adjudicated_label_semantic") or ""
             status = "manual"
             notes = manual[audit_id].get("adjudication_notes") or ""
+        elif semantic_labels and all(label == semantic_labels[0] for label in semantic_labels) and len(semantic_labels) == len(labels):
+            adjudicated_semantic = semantic_labels[0]
+            adjudicated = _parse_semantic_label(adjudicated_semantic)
+            status = "auto_agree"
+            notes = ""
         elif known and all(label == known[0] for label in known) and len(known) == len(labels):
             adjudicated = known[0]
+            adjudicated_semantic = "stable_answerable" if known[0] else "fragile"
             status = "auto_agree"
             notes = ""
         else:
             adjudicated = None
+            adjudicated_semantic = ""
             status = "pending"
             notes = ""
             template_rows.append(_template_row(audit_id, labels))
@@ -52,6 +70,7 @@ def adjudicate_labels_v4(
                 "audit_id": audit_id,
                 "orbit_id": base.get("orbit_id"),
                 "dataset": base.get("dataset"),
+                "adjudicated_label_semantic": adjudicated_semantic,
                 "adjudicated_label_answerable": adjudicated,
                 "adjudication_status": status,
                 "adjudication_notes": notes,
@@ -60,6 +79,7 @@ def adjudicate_labels_v4(
                 "auditor_labels": [
                     {
                         "auditor_id": row.get("auditor_id"),
+                        "label_semantic": row.get("label_semantic"),
                         "label_answerable_bool": row.get("label_answerable_bool"),
                         "failure_type": row.get("failure_type"),
                         "confidence": row.get("confidence"),
@@ -101,19 +121,26 @@ def _load_jsonl(path: Path) -> list[dict[str, Any]]:
 
 def _template_row(audit_id: str, labels: list[dict[str, Any]]) -> dict[str, str]:
     label_text = "; ".join(
-        f"{row.get('auditor_id')}={row.get('label_answerable')}:{row.get('notes') or ''}"
+        f"{row.get('auditor_id')}={row.get('label_semantic') or row.get('label_answerable')}:{row.get('notes') or ''}"
         for row in labels
     )
     return {
         "audit_id": audit_id,
         "auditor_labels": label_text,
+        "adjudicated_label_semantic": "",
         "adjudicated_label_answerable": "",
         "adjudication_notes": "",
     }
 
 
 def _write_template_csv(path: Path, rows: list[dict[str, str]]) -> None:
-    columns = ["audit_id", "auditor_labels", "adjudicated_label_answerable", "adjudication_notes"]
+    columns = [
+        "audit_id",
+        "auditor_labels",
+        "adjudicated_label_semantic",
+        "adjudicated_label_answerable",
+        "adjudication_notes",
+    ]
     with path.open("w", newline="", encoding="utf-8-sig") as dst:
         writer = csv.DictWriter(dst, fieldnames=columns)
         writer.writeheader()
@@ -134,10 +161,18 @@ def _load_adjudication_csv(path: Path | None) -> dict[str, dict[str, Any]]:
             if audit_id in rows:
                 raise ValueError(f"{path}:{row_no} duplicates audit_id {audit_id}")
             rows[audit_id] = {
-                "adjudicated_label_answerable": _parse_label(row.get("adjudicated_label_answerable")),
+                "adjudicated_label_semantic": str(row.get("adjudicated_label_semantic") or "").strip(),
+                "adjudicated_label_answerable": _parse_manual_label(row),
                 "adjudication_notes": str(row.get("adjudication_notes") or "").strip(),
             }
     return rows
+
+
+def _parse_manual_label(row: dict[str, Any]) -> bool | None:
+    semantic = str(row.get("adjudicated_label_semantic") or "").strip()
+    if semantic:
+        return _parse_semantic_label(semantic)
+    return _parse_label(row.get("adjudicated_label_answerable"))
 
 
 def _parse_label(value: Any) -> bool | None:

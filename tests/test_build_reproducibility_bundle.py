@@ -83,6 +83,27 @@ def test_hidden_path_audit_flags_windows_absolute_paths(tmp_path):
     assert audit["finding_count"] == 1
 
 
+def test_hidden_path_audit_ignores_json_escaped_quotes_after_colon(tmp_path):
+    results = tmp_path / "results"
+    results.mkdir()
+    artifact = results / "artifact.jsonl"
+    artifact.write_text('{"text": "Stephen Elien:\\""}', encoding="utf-8")
+    manifest = {
+        "artifacts": [
+            {
+                "path": "results/artifact.jsonl",
+                "exists": True,
+                "size_bytes": artifact.stat().st_size,
+            }
+        ]
+    }
+
+    audit = _hidden_path_audit(tmp_path, manifest)
+
+    assert audit["passed"] is True
+    assert audit["finding_count"] == 0
+
+
 def test_seeds_extracts_explicit_seed_lists(tmp_path):
     results = tmp_path / "results"
     results.mkdir()

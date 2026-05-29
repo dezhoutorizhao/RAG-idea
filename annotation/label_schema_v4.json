@@ -2,7 +2,7 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "title": "Human Audit v4 Label Row",
   "type": "object",
-  "required": ["audit_id", "auditor_id", "label_answerable"],
+  "required": ["audit_id", "auditor_id", "label_semantic"],
   "additionalProperties": true,
   "properties": {
     "audit_id": {
@@ -17,9 +17,22 @@
       "type": "string",
       "minLength": 1
     },
+    "label_semantic": {
+      "type": "string",
+      "enum": [
+        "",
+        "stable_answerable",
+        "fragile",
+        "unanswerable",
+        "ambiguous",
+        "annotation_error"
+      ],
+      "description": "Primary five-way orbit-level semantic label for Human Audit v4."
+    },
     "label_answerable": {
       "type": "string",
-      "enum": ["", "answerable", "fragile", "unsure", "true", "false", "yes", "no"]
+      "enum": ["", "answerable", "fragile", "unsure", "true", "false", "yes", "no"],
+      "description": "Backward-compatible binary projection; stable_answerable maps to answerable, fragile/unanswerable map to fragile, ambiguous/annotation_error map to unsure."
     },
     "failure_type": {
       "type": "string",

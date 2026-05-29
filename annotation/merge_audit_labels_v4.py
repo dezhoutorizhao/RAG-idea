@@ -8,7 +8,15 @@ from pathlib import Path
 from typing import Any
 
 
-REQUIRED_COLUMNS = {"audit_id", "auditor_id", "label_answerable"}
+REQUIRED_COLUMNS = {"audit_id", "auditor_id"}
+SEMANTIC_VALUES = {
+    "",
+    "stable_answerable",
+    "fragile",
+    "unanswerable",
+    "ambiguous",
+    "annotation_error",
+}
 TRUE_VALUES = {"true", "yes", "1", "answerable", "supported"}
 FALSE_VALUES = {"false", "no", "0", "fragile", "unanswerable", "unsupported", "insufficient"}
 UNSURE_VALUES = {"", "unsure", "unknown", "unclear"}
@@ -41,14 +49,20 @@ def merge_audit_labels_v4(
                 raise ValueError(f"duplicate label for audit_id={audit_id} auditor_id={auditor_id}")
             seen.add(key)
             hidden = hidden_by_audit_id[audit_id]
+            semantic_label = str(row.get("label_semantic") or "").strip()
             label_text = str(row.get("label_answerable") or "").strip()
+            if semantic_label:
+                label_bool = _parse_semantic_label(semantic_label)
+            else:
+                label_bool = _parse_label(label_text)
             rows.append(
                 {
                     "audit_id": audit_id,
                     "auditor_id": auditor_id,
                     "dataset": row.get("dataset") or hidden.get("dataset") or "",
+                    "label_semantic": semantic_label,
                     "label_answerable": label_text,
-                    "label_answerable_bool": _parse_label(label_text),
+                    "label_answerable_bool": label_bool,
                     "failure_type": str(row.get("failure_type") or "").strip(),
                     "confidence": str(row.get("confidence") or "").strip(),
                     "notes": str(row.get("notes") or "").strip(),
@@ -86,6 +100,8 @@ def _load_csv(path: Path) -> list[dict[str, str]]:
         missing = sorted(REQUIRED_COLUMNS - fieldnames)
         if missing:
             raise ValueError(f"{path} is missing required columns: {missing}")
+        if "label_semantic" not in fieldnames and "label_answerable" not in fieldnames:
+            raise ValueError(f"{path} must include label_semantic or label_answerable")
         if "orbit_id" in fieldnames or "construction_type" in fieldnames:
             raise ValueError(f"{path} appears unblinded; remove orbit/construction columns")
         return [dict(row) for row in reader]
@@ -100,6 +116,17 @@ def _parse_label(value: Any) -> bool | None:
     if normalized in UNSURE_VALUES:
         return None
     raise ValueError(f"unknown label_answerable value {value!r}")
+
+
+def _parse_semantic_label(value: Any) -> bool | None:
+    normalized = str(value or "").strip().lower()
+    if normalized not in SEMANTIC_VALUES:
+        raise ValueError(f"unknown label_semantic value {value!r}")
+    if normalized == "stable_answerable":
+        return True
+    if normalized in {"fragile", "unanswerable"}:
+        return False
+    return None
 
 
 def main() -> None:

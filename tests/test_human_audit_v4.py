@@ -101,6 +101,7 @@ def test_export_v4_pack_is_blind_and_balanced(tmp_path):
         "audit_id",
         "dataset",
         "auditor_id",
+        "label_semantic",
         "label_answerable",
         "failure_type",
         "confidence",
@@ -145,9 +146,13 @@ def test_merge_agreement_and_adjudication_v4(tmp_path):
     labels2 = tmp_path / "audit" / "unit_pack.ann2.labels.csv"
     rows1 = list(csv.DictReader(labels1.open(encoding="utf-8-sig")))
     rows2 = list(csv.DictReader(labels2.open(encoding="utf-8-sig")))
+    rows1[0]["label_semantic"] = "stable_answerable"
     rows1[0]["label_answerable"] = "answerable"
+    rows1[1]["label_semantic"] = "fragile"
     rows1[1]["label_answerable"] = "fragile"
+    rows2[0]["label_semantic"] = "stable_answerable"
     rows2[0]["label_answerable"] = "answerable"
+    rows2[1]["label_semantic"] = "stable_answerable"
     rows2[1]["label_answerable"] = "answerable"
     _write_csv(labels1, rows1)
     _write_csv(labels2, rows2)
@@ -165,7 +170,10 @@ def test_merge_agreement_and_adjudication_v4(tmp_path):
     agreement = compute_agreement_v4(merged)
     assert agreement["pairwise"][0]["compared"] == 2
     assert agreement["pairwise"][0]["agreements"] == 1
+    assert agreement["semantic_pairwise"][0]["compared"] == 2
+    assert agreement["semantic_pairwise"][0]["agreements"] == 1
     assert len(agreement["conflicts"]) == 1
+    assert len(agreement["semantic_conflicts"]) == 1
 
     adjudicated = tmp_path / "audit" / "adjudicated.jsonl"
     template = tmp_path / "audit" / "adjudication_template.csv"
@@ -173,6 +181,46 @@ def test_merge_agreement_and_adjudication_v4(tmp_path):
     assert summary["auto_agree"] == 1
     assert summary["pending"] == 1
     assert len(list(csv.DictReader(template.open(encoding="utf-8-sig")))) == 1
+
+
+def test_semantic_labels_project_to_binary_for_backcompat(tmp_path):
+    raw = tmp_path / "raw.jsonl"
+    private = tmp_path / "private.jsonl"
+    orbit_ids = ["fever:a:stable", "fever:b:missing"]
+    _write_jsonl(raw, [_raw_item(orbit_id) for orbit_id in orbit_ids])
+    _write_jsonl(
+        private,
+        [
+            _private_item("fever:a:stable", True, "stable"),
+            _private_item("fever:b:missing", False, "missing"),
+        ],
+    )
+    export_blind_audit_pack_v4(
+        raw,
+        private,
+        tmp_path / "audit",
+        pack_name="unit_pack",
+        seed=3,
+        annotator_ids=["ann1"],
+        audit_id_prefix="unit",
+    )
+
+    labels = tmp_path / "audit" / "unit_pack.ann1.labels.csv"
+    rows = list(csv.DictReader(labels.open(encoding="utf-8-sig")))
+    rows[0]["label_semantic"] = "stable_answerable"
+    rows[1]["label_semantic"] = "unanswerable"
+    _write_csv(labels, rows)
+
+    merged = tmp_path / "audit" / "merged.jsonl"
+    merge_audit_labels_v4(
+        tmp_path / "audit" / "unit_pack.manifest.json",
+        [labels],
+        merged,
+    )
+    merged_rows = [json.loads(line) for line in merged.read_text(encoding="utf-8").splitlines()]
+
+    assert [row["label_semantic"] for row in merged_rows] == ["stable_answerable", "unanswerable"]
+    assert [row["label_answerable_bool"] for row in merged_rows] == [True, False]
 
 
 def _write_csv(path, rows):

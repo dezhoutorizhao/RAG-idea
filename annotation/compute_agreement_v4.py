@@ -30,20 +30,38 @@ def compute_agreement_v4(merged_labels_path: Path) -> dict[str, Any]:
 
     pairwise = []
     conflicts = []
+    semantic_pairwise = []
+    semantic_conflicts = []
     for left, right in combinations(auditors, 2):
         compared = []
+        semantic_compared = []
         for audit_id, labels in sorted(by_audit.items()):
             if left not in labels or right not in labels:
                 continue
             left_label = labels[left].get("label_answerable_bool")
             right_label = labels[right].get("label_answerable_bool")
             if left_label is None or right_label is None:
-                continue
-            compared.append((audit_id, bool(left_label), bool(right_label)))
+                pass
+            else:
+                compared.append((audit_id, bool(left_label), bool(right_label)))
+            left_semantic = str(labels[left].get("label_semantic") or "").strip()
+            right_semantic = str(labels[right].get("label_semantic") or "").strip()
+            if left_semantic and right_semantic:
+                semantic_compared.append((audit_id, left_semantic, right_semantic))
         agree = sum(l == r for _, l, r in compared)
+        semantic_agree = sum(l == r for _, l, r in semantic_compared)
         for audit_id, left_label, right_label in compared:
             if left_label != right_label:
                 conflicts.append(
+                    {
+                        "audit_id": audit_id,
+                        left: left_label,
+                        right: right_label,
+                    }
+                )
+        for audit_id, left_label, right_label in semantic_compared:
+            if left_label != right_label:
+                semantic_conflicts.append(
                     {
                         "audit_id": audit_id,
                         left: left_label,
@@ -59,6 +77,16 @@ def compute_agreement_v4(merged_labels_path: Path) -> dict[str, Any]:
                 "cohen_kappa": _cohen_kappa([(l, r) for _, l, r in compared]),
             }
         )
+        semantic_pairwise.append(
+            {
+                "auditors": [left, right],
+                "compared": len(semantic_compared),
+                "agreements": semantic_agree,
+                "agreement_rate": semantic_agree / len(semantic_compared)
+                if semantic_compared
+                else None,
+            }
+        )
 
     return {
         "input": str(merged_labels_path),
@@ -68,6 +96,8 @@ def compute_agreement_v4(merged_labels_path: Path) -> dict[str, Any]:
         "completion": completion,
         "pairwise": pairwise,
         "conflicts": conflicts,
+        "semantic_pairwise": semantic_pairwise,
+        "semantic_conflicts": semantic_conflicts,
     }
 
 

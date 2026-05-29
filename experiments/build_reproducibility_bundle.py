@@ -49,7 +49,7 @@ SEED_SOURCE_FILES = [
 ]
 
 HIDDEN_LOCAL_PATH_PATTERNS = [
-    re.compile(r"[A-Za-z]:\\"),
+    re.compile(r"[A-Za-z]:(?:\\\\|\\)[A-Za-z0-9_. -]"),
     re.compile(r"/Users/[^/\s]+"),
     re.compile(r"/home/(?!syk\b)[^/\s]+"),
 ]
