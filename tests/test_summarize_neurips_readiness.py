@@ -42,6 +42,7 @@ def test_summarize_neurips_readiness_maps_current_gates(tmp_path):
     assert by_req["Human-audited orbit labels"]["status"] == BLOCKED
     assert by_req["Text-only semantic verifier"]["status"] == PARTIAL
     assert by_req["Strong baselines and equal-budget controls"]["status"] == PARTIAL
+    assert "6 target-dir file probes failed" in by_req["Full CoRM-RAG reproduction"]["boundary_or_next_action"]
     assert by_req["Risk-control claim"]["status"] == FAIL
     assert summary["ready_for_neurips_main_track"] is False
 
@@ -88,7 +89,17 @@ def _closure():
                 "transfer_sweep": {"negative_evidence_for_main_risk_claim": True}
             }
         },
-        "corm_reconstruction": {"preflight_ready": False},
+        "corm_reconstruction": {
+            "preflight_ready": False,
+            "latest_storage_probe": {
+                "target_available_gib": 322.14,
+                "target_write_probe_passed": False,
+                "write_probe_matrix_summary": {
+                    "failed_target_dirs": [{}, {}, {}, {}, {}, {}],
+                    "writable_fallback_dirs": ["/home/syk", "/tmp", "/dev/shm"],
+                },
+            },
+        },
         "claim_verification": {"failed_claims": 0},
     }
 

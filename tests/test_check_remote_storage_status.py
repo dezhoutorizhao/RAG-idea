@@ -1,4 +1,10 @@
-from experiments.check_remote_storage_status import _connect_kwargs, parse_df_pt
+from experiments.check_remote_storage_status import (
+    _connect_kwargs,
+    _default_probe_dirs,
+    _parse_probe_json,
+    parse_df_pt,
+    parse_df_pti,
+)
 
 
 def test_parse_df_pt_extracts_mount_rows():
@@ -14,6 +20,35 @@ tmpfs          tmpfs       16384000   1000000  15384000       7% /dev/shm
     assert rows[1]["type"] == "fuseblk"
     assert rows[1]["available_1k_blocks"] == 276762580
     assert rows[1]["mount"] == "/mnt/ntfs-disk"
+
+
+def test_parse_df_pti_extracts_inode_rows():
+    output = """Filesystem     Type       Inodes IUsed     IFree IUse% Mounted on
+/dev/nvme0n1p2 ext4    120000000  9000 119991000    1% /
+/dev/nvme1n1p1 fuseblk 333000000 11000 332989000    1% /mnt/ntfs-disk
+"""
+
+    rows = parse_df_pti(output)
+
+    assert rows[1]["filesystem"] == "/dev/nvme1n1p1"
+    assert rows[1]["type"] == "fuseblk"
+    assert rows[1]["ifree"] == 332989000
+    assert rows[1]["mount"] == "/mnt/ntfs-disk"
+
+
+def test_default_probe_dirs_include_target_and_writable_fallbacks():
+    dirs = _default_probe_dirs(target="/mnt/ntfs-disk", user="syk", extra=None)
+
+    assert "/mnt/ntfs-disk" in dirs
+    assert "/mnt/ntfs-disk/csrm_corm_reconstruction/data" in dirs
+    assert "/home/syk" in dirs
+    assert "/dev/shm" in dirs
+
+
+def test_parse_probe_json_reads_last_json_line():
+    parsed = _parse_probe_json('noise\n{"ok": false, "errno": 28}\n')
+
+    assert parsed == {"ok": False, "errno": 28}
 
 
 def test_connect_kwargs_supports_key_or_agent_auth_without_password():

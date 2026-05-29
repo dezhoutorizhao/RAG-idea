@@ -25,6 +25,7 @@ def check_remote_storage_status(
     look_for_keys: bool = True,
     min_free_gib: float = 180.0,
     timeout: int = 30,
+    probe_dirs: list[str] | None = None,
 ) -> dict[str, Any]:
     client = paramiko.SSHClient()
     client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
@@ -42,6 +43,7 @@ def check_remote_storage_status(
     )
     try:
         df = _run(client, f"df -PT / {shlex.quote(target)} /dev/shm 2>&1")
+        df_inodes = _run(client, f"df -PTi / {shlex.quote(target)} /dev/shm 2>&1")
         findmnt = _run(client, f"findmnt -no SOURCE,FSTYPE,OPTIONS {shlex.quote(target)} 2>&1 || true")
         gpu = _run(
             client,
@@ -49,10 +51,15 @@ def check_remote_storage_status(
             "--format=csv,noheader,nounits 2>&1 || true",
         )
         write_probe = _run(client, _write_probe_command(target))
+        write_probe_matrix = [
+            _file_write_probe(client, directory)
+            for directory in _default_probe_dirs(target=target, user=user, extra=probe_dirs)
+        ]
     finally:
         client.close()
 
     filesystems = parse_df_pt(df["stdout"])
+    inode_filesystems = parse_df_pti(df_inodes["stdout"])
     target_fs = _find_mount(filesystems, target)
     available_gib = None if target_fs is None else target_fs["available_1k_blocks"] / (1024**2)
     writable = write_probe["exit_status"] == 0
@@ -68,9 +75,11 @@ def check_remote_storage_status(
         "target_min_free_met": min_free_met,
         "target_write_probe_passed": writable,
         "filesystems": filesystems,
+        "inode_filesystems": inode_filesystems,
         "target_findmnt": findmnt,
         "gpu_query": gpu,
         "write_probe": write_probe,
+        "write_probe_matrix": write_probe_matrix,
         "claim_policy": (
             "This checks storage writability and free space only; it is not a completed "
             "CoRM-RAG reproduction result."
@@ -135,6 +144,34 @@ def parse_df_pt(output: str) -> list[dict[str, Any]]:
     return rows
 
 
+def parse_df_pti(output: str) -> list[dict[str, Any]]:
+    rows = []
+    for line in output.splitlines():
+        stripped = line.strip()
+        if not stripped or stripped.startswith("Filesystem"):
+            continue
+        parts = stripped.split()
+        if len(parts) < 7:
+            continue
+        inodes = _int_or_none(parts[2])
+        iused = _int_or_none(parts[3])
+        ifree = _int_or_none(parts[4])
+        if inodes is None or iused is None or ifree is None:
+            continue
+        rows.append(
+            {
+                "filesystem": parts[0],
+                "type": parts[1],
+                "inodes": inodes,
+                "iused": iused,
+                "ifree": ifree,
+                "iuse": parts[5],
+                "mount": " ".join(parts[6:]),
+            }
+        )
+    return rows
+
+
 def _find_mount(filesystems: list[dict[str, Any]], target: str) -> dict[str, Any] | None:
     exact = [item for item in filesystems if item["mount"] == target]
     if exact:
@@ -162,6 +199,69 @@ def _write_probe_command(target: str) -> str:
         "trap 'rm -rf \"$TESTDIR\"' EXIT; "
         f"TESTFILE=\"$TESTDIR/probe.bin\" python3 -c {shlex.quote(python)}"
     )
+
+
+def _default_probe_dirs(*, target: str, user: str, extra: list[str] | None) -> list[str]:
+    candidates = [
+        target,
+        target.rstrip("/") + "/csrm_corm_reconstruction",
+        target.rstrip("/") + "/csrm_corm_reconstruction/data",
+        target.rstrip("/") + "/csrm_corm_reconstruction/outputs",
+        target.rstrip("/") + "/" + user,
+        target.rstrip("/") + "/tmp",
+        "/home/" + user,
+        "/tmp",
+        "/dev/shm",
+    ]
+    if extra:
+        candidates.extend(extra)
+    seen = set()
+    output = []
+    for directory in candidates:
+        if directory not in seen:
+            output.append(directory)
+            seen.add(directory)
+    return output
+
+
+def _file_write_probe(client: paramiko.SSHClient, directory: str) -> dict[str, Any]:
+    command_result = _run(client, _file_write_probe_command(directory))
+    parsed = _parse_probe_json(command_result["stdout"])
+    return {
+        "directory": directory,
+        "command": command_result["command"],
+        "exit_status": command_result["exit_status"],
+        "stdout": command_result["stdout"],
+        "stderr": command_result["stderr"],
+        "parsed": parsed,
+        "write_passed": bool(parsed and parsed.get("ok")),
+    }
+
+
+def _file_write_probe_command(directory: str) -> str:
+    python = (
+        "import json,os,pathlib,uuid;"
+        "d=pathlib.Path(os.environ['TESTDIR']);"
+        "p=d/('csrm_file_probe_'+uuid.uuid4().hex);"
+        "r={'directory':str(d),'exists':d.exists(),'is_dir':d.is_dir()};"
+        "\ntry:\n"
+        "    f=open(p,'wb'); f.write(b'probe\\n'); f.flush(); os.fsync(f.fileno()); f.close();"
+        "    p.unlink(); r.update({'ok':True})\n"
+        "except OSError as exc:\n"
+        "    r.update({'ok':False,'errno':exc.errno,'error':str(exc)})\n"
+        "print(json.dumps(r,sort_keys=True))"
+    )
+    return f"TESTDIR={shlex.quote(directory)} python3 -c {shlex.quote(python)}"
+
+
+def _parse_probe_json(stdout: str) -> dict[str, Any] | None:
+    stripped = stdout.strip()
+    if not stripped:
+        return None
+    try:
+        return json.loads(stripped.splitlines()[-1])
+    except json.JSONDecodeError:
+        return None
 
 
 def _run(client: paramiko.SSHClient, command: str) -> dict[str, Any]:

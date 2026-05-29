@@ -89,6 +89,7 @@ def _rows(
     mechanism = closure.get("mechanism_ablation") or {}
     risk = closure.get("risk_control") or {}
     reconstruction = closure.get("corm_reconstruction") or {}
+    storage_probe = reconstruction.get("latest_storage_probe") or {}
     gate = reproduction.get("gate_summary", {})
     return [
         _row(
@@ -167,7 +168,7 @@ def _rows(
                 "results/corm_full_wikipedia_job_status.json",
                 "results/remote_storage_status_20260529.json",
             ],
-            "Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts.",
+            _full_corm_boundary(storage_probe),
         ),
         _row(
             "Mechanism ablations",
@@ -222,6 +223,21 @@ def _row(requirement: str, status: str, evidence: list[str], boundary: str) -> d
         "evidence": evidence,
         "boundary_or_next_action": boundary,
     }
+
+
+def _full_corm_boundary(storage_probe: dict[str, Any]) -> str:
+    matrix = storage_probe.get("write_probe_matrix_summary") or {}
+    failed_target_dirs = matrix.get("failed_target_dirs") or []
+    writable_fallback_dirs = matrix.get("writable_fallback_dirs") or []
+    available = storage_probe.get("target_available_gib")
+    available_text = "unknown" if available is None else f"{available:.1f} GiB"
+    return (
+        "Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original "
+        f"artifacts. Latest storage probe shows {available_text} available and "
+        f"target_write_probe_passed={storage_probe.get('target_write_probe_passed')}; "
+        f"{len(failed_target_dirs)} target-dir file probes failed while writable fallback dirs are "
+        f"{writable_fallback_dirs}."
+    )
 
 
 def _status_counts(rows: list[dict[str, Any]]) -> dict[str, int]:

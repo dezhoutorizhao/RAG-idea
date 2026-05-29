@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T04:07:16.634260+00:00`
+Generated: `2026-05-29T04:13:50.304051+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -71,7 +71,7 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 
 Hard blockers:
 - Human-audited orbit labels: Pending labels: 300; cannot claim human-audited results.
-- Full CoRM-RAG reproduction: Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts.
+- Full CoRM-RAG reproduction: Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts. Latest storage probe shows 322.1 GiB available and target_write_probe_passed=False; 6 target-dir file probes failed while writable fallback dirs are ['/home/syk', '/tmp', '/dev/shm'].
 - Independent external review: Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.
 
 Negative or partial evidence:
@@ -144,7 +144,7 @@ V4 anti-shortcut suite:
 - Risk@30 wins/ties/losses vs strongest non-CSRM: `16` / `4` / `4`.
 - Risk@50 wins/ties/losses vs strongest non-CSRM: `24` / `0` / `0`.
 - AURC wins/ties/losses vs strongest non-CSRM: `16` / `0` / `8`.
-- Mean Risk@30/Risk@50/AURC reduction: `0.1528` / `0.1913` / `0.1090`.
+- Mean Risk@30/Risk@50/AURC reduction: `0.1514` / `0.1904` / `0.1066`.
 - Claim policy: This matrix expands the end-to-end proxy to two retrieval policies and two generators over the materialized v4 orbit corpus. It is still a local-corpus proxy, not a full Wikipedia retrieval-generation reproduction.
 
 ## CoRM Reconstruction

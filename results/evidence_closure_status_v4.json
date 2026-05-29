@@ -38,7 +38,7 @@
     "latest_storage_probe": {
       "artifact": "results/remote_storage_status_20260529.json",
       "gpu_query": "0, NVIDIA GeForce RTX 4090, 24564, 24076\n1, NVIDIA GeForce RTX 4090, 24564, 24097\n",
-      "observed_at_utc": "2026-05-29T04:06:55.426083+00:00",
+      "observed_at_utc": "2026-05-29T04:11:44.651866+00:00",
       "ready_for_full_reproduction_storage": false,
       "target": "/mnt/ntfs-disk",
       "target_available_gib": 322.14443588256836,
@@ -47,7 +47,49 @@
       "target_findmnt": "/dev/nvme1n1p1 fuseblk rw,relatime,user_id=0,group_id=0,default_permissions,allow_other,blksize=4096\n",
       "target_min_free_met": true,
       "target_write_probe_passed": false,
-      "write_probe_error": "mktemp: \u65e0\u6cd5\u901a\u8fc7\u6a21\u677f \u201c/mnt/ntfs-disk/csrm_write_probe.XXXXXX\u201d \u521b\u5efa\u76ee\u5f55: \u8bbe\u5907\u4e0a\u6ca1\u6709\u7a7a\u95f4\n"
+      "write_probe_error": "mktemp: \u65e0\u6cd5\u901a\u8fc7\u6a21\u677f \u201c/mnt/ntfs-disk/csrm_write_probe.XXXXXX\u201d \u521b\u5efa\u76ee\u5f55: \u8bbe\u5907\u4e0a\u6ca1\u6709\u7a7a\u95f4\n",
+      "write_probe_matrix_summary": {
+        "failed_count": 6,
+        "failed_target_dirs": [
+          {
+            "directory": "/mnt/ntfs-disk",
+            "errno": 28,
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_file_probe_44f63f8a9b784f48bbc0695dc5d5e9c1'"
+          },
+          {
+            "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction",
+            "errno": 28,
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/csrm_file_probe_c8eb7be99f3c4708a97053d8c4bd63db'"
+          },
+          {
+            "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction/data",
+            "errno": 28,
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/data/csrm_file_probe_0b87832cdf9345e1aa21a6f647108eb0'"
+          },
+          {
+            "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs",
+            "errno": 28,
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/csrm_file_probe_942c4b7a7ba14544b3088fc46578a65a'"
+          },
+          {
+            "directory": "/mnt/ntfs-disk/syk",
+            "errno": 28,
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/syk/csrm_file_probe_4f05044f5451481bb9fe7b293420229e'"
+          },
+          {
+            "directory": "/mnt/ntfs-disk/tmp",
+            "errno": 28,
+            "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/tmp/csrm_file_probe_a4273c336c2241999a97a3b9029527d5'"
+          }
+        ],
+        "passed_count": 3,
+        "probed_dir_count": 9,
+        "writable_fallback_dirs": [
+          "/home/syk",
+          "/tmp",
+          "/dev/shm"
+        ]
+      }
     },
     "missing_required_artifacts": 5,
     "preflight_ready": false,
@@ -86,9 +128,9 @@
       "lexical_guarded"
     ],
     "has_losses": true,
-    "mean_aurc_reduction": 0.10903406180735982,
-    "mean_risk30_reduction": 0.15277777777777776,
-    "mean_risk50_reduction": 0.19125,
+    "mean_aurc_reduction": 0.10662897498179157,
+    "mean_risk30_reduction": 0.15138888888888888,
+    "mean_risk50_reduction": 0.19041666666666665,
     "retrievers": [
       "bm25_orbit_pool",
       "dense_hash_orbit_pool"
@@ -121,7 +163,7 @@
     "risk50_wins": 12,
     "row_count": 12
   },
-  "generated_at_utc": "2026-05-29T04:07:16.634260+00:00",
+  "generated_at_utc": "2026-05-29T04:13:50.304051+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -499,7 +541,7 @@
         "status": "blocked"
       },
       {
-        "boundary_or_next_action": "Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts.",
+        "boundary_or_next_action": "Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts. Latest storage probe shows 322.1 GiB available and target_write_probe_passed=False; 6 target-dir file probes failed while writable fallback dirs are ['/home/syk', '/tmp', '/dev/shm'].",
         "requirement": "Full CoRM-RAG reproduction",
         "status": "blocked"
       },

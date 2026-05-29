@@ -2,13 +2,13 @@
   "claim_policy": "This checks storage writability and free space only; it is not a completed CoRM-RAG reproduction result.",
   "filesystems": [
     {
-      "available_1k_blocks": 12900376,
+      "available_1k_blocks": 12889584,
       "blocks_1k": 1967357936,
       "capacity": "100%",
       "filesystem": "/dev/nvme0n1p2",
       "mount": "/",
       "type": "ext4",
-      "used_1k_blocks": 1854447528
+      "used_1k_blocks": 1854458320
     },
     {
       "available_1k_blocks": 337792924,
@@ -35,8 +35,37 @@
     "stderr": "",
     "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 24076\n1, NVIDIA GeForce RTX 4090, 24564, 24097\n"
   },
+  "inode_filesystems": [
+    {
+      "filesystem": "/dev/nvme0n1p2",
+      "ifree": 115862535,
+      "inodes": 124993536,
+      "iuse": "8%",
+      "iused": 9131001,
+      "mount": "/",
+      "type": "ext4"
+    },
+    {
+      "filesystem": "/dev/nvme1n1p1",
+      "ifree": 337822420,
+      "inodes": 348999580,
+      "iuse": "4%",
+      "iused": 11177160,
+      "mount": "/mnt/ntfs-disk",
+      "type": "fuseblk"
+    },
+    {
+      "filesystem": "tmpfs",
+      "ifree": 24539085,
+      "inodes": 24690699,
+      "iuse": "1%",
+      "iused": 151614,
+      "mount": "/dev/shm",
+      "type": "tmpfs"
+    }
+  ],
   "min_free_gib": 180.0,
-  "observed_at_utc": "2026-05-29T04:06:55.426083+00:00",
+  "observed_at_utc": "2026-05-29T04:11:44.651866+00:00",
   "ready_for_full_reproduction_storage": false,
   "remote": {
     "host": "192.168.103.101",
@@ -58,5 +87,145 @@
     "exit_status": 1,
     "stderr": "mktemp: \u65e0\u6cd5\u901a\u8fc7\u6a21\u677f \u201c/mnt/ntfs-disk/csrm_write_probe.XXXXXX\u201d \u521b\u5efa\u76ee\u5f55: \u8bbe\u5907\u4e0a\u6ca1\u6709\u7a7a\u95f4\n",
     "stdout": ""
-  }
+  },
+  "write_probe_matrix": [
+    {
+      "command": "TESTDIR=/mnt/ntfs-disk python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/mnt/ntfs-disk",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/mnt/ntfs-disk",
+        "errno": 28,
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_file_probe_44f63f8a9b784f48bbc0695dc5d5e9c1'",
+        "exists": true,
+        "is_dir": true,
+        "ok": false
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_file_probe_44f63f8a9b784f48bbc0695dc5d5e9c1'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "write_passed": false
+    },
+    {
+      "command": "TESTDIR=/mnt/ntfs-disk/csrm_corm_reconstruction python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction",
+        "errno": 28,
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/csrm_file_probe_c8eb7be99f3c4708a97053d8c4bd63db'",
+        "exists": true,
+        "is_dir": true,
+        "ok": false
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk/csrm_corm_reconstruction\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/csrm_file_probe_c8eb7be99f3c4708a97053d8c4bd63db'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "write_passed": false
+    },
+    {
+      "command": "TESTDIR=/mnt/ntfs-disk/csrm_corm_reconstruction/data python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction/data",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction/data",
+        "errno": 28,
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/data/csrm_file_probe_0b87832cdf9345e1aa21a6f647108eb0'",
+        "exists": true,
+        "is_dir": true,
+        "ok": false
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk/csrm_corm_reconstruction/data\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/data/csrm_file_probe_0b87832cdf9345e1aa21a6f647108eb0'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "write_passed": false
+    },
+    {
+      "command": "TESTDIR=/mnt/ntfs-disk/csrm_corm_reconstruction/outputs python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction/outputs",
+        "errno": 28,
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/csrm_file_probe_942c4b7a7ba14544b3088fc46578a65a'",
+        "exists": true,
+        "is_dir": true,
+        "ok": false
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk/csrm_corm_reconstruction/outputs\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/csrm_corm_reconstruction/outputs/csrm_file_probe_942c4b7a7ba14544b3088fc46578a65a'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "write_passed": false
+    },
+    {
+      "command": "TESTDIR=/mnt/ntfs-disk/syk python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/mnt/ntfs-disk/syk",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/mnt/ntfs-disk/syk",
+        "errno": 28,
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/syk/csrm_file_probe_4f05044f5451481bb9fe7b293420229e'",
+        "exists": true,
+        "is_dir": true,
+        "ok": false
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk/syk\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/syk/csrm_file_probe_4f05044f5451481bb9fe7b293420229e'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "write_passed": false
+    },
+    {
+      "command": "TESTDIR=/mnt/ntfs-disk/tmp python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/mnt/ntfs-disk/tmp",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/mnt/ntfs-disk/tmp",
+        "errno": 28,
+        "error": "[Errno 28] No space left on device: '/mnt/ntfs-disk/tmp/csrm_file_probe_a4273c336c2241999a97a3b9029527d5'",
+        "exists": true,
+        "is_dir": true,
+        "ok": false
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/mnt/ntfs-disk/tmp\", \"errno\": 28, \"error\": \"[Errno 28] No space left on device: '/mnt/ntfs-disk/tmp/csrm_file_probe_a4273c336c2241999a97a3b9029527d5'\", \"exists\": true, \"is_dir\": true, \"ok\": false}\n",
+      "write_passed": false
+    },
+    {
+      "command": "TESTDIR=/home/syk python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/home/syk",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/home/syk",
+        "exists": true,
+        "is_dir": true,
+        "ok": true
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/home/syk\", \"exists\": true, \"is_dir\": true, \"ok\": true}\n",
+      "write_passed": true
+    },
+    {
+      "command": "TESTDIR=/tmp python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/tmp",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/tmp",
+        "exists": true,
+        "is_dir": true,
+        "ok": true
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/tmp\", \"exists\": true, \"is_dir\": true, \"ok\": true}\n",
+      "write_passed": true
+    },
+    {
+      "command": "TESTDIR=/dev/shm python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/dev/shm",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/dev/shm",
+        "exists": true,
+        "is_dir": true,
+        "ok": true
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/dev/shm\", \"exists\": true, \"is_dir\": true, \"ok\": true}\n",
+      "write_passed": true
+    }
+  ]
 }

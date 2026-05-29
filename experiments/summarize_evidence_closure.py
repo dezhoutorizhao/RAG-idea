@@ -361,6 +361,41 @@ def _remote_storage_probe_status(results: Path) -> dict[str, Any] | None:
         "target_findmnt": get(payload, "target_findmnt", "stdout"),
         "gpu_query": get(payload, "gpu_query", "stdout"),
         "write_probe_error": get(payload, "write_probe", "stderr"),
+        "write_probe_matrix_summary": _write_probe_matrix_summary(
+            payload.get("write_probe_matrix", []),
+            target,
+        ),
+    }
+
+
+def _write_probe_matrix_summary(matrix: list[dict[str, Any]], target: str | None) -> dict[str, Any]:
+    rows = [row for row in matrix if isinstance(row, dict)]
+    target_prefix = None if target is None else target.rstrip("/") + "/"
+    failed_target_dirs = []
+    writable_fallback_dirs = []
+    for row in rows:
+        directory = row.get("directory")
+        passed = bool(row.get("write_passed"))
+        if not isinstance(directory, str):
+            continue
+        under_target = target is not None and (directory == target or directory.startswith(target_prefix))
+        if under_target and not passed:
+            parsed = row.get("parsed") if isinstance(row.get("parsed"), dict) else {}
+            failed_target_dirs.append(
+                {
+                    "directory": directory,
+                    "errno": parsed.get("errno"),
+                    "error": parsed.get("error"),
+                }
+            )
+        if not under_target and passed:
+            writable_fallback_dirs.append(directory)
+    return {
+        "probed_dir_count": len(rows),
+        "passed_count": sum(1 for row in rows if row.get("write_passed")),
+        "failed_count": sum(1 for row in rows if not row.get("write_passed")),
+        "failed_target_dirs": failed_target_dirs,
+        "writable_fallback_dirs": writable_fallback_dirs,
     }
 
 

@@ -144,6 +144,19 @@ def test_remote_storage_probe_status_marks_write_failure(tmp_path):
             "target_findmnt": {"stdout": "/dev/nvme1n1p1 fuseblk rw\n"},
             "gpu_query": {"stdout": "0, NVIDIA GeForce RTX 4090, 24564, 24076\n"},
             "write_probe": {"stderr": "No space left on device\n"},
+            "write_probe_matrix": [
+                {
+                    "directory": "/mnt/ntfs-disk",
+                    "write_passed": False,
+                    "parsed": {"errno": 28, "error": "No space left on device"},
+                },
+                {
+                    "directory": "/mnt/ntfs-disk/csrm_corm_reconstruction/data",
+                    "write_passed": False,
+                    "parsed": {"errno": 28, "error": "No space left on device"},
+                },
+                {"directory": "/home/syk", "write_passed": True, "parsed": {"ok": True}},
+            ],
         },
     )
 
@@ -154,6 +167,11 @@ def test_remote_storage_probe_status_marks_write_failure(tmp_path):
     assert status["ready_for_full_reproduction_storage"] is False
     assert status["target_filesystem_type"] == "fuseblk"
     assert "No space left" in status["write_probe_error"]
+    matrix = status["write_probe_matrix_summary"]
+    assert matrix["probed_dir_count"] == 3
+    assert matrix["passed_count"] == 1
+    assert len(matrix["failed_target_dirs"]) == 2
+    assert matrix["writable_fallback_dirs"] == ["/home/syk"]
 
 
 def test_ext4_prepare_dry_run_status_is_non_destructive(tmp_path):
