@@ -32,6 +32,10 @@ from experiments.materialize_llm_judge_requests_v4 import (
     materialize_llm_judge_requests_v4,
     render_markdown as render_llm_judge_requests_markdown,
 )
+from experiments.materialize_llm_judge_requests_nli_probe import (
+    materialize_llm_judge_requests_nli_probe,
+    render_markdown as render_llm_judge_nli_probe_markdown,
+)
 from experiments.run_end2end_retriever_generator_matrix_v4 import (
     DEFAULT_DATASETS as DEFAULT_END2END_MATRIX_DATASETS,
     render_markdown as render_end2end_matrix_markdown,
@@ -247,6 +251,31 @@ def reproduce_current_evidence_v4(
             "name": "materialize_llm_judge_requests_v4",
             "outputs": [str(llm_judge_requests_jsonl), str(llm_judge_status_json), str(llm_judge_status_md)],
             "ready": llm_judge_status["ready_for_baseline_coverage"],
+        }
+    )
+
+    llm_judge_nli_jsonl = results / "llm_judge_nli_probe_requests_20260529.jsonl"
+    llm_judge_nli_status_json = results / "llm_judge_nli_probe_request_status_20260529.json"
+    llm_judge_nli_status_md = results / "llm_judge_nli_probe_request_status_20260529.md"
+    llm_judge_nli_status = materialize_llm_judge_requests_nli_probe(
+        results / "audit_sample_paper_1000_v3_nli_set.jsonl",
+        llm_judge_nli_jsonl,
+        model="gpt-4.1-mini",
+    )
+    _write_json(llm_judge_nli_status_json, llm_judge_nli_status)
+    llm_judge_nli_status_md.write_text(
+        render_llm_judge_nli_probe_markdown(llm_judge_nli_status),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "materialize_llm_judge_requests_nli_probe",
+            "outputs": [
+                str(llm_judge_nli_jsonl),
+                str(llm_judge_nli_status_json),
+                str(llm_judge_nli_status_md),
+            ],
+            "ready": llm_judge_nli_status["ready_for_nli_llm_correlation"],
         }
     )
 

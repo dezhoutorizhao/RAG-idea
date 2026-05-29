@@ -1,6 +1,6 @@
 # Text-Only Verifier Status
 
-Generated: `2026-05-29T03:45:39.993906+00:00`
+Generated: `2026-05-29T03:50:19.850129+00:00`
 
 Ready for text-only main claim: `False`
 
@@ -23,6 +23,9 @@ Ready for text-only main claim: `False`
 - Request pack ready: `True`.
 - Request count: `1200`.
 - Score artifact ready: `False`.
+- NLI-paired request pack ready: `True`.
+- NLI-paired request count: `1000`.
+- NLI-paired score artifact ready: `False`.
 - Paired score space ready: `False`.
 - NLI/LLM correlation ready: `False`.
 
@@ -31,7 +34,7 @@ Ready for text-only main claim: `False`
 | Criterion | Status | Detail |
 |---|---|---|
 | NLI/text-only scorer beats required weak baselines | `pass` | CSRM has higher AUROC and lower Risk@30/AURC than naive orbit average, single-set SURE-style, and clean-only CoRM reducers. |
-| LLM judge and NLI ranking correlation | `blocked` | LLM judge request pack exists, but no API-backed score artifact in a paired score space exists yet. |
+| LLM judge and NLI ranking correlation | `blocked` | The NLI-paired LLM judge request pack exists, but no API-backed paired score artifact exists yet. |
 | Human-label text-only CSRM evaluation | `blocked` | Human audit v4 adjudicated labels are still pending, so human-label text-only Risk@30/50 cannot be claimed. |
 
 ## Claim Policy

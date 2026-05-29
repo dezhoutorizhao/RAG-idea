@@ -1,6 +1,6 @@
 {
   "claim_policy": "This audits the text-only verifier evidence from RAG-idea Section 5.2. It supports only the NLI bridge/probe claim until LLM judge scores and human adjudicated labels are available.",
-  "generated_at_utc": "2026-05-29T03:45:39.993906+00:00",
+  "generated_at_utc": "2026-05-29T03:50:19.850129+00:00",
   "human_audit": {
     "pending": 300,
     "ready": false,
@@ -8,6 +8,11 @@
   },
   "llm_judge": {
     "nli_llm_correlation_ready": false,
+    "paired_request_count": 1000,
+    "paired_request_pack_ready": true,
+    "paired_request_status_path": "results\\llm_judge_nli_probe_request_status_20260529.json",
+    "paired_score_artifact_ready": false,
+    "paired_score_path": "results\\llm_judge_nli_probe_scores_20260529.jsonl",
     "paired_score_space_ready": false,
     "request_count": 1200,
     "request_pack_ready": true,
@@ -69,7 +74,7 @@
     },
     {
       "criterion": "LLM judge and NLI ranking correlation",
-      "detail": "LLM judge request pack exists, but no API-backed score artifact in a paired score space exists yet.",
+      "detail": "The NLI-paired LLM judge request pack exists, but no API-backed paired score artifact exists yet.",
       "evidence": "results\\llm_judge_v4_scores_20260529.jsonl",
       "status": "blocked"
     },

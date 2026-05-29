@@ -80,6 +80,15 @@
       "ready": false
     },
     {
+      "name": "materialize_llm_judge_requests_nli_probe",
+      "outputs": [
+        "results\\llm_judge_nli_probe_requests_20260529.jsonl",
+        "results\\llm_judge_nli_probe_request_status_20260529.json",
+        "results\\llm_judge_nli_probe_request_status_20260529.md"
+      ],
+      "ready": false
+    },
+    {
       "name": "summarize_text_only_verifier_status",
       "outputs": [
         "results\\text_only_verifier_status_20260529.json",
@@ -233,7 +242,7 @@
     "human_audit_v4_ready": false,
     "remote_storage_ready": false
   },
-  "generated_at_utc": "2026-05-29T03:45:43.859770+00:00",
+  "generated_at_utc": "2026-05-29T03:50:24.405943+00:00",
   "ready_for_neurips_main_claim": false,
   "root": ".",
   "strict": false

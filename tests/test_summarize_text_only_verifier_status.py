@@ -19,6 +19,15 @@ def test_text_only_verifier_status_tracks_nli_pass_and_missing_llm_scores(tmp_pa
             "score_artifact_ready": False,
         },
     )
+    _write_json(
+        results / "llm_judge_nli_probe_request_status_20260529.json",
+        {
+            "request_pack_ready": True,
+            "paired_to_nli_probe": True,
+            "request_count": 1000,
+            "score_artifact_ready": False,
+        },
+    )
     _write_json(results / "human_audit_v4_status_20260529.json", {"ready": False, "pending": 300})
 
     summary = summarize_text_only_verifier_status(tmp_path)
@@ -26,6 +35,8 @@ def test_text_only_verifier_status_tracks_nli_pass_and_missing_llm_scores(tmp_pa
     assert summary["nli_probe"]["directional_advantage_ready"] is True
     assert len(summary["nli_probe"]["required_baseline_comparisons"]) == 4
     assert summary["llm_judge"]["request_pack_ready"] is True
+    assert summary["llm_judge"]["paired_request_pack_ready"] is True
+    assert summary["llm_judge"]["paired_request_count"] == 1000
     assert summary["llm_judge"]["nli_llm_correlation_ready"] is False
     assert summary["ready_for_text_only_main_claim"] is False
     statuses = {item["criterion"]: item["status"] for item in summary["success_criteria"]}
@@ -40,12 +51,17 @@ def test_text_only_verifier_markdown_lists_comparisons(tmp_path):
     _write_json(results / "audit_sample_paper_1000_v3_nli_set_eval.json", _nli_eval())
     (results / "audit_sample_paper_1000_v3_nli_set.jsonl").write_text("{}\n", encoding="utf-8")
     _write_json(results / "llm_judge_v4_request_status_20260529.json", {"request_pack_ready": True})
+    _write_json(
+        results / "llm_judge_nli_probe_request_status_20260529.json",
+        {"request_pack_ready": True, "paired_to_nli_probe": True, "request_count": 1000},
+    )
     _write_json(results / "human_audit_v4_status_20260529.json", {"ready": False})
 
     text = render_markdown(summarize_text_only_verifier_status(tmp_path))
 
     assert "Text-Only Verifier Status" in text
     assert "naive_orbit_average" in text
+    assert "NLI-paired request pack ready: `True`" in text
     assert "NLI/LLM correlation ready: `False`" in text
 
 
