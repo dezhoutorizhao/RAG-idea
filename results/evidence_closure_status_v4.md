@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T01:10:41.907772+00:00`
+Generated: `2026-05-29T01:21:00.255585+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -72,6 +72,13 @@ V4 case-study gallery:
 - Outputs: `paper\case_studies\v4_case_gallery_20260529.jsonl` and `paper\case_studies\v4_case_gallery_20260529.md`.
 - Claim boundary: Diagnostic case gallery exported from private-label v4 failure analyses; not human-adjudicated evidence.
 
+Clean-sufficiency misleading diagnostic:
+- Rows: `1200` across `6` datasets; overall private-label failure rate: `0.5000`.
+- Top-quartile clean sufficiency threshold/failure rate/n: `0.2390` / `0.5050` / `303`.
+- Top-quartile worst sufficiency threshold/failure rate/n: `0.2253` / `0.3609` / `302`.
+- Outputs: `paper\figures\clean_sufficiency_misleading_v4_20260529.svg` and `paper\figures\clean_sufficiency_misleading_v4_20260529.csv`.
+- Claim boundary: Private-label diagnostic figure: failure rates come from v4 heuristic/private labels, not human-adjudicated labels.
+
 ## End-to-End Selective RAG Proxy
 
 - Rows: `12`; all-win: `False`; has losses/mixed rows: `True`.
@@ -132,6 +139,7 @@ Allowed claims:
 - Hotpot semantic-swap v4 is a leakage-controlled diagnostic where self-consistency and retrieval-stability shortcuts fail.
 - The v4 failure taxonomy and case gallery are machine-readable diagnostics across FEVER and Hotpot variants, with heuristic/private-label status until human audit v4 is complete.
 - A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection.
+- A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.
 
 Disallowed claims:
 - Full original CoRM-RAG retrieval-generation reproduction is complete.

@@ -1,6 +1,7 @@
 import json
 
 from experiments.summarize_evidence_closure import (
+    _clean_sufficiency_figure_status,
     _ext4_prepare_dry_run_status,
     _human_audit_v4_eval_status,
     _human_audit_v4_status,
@@ -385,6 +386,41 @@ def test_v4_case_gallery_status_summarizes_outputs(tmp_path):
     assert status["case_count"] == 192
     assert status["bucket_counts"]["target_high_false_positive"] == 48
     assert status["outputs"]["markdown"].endswith(".md")
+    assert "not human-adjudicated" in status["claim_boundary"]
+
+
+def test_clean_sufficiency_figure_status_summarizes_private_label_boundary(tmp_path):
+    _write_json(
+        tmp_path / "clean_sufficiency_misleading_v4_20260529.json",
+        {
+            "row_count": 1200,
+            "dataset_count": 6,
+            "failure_rate": 0.5,
+            "high_sufficiency_failure": {
+                "clean_sufficiency": {
+                    "threshold": 0.24,
+                    "failure_rate": 0.51,
+                    "n": 303,
+                },
+                "worst_sufficiency": {
+                    "threshold": 0.22,
+                    "failure_rate": 0.36,
+                    "n": 302,
+                },
+            },
+            "outputs": {
+                "svg": "paper/figures/clean.svg",
+                "csv": "paper/figures/clean.csv",
+            },
+            "claim_boundary": "not human-adjudicated labels",
+        },
+    )
+
+    status = _clean_sufficiency_figure_status(tmp_path)
+
+    assert status["row_count"] == 1200
+    assert status["clean_top_quartile_failure_rate"] == 0.51
+    assert status["worst_top_quartile_n"] == 302
     assert "not human-adjudicated" in status["claim_boundary"]
 
 

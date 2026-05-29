@@ -16,6 +16,10 @@ if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
 from experiments.run_human_audit_eval_v4 import run_human_audit_eval_v4
+from experiments.build_clean_sufficiency_misleading_figure import (
+    DEFAULT_INPUTS as DEFAULT_CLEAN_SUFFICIENCY_FIGURE_INPUTS,
+    build_clean_sufficiency_misleading_figure,
+)
 from experiments.export_v4_case_gallery import export_v4_case_gallery
 from experiments.summarize_evidence_closure import evidence_closure, render_markdown as render_closure_markdown
 from experiments.summarize_end2end_selective_rag_proxy import (
@@ -172,6 +176,30 @@ def reproduce_current_evidence_v4(
                 str(case_gallery_summary),
             ],
             "ready": case_gallery["case_count"] > 0,
+        }
+    )
+
+    clean_sufficiency_csv = root / "paper/figures/clean_sufficiency_misleading_v4_20260529.csv"
+    clean_sufficiency_svg = root / "paper/figures/clean_sufficiency_misleading_v4_20260529.svg"
+    clean_sufficiency_md = root / "paper/figures/clean_sufficiency_misleading_v4_20260529.md"
+    clean_sufficiency_json = results / "clean_sufficiency_misleading_v4_20260529.json"
+    clean_sufficiency = build_clean_sufficiency_misleading_figure(
+        [root / path for path in DEFAULT_CLEAN_SUFFICIENCY_FIGURE_INPUTS],
+        clean_sufficiency_csv,
+        clean_sufficiency_json,
+        clean_sufficiency_svg,
+        clean_sufficiency_md,
+    )
+    commands.append(
+        {
+            "name": "build_clean_sufficiency_misleading_figure",
+            "outputs": [
+                str(clean_sufficiency_csv),
+                str(clean_sufficiency_json),
+                str(clean_sufficiency_svg),
+                str(clean_sufficiency_md),
+            ],
+            "ready": clean_sufficiency["row_count"] > 0,
         }
     )
 

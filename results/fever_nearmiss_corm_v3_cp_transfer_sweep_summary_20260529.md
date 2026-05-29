@@ -1,6 +1,6 @@
 # FEVER CP Transfer Sweep
 
-Generated: `2026-05-29T01:10:41.851943+00:00`
+Generated: `2026-05-29T01:21:00.090395+00:00`
 
 Dataset: `FEVER v3 near-miss CoRM 1200`
 Primary method: `csrm_logreg_calibrated`

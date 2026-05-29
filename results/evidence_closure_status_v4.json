@@ -7,7 +7,8 @@
     "Hotpot-only empirical risk-target transfer is supported under the conservative CP pressure test.",
     "Hotpot semantic-swap v4 is a leakage-controlled diagnostic where self-consistency and retrieval-stability shortcuts fail.",
     "The v4 failure taxonomy and case gallery are machine-readable diagnostics across FEVER and Hotpot variants, with heuristic/private-label status until human audit v4 is complete.",
-    "A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection."
+    "A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection.",
+    "A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim."
   ],
   "claim_verification": {
     "failed_claims": 0,
@@ -90,7 +91,7 @@
     "risk50_wins": 12,
     "row_count": 12
   },
-  "generated_at_utc": "2026-05-29T01:10:41.907772+00:00",
+  "generated_at_utc": "2026-05-29T01:21:00.255585+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "case_gallery": {
@@ -129,6 +130,25 @@
         "jsonl": "paper\\case_studies\\v4_case_gallery_20260529.jsonl",
         "markdown": "paper\\case_studies\\v4_case_gallery_20260529.md"
       }
+    },
+    "clean_sufficiency_figure": {
+      "artifact": "results/clean_sufficiency_misleading_v4_20260529.json",
+      "claim_boundary": "Private-label diagnostic figure: failure rates come from v4 heuristic/private labels, not human-adjudicated labels.",
+      "clean_top_quartile_failure_rate": 0.504950495049505,
+      "clean_top_quartile_n": 303,
+      "clean_top_quartile_threshold": 0.2390076907152059,
+      "dataset_count": 6,
+      "failure_rate": 0.5,
+      "outputs": {
+        "csv": "paper\\figures\\clean_sufficiency_misleading_v4_20260529.csv",
+        "json": "results\\clean_sufficiency_misleading_v4_20260529.json",
+        "markdown": "paper\\figures\\clean_sufficiency_misleading_v4_20260529.md",
+        "svg": "paper\\figures\\clean_sufficiency_misleading_v4_20260529.svg"
+      },
+      "row_count": 1200,
+      "worst_top_quartile_failure_rate": 0.3609271523178808,
+      "worst_top_quartile_n": 302,
+      "worst_top_quartile_threshold": 0.22533455238910327
     },
     "failure_taxonomy": {
       "artifact": "results/v4_failure_taxonomy_summary_20260529.json",

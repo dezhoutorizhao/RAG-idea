@@ -1,0 +1,67 @@
+{
+  "claim_boundary": "Private-label diagnostic figure: failure rates come from v4 heuristic/private labels, not human-adjudicated labels.",
+  "construction_type_counts": {
+    "conflict": 19,
+    "distractor": 65,
+    "false_premise": 52,
+    "fragile_mixed": 25,
+    "hard_missing_hop": 100,
+    "missing": 16,
+    "missing_hop": 100,
+    "near_miss_dilution": 23,
+    "semantic_swap": 100,
+    "stable": 600,
+    "wrong_answer": 100
+  },
+  "dataset_count": 6,
+  "dataset_counts": {
+    "fever_orbits_v4_n100_structbalanced": 200,
+    "hotpot_orbits_v4_hardneg_n100": 200,
+    "hotpot_orbits_v4_n100_hardmatched": 200,
+    "hotpot_orbits_v4_n100_structbalanced": 200,
+    "hotpot_orbits_v4_semanticswap_n100": 200,
+    "hotpot_orbits_v4_supportpreserve_n100": 200
+  },
+  "failure_count": 600,
+  "failure_rate": 0.5,
+  "generated_at_utc": "2026-05-29T01:21:00.181787+00:00",
+  "high_sufficiency_failure": {
+    "clean_sufficiency": {
+      "failure_rate": 0.504950495049505,
+      "failures": 153,
+      "n": 303,
+      "threshold": 0.2390076907152059,
+      "threshold_policy": "feature_top_quartile"
+    },
+    "mean_sufficiency": {
+      "failure_rate": 0.40728476821192056,
+      "failures": 123,
+      "n": 302,
+      "threshold": 0.23093781915422626,
+      "threshold_policy": "feature_top_quartile"
+    },
+    "worst_sufficiency": {
+      "failure_rate": 0.3609271523178808,
+      "failures": 109,
+      "n": 302,
+      "threshold": 0.22533455238910327,
+      "threshold_policy": "feature_top_quartile"
+    }
+  },
+  "inputs": [
+    "results\\fever_orbits_v4_n100.constant.structbalanced.textonly_scored.jsonl",
+    "results\\hotpot_orbits_v4_hardneg_n100.constant.textonly_scored.jsonl",
+    "results\\hotpot_orbits_v4_n100.constant.hardmatched.textonly_scored.jsonl",
+    "results\\hotpot_orbits_v4_n100.constant.structbalanced.textonly_scored.jsonl",
+    "results\\hotpot_orbits_v4_semanticswap_n100.constant.textonly_scored.jsonl",
+    "results\\hotpot_orbits_v4_supportpreserve_n100.constant.textonly_scored.jsonl"
+  ],
+  "nonempty_bin_count": 29,
+  "outputs": {
+    "csv": "paper\\figures\\clean_sufficiency_misleading_v4_20260529.csv",
+    "json": "results\\clean_sufficiency_misleading_v4_20260529.json",
+    "markdown": "paper\\figures\\clean_sufficiency_misleading_v4_20260529.md",
+    "svg": "paper\\figures\\clean_sufficiency_misleading_v4_20260529.svg"
+  },
+  "row_count": 1200
+}

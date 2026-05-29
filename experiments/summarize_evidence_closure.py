@@ -81,6 +81,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     v4_strong_baselines = _v4_strong_baseline_status(results)
     v4_failure_taxonomy = _v4_failure_taxonomy_status(results)
     v4_case_gallery = _v4_case_gallery_status(results)
+    clean_sufficiency_figure = _clean_sufficiency_figure_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -111,6 +112,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "human_audit_v4_eval": human_audit_v4_eval_status,
             "failure_taxonomy": v4_failure_taxonomy,
             "case_gallery": v4_case_gallery,
+            "clean_sufficiency_figure": clean_sufficiency_figure,
         },
         "risk_control": {
             "hotpot_cp": {
@@ -193,6 +195,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "Hotpot semantic-swap v4 is a leakage-controlled diagnostic where self-consistency and retrieval-stability shortcuts fail.",
             "The v4 failure taxonomy and case gallery are machine-readable diagnostics across FEVER and Hotpot variants, with heuristic/private-label status until human audit v4 is complete.",
             "A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection.",
+            "A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.",
         ],
         "disallowed_claims": [
             "Full original CoRM-RAG retrieval-generation reproduction is complete.",
@@ -516,6 +519,29 @@ def _v4_case_gallery_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _clean_sufficiency_figure_status(results: Path) -> dict[str, Any] | None:
+    path = results / "clean_sufficiency_misleading_v4_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    clean = payload.get("high_sufficiency_failure", {}).get("clean_sufficiency", {})
+    worst = payload.get("high_sufficiency_failure", {}).get("worst_sufficiency", {})
+    return {
+        "artifact": str(path.as_posix()),
+        "row_count": payload.get("row_count"),
+        "dataset_count": payload.get("dataset_count"),
+        "failure_rate": payload.get("failure_rate"),
+        "clean_top_quartile_threshold": clean.get("threshold"),
+        "clean_top_quartile_failure_rate": clean.get("failure_rate"),
+        "clean_top_quartile_n": clean.get("n"),
+        "worst_top_quartile_threshold": worst.get("threshold"),
+        "worst_top_quartile_failure_rate": worst.get("failure_rate"),
+        "worst_top_quartile_n": worst.get("n"),
+        "outputs": payload.get("outputs"),
+        "claim_boundary": payload.get("claim_boundary"),
+    }
+
+
 def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     path = results / "human_audit_v4_eval_status_20260529.json"
     if not path.exists():
@@ -580,6 +606,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     human_v4_eval = status["latest_v4_diagnostics"].get("human_audit_v4_eval")
     failure_taxonomy = status["latest_v4_diagnostics"].get("failure_taxonomy")
     case_gallery = status["latest_v4_diagnostics"].get("case_gallery")
+    clean_sufficiency_figure = status["latest_v4_diagnostics"].get("clean_sufficiency_figure")
 
     def row(method: str, item: dict[str, float | None]) -> str:
         return (
@@ -729,6 +756,29 @@ def render_markdown(status: dict[str, Any]) -> str:
         )
     else:
         lines.extend(["V4 case-study gallery:", "- Not recorded.", ""])
+    if clean_sufficiency_figure:
+        outputs = clean_sufficiency_figure.get("outputs") or {}
+        lines.extend(
+            [
+                "Clean-sufficiency misleading diagnostic:",
+                f"- Rows: `{clean_sufficiency_figure['row_count']}` across "
+                f"`{clean_sufficiency_figure['dataset_count']}` datasets; overall private-label "
+                f"failure rate: `{_fmt(clean_sufficiency_figure['failure_rate'])}`.",
+                f"- Top-quartile clean sufficiency threshold/failure rate/n: "
+                f"`{_fmt(clean_sufficiency_figure['clean_top_quartile_threshold'])}` / "
+                f"`{_fmt(clean_sufficiency_figure['clean_top_quartile_failure_rate'])}` / "
+                f"`{clean_sufficiency_figure['clean_top_quartile_n']}`.",
+                f"- Top-quartile worst sufficiency threshold/failure rate/n: "
+                f"`{_fmt(clean_sufficiency_figure['worst_top_quartile_threshold'])}` / "
+                f"`{_fmt(clean_sufficiency_figure['worst_top_quartile_failure_rate'])}` / "
+                f"`{clean_sufficiency_figure['worst_top_quartile_n']}`.",
+                f"- Outputs: `{outputs.get('svg')}` and `{outputs.get('csv')}`.",
+                f"- Claim boundary: {clean_sufficiency_figure['claim_boundary']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["Clean-sufficiency misleading diagnostic:", "- Not recorded.", ""])
     lines.extend(["## End-to-End Selective RAG Proxy", ""])
     if end2end_proxy:
         lines.extend(

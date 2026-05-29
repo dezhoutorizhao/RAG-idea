@@ -21,12 +21,17 @@ DEFAULT_ARTIFACTS = [
     Path("results/v4_strong_baseline_summary_20260529.json"),
     Path("results/v4_failure_taxonomy_summary_20260529.json"),
     Path("results/v4_case_gallery_summary_20260529.json"),
+    Path("results/clean_sufficiency_misleading_v4_20260529.json"),
     Path("paper/case_studies/v4_case_gallery_20260529.jsonl"),
     Path("paper/case_studies/v4_case_gallery_20260529.md"),
+    Path("paper/figures/clean_sufficiency_misleading_v4_20260529.csv"),
+    Path("paper/figures/clean_sufficiency_misleading_v4_20260529.svg"),
+    Path("paper/figures/clean_sufficiency_misleading_v4_20260529.md"),
     Path("experiments/reproduce_current_evidence_v4.py"),
     Path("experiments/summarize_evidence_closure.py"),
     Path("experiments/summarize_v4_failure_taxonomy.py"),
     Path("experiments/export_v4_case_gallery.py"),
+    Path("experiments/build_clean_sufficiency_misleading_figure.py"),
 ]
 
 

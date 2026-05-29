@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T01:10:41.886465+00:00`
+Generated: `2026-05-29T01:21:00.193050+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -15,6 +15,7 @@ Ready for NeurIPS main claim: `False`
 | summarize_v4_strong_baselines | `False` | `results\v4_strong_baseline_summary_20260529.json`<br>`results\v4_strong_baseline_summary_20260529.md` |
 | summarize_v4_failure_taxonomy | `True` | `results\v4_failure_taxonomy_summary_20260529.json`<br>`results\v4_failure_taxonomy_summary_20260529.md` |
 | export_v4_case_gallery | `True` | `paper\case_studies\v4_case_gallery_20260529.jsonl`<br>`paper\case_studies\v4_case_gallery_20260529.md`<br>`results\v4_case_gallery_summary_20260529.json` |
+| build_clean_sufficiency_misleading_figure | `True` | `paper\figures\clean_sufficiency_misleading_v4_20260529.csv`<br>`results\clean_sufficiency_misleading_v4_20260529.json`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.svg`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.md` |
 | summarize_evidence_closure | `False` | `results\evidence_closure_status_v4.json`<br>`results\evidence_closure_status_v4.md` |
 
 ## Gate Summary
