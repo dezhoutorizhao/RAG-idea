@@ -45,6 +45,8 @@ def test_source_artifacts_include_remote_storage_unblock_evidence():
     assert "results/remote_ext4_prepare_dryrun_20260529.json" in defaults
     assert "results/remote_ext4_prepare_dryrun_20260529.md" in defaults
     assert "results/remote_storage_cleanup_plan_20260529.md" in defaults
+    assert "results/remote_cleanup_candidates_20260529.json" in defaults
+    assert "results/remote_cleanup_candidates_20260529.md" in defaults
 
 
 def _write_minimal_sources(root):

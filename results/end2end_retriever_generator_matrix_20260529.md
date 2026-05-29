@@ -1,6 +1,6 @@
 # V4 End-to-End Retriever-Generator Matrix
 
-Generated: `2026-05-29T07:52:11.776972+00:00`
+Generated: `2026-05-29T07:59:25.493635+00:00`
 
 Datasets: `6`
 Retrievers: `['bm25_orbit_pool', 'dense_hash_orbit_pool']`

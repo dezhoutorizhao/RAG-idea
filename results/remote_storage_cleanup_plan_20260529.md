@@ -4,6 +4,8 @@ Date: 2026-05-29
 
 Latest dry-run snapshot: `2026-05-29T07:49:14Z`
 
+Latest detailed candidate audit: `2026-05-29T07:58:46Z`
+
 This report identifies the current storage blocker for full CoRM-RAG reproduction and the smallest observed cleanup path that can plausibly provide at least 180 GiB of writable ext4 space.
 
 ## Current Blocker
@@ -66,6 +68,17 @@ The minimum practical cleanup set that appears to satisfy the 180 GiB requiremen
 2. remove /root/.cache contents
 3. remove /home/syk/.cache contents
 ```
+
+A follow-up read-only candidate audit (`results/remote_cleanup_candidates_20260529.json`) refines this estimate:
+
+```text
+top-30 Docker JSON logs = 134.1 GiB
+/root/.cache = 30.4 GiB
+/home/syk/.cache = 18.4 GiB
+recommended reclaim lower bound = 182.8 GiB
+```
+
+This lower bound is just above the 180 GiB target, so cleanup should be followed by an independent `/home/syk` free-space and write/fsync/read/delete probe before starting the full reproduction.
 
 ## Not Recommended Without Coordination
 

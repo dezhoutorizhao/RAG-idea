@@ -1,6 +1,6 @@
 # External Review Packet
 
-Generated: `2026-05-29T07:52:23.076821+00:00`
+Generated: `2026-05-29T07:59:36.854259+00:00`
 
 Packet ready: `True`
 External review completed: `False`
@@ -20,7 +20,7 @@ Blocker: `pending_external_review`
 
 - Verified claims: `{'passed_claims': 28, 'failed_claims': 0, 'total_claims': 28}`.
 - Readiness status counts: `{'blocked': 3, 'fail': 1, 'partial': 5, 'pass': 5}`.
-- Evidence manifest artifacts: `202`.
+- Evidence manifest artifacts: `206`.
 - Evidence manifest missing artifacts: `0`.
 
 ## Hard Blockers
@@ -49,29 +49,31 @@ Blocker: `pending_external_review`
 | `RAG-idea改进.md` | `True` | 49684 | `abea2cc9e252308bd254f974d86cbd89910eecfeab3ee4a55ab14fc5dee71242` |
 | `CLAIMS_LEDGER.json` | `True` | 53391 | `f433d29dc1ca4d67e4097403e7e84c6adc8ec7de7c9785d1e3111a15d699d244` |
 | `results\claims_verification.json` | `True` | 62860 | `b3051aff04cf1c2efe13719f0587dca08c1af41ba043266c8fdd1b7c3cde1a6e` |
-| `results\evidence_closure_status_v4.json` | `True` | 49321 | `ae4b2dee398b47e0659d0ac351eead0026256fe8c2da31376a8a536d06f23dc3` |
-| `results\neurips_readiness_matrix_20260529.json` | `True` | 14724 | `7a5eab3c4b0023a3cff9e923e58f442dcdf831347621cc9676fff93944081d7e` |
-| `results\v4_evidence_package_manifest_20260529.json` | `True` | 47785 | `5d7111e13c28b6bd0e5b52e0e51d2ca49879c228a2f4eb6ae2487eac1ca0403f` |
-| `results\text_only_verifier_status_20260529.json` | `True` | 4153 | `635d4006e51f9d337b39445ef08d245bf143a47348718ae6874843b57729f745` |
-| `results\v4_strong_baseline_summary_20260529.json` | `True` | 73809 | `fc21c48e17872fa7a79b46e94e0e9d7d7c831d0114485289eb4a41b8bcf60ca1` |
-| `results\v4_calibration_quality_20260529.json` | `True` | 28533 | `efdc82ec6d8da85dd9ed3fc1fa18f574a9cd893786800f7695cc2a326293c629` |
-| `results\v4_claim_safe_target_selection_20260529.json` | `True` | 7318 | `7c828c77d345e7a8f61e5b82082a9ac15bfe2971628a25dcc5e84d89f666d16e` |
-| `results\risk_control_abstention_baselines_20260529.json` | `True` | 11626 | `108f2625b9851c54a33ecee602ad38fa6df89f88c2f56e1919fb19b924c8767b` |
-| `results\theory_formalization_status_20260529.json` | `True` | 1761 | `c941c428358570e0a96cccf1411e0f5eeb35012d91c2b3bd9472a338384e7841` |
-| `results\novelty_audit_20260529.json` | `True` | 5760 | `e7af4d4605c99def0bbe3586cd4d682897942619eab978f2089a916c7a70d844` |
+| `results\evidence_closure_status_v4.json` | `True` | 49321 | `b29cf5b602967e6102a5b9bb79469ed86281f95efe8dcc9a91bb106cffd75a08` |
+| `results\neurips_readiness_matrix_20260529.json` | `True` | 14724 | `aa20f0a78e48afeec8272a1ed60855e37debe677c0bb45f6a2562b31012e9931` |
+| `results\v4_evidence_package_manifest_20260529.json` | `True` | 48647 | `32d25fecb4664cdad3bfe888613c624b5b342eb0158c575945950961db105d6c` |
+| `results\text_only_verifier_status_20260529.json` | `True` | 4153 | `eb02f6a44a06f8ee5fce038e86114cea88993a40f2d47d563ad7c2047bfda1c9` |
+| `results\v4_strong_baseline_summary_20260529.json` | `True` | 73809 | `8bfa7df2296115705830da68a901a5c03c7b4e8d9b2e2dc83c7fc47e22da746e` |
+| `results\v4_calibration_quality_20260529.json` | `True` | 28533 | `203f4be3f66d15c20c7319e34ae3b3c79e542d674ac148dfc030cb1c783c1b50` |
+| `results\v4_claim_safe_target_selection_20260529.json` | `True` | 7318 | `af7bf657b385010d05ad0e599636061afee10cd23518b445f7e92287720d166b` |
+| `results\risk_control_abstention_baselines_20260529.json` | `True` | 11626 | `1a8fefdad52a410daec9e28a8c4daf73e37cc150095a89af5b7e358765d3143b` |
+| `results\theory_formalization_status_20260529.json` | `True` | 1761 | `7e23443bffcd02558422d8f5d940f38bd0361310fba015a67f463b495d506864` |
+| `results\novelty_audit_20260529.json` | `True` | 5760 | `0e71db8ede99789db4c2aec898f5503985a009a525726509e995eb4ab0745588` |
 | `paper\sections\formalization.tex` | `True` | 2869 | `4a9985e6c1156ba7209df22ee2527d76300e696b3bc0ce6560773d07e6018df2` |
 | `paper\sections\theory.tex` | `True` | 3841 | `5c04e9b9ae97e0b9ccbce85ef0734c5887044a9a808975a452d8dcd80f89925d` |
-| `results\end2end_retriever_generator_matrix_20260529.json` | `True` | 52753 | `d09bf3fbc06b0c67202074cf18f5fb24fe69049ffb955571f15746e126ea5eca` |
-| `results\end2end_risk_coverage_curves_20260529.json` | `True` | 130245 | `6d288e6e97e84c20799a0caf0c65d886ea34a6d8223902781bd34ffa22581a49` |
-| `results\end2end_target_risk_coverage_20260529.json` | `True` | 30644 | `c11ea3d86999b55187e042c5589d025b494a26681f91671c05f1ce43034bc662` |
+| `results\end2end_retriever_generator_matrix_20260529.json` | `True` | 52753 | `f5165537641047ef8467b75bd645d6468236dda82ea5f8ff6b90917c7d5e2cfc` |
+| `results\end2end_risk_coverage_curves_20260529.json` | `True` | 130245 | `8fcdcf1909285af18578e150b6a06f23d5ff228ad889ee89615c0b8b88ec2125` |
+| `results\end2end_target_risk_coverage_20260529.json` | `True` | 30644 | `08950fa5030b065f1aef5e2c02a2486a93efe2fa13a0d29ad8ae6ff7861e6512` |
 | `results\remote_storage_status_20260529.json` | `True` | 14189 | `3246f13012a84b122534652634727bf6831df15d5157f57b1065d67a5a0d63d5` |
 | `results\remote_home_storage_status_20260529.json` | `True` | 12190 | `d529ece561d4322c73df786bc23e482e2c3950d02db667ab05511ea57f645ffa` |
 | `results\remote_ext4_prepare_dryrun_20260529.json` | `True` | 5843 | `71111d38d9457dc9a5ce5531cdd825948d7888d68e3e5cc63b0b246686f08601` |
 | `results\remote_ext4_prepare_dryrun_20260529.md` | `True` | 1734 | `ca3bbbb1e00ba180ca6dec9f28e319e42d39e29ba55ff2e852a96467f6e62666` |
-| `results\remote_storage_cleanup_plan_20260529.md` | `True` | 3157 | `34ed3083f59843c94f40ae3abda0f1e892e14e8186556c713fd5edb7c33d5399` |
-| `results\human_audit_v4_paper_pack_status_20260529.json` | `True` | 4984 | `a178f167f64dd190f598e7f8b3d82dd69a3ddf33f0492f70f636355e5aa79803` |
-| `results\human_audit_v4_assignment_batches_20260529.json` | `True` | 17555 | `6e73084ecd03781fc4c6edb801c25f523f92cdaa96a414a4bebf8b951fa8f7d5` |
-| `results\human_audit_v4_batch_collection_20260529.json` | `True` | 4742 | `5fcc4d03f8a16cb288fb6cb119e14f72428731c355d349694fdefca1a24a9edb` |
+| `results\remote_storage_cleanup_plan_20260529.md` | `True` | 3669 | `a26c0c309ec8a84baa25d26cb02ec06b54d0abcd97743977b8dee3c1f30d5899` |
+| `results\remote_cleanup_candidates_20260529.json` | `True` | 38761 | `e15260c3d8f95d2715972e6c927ca827f60a78e95cc767366a00e896637718aa` |
+| `results\remote_cleanup_candidates_20260529.md` | `True` | 4266 | `e2ddd08c863e2770dc23875d6cceeda3c1cf74a244d5f04942d21a6d8f685535` |
+| `results\human_audit_v4_paper_pack_status_20260529.json` | `True` | 4984 | `10737066ba49482f90a94f04cb222b1a863bcbc79695ba8eb5b7f3d75f4cc892` |
+| `results\human_audit_v4_assignment_batches_20260529.json` | `True` | 17555 | `e410c987428d2b6bba94e1fe474253d1f0de93380e892bb3805704d30d84e160` |
+| `results\human_audit_v4_batch_collection_20260529.json` | `True` | 4742 | `751ab2644f1debb42bc9d2868f2723e576020e2bc27cafa6c389e60590709817` |
 | `results\human_audit_v4_status_20260529.json` | `True` | 13342 | `6c1147bdc32e6fbb51c99364a38eec82eae403cf4bc97ed219ed64e8f753232b` |
 
 ## Reviewer Output Contract

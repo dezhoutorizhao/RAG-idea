@@ -45,6 +45,10 @@ def test_summarize_neurips_unblock_plan_tracks_external_gates(tmp_path):
         "mode": "dry_run",
         "destructive_operations_executed": False,
     })
+    _write_json(results / "remote_cleanup_candidates_20260529.json", {
+        "recommended_reclaim_gib_lower_bound": 184.0,
+        "destructive_operations_executed": False,
+    })
     _write_json(results / "external_review_packet_status_20260529.json", {
         "packet_ready": True,
         "external_review_completed": False,
@@ -63,6 +67,7 @@ def test_summarize_neurips_unblock_plan_tracks_external_gates(tmp_path):
     assert blockers["run_api_backed_llm_judge"]["next_commands"] == ["submit batch"]
     assert blockers["repair_storage_for_full_corm_reproduction"]["requires_user_approval"] is True
     assert "home_write_probe_passed=True" in blockers["repair_storage_for_full_corm_reproduction"]["current_evidence"]
+    assert "cleanup_candidate_audit_ready=True" in blockers["repair_storage_for_full_corm_reproduction"]["current_evidence"]
     assert blockers["risk_control_claim_boundary"]["status"] == "fail"
 
     text = render_markdown(summary)

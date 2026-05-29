@@ -161,7 +161,10 @@ def test_default_manifest_tracks_neurips_unblock_plan_artifacts():
     assert "results/remote_ext4_prepare_dryrun_20260529.json" in defaults
     assert "results/remote_ext4_prepare_dryrun_20260529.md" in defaults
     assert "results/remote_storage_cleanup_plan_20260529.md" in defaults
+    assert "results/remote_cleanup_candidates_20260529.json" in defaults
+    assert "results/remote_cleanup_candidates_20260529.md" in defaults
     assert "experiments/summarize_neurips_unblock_plan.py" in defaults
+    assert "experiments/audit_remote_cleanup_candidates.py" in defaults
 
 
 def test_default_manifest_tracks_theory_formalization_artifacts():

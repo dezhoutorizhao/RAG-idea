@@ -28,7 +28,7 @@
       "status": "blocked"
     },
     {
-      "current_evidence": "target=/mnt/ntfs-disk; target_available_gib=322.1; target_write_probe_passed=False; home_available_gib=12.2; home_write_probe_passed=True; home_min_free_met=False; ext4_mode=dry_run; destructive_operations_executed=False.",
+      "current_evidence": "target=/mnt/ntfs-disk; target_available_gib=322.1; target_write_probe_passed=False; home_available_gib=12.2; home_write_probe_passed=True; home_min_free_met=False; ext4_mode=dry_run; destructive_operations_executed=False; cleanup_candidate_audit_ready=True; cleanup_reclaim_lower_bound_gib=182.8.",
       "id": "repair_storage_for_full_corm_reproduction",
       "next_commands": [
         "$env:CORM_REMOTE_PASSWORD='<set locally>'; python -m experiments.prepare_remote_ext4_storage --host 192.168.103.101 --user syk --port 22 --target /home/syk --output results/remote_ext4_prepare_execute_20260529.json --min-free-gib 180 --execute",
@@ -67,7 +67,7 @@
   ],
   "claim_policy": "This is an unblock plan, not evidence that the blockers are solved. It records the minimum external actions and repository commands needed before NeurIPS main-track readiness can be re-evaluated.",
   "external_action_required_count": 4,
-  "generated_at_utc": "2026-05-29T07:52:23.078932+00:00",
+  "generated_at_utc": "2026-05-29T07:59:36.857100+00:00",
   "next_execution_order": [
     "complete_human_audit_labels",
     "run_api_backed_llm_judge_batch",
@@ -86,6 +86,7 @@
   "ready_for_neurips_main_track": false,
   "requires_user_approval_count": 1,
   "source_artifacts": {
+    "cleanup_candidates": "results\\remote_cleanup_candidates_20260529.json",
     "ext4_dryrun": "results\\remote_ext4_prepare_dryrun_20260529.json",
     "external_review": "results\\external_review_packet_status_20260529.json",
     "human_collection": "results\\human_audit_v4_batch_collection_20260529.json",

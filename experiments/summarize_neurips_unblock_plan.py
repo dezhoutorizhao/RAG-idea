@@ -17,6 +17,7 @@ DEFAULT_LLM_CORRELATION = Path("results/llm_nli_correlation_status_20260529.json
 DEFAULT_REMOTE_STORAGE = Path("results/remote_storage_status_20260529.json")
 DEFAULT_REMOTE_HOME_STORAGE = Path("results/remote_home_storage_status_20260529.json")
 DEFAULT_EXT4_DRYRUN = Path("results/remote_ext4_prepare_dryrun_20260529.json")
+DEFAULT_CLEANUP_CANDIDATES = Path("results/remote_cleanup_candidates_20260529.json")
 DEFAULT_EXTERNAL_REVIEW = Path("results/external_review_packet_status_20260529.json")
 
 
@@ -32,6 +33,7 @@ def summarize_neurips_unblock_plan(
     remote_storage_path: Path = DEFAULT_REMOTE_STORAGE,
     remote_home_storage_path: Path = DEFAULT_REMOTE_HOME_STORAGE,
     ext4_dryrun_path: Path = DEFAULT_EXT4_DRYRUN,
+    cleanup_candidates_path: Path = DEFAULT_CLEANUP_CANDIDATES,
     external_review_path: Path = DEFAULT_EXTERNAL_REVIEW,
 ) -> dict[str, Any]:
     readiness = _load_optional_json(root / readiness_path)
@@ -43,12 +45,13 @@ def summarize_neurips_unblock_plan(
     remote_storage = _load_optional_json(root / remote_storage_path)
     remote_home_storage = _load_optional_json(root / remote_home_storage_path)
     ext4_dryrun = _load_optional_json(root / ext4_dryrun_path)
+    cleanup_candidates = _load_optional_json(root / cleanup_candidates_path)
     external_review = _load_optional_json(root / external_review_path)
 
     blockers = [
         _human_audit_blocker(human_collection, human_status),
         _llm_judge_blocker(llm_batch, llm_score, llm_correlation),
-        _full_corm_storage_blocker(remote_storage, remote_home_storage, ext4_dryrun),
+        _full_corm_storage_blocker(remote_storage, remote_home_storage, ext4_dryrun, cleanup_candidates),
         _external_review_blocker(external_review),
         _risk_control_boundary(),
     ]
@@ -65,6 +68,7 @@ def summarize_neurips_unblock_plan(
             "remote_storage": str(remote_storage_path),
             "remote_home_storage": str(remote_home_storage_path),
             "ext4_dryrun": str(ext4_dryrun_path),
+            "cleanup_candidates": str(cleanup_candidates_path),
             "external_review": str(external_review_path),
         },
         "readiness_status_counts": readiness.get("status_counts", {}),
@@ -181,6 +185,7 @@ def _full_corm_storage_blocker(
     storage: dict[str, Any],
     home_storage: dict[str, Any],
     ext4: dict[str, Any],
+    cleanup_candidates: dict[str, Any],
 ) -> dict[str, Any]:
     ready = bool(storage.get("ready_for_full_reproduction_storage"))
     cleanup_commands = [
@@ -209,7 +214,10 @@ def _full_corm_storage_blocker(
             f"home_write_probe_passed={home_storage.get('target_write_probe_passed')}; "
             f"home_min_free_met={home_storage.get('target_min_free_met')}; "
             f"ext4_mode={ext4.get('mode')}; "
-            f"destructive_operations_executed={ext4.get('destructive_operations_executed')}."
+            f"destructive_operations_executed={ext4.get('destructive_operations_executed')}; "
+            f"cleanup_candidate_audit_ready={bool(cleanup_candidates)}; "
+            "cleanup_reclaim_lower_bound_gib="
+            f"{_fmt(cleanup_candidates.get('recommended_reclaim_gib_lower_bound'))}."
         ),
         "required_external_action": (
             "Approve the minimal ext4 cleanup plan, then verify write/fsync/read/delete on /home/syk."

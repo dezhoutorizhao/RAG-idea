@@ -1,8 +1,34 @@
 {
   "allowed_remote_path_note": "Remote /mnt/ntfs-disk and /home/syk paths are documented operational paths, not hidden local dependencies.",
-  "finding_count": 0,
-  "findings": [],
-  "generated_at_utc": "2026-05-29T07:52:24.547160+00:00",
-  "passed": true,
-  "scanned_artifact_count": 206
+  "finding_count": 5,
+  "findings": [
+    {
+      "artifact": "experiments/audit_remote_cleanup_candidates.py",
+      "match": "/home/{shlex.quote(user)}",
+      "pattern": "/home/(?!syk\\b)[^/\\s]+"
+    },
+    {
+      "artifact": "experiments/audit_remote_cleanup_candidates.py",
+      "match": "/home/{shlex.quote(user)}",
+      "pattern": "/home/(?!syk\\b)[^/\\s]+"
+    },
+    {
+      "artifact": "experiments/audit_remote_cleanup_candidates.py",
+      "match": "/home/{shlex.quote(user)}",
+      "pattern": "/home/(?!syk\\b)[^/\\s]+"
+    },
+    {
+      "artifact": "experiments/audit_remote_cleanup_candidates.py",
+      "match": "/home/{shlex.quote(user)}",
+      "pattern": "/home/(?!syk\\b)[^/\\s]+"
+    },
+    {
+      "artifact": "experiments/audit_remote_cleanup_candidates.py",
+      "match": "/home/{shlex.quote(user)}",
+      "pattern": "/home/(?!syk\\b)[^/\\s]+"
+    }
+  ],
+  "generated_at_utc": "2026-05-29T07:59:38.287153+00:00",
+  "passed": false,
+  "scanned_artifact_count": 209
 }
