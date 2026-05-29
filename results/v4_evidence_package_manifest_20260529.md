@@ -1,6 +1,6 @@
 # V4 Evidence Package Manifest
 
-Generated: `2026-05-29T01:30:39.673715+00:00`
+Generated: `2026-05-29T01:35:36.657897+00:00`
 
 Package status: `complete_with_known_blockers`
 Ready for NeurIPS main claim: `False`
@@ -26,27 +26,30 @@ Missing artifacts: `0`
 
 | Path | Exists | Bytes | SHA256 |
 |---|---:|---:|---|
-| `results\current_evidence_reproduction_20260529.json` | `True` | `4571` | `e0718494aeed9ac092d8a6c8fb6b790f260261d12693d81d9e4868a7e30f73de` |
-| `results\current_evidence_reproduction_20260529.md` | `True` | `3494` | `7dd2e67e7a3ae8580562ea9edd802fc6cf297eea8ddacbfc160fb3fde7457f0d` |
-| `results\evidence_closure_status_v4.json` | `True` | `22999` | `097d21cd13156777b9cf22b587f344cdff1aec3cdb4e9852b286433d9b26933f` |
-| `results\evidence_closure_status_v4.md` | `True` | `12365` | `287169f9da442456c39651252ffc27321f1661798ac173ce73453e89354e2e11` |
+| `results\current_evidence_reproduction_20260529.json` | `True` | `4801` | `9594d903ef18f865d31f4eb54d72673b19c1a72f5902c6e15a52f2d86fe0690e` |
+| `results\current_evidence_reproduction_20260529.md` | `True` | `3638` | `be38a99bc6477e887f1c6d521af01297b2fd069be470ae1c6e6da688271ce932` |
+| `results\evidence_closure_status_v4.json` | `True` | `24869` | `1a665665194ddddae94b89f1b83e6e465a69e82ffc486d86fd466acf124142e9` |
+| `results\evidence_closure_status_v4.md` | `True` | `13481` | `9d0ab6d266e39045d7c10c76beb5761e549e4ff91ac20a5b4f49833ddf9af544` |
+| `results\neurips_readiness_matrix_20260529.json` | `True` | `6650` | `7d2c952bcf688db12bdd19fb8934be9a40f7e6005f6394a6d717226200c05c46` |
+| `results\neurips_readiness_matrix_20260529.md` | `True` | `2998` | `90e94af13414a7868bde758065339ba007a947c1e56a7edfff9c8c93ade945b1` |
 | `results\human_audit_v4_status_20260529.json` | `True` | `5073` | `9c730826406716ab8f3fb7c417bca1626f06e418628e8971765d64cf4d73c9d1` |
 | `results\human_audit_v4_eval_status_20260529.json` | `True` | `2528` | `3703442aa638c9b6ea69f245604e62a170ab871173452907e26d4857f9a8f3ba` |
-| `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json` | `True` | `8163` | `4cb5817519fc133d17210ceea94112030d02bfd811143875722bd5dc6f06c376` |
-| `results\end2end_selective_rag_proxy_summary_20260529.json` | `True` | `13211` | `806b2cdbe4c15eba5a464113aa701cdc92e52f537c81bf9e9447e2f3f2ae0c86` |
-| `results\mechanism_ablation_summary_20260529.json` | `True` | `10571` | `a2c648fdbfd310e779b10a3af8997ab0c5b0ce7589395d91e88abebae8394b85` |
-| `results\v4_strong_baseline_summary_20260529.json` | `True` | `43608` | `d795ba33d3469af7acb57bc32f6bed316750b67376b4e8b3cd6d632a589bf826` |
-| `results\v4_anti_shortcut_summary_20260529.json` | `True` | `5006` | `6d0d4d2023df078bcf16506da9f143117a1561abbd5d3f47f77ba967d5ec9120` |
-| `results\v4_failure_taxonomy_summary_20260529.json` | `True` | `46069` | `2dd9776393387bd10e52b6df6830fe7572917ebc4a8e85c5de4b0b93759c9b02` |
-| `results\v4_case_gallery_summary_20260529.json` | `True` | `1882` | `e3736f1aa5c187313d120eb31997b47738a812d19d3806816bb153b8584d4171` |
-| `results\clean_sufficiency_misleading_v4_20260529.json` | `True` | `2465` | `60e987fcdfa7cf5431485fec0c8b839365c0b616d31bfca4542aa5cb9dff919a` |
+| `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json` | `True` | `8163` | `78054df491d8d47db9367eeedd3ab3a04ce866a77a87a8aac00246f04f6f3219` |
+| `results\end2end_selective_rag_proxy_summary_20260529.json` | `True` | `13211` | `1667ffb7fe52b2b3d94804d64ef29e581f4798fa62d8b4f1c84e0ccb8325d95b` |
+| `results\mechanism_ablation_summary_20260529.json` | `True` | `10571` | `08aa0a43428695dc3045e591d7501c1db41c1054737e8a74ed5936e916e9dc0d` |
+| `results\v4_strong_baseline_summary_20260529.json` | `True` | `43608` | `dd5005a52c2138a1a118393819921d6895b12e4303167be1347c7c910fe16450` |
+| `results\v4_anti_shortcut_summary_20260529.json` | `True` | `5006` | `9535725f9b97aeee4d74b2f36108151c80e81cddef0bad89ad829d5d16464245` |
+| `results\v4_failure_taxonomy_summary_20260529.json` | `True` | `46069` | `68fe400c467949e8e6e354f4c13b760e7e71c198ec54c312a9321ab72902105b` |
+| `results\v4_case_gallery_summary_20260529.json` | `True` | `1882` | `68f6085a227795e373adc18fbb009db8b6f64d2544437b0e77f097df471167a8` |
+| `results\clean_sufficiency_misleading_v4_20260529.json` | `True` | `2465` | `a1d2f073a0960c5ff37baa1b81d15e4e402a4f209396638fe63929b9dd88f6b0` |
 | `paper\case_studies\v4_case_gallery_20260529.jsonl` | `True` | `191730` | `f03232de577d772efa6cb88bb54c7c9e8b3d48881493364f7ac052c74dbe4a59` |
-| `paper\case_studies\v4_case_gallery_20260529.md` | `True` | `27403` | `9376e7fa3c276de5a9f0b3b61cfe289c507aad33f6efeead80efeae65d2700f3` |
+| `paper\case_studies\v4_case_gallery_20260529.md` | `True` | `27403` | `010b4a054ddbac49d9526379ab2fdfad3bb3b8a2f914273a77c80b94d208ec18` |
 | `paper\figures\clean_sufficiency_misleading_v4_20260529.csv` | `True` | `3097` | `ded3232932e843f23579e5f85768c2fe16a3e90f18f920532564c3def0c2ab5e` |
 | `paper\figures\clean_sufficiency_misleading_v4_20260529.svg` | `True` | `6083` | `a354e94977a8ffcf4d32cc4e560521006ab552b043189b98ea2dfd5103bd73f3` |
-| `paper\figures\clean_sufficiency_misleading_v4_20260529.md` | `True` | `914` | `e6339fd4b9cfdccfe9442559b4a188461ea8349cac13782cca013dc3e1211277` |
-| `experiments\reproduce_current_evidence_v4.py` | `True` | `15178` | `a4c57f65c289d8a77db3868e95c4caa8d51684b84acd176568e96f595c4ed53f` |
-| `experiments\summarize_evidence_closure.py` | `True` | `50262` | `3ab8f541a0544a6d041a95f55daec60c9e8730e3fcbe64dafd595614c8946797` |
+| `paper\figures\clean_sufficiency_misleading_v4_20260529.md` | `True` | `914` | `c39d6522b313cb98ef9ffc410f7e14ab49def2514aa536a2daa3eb01ae5a021a` |
+| `experiments\reproduce_current_evidence_v4.py` | `True` | `15878` | `302faca683cdd472a1e796b8f38ae6a68b32a7a9292c6a9f2deed67f29deb98f` |
+| `experiments\summarize_evidence_closure.py` | `True` | `52727` | `2118b71f011ba7954e1056bd05b0d2a5570541ebe8dd58a977932ea79ce73649` |
+| `experiments\summarize_neurips_readiness.py` | `True` | `9118` | `94c37350303e7d874824e8d3ce717449053d8c0485001229f35d384e8168e1d4` |
 | `experiments\summarize_mechanism_ablation.py` | `True` | `7701` | `a336bab17cb5b49aabc1aecc9aca84d190485238c61fb248a0a2fa95fe0c7100` |
 | `experiments\summarize_v4_failure_taxonomy.py` | `True` | `11135` | `f5eb0a9e034ef89964e4b51c7069b149bd36156705da4bda2f14f8f1948e3af1` |
 | `experiments\summarize_v4_anti_shortcut.py` | `True` | `7039` | `2a57b2459f92de27e292070bcebb69870349dfc8370c08960cba54ca7b0c88f1` |

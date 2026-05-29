@@ -10,6 +10,7 @@ from experiments.summarize_evidence_closure import (
     _fever_cp_transfer_sweep_status,
     _remote_storage_probe_status,
     _mechanism_ablation_status,
+    _neurips_readiness_status,
     _semantic_swap_status,
     _v4_case_gallery_status,
     _v4_anti_shortcut_status,
@@ -488,6 +489,37 @@ def test_mechanism_ablation_status_summarizes_alignment_and_boundaries(tmp_path)
     assert status["shuffled_auroc_drop_mean"] == 0.9
     assert status["no_worst_risk30_increase_mean"] == 0.0
     assert status["weak_or_negative_methods"] == ["csrm_no_worst_sufficiency"]
+
+
+def test_neurips_readiness_status_summarizes_blockers(tmp_path):
+    _write_json(
+        tmp_path / "neurips_readiness_matrix_20260529.json",
+        {
+            "ready_for_neurips_main_track": False,
+            "status_counts": {"pass": 4, "partial": 2, "fail": 1, "blocked": 3},
+            "hard_blockers": [
+                {
+                    "requirement": "Human-audited orbit labels",
+                    "status": "blocked",
+                    "boundary_or_next_action": "Pending labels: 300",
+                }
+            ],
+            "negative_or_partial_evidence": [
+                {
+                    "requirement": "Risk-control claim",
+                    "status": "fail",
+                    "boundary_or_next_action": "FEVER target is negative",
+                }
+            ],
+        },
+    )
+
+    status = _neurips_readiness_status(tmp_path)
+
+    assert status["ready_for_neurips_main_track"] is False
+    assert status["hard_blocker_count"] == 1
+    assert status["negative_or_partial_count"] == 1
+    assert status["hard_blockers"][0]["requirement"] == "Human-audited orbit labels"
 
 
 def test_current_reproduction_status_is_aggregated(tmp_path):

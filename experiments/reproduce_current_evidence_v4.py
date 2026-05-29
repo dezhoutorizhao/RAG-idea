@@ -57,6 +57,10 @@ from experiments.summarize_mechanism_ablation import (
     render_markdown as render_mechanism_ablation_markdown,
     summarize_mechanism_ablation,
 )
+from experiments.summarize_neurips_readiness import (
+    render_markdown as render_neurips_readiness_markdown,
+    summarize_neurips_readiness,
+)
 
 
 DEFAULT_MANIFESTS = [
@@ -256,6 +260,19 @@ def reproduce_current_evidence_v4(
             "name": "summarize_evidence_closure",
             "outputs": [str(closure_json), str(closure_md)],
             "ready": _closure_ready(closure),
+        }
+    )
+
+    readiness_json = results / "neurips_readiness_matrix_20260529.json"
+    readiness_md = results / "neurips_readiness_matrix_20260529.md"
+    readiness = summarize_neurips_readiness(root)
+    _write_json(readiness_json, readiness)
+    readiness_md.write_text(render_neurips_readiness_markdown(readiness), encoding="utf-8")
+    commands.append(
+        {
+            "name": "summarize_neurips_readiness",
+            "outputs": [str(readiness_json), str(readiness_md)],
+            "ready": readiness["ready_for_neurips_main_track"],
         }
     )
 

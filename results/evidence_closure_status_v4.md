@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T01:30:34.555035+00:00`
+Generated: `2026-05-29T01:35:30.404776+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -47,6 +47,22 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 - Human audit pending: `300`; human eval ready: `False`.
 - Full CoRM reconstruction ready: `False`; remote storage ready: `False`.
 - Claim verifier passed: `True`.
+
+## NeurIPS Readiness Matrix
+
+- Ready for NeurIPS main-track claim: `False`.
+- Status counts: `{'blocked': 3, 'fail': 1, 'partial': 2, 'pass': 4}`.
+- Hard blockers: `3`; negative/partial evidence items: `3`.
+
+Hard blockers:
+- Human-audited orbit labels: Pending labels: 300; cannot claim human-audited results.
+- Full CoRM-RAG reproduction: Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts.
+- Independent external review: Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.
+
+Negative or partial evidence:
+- Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; claims must use calibrated/proxy wording with caveats.
+- End-to-end selective RAG (`partial`): Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction.
+- Risk-control claim (`fail`): Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.
 
 ## V4 Strong Baselines
 

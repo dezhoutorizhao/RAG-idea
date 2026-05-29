@@ -84,6 +84,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     clean_sufficiency_figure = _clean_sufficiency_figure_status(results)
     v4_anti_shortcut = _v4_anti_shortcut_status(results)
     mechanism_ablation = _mechanism_ablation_status(results)
+    neurips_readiness = _neurips_readiness_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -167,6 +168,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "failed_claims": claims.get("failed_claims"),
         },
         "current_evidence_reproduction": current_reproduction_status,
+        "neurips_readiness": neurips_readiness,
         "mechanism_ablation": mechanism_ablation,
         "end2end_selective_rag_proxy": end2end_proxy,
         "v4_strong_baselines": v4_strong_baselines,
@@ -597,6 +599,36 @@ def _mechanism_ablation_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _neurips_readiness_status(results: Path) -> dict[str, Any] | None:
+    path = results / "neurips_readiness_matrix_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "ready_for_neurips_main_track": payload.get("ready_for_neurips_main_track"),
+        "status_counts": payload.get("status_counts"),
+        "hard_blocker_count": len(payload.get("hard_blockers", [])),
+        "negative_or_partial_count": len(payload.get("negative_or_partial_evidence", [])),
+        "hard_blockers": [
+            {
+                "requirement": row.get("requirement"),
+                "status": row.get("status"),
+                "boundary_or_next_action": row.get("boundary_or_next_action"),
+            }
+            for row in payload.get("hard_blockers", [])
+        ],
+        "negative_or_partial_evidence": [
+            {
+                "requirement": row.get("requirement"),
+                "status": row.get("status"),
+                "boundary_or_next_action": row.get("boundary_or_next_action"),
+            }
+            for row in payload.get("negative_or_partial_evidence", [])
+        ],
+    }
+
+
 def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     path = results / "human_audit_v4_eval_status_20260529.json"
     if not path.exists():
@@ -654,6 +686,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     risk = status["risk_control"]
     claims = status["claim_verification"]
     reproduction = status.get("current_evidence_reproduction")
+    neurips_readiness = status.get("neurips_readiness")
     mechanism_ablation = status.get("mechanism_ablation")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
     strong_baselines = status.get("v4_strong_baselines")
@@ -749,6 +782,31 @@ def render_markdown(status: dict[str, Any]) -> str:
                 "",
             ]
         )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## NeurIPS Readiness Matrix", ""])
+    if neurips_readiness:
+        lines.extend(
+            [
+                f"- Ready for NeurIPS main-track claim: "
+                f"`{neurips_readiness['ready_for_neurips_main_track']}`.",
+                f"- Status counts: `{neurips_readiness['status_counts']}`.",
+                f"- Hard blockers: `{neurips_readiness['hard_blocker_count']}`; "
+                f"negative/partial evidence items: `{neurips_readiness['negative_or_partial_count']}`.",
+                "",
+                "Hard blockers:",
+            ]
+        )
+        lines.extend(
+            f"- {item['requirement']}: {item['boundary_or_next_action']}"
+            for item in neurips_readiness["hard_blockers"]
+        )
+        lines.extend(["", "Negative or partial evidence:"])
+        lines.extend(
+            f"- {item['requirement']} (`{item['status']}`): {item['boundary_or_next_action']}"
+            for item in neurips_readiness["negative_or_partial_evidence"]
+        )
+        lines.append("")
     else:
         lines.extend(["- Not recorded.", ""])
     lines.extend(["## V4 Strong Baselines", ""])

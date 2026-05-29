@@ -1,0 +1,158 @@
+{
+  "claim_policy": "This matrix tracks readiness against the NeurIPS main-track evidence plan. A pass means the current artifact supports that checklist item at the stated scope; partial means useful evidence exists but is too narrow or mixed; fail means current evidence contradicts the strong version of the requirement; blocked means the item cannot be completed without human labels, storage repair/approval, or an external review.",
+  "generated_at_utc": "2026-05-29T01:35:30.394885+00:00",
+  "hard_blockers": [
+    {
+      "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
+      "evidence": [
+        "results/human_audit_v4_status_20260529.json",
+        "results/human_audit_v4_eval_status_20260529.json"
+      ],
+      "requirement": "Human-audited orbit labels",
+      "status": "blocked"
+    },
+    {
+      "boundary_or_next_action": "Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts.",
+      "evidence": [
+        "results/corm_reproduction_preflight.json",
+        "results/corm_full_wikipedia_job_status.json",
+        "results/remote_storage_status_20260529.json"
+      ],
+      "requirement": "Full CoRM-RAG reproduction",
+      "status": "blocked"
+    },
+    {
+      "boundary_or_next_action": "Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.",
+      "evidence": [],
+      "requirement": "Independent external review",
+      "status": "blocked"
+    }
+  ],
+  "negative_or_partial_evidence": [
+    {
+      "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; claims must use calibrated/proxy wording with caveats.",
+      "evidence": [
+        "results/v4_strong_baseline_summary_20260529.json"
+      ],
+      "requirement": "Strong baselines and equal-budget controls",
+      "status": "partial"
+    },
+    {
+      "boundary_or_next_action": "Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction.",
+      "evidence": [
+        "results/end2end_selective_rag_proxy_summary_20260529.json"
+      ],
+      "requirement": "End-to-end selective RAG",
+      "status": "partial"
+    },
+    {
+      "boundary_or_next_action": "Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.",
+      "evidence": [
+        "results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json"
+      ],
+      "requirement": "Risk-control claim",
+      "status": "fail"
+    }
+  ],
+  "ready_for_neurips_main_track": false,
+  "rows": [
+    {
+      "boundary_or_next_action": "Core anti-shortcut suite passes; private construction metadata remains evaluator-only.",
+      "evidence": [
+        "results/v4_anti_shortcut_summary_20260529.json",
+        "results/evidence_closure_status_v4.json"
+      ],
+      "requirement": "Leakage-free v4 pipeline",
+      "status": "pass"
+    },
+    {
+      "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
+      "evidence": [
+        "results/human_audit_v4_status_20260529.json",
+        "results/human_audit_v4_eval_status_20260529.json"
+      ],
+      "requirement": "Human-audited orbit labels",
+      "status": "blocked"
+    },
+    {
+      "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; claims must use calibrated/proxy wording with caveats.",
+      "evidence": [
+        "results/v4_strong_baseline_summary_20260529.json"
+      ],
+      "requirement": "Strong baselines and equal-budget controls",
+      "status": "partial"
+    },
+    {
+      "boundary_or_next_action": "Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction.",
+      "evidence": [
+        "results/end2end_selective_rag_proxy_summary_20260529.json"
+      ],
+      "requirement": "End-to-end selective RAG",
+      "status": "partial"
+    },
+    {
+      "boundary_or_next_action": "Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts.",
+      "evidence": [
+        "results/corm_reproduction_preflight.json",
+        "results/corm_full_wikipedia_job_status.json",
+        "results/remote_storage_status_20260529.json"
+      ],
+      "requirement": "Full CoRM-RAG reproduction",
+      "status": "blocked"
+    },
+    {
+      "boundary_or_next_action": "Alignment evidence is strong; no-worst-sufficiency is weak/redundant in current bridge artifacts.",
+      "evidence": [
+        "results/mechanism_ablation_summary_20260529.json"
+      ],
+      "requirement": "Mechanism ablations",
+      "status": "pass"
+    },
+    {
+      "boundary_or_next_action": "Paper-facing diagnostics are complete but private-label, not human-adjudicated.",
+      "evidence": [
+        "results/v4_failure_taxonomy_summary_20260529.json",
+        "paper/case_studies/v4_case_gallery_20260529.md",
+        "paper/figures/clean_sufficiency_misleading_v4_20260529.svg"
+      ],
+      "requirement": "Failure taxonomy and case studies",
+      "status": "pass"
+    },
+    {
+      "boundary_or_next_action": "Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.",
+      "evidence": [
+        "results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json"
+      ],
+      "requirement": "Risk-control claim",
+      "status": "fail"
+    },
+    {
+      "boundary_or_next_action": "Manifest artifacts: 26; missing: 0.",
+      "evidence": [
+        "CLAIMS_LEDGER.json",
+        "results/claims_verification.json",
+        "results/v4_evidence_package_manifest_20260529.json"
+      ],
+      "requirement": "Claim ledger and evidence package",
+      "status": "pass"
+    },
+    {
+      "boundary_or_next_action": "Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.",
+      "evidence": [],
+      "requirement": "Independent external review",
+      "status": "blocked"
+    }
+  ],
+  "source": {
+    "closure": "results/evidence_closure_status_v4.json",
+    "manifest": "results/v4_evidence_package_manifest_20260529.json",
+    "plan": "RAG-idea\u6539\u8fdb.md Sections 13.1/13.2 plus current closure blockers",
+    "reproduction": "results/current_evidence_reproduction_20260529.json"
+  },
+  "status_counts": {
+    "blocked": 3,
+    "fail": 1,
+    "partial": 2,
+    "pass": 4
+  }
+}

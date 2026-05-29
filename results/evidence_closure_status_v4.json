@@ -93,7 +93,7 @@
     "risk50_wins": 12,
     "row_count": 12
   },
-  "generated_at_utc": "2026-05-29T01:30:34.555035+00:00",
+  "generated_at_utc": "2026-05-29T01:35:30.404776+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -460,6 +460,52 @@
       "csrm_no_answer_consistency",
       "csrm_no_worst_sufficiency"
     ]
+  },
+  "neurips_readiness": {
+    "artifact": "results/neurips_readiness_matrix_20260529.json",
+    "hard_blocker_count": 3,
+    "hard_blockers": [
+      {
+        "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
+        "requirement": "Human-audited orbit labels",
+        "status": "blocked"
+      },
+      {
+        "boundary_or_next_action": "Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts.",
+        "requirement": "Full CoRM-RAG reproduction",
+        "status": "blocked"
+      },
+      {
+        "boundary_or_next_action": "Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.",
+        "requirement": "Independent external review",
+        "status": "blocked"
+      }
+    ],
+    "negative_or_partial_count": 3,
+    "negative_or_partial_evidence": [
+      {
+        "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; claims must use calibrated/proxy wording with caveats.",
+        "requirement": "Strong baselines and equal-budget controls",
+        "status": "partial"
+      },
+      {
+        "boundary_or_next_action": "Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction.",
+        "requirement": "End-to-end selective RAG",
+        "status": "partial"
+      },
+      {
+        "boundary_or_next_action": "Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.",
+        "requirement": "Risk-control claim",
+        "status": "fail"
+      }
+    ],
+    "ready_for_neurips_main_track": false,
+    "status_counts": {
+      "blocked": 3,
+      "fail": 1,
+      "partial": 2,
+      "pass": 4
+    }
   },
   "remaining_human_audit_blockers": [
     "Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items."
