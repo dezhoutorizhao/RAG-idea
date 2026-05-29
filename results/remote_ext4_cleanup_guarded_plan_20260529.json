@@ -1,0 +1,43 @@
+{
+  "can_execute": false,
+  "claim_policy": "This guarded plan is not a cleanup result. It exists to prevent accidental remote deletion and to make the required approval token and cleanup scope auditable.",
+  "cleanup_scope": [
+    "truncate Docker json-file logs only",
+    "delete immediate contents of /root/.cache",
+    "delete immediate contents of /home/syk/.cache"
+  ],
+  "confirm_token_required": "APPROVE_EXT4_LOG_CACHE_CLEANUP_FOR_FULL_CORM_RAG_REPRO",
+  "confirmation_valid": false,
+  "destructive_operations_executed": false,
+  "execute_command": "$env:CORM_REMOTE_PASSWORD='<set locally>'; python -m experiments.guarded_remote_ext4_cleanup --host 192.168.103.101 --user syk --port 22 --target /home/syk --min-free-gib 180 --execute --confirm-token APPROVE_EXT4_LOG_CACHE_CLEANUP_FOR_FULL_CORM_RAG_REPRO",
+  "execute_requested": false,
+  "explicit_non_scope": [
+    "no docker system prune",
+    "no Docker volume deletion",
+    "no container/image deletion",
+    "no /mnt/ntfs-disk deletion",
+    "no other users' home directory deletion"
+  ],
+  "generated_at_utc": "2026-05-29T08:04:31.634770+00:00",
+  "min_free_gib": 180.0,
+  "post_execute_probe_required": "$env:CORM_REMOTE_PASSWORD='<set locally>'; python -m experiments.check_remote_storage_status --host 192.168.103.101 --user syk --port 22 --target /home/syk --output results/remote_storage_status_after_ext4_cleanup.json --min-free-gib 180",
+  "preflight": {
+    "candidate_audit_read_only": true,
+    "min_reclaim_gib_required": 180.0,
+    "passed": true,
+    "recommended_reclaim_gib_lower_bound": 182.82569139171392,
+    "recommended_reclaim_met": true,
+    "required_scope": [
+      "clear_root_cache_contents",
+      "clear_user_cache_contents",
+      "truncate_docker_json_logs"
+    ],
+    "required_scope_present": true
+  },
+  "remote": {
+    "host": "192.168.103.101",
+    "port": 22,
+    "user": "syk"
+  },
+  "target": "/home/syk"
+}

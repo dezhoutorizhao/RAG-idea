@@ -190,9 +190,10 @@ def _full_corm_storage_blocker(
     ready = bool(storage.get("ready_for_full_reproduction_storage"))
     cleanup_commands = [
         (
-            "$env:CORM_REMOTE_PASSWORD='<set locally>'; python -m experiments.prepare_remote_ext4_storage "
+            "$env:CORM_REMOTE_PASSWORD='<set locally>'; python -m experiments.guarded_remote_ext4_cleanup "
             "--host 192.168.103.101 --user syk --port 22 --target /home/syk "
-            "--output results/remote_ext4_prepare_execute_20260529.json --min-free-gib 180 --execute"
+            "--min-free-gib 180 --execute "
+            "--confirm-token APPROVE_EXT4_LOG_CACHE_CLEANUP_FOR_FULL_CORM_RAG_REPRO"
         ),
         (
             "$env:CORM_REMOTE_PASSWORD='<set locally>'; python -m experiments.check_remote_storage_status "

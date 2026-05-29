@@ -3,7 +3,7 @@
   "blocker_reason": "pending_external_review",
   "claim_policy": "This packet prepares the current evidence package for independent external review. It is not itself an external review and does not upgrade any claim until an independent review response is present.",
   "external_review_completed": false,
-  "generated_at_utc": "2026-05-29T07:59:36.854259+00:00",
+  "generated_at_utc": "2026-05-29T08:06:52.766931+00:00",
   "hard_blockers": [
     {
       "boundary_or_next_action": "Assignment batches ready: True; batch collection complete: False; pending labels: 1300; cannot claim human-audited results.",
@@ -39,7 +39,7 @@
       "status": "blocked"
     }
   ],
-  "manifest_artifact_count": 206,
+  "manifest_artifact_count": 212,
   "manifest_missing_artifact_count": 0,
   "missing_source_artifacts": [],
   "negative_or_partial_evidence": [
@@ -147,61 +147,61 @@
     {
       "exists": true,
       "path": "results\\evidence_closure_status_v4.json",
-      "sha256": "b29cf5b602967e6102a5b9bb79469ed86281f95efe8dcc9a91bb106cffd75a08",
-      "size_bytes": 49321
+      "sha256": "d2dfe169838068dcb2935e582c0785b75641b4ed91bbc18ddadbeb822b374b4e",
+      "size_bytes": 49322
     },
     {
       "exists": true,
       "path": "results\\neurips_readiness_matrix_20260529.json",
-      "sha256": "aa20f0a78e48afeec8272a1ed60855e37debe677c0bb45f6a2562b31012e9931",
+      "sha256": "69e610da029df5524f6f82eb22e2b68527e1392e25eeccad20489de044327f19",
       "size_bytes": 14724
     },
     {
       "exists": true,
       "path": "results\\v4_evidence_package_manifest_20260529.json",
-      "sha256": "32d25fecb4664cdad3bfe888613c624b5b342eb0158c575945950961db105d6c",
-      "size_bytes": 48647
+      "sha256": "0e764f5267248323de745139a1a14ff8ca9241f6a73eb88ce1db9ec6cc85c287",
+      "size_bytes": 49950
     },
     {
       "exists": true,
       "path": "results\\text_only_verifier_status_20260529.json",
-      "sha256": "eb02f6a44a06f8ee5fce038e86114cea88993a40f2d47d563ad7c2047bfda1c9",
+      "sha256": "691a8618215d5c52ccca915ac91aede41056310e58797feb2e0ec674ef88a70d",
       "size_bytes": 4153
     },
     {
       "exists": true,
       "path": "results\\v4_strong_baseline_summary_20260529.json",
-      "sha256": "8bfa7df2296115705830da68a901a5c03c7b4e8d9b2e2dc83c7fc47e22da746e",
+      "sha256": "b68684377f01dcaa8434bf72cfb65838d04dba2e8570740198195ae1c76ca1af",
       "size_bytes": 73809
     },
     {
       "exists": true,
       "path": "results\\v4_calibration_quality_20260529.json",
-      "sha256": "203f4be3f66d15c20c7319e34ae3b3c79e542d674ac148dfc030cb1c783c1b50",
+      "sha256": "96d7620e66496a56c45b441d261b71ad495fcfd941d407b8fc12b664b8d06716",
       "size_bytes": 28533
     },
     {
       "exists": true,
       "path": "results\\v4_claim_safe_target_selection_20260529.json",
-      "sha256": "af7bf657b385010d05ad0e599636061afee10cd23518b445f7e92287720d166b",
+      "sha256": "9ec90f95d2a842c4ad33f4d0998da4a6c0aaa9afa65d973a43d4b12652a23090",
       "size_bytes": 7318
     },
     {
       "exists": true,
       "path": "results\\risk_control_abstention_baselines_20260529.json",
-      "sha256": "1a8fefdad52a410daec9e28a8c4daf73e37cc150095a89af5b7e358765d3143b",
+      "sha256": "ecd9719699293e0d55612f86ba998f57f90c8c89d7c7f26aec0103c88a1d35ef",
       "size_bytes": 11626
     },
     {
       "exists": true,
       "path": "results\\theory_formalization_status_20260529.json",
-      "sha256": "7e23443bffcd02558422d8f5d940f38bd0361310fba015a67f463b495d506864",
+      "sha256": "865a9c3ef9f0c07c6b0810aee4e0875f0c2cf7dda1a7059defc42a15ebeb169f",
       "size_bytes": 1761
     },
     {
       "exists": true,
       "path": "results\\novelty_audit_20260529.json",
-      "sha256": "0e71db8ede99789db4c2aec898f5503985a009a525726509e995eb4ab0745588",
+      "sha256": "9ea7ed7865320699f21b9f501f432d150b342fa050bf89faae0659e2bbb033e6",
       "size_bytes": 5760
     },
     {
@@ -219,19 +219,19 @@
     {
       "exists": true,
       "path": "results\\end2end_retriever_generator_matrix_20260529.json",
-      "sha256": "f5165537641047ef8467b75bd645d6468236dda82ea5f8ff6b90917c7d5e2cfc",
+      "sha256": "b34ab0224037d37537c75b9ddf6919ea9848dc9d5241f2c7b75815815cfc54bb",
       "size_bytes": 52753
     },
     {
       "exists": true,
       "path": "results\\end2end_risk_coverage_curves_20260529.json",
-      "sha256": "8fcdcf1909285af18578e150b6a06f23d5ff228ad889ee89615c0b8b88ec2125",
+      "sha256": "50727ab7e2efc58ac641c1e53bcae6199b5220ba06b61818f0407542d0ebea88",
       "size_bytes": 130245
     },
     {
       "exists": true,
       "path": "results\\end2end_target_risk_coverage_20260529.json",
-      "sha256": "08950fa5030b065f1aef5e2c02a2486a93efe2fa13a0d29ad8ae6ff7861e6512",
+      "sha256": "22fde1fb1a97e840684401cc54c85e9ec404cf1692825c20e4ef34b403f1d776",
       "size_bytes": 30644
     },
     {
@@ -278,20 +278,32 @@
     },
     {
       "exists": true,
+      "path": "results\\remote_ext4_cleanup_guarded_plan_20260529.json",
+      "sha256": "b44decb70c0ded5c908cad493c50823aeef621ed596426df4a3e57f79da2e011",
+      "size_bytes": 1955
+    },
+    {
+      "exists": true,
+      "path": "results\\remote_ext4_cleanup_guarded_plan_20260529.md",
+      "sha256": "1248591274c56256e722a5ae061feafcc1130c9a225402ac249ea65f08d5f8bd",
+      "size_bytes": 1621
+    },
+    {
+      "exists": true,
       "path": "results\\human_audit_v4_paper_pack_status_20260529.json",
-      "sha256": "10737066ba49482f90a94f04cb222b1a863bcbc79695ba8eb5b7f3d75f4cc892",
+      "sha256": "c6b0151661049b8a1168e401ddcea93eab44d57dc5ec9b6064b6a816caaa0a4f",
       "size_bytes": 4984
     },
     {
       "exists": true,
       "path": "results\\human_audit_v4_assignment_batches_20260529.json",
-      "sha256": "e410c987428d2b6bba94e1fe474253d1f0de93380e892bb3805704d30d84e160",
+      "sha256": "d7bbc03d011919ae040a13dacb8a51d581f8b6a8e30c5ffd2289557f0f70e6af",
       "size_bytes": 17555
     },
     {
       "exists": true,
       "path": "results\\human_audit_v4_batch_collection_20260529.json",
-      "sha256": "751ab2644f1debb42bc9d2868f2723e576020e2bc27cafa6c389e60590709817",
+      "sha256": "3d4854fbe165788c032b09d1ca4ab399a471a3f60eeb54d955df080c82b88449",
       "size_bytes": 4742
     },
     {

@@ -68,6 +68,10 @@ def test_summarize_neurips_unblock_plan_tracks_external_gates(tmp_path):
     assert blockers["repair_storage_for_full_corm_reproduction"]["requires_user_approval"] is True
     assert "home_write_probe_passed=True" in blockers["repair_storage_for_full_corm_reproduction"]["current_evidence"]
     assert "cleanup_candidate_audit_ready=True" in blockers["repair_storage_for_full_corm_reproduction"]["current_evidence"]
+    assert any(
+        "experiments.guarded_remote_ext4_cleanup" in command
+        for command in blockers["repair_storage_for_full_corm_reproduction"]["next_commands"]
+    )
     assert blockers["risk_control_claim_boundary"]["status"] == "fail"
 
     text = render_markdown(summary)
