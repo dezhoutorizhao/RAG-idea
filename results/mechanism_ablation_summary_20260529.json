@@ -1,0 +1,315 @@
+{
+  "aggregate": {
+    "by_method": {
+      "corm_max_clean": {
+        "aurc_increase_mean": 0.31995691950662186,
+        "auroc_drop_mean": 0.49878259520663054,
+        "dataset_count": 2,
+        "risk30_increase_mean": 0.4858205485820549,
+        "strong_mechanism_evidence": true
+      },
+      "csrm_no_answer_consistency": {
+        "aurc_increase_mean": 0.13439787784915833,
+        "auroc_drop_mean": 0.12389791582493703,
+        "dataset_count": 2,
+        "risk30_increase_mean": 0.2399320083682009,
+        "strong_mechanism_evidence": false
+      },
+      "csrm_no_worst_sufficiency": {
+        "aurc_increase_mean": -0.000790194172315628,
+        "auroc_drop_mean": -0.0004120556719948709,
+        "dataset_count": 1,
+        "risk30_increase_mean": 0.0,
+        "strong_mechanism_evidence": false
+      },
+      "csrm_shuffled_perturbations": {
+        "aurc_increase_mean": 0.5030500958226289,
+        "auroc_drop_mean": 0.982357039651075,
+        "dataset_count": 2,
+        "risk30_increase_mean": 0.694328219432822,
+        "strong_mechanism_evidence": true
+      },
+      "naive_orbit_average": {
+        "aurc_increase_mean": 0.20992371142676627,
+        "auroc_drop_mean": 0.19452754431706265,
+        "dataset_count": 2,
+        "risk30_increase_mean": 0.270631876646521,
+        "strong_mechanism_evidence": true
+      },
+      "single_set_sure_style": {
+        "aurc_increase_mean": 0.3144250937109768,
+        "auroc_drop_mean": 0.49878259520663054,
+        "dataset_count": 2,
+        "risk30_increase_mean": 0.4858205485820549,
+        "strong_mechanism_evidence": true
+      }
+    },
+    "methods_with_negative_or_weak_evidence": [
+      "csrm_no_answer_consistency",
+      "csrm_no_worst_sufficiency"
+    ],
+    "strong_alignment_evidence": true
+  },
+  "claim_implication": "Mechanism ablations strongly support orbit alignment as necessary: shuffled perturbations collapse on both Hotpot and FEVER. Answer consistency is important on Hotpot and mildly positive on FEVER. Worst-sufficiency removal is not consistently harmful in the current bridge artifacts, so it should be framed as a weak or redundant component rather than a required standalone mechanism.",
+  "dataset_count": 2,
+  "generated_at_utc": "2026-05-29T01:30:34.536247+00:00",
+  "inputs": [
+    "results\\hotpot_corm_multiseed_summary_fullabl.json",
+    "results\\fever_nearmiss_corm_v3_multiseed_summary.json"
+  ],
+  "rows": [
+    {
+      "artifact": "results\\hotpot_corm_multiseed_summary_fullabl.json",
+      "csrm": {
+        "aurc": 0.40489864613787746,
+        "auroc": 0.9975651904132611,
+        "risk_at_30": 0.16689911668991164,
+        "risk_at_50": 0.5
+      },
+      "dataset": "hotpot_corm_multiseed",
+      "deltas": {
+        "aurc_increase": 0.26057729601480945,
+        "auroc_drop": 0.23987916498320738,
+        "risk30_increase": 0.4798640167364018,
+        "risk50_increase": 0.0
+      },
+      "method": "csrm_no_answer_consistency",
+      "method_metrics": {
+        "aurc": 0.6654759421526869,
+        "auroc": 0.7576860254300537,
+        "risk_at_30": 0.6467631334263134,
+        "risk_at_50": 0.5
+      }
+    },
+    {
+      "artifact": "results\\hotpot_corm_multiseed_summary_fullabl.json",
+      "csrm": {
+        "aurc": 0.40489864613787746,
+        "auroc": 0.9975651904132611,
+        "risk_at_30": 0.16689911668991164,
+        "risk_at_50": 0.5
+      },
+      "dataset": "hotpot_corm_multiseed",
+      "deltas": {
+        "aurc_increase": -0.000790194172315628,
+        "auroc_drop": -0.0004120556719948709,
+        "risk30_increase": 0.0,
+        "risk50_increase": 0.0
+      },
+      "method": "csrm_no_worst_sufficiency",
+      "method_metrics": {
+        "aurc": 0.40410845196556183,
+        "auroc": 0.997977246085256,
+        "risk_at_30": 0.16689911668991164,
+        "risk_at_50": 0.5
+      }
+    },
+    {
+      "artifact": "results\\hotpot_corm_multiseed_summary_fullabl.json",
+      "csrm": {
+        "aurc": 0.40489864613787746,
+        "auroc": 0.9975651904132611,
+        "risk_at_30": 0.16689911668991164,
+        "risk_at_50": 0.5
+      },
+      "dataset": "hotpot_corm_multiseed",
+      "deltas": {
+        "aurc_increase": 0.5584018896724163,
+        "auroc_drop": 0.99742907930215,
+        "risk30_increase": 0.8331008833100884,
+        "risk50_increase": 0.5
+      },
+      "method": "csrm_shuffled_perturbations",
+      "method_metrics": {
+        "aurc": 0.9633005358102938,
+        "auroc": 0.00013611111111111113,
+        "risk_at_30": 1.0,
+        "risk_at_50": 1.0
+      }
+    },
+    {
+      "artifact": "results\\hotpot_corm_multiseed_summary_fullabl.json",
+      "csrm": {
+        "aurc": 0.40489864613787746,
+        "auroc": 0.9975651904132611,
+        "risk_at_30": 0.16689911668991164,
+        "risk_at_50": 0.5
+      },
+      "dataset": "hotpot_corm_multiseed",
+      "deltas": {
+        "aurc_increase": 0.17801377656901757,
+        "auroc_drop": 0.165444255300792,
+        "risk30_increase": 0.3449674569967457,
+        "risk50_increase": 0.0
+      },
+      "method": "naive_orbit_average",
+      "method_metrics": {
+        "aurc": 0.582912422706895,
+        "auroc": 0.8321209351124691,
+        "risk_at_30": 0.5118665736866573,
+        "risk_at_50": 0.5
+      }
+    },
+    {
+      "artifact": "results\\hotpot_corm_multiseed_summary_fullabl.json",
+      "csrm": {
+        "aurc": 0.40489864613787746,
+        "auroc": 0.9975651904132611,
+        "risk_at_30": 0.16689911668991164,
+        "risk_at_50": 0.5
+      },
+      "dataset": "hotpot_corm_multiseed",
+      "deltas": {
+        "aurc_increase": 0.3325730875304643,
+        "auroc_drop": 0.4975651904132611,
+        "risk30_increase": 0.5827522082752209,
+        "risk50_increase": 0.2504187604690117
+      },
+      "method": "single_set_sure_style",
+      "method_metrics": {
+        "aurc": 0.7374717336683417,
+        "auroc": 0.5,
+        "risk_at_30": 0.7496513249651325,
+        "risk_at_50": 0.7504187604690117
+      }
+    },
+    {
+      "artifact": "results\\hotpot_corm_multiseed_summary_fullabl.json",
+      "csrm": {
+        "aurc": 0.40489864613787746,
+        "auroc": 0.9975651904132611,
+        "risk_at_30": 0.16689911668991164,
+        "risk_at_50": 0.5
+      },
+      "dataset": "hotpot_corm_multiseed",
+      "deltas": {
+        "aurc_increase": 0.33947007245508815,
+        "auroc_drop": 0.4975651904132611,
+        "risk30_increase": 0.5827522082752209,
+        "risk50_increase": 0.24958123953098832
+      },
+      "method": "corm_max_clean",
+      "method_metrics": {
+        "aurc": 0.7443687185929656,
+        "auroc": 0.5,
+        "risk_at_30": 0.7496513249651325,
+        "risk_at_50": 0.7495812395309883
+      }
+    },
+    {
+      "artifact": "results\\fever_nearmiss_corm_v3_multiseed_summary.json",
+      "csrm": {
+        "aurc": 0.5301117889973995,
+        "auroc": 1.0,
+        "risk_at_30": 0.4444444444444444,
+        "risk_at_50": 0.6666666666666666
+      },
+      "dataset": "fever_nearmiss_corm_v3_multiseed",
+      "deltas": {
+        "aurc_increase": 0.008218459683507207,
+        "auroc_drop": 0.007916666666666683,
+        "risk30_increase": 0.0,
+        "risk50_increase": 0.0
+      },
+      "method": "csrm_no_answer_consistency",
+      "method_metrics": {
+        "aurc": 0.5383302486809067,
+        "auroc": 0.9920833333333333,
+        "risk_at_30": 0.4444444444444444,
+        "risk_at_50": 0.6666666666666666
+      }
+    },
+    {
+      "artifact": "results\\fever_nearmiss_corm_v3_multiseed_summary.json",
+      "csrm": {
+        "aurc": 0.5301117889973995,
+        "auroc": 1.0,
+        "risk_at_30": 0.4444444444444444,
+        "risk_at_50": 0.6666666666666666
+      },
+      "dataset": "fever_nearmiss_corm_v3_multiseed",
+      "deltas": {
+        "aurc_increase": 0.44769830197284144,
+        "auroc_drop": 0.967285,
+        "risk30_increase": 0.5555555555555556,
+        "risk50_increase": 0.33333333333333337
+      },
+      "method": "csrm_shuffled_perturbations",
+      "method_metrics": {
+        "aurc": 0.977810090970241,
+        "auroc": 0.032715,
+        "risk_at_30": 1.0,
+        "risk_at_50": 1.0
+      }
+    },
+    {
+      "artifact": "results\\fever_nearmiss_corm_v3_multiseed_summary.json",
+      "csrm": {
+        "aurc": 0.5301117889973995,
+        "auroc": 1.0,
+        "risk_at_30": 0.4444444444444444,
+        "risk_at_50": 0.6666666666666666
+      },
+      "dataset": "fever_nearmiss_corm_v3_multiseed",
+      "deltas": {
+        "aurc_increase": 0.24183364628451498,
+        "auroc_drop": 0.22361083333333331,
+        "risk30_increase": 0.1962962962962963,
+        "risk50_increase": 0.0
+      },
+      "method": "naive_orbit_average",
+      "method_metrics": {
+        "aurc": 0.7719454352819145,
+        "auroc": 0.7763891666666667,
+        "risk_at_30": 0.6407407407407407,
+        "risk_at_50": 0.6666666666666666
+      }
+    },
+    {
+      "artifact": "results\\fever_nearmiss_corm_v3_multiseed_summary.json",
+      "csrm": {
+        "aurc": 0.5301117889973995,
+        "auroc": 1.0,
+        "risk_at_30": 0.4444444444444444,
+        "risk_at_50": 0.6666666666666666
+      },
+      "dataset": "fever_nearmiss_corm_v3_multiseed",
+      "deltas": {
+        "aurc_increase": 0.2962770998914894,
+        "auroc_drop": 0.5,
+        "risk30_increase": 0.38888888888888895,
+        "risk50_increase": 0.1644444444444444
+      },
+      "method": "single_set_sure_style",
+      "method_metrics": {
+        "aurc": 0.826388888888889,
+        "auroc": 0.5,
+        "risk_at_30": 0.8333333333333334,
+        "risk_at_50": 0.831111111111111
+      }
+    },
+    {
+      "artifact": "results\\fever_nearmiss_corm_v3_multiseed_summary.json",
+      "csrm": {
+        "aurc": 0.5301117889973995,
+        "auroc": 1.0,
+        "risk_at_30": 0.4444444444444444,
+        "risk_at_50": 0.6666666666666666
+      },
+      "dataset": "fever_nearmiss_corm_v3_multiseed",
+      "deltas": {
+        "aurc_increase": 0.30044376655815563,
+        "auroc_drop": 0.5,
+        "risk30_increase": 0.38888888888888895,
+        "risk50_increase": 0.16666666666666674
+      },
+      "method": "corm_max_clean",
+      "method_metrics": {
+        "aurc": 0.8305555555555552,
+        "auroc": 0.5,
+        "risk_at_30": 0.8333333333333334,
+        "risk_at_50": 0.8333333333333334
+      }
+    }
+  ]
+}

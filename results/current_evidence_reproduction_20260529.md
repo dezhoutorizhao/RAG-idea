@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T01:25:57.428379+00:00`
+Generated: `2026-05-29T01:30:34.545091+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -17,6 +17,7 @@ Ready for NeurIPS main claim: `False`
 | export_v4_case_gallery | `True` | `paper\case_studies\v4_case_gallery_20260529.jsonl`<br>`paper\case_studies\v4_case_gallery_20260529.md`<br>`results\v4_case_gallery_summary_20260529.json` |
 | build_clean_sufficiency_misleading_figure | `True` | `paper\figures\clean_sufficiency_misleading_v4_20260529.csv`<br>`results\clean_sufficiency_misleading_v4_20260529.json`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.svg`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.md` |
 | summarize_v4_anti_shortcut | `True` | `results\v4_anti_shortcut_summary_20260529.json`<br>`results\v4_anti_shortcut_summary_20260529.md` |
+| summarize_mechanism_ablation | `True` | `results\mechanism_ablation_summary_20260529.json`<br>`results\mechanism_ablation_summary_20260529.md` |
 | summarize_evidence_closure | `False` | `results\evidence_closure_status_v4.json`<br>`results\evidence_closure_status_v4.md` |
 
 ## Gate Summary

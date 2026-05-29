@@ -52,6 +52,11 @@ from experiments.summarize_human_audit_v4_status import (
     render_markdown as render_human_audit_markdown,
     summarize_human_audit_v4_status,
 )
+from experiments.summarize_mechanism_ablation import (
+    DEFAULT_INPUTS as DEFAULT_MECHANISM_ABLATION_INPUTS,
+    render_markdown as render_mechanism_ablation_markdown,
+    summarize_mechanism_ablation,
+)
 
 
 DEFAULT_MANIFESTS = [
@@ -220,6 +225,24 @@ def reproduce_current_evidence_v4(
             "name": "summarize_v4_anti_shortcut",
             "outputs": [str(anti_shortcut_json), str(anti_shortcut_md)],
             "ready": anti_shortcut["aggregate"]["pass_core_anti_shortcut_suite"],
+        }
+    )
+
+    mechanism_ablation_json = results / "mechanism_ablation_summary_20260529.json"
+    mechanism_ablation_md = results / "mechanism_ablation_summary_20260529.md"
+    mechanism_ablation = summarize_mechanism_ablation(
+        [root / path for path in DEFAULT_MECHANISM_ABLATION_INPUTS]
+    )
+    _write_json(mechanism_ablation_json, mechanism_ablation)
+    mechanism_ablation_md.write_text(
+        render_mechanism_ablation_markdown(mechanism_ablation),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "summarize_mechanism_ablation",
+            "outputs": [str(mechanism_ablation_json), str(mechanism_ablation_md)],
+            "ready": bool(mechanism_ablation["aggregate"]["strong_alignment_evidence"]),
         }
     )
 

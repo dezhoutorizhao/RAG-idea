@@ -83,6 +83,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     v4_case_gallery = _v4_case_gallery_status(results)
     clean_sufficiency_figure = _clean_sufficiency_figure_status(results)
     v4_anti_shortcut = _v4_anti_shortcut_status(results)
+    mechanism_ablation = _mechanism_ablation_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -166,6 +167,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "failed_claims": claims.get("failed_claims"),
         },
         "current_evidence_reproduction": current_reproduction_status,
+        "mechanism_ablation": mechanism_ablation,
         "end2end_selective_rag_proxy": end2end_proxy,
         "v4_strong_baselines": v4_strong_baselines,
         "corm_reconstruction": {
@@ -199,6 +201,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection.",
             "A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.",
             "The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.",
+            "Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings.",
         ],
         "disallowed_claims": [
             "Full original CoRM-RAG retrieval-generation reproduction is complete.",
@@ -569,6 +572,31 @@ def _v4_anti_shortcut_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _mechanism_ablation_status(results: Path) -> dict[str, Any] | None:
+    path = results / "mechanism_ablation_summary_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    by_method = payload.get("aggregate", {}).get("by_method", {})
+    shuffled = by_method.get("csrm_shuffled_perturbations", {})
+    no_answer = by_method.get("csrm_no_answer_consistency", {})
+    no_worst = by_method.get("csrm_no_worst_sufficiency", {})
+    return {
+        "artifact": str(path.as_posix()),
+        "dataset_count": payload.get("dataset_count"),
+        "strong_alignment_evidence": get(payload, "aggregate", "strong_alignment_evidence"),
+        "weak_or_negative_methods": get(payload, "aggregate", "methods_with_negative_or_weak_evidence"),
+        "shuffled_auroc_drop_mean": shuffled.get("auroc_drop_mean"),
+        "shuffled_risk30_increase_mean": shuffled.get("risk30_increase_mean"),
+        "shuffled_aurc_increase_mean": shuffled.get("aurc_increase_mean"),
+        "no_answer_auroc_drop_mean": no_answer.get("auroc_drop_mean"),
+        "no_answer_risk30_increase_mean": no_answer.get("risk30_increase_mean"),
+        "no_worst_auroc_drop_mean": no_worst.get("auroc_drop_mean"),
+        "no_worst_risk30_increase_mean": no_worst.get("risk30_increase_mean"),
+        "claim_implication": payload.get("claim_implication"),
+    }
+
+
 def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     path = results / "human_audit_v4_eval_status_20260529.json"
     if not path.exists():
@@ -626,6 +654,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     risk = status["risk_control"]
     claims = status["claim_verification"]
     reproduction = status.get("current_evidence_reproduction")
+    mechanism_ablation = status.get("mechanism_ablation")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
     strong_baselines = status.get("v4_strong_baselines")
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
@@ -829,6 +858,30 @@ def render_markdown(status: dict[str, Any]) -> str:
         )
     else:
         lines.extend(["V4 anti-shortcut suite:", "- Not recorded.", ""])
+    lines.extend(["## Mechanism Ablation", ""])
+    if mechanism_ablation:
+        lines.extend(
+            [
+                f"- Datasets: `{mechanism_ablation['dataset_count']}`; strong alignment evidence: "
+                f"`{mechanism_ablation['strong_alignment_evidence']}`.",
+                f"- Shuffled perturbations mean AUROC drop / Risk@30 increase / AURC increase: "
+                f"`{_fmt(mechanism_ablation['shuffled_auroc_drop_mean'])}` / "
+                f"`{_fmt(mechanism_ablation['shuffled_risk30_increase_mean'])}` / "
+                f"`{_fmt(mechanism_ablation['shuffled_aurc_increase_mean'])}`.",
+                f"- No-answer-consistency mean AUROC drop / Risk@30 increase: "
+                f"`{_fmt(mechanism_ablation['no_answer_auroc_drop_mean'])}` / "
+                f"`{_fmt(mechanism_ablation['no_answer_risk30_increase_mean'])}`.",
+                f"- No-worst-sufficiency mean AUROC drop / Risk@30 increase: "
+                f"`{_fmt(mechanism_ablation['no_worst_auroc_drop_mean'])}` / "
+                f"`{_fmt(mechanism_ablation['no_worst_risk30_increase_mean'])}`.",
+                f"- Weak or negative standalone component evidence: "
+                f"`{mechanism_ablation['weak_or_negative_methods']}`.",
+                f"- Claim implication: {mechanism_ablation['claim_implication']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
     lines.extend(["## End-to-End Selective RAG Proxy", ""])
     if end2end_proxy:
         lines.extend(

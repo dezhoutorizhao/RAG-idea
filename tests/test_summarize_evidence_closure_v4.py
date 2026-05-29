@@ -9,6 +9,7 @@ from experiments.summarize_evidence_closure import (
     _end2end_proxy_status,
     _fever_cp_transfer_sweep_status,
     _remote_storage_probe_status,
+    _mechanism_ablation_status,
     _semantic_swap_status,
     _v4_case_gallery_status,
     _v4_anti_shortcut_status,
@@ -451,6 +452,42 @@ def test_v4_anti_shortcut_status_summarizes_passed_suite(tmp_path):
     assert status["pass_core_anti_shortcut_suite"] is True
     assert status["max_single_feature_auroc_max"] == 0.51875
     assert status["random_label_median_all_near_half"] is True
+
+
+def test_mechanism_ablation_status_summarizes_alignment_and_boundaries(tmp_path):
+    _write_json(
+        tmp_path / "mechanism_ablation_summary_20260529.json",
+        {
+            "dataset_count": 2,
+            "aggregate": {
+                "strong_alignment_evidence": True,
+                "methods_with_negative_or_weak_evidence": ["csrm_no_worst_sufficiency"],
+                "by_method": {
+                    "csrm_shuffled_perturbations": {
+                        "auroc_drop_mean": 0.9,
+                        "risk30_increase_mean": 0.6,
+                        "aurc_increase_mean": 0.5,
+                    },
+                    "csrm_no_answer_consistency": {
+                        "auroc_drop_mean": 0.1,
+                        "risk30_increase_mean": 0.2,
+                    },
+                    "csrm_no_worst_sufficiency": {
+                        "auroc_drop_mean": -0.01,
+                        "risk30_increase_mean": 0.0,
+                    },
+                },
+            },
+            "claim_implication": "alignment is necessary",
+        },
+    )
+
+    status = _mechanism_ablation_status(tmp_path)
+
+    assert status["strong_alignment_evidence"] is True
+    assert status["shuffled_auroc_drop_mean"] == 0.9
+    assert status["no_worst_risk30_increase_mean"] == 0.0
+    assert status["weak_or_negative_methods"] == ["csrm_no_worst_sufficiency"]
 
 
 def test_current_reproduction_status_is_aggregated(tmp_path):

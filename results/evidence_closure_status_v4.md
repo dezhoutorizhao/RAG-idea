@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T01:25:57.436581+00:00`
+Generated: `2026-05-29T01:30:34.555035+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -87,6 +87,15 @@ V4 anti-shortcut suite:
 - Private metadata upper bound all high: `True`.
 - Claim implication: The primary v4 anti-shortcut suite passes the core non-oracle checks: raw feature firewall, structural-only <= 0.55, source-item group split without overlap, and random-label sanity near 0.5. Private construction metadata remains a high-leakage upper bound, so these fields must stay evaluator-only. This supports leakage-control claims but does not replace human audit or end-to-end RAG evidence.
 
+## Mechanism Ablation
+
+- Datasets: `2`; strong alignment evidence: `True`.
+- Shuffled perturbations mean AUROC drop / Risk@30 increase / AURC increase: `0.9824` / `0.6943` / `0.5031`.
+- No-answer-consistency mean AUROC drop / Risk@30 increase: `0.1239` / `0.2399`.
+- No-worst-sufficiency mean AUROC drop / Risk@30 increase: `-0.0004` / `0.0000`.
+- Weak or negative standalone component evidence: `['csrm_no_answer_consistency', 'csrm_no_worst_sufficiency']`.
+- Claim implication: Mechanism ablations strongly support orbit alignment as necessary: shuffled perturbations collapse on both Hotpot and FEVER. Answer consistency is important on Hotpot and mildly positive on FEVER. Worst-sufficiency removal is not consistently harmful in the current bridge artifacts, so it should be framed as a weak or redundant component rather than a required standalone mechanism.
+
 ## End-to-End Selective RAG Proxy
 
 - Rows: `12`; all-win: `False`; has losses/mixed rows: `True`.
@@ -149,6 +158,7 @@ Allowed claims:
 - A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection.
 - A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.
 - The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.
+- Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings.
 
 Disallowed claims:
 - Full original CoRM-RAG retrieval-generation reproduction is complete.
