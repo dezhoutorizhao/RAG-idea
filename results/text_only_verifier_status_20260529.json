@@ -1,6 +1,6 @@
 {
   "claim_policy": "This audits the text-only verifier evidence from RAG-idea Section 5.2. It supports only the NLI bridge/probe claim until LLM judge scores and human adjudicated labels are available.",
-  "generated_at_utc": "2026-05-29T04:13:45.342438+00:00",
+  "generated_at_utc": "2026-05-29T04:22:11.147880+00:00",
   "human_audit": {
     "pending": 300,
     "ready": false,
@@ -11,6 +11,10 @@
     "correlation_status": "blocked",
     "correlation_status_path": "results\\llm_nli_correlation_status_20260529.json",
     "nli_llm_correlation_ready": false,
+    "paired_batch_ready_for_submission": false,
+    "paired_batch_run_blocker_reason": "missing_openai_api_key",
+    "paired_batch_run_status": "blocked",
+    "paired_batch_run_status_path": "results\\llm_judge_nli_probe_batch_run_status_20260529.json",
     "paired_request_count": 1000,
     "paired_request_pack_ready": true,
     "paired_request_status_path": "results\\llm_judge_nli_probe_request_status_20260529.json",

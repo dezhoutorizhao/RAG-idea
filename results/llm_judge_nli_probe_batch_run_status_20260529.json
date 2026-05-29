@@ -1,0 +1,26 @@
+{
+  "action": "preflight",
+  "api_key_ready": false,
+  "batch_output_jsonl": "results\\llm_judge_nli_probe_batch_output_20260529.jsonl",
+  "blocker_reason": "missing_openai_api_key",
+  "claim_policy": "This manages API-backed LLM judge batch execution for the paired NLI probe. Preflight performs no network calls. Submit/retrieve require an API key and produce execution metadata only; answerable-score normalization and correlation are evaluated by downstream artifacts.",
+  "completion_window": "24h",
+  "endpoint": "/v1/chat/completions",
+  "generated_at_utc": "2026-05-29T04:22:10.975239+00:00",
+  "ready_for_batch_submission": false,
+  "ready_for_score_normalization": false,
+  "request_jsonl": "results\\llm_judge_nli_probe_requests_20260529.jsonl",
+  "request_status": {
+    "errors": [],
+    "exists": true,
+    "models": [
+      "gpt-4.1-mini"
+    ],
+    "path": "results\\llm_judge_nli_probe_requests_20260529.jsonl",
+    "request_count": 1000,
+    "size_bytes": 7760059,
+    "unique_custom_id_count": 1000,
+    "valid": true
+  },
+  "status": "blocked"
+}

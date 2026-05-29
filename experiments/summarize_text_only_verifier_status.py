@@ -14,6 +14,7 @@ DEFAULT_LLM_JUDGE_STATUS = Path("results/llm_judge_v4_request_status_20260529.js
 DEFAULT_LLM_JUDGE_SCORES = Path("results/llm_judge_v4_scores_20260529.jsonl")
 DEFAULT_PAIRED_LLM_JUDGE_STATUS = Path("results/llm_judge_nli_probe_request_status_20260529.json")
 DEFAULT_PAIRED_LLM_JUDGE_SCORES = Path("results/llm_judge_nli_probe_scores_20260529.jsonl")
+DEFAULT_PAIRED_LLM_BATCH_RUN_STATUS = Path("results/llm_judge_nli_probe_batch_run_status_20260529.json")
 DEFAULT_PAIRED_LLM_SCORE_STATUS = Path("results/llm_judge_nli_probe_score_status_20260529.json")
 DEFAULT_LLM_NLI_CORRELATION_STATUS = Path("results/llm_nli_correlation_status_20260529.json")
 DEFAULT_HUMAN_AUDIT_STATUS = Path("results/human_audit_v4_status_20260529.json")
@@ -34,6 +35,7 @@ def summarize_text_only_verifier_status(
     llm_judge_scores_path: Path = DEFAULT_LLM_JUDGE_SCORES,
     paired_llm_judge_status_path: Path = DEFAULT_PAIRED_LLM_JUDGE_STATUS,
     paired_llm_judge_scores_path: Path = DEFAULT_PAIRED_LLM_JUDGE_SCORES,
+    paired_llm_batch_run_status_path: Path = DEFAULT_PAIRED_LLM_BATCH_RUN_STATUS,
     paired_llm_score_status_path: Path = DEFAULT_PAIRED_LLM_SCORE_STATUS,
     llm_nli_correlation_status_path: Path = DEFAULT_LLM_NLI_CORRELATION_STATUS,
     human_audit_status_path: Path = DEFAULT_HUMAN_AUDIT_STATUS,
@@ -44,6 +46,7 @@ def summarize_text_only_verifier_status(
     llm_scores_abs = root / llm_judge_scores_path
     paired_llm_status_abs = root / paired_llm_judge_status_path
     paired_llm_scores_abs = root / paired_llm_judge_scores_path
+    paired_batch_run_status_abs = root / paired_llm_batch_run_status_path
     paired_score_status_abs = root / paired_llm_score_status_path
     correlation_status_abs = root / llm_nli_correlation_status_path
     human_status_abs = root / human_audit_status_path
@@ -51,6 +54,7 @@ def summarize_text_only_verifier_status(
     nli_eval = _load_optional_json(nli_eval_abs)
     llm_status = _load_optional_json(llm_status_abs)
     paired_llm_status = _load_optional_json(paired_llm_status_abs)
+    paired_batch_run_status = _load_optional_json(paired_batch_run_status_abs)
     paired_score_status = _load_optional_json(paired_score_status_abs)
     correlation_status = _load_optional_json(correlation_status_abs)
     human_status = _load_optional_json(human_status_abs)
@@ -139,6 +143,10 @@ def summarize_text_only_verifier_status(
             "paired_score_path": str(paired_llm_judge_scores_path),
             "paired_score_artifact_ready": paired_score_ready,
             "paired_score_space_ready": paired_score_space_ready,
+            "paired_batch_run_status_path": str(paired_llm_batch_run_status_path),
+            "paired_batch_run_status": _get(paired_batch_run_status, "status"),
+            "paired_batch_run_blocker_reason": _get(paired_batch_run_status, "blocker_reason"),
+            "paired_batch_ready_for_submission": _get(paired_batch_run_status, "ready_for_batch_submission"),
             "paired_score_status_path": str(paired_llm_score_status_path),
             "paired_score_status": _get(paired_score_status, "status"),
             "paired_score_blocker_reason": _get(paired_score_status, "blocker_reason"),
@@ -198,6 +206,9 @@ def render_markdown(summary: dict[str, Any]) -> str:
             f"- NLI-paired request count: `{summary['llm_judge']['paired_request_count']}`.",
             f"- NLI-paired score artifact ready: `{summary['llm_judge']['paired_score_artifact_ready']}`.",
             f"- Paired score space ready: `{summary['llm_judge']['paired_score_space_ready']}`.",
+            f"- Paired batch run status: `{summary['llm_judge']['paired_batch_run_status']}`.",
+            f"- Paired batch blocker: `{summary['llm_judge']['paired_batch_run_blocker_reason']}`.",
+            f"- Paired batch ready for submission: `{summary['llm_judge']['paired_batch_ready_for_submission']}`.",
             f"- Paired score normalization status: `{summary['llm_judge']['paired_score_status']}`.",
             f"- Paired score blocker: `{summary['llm_judge']['paired_score_blocker_reason']}`.",
             f"- Paired parsed scores: `{summary['llm_judge']['paired_score_parsed_count']}`.",

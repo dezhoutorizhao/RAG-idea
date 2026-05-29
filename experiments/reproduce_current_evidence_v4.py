@@ -3,6 +3,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -39,6 +40,10 @@ from experiments.materialize_llm_judge_requests_nli_probe import (
 from experiments.normalize_llm_judge_batch_responses import (
     normalize_llm_judge_batch_responses,
     render_markdown as render_llm_judge_nli_score_status_markdown,
+)
+from experiments.manage_openai_llm_judge_batch import (
+    manage_openai_llm_judge_batch,
+    render_markdown as render_llm_judge_nli_batch_run_markdown,
 )
 from experiments.run_end2end_retriever_generator_matrix_v4 import (
     DEFAULT_DATASETS as DEFAULT_END2END_MATRIX_DATASETS,
@@ -284,6 +289,30 @@ def reproduce_current_evidence_v4(
                 str(llm_judge_nli_status_md),
             ],
             "ready": llm_judge_nli_status["ready_for_nli_llm_correlation"],
+        }
+    )
+
+    llm_judge_nli_batch_run_status_json = results / "llm_judge_nli_probe_batch_run_status_20260529.json"
+    llm_judge_nli_batch_run_status_md = results / "llm_judge_nli_probe_batch_run_status_20260529.md"
+    llm_judge_nli_batch_run_status = manage_openai_llm_judge_batch(
+        llm_judge_nli_jsonl,
+        results / "llm_judge_nli_probe_batch_output_20260529.jsonl",
+        action="preflight",
+        api_key=os.environ.get("OPENAI_API_KEY"),
+    )
+    _write_json(llm_judge_nli_batch_run_status_json, llm_judge_nli_batch_run_status)
+    llm_judge_nli_batch_run_status_md.write_text(
+        render_llm_judge_nli_batch_run_markdown(llm_judge_nli_batch_run_status),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "manage_openai_llm_judge_batch_preflight",
+            "outputs": [
+                str(llm_judge_nli_batch_run_status_json),
+                str(llm_judge_nli_batch_run_status_md),
+            ],
+            "ready": llm_judge_nli_batch_run_status["ready_for_batch_submission"],
         }
     )
 

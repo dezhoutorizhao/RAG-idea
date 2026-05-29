@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T04:13:49.170508+00:00`
+Generated: `2026-05-29T04:22:14.950576+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -17,6 +17,7 @@ Ready for NeurIPS main claim: `False`
 | run_end2end_retriever_generator_matrix_v4 | `False` | `results\end2end_retriever_generator_matrix_20260529.json`<br>`results\end2end_retriever_generator_matrix_20260529.md` |
 | materialize_llm_judge_requests_v4 | `False` | `results\llm_judge_v4_requests_20260529.jsonl`<br>`results\llm_judge_v4_request_status_20260529.json`<br>`results\llm_judge_v4_request_status_20260529.md` |
 | materialize_llm_judge_requests_nli_probe | `False` | `results\llm_judge_nli_probe_requests_20260529.jsonl`<br>`results\llm_judge_nli_probe_request_status_20260529.json`<br>`results\llm_judge_nli_probe_request_status_20260529.md` |
+| manage_openai_llm_judge_batch_preflight | `False` | `results\llm_judge_nli_probe_batch_run_status_20260529.json`<br>`results\llm_judge_nli_probe_batch_run_status_20260529.md` |
 | normalize_llm_judge_batch_responses | `False` | `results\llm_judge_nli_probe_score_status_20260529.json`<br>`results\llm_judge_nli_probe_score_status_20260529.md` |
 | compute_llm_nli_correlation | `False` | `results\llm_nli_correlation_status_20260529.json`<br>`results\llm_nli_correlation_status_20260529.md` |
 | summarize_text_only_verifier_status | `False` | `results\text_only_verifier_status_20260529.json`<br>`results\text_only_verifier_status_20260529.md` |

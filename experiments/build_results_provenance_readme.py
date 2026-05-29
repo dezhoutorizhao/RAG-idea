@@ -18,6 +18,7 @@ PROVENANCE_BY_STEP = {
     "summarize_end2end_selective_rag_proxy": "experiments/summarize_end2end_selective_rag_proxy.py",
     "materialize_llm_judge_requests_v4": "experiments/materialize_llm_judge_requests_v4.py",
     "materialize_llm_judge_requests_nli_probe": "experiments/materialize_llm_judge_requests_nli_probe.py",
+    "manage_openai_llm_judge_batch_preflight": "experiments/manage_openai_llm_judge_batch.py",
     "normalize_llm_judge_batch_responses": "experiments/normalize_llm_judge_batch_responses.py",
     "compute_llm_nli_correlation": "experiments/compute_llm_nli_correlation.py",
     "summarize_text_only_verifier_status": "experiments/summarize_text_only_verifier_status.py",

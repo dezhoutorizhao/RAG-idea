@@ -1,6 +1,6 @@
 # Text-Only Verifier Status
 
-Generated: `2026-05-29T04:13:45.342438+00:00`
+Generated: `2026-05-29T04:22:11.147880+00:00`
 
 Ready for text-only main claim: `False`
 
@@ -27,6 +27,9 @@ Ready for text-only main claim: `False`
 - NLI-paired request count: `1000`.
 - NLI-paired score artifact ready: `False`.
 - Paired score space ready: `False`.
+- Paired batch run status: `blocked`.
+- Paired batch blocker: `missing_openai_api_key`.
+- Paired batch ready for submission: `False`.
 - Paired score normalization status: `blocked`.
 - Paired score blocker: `missing_or_empty_batch_output_artifact`.
 - Paired parsed scores: `0`.
