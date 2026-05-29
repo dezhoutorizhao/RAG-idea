@@ -8,6 +8,7 @@ from experiments.summarize_evidence_closure import (
     _current_reproduction_status,
     _end2end_proxy_status,
     _end2end_curves_status,
+    _end2end_target_risk_coverage_status,
     _external_review_packet_status,
     _fever_cp_transfer_sweep_status,
     _remote_storage_probe_status,
@@ -362,6 +363,43 @@ def test_end2end_curves_status_summarizes_risk_coverage_points(tmp_path):
     assert status["csrm_risk_at_30"] == 0.2
     assert status["strongest_non_csrm_risk_at_50"] == 0.4
     assert status["risk50_reduction"] == 0.15
+
+
+def test_end2end_target_risk_status_summarizes_fixed_risk_coverage(tmp_path):
+    _write_json(
+        tmp_path / "end2end_target_risk_coverage_20260529.json",
+        {
+            "source_matrix_row_count": 4,
+            "row_count": 12,
+            "risk_targets": [0.2, 0.3, 0.4],
+            "coverage_at_target_risk_supported": True,
+            "aggregate": {
+                "csrm_higher_coverage_target_count": 2,
+                "target_count": 3,
+                "wins": 8,
+                "ties": 2,
+                "losses": 2,
+                "by_target": [
+                    {
+                        "target_risk": 0.2,
+                        "csrm_mean_coverage": 0.35,
+                        "strongest_non_csrm_mean_coverage": 0.25,
+                        "mean_coverage_delta": 0.1,
+                    }
+                ],
+            },
+            "claim_policy": "proxy fixed-risk coverage only",
+        },
+    )
+
+    status = _end2end_target_risk_coverage_status(tmp_path)
+
+    assert status["source_matrix_row_count"] == 4
+    assert status["csrm_higher_coverage_target_count"] == 2
+    assert status["target_count"] == 3
+    assert status["wins"] == 8
+    assert status["coverage_at_target_risk_supported"] is True
+    assert status["by_target"][0]["mean_coverage_delta"] == 0.1
 
 
 def test_v4_strong_baseline_status_marks_rule_losses(tmp_path):

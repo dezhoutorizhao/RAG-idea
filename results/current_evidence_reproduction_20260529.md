@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T05:26:41.216124+00:00`
+Generated: `2026-05-29T05:37:10.588670+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -16,6 +16,7 @@ Ready for NeurIPS main claim: `False`
 | summarize_end2end_selective_rag_proxy | `False` | `results\end2end_selective_rag_proxy_summary_20260529.json`<br>`results\end2end_selective_rag_proxy_summary_20260529.md` |
 | run_end2end_retriever_generator_matrix_v4 | `False` | `results\end2end_retriever_generator_matrix_20260529.json`<br>`results\end2end_retriever_generator_matrix_20260529.md` |
 | plot_end2end_risk_coverage_curves | `True` | `results\end2end_risk_coverage_curves_20260529.json`<br>`results\end2end_risk_coverage_curves_20260529.md`<br>`paper\figures\end2end_risk_coverage_curves_20260529.svg` |
+| summarize_end2end_target_risk_coverage | `True` | `results\end2end_target_risk_coverage_20260529.json`<br>`results\end2end_target_risk_coverage_20260529.md` |
 | materialize_llm_judge_requests_v4 | `False` | `results\llm_judge_v4_requests_20260529.jsonl`<br>`results\llm_judge_v4_request_status_20260529.json`<br>`results\llm_judge_v4_request_status_20260529.md` |
 | materialize_llm_judge_requests_nli_probe | `False` | `results\llm_judge_nli_probe_requests_20260529.jsonl`<br>`results\llm_judge_nli_probe_request_status_20260529.json`<br>`results\llm_judge_nli_probe_request_status_20260529.md` |
 | manage_openai_llm_judge_batch_preflight | `False` | `results\llm_judge_nli_probe_batch_run_status_20260529.json`<br>`results\llm_judge_nli_probe_batch_run_status_20260529.md` |
@@ -60,7 +61,7 @@ Non-human:
 - Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.
 - FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.
 - External review packet is ready, but independent review remains pending; place the response at results\external_review_response_20260529.md.
-- End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.
+- End-to-end selective RAG evidence is currently proxy-only: fixed-coverage and fixed-risk views are directionally positive, but some Hotpot v4 variants remain mixed and this is not a full CoRM-RAG reproduction.
 - V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.
 - V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.
 

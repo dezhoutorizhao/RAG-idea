@@ -3,7 +3,7 @@
   "blocker_reason": "pending_external_review",
   "claim_policy": "This packet prepares the current evidence package for independent external review. It is not itself an external review and does not upgrade any claim until an independent review response is present.",
   "external_review_completed": false,
-  "generated_at_utc": "2026-05-29T05:26:41.215316+00:00",
+  "generated_at_utc": "2026-05-29T05:37:10.587548+00:00",
   "hard_blockers": [
     {
       "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
@@ -64,11 +64,12 @@
       "status": "partial"
     },
     {
-      "boundary_or_next_action": "Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage curve artifact summarizes the proxy trend but does not remove the full-reproduction boundary.",
+      "boundary_or_next_action": "Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage and target-risk coverage artifacts summarize lower accepted-error risk at fixed coverage and higher coverage at fixed target risk, but do not remove the full-reproduction boundary.",
       "evidence": [
         "results/end2end_selective_rag_proxy_summary_20260529.json",
         "results/end2end_retriever_generator_matrix_20260529.json",
         "results/end2end_risk_coverage_curves_20260529.json",
+        "results/end2end_target_risk_coverage_20260529.json",
         "paper/figures/end2end_risk_coverage_curves_20260529.svg"
       ],
       "requirement": "End-to-end selective RAG",
@@ -132,50 +133,56 @@
     {
       "exists": true,
       "path": "results\\evidence_closure_status_v4.json",
-      "sha256": "05917bab9ac6add8b2ce6dac010b391ba2204cc96775fb3cd1d97c0cac753f36",
-      "size_bytes": 34165
+      "sha256": "b806073fa7086f84fcad87bac5c436104911e9f254af76119513c1d4ced2efe7",
+      "size_bytes": 35843
     },
     {
       "exists": true,
       "path": "results\\neurips_readiness_matrix_20260529.json",
-      "sha256": "3f955f16599e7f503b03f7b771406885be94f57684eed75abf3e593e73d5c154",
-      "size_bytes": 11668
+      "sha256": "c6e791a7bc12846e46647be023301f9b829a7657c255216a9f3a41b0e0c448ac",
+      "size_bytes": 11968
     },
     {
       "exists": true,
       "path": "results\\v4_evidence_package_manifest_20260529.json",
-      "sha256": "becfa7e804d099f26439f5dee14c4042a7ea8efd5c935a470795bb9f82c6508b",
+      "sha256": "a0f18c3bd47f3798e3a7d42f3011ff158b77599a1e93639326c743ea686f7224",
       "size_bytes": 33108
     },
     {
       "exists": true,
       "path": "results\\text_only_verifier_status_20260529.json",
-      "sha256": "7f84bec63bc25182c9006cc699126917839134e76c992d480fa4dfd0246ee393",
+      "sha256": "00703658895912ea0f19733d5495b17cc480ea0b096adbd09f8dc399e1e3ef33",
       "size_bytes": 4152
     },
     {
       "exists": true,
       "path": "results\\v4_strong_baseline_summary_20260529.json",
-      "sha256": "320458199cedf0ea35ae9670d8b4ff92f55ba4c93fcd68e2e1e57dfaab5574b6",
+      "sha256": "4debcac5620bdea32e272134bf8304dafc556a098a9db5b4090cb12cc4e4947a",
       "size_bytes": 62689
     },
     {
       "exists": true,
       "path": "results\\v4_calibration_quality_20260529.json",
-      "sha256": "660bf0f2678d178efc8771c3b8e18233438e2d8213f43f3fd0da7ae6ad141853",
+      "sha256": "218ce3b3712b79e5cf608ad0251d841ffe1afaa43ad7d5070533ae5f1be7d3c9",
       "size_bytes": 25694
     },
     {
       "exists": true,
       "path": "results\\end2end_retriever_generator_matrix_20260529.json",
-      "sha256": "9a7305f3837c9c637931f2f14da222ddd55808a2756ab9ab822342a20089f332",
+      "sha256": "962355c722e2fac072f0c0a00bf9c324e6c88530e658be08fd92032518773fb6",
       "size_bytes": 52753
     },
     {
       "exists": true,
       "path": "results\\end2end_risk_coverage_curves_20260529.json",
-      "sha256": "1a5b43eb4225653fe4d1d35b4d03c5e2c01347c191538640947fe722d51af63a",
+      "sha256": "6daf70d1926e1d9e4f88270ace5cb47920497964f911c0019b44a04affc7f0d4",
       "size_bytes": 130245
+    },
+    {
+      "exists": true,
+      "path": "results\\end2end_target_risk_coverage_20260529.json",
+      "sha256": "d0891e4a7f3710cde789688611c3759e7cbc399167a2513d0dfe2a0bf7d3f29e",
+      "size_bytes": 30644
     },
     {
       "exists": true,

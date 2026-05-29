@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T05:26:42.369517+00:00`
+Generated: `2026-05-29T05:37:11.845316+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `32`; tracked artifacts: `141`.
+- Provenance steps: `33`; tracked artifacts: `144`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `141`; dataset construction hashes: `41`.
+- Artifact checksums: `144`; dataset construction hashes: `41`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -85,7 +85,7 @@ Hard blockers:
 Negative or partial evidence:
 - Text-only semantic verifier (`partial`): NLI cross-scorer evidence is directionally positive against required weak baselines, but LLM-NLI correlation and human-label text-only evaluation are not ready.
 - Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.
-- End-to-end selective RAG (`partial`): Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage curve artifact summarizes the proxy trend but does not remove the full-reproduction boundary.
+- End-to-end selective RAG (`partial`): Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage and target-risk coverage artifacts summarize lower accepted-error risk at fixed coverage and higher coverage at fixed target risk, but do not remove the full-reproduction boundary.
 - Calibrated orbit risk model (`partial`): Calibration-quality artifact shows Brier wins 6/6 against rule/minimax references, but ECE wins 4/6. This supports empirical calibration-quality wording, not a formal risk guarantee.
 - Risk-control claim (`fail`): Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.
 
@@ -172,6 +172,14 @@ V4 anti-shortcut suite:
 - SVG: `paper\figures\end2end_risk_coverage_curves_20260529.svg`.
 - Claim policy: This figure summarizes risk-coverage curves for the local-corpus end-to-end proxy matrix. It is useful Phase 5 visualization evidence, but it is not a full Wikipedia/CoRM-RAG retrieval-generation reproduction.
 
+## End-to-End Coverage at Target Risk
+
+- Source rows: `24`; target-risk rows: `72`; targets: `[0.2, 0.3, 0.4]`.
+- CSRM higher mean coverage target count: `3` / `3`.
+- Row-level wins/ties/losses vs strongest non-CSRM: `40` / `28` / `4`.
+- Coverage-at-target-risk supported: `True`.
+- Claim policy: This artifact reports coverage at fixed accepted-error risk targets for the same local-corpus end-to-end proxy matrix as the risk-coverage curve. It is not a full Wikipedia/CoRM-RAG reproduction and should not be used as human-audited evidence.
+
 ## CoRM Reconstruction
 
 - Preflight ready: `False`.
@@ -241,7 +249,7 @@ Remaining non-human blockers:
 - Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.
 - FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.
 - External review packet is ready, but independent review remains pending; place the response at results\external_review_response_20260529.md.
-- End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.
+- End-to-end selective RAG evidence is currently proxy-only: fixed-coverage and fixed-risk views are directionally positive, but some Hotpot v4 variants remain mixed and this is not a full CoRM-RAG reproduction.
 - V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.
 - V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.
 

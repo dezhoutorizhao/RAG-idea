@@ -105,8 +105,11 @@ def test_default_manifest_tracks_end2end_risk_coverage_curve_artifacts():
 
     assert "results/end2end_risk_coverage_curves_20260529.json" in defaults
     assert "results/end2end_risk_coverage_curves_20260529.md" in defaults
+    assert "results/end2end_target_risk_coverage_20260529.json" in defaults
+    assert "results/end2end_target_risk_coverage_20260529.md" in defaults
     assert "paper/figures/end2end_risk_coverage_curves_20260529.svg" in defaults
     assert "experiments/plot_end2end_risk_coverage_curves.py" in defaults
+    assert "experiments/summarize_end2end_target_risk_coverage.py" in defaults
 
 
 def test_default_manifest_tracks_v4_calibration_quality_artifacts():

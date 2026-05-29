@@ -80,6 +80,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     end2end_proxy = _end2end_proxy_status(results)
     end2end_matrix = _end2end_matrix_status(results)
     end2end_curves = _end2end_curves_status(results)
+    end2end_target_risk = _end2end_target_risk_coverage_status(results)
     v4_strong_baselines = _v4_strong_baseline_status(results)
     v4_failure_taxonomy = _v4_failure_taxonomy_status(results)
     v4_case_gallery = _v4_case_gallery_status(results)
@@ -183,6 +184,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         "end2end_selective_rag_proxy": end2end_proxy,
         "end2end_retriever_generator_matrix": end2end_matrix,
         "end2end_risk_coverage_curves": end2end_curves,
+        "end2end_target_risk_coverage": end2end_target_risk,
         "v4_strong_baselines": v4_strong_baselines,
         "corm_reconstruction": {
             "preflight_ready": preflight.get("ready"),
@@ -231,7 +233,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
             "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
             _external_review_blocker(external_review),
-            "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
+            "End-to-end selective RAG evidence is currently proxy-only: fixed-coverage and fixed-risk views are directionally positive, but some Hotpot v4 variants remain mixed and this is not a full CoRM-RAG reproduction.",
             "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.",
             "V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.",
         ],
@@ -574,6 +576,28 @@ def _end2end_curves_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _end2end_target_risk_coverage_status(results: Path) -> dict[str, Any] | None:
+    path = results / "end2end_target_risk_coverage_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    aggregate = payload.get("aggregate", {})
+    return {
+        "artifact": str(path.as_posix()),
+        "source_matrix_row_count": payload.get("source_matrix_row_count"),
+        "row_count": payload.get("row_count"),
+        "risk_targets": payload.get("risk_targets"),
+        "coverage_at_target_risk_supported": payload.get("coverage_at_target_risk_supported"),
+        "csrm_higher_coverage_target_count": aggregate.get("csrm_higher_coverage_target_count"),
+        "target_count": aggregate.get("target_count"),
+        "wins": aggregate.get("wins"),
+        "ties": aggregate.get("ties"),
+        "losses": aggregate.get("losses"),
+        "by_target": aggregate.get("by_target", []),
+        "claim_policy": payload.get("claim_policy"),
+    }
+
+
 def _curve_risk(points: list[dict[str, Any]], key: str, coverage: float) -> float | None:
     for point in points:
         if abs(float(point.get("coverage", -1.0)) - coverage) < 1e-12:
@@ -911,6 +935,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     end2end_proxy = status.get("end2end_selective_rag_proxy")
     end2end_matrix = status.get("end2end_retriever_generator_matrix")
     end2end_curves = status.get("end2end_risk_coverage_curves")
+    end2end_target_risk = status.get("end2end_target_risk_coverage")
     strong_baselines = status.get("v4_strong_baselines")
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
     human_v4 = status["latest_v4_diagnostics"].get("human_audit_v4")
@@ -1310,6 +1335,26 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"`{_fmt(end2end_curves['risk50_reduction'])}`.",
                 f"- SVG: `{end2end_curves['svg']}`.",
                 f"- Claim policy: {end2end_curves['claim_policy']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## End-to-End Coverage at Target Risk", ""])
+    if end2end_target_risk:
+        lines.extend(
+            [
+                f"- Source rows: `{end2end_target_risk['source_matrix_row_count']}`; target-risk rows: "
+                f"`{end2end_target_risk['row_count']}`; targets: `{end2end_target_risk['risk_targets']}`.",
+                f"- CSRM higher mean coverage target count: "
+                f"`{end2end_target_risk['csrm_higher_coverage_target_count']}` / "
+                f"`{end2end_target_risk['target_count']}`.",
+                f"- Row-level wins/ties/losses vs strongest non-CSRM: "
+                f"`{end2end_target_risk['wins']}` / `{end2end_target_risk['ties']}` / "
+                f"`{end2end_target_risk['losses']}`.",
+                f"- Coverage-at-target-risk supported: "
+                f"`{end2end_target_risk['coverage_at_target_risk_supported']}`.",
+                f"- Claim policy: {end2end_target_risk['claim_policy']}",
                 "",
             ]
         )

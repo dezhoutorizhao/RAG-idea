@@ -55,6 +55,10 @@ from experiments.plot_end2end_risk_coverage_curves import (
     render_markdown as render_end2end_curves_markdown,
     render_svg as render_end2end_curves_svg,
 )
+from experiments.summarize_end2end_target_risk_coverage import (
+    render_markdown as render_end2end_target_risk_markdown,
+    summarize_end2end_target_risk_coverage,
+)
 from experiments.summarize_fever_cp_transfer_sweep import (
     DEFAULT_INPUTS as DEFAULT_FEVER_CP_SWEEP_INPUTS,
     render_markdown as render_fever_cp_sweep_markdown,
@@ -279,6 +283,22 @@ def reproduce_current_evidence_v4(
             "outputs": [str(end2end_curves_json), str(end2end_curves_md), str(end2end_curves_svg)],
             "ready": end2end_curves["protocol_complete"]
             and end2end_curves["aggregate"]["csrm_lower_risk_coverage_count"] >= 1,
+        }
+    )
+
+    end2end_target_risk_json = results / "end2end_target_risk_coverage_20260529.json"
+    end2end_target_risk_md = results / "end2end_target_risk_coverage_20260529.md"
+    end2end_target_risk = summarize_end2end_target_risk_coverage(end2end_curves_json)
+    _write_json(end2end_target_risk_json, end2end_target_risk)
+    end2end_target_risk_md.write_text(
+        render_end2end_target_risk_markdown(end2end_target_risk),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "summarize_end2end_target_risk_coverage",
+            "outputs": [str(end2end_target_risk_json), str(end2end_target_risk_md)],
+            "ready": end2end_target_risk["coverage_at_target_risk_supported"],
         }
     )
 

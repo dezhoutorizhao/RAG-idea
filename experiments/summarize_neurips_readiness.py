@@ -159,12 +159,14 @@ def _rows(
                 "results/end2end_selective_rag_proxy_summary_20260529.json",
                 "results/end2end_retriever_generator_matrix_20260529.json",
                 "results/end2end_risk_coverage_curves_20260529.json",
+                "results/end2end_target_risk_coverage_20260529.json",
                 "paper/figures/end2end_risk_coverage_curves_20260529.svg",
             ],
             (
                 "Proxy evidence now covers two local retrievers and two generators, but remains mixed "
                 "and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The "
-                "risk-coverage curve artifact summarizes the proxy trend but does not remove "
+                "risk-coverage and target-risk coverage artifacts summarize lower accepted-error "
+                "risk at fixed coverage and higher coverage at fixed target risk, but do not remove "
                 "the full-reproduction boundary."
             ),
         ),

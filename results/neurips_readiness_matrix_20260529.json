@@ -1,6 +1,6 @@
 {
   "claim_policy": "This matrix tracks readiness against the NeurIPS main-track evidence plan. A pass means the current artifact supports that checklist item at the stated scope; partial means useful evidence exists but is too narrow or mixed; fail means current evidence contradicts the strong version of the requirement; blocked means the item cannot be completed without human labels, storage repair/approval, or an external review.",
-  "generated_at_utc": "2026-05-29T05:26:41.699040+00:00",
+  "generated_at_utc": "2026-05-29T05:37:11.078814+00:00",
   "hard_blockers": [
     {
       "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
@@ -58,11 +58,12 @@
       "status": "partial"
     },
     {
-      "boundary_or_next_action": "Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage curve artifact summarizes the proxy trend but does not remove the full-reproduction boundary.",
+      "boundary_or_next_action": "Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage and target-risk coverage artifacts summarize lower accepted-error risk at fixed coverage and higher coverage at fixed target risk, but do not remove the full-reproduction boundary.",
       "evidence": [
         "results/end2end_selective_rag_proxy_summary_20260529.json",
         "results/end2end_retriever_generator_matrix_20260529.json",
         "results/end2end_risk_coverage_curves_20260529.json",
+        "results/end2end_target_risk_coverage_20260529.json",
         "paper/figures/end2end_risk_coverage_curves_20260529.svg"
       ],
       "requirement": "End-to-end selective RAG",
@@ -132,11 +133,12 @@
       "status": "partial"
     },
     {
-      "boundary_or_next_action": "Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage curve artifact summarizes the proxy trend but does not remove the full-reproduction boundary.",
+      "boundary_or_next_action": "Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage and target-risk coverage artifacts summarize lower accepted-error risk at fixed coverage and higher coverage at fixed target risk, but do not remove the full-reproduction boundary.",
       "evidence": [
         "results/end2end_selective_rag_proxy_summary_20260529.json",
         "results/end2end_retriever_generator_matrix_20260529.json",
         "results/end2end_risk_coverage_curves_20260529.json",
+        "results/end2end_target_risk_coverage_20260529.json",
         "paper/figures/end2end_risk_coverage_curves_20260529.svg"
       ],
       "requirement": "End-to-end selective RAG",
@@ -188,7 +190,7 @@
       "status": "fail"
     },
     {
-      "boundary_or_next_action": "Manifest artifacts: 141; missing: 0.",
+      "boundary_or_next_action": "Manifest artifacts: 144; missing: 0.",
       "evidence": [
         "CLAIMS_LEDGER.json",
         "results/claims_verification.json",

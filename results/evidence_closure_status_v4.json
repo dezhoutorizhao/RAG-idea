@@ -188,6 +188,55 @@
     "risk50_wins": 12,
     "row_count": 12
   },
+  "end2end_target_risk_coverage": {
+    "artifact": "results/end2end_target_risk_coverage_20260529.json",
+    "by_target": [
+      {
+        "csrm_mean_coverage": 0.3,
+        "losses": 0,
+        "mean_coverage_delta": 0.2333333333333333,
+        "row_count": 24,
+        "strongest_non_csrm_mean_coverage": 0.06666666666666667,
+        "target_risk": 0.2,
+        "ties": 8,
+        "wins": 16
+      },
+      {
+        "csrm_mean_coverage": 0.4333333333333333,
+        "losses": 0,
+        "mean_coverage_delta": 0.26666666666666666,
+        "row_count": 24,
+        "strongest_non_csrm_mean_coverage": 0.16666666666666666,
+        "target_risk": 0.3,
+        "ties": 12,
+        "wins": 12
+      },
+      {
+        "csrm_mean_coverage": 0.5833333333333334,
+        "losses": 4,
+        "mean_coverage_delta": 0.1708333333333333,
+        "row_count": 24,
+        "strongest_non_csrm_mean_coverage": 0.41250000000000003,
+        "target_risk": 0.4,
+        "ties": 8,
+        "wins": 12
+      }
+    ],
+    "claim_policy": "This artifact reports coverage at fixed accepted-error risk targets for the same local-corpus end-to-end proxy matrix as the risk-coverage curve. It is not a full Wikipedia/CoRM-RAG reproduction and should not be used as human-audited evidence.",
+    "coverage_at_target_risk_supported": true,
+    "csrm_higher_coverage_target_count": 3,
+    "losses": 4,
+    "risk_targets": [
+      0.2,
+      0.3,
+      0.4
+    ],
+    "row_count": 72,
+    "source_matrix_row_count": 24,
+    "target_count": 3,
+    "ties": 28,
+    "wins": 40
+  },
   "external_review": {
     "artifact": "results/external_review_packet_status_20260529.json",
     "blocker_reason": "pending_external_review",
@@ -201,7 +250,7 @@
     "review_response_path": "results\\external_review_response_20260529.md",
     "status": "packet_ready"
   },
-  "generated_at_utc": "2026-05-29T05:26:42.369517+00:00",
+  "generated_at_utc": "2026-05-29T05:37:11.845316+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -604,7 +653,7 @@
         "status": "partial"
       },
       {
-        "boundary_or_next_action": "Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage curve artifact summarizes the proxy trend but does not remove the full-reproduction boundary.",
+        "boundary_or_next_action": "Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage and target-risk coverage artifacts summarize lower accepted-error risk at fixed coverage and higher coverage at fixed target risk, but do not remove the full-reproduction boundary.",
         "requirement": "End-to-end selective RAG",
         "status": "partial"
       },
@@ -634,13 +683,13 @@
     "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
     "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
     "External review packet is ready, but independent review remains pending; place the response at results\\external_review_response_20260529.md.",
-    "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
+    "End-to-end selective RAG evidence is currently proxy-only: fixed-coverage and fixed-risk views are directionally positive, but some Hotpot v4 variants remain mixed and this is not a full CoRM-RAG reproduction.",
     "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.",
     "V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim."
   ],
   "reproducibility_bundle": {
     "artifact": "reproducibility/bundle_summary_20260529.json",
-    "artifact_checksum_count": 141,
+    "artifact_checksum_count": 144,
     "checkpoint_hash_available": true,
     "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
     "dataset_construction_hash_count": 41,
@@ -660,7 +709,7 @@
   },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 141,
+    "artifact_count": 144,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,
@@ -672,7 +721,7 @@
     },
     "readme_artifact": "results/README.md",
     "readme_exists": true,
-    "step_count": 32,
+    "step_count": 33,
     "untracked_output_count": 0
   },
   "risk_control": {
