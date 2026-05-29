@@ -80,6 +80,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     end2end_proxy = _end2end_proxy_status(results)
     v4_strong_baselines = _v4_strong_baseline_status(results)
     v4_failure_taxonomy = _v4_failure_taxonomy_status(results)
+    v4_case_gallery = _v4_case_gallery_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -109,6 +110,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "human_audit_v4": human_audit_v4_status,
             "human_audit_v4_eval": human_audit_v4_eval_status,
             "failure_taxonomy": v4_failure_taxonomy,
+            "case_gallery": v4_case_gallery,
         },
         "risk_control": {
             "hotpot_cp": {
@@ -190,6 +192,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "Hotpot-only empirical risk-target transfer is supported under the conservative CP pressure test.",
             "Hotpot semantic-swap v4 is a leakage-controlled diagnostic where self-consistency and retrieval-stability shortcuts fail.",
             "The v4 failure taxonomy and case gallery are machine-readable diagnostics across FEVER and Hotpot variants, with heuristic/private-label status until human audit v4 is complete.",
+            "A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection.",
         ],
         "disallowed_claims": [
             "Full original CoRM-RAG retrieval-generation reproduction is complete.",
@@ -496,6 +499,23 @@ def _v4_failure_taxonomy_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _v4_case_gallery_status(results: Path) -> dict[str, Any] | None:
+    path = results / "v4_case_gallery_summary_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "input_count": payload.get("input_count"),
+        "case_count": payload.get("case_count"),
+        "bucket_counts": payload.get("bucket_counts"),
+        "dataset_counts": payload.get("dataset_counts"),
+        "construction_type_counts": payload.get("construction_type_counts"),
+        "outputs": payload.get("outputs"),
+        "claim_boundary": payload.get("claim_boundary"),
+    }
+
+
 def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     path = results / "human_audit_v4_eval_status_20260529.json"
     if not path.exists():
@@ -559,6 +579,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     human_v4 = status["latest_v4_diagnostics"].get("human_audit_v4")
     human_v4_eval = status["latest_v4_diagnostics"].get("human_audit_v4_eval")
     failure_taxonomy = status["latest_v4_diagnostics"].get("failure_taxonomy")
+    case_gallery = status["latest_v4_diagnostics"].get("case_gallery")
 
     def row(method: str, item: dict[str, float | None]) -> str:
         return (
@@ -694,6 +715,20 @@ def render_markdown(status: dict[str, Any]) -> str:
         )
     else:
         lines.extend(["- Not recorded.", ""])
+    if case_gallery:
+        outputs = case_gallery.get("outputs") or {}
+        lines.extend(
+            [
+                "V4 case-study gallery:",
+                f"- Cases: `{case_gallery['case_count']}` from `{case_gallery['input_count']}` inputs.",
+                f"- Bucket coverage: `{case_gallery['bucket_counts']}`.",
+                f"- Outputs: `{outputs.get('jsonl')}` and `{outputs.get('markdown')}`.",
+                f"- Claim boundary: {case_gallery['claim_boundary']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["V4 case-study gallery:", "- Not recorded.", ""])
     lines.extend(["## End-to-End Selective RAG Proxy", ""])
     if end2end_proxy:
         lines.extend(

@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-28T19:30:43.021524+00:00`
+Generated: `2026-05-29T01:10:41.907772+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -66,6 +66,12 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 - Recurring top feature gaps: `min_sufficiency, clean_to_worst_gap, verifier_entropy, retrieval_overlap, answer_consistency`.
 - Claim implication: The v4 failure taxonomy is now machine-readable across FEVER and Hotpot variants. It supports a paper narrative around counterfactual sufficiency instability and documents mixed target-vs-baseline behavior. It remains heuristic/private-label analysis until human audit v4 adjudication is complete.
 
+V4 case-study gallery:
+- Cases: `192` from `6` inputs.
+- Bucket coverage: `{'baseline_over_target_on_positive': 48, 'target_high_false_positive': 48, 'target_low_false_negative': 48, 'target_over_baseline_on_negative': 48}`.
+- Outputs: `paper\case_studies\v4_case_gallery_20260529.jsonl` and `paper\case_studies\v4_case_gallery_20260529.md`.
+- Claim boundary: Diagnostic case gallery exported from private-label v4 failure analyses; not human-adjudicated evidence.
+
 ## End-to-End Selective RAG Proxy
 
 - Rows: `12`; all-win: `False`; has losses/mixed rows: `True`.
@@ -125,6 +131,7 @@ Allowed claims:
 - Hotpot-only empirical risk-target transfer is supported under the conservative CP pressure test.
 - Hotpot semantic-swap v4 is a leakage-controlled diagnostic where self-consistency and retrieval-stability shortcuts fail.
 - The v4 failure taxonomy and case gallery are machine-readable diagnostics across FEVER and Hotpot variants, with heuristic/private-label status until human audit v4 is complete.
+- A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection.
 
 Disallowed claims:
 - Full original CoRM-RAG retrieval-generation reproduction is complete.

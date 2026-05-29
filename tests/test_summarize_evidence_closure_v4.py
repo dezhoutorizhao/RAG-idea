@@ -9,6 +9,7 @@ from experiments.summarize_evidence_closure import (
     _fever_cp_transfer_sweep_status,
     _remote_storage_probe_status,
     _semantic_swap_status,
+    _v4_case_gallery_status,
     _v4_failure_taxonomy_status,
     _v4_strong_baseline_status,
 )
@@ -360,6 +361,31 @@ def test_v4_failure_taxonomy_status_summarizes_diagnostic(tmp_path):
     assert status["risk30_wins"] == 1
     assert len(status["top_feature_gaps"]) == 5
     assert "human audit v4" in status["claim_implication"]
+
+
+def test_v4_case_gallery_status_summarizes_outputs(tmp_path):
+    _write_json(
+        tmp_path / "v4_case_gallery_summary_20260529.json",
+        {
+            "input_count": 6,
+            "case_count": 192,
+            "bucket_counts": {"target_high_false_positive": 48},
+            "dataset_counts": {"hotpot": 32},
+            "construction_type_counts": {"stable": 96},
+            "outputs": {
+                "jsonl": "paper/case_studies/v4_case_gallery_20260529.jsonl",
+                "markdown": "paper/case_studies/v4_case_gallery_20260529.md",
+            },
+            "claim_boundary": "not human-adjudicated evidence",
+        },
+    )
+
+    status = _v4_case_gallery_status(tmp_path)
+
+    assert status["case_count"] == 192
+    assert status["bucket_counts"]["target_high_false_positive"] == 48
+    assert status["outputs"]["markdown"].endswith(".md")
+    assert "not human-adjudicated" in status["claim_boundary"]
 
 
 def test_current_reproduction_status_is_aggregated(tmp_path):

@@ -16,6 +16,7 @@ if str(SRC) not in sys.path:
     sys.path.insert(0, str(SRC))
 
 from experiments.run_human_audit_eval_v4 import run_human_audit_eval_v4
+from experiments.export_v4_case_gallery import export_v4_case_gallery
 from experiments.summarize_evidence_closure import evidence_closure, render_markdown as render_closure_markdown
 from experiments.summarize_end2end_selective_rag_proxy import (
     DEFAULT_INPUTS as DEFAULT_END2END_PROXY_INPUTS,
@@ -149,6 +150,28 @@ def reproduce_current_evidence_v4(
             "name": "summarize_v4_failure_taxonomy",
             "outputs": [str(failure_taxonomy_json), str(failure_taxonomy_md)],
             "ready": failure_taxonomy["dataset_count"] >= len(DEFAULT_V4_FAILURE_TAXONOMY_INPUTS),
+        }
+    )
+
+    case_gallery_jsonl = root / "paper/case_studies/v4_case_gallery_20260529.jsonl"
+    case_gallery_md = root / "paper/case_studies/v4_case_gallery_20260529.md"
+    case_gallery_summary = results / "v4_case_gallery_summary_20260529.json"
+    case_gallery = export_v4_case_gallery(
+        [root / path for path in DEFAULT_V4_FAILURE_TAXONOMY_INPUTS],
+        case_gallery_jsonl,
+        case_gallery_md,
+        case_gallery_summary,
+        per_bucket_per_dataset=2,
+    )
+    commands.append(
+        {
+            "name": "export_v4_case_gallery",
+            "outputs": [
+                str(case_gallery_jsonl),
+                str(case_gallery_md),
+                str(case_gallery_summary),
+            ],
+            "ready": case_gallery["case_count"] > 0,
         }
     )
 
