@@ -1,0 +1,216 @@
+{
+  "all_win_supported": false,
+  "allowed_wording": [
+    "Use `csrm_calibrated_gbdt` as the current paper-facing target only with caveats.",
+    "Claim empirical calibrated-orbit selective-risk evidence, not all-win behavior.",
+    "Report CSRM-Rule as a mechanism baseline with negative evidence against strong learned/context baselines.",
+    "State that LLM-as-judge, human audit, and full CoRM-RAG reproduction remain open blockers."
+  ],
+  "baseline_missing_or_partial_requirements": [
+    {
+      "boundary": "CoRM-derived clean/context reducers are present, but full faithful CoRM-RAG risk-aware end-to-end reproduction remains blocked.",
+      "requirement": "faithful_or_official_corm_rag",
+      "status": "partial"
+    },
+    {
+      "boundary": "No explicit LLM-as-judge baseline artifact is present in the current v4 baseline method union. Self-consistency proxy should not be reported as an LLM judge.",
+      "requirement": "llm_judge",
+      "status": "missing"
+    }
+  ],
+  "blocked_items": [
+    "LLM-as-judge baseline is still missing.",
+    "Faithful/full CoRM-RAG baseline remains partial until full reproduction is complete.",
+    "Human audit labels are incomplete: pending auditor labels=2000, pending adjudicated labels=1000.",
+    "Text-only verifier main claim is blocked by missing LLM correlation and human labels."
+  ],
+  "candidate_rows": [
+    {
+      "brier_win_count": 4,
+      "calibration_dataset_mentions": 4,
+      "ece_win_count": 1,
+      "mean_worst_case_delta": 0.01832192621269934,
+      "method": "csrm_calibrated_gbdt",
+      "metric_rows": {
+        "auprc_improvement": {
+          "losses": 1,
+          "mean_worst_case_delta": 0.03327588610535883,
+          "robust_wins": 2,
+          "ties": 3
+        },
+        "aurc_reduction": {
+          "losses": 1,
+          "mean_worst_case_delta": 0.006514670611543476,
+          "robust_wins": 4,
+          "ties": 1
+        },
+        "auroc_improvement": {
+          "losses": 1,
+          "mean_worst_case_delta": 0.0215804861520974,
+          "robust_wins": 2,
+          "ties": 3
+        },
+        "risk_at_30_reduction": {
+          "losses": 1,
+          "mean_worst_case_delta": 0.03927553927553928,
+          "robust_wins": 2,
+          "ties": 3
+        },
+        "risk_at_50_reduction": {
+          "losses": 1,
+          "mean_worst_case_delta": 0.0031799690266509518,
+          "robust_wins": 1,
+          "ties": 4
+        },
+        "risk_at_70_reduction": {
+          "losses": 0,
+          "mean_worst_case_delta": 0.006105006105006108,
+          "robust_wins": 2,
+          "ties": 4
+        }
+      },
+      "recommendation": "primary_with_caveats",
+      "total_losses": 5,
+      "total_robust_wins": 13,
+      "total_ties": 18
+    },
+    {
+      "brier_win_count": 0,
+      "calibration_dataset_mentions": 1,
+      "ece_win_count": 1,
+      "mean_worst_case_delta": -0.018307770928178615,
+      "method": "csrm_calibrated_logistic",
+      "metric_rows": {
+        "auprc_improvement": {
+          "losses": 2,
+          "mean_worst_case_delta": -0.009789295954139613,
+          "robust_wins": 1,
+          "ties": 3
+        },
+        "aurc_reduction": {
+          "losses": 5,
+          "mean_worst_case_delta": -0.03592921365362859,
+          "robust_wins": 1,
+          "ties": 0
+        },
+        "auroc_improvement": {
+          "losses": 2,
+          "mean_worst_case_delta": -0.014012804118302838,
+          "robust_wins": 0,
+          "ties": 4
+        },
+        "risk_at_30_reduction": {
+          "losses": 1,
+          "mean_worst_case_delta": -0.01785714285714286,
+          "robust_wins": 1,
+          "ties": 4
+        },
+        "risk_at_50_reduction": {
+          "losses": 2,
+          "mean_worst_case_delta": -0.024169035896724686,
+          "robust_wins": 0,
+          "ties": 4
+        },
+        "risk_at_70_reduction": {
+          "losses": 2,
+          "mean_worst_case_delta": -0.00808913308913309,
+          "robust_wins": 0,
+          "ties": 4
+        }
+      },
+      "recommendation": "secondary_or_ablation",
+      "total_losses": 14,
+      "total_robust_wins": 3,
+      "total_ties": 19
+    },
+    {
+      "brier_win_count": 2,
+      "calibration_dataset_mentions": 4,
+      "ece_win_count": 4,
+      "mean_worst_case_delta": -0.025615423220162848,
+      "method": "csrm_calibrated_isotonic",
+      "metric_rows": {
+        "auprc_improvement": {
+          "losses": 2,
+          "mean_worst_case_delta": -0.011646312683031278,
+          "robust_wins": 1,
+          "ties": 3
+        },
+        "aurc_reduction": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.040474737665401564,
+          "robust_wins": 2,
+          "ties": 1
+        },
+        "auroc_improvement": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.024108780357181895,
+          "robust_wins": 0,
+          "ties": 3
+        },
+        "risk_at_30_reduction": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.03505291005291006,
+          "robust_wins": 0,
+          "ties": 3
+        },
+        "risk_at_50_reduction": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.034665302914730835,
+          "robust_wins": 0,
+          "ties": 3
+        },
+        "risk_at_70_reduction": {
+          "losses": 3,
+          "mean_worst_case_delta": -0.007744495647721456,
+          "robust_wins": 0,
+          "ties": 3
+        }
+      },
+      "recommendation": "secondary_or_ablation",
+      "total_losses": 17,
+      "total_robust_wins": 3,
+      "total_ties": 16
+    }
+  ],
+  "claim_policy": "This artifact selects the safest paper-facing target wording from the current strong-baseline and calibration evidence. It is a claim-boundary audit, not a new human label source, LLM judge run, or full CoRM-RAG reproduction.",
+  "claim_safe_status": "partial",
+  "csrm_rule_negative_evidence": {
+    "by_auprc": {
+      "losses": 6,
+      "ties": 0,
+      "wins": 0
+    },
+    "by_aurc": {
+      "losses": 6,
+      "ties": 0,
+      "wins": 0
+    },
+    "by_auroc": {
+      "losses": 6,
+      "ties": 0,
+      "wins": 0
+    },
+    "by_risk_at_30": {
+      "losses": 6,
+      "ties": 0,
+      "wins": 0
+    }
+  },
+  "disallowed_wording": [
+    "CSRM-Rule is the primary method against strong learned/context baselines.",
+    "CSRM or any calibrated variant is all-win across the current v4 strong-baseline suite.",
+    "The strong-baseline evidence is complete without an LLM-as-judge baseline.",
+    "The current results are human-audited.",
+    "The calibrated model establishes a formal risk-control guarantee."
+  ],
+  "generated_at_utc": "2026-05-29T07:16:39.804994+00:00",
+  "recommended_primary_target": "csrm_calibrated_gbdt",
+  "sources": {
+    "baseline_coverage": "results\\v4_baseline_coverage_matrix_20260529.json",
+    "calibration_quality": "results\\v4_calibration_quality_20260529.json",
+    "human_collection": "results\\human_audit_v4_batch_collection_20260529.json",
+    "strong_baselines": "results\\v4_strong_baseline_summary_20260529.json",
+    "text_only": "results\\text_only_verifier_status_20260529.json"
+  }
+}

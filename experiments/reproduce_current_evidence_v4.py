@@ -109,6 +109,10 @@ from experiments.summarize_v4_calibration_quality import (
     render_markdown as render_v4_calibration_quality_markdown,
     summarize_v4_calibration_quality,
 )
+from experiments.summarize_v4_claim_safe_target_selection import (
+    render_markdown as render_v4_claim_safe_target_selection_markdown,
+    summarize_v4_claim_safe_target_selection,
+)
 from experiments.summarize_v4_failure_taxonomy import (
     DEFAULT_INPUTS as DEFAULT_V4_FAILURE_TAXONOMY_INPUTS,
     render_markdown as render_v4_failure_taxonomy_markdown,
@@ -632,6 +636,22 @@ def reproduce_current_evidence_v4(
             "name": "summarize_v4_calibration_quality",
             "outputs": [str(calibration_quality_json), str(calibration_quality_md)],
             "ready": calibration_quality["calibration_quality_supported"],
+        }
+    )
+
+    claim_safe_target_json = results / "v4_claim_safe_target_selection_20260529.json"
+    claim_safe_target_md = results / "v4_claim_safe_target_selection_20260529.md"
+    claim_safe_target = summarize_v4_claim_safe_target_selection()
+    _write_json(claim_safe_target_json, claim_safe_target)
+    claim_safe_target_md.write_text(
+        render_v4_claim_safe_target_selection_markdown(claim_safe_target),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "summarize_v4_claim_safe_target_selection",
+            "outputs": [str(claim_safe_target_json), str(claim_safe_target_md)],
+            "ready": claim_safe_target["all_win_supported"],
         }
     )
 

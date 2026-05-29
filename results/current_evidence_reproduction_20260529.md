@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T07:05:32.345633+00:00`
+Generated: `2026-05-29T07:16:39.948058+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -33,6 +33,7 @@ Ready for NeurIPS main claim: `False`
 | summarize_v4_split_threshold_protocol | `True` | `results\v4_split_threshold_protocol_20260529.json`<br>`results\v4_split_threshold_protocol_20260529.md` |
 | summarize_risk_control_abstention_baselines | `True` | `results\risk_control_abstention_baselines_20260529.json`<br>`results\risk_control_abstention_baselines_20260529.md` |
 | summarize_v4_calibration_quality | `False` | `results\v4_calibration_quality_20260529.json`<br>`results\v4_calibration_quality_20260529.md` |
+| summarize_v4_claim_safe_target_selection | `False` | `results\v4_claim_safe_target_selection_20260529.json`<br>`results\v4_claim_safe_target_selection_20260529.md` |
 | summarize_v4_failure_taxonomy | `True` | `results\v4_failure_taxonomy_summary_20260529.json`<br>`results\v4_failure_taxonomy_summary_20260529.md` |
 | export_v4_case_gallery | `True` | `paper\case_studies\v4_case_gallery_20260529.jsonl`<br>`paper\case_studies\v4_case_gallery_20260529.md`<br>`results\v4_case_gallery_summary_20260529.json` |
 | build_clean_sufficiency_misleading_figure | `True` | `paper\figures\clean_sufficiency_misleading_v4_20260529.csv`<br>`results\clean_sufficiency_misleading_v4_20260529.json`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.svg`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.md` |
@@ -72,6 +73,7 @@ Non-human:
 - External review packet is ready, but independent review remains pending; place the response at results\external_review_response_20260529.md.
 - End-to-end selective RAG evidence is currently proxy-only: fixed-coverage and fixed-risk views are directionally positive, but some Hotpot v4 variants remain mixed and this is not a full CoRM-RAG reproduction.
 - V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.
+- Claim-safe target selection recommends csrm_calibrated_gbdt only with caveats; all-win support is False, and blockers remain: LLM-as-judge baseline is still missing.; Faithful/full CoRM-RAG baseline remains partial until full reproduction is complete.; Human audit labels are incomplete: pending auditor labels=2000, pending adjudicated labels=1000.; Text-only verifier main claim is blocked by missing LLM correlation and human labels.
 - V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.
 - Novelty positioning remains proceed-with-caution because closely related 2025-2026 work exists; strong novelty claims require narrower wording and completed human-audit/baseline evidence.
 

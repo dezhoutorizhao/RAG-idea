@@ -13,7 +13,8 @@
     "Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings.",
     "The theory/formalization module states the orbit-risk object and information-structure rationale for clean-only, single-set, and aligned-orbit evidence.",
     "The novelty audit supports a narrow proceed-with-caution positioning around aligned evidence-orbit selective risk.",
-    "The calibrated orbit risk model improves Brier score over rule/minimax baselines across current v4 calibration artifacts; ECE evidence is mostly positive but mixed."
+    "The calibrated orbit risk model improves Brier score over rule/minimax baselines across current v4 calibration artifacts; ECE evidence is mostly positive but mixed.",
+    "The claim-safe target-selection audit recommends calibrated CSRM wording with explicit caveats rather than CSRM-Rule or all-win wording."
   ],
   "claim_verification": {
     "failed_claims": 0,
@@ -119,7 +120,8 @@
     "The v4 failure taxonomy is human-adjudicated evidence.",
     "Calibration establishes a formal risk-control guarantee.",
     "The theory/formalization module proves empirical all-win behavior or replaces human audit.",
-    "CSRM-RAG has a closed strong novelty claim independent of CoRM-RAG, SURE-RAG, Sufficient Context, and CF-RAG."
+    "CSRM-RAG has a closed strong novelty claim independent of CoRM-RAG, SURE-RAG, Sufficient Context, and CF-RAG.",
+    "CSRM-Rule or any calibrated CSRM target is an all-win method against the current strong-baseline suite."
   ],
   "end2end_retriever_generator_matrix": {
     "all_win": false,
@@ -254,7 +256,7 @@
     "review_response_path": "results\\external_review_response_20260529.md",
     "status": "packet_ready"
   },
-  "generated_at_utc": "2026-05-29T07:05:33.863690+00:00",
+  "generated_at_utc": "2026-05-29T07:16:41.434069+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -757,7 +759,7 @@
         "status": "partial"
       },
       {
-        "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency, risk-control abstention baselines, and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.",
+        "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency, risk-control abstention baselines, shared calibration-threshold selection, and claim-safe target selection are auditable, but test risk/coverage remains mixed rather than all-win.",
         "requirement": "Strong baselines and equal-budget controls",
         "status": "partial"
       },
@@ -845,12 +847,13 @@
     "External review packet is ready, but independent review remains pending; place the response at results\\external_review_response_20260529.md.",
     "End-to-end selective RAG evidence is currently proxy-only: fixed-coverage and fixed-risk views are directionally positive, but some Hotpot v4 variants remain mixed and this is not a full CoRM-RAG reproduction.",
     "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.",
+    "Claim-safe target selection recommends csrm_calibrated_gbdt only with caveats; all-win support is False, and blockers remain: LLM-as-judge baseline is still missing.; Faithful/full CoRM-RAG baseline remains partial until full reproduction is complete.; Human audit labels are incomplete: pending auditor labels=2000, pending adjudicated labels=1000.; Text-only verifier main claim is blocked by missing LLM correlation and human labels.",
     "V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.",
     "Novelty positioning remains proceed-with-caution because closely related 2025-2026 work exists; strong novelty claims require narrower wording and completed human-audit/baseline evidence."
   ],
   "reproducibility_bundle": {
     "artifact": "reproducibility/bundle_summary_20260529.json",
-    "artifact_checksum_count": 195,
+    "artifact_checksum_count": 198,
     "checkpoint_hash_available": true,
     "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
     "dataset_construction_hash_count": 42,
@@ -870,7 +873,7 @@
   },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 195,
+    "artifact_count": 198,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,
@@ -882,7 +885,7 @@
     },
     "readme_artifact": "results/README.md",
     "readme_exists": true,
-    "step_count": 39,
+    "step_count": 40,
     "untracked_output_count": 0
   },
   "risk_control": {
@@ -1066,6 +1069,25 @@
       "csrm_calibrated_isotonic",
       "csrm_calibrated_gbdt"
     ]
+  },
+  "v4_claim_safe_target_selection": {
+    "all_win_supported": false,
+    "artifact": "results/v4_claim_safe_target_selection_20260529.json",
+    "blocked_items": [
+      "LLM-as-judge baseline is still missing.",
+      "Faithful/full CoRM-RAG baseline remains partial until full reproduction is complete.",
+      "Human audit labels are incomplete: pending auditor labels=2000, pending adjudicated labels=1000.",
+      "Text-only verifier main claim is blocked by missing LLM correlation and human labels."
+    ],
+    "claim_safe_status": "partial",
+    "disallowed_wording": [
+      "CSRM-Rule is the primary method against strong learned/context baselines.",
+      "CSRM or any calibrated variant is all-win across the current v4 strong-baseline suite.",
+      "The strong-baseline evidence is complete without an LLM-as-judge baseline.",
+      "The current results are human-audited.",
+      "The calibrated model establishes a formal risk-control guarantee."
+    ],
+    "recommended_primary_target": "csrm_calibrated_gbdt"
   },
   "v4_strong_baselines": {
     "artifact": "results/v4_strong_baseline_summary_20260529.json",

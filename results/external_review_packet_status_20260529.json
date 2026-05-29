@@ -3,10 +3,10 @@
   "blocker_reason": "pending_external_review",
   "claim_policy": "This packet prepares the current evidence package for independent external review. It is not itself an external review and does not upgrade any claim until an independent review response is present.",
   "external_review_completed": false,
-  "generated_at_utc": "2026-05-29T07:05:32.344823+00:00",
+  "generated_at_utc": "2026-05-29T07:16:39.947119+00:00",
   "hard_blockers": [
     {
-      "boundary_or_next_action": "Assignment batches ready: True; batch collection complete: None; pending labels: 1300; cannot claim human-audited results.",
+      "boundary_or_next_action": "Assignment batches ready: True; batch collection complete: False; pending labels: 1300; cannot claim human-audited results.",
       "evidence": [
         "results/human_audit_v4_paper_pack_status_20260529.json",
         "results/human_audit_v4_assignment_batches_20260529.json",
@@ -39,7 +39,7 @@
       "status": "blocked"
     }
   ],
-  "manifest_artifact_count": 189,
+  "manifest_artifact_count": 195,
   "manifest_missing_artifact_count": 0,
   "missing_source_artifacts": [],
   "negative_or_partial_evidence": [
@@ -54,7 +54,7 @@
       "status": "partial"
     },
     {
-      "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency, risk-control abstention baselines, and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.",
+      "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency, risk-control abstention baselines, shared calibration-threshold selection, and claim-safe target selection are auditable, but test risk/coverage remains mixed rather than all-win.",
       "evidence": [
         "results/v4_strong_baseline_summary_20260529.json",
         "results/v4_baseline_coverage_matrix_20260529.json",
@@ -62,6 +62,7 @@
         "results/v4_shared_threshold_selection_20260529.json",
         "results/v4_split_threshold_protocol_20260529.json",
         "results/risk_control_abstention_baselines_20260529.json",
+        "results/v4_claim_safe_target_selection_20260529.json",
         "results/llm_judge_v4_request_status_20260529.json"
       ],
       "requirement": "Strong baselines and equal-budget controls",
@@ -146,55 +147,61 @@
     {
       "exists": true,
       "path": "results\\evidence_closure_status_v4.json",
-      "sha256": "bfda775700571e2bcd3d748b0b49a517f94b0ab15ad019eb089e0110076f9301",
-      "size_bytes": 47504
+      "sha256": "ba66df42e4a834cf157141544dd6ed368e1e0c96fc28676117f4e7f8619fa9d8",
+      "size_bytes": 49292
     },
     {
       "exists": true,
       "path": "results\\neurips_readiness_matrix_20260529.json",
-      "sha256": "f87a66a46765c7610aa7634781bd79b5db542a08fa2ec2d6c3c2906658dc0d19",
-      "size_bytes": 14534
+      "sha256": "356b83fdf7788026e656c5aadf2869a591c4e4a76c280a359efaa92c3de50ed5",
+      "size_bytes": 14724
     },
     {
       "exists": true,
       "path": "results\\v4_evidence_package_manifest_20260529.json",
-      "sha256": "5f72e603c525a0ba7bb5817cff0f664356f9659dd92c50f955ed508a9557ae01",
-      "size_bytes": 44286
+      "sha256": "943e49f5125e13c0044c90b046282af67a15e3aef09ef8bcd4852dcc48d80128",
+      "size_bytes": 45821
     },
     {
       "exists": true,
       "path": "results\\text_only_verifier_status_20260529.json",
-      "sha256": "2fca0442f6c55a7e7d302b906b7944283f083b04a886d6b6b1fdebdf197e28ff",
+      "sha256": "76be310d5c5b1dcd8bbc0a2c31ae5fa08f9464e7bda18f609823a5f222410e31",
       "size_bytes": 4153
     },
     {
       "exists": true,
       "path": "results\\v4_strong_baseline_summary_20260529.json",
-      "sha256": "aa8c5a8a9fc1795df6d0fb01a71484a9f55697c8db25b5dd541fec02ed221a5b",
+      "sha256": "86787322c75d378e3cccc19fc50e66a01a1387161b85eae9a7bcceb6c9227861",
       "size_bytes": 73809
     },
     {
       "exists": true,
       "path": "results\\v4_calibration_quality_20260529.json",
-      "sha256": "cdd48bf8e53d181dc0bdbc98dcd5f7664dc88f8f835d9de77b5f9f0aca163ac3",
+      "sha256": "943737359379597ae4902dc277175acb5ecbe60e47f7d9803d75dd00b05edda7",
       "size_bytes": 28533
     },
     {
       "exists": true,
+      "path": "results\\v4_claim_safe_target_selection_20260529.json",
+      "sha256": "15ad1e6d6f44ab1b2386f0a3a416b8bc6272a025e22336f25a910ab2d0c9f210",
+      "size_bytes": 7318
+    },
+    {
+      "exists": true,
       "path": "results\\risk_control_abstention_baselines_20260529.json",
-      "sha256": "19a4a839a367f8e22ae06352c517c9b17e334ee7fbb3ede70b2f4873747c4a28",
+      "sha256": "cc71e77e68ec4587677322d54c0e597e9433b2bcfe79b2ea84e6663a6a210e69",
       "size_bytes": 11626
     },
     {
       "exists": true,
       "path": "results\\theory_formalization_status_20260529.json",
-      "sha256": "46fe26d2ca8e875b5b10806b14f34b604be81304570845e7d347487e296dc0c6",
+      "sha256": "3ab28764ba6fcd657742f424910463dee7ea50ddb6db4dabc0d32d7aaacdb051",
       "size_bytes": 1761
     },
     {
       "exists": true,
       "path": "results\\novelty_audit_20260529.json",
-      "sha256": "e3856ff5e4417365c2fd0ac18e1870214100472dc58d087109a390e8eb7e6580",
+      "sha256": "b730b9453c617716f14c5695f3c035cd7f2150b872a4da130ea82d49beaccb80",
       "size_bytes": 5760
     },
     {
@@ -212,19 +219,19 @@
     {
       "exists": true,
       "path": "results\\end2end_retriever_generator_matrix_20260529.json",
-      "sha256": "beaefb4d3c8933c385383211eff9ad850d610b40154360533125e9d1b4846fb5",
+      "sha256": "6c814291fc768e7e7e9d3bb9bc9bab24adf66bd7c6729dcd0c4c0d3e5118a869",
       "size_bytes": 52753
     },
     {
       "exists": true,
       "path": "results\\end2end_risk_coverage_curves_20260529.json",
-      "sha256": "224b93d35b35ba0996849e2b17a8a2cf3f14fd82c5dfcd9b35a3823960ce7624",
+      "sha256": "b6a60af674fa53f79a555c510aa3d9441ada5ffe5beff41c969232920a3b12d0",
       "size_bytes": 130245
     },
     {
       "exists": true,
       "path": "results\\end2end_target_risk_coverage_20260529.json",
-      "sha256": "c9e3a7c925bb672e563d32520c86e496edfaa47630ed965119f5c0772800e455",
+      "sha256": "3a699ff3ddd57013f00fcc4579d768ecd4a8a2d4fde537a33b3a3121319ce0eb",
       "size_bytes": 30644
     },
     {
@@ -236,19 +243,19 @@
     {
       "exists": true,
       "path": "results\\human_audit_v4_paper_pack_status_20260529.json",
-      "sha256": "488b131a18440478e16444f604252d26234ff24c999ab293ca223430072f1d70",
+      "sha256": "0e1caba861b87a13065e49a805fa5b2093ec335b546df797eb3da85ec3afd4ca",
       "size_bytes": 4984
     },
     {
       "exists": true,
       "path": "results\\human_audit_v4_assignment_batches_20260529.json",
-      "sha256": "b24b80871c7682b705f5fcfd1f8b9cacaa1d2d298b4f50a3d54326db3d5344f4",
+      "sha256": "f321ed206415bc21c2a871130e568a9ec5f1432a87ccd1045d7adfb27a183f05",
       "size_bytes": 17555
     },
     {
       "exists": true,
       "path": "results\\human_audit_v4_batch_collection_20260529.json",
-      "sha256": "1c4b3972ad936dd715e56545e735cbdf9299a487617aec104e0ee030d2458577",
+      "sha256": "3f1344cc5a48af8b06c7400272b6f9e05fe5aaae0a292b63e188a59c0cb2a88a",
       "size_bytes": 4742
     },
     {

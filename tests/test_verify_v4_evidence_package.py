@@ -139,6 +139,8 @@ def test_default_manifest_tracks_v4_calibration_quality_artifacts():
 
     assert "results/v4_calibration_quality_20260529.json" in defaults
     assert "results/v4_calibration_quality_20260529.md" in defaults
+    assert "results/v4_claim_safe_target_selection_20260529.json" in defaults
+    assert "experiments/summarize_v4_claim_safe_target_selection.py" in defaults
     assert "results/calibration_fever_v4_n100_structbalanced.json" in defaults
     assert "results/compare_calibrated_fever_v4_n100_structbalanced.json" in defaults
     assert "results/risk_control_abstention_baselines_20260529.json" in defaults

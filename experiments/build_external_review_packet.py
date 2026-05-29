@@ -23,6 +23,7 @@ SOURCE_ARTIFACTS = [
     Path("results/text_only_verifier_status_20260529.json"),
     Path("results/v4_strong_baseline_summary_20260529.json"),
     Path("results/v4_calibration_quality_20260529.json"),
+    Path("results/v4_claim_safe_target_selection_20260529.json"),
     Path("results/risk_control_abstention_baselines_20260529.json"),
     Path("results/theory_formalization_status_20260529.json"),
     Path("results/novelty_audit_20260529.json"),

@@ -39,6 +39,9 @@ PROVENANCE_BY_STEP = {
     "summarize_v4_split_threshold_protocol": "experiments/summarize_v4_split_threshold_protocol.py",
     "summarize_risk_control_abstention_baselines": "experiments/summarize_risk_control_abstention_baselines.py",
     "summarize_v4_calibration_quality": "experiments/summarize_v4_calibration_quality.py",
+    "summarize_v4_claim_safe_target_selection": (
+        "experiments/summarize_v4_claim_safe_target_selection.py"
+    ),
     "summarize_v4_failure_taxonomy": "experiments/summarize_v4_failure_taxonomy.py",
     "export_v4_case_gallery": "experiments/export_v4_case_gallery.py",
     "build_clean_sufficiency_misleading_figure": "experiments/build_clean_sufficiency_misleading_figure.py",

@@ -91,6 +91,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     theory_formalization = _theory_formalization_status(results)
     novelty_audit = _novelty_audit_status(results)
     v4_calibration_quality = _v4_calibration_quality_status(results)
+    v4_claim_safe_target = _v4_claim_safe_target_status(results)
     neurips_readiness = _neurips_readiness_status(results)
     external_review = _external_review_packet_status(results)
     results_provenance = _results_provenance_status(results)
@@ -188,6 +189,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         "theory_formalization": theory_formalization,
         "novelty_audit": novelty_audit,
         "v4_calibration_quality": v4_calibration_quality,
+        "v4_claim_safe_target_selection": v4_claim_safe_target,
         "end2end_selective_rag_proxy": end2end_proxy,
         "end2end_retriever_generator_matrix": end2end_matrix,
         "end2end_risk_coverage_curves": end2end_curves,
@@ -229,6 +231,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "The theory/formalization module states the orbit-risk object and information-structure rationale for clean-only, single-set, and aligned-orbit evidence.",
             "The novelty audit supports a narrow proceed-with-caution positioning around aligned evidence-orbit selective risk.",
             "The calibrated orbit risk model improves Brier score over rule/minimax baselines across current v4 calibration artifacts; ECE evidence is mostly positive but mixed.",
+            "The claim-safe target-selection audit recommends calibrated CSRM wording with explicit caveats rather than CSRM-Rule or all-win wording.",
         ],
         "disallowed_claims": [
             "Full original CoRM-RAG retrieval-generation reproduction is complete.",
@@ -240,6 +243,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "Calibration establishes a formal risk-control guarantee.",
             "The theory/formalization module proves empirical all-win behavior or replaces human audit.",
             "CSRM-RAG has a closed strong novelty claim independent of CoRM-RAG, SURE-RAG, Sufficient Context, and CF-RAG.",
+            "CSRM-Rule or any calibrated CSRM target is an all-win method against the current strong-baseline suite.",
         ],
         "remaining_non_human_blockers": [
             "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
@@ -247,6 +251,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             _external_review_blocker(external_review),
             "End-to-end selective RAG evidence is currently proxy-only: fixed-coverage and fixed-risk views are directionally positive, but some Hotpot v4 variants remain mixed and this is not a full CoRM-RAG reproduction.",
             "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.",
+            _claim_safe_target_blocker(v4_claim_safe_target),
             "V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.",
             "Novelty positioning remains proceed-with-caution because closely related 2025-2026 work exists; strong novelty claims require narrower wording and completed human-audit/baseline evidence.",
         ],
@@ -841,6 +846,21 @@ def _v4_calibration_quality_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _v4_claim_safe_target_status(results: Path) -> dict[str, Any] | None:
+    path = results / "v4_claim_safe_target_selection_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "recommended_primary_target": payload.get("recommended_primary_target"),
+        "all_win_supported": payload.get("all_win_supported"),
+        "claim_safe_status": payload.get("claim_safe_status"),
+        "blocked_items": payload.get("blocked_items", []),
+        "disallowed_wording": payload.get("disallowed_wording", []),
+    }
+
+
 def _neurips_readiness_status(results: Path) -> dict[str, Any] | None:
     path = results / "neurips_readiness_matrix_20260529.json"
     if not path.exists():
@@ -903,6 +923,18 @@ def _external_review_blocker(external_review: dict[str, Any] | None) -> str:
             f"place the response at {external_review.get('review_response_path')}."
         )
     return "Independent external review packet is missing or incomplete after the latest evidence update."
+
+
+def _claim_safe_target_blocker(status: dict[str, Any] | None) -> str:
+    if not status:
+        return "Claim-safe target-selection audit is missing; primary-method wording remains unaudited."
+    target = status.get("recommended_primary_target")
+    blocked = status.get("blocked_items") or []
+    return (
+        f"Claim-safe target selection recommends {target} only with caveats; "
+        f"all-win support is {status.get('all_win_supported')}, and blockers remain: "
+        f"{'; '.join(str(item) for item in blocked)}"
+    )
 
 
 def _results_provenance_status(results: Path) -> dict[str, Any] | None:
@@ -1009,6 +1041,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     theory_formalization = status.get("theory_formalization")
     novelty_audit = status.get("novelty_audit")
     calibration_quality = status.get("v4_calibration_quality")
+    claim_safe_target = status.get("v4_claim_safe_target_selection")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
     end2end_matrix = status.get("end2end_retriever_generator_matrix")
     end2end_curves = status.get("end2end_risk_coverage_curves")
@@ -1163,6 +1196,19 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"`{_fmt(calibration_quality['mean_best_target_ece_reduction'])}`.",
                 f"- ECE non-win datasets: `{calibration_quality['datasets_with_ece_nonwin']}`.",
                 f"- Claim implication: {calibration_quality['claim_implication']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## V4 Claim-Safe Target Selection", ""])
+    if claim_safe_target:
+        lines.extend(
+            [
+                f"- Recommended primary target: `{claim_safe_target['recommended_primary_target']}`.",
+                f"- All-win supported: `{claim_safe_target['all_win_supported']}`.",
+                f"- Claim-safe status: `{claim_safe_target['claim_safe_status']}`.",
+                f"- Blocked items: `{claim_safe_target['blocked_items']}`.",
                 "",
             ]
         )

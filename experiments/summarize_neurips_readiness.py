@@ -157,6 +157,7 @@ def _rows(
                 "results/v4_shared_threshold_selection_20260529.json",
                 "results/v4_split_threshold_protocol_20260529.json",
                 "results/risk_control_abstention_baselines_20260529.json",
+                "results/v4_claim_safe_target_selection_20260529.json",
                 "results/llm_judge_v4_request_status_20260529.json",
             ],
             (
@@ -164,8 +165,8 @@ def _rows(
                 "coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, "
                 "and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed "
                 "score artifact exists. Template multi-sample self-consistency, risk-control abstention baselines, "
-                "and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed "
-                "rather than all-win."
+                "shared calibration-threshold selection, and claim-safe target selection are auditable, but test "
+                "risk/coverage remains mixed rather than all-win."
             ),
         ),
         _row(
