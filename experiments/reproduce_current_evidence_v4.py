@@ -66,6 +66,11 @@ from experiments.build_results_provenance_readme import (
     render_markdown as render_results_provenance_markdown,
 )
 from experiments.build_reproducibility_bundle import build_reproducibility_bundle
+from experiments.build_claims_ledger_markdown import (
+    build_claims_ledger_markdown,
+    render_markdown as render_claims_ledger_markdown,
+)
+from experiments.verify_claims import verify_claims
 
 
 DEFAULT_MANIFESTS = [
@@ -255,6 +260,17 @@ def reproduce_current_evidence_v4(
         }
     )
 
+    claims_verification_json = results / "claims_verification.json"
+    claims_verification = verify_claims(root / "CLAIMS_LEDGER.json", root)
+    _write_json(claims_verification_json, claims_verification)
+    commands.append(
+        {
+            "name": "verify_claims",
+            "outputs": [str(claims_verification_json)],
+            "ready": claims_verification["failed_claims"] == 0,
+        }
+    )
+
     closure_json = results / "evidence_closure_status_v4.json"
     closure_md = results / "evidence_closure_status_v4.md"
     closure = evidence_closure(root)
@@ -323,6 +339,24 @@ def reproduce_current_evidence_v4(
             "name": "build_results_provenance_readme",
             "outputs": [str(provenance_json), str(provenance_md)],
             "ready": provenance["missing_output_count"] == 0,
+        }
+    )
+    _write_json(output_json, report)
+    output_md.write_text(render_markdown(report), encoding="utf-8")
+
+    claims_md = root / "CLAIMS_LEDGER.md"
+    claims_summary_json = results / "claims_ledger_markdown_summary_20260529.json"
+    claims_summary = build_claims_ledger_markdown(
+        root / "CLAIMS_LEDGER.json",
+        results / "claims_verification.json",
+    )
+    _write_json(claims_summary_json, claims_summary)
+    claims_md.write_text(render_claims_ledger_markdown(claims_summary), encoding="utf-8")
+    commands.append(
+        {
+            "name": "build_claims_ledger_markdown",
+            "outputs": [str(claims_md), str(claims_summary_json)],
+            "ready": claims_summary["failed_claims"] == 0,
         }
     )
     _write_json(output_json, report)

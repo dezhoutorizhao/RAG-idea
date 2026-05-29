@@ -1,6 +1,6 @@
 # V4 Evidence Package Manifest
 
-Generated: `2026-05-29T01:54:02.360058+00:00`
+Generated: `2026-05-29T02:00:03.328048+00:00`
 
 Package status: `complete_with_known_blockers`
 Ready for NeurIPS main claim: `False`
@@ -26,51 +26,57 @@ Missing artifacts: `0`
 
 | Path | Exists | Bytes | SHA256 |
 |---|---:|---:|---|
-| `results\current_evidence_reproduction_20260529.json` | `True` | `5515` | `d3a17ccdcea8faa6059c4986ee56d7fc7e96ddcdb3500e18cafb991b60791623` |
-| `results\current_evidence_reproduction_20260529.md` | `True` | `4140` | `60bf14d6eb7f79dfc4f41f44af770dde3a99d42fe803eb65eaa30a33e08a85c4` |
-| `results\evidence_closure_status_v4.json` | `True` | `26617` | `359a0c1727e6a2820a7d11e50f54e6333e72ba8520b11f7e3844eb1229451157` |
-| `results\evidence_closure_status_v4.md` | `True` | `14386` | `98a95ec07454152afb118c8f8d0a2904e653fce6d177f2ffd8edbf25c32298a4` |
-| `results\results_provenance_manifest_20260529.json` | `True` | `17189` | `0b083886d6de695300c468055a70d40f5961f1db03bdb608f9533bafaffb8982` |
-| `results\README.md` | `True` | `8266` | `e070200b761cdfa06c3d36a2a05654d61f92920d63b2b749ec84e9f5ef2cd5b7` |
-| `results\neurips_readiness_matrix_20260529.json` | `True` | `6650` | `eaa6eb86357e04b8c1b78a39ccff1abb27d4074b62844f32e68d022cd9f48f10` |
-| `results\neurips_readiness_matrix_20260529.md` | `True` | `2998` | `b345a36d3447a0b7c46d190d3889cc961f93febdcbe4b0ba5965718eb111cda7` |
+| `results\current_evidence_reproduction_20260529.json` | `True` | `5865` | `78963d425dd732f36227295d5f2fe000c7a1e3ff67171b984ad7acf0cdc6ee37` |
+| `results\current_evidence_reproduction_20260529.md` | `True` | `4327` | `900db39b18e212c805febfddabb64942d3724730992dd8b8e4c06968f8c1211e` |
+| `CLAIMS_LEDGER.json` | `True` | `53391` | `f433d29dc1ca4d67e4097403e7e84c6adc8ec7de7c9785d1e3111a15d699d244` |
+| `CLAIMS_LEDGER.md` | `True` | `25742` | `033be0bbdd612615611540b7701ca5e7855ab0178f4ab7880da22869f09eceb7` |
+| `results\claims_verification.json` | `True` | `62860` | `b3051aff04cf1c2efe13719f0587dca08c1af41ba043266c8fdd1b7c3cde1a6e` |
+| `results\claims_ledger_markdown_summary_20260529.json` | `True` | `26379` | `1a7b1ef6327f8de76507a69ef9b6aa46adec2491e5c05e436ae8ee7fb6e664da` |
+| `results\evidence_closure_status_v4.json` | `True` | `26617` | `8d692cca8a3453013df34f8e3a7c1b577184896b02b1941b73c72ac717487803` |
+| `results\evidence_closure_status_v4.md` | `True` | `14386` | `ddf3b54585c585c0d3c9c502431f625412558cbb3a84d8af3fa75b3f2ffedc23` |
+| `results\results_provenance_manifest_20260529.json` | `True` | `18587` | `7a8328858538f04840efaf97357d45c1a95a286f5bc13de1c667727f95b7cb02` |
+| `results\README.md` | `True` | `8735` | `8e9f20758cab5f3298ce90996ef2dd6291d2391427b44a4774d0792af4e806c3` |
+| `results\neurips_readiness_matrix_20260529.json` | `True` | `6650` | `f965e2d8803d2907738873beda23e9ac415466082fd812a7dc978c5fd48ccd89` |
+| `results\neurips_readiness_matrix_20260529.md` | `True` | `2998` | `0b22984471a12363fa1daf3ebb48150fdfeccfcb4bb593ae23c0f62dfc9e3665` |
 | `results\human_audit_v4_status_20260529.json` | `True` | `5073` | `9c730826406716ab8f3fb7c417bca1626f06e418628e8971765d64cf4d73c9d1` |
 | `results\human_audit_v4_status_20260529.md` | `True` | `828` | `0191a484feadce29a1321637744eb76990ff896c79f70ae05635b3c056b0a01d` |
 | `results\human_audit_v4_eval_status_20260529.json` | `True` | `2528` | `3703442aa638c9b6ea69f245604e62a170ab871173452907e26d4857f9a8f3ba` |
 | `results\human_audit_v4_eval_status_20260529.md` | `True` | `1036` | `631763b47c09690e4257ed1e84e67b9f5e2694456a50528b1d72ae92a316ef78` |
-| `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json` | `True` | `8163` | `0a2cd7239c2fe2f82407eab479d176dd6f6a4e8076caafa145c6ed64a1878501` |
-| `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.md` | `True` | `1930` | `ba3354dcf6601b9b178f03d2d0ec82de8437dc860619e7e236afcebbb491b22d` |
-| `results\end2end_selective_rag_proxy_summary_20260529.json` | `True` | `13211` | `282d413c09884ba08f78e40bc2f7938a9d238cfba8d42a01d977ff2c82fdf46a` |
-| `results\end2end_selective_rag_proxy_summary_20260529.md` | `True` | `3279` | `877b0d3a607b7446b62372c9cb1fc8b7ef06dd98ccf243f989a29bd571983018` |
-| `results\mechanism_ablation_summary_20260529.json` | `True` | `10571` | `e3623e1a19d9e90ebc35c81378796a344023d4f8d0309fe591e9dc24efdb6056` |
-| `results\mechanism_ablation_summary_20260529.md` | `True` | `2368` | `ca2f842686b4312652bb5422c4e9882b3b728a85c967bacdb6a1650477f44fec` |
-| `results\v4_strong_baseline_summary_20260529.json` | `True` | `43608` | `1ab2459189ea04a2ee9c9eb52bd8cce7ec418e9eac91772fa6b46d3c9a61e5ac` |
-| `results\v4_strong_baseline_summary_20260529.md` | `True` | `3178` | `1f183a8ec5bc488cccf198d9b75e6d54a41f0a10259f20ab2d91116c846f26fe` |
-| `results\v4_anti_shortcut_summary_20260529.json` | `True` | `5006` | `7230eb45c7c404ace61443c0bb3b8b91112ab18c860855d974a1209a7d765194` |
-| `results\v4_anti_shortcut_summary_20260529.md` | `True` | `1558` | `befdff2bcdee6b7a70e95ad69b26e94bce60ba051f7e26b9b18e66fdccbbe5dd` |
-| `results\v4_failure_taxonomy_summary_20260529.json` | `True` | `46069` | `459276f2cc7be6e307b2bb1691095ce6522365b3223ef3483c77d44c60177a7f` |
-| `results\v4_failure_taxonomy_summary_20260529.md` | `True` | `3223` | `f4ad1e3cbc0b88add8b8c7b3993c0442ae756ce1b58c6cb8765ed1f99ee8c34f` |
-| `results\v4_case_gallery_summary_20260529.json` | `True` | `1882` | `6c87ee866b0e6244705b3261920a8f77adbc6dbe59a4b8ef0c7295dd05e73211` |
-| `results\clean_sufficiency_misleading_v4_20260529.json` | `True` | `2465` | `c921f89b742c65afd6407219ba4c716f2c3dd8d628a433b515fb20089800dcf5` |
+| `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json` | `True` | `8163` | `62314b856fbe2f5713629dcaa7ce5ac3e90a443bde08f4e480aa6f874f5e2a74` |
+| `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.md` | `True` | `1930` | `69deb3f8aad8c745da3ac2c3d5141b745fd251adfae9d4ad88fbafd15656458f` |
+| `results\end2end_selective_rag_proxy_summary_20260529.json` | `True` | `13211` | `798df4468ea11734ee89b74ca725c75d2f853a3c9526377d4c47649e2b3403b5` |
+| `results\end2end_selective_rag_proxy_summary_20260529.md` | `True` | `3279` | `6c4b3ae2c2ec090acd3ee2bed7884723ec44466ce96a76bd1a4487be30553c4d` |
+| `results\mechanism_ablation_summary_20260529.json` | `True` | `10571` | `6cbbdb99b6aac74a56d08d828186291d4652a36f3b20bd8fd03f0a2591656eef` |
+| `results\mechanism_ablation_summary_20260529.md` | `True` | `2368` | `081d38dd6b4e14d6ad282c6910cd2d71756f064059f4ff1e890fdf3550a1ed94` |
+| `results\v4_strong_baseline_summary_20260529.json` | `True` | `43608` | `e6c847d0605072a1194606e61ef60bab33783e7009e492fb5b02430c507c6a94` |
+| `results\v4_strong_baseline_summary_20260529.md` | `True` | `3178` | `8d97dfcd88a58764d8f41275f6ccab63916fb7ed1989550fda7ecc5facfa4aae` |
+| `results\v4_anti_shortcut_summary_20260529.json` | `True` | `5006` | `6b4b3e7dec323a082918cfe08f9357c96ecce06a629cb10f95bf9c9a35dfd613` |
+| `results\v4_anti_shortcut_summary_20260529.md` | `True` | `1558` | `d30170806e6ec62659ef77173687582192fdd6e142fd1afbfa607e8771de9620` |
+| `results\v4_failure_taxonomy_summary_20260529.json` | `True` | `46069` | `a801bbd87b3f4505c12134feb9376365367532c7f33a2588c40a85cace771a8e` |
+| `results\v4_failure_taxonomy_summary_20260529.md` | `True` | `3223` | `05497bc9b1983018ed53e7536eac5731af7fb86ae9b5eb7102a338bb5bc3a944` |
+| `results\v4_case_gallery_summary_20260529.json` | `True` | `1882` | `12714bf730aca63526d0df497dd6e30095842def0e543b07cbbf3b882164fcdb` |
+| `results\clean_sufficiency_misleading_v4_20260529.json` | `True` | `2465` | `176e243bd6ba1dee669286eb3216c04ad7fc5f6018f23832d43b8ebd961fe530` |
 | `paper\case_studies\v4_case_gallery_20260529.jsonl` | `True` | `191730` | `f03232de577d772efa6cb88bb54c7c9e8b3d48881493364f7ac052c74dbe4a59` |
-| `paper\case_studies\v4_case_gallery_20260529.md` | `True` | `27403` | `ef9a5a37c2fb73424bcc1a07aab4f2058b9797f3dbaf8451d4f6fe17d3792da0` |
+| `paper\case_studies\v4_case_gallery_20260529.md` | `True` | `27403` | `10a695b5e299cbd698421aa5356f682f6f299c252d804cab439171a6a4360b2b` |
 | `paper\figures\clean_sufficiency_misleading_v4_20260529.csv` | `True` | `3097` | `ded3232932e843f23579e5f85768c2fe16a3e90f18f920532564c3def0c2ab5e` |
 | `paper\figures\clean_sufficiency_misleading_v4_20260529.svg` | `True` | `6083` | `a354e94977a8ffcf4d32cc4e560521006ab552b043189b98ea2dfd5103bd73f3` |
-| `paper\figures\clean_sufficiency_misleading_v4_20260529.md` | `True` | `914` | `110716b29b67202db38b007d35ecb16cc3d42a12fac009b0d60cee980b4a6bfa` |
-| `reproducibility\checksums.json` | `True` | `20601` | `ce0031e0e916e284f3fb658c00dba69ddff64d177d728e617f90cb6e4c3ad426` |
-| `reproducibility\seeds.json` | `True` | `1288` | `59e45f681f6af837d127abf85e7b75211e3203b1b6119df5242d5fcfe60c327d` |
-| `reproducibility\hardware.md` | `True` | `788` | `34c987313b67d4659dc70196f73fd20fd0e882a4235f2e5ce13233d7b208c86f` |
-| `reproducibility\artifact_manifest.md` | `True` | `13156` | `74a10e47a90d7ef9c76d4578f82825b9b2079971e805aebc51dbd8d4abea3063` |
-| `reproducibility\hidden_local_path_audit.json` | `True` | `297` | `af6defbddd59b5427efc8a1798e7a38a42b2dda1d42ff1ed379a898556515fd8` |
-| `reproducibility\hidden_local_path_audit.md` | `True` | `198` | `3e6e5b7e840e7999a28ed2866c34f11157e230a755952dde00a0ad1d166050c4` |
-| `reproducibility\reproduction_commands.md` | `True` | `584` | `8b468a26c5fb5f42b0bd75a6efd6a2545722d095d09376e3edaac422379f979b` |
-| `reproducibility\bundle_summary_20260529.json` | `True` | `1129` | `2047d4554204a2e263c57f19942d5b2e7836f095d3c024fe0205e366491f4cf3` |
-| `scripts\run_smoke.ps1` | `True` | `222` | `1b9277a8d0e10f4176d8de15c8f02783e8b6870b3bb900113f20e835fa56cb65` |
-| `scripts\run_main_tables.ps1` | `True` | `984` | `0f9f2fb52df85e425911207e1433a38ce2fb10868672a86bf92bd98f029e5ad6` |
+| `paper\figures\clean_sufficiency_misleading_v4_20260529.md` | `True` | `914` | `344a3df3220481a1d1b10d493eb72d1adc1c7196cd391e7590e0772180fdb7c8` |
+| `reproducibility\checksums.json` | `True` | `21803` | `5f59829d97056a558ab0dc1a480d2fbf2e263e61a310d05f30cb57e97ae7ac5e` |
+| `reproducibility\seeds.json` | `True` | `1288` | `902622a59346918ede8b28b01712705c4b5e036aae6eac448fba4541bb2bcdfa` |
+| `reproducibility\hardware.md` | `True` | `788` | `b2880336038bc6dcde1938ceb42e12ff633a5da0f9ac0cd79e8a661ed6159901` |
+| `reproducibility\artifact_manifest.md` | `True` | `13911` | `46a4310659741f647d1a6c00c793378b9f336d1dec204b30b551dfb95840ba79` |
+| `reproducibility\hidden_local_path_audit.json` | `True` | `297` | `24e07a9d32659354dfa72531e8e8648f78c5fa63357aa73801314ed6798679ee` |
+| `reproducibility\hidden_local_path_audit.md` | `True` | `198` | `67ad55522a7e9bd65a4c2d62d26535a9df16ca91a5da034e56947eaf07572465` |
+| `reproducibility\reproduction_commands.md` | `True` | `627` | `3f3f3099efd9793573b6323ec44ec9f5b8b041be4d5747d7ca3c662dfdcfa3a5` |
+| `reproducibility\bundle_summary_20260529.json` | `True` | `1207` | `695051afc18807a82903a96f28b47c6efe731e26623d63f4cce4751cf8f06b9f` |
+| `scripts\run_smoke.ps1` | `True` | `269` | `ba2fffb2d29487762fa0d9b20b2b31348c84db9d41d2ce8a72905de575725012` |
+| `scripts\run_main_tables.ps1` | `True` | `1223` | `a55e26f8b465ca95e54d1c8519896899803b5d5dfae2a42d7a46e039b1a15c33` |
 | `.github\workflows\ci.yml` | `True` | `571` | `745119d83f3c42e313a7dd1559e2efd93e5f9247850da0fd813b2705b4efae42` |
-| `experiments\reproduce_current_evidence_v4.py` | `True` | `17707` | `82ad8b012394c7af57c48d299dbd76da1f9a0ae8ed861f036c9d04f9bba6b9e3` |
-| `experiments\build_results_provenance_readme.py` | `True` | `11272` | `73fb1cd2925b570c2a332681d7beda1d135a4ac4df19ecb7a69be853fdf94837` |
-| `experiments\build_reproducibility_bundle.py` | `True` | `18176` | `b1ae2c4bce7fbf70e478263c4906310098e6bf962910b311c0f77b9ce313d0f6` |
+| `experiments\reproduce_current_evidence_v4.py` | `True` | `19054` | `f34dd5a3b26d383b73b9599f596c150c033cda1de27e3a04459998e479667e68` |
+| `experiments\verify_claims.py` | `True` | `4187` | `8088588cf429a613407aee71add076a116367b3ee945616a70c6c2834f94e4b6` |
+| `experiments\build_results_provenance_readme.py` | `True` | `11491` | `587db3c6dad21cc5222b272db15b5bf48ce6d5db4f1e467044bb6c860565ae55` |
+| `experiments\build_claims_ledger_markdown.py` | `True` | `5519` | `787ef83b3edbd2b63531e8e7a7f230c4f27787d406fa545955cb361d6a421404` |
+| `experiments\build_reproducibility_bundle.py` | `True` | `18592` | `35c8a11ddf771ae29ee4e8e3e4f471030a305a4a5f5046c375facccdddd90cac` |
 | `experiments\summarize_evidence_closure.py` | `True` | `56897` | `26a413e5abfbbbf08dc841edb52a532e92ea16ee4ab3732addf35bd7ec2f9c28` |
 | `experiments\summarize_neurips_readiness.py` | `True` | `9118` | `94c37350303e7d874824e8d3ce717449053d8c0485001229f35d384e8168e1d4` |
 | `experiments\summarize_mechanism_ablation.py` | `True` | `7701` | `a336bab17cb5b49aabc1aecc9aca84d190485238c61fb248a0a2fa95fe0c7100` |

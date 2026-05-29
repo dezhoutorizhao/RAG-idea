@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T01:54:01.682281+00:00`
+Generated: `2026-05-29T02:00:02.490229+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -18,9 +18,11 @@ Ready for NeurIPS main claim: `False`
 | build_clean_sufficiency_misleading_figure | `True` | `paper\figures\clean_sufficiency_misleading_v4_20260529.csv`<br>`results\clean_sufficiency_misleading_v4_20260529.json`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.svg`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.md` |
 | summarize_v4_anti_shortcut | `True` | `results\v4_anti_shortcut_summary_20260529.json`<br>`results\v4_anti_shortcut_summary_20260529.md` |
 | summarize_mechanism_ablation | `True` | `results\mechanism_ablation_summary_20260529.json`<br>`results\mechanism_ablation_summary_20260529.md` |
+| verify_claims | `True` | `results\claims_verification.json` |
 | summarize_evidence_closure | `False` | `results\evidence_closure_status_v4.json`<br>`results\evidence_closure_status_v4.md` |
 | summarize_neurips_readiness | `False` | `results\neurips_readiness_matrix_20260529.json`<br>`results\neurips_readiness_matrix_20260529.md` |
 | build_results_provenance_readme | `True` | `results\results_provenance_manifest_20260529.json`<br>`results\README.md` |
+| build_claims_ledger_markdown | `True` | `CLAIMS_LEDGER.md`<br>`results\claims_ledger_markdown_summary_20260529.json` |
 | build_reproducibility_bundle | `True` | `reproducibility/checksums.json`<br>`reproducibility/seeds.json`<br>`reproducibility/hardware.md`<br>`reproducibility/artifact_manifest.md`<br>`reproducibility/hidden_local_path_audit.json`<br>`reproducibility/hidden_local_path_audit.md`<br>`reproducibility/reproduction_commands.md`<br>`reproducibility/bundle_summary_20260529.json` |
 
 ## Gate Summary

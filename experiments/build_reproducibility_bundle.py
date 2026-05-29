@@ -61,6 +61,7 @@ def build_reproducibility_bundle(root: Path) -> dict[str, Any]:
 
     manifest = _load_json(root / "results/v4_evidence_package_manifest_20260529.json")
     closure = _load_json(root / "results/evidence_closure_status_v4.json")
+    claims_summary = _load_optional_json(root / "results/claims_ledger_markdown_summary_20260529.json")
     checkpoint = _load_optional_json(root / "results/corm_remote_checkpoint_status.json")
     release = _load_optional_json(root / "results/corm_release_manifest.json")
     remote_storage = _load_optional_json(root / "results/remote_storage_status_20260529.json")
@@ -101,6 +102,10 @@ def build_reproducibility_bundle(root: Path) -> dict[str, Any]:
         "artifact_checksum_count": len(checksums["artifacts"]),
         "dataset_construction_hash_count": len(checksums["dataset_construction_artifacts"]),
         "checkpoint_hash_available": bool(checksums["checkpoints"]),
+        "claims_ledger_markdown_ready": claims_summary.get("failed_claims") == 0
+        if claims_summary
+        else False,
+        "claims_ledger_total_claims": claims_summary.get("total_claims"),
         "seed_source_count": len(seeds["sources"]),
         "unique_seed_count": len(seeds["unique_seeds"]),
         "hidden_local_path_finding_count": hidden_path_audit["finding_count"],
@@ -304,8 +309,9 @@ def _render_artifact_manifest(manifest: dict[str, Any], checksums: dict[str, Any
         f"Manifest artifacts: `{manifest.get('artifact_count')}`.",
         f"Missing artifacts: `{manifest.get('missing_artifact_count')}`.",
         f"Dataset construction hashes: `{len(checksums['dataset_construction_artifacts'])}`.",
-        f"Checkpoint hashes: `{len(checksums['checkpoints'])}`.",
-        "",
+            f"Checkpoint hashes: `{len(checksums['checkpoints'])}`.",
+            f"Claims ledger markdown: `CLAIMS_LEDGER.md`.",
+            "",
         "## Current Evidence Artifacts",
         "",
         "| Path | Bytes | SHA256 |",
@@ -355,7 +361,7 @@ def _render_reproduction_commands() -> str:
             "Equivalent command:",
             "",
             "```powershell",
-            "$env:PYTHONPATH='src'; python -m pytest tests/test_build_results_provenance_readme.py tests/test_build_reproducibility_bundle.py tests/test_verify_v4_evidence_package.py -q",
+            "$env:PYTHONPATH='src'; python -m pytest tests/test_build_results_provenance_readme.py tests/test_build_claims_ledger_markdown.py tests/test_build_reproducibility_bundle.py tests/test_verify_v4_evidence_package.py -q",
             "```",
             "",
             "## Main Current-Evidence Tables",

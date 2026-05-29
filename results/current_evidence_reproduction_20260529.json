@@ -98,6 +98,13 @@
       "ready": true
     },
     {
+      "name": "verify_claims",
+      "outputs": [
+        "results\\claims_verification.json"
+      ],
+      "ready": true
+    },
+    {
       "name": "summarize_evidence_closure",
       "outputs": [
         "results\\evidence_closure_status_v4.json",
@@ -118,6 +125,14 @@
       "outputs": [
         "results\\results_provenance_manifest_20260529.json",
         "results\\README.md"
+      ],
+      "ready": true
+    },
+    {
+      "name": "build_claims_ledger_markdown",
+      "outputs": [
+        "CLAIMS_LEDGER.md",
+        "results\\claims_ledger_markdown_summary_20260529.json"
       ],
       "ready": true
     },
@@ -145,7 +160,7 @@
     "human_audit_v4_ready": false,
     "remote_storage_ready": false
   },
-  "generated_at_utc": "2026-05-29T01:54:01.682281+00:00",
+  "generated_at_utc": "2026-05-29T02:00:02.490229+00:00",
   "ready_for_neurips_main_claim": false,
   "root": ".",
   "strict": false

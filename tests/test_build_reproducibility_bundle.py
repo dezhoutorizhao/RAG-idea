@@ -44,11 +44,17 @@ def test_build_reproducibility_bundle_writes_core_outputs(tmp_path):
             "sha256_match": True,
         },
     )
+    _write_json(
+        results / "claims_ledger_markdown_summary_20260529.json",
+        {"total_claims": 1, "failed_claims": 0},
+    )
 
     summary = build_reproducibility_bundle(tmp_path)
 
     assert summary["artifact_checksum_count"] == 1
     assert summary["checkpoint_hash_available"] is True
+    assert summary["claims_ledger_markdown_ready"] is True
+    assert summary["claims_ledger_total_claims"] == 1
     assert summary["hidden_local_path_passed"] is True
     assert (tmp_path / "reproducibility/checksums.json").exists()
     assert (tmp_path / "reproducibility/seeds.json").exists()

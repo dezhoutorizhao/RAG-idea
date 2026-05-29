@@ -1,0 +1,494 @@
+{
+  "claim_boundary": "This markdown ledger mirrors CLAIMS_LEDGER.json and results/claims_verification.json. It documents support and limitations; it does not upgrade bridge, proxy, or pending human-audit evidence into NeurIPS-ready main-claim support.",
+  "claims": [
+    {
+      "check_count": 4,
+      "declared_status": "supported_bridge",
+      "evidence_files": [
+        "results/hotpot_orbits_corm_800_eval_fullabl.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C1_hotpot_main_gain",
+      "limitations": [
+        "Bridge split uses structural labels from Hotpot supporting facts, not completed human audit.",
+        "Full CoRM-RAG retrieval-generation evaluation is not reproduced."
+      ],
+      "passed_check_count": 4,
+      "text": "On the HotpotQA bridge split with released CoRM critic scores, CSRM lowers selective risk versus CoRM clean scoring, SURE-style single-set sufficiency, and naive orbit averaging.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 2,
+      "declared_status": "supported_bridge",
+      "evidence_files": [
+        "results/hotpot_corm_multiseed_summary_fullabl.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C2_hotpot_multiseed_stability",
+      "limitations": [
+        "All seeds are from the same HotpotQA validation source."
+      ],
+      "passed_check_count": 2,
+      "text": "The HotpotQA bridge gain is stable across three random data seeds.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 2,
+      "declared_status": "supported_bridge",
+      "evidence_files": [
+        "results/hotpot_corm_multiseed_summary_fullabl.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C3_orbit_alignment_required",
+      "limitations": [
+        "The shuffled ablation tests orbit alignment, not all possible verifier-call budget confounds."
+      ],
+      "passed_check_count": 2,
+      "text": "CSRM's gain is not explained by using more perturbation calls alone; shuffled perturbation alignment collapses performance.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 2,
+      "declared_status": "supported_bridge",
+      "evidence_files": [
+        "results/hotpot_corm_multiseed_summary_fullabl.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C4_answer_consistency_mechanism",
+      "limitations": [
+        "Mechanism evidence is strongest for HotpotQA; FEVER v3 near-miss is a deliberately constructed heuristic stress split pending audit."
+      ],
+      "passed_check_count": 2,
+      "text": "Answer/support-signature consistency is a necessary mechanism on HotpotQA bridge splits.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 3,
+      "declared_status": "supported_secondary_bridge",
+      "evidence_files": [
+        "results/fever_nearmiss_corm_v3_multiseed_summary.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C5_fever_second_domain_sanity",
+      "limitations": [
+        "The FEVER v3 near-miss split supersedes earlier builder versions whose audits exposed invalid missing-evidence coverage and non-gold high-support feature leakage.",
+        "The near-miss split still uses deliberately hard verifier-feature assignments and remains a heuristic stress bridge until human semantic audit is complete."
+      ],
+      "passed_check_count": 3,
+      "text": "FEVER v3 near-miss dilution provides a second real-domain stress bridge where CSRM separates fragile orbits better than naive orbit averaging after support-key budget and non-gold support-feature audits.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 2,
+      "declared_status": "unsupported_until_audited",
+      "evidence_files": [
+        "results/audit_sample_100_v3_summary.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C6_human_audit_not_complete",
+      "limitations": [
+        "No human-audited performance claim can be made yet."
+      ],
+      "passed_check_count": 2,
+      "text": "Human audit is prepared but not complete.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 3,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/fever_nearmiss_v3_case_studies.json",
+        "results/hotpot_case_studies.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C7_case_studies_available",
+      "limitations": [
+        "Case studies are selected from heuristic-label bridge data and must not replace human audit."
+      ],
+      "passed_check_count": 3,
+      "text": "Representative Hotpot and FEVER case studies have been extracted for failure and limitation analysis.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 4,
+      "declared_status": "supported_bridge",
+      "evidence_files": [
+        "results/fever_nearmiss_corm_v3_paired_comparison.json",
+        "results/hotpot_corm_paired_comparison.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C8_paired_bootstrap_positive_deltas",
+      "limitations": [
+        "Paired bootstrap is computed over bridge labels; it does not resolve human-audit or verifier-validity gaps."
+      ],
+      "passed_check_count": 4,
+      "text": "Paired bootstrap comparisons show positive selective-risk reductions for CSRM versus naive orbit averaging on both Hotpot and FEVER v3 near-miss bridge splits.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 2,
+      "declared_status": "unsupported_until_preflight_passes",
+      "evidence_files": [
+        "results/corm_reproduction_preflight.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C9_corm_original_reproduction_blocked",
+      "limitations": [
+        "The released Evidence Critic checkpoint is present, but original end-to-end reproduction still requires data/index files and runtime dependencies.",
+        "This claim is a blocker statement, not a performance result."
+      ],
+      "passed_check_count": 2,
+      "text": "Full CoRM-RAG original NQ/Biased-NQ/TruthfulQA reproduction is not complete in the current environment.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 4,
+      "declared_status": "unsupported_until_stronger_calibration",
+      "evidence_files": [
+        "results/fever_nearmiss_corm_v3_calibration_multiseed.json",
+        "results/hotpot_corm_calibration_multiseed.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C10_calibrated_risk_guarantee_not_supported",
+      "limitations": [
+        "The calibrated model improves ranking quality, but threshold transfer misses the 0.20 risk target in one of three split seeds on Hotpot and two of three FEVER v3 near-miss split seeds.",
+        "Zero-coverage thresholds are treated as vacuous and do not count as formal guarantees."
+      ],
+      "passed_check_count": 4,
+      "text": "Current split-calibrated CSRM results do not support a formal risk guarantee at target risk 0.20.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 5,
+      "declared_status": "supported_partial_pressure_test",
+      "evidence_files": [
+        "results/fever_nearmiss_corm_v3_risk_control_cp_multiseed.json",
+        "results/hotpot_corm_risk_control_cp_multiseed.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C14_cp_risk_control_partial_hotpot_only",
+      "limitations": [
+        "The Clopper-Pearson bound is applied to calibration-set selective risk only; held-out target hits are empirical transfer checks, not distribution-free guarantees under domain or split shift.",
+        "The FEVER v3 near-miss bridge still misses the target in two of three split seeds for logistic CSRM.",
+        "Baselines without a feasible non-vacuous threshold remain zero-coverage under this conservative target and should not be counted as successful risk control."
+      ],
+      "passed_check_count": 5,
+      "text": "A conservative Clopper-Pearson calibration pressure test supports empirical risk-target transfer for logistic CSRM on Hotpot only; FEVER v3 near-miss still fails the 0.20 target in two of three split seeds, so no general formal risk-control claim is supported.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 5,
+      "declared_status": "supported_blocker",
+      "evidence_files": [
+        "results/corm_reproduction_path_audit.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C15_corm_reproduction_path_blocked",
+      "limitations": [
+        "This is a source-path audit of the currently available repository, not proof that authors cannot provide the missing artifacts out of band.",
+        "Manual reconstruction may still be possible by adding a FAISS builder and recreating the Biased-NQ perturbation file, but that would no longer be a direct reproduction of the released evaluation pipeline.",
+        "The remote server has sufficient GPU hardware but currently lacks the ML runtime stack; environment setup alone does not solve the missing exact data/index generation path."
+      ],
+      "passed_check_count": 5,
+      "text": "The released CoRM-RAG repository does not expose a complete scripted path to rebuild the runtime artifacts required by run_eval.sh: wiki_passages.jsonl is partially scripted, but wiki.faiss and biased_nq_test.jsonl lack exact detected producers.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 3,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/corm_reproduction_path_audit.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C16_corm_supplemental_reconstruction_tools",
+      "limitations": [
+        "These are supplemental reconstruction helpers, not upstream CoRM-RAG release files.",
+        "Running the full reconstruction still requires Wikipedia embeddings/passages, perturbation generation or original perturbation JSONL, FAISS, vLLM, and enough disk/GPU resources.",
+        "Results from reconstructed artifacts must be reported as reconstructed-pipeline evidence unless exact equivalence to the authors' original artifacts is established."
+      ],
+      "passed_check_count": 3,
+      "text": "This workspace now contains supplemental tools for a documented CoRM artifact reconstruction attempt: a FAISS builder from wiki embeddings and a Biased-NQ materializer from perturbation JSONL.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 5,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/corm_reconstruction_plan.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C17_corm_reconstruction_plan_ready",
+      "limitations": [
+        "The plan has not been executed; it is an execution artifact, not a reproduced result.",
+        "The plan still requires full Wikipedia encoding, FAISS construction, perturbation generation or staging, and vLLM evaluation.",
+        "The plan intentionally omits passwords and API keys; secrets must be provided by the caller or secure environment variables."
+      ],
+      "passed_check_count": 5,
+      "text": "A machine-readable remote reconstruction plan now exists for running a documented CoRM reconstructed pipeline on the /mnt/ntfs-disk server workspace without writing secrets into scripts.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 4,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/corm_remote_scripts_manifest.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C18_corm_remote_script_pack_materialized",
+      "limitations": [
+        "The full ordered script pack has not been run end-to-end on the remote server; targeted runtime-bootstrap and staged-input smoke paths have been exercised separately.",
+        "The scripts still require full Wikipedia/FAISS generation, API credentials or staged perturbations, and substantial compute.",
+        "The script pack deliberately uses environment-variable references for secrets rather than embedding secret values."
+      ],
+      "passed_check_count": 4,
+      "text": "The remote CoRM reconstruction plan has been materialized into an ordered, secret-free shell script pack for execution on the /mnt/ntfs-disk server workspace.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 5,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/corm_remote_runtime_status.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C19_corm_remote_runtime_ready",
+      "limitations": [
+        "The runtime is transient because it lives under /dev/shm and must be recreated after a reboot.",
+        "This is runtime readiness only, not reconstructed evaluation evidence.",
+        "The CoRM checkpoint is now staged separately, but Wikipedia/FAISS/Biased-NQ artifacts have not been generated."
+      ],
+      "passed_check_count": 5,
+      "text": "The remote CoRM reconstruction environment now has an import-ready Python runtime with torch/CUDA, FAISS, Transformers, datasets, and vLLM available under the transient /dev/shm runtime root.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 3,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/corm_remote_checkpoint_status.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C20_corm_remote_checkpoint_uploaded",
+      "limitations": [
+        "Checkpoint staging is necessary for reconstructed evaluation but does not produce any evaluation metric.",
+        "Data/index artifacts are still missing."
+      ],
+      "passed_check_count": 3,
+      "text": "The 5.2GB released CoRM Evidence Critic checkpoint has been uploaded to the remote reconstruction workspace and verified by SHA256.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 4,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/corm_streaming_encoder_remote_smoke.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C21_corm_streaming_encoder_smoke",
+      "limitations": [
+        "The smoke uses a dummy embedding backend and staged two-row JSONL input; it is an engineering path check, not full Wikipedia evidence.",
+        "Default direct huggingface.co access timed out on the server; C22 records that the HF Contriever/Wikipedia path works when launched with the mirror endpoint and /dev/shm cache, and a full Wikipedia construction job has been launched but is not complete."
+      ],
+      "passed_check_count": 4,
+      "text": "The supplemental streaming Wikipedia encoder can consume staged JSONL input on the remote server, write sharded embeddings, and feed the supplemental FAISS builder without using the full Wikipedia dataset in memory.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 6,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/corm_streaming_encoder_remote_hf_smoke.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C22_corm_hf_streaming_encoder_smoke",
+      "limitations": [
+        "This is a 16-passage engineering smoke, not a full Wikipedia index or CoRM evaluation.",
+        "The HuggingFace/model cache lives under /dev/shm and is transient.",
+        "The resulting FAISS index is supplemental reconstructed-pipeline infrastructure, not the authors' original wiki.faiss artifact."
+      ],
+      "passed_check_count": 6,
+      "text": "The supplemental streaming Wikipedia encoder can stream real Wikipedia through a reachable HuggingFace mirror on the remote server, encode passages with facebook/contriever-msmarco on CUDA, and build a FAISS index from sharded 768-dimensional embeddings.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 5,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/corm_template_biased_nq_remote_smoke.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C23_corm_template_biased_nq_smoke",
+      "limitations": [
+        "The template fallback is for reconstructed-pipeline smoke tests only.",
+        "It is not the authors' OpenAI-generated perturbation set and must not be reported as original Biased-NQ evidence.",
+        "It does not remove the need for API-generated or author-provided perturbations for serious reproduction claims."
+      ],
+      "passed_check_count": 5,
+      "text": "When OpenAI-compatible API credentials are unavailable, the reconstructed pipeline has a deterministic template fallback that can produce structurally valid NQ perturbations and a Biased-NQ-format smoke file on the remote server.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 5,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/corm_eval_stage_dir_patch_status.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C24_corm_eval_stage_dir_patch",
+      "limitations": [
+        "This is deployment-readiness evidence only, not a reconstructed CoRM evaluation result.",
+        "The patch does not create wiki.faiss, wiki_passages.jsonl, original Biased-NQ perturbations, or any evaluation metrics.",
+        "Symlink mode depends on the final FAISS file staying available under the remote persistent data directory."
+      ],
+      "passed_check_count": 5,
+      "text": "The reconstructed CoRM evaluation scripts have been patched and redeployed so staging can use a large persistent stage directory and symlink wiki.faiss instead of copying it under the almost-full root filesystem.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 6,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/corm_template_smoke_eval_readiness_status.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C25_corm_template_smoke_eval_readiness",
+      "limitations": [
+        "This is readiness evidence for the full-index watcher-triggered smoke path; that path has not run and has produced no full-index metrics.",
+        "The path uses deterministic template perturbations and must not be reported as original Biased-NQ evidence.",
+        "The deployed script now uses a Qwen2.5 generator because the current remote Transformers/vLLM stack does not recognize Qwen3; this is a runtime-compatible reconstructed smoke choice, not an original-artifact equivalence claim."
+      ],
+      "passed_check_count": 6,
+      "text": "A bounded template Biased-NQ reconstructed-eval smoke path has been generated, deployed, and syntax-checked so the first post-FAISS evaluation can run a small, explicitly smoke-labeled Biased_NQ path before any full reconstructed evaluation.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 4,
+      "declared_status": "supported_operational_status",
+      "evidence_files": [
+        "results/corm_template_smoke_eval_watcher_status.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C26_corm_template_smoke_eval_watcher",
+      "limitations": [
+        "This is operational status evidence only; the watcher is not currently running.",
+        "The watcher should be redeployed only after wiki.faiss exists or after the storage situation is stable.",
+        "The eventual full-index smoke result, if produced, remains reconstructed-pipeline plumbing evidence rather than original Biased-NQ or full CoRM-RAG reproduction evidence."
+      ],
+      "passed_check_count": 4,
+      "text": "The post-FAISS template Biased_NQ smoke watcher was intentionally paused after the second NTFS/fuseblk storage failure so file records could be preserved for the active full-index reconstruction job.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 8,
+      "declared_status": "supported_structural_audit",
+      "evidence_files": [
+        "results/fever_nearmiss_corm_v3_orbit_consistency_audit.json",
+        "results/fever_nearmiss_corm_v3_seed31_orbit_consistency_audit.json",
+        "results/fever_nearmiss_corm_v3_seed47_orbit_consistency_audit.json",
+        "results/hotpot_orbit_consistency_audit.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C11_structural_consistency_audits_pass",
+      "limitations": [
+        "This deterministic audit checks implemented structural and dataset-provenance invariants only; it does not replace human semantic labeling.",
+        "The audit proves that the current generated orbit files satisfy implemented invariants; it does not prove that every heuristic label is semantically correct."
+      ],
+      "passed_check_count": 8,
+      "text": "The current HotpotQA and FEVER v3 orbit files pass structural and dataset-constraint consistency checks for source provenance, label-source metadata, generated labels, split names, perturbation counts/types, support-key lineage, duplicate evidence ids, support-key coverage, support-feature provenance, and verifier-feature ranges.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 6,
+      "declared_status": "supported_probe",
+      "evidence_files": [
+        "results/audit_sample_paper_1000_v3_nli_set_eval.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C12_nli_set_probe_cross_scorer",
+      "limitations": [
+        "This is an automated cross-scorer probe using `cross-encoder/nli-deberta-v3-small`, not a validated human semantic audit.",
+        "The labels remain the v3 heuristic audit-sample labels; this result tests feature-source robustness, not final ground-truth validity.",
+        "The NLI verifier is set-level and off-the-shelf, so it should be presented as sensitivity analysis rather than primary evidence."
+      ],
+      "passed_check_count": 6,
+      "text": "On the v3 paper-grade audit sample rescored with an independent set-level NLI verifier, CSRM still improves AUROC and Risk@30 versus naive orbit averaging, SURE-style single-set sufficiency, and shuffled perturbation alignment.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 3,
+      "declared_status": "supported_blocker",
+      "evidence_files": [
+        "results/corm_release_manifest.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C13_hf_release_checkpoint_only",
+      "limitations": [
+        "This claim is limited to the Hugging Face model release queried in `results/corm_release_manifest.json`.",
+        "GitHub API querying may be rate-limited; the blocker claim should be read together with the local preflight report.",
+        "The data artifacts could still be obtainable from authors or rebuilt from upstream sources, but they are not present in the queried HF release."
+      ],
+      "passed_check_count": 3,
+      "text": "The public Hugging Face release for CoRM-RAG contains the released critic checkpoint but does not contain the data/index artifacts required for full original retrieval-generation reproduction.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 8,
+      "declared_status": "supported_artifact",
+      "evidence_files": [
+        "results/corm_partial_template_eval_smoke_status.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C27_corm_partial_template_eval_smoke",
+      "limitations": [
+        "This is an isolated four-shard partial-index smoke using deterministic template perturbations; it is not a full Wikipedia/FAISS index and not original Biased-NQ evidence.",
+        "The evaluation uses only two examples and produced accuracy 0.0, so it must not be used as a performance claim.",
+        "The result validates deployment plumbing and identifies the runtime-compatible generator path while the full reconstruction remains incomplete."
+      ],
+      "passed_check_count": 8,
+      "text": "An isolated partial-index template Biased_NQ smoke evaluation completed on the remote server, validating FAISS loading, retrieval, released CoRM critic scoring, vLLM generation, metric writing, runtime PATH wiring, and a Qwen2.5 generator fallback on a 200,000-vector reconstructed index.",
+      "verification_status": "pass"
+    },
+    {
+      "check_count": 6,
+      "declared_status": "supported_blocker",
+      "evidence_files": [
+        "results/corm_full_wikipedia_job_status.json"
+      ],
+      "failed_check_count": 0,
+      "id": "C28_corm_full_wikipedia_reconstruction_storage_blocked",
+      "limitations": [
+        "This is documented reconstruction progress plus a storage blocker, not a completed original CoRM-RAG reproduction.",
+        "A reliable ext4/XFS persistent target or author-provided artifacts are still needed before reporting full retrieval-generation metrics.",
+        "Continuing on the current NTFS/fuseblk mount is not evidence-efficient because both embedding shard writes and wiki_passages.jsonl writes have repeatedly failed."
+      ],
+      "passed_check_count": 6,
+      "text": "The full Wikipedia/FAISS reconstruction attempt made additional progress to a complete 250k-passage shard 000051, but the current remote path is blocked by NTFS/fuseblk storage I/O failures before wiki.faiss can be built.",
+      "verification_status": "pass"
+    }
+  ],
+  "failed_claims": 0,
+  "generated_at_utc": "2026-05-29T02:00:02.924071+00:00",
+  "passed_claims": 28,
+  "source": {
+    "ledger": "CLAIMS_LEDGER.json",
+    "verification": "results\\claims_verification.json"
+  },
+  "status_counts": {
+    "supported_artifact": 12,
+    "supported_blocker": 3,
+    "supported_bridge": 5,
+    "supported_operational_status": 1,
+    "supported_partial_pressure_test": 1,
+    "supported_probe": 1,
+    "supported_secondary_bridge": 1,
+    "supported_structural_audit": 1,
+    "unsupported_until_audited": 1,
+    "unsupported_until_preflight_passes": 1,
+    "unsupported_until_stronger_calibration": 1
+  },
+  "total_claims": 28,
+  "verification_status_counts": {
+    "pass": 28
+  },
+  "verification_total_claims": 28
+}
