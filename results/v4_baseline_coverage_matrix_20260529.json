@@ -1,0 +1,146 @@
+{
+  "all_required_baselines_present": false,
+  "claim_policy": "This matrix audits coverage of required strong-baseline families. It does not upgrade proxy or partial baselines into faithful end-to-end baselines.",
+  "generated_at_utc": "2026-05-29T02:37:50.888523+00:00",
+  "method_union": [
+    "calibrated_logistic_context",
+    "calibrated_logistic_orbit",
+    "context_sufficiency_clean",
+    "corm_max_clean",
+    "corm_mean_clean",
+    "csrm_rule",
+    "equal_budget_ensemble_logistic",
+    "equal_budget_mean",
+    "equal_budget_min",
+    "equal_budget_q25",
+    "faithful_sure_multi",
+    "retrieval_stability",
+    "self_consistency_proxy"
+  ],
+  "rows": [
+    {
+      "boundary": "CoRM-derived clean/context reducers are present, but full faithful CoRM-RAG risk-aware end-to-end reproduction remains blocked.",
+      "matched_methods": [
+        "corm_max_clean",
+        "corm_mean_clean"
+      ],
+      "missing_methods": [],
+      "plan_reference": "RAG-idea\u6539\u8fdb.md 5.5.2",
+      "required_methods": [
+        "corm_max_clean",
+        "corm_mean_clean"
+      ],
+      "requirement": "faithful_or_official_corm_rag",
+      "status": "partial"
+    },
+    {
+      "boundary": "Multi-evidence SURE-style sufficiency aggregation is present.",
+      "matched_methods": [
+        "faithful_sure_multi"
+      ],
+      "missing_methods": [],
+      "plan_reference": "RAG-idea\u6539\u8fdb.md 5.5.2 / 6.4",
+      "required_methods": [
+        "faithful_sure_multi"
+      ],
+      "requirement": "faithful_sure_style_multi_evidence",
+      "status": "present"
+    },
+    {
+      "boundary": "Context-sufficiency and learned context-only baselines are present.",
+      "matched_methods": [
+        "context_sufficiency_clean",
+        "calibrated_logistic_context"
+      ],
+      "missing_methods": [],
+      "plan_reference": "RAG-idea\u6539\u8fdb.md 5.5.2",
+      "required_methods": [
+        "context_sufficiency_clean",
+        "calibrated_logistic_context"
+      ],
+      "requirement": "context_sufficiency_classifier",
+      "status": "present"
+    },
+    {
+      "boundary": "No explicit LLM-as-judge baseline artifact is present in the current v4 baseline method union. Self-consistency proxy should not be reported as an LLM judge.",
+      "matched_methods": [],
+      "missing_methods": [
+        "llm_judge",
+        "llm_as_judge"
+      ],
+      "plan_reference": "RAG-idea\u6539\u8fdb.md 5.5.2 / 14.3 Phase 2",
+      "required_methods": [
+        "llm_judge",
+        "llm_as_judge"
+      ],
+      "requirement": "llm_judge",
+      "status": "missing"
+    },
+    {
+      "boundary": "A self-consistency proxy is present; it is not a full multi-sample generation self-consistency experiment.",
+      "matched_methods": [
+        "self_consistency_proxy"
+      ],
+      "missing_methods": [],
+      "plan_reference": "RAG-idea\u6539\u8fdb.md 5.5.2",
+      "required_methods": [
+        "self_consistency_proxy"
+      ],
+      "requirement": "self_consistency",
+      "status": "partial"
+    },
+    {
+      "boundary": "Equal-budget reducers and out-of-fold logistic ensemble are present.",
+      "matched_methods": [
+        "equal_budget_mean",
+        "equal_budget_min",
+        "equal_budget_q25",
+        "equal_budget_ensemble_logistic"
+      ],
+      "missing_methods": [],
+      "plan_reference": "RAG-idea\u6539\u8fdb.md 5.5.2",
+      "required_methods": [
+        "equal_budget_mean",
+        "equal_budget_min",
+        "equal_budget_q25",
+        "equal_budget_ensemble_logistic"
+      ],
+      "requirement": "equal_budget_orbit_ensemble",
+      "status": "present"
+    },
+    {
+      "boundary": "Retrieval-stability shortcut baseline is present.",
+      "matched_methods": [
+        "retrieval_stability"
+      ],
+      "missing_methods": [],
+      "plan_reference": "RAG-idea\u6539\u8fdb.md 5.5.2",
+      "required_methods": [
+        "retrieval_stability"
+      ],
+      "requirement": "retrieval_stability",
+      "status": "present"
+    },
+    {
+      "boundary": "Learned calibrated context/orbit baselines are present.",
+      "matched_methods": [
+        "calibrated_logistic_context",
+        "calibrated_logistic_orbit"
+      ],
+      "missing_methods": [],
+      "plan_reference": "RAG-idea\u6539\u8fdb.md 5.5.2 / 5.6",
+      "required_methods": [
+        "calibrated_logistic_context",
+        "calibrated_logistic_orbit"
+      ],
+      "requirement": "calibrated_logistic_baseline",
+      "status": "present"
+    }
+  ],
+  "source": "results\\v4_strong_baseline_summary_20260529.json",
+  "status_counts": {
+    "missing": 1,
+    "partial": 2,
+    "present": 5
+  }
+}

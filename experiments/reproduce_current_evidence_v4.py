@@ -38,6 +38,10 @@ from experiments.summarize_v4_strong_baselines import (
     render_markdown as render_v4_strong_baselines_markdown,
     summarize_v4_strong_baselines,
 )
+from experiments.summarize_v4_baseline_coverage import (
+    render_markdown as render_v4_baseline_coverage_markdown,
+    summarize_v4_baseline_coverage,
+)
 from experiments.summarize_v4_failure_taxonomy import (
     DEFAULT_INPUTS as DEFAULT_V4_FAILURE_TAXONOMY_INPUTS,
     render_markdown as render_v4_failure_taxonomy_markdown,
@@ -203,6 +207,22 @@ def reproduce_current_evidence_v4(
             "ready": not bool(
                 strong_baselines["aggregate"]["csrm_rule_vs_strongest"]["by_auroc"]["losses"]
             ),
+        }
+    )
+
+    baseline_coverage_json = results / "v4_baseline_coverage_matrix_20260529.json"
+    baseline_coverage_md = results / "v4_baseline_coverage_matrix_20260529.md"
+    baseline_coverage = summarize_v4_baseline_coverage(strong_baselines_json)
+    _write_json(baseline_coverage_json, baseline_coverage)
+    baseline_coverage_md.write_text(
+        render_v4_baseline_coverage_markdown(baseline_coverage),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "summarize_v4_baseline_coverage",
+            "outputs": [str(baseline_coverage_json), str(baseline_coverage_md)],
+            "ready": baseline_coverage["all_required_baselines_present"],
         }
     )
 

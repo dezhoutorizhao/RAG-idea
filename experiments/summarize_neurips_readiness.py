@@ -107,10 +107,13 @@ def _rows(closure: dict[str, Any], manifest: dict[str, Any], reproduction: dict[
         _row(
             "Strong baselines and equal-budget controls",
             PARTIAL if strong else FAIL,
-            ["results/v4_strong_baseline_summary_20260529.json"],
+            [
+                "results/v4_strong_baseline_summary_20260529.json",
+                "results/v4_baseline_coverage_matrix_20260529.json",
+            ],
             (
                 "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; "
-                "claims must use calibrated/proxy wording with caveats."
+                "coverage matrix also marks faithful CoRM and self-consistency as partial and LLM judge as missing."
             ),
         ),
         _row(

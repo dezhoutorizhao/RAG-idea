@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T02:33:41.612037+00:00`
+Generated: `2026-05-29T02:37:51.897457+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `18`; tracked artifacts: `92`.
+- Provenance steps: `19`; tracked artifacts: `95`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `92`; dataset construction hashes: `41`.
+- Artifact checksums: `95`; dataset construction hashes: `41`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -75,7 +75,7 @@ Hard blockers:
 - Independent external review: Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.
 
 Negative or partial evidence:
-- Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; claims must use calibrated/proxy wording with caveats.
+- Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage matrix also marks faithful CoRM and self-consistency as partial and LLM judge as missing.
 - End-to-end selective RAG (`partial`): Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction.
 - Risk-control claim (`fail`): Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.
 
