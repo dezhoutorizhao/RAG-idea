@@ -1,0 +1,47 @@
+{
+  "audit_dir": "results\\human_audit_v4",
+  "binary_comparable": 0,
+  "binary_mismatch_rate": null,
+  "binary_mismatches": 0,
+  "claim_policy": "This artifact compares heuristic labels with adjudicated human labels only when adjudicated labels exist. Pending labels are excluded from mismatch rates.",
+  "human_audit_complete": false,
+  "mismatch_artifact_ready": true,
+  "pack_count": 2,
+  "packs": [
+    {
+      "binary_comparable": 0,
+      "binary_mismatch_rate": null,
+      "binary_mismatches": 0,
+      "binary_mismatches_by_construction": {},
+      "claim_boundary": "Mismatch counts are undefined until adjudicated human labels exist. A zero mismatch count with zero comparable rows is not positive evidence.",
+      "manifest": "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.manifest.json",
+      "mismatch_examples": [],
+      "pack_name": "fever_v4_n100_structbalanced_blind100",
+      "pending_adjudications": 100,
+      "selected_items": 100,
+      "semantic_comparable": 0,
+      "semantic_mismatch_rate": null,
+      "semantic_mismatches": 0,
+      "semantic_mismatches_by_construction": {}
+    },
+    {
+      "binary_comparable": 0,
+      "binary_mismatch_rate": null,
+      "binary_mismatches": 0,
+      "binary_mismatches_by_construction": {},
+      "claim_boundary": "Mismatch counts are undefined until adjudicated human labels exist. A zero mismatch count with zero comparable rows is not positive evidence.",
+      "manifest": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.manifest.json",
+      "mismatch_examples": [],
+      "pack_name": "hotpot_v4_semanticswap_n100_blind200",
+      "pending_adjudications": 200,
+      "selected_items": 200,
+      "semantic_comparable": 0,
+      "semantic_mismatch_rate": null,
+      "semantic_mismatches": 0,
+      "semantic_mismatches_by_construction": {}
+    }
+  ],
+  "semantic_comparable": 0,
+  "semantic_mismatch_rate": null,
+  "semantic_mismatches": 0
+}

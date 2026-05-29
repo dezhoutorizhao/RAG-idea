@@ -56,6 +56,10 @@ from experiments.summarize_human_audit_v4_disagreements import (
     render_markdown as render_human_audit_disagreement_markdown,
     summarize_human_audit_v4_disagreements,
 )
+from experiments.summarize_human_audit_v4_mismatch import (
+    render_markdown as render_human_audit_mismatch_markdown,
+    summarize_human_audit_v4_mismatch,
+)
 from experiments.summarize_mechanism_ablation import (
     DEFAULT_INPUTS as DEFAULT_MECHANISM_ABLATION_INPUTS,
     render_markdown as render_mechanism_ablation_markdown,
@@ -119,6 +123,22 @@ def reproduce_current_evidence_v4(
             "name": "summarize_human_audit_v4_disagreements",
             "outputs": [str(human_disagreements_json), str(human_disagreements_md)],
             "ready": human_disagreements["taxonomy_artifact_ready"],
+        }
+    )
+
+    human_mismatch_json = results / "human_audit_v4_mismatch_20260529.json"
+    human_mismatch_md = results / "human_audit_v4_mismatch_20260529.md"
+    human_mismatch = summarize_human_audit_v4_mismatch(results / "human_audit_v4")
+    _write_json(human_mismatch_json, human_mismatch)
+    human_mismatch_md.write_text(
+        render_human_audit_mismatch_markdown(human_mismatch),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "summarize_human_audit_v4_mismatch",
+            "outputs": [str(human_mismatch_json), str(human_mismatch_md)],
+            "ready": human_mismatch["mismatch_artifact_ready"],
         }
     )
 

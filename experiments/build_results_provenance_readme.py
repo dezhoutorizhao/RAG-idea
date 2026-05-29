@@ -12,6 +12,7 @@ from typing import Any
 PROVENANCE_BY_STEP = {
     "summarize_human_audit_v4_status": "experiments/summarize_human_audit_v4_status.py",
     "summarize_human_audit_v4_disagreements": "experiments/summarize_human_audit_v4_disagreements.py",
+    "summarize_human_audit_v4_mismatch": "experiments/summarize_human_audit_v4_mismatch.py",
     "run_human_audit_eval_v4": "experiments/run_human_audit_eval_v4.py",
     "summarize_fever_cp_transfer_sweep": "experiments/summarize_fever_cp_transfer_sweep.py",
     "summarize_end2end_selective_rag_proxy": "experiments/summarize_end2end_selective_rag_proxy.py",
