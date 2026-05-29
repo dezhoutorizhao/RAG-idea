@@ -86,6 +86,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     mechanism_ablation = _mechanism_ablation_status(results)
     neurips_readiness = _neurips_readiness_status(results)
     results_provenance = _results_provenance_status(results)
+    reproducibility_bundle = _reproducibility_bundle_status(root)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -170,6 +171,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         },
         "current_evidence_reproduction": current_reproduction_status,
         "results_provenance": results_provenance,
+        "reproducibility_bundle": reproducibility_bundle,
         "neurips_readiness": neurips_readiness,
         "mechanism_ablation": mechanism_ablation,
         "end2end_selective_rag_proxy": end2end_proxy,
@@ -651,6 +653,25 @@ def _results_provenance_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _reproducibility_bundle_status(root: Path) -> dict[str, Any] | None:
+    path = root / "reproducibility/bundle_summary_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": "reproducibility/bundle_summary_20260529.json",
+        "artifact_checksum_count": payload.get("artifact_checksum_count"),
+        "dataset_construction_hash_count": payload.get("dataset_construction_hash_count"),
+        "checkpoint_hash_available": payload.get("checkpoint_hash_available"),
+        "unique_seed_count": payload.get("unique_seed_count"),
+        "hidden_local_path_passed": payload.get("hidden_local_path_passed"),
+        "hidden_local_path_finding_count": payload.get("hidden_local_path_finding_count"),
+        "remote_storage_ready": payload.get("remote_storage_ready"),
+        "claim_boundary": payload.get("claim_boundary"),
+        "outputs": payload.get("outputs", {}),
+    }
+
+
 def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     path = results / "human_audit_v4_eval_status_20260529.json"
     if not path.exists():
@@ -709,6 +730,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     claims = status["claim_verification"]
     reproduction = status.get("current_evidence_reproduction")
     results_provenance = status.get("results_provenance")
+    reproducibility_bundle = status.get("reproducibility_bundle")
     neurips_readiness = status.get("neurips_readiness")
     mechanism_ablation = status.get("mechanism_ablation")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
@@ -820,6 +842,26 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"missing current-step outputs: `{results_provenance['missing_output_count']}`; "
                 f"untracked current-step outputs: `{results_provenance['untracked_output_count']}`.",
                 f"- Claim boundary: {results_provenance['claim_boundary']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## Reproducibility Bundle", ""])
+    if reproducibility_bundle:
+        lines.extend(
+            [
+                f"- Artifact checksums: `{reproducibility_bundle['artifact_checksum_count']}`; "
+                f"dataset construction hashes: "
+                f"`{reproducibility_bundle['dataset_construction_hash_count']}`.",
+                f"- Checkpoint hash available: "
+                f"`{reproducibility_bundle['checkpoint_hash_available']}`; "
+                f"unique seeds: `{reproducibility_bundle['unique_seed_count']}`.",
+                f"- Hidden local path audit passed: "
+                f"`{reproducibility_bundle['hidden_local_path_passed']}`; "
+                f"findings: `{reproducibility_bundle['hidden_local_path_finding_count']}`.",
+                f"- Remote storage ready: `{reproducibility_bundle['remote_storage_ready']}`.",
+                f"- Claim boundary: {reproducibility_bundle['claim_boundary']}",
                 "",
             ]
         )

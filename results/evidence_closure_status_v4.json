@@ -93,7 +93,7 @@
     "risk50_wins": 12,
     "row_count": 12
   },
-  "generated_at_utc": "2026-05-29T01:45:14.093724+00:00",
+  "generated_at_utc": "2026-05-29T01:54:02.277238+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -517,9 +517,29 @@
     "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
     "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats."
   ],
+  "reproducibility_bundle": {
+    "artifact": "reproducibility/bundle_summary_20260529.json",
+    "artifact_checksum_count": 52,
+    "checkpoint_hash_available": true,
+    "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
+    "dataset_construction_hash_count": 41,
+    "hidden_local_path_finding_count": 0,
+    "hidden_local_path_passed": true,
+    "outputs": {
+      "artifact_manifest": "reproducibility\\artifact_manifest.md",
+      "checksums": "reproducibility\\checksums.json",
+      "hardware": "reproducibility\\hardware.md",
+      "hidden_local_path_audit_json": "reproducibility\\hidden_local_path_audit.json",
+      "hidden_local_path_audit_md": "reproducibility\\hidden_local_path_audit.md",
+      "reproduction_commands": "reproducibility\\reproduction_commands.md",
+      "seeds": "reproducibility\\seeds.json"
+    },
+    "remote_storage_ready": false,
+    "unique_seed_count": 3
+  },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 40,
+    "artifact_count": 52,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,
@@ -531,7 +551,7 @@
     },
     "readme_artifact": "results/README.md",
     "readme_exists": true,
-    "step_count": 13,
+    "step_count": 14,
     "untracked_output_count": 0
   },
   "risk_control": {

@@ -120,6 +120,20 @@
         "results\\README.md"
       ],
       "ready": true
+    },
+    {
+      "name": "build_reproducibility_bundle",
+      "outputs": [
+        "reproducibility/checksums.json",
+        "reproducibility/seeds.json",
+        "reproducibility/hardware.md",
+        "reproducibility/artifact_manifest.md",
+        "reproducibility/hidden_local_path_audit.json",
+        "reproducibility/hidden_local_path_audit.md",
+        "reproducibility/reproduction_commands.md",
+        "reproducibility/bundle_summary_20260529.json"
+      ],
+      "ready": true
     }
   ],
   "gate_summary": {
@@ -131,7 +145,7 @@
     "human_audit_v4_ready": false,
     "remote_storage_ready": false
   },
-  "generated_at_utc": "2026-05-29T01:44:29.668656+00:00",
+  "generated_at_utc": "2026-05-29T01:54:01.682281+00:00",
   "ready_for_neurips_main_claim": false,
   "root": ".",
   "strict": false

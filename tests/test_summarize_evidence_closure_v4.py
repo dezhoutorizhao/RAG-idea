@@ -11,6 +11,7 @@ from experiments.summarize_evidence_closure import (
     _remote_storage_probe_status,
     _mechanism_ablation_status,
     _neurips_readiness_status,
+    _reproducibility_bundle_status,
     _results_provenance_status,
     _semantic_swap_status,
     _v4_case_gallery_status,
@@ -545,6 +546,32 @@ def test_results_provenance_status_summarizes_readme_artifact(tmp_path):
     assert status["artifact_count"] == 32
     assert status["untracked_output_count"] == 7
     assert status["claim_boundary"] == "does not complete pending human audit labels"
+
+
+def test_reproducibility_bundle_status_summarizes_artifact_grade_outputs(tmp_path):
+    reproducibility = tmp_path / "reproducibility"
+    reproducibility.mkdir()
+    _write_json(
+        reproducibility / "bundle_summary_20260529.json",
+        {
+            "artifact_checksum_count": 40,
+            "dataset_construction_hash_count": 12,
+            "checkpoint_hash_available": True,
+            "unique_seed_count": 3,
+            "hidden_local_path_passed": True,
+            "hidden_local_path_finding_count": 0,
+            "remote_storage_ready": False,
+            "claim_boundary": "does not complete full reproduction",
+            "outputs": {"checksums": "reproducibility/checksums.json"},
+        },
+    )
+
+    status = _reproducibility_bundle_status(tmp_path)
+
+    assert status["artifact_checksum_count"] == 40
+    assert status["dataset_construction_hash_count"] == 12
+    assert status["checkpoint_hash_available"] is True
+    assert status["hidden_local_path_passed"] is True
 
 
 def test_current_reproduction_status_is_aggregated(tmp_path):

@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T01:44:29.668656+00:00`
+Generated: `2026-05-29T01:54:01.682281+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -21,6 +21,7 @@ Ready for NeurIPS main claim: `False`
 | summarize_evidence_closure | `False` | `results\evidence_closure_status_v4.json`<br>`results\evidence_closure_status_v4.md` |
 | summarize_neurips_readiness | `False` | `results\neurips_readiness_matrix_20260529.json`<br>`results\neurips_readiness_matrix_20260529.md` |
 | build_results_provenance_readme | `True` | `results\results_provenance_manifest_20260529.json`<br>`results\README.md` |
+| build_reproducibility_bundle | `True` | `reproducibility/checksums.json`<br>`reproducibility/seeds.json`<br>`reproducibility/hardware.md`<br>`reproducibility/artifact_manifest.md`<br>`reproducibility/hidden_local_path_audit.json`<br>`reproducibility/hidden_local_path_audit.md`<br>`reproducibility/reproduction_commands.md`<br>`reproducibility/bundle_summary_20260529.json` |
 
 ## Gate Summary
 

@@ -65,6 +65,7 @@ from experiments.build_results_provenance_readme import (
     build_results_provenance_readme,
     render_markdown as render_results_provenance_markdown,
 )
+from experiments.build_reproducibility_bundle import build_reproducibility_bundle
 
 
 DEFAULT_MANIFESTS = [
@@ -322,6 +323,26 @@ def reproduce_current_evidence_v4(
             "name": "build_results_provenance_readme",
             "outputs": [str(provenance_json), str(provenance_md)],
             "ready": provenance["missing_output_count"] == 0,
+        }
+    )
+    _write_json(output_json, report)
+    output_md.write_text(render_markdown(report), encoding="utf-8")
+
+    reproducibility = build_reproducibility_bundle(root)
+    commands.append(
+        {
+            "name": "build_reproducibility_bundle",
+            "outputs": [
+                "reproducibility/checksums.json",
+                "reproducibility/seeds.json",
+                "reproducibility/hardware.md",
+                "reproducibility/artifact_manifest.md",
+                "reproducibility/hidden_local_path_audit.json",
+                "reproducibility/hidden_local_path_audit.md",
+                "reproducibility/reproduction_commands.md",
+                "reproducibility/bundle_summary_20260529.json",
+            ],
+            "ready": reproducibility["hidden_local_path_passed"],
         }
     )
     _write_json(output_json, report)
