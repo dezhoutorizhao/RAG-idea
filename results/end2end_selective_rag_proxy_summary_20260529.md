@@ -1,6 +1,6 @@
 # End-to-End Selective RAG Proxy Summary
 
-Generated: `2026-05-29T02:19:33.881245+00:00`
+Generated: `2026-05-29T02:23:56.047881+00:00`
 
 ## Aggregate
 

@@ -8,6 +8,8 @@ Total items: `300`
 Adjudicated labels: `0`
 Pending: `300`
 Semantic label schema ready: `True`
+Adjudicated ambiguous rate: `None`
+Adjudicated ambiguous/error rate: `None`
 
 | Pack | Items | Auditor labeled | Adjudicated | Pending | Ready |
 |---|---:|---:|---:|---:|---|

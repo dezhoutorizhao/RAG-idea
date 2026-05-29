@@ -1,11 +1,22 @@
 {
+  "adjudicated_ambiguous_or_error_rate": null,
+  "adjudicated_ambiguous_rate": null,
   "adjudicated_labeled": 0,
+  "adjudicated_semantic_label_counts": {
+    "ambiguous": 0,
+    "annotation_error": 0,
+    "fragile": 0,
+    "stable_answerable": 0,
+    "unanswerable": 0
+  },
   "audit_dir": "results\\human_audit_v4",
   "claim_policy": "This report tracks human-audit readiness only. Empty or pending labels do not support human-audited claims.",
   "pack_count": 2,
   "packs": [
     {
       "adjudication": {
+        "ambiguous_or_error_rate": null,
+        "ambiguous_rate": null,
         "by_status": {
           "pending": 100
         },
@@ -15,7 +26,14 @@
         "items": 100,
         "labeled": 0,
         "path": "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.adjudicated_labels.jsonl",
-        "pending": 100
+        "pending": 100,
+        "semantic_label_counts": {
+          "ambiguous": 0,
+          "annotation_error": 0,
+          "fragile": 0,
+          "stable_answerable": 0,
+          "unanswerable": 0
+        }
       },
       "agreement": {
         "auditors": [
@@ -35,6 +53,7 @@
           }
         },
         "conflicts": 0,
+        "gwet_ac1_ready": true,
         "pairwise": [
           {
             "agreement_rate": null,
@@ -44,7 +63,8 @@
               "auditor2"
             ],
             "cohen_kappa": null,
-            "compared": 0
+            "compared": 0,
+            "gwet_ac1": null
           }
         ],
         "semantic_conflicts": 0,
@@ -56,12 +76,22 @@
               "auditor1",
               "auditor2"
             ],
-            "compared": 0
+            "compared": 0,
+            "gwet_ac1": null
           }
         ]
       },
+      "auditor_semantic_label_counts": {
+        "ambiguous": 0,
+        "annotation_error": 0,
+        "fragile": 0,
+        "stable_answerable": 0,
+        "unanswerable": 0
+      },
       "auditors": {
         "fever_v4_n100_structbalanced_blind100.auditor1.labels": {
+          "ambiguous_or_error_rate": null,
+          "ambiguous_rate": null,
           "completion_rate": 0.0,
           "exists": true,
           "has_label_semantic_column": true,
@@ -72,10 +102,19 @@
           "rows": 100,
           "semantic_completion_rate": 0.0,
           "semantic_invalid": 0,
+          "semantic_label_counts": {
+            "ambiguous": 0,
+            "annotation_error": 0,
+            "fragile": 0,
+            "stable_answerable": 0,
+            "unanswerable": 0
+          },
           "semantic_labeled": 0,
           "semantic_pending": 100
         },
         "fever_v4_n100_structbalanced_blind100.auditor2.labels": {
+          "ambiguous_or_error_rate": null,
+          "ambiguous_rate": null,
           "completion_rate": 0.0,
           "exists": true,
           "has_label_semantic_column": true,
@@ -86,6 +125,13 @@
           "rows": 100,
           "semantic_completion_rate": 0.0,
           "semantic_invalid": 0,
+          "semantic_label_counts": {
+            "ambiguous": 0,
+            "annotation_error": 0,
+            "fragile": 0,
+            "stable_answerable": 0,
+            "unanswerable": 0
+          },
           "semantic_labeled": 0,
           "semantic_pending": 100
         }
@@ -112,6 +158,8 @@
     },
     {
       "adjudication": {
+        "ambiguous_or_error_rate": null,
+        "ambiguous_rate": null,
         "by_status": {
           "pending": 200
         },
@@ -121,7 +169,14 @@
         "items": 200,
         "labeled": 0,
         "path": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.adjudicated_labels.jsonl",
-        "pending": 200
+        "pending": 200,
+        "semantic_label_counts": {
+          "ambiguous": 0,
+          "annotation_error": 0,
+          "fragile": 0,
+          "stable_answerable": 0,
+          "unanswerable": 0
+        }
       },
       "agreement": {
         "auditors": [
@@ -141,6 +196,7 @@
           }
         },
         "conflicts": 0,
+        "gwet_ac1_ready": true,
         "pairwise": [
           {
             "agreement_rate": null,
@@ -150,7 +206,8 @@
               "auditor2"
             ],
             "cohen_kappa": null,
-            "compared": 0
+            "compared": 0,
+            "gwet_ac1": null
           }
         ],
         "semantic_conflicts": 0,
@@ -162,12 +219,22 @@
               "auditor1",
               "auditor2"
             ],
-            "compared": 0
+            "compared": 0,
+            "gwet_ac1": null
           }
         ]
       },
+      "auditor_semantic_label_counts": {
+        "ambiguous": 0,
+        "annotation_error": 0,
+        "fragile": 0,
+        "stable_answerable": 0,
+        "unanswerable": 0
+      },
       "auditors": {
         "hotpot_v4_semanticswap_n100_blind200.auditor1.labels": {
+          "ambiguous_or_error_rate": null,
+          "ambiguous_rate": null,
           "completion_rate": 0.0,
           "exists": true,
           "has_label_semantic_column": true,
@@ -178,10 +245,19 @@
           "rows": 200,
           "semantic_completion_rate": 0.0,
           "semantic_invalid": 0,
+          "semantic_label_counts": {
+            "ambiguous": 0,
+            "annotation_error": 0,
+            "fragile": 0,
+            "stable_answerable": 0,
+            "unanswerable": 0
+          },
           "semantic_labeled": 0,
           "semantic_pending": 200
         },
         "hotpot_v4_semanticswap_n100_blind200.auditor2.labels": {
+          "ambiguous_or_error_rate": null,
+          "ambiguous_rate": null,
           "completion_rate": 0.0,
           "exists": true,
           "has_label_semantic_column": true,
@@ -192,6 +268,13 @@
           "rows": 200,
           "semantic_completion_rate": 0.0,
           "semantic_invalid": 0,
+          "semantic_label_counts": {
+            "ambiguous": 0,
+            "annotation_error": 0,
+            "fragile": 0,
+            "stable_answerable": 0,
+            "unanswerable": 0
+          },
           "semantic_labeled": 0,
           "semantic_pending": 200
         }

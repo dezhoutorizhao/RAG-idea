@@ -170,8 +170,10 @@ def test_merge_agreement_and_adjudication_v4(tmp_path):
     agreement = compute_agreement_v4(merged)
     assert agreement["pairwise"][0]["compared"] == 2
     assert agreement["pairwise"][0]["agreements"] == 1
+    assert round(agreement["pairwise"][0]["gwet_ac1"], 4) == 0.2
     assert agreement["semantic_pairwise"][0]["compared"] == 2
     assert agreement["semantic_pairwise"][0]["agreements"] == 1
+    assert round(agreement["semantic_pairwise"][0]["gwet_ac1"], 4) == 0.2
     assert len(agreement["conflicts"]) == 1
     assert len(agreement["semantic_conflicts"]) == 1
 

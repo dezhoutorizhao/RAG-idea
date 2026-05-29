@@ -55,6 +55,8 @@ def test_human_audit_v4_status_reports_pending_pack(tmp_path):
     assert status["total_items"] == 2
     assert status["adjudicated_labeled"] == 1
     assert status["pending"] == 1
+    assert status["adjudicated_semantic_label_counts"]["ambiguous"] == 0
+    assert status["adjudicated_ambiguous_rate"] is None
     assert status["packs"][0]["auditors"]["pack.auditor1.labels"]["labeled"] == 1
     assert status["packs"][0]["failed_gates"][0]["gate"] == "all_items_adjudicated"
 
@@ -118,6 +120,9 @@ def test_human_audit_v4_status_reports_semantic_schema_ready(tmp_path):
     assert status["semantic_label_schema_ready"] is True
     assert status["packs"][0]["semantic_label_schema_ready"] is True
     assert status["packs"][0]["auditors"]["pack.auditor1.labels"]["semantic_labeled"] == 1
+    assert status["packs"][0]["auditor_semantic_label_counts"]["stable_answerable"] == 2
+    assert status["packs"][0]["adjudication"]["semantic_label_counts"]["stable_answerable"] == 1
+    assert status["adjudicated_ambiguous_rate"] == 0
     assert status["packs"][0]["failed_gates"] == []
 
 

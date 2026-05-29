@@ -75,6 +75,7 @@ def compute_agreement_v4(merged_labels_path: Path) -> dict[str, Any]:
                 "agreements": agree,
                 "agreement_rate": agree / len(compared) if compared else None,
                 "cohen_kappa": _cohen_kappa([(l, r) for _, l, r in compared]),
+                "gwet_ac1": _gwet_ac1([(l, r) for _, l, r in compared]),
             }
         )
         semantic_pairwise.append(
@@ -85,6 +86,7 @@ def compute_agreement_v4(merged_labels_path: Path) -> dict[str, Any]:
                 "agreement_rate": semantic_agree / len(semantic_compared)
                 if semantic_compared
                 else None,
+                "gwet_ac1": _gwet_ac1([(l, r) for _, l, r in semantic_compared]),
             }
         )
 
@@ -120,6 +122,25 @@ def _cohen_kappa(pairs: list[tuple[bool, bool]]) -> float | None:
     if expected == 1:
         return 1.0 if observed == 1 else None
     return (observed - expected) / (1 - expected)
+
+
+def _gwet_ac1(pairs: list[tuple[Any, Any]]) -> float | None:
+    if not pairs:
+        return None
+    observed = sum(left == right for left, right in pairs) / len(pairs)
+    ratings = [label for pair in pairs for label in pair]
+    categories = sorted({str(label) for label in ratings})
+    if len(categories) <= 1:
+        return observed
+    total = len(ratings)
+    proportions = [
+        sum(str(label) == category for label in ratings) / total
+        for category in categories
+    ]
+    chance = sum(p * (1 - p) for p in proportions) / (len(categories) - 1)
+    if chance == 1:
+        return 1.0 if observed == 1 else None
+    return (observed - chance) / (1 - chance)
 
 
 def main() -> None:

@@ -27,12 +27,25 @@ def summarize_human_audit_v4_status(audit_dir: Path) -> dict[str, Any]:
     total_items = sum(pack["selected_items"] for pack in packs)
     adjudicated_labeled = sum(pack["adjudication"]["labeled"] for pack in packs)
     pending = sum(pack["adjudication"]["pending"] for pack in packs)
+    adjudicated_semantic_counts = _sum_counts(
+        pack["adjudication"]["semantic_label_counts"] for pack in packs
+    )
     return {
         "audit_dir": str(audit_dir),
         "pack_count": len(packs),
         "total_items": total_items,
         "adjudicated_labeled": adjudicated_labeled,
         "pending": pending,
+        "adjudicated_semantic_label_counts": adjudicated_semantic_counts,
+        "adjudicated_ambiguous_rate": _rate(
+            adjudicated_semantic_counts.get("ambiguous", 0),
+            sum(adjudicated_semantic_counts.values()),
+        ),
+        "adjudicated_ambiguous_or_error_rate": _rate(
+            adjudicated_semantic_counts.get("ambiguous", 0)
+            + adjudicated_semantic_counts.get("annotation_error", 0),
+            sum(adjudicated_semantic_counts.values()),
+        ),
         "semantic_label_schema_ready": bool(packs)
         and all(pack["semantic_label_schema_ready"] for pack in packs),
         "ready": bool(packs) and all(pack["ready"] for pack in packs),
@@ -80,6 +93,9 @@ def summarize_pack(manifest_path: Path) -> dict[str, Any]:
         "selected_items": selected_items,
         "expected_label_counts": expected_counts,
         "auditors": auditor_summaries,
+        "auditor_semantic_label_counts": _sum_counts(
+            auditor["semantic_label_counts"] for auditor in auditor_summaries.values()
+        ),
         "semantic_label_schema_ready": all(
             auditor.get("has_label_semantic_column") for auditor in auditor_summaries.values()
         ),
@@ -104,12 +120,14 @@ def summarize_label_csv(path: Path) -> dict[str, Any]:
             "semantic_labeled": 0,
             "semantic_pending": 0,
             "semantic_invalid": 0,
+            "semantic_label_counts": _empty_semantic_counts(),
             "has_label_semantic_column": False,
         }
     reader = csv.DictReader(path.open(newline="", encoding="utf-8-sig"))
     rows = list(reader)
     labeled = pending = invalid = 0
     semantic_labeled = semantic_pending = semantic_invalid = 0
+    semantic_counts = _empty_semantic_counts()
     has_semantic = "label_semantic" in set(reader.fieldnames or [])
     for row in rows:
         parsed = _parse_label(row.get("label_answerable"))
@@ -126,6 +144,7 @@ def summarize_label_csv(path: Path) -> dict[str, Any]:
             semantic_invalid += 1
         else:
             semantic_labeled += 1
+            semantic_counts[semantic] += 1
     return {
         "path": str(path),
         "exists": True,
@@ -136,6 +155,12 @@ def summarize_label_csv(path: Path) -> dict[str, Any]:
         "semantic_labeled": semantic_labeled,
         "semantic_pending": semantic_pending,
         "semantic_invalid": semantic_invalid,
+        "semantic_label_counts": semantic_counts,
+        "ambiguous_rate": _rate(semantic_counts["ambiguous"], semantic_labeled),
+        "ambiguous_or_error_rate": _rate(
+            semantic_counts["ambiguous"] + semantic_counts["annotation_error"],
+            semantic_labeled,
+        ),
         "has_label_semantic_column": has_semantic,
         "completion_rate": labeled / len(rows) if rows else None,
         "semantic_completion_rate": semantic_labeled / len(rows) if rows else None,
@@ -151,10 +176,14 @@ def summarize_adjudicated_labels(path: Path, expected_items: int) -> dict[str, A
             "labeled": 0,
             "pending": expected_items,
             "invalid": 0,
+            "semantic_label_counts": _empty_semantic_counts(),
+            "ambiguous_rate": None,
+            "ambiguous_or_error_rate": None,
             "by_status": {},
         }
     items = _load_jsonl(path)
     labeled = pending = invalid = 0
+    semantic_counts = _empty_semantic_counts()
     by_status: dict[str, int] = {}
     for item in items:
         status = str(item.get("adjudication_status") or "unknown")
@@ -166,6 +195,9 @@ def summarize_adjudicated_labels(path: Path, expected_items: int) -> dict[str, A
             labeled += 1
         else:
             invalid += 1
+        semantic = _parse_semantic_label(item.get("adjudicated_label_semantic"))
+        if semantic in semantic_counts:
+            semantic_counts[semantic] += 1
     return {
         "path": str(path),
         "exists": True,
@@ -173,6 +205,12 @@ def summarize_adjudicated_labels(path: Path, expected_items: int) -> dict[str, A
         "labeled": labeled,
         "pending": pending,
         "invalid": invalid,
+        "semantic_label_counts": semantic_counts,
+        "ambiguous_rate": _rate(semantic_counts["ambiguous"], sum(semantic_counts.values())),
+        "ambiguous_or_error_rate": _rate(
+            semantic_counts["ambiguous"] + semantic_counts["annotation_error"],
+            sum(semantic_counts.values()),
+        ),
         "completion_rate": labeled / len(items) if items else None,
         "by_status": by_status,
     }
@@ -190,6 +228,8 @@ def render_markdown(status: dict[str, Any]) -> str:
         f"Adjudicated labels: `{status['adjudicated_labeled']}`",
         f"Pending: `{status['pending']}`",
         f"Semantic label schema ready: `{status['semantic_label_schema_ready']}`",
+        f"Adjudicated ambiguous rate: `{status['adjudicated_ambiguous_rate']}`",
+        f"Adjudicated ambiguous/error rate: `{status['adjudicated_ambiguous_or_error_rate']}`",
         "",
         "| Pack | Items | Auditor labeled | Adjudicated | Pending | Ready |",
         "|---|---:|---:|---:|---:|---|",
@@ -255,9 +295,41 @@ def _agreement_summary(agreement: dict[str, Any] | None) -> dict[str, Any] | Non
         "completion": agreement.get("completion"),
         "pairwise": agreement.get("pairwise"),
         "semantic_pairwise": agreement.get("semantic_pairwise"),
+        "gwet_ac1_ready": _agreement_has_key(agreement.get("pairwise"), "gwet_ac1")
+        and _agreement_has_key(agreement.get("semantic_pairwise"), "gwet_ac1"),
         "conflicts": len(agreement.get("conflicts", [])),
         "semantic_conflicts": len(agreement.get("semantic_conflicts", [])),
     }
+
+
+def _agreement_has_key(rows: Any, key: str) -> bool:
+    if not isinstance(rows, list):
+        return False
+    return all(isinstance(row, dict) and key in row for row in rows)
+
+
+def _empty_semantic_counts() -> dict[str, int]:
+    return {
+        "stable_answerable": 0,
+        "fragile": 0,
+        "unanswerable": 0,
+        "ambiguous": 0,
+        "annotation_error": 0,
+    }
+
+
+def _sum_counts(counts: Any) -> dict[str, int]:
+    total = _empty_semantic_counts()
+    for row in counts:
+        if not isinstance(row, dict):
+            continue
+        for key in total:
+            total[key] += int(row.get(key) or 0)
+    return total
+
+
+def _rate(numerator: int, denominator: int) -> float | None:
+    return numerator / denominator if denominator else None
 
 
 def _load_json_if_exists(path: Path) -> dict[str, Any] | None:
