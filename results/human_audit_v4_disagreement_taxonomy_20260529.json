@@ -1,0 +1,57 @@
+{
+  "aggregate": {
+    "auto_agree_count": 0,
+    "binary_conflict_count": 0,
+    "failure_type_disagreement_count": 0,
+    "manual_adjudication_count": 0,
+    "pending_adjudication_count": 300,
+    "semantic_conflict_count": 0
+  },
+  "audit_dir": "results\\human_audit_v4",
+  "claim_policy": "This artifact exposes disagreement taxonomy and adjudication state only. It does not convert pending labels into human-audited evidence.",
+  "human_audit_complete": false,
+  "pack_count": 2,
+  "packs": [
+    {
+      "adjudication_status_counts": {
+        "pending": 100
+      },
+      "adjudication_template_rows": 100,
+      "auto_agree_count": 0,
+      "binary_conflict_count": 0,
+      "binary_conflict_taxonomy": [],
+      "claim_boundary": "Conflict and pending counts are audit workflow diagnostics. They are not human-audited result metrics until labels are complete.",
+      "failure_type_disagreement_count": 0,
+      "failure_type_disagreement_examples": [],
+      "failure_type_disagreement_taxonomy": [],
+      "manifest": "results\\human_audit_v4\\fever_v4_n100_structbalanced_blind100.manifest.json",
+      "manual_adjudication_count": 0,
+      "pack_name": "fever_v4_n100_structbalanced_blind100",
+      "pending_adjudication_count": 100,
+      "selected_items": 100,
+      "semantic_conflict_count": 0,
+      "semantic_conflict_taxonomy": []
+    },
+    {
+      "adjudication_status_counts": {
+        "pending": 200
+      },
+      "adjudication_template_rows": 200,
+      "auto_agree_count": 0,
+      "binary_conflict_count": 0,
+      "binary_conflict_taxonomy": [],
+      "claim_boundary": "Conflict and pending counts are audit workflow diagnostics. They are not human-audited result metrics until labels are complete.",
+      "failure_type_disagreement_count": 0,
+      "failure_type_disagreement_examples": [],
+      "failure_type_disagreement_taxonomy": [],
+      "manifest": "results\\human_audit_v4\\hotpot_v4_semanticswap_n100_blind200.manifest.json",
+      "manual_adjudication_count": 0,
+      "pack_name": "hotpot_v4_semanticswap_n100_blind200",
+      "pending_adjudication_count": 200,
+      "selected_items": 200,
+      "semantic_conflict_count": 0,
+      "semantic_conflict_taxonomy": []
+    }
+  ],
+  "taxonomy_artifact_ready": true
+}

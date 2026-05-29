@@ -98,6 +98,7 @@ def _rows(closure: dict[str, Any], manifest: dict[str, Any], reproduction: dict[
             BLOCKED if not gate.get("human_audit_v4_ready") else PASS,
             [
                 "results/human_audit_v4_status_20260529.json",
+                "results/human_audit_v4_disagreement_taxonomy_20260529.json",
                 "results/human_audit_v4_eval_status_20260529.json",
             ],
             f"Pending labels: {gate.get('human_audit_v4_pending')}; cannot claim human-audited results.",

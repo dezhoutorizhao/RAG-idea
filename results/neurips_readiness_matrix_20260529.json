@@ -1,11 +1,12 @@
 {
   "claim_policy": "This matrix tracks readiness against the NeurIPS main-track evidence plan. A pass means the current artifact supports that checklist item at the stated scope; partial means useful evidence exists but is too narrow or mixed; fail means current evidence contradicts the strong version of the requirement; blocked means the item cannot be completed without human labels, storage repair/approval, or an external review.",
-  "generated_at_utc": "2026-05-29T02:23:56.167312+00:00",
+  "generated_at_utc": "2026-05-29T02:28:50.768081+00:00",
   "hard_blockers": [
     {
       "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
       "evidence": [
         "results/human_audit_v4_status_20260529.json",
+        "results/human_audit_v4_disagreement_taxonomy_20260529.json",
         "results/human_audit_v4_eval_status_20260529.json"
       ],
       "requirement": "Human-audited orbit labels",
@@ -69,6 +70,7 @@
       "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
       "evidence": [
         "results/human_audit_v4_status_20260529.json",
+        "results/human_audit_v4_disagreement_taxonomy_20260529.json",
         "results/human_audit_v4_eval_status_20260529.json"
       ],
       "requirement": "Human-audited orbit labels",

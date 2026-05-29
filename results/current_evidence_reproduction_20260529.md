@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T02:23:56.168901+00:00`
+Generated: `2026-05-29T02:28:50.769757+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -9,6 +9,7 @@ Ready for NeurIPS main claim: `False`
 | Step | Ready | Outputs |
 |---|---|---|
 | summarize_human_audit_v4_status | `False` | `results\human_audit_v4_status_20260529.json`<br>`results\human_audit_v4_status_20260529.md` |
+| summarize_human_audit_v4_disagreements | `True` | `results\human_audit_v4_disagreement_taxonomy_20260529.json`<br>`results\human_audit_v4_disagreement_taxonomy_20260529.md` |
 | run_human_audit_eval_v4 | `False` | `results\human_audit_v4_eval_status_20260529.json`<br>`results\human_audit_v4_eval_status_20260529.md` |
 | summarize_fever_cp_transfer_sweep | `False` | `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json`<br>`results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.md` |
 | summarize_end2end_selective_rag_proxy | `False` | `results\end2end_selective_rag_proxy_summary_20260529.json`<br>`results\end2end_selective_rag_proxy_summary_20260529.md` |

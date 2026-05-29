@@ -1,6 +1,6 @@
 # NeurIPS Readiness Matrix
 
-Generated: `2026-05-29T02:23:56.167312+00:00`
+Generated: `2026-05-29T02:28:50.768081+00:00`
 
 Ready for NeurIPS main-track claim: `False`
 
@@ -16,7 +16,7 @@ Ready for NeurIPS main-track claim: `False`
 | Requirement | Status | Evidence | Boundary / next action |
 |---|---|---|---|
 | Leakage-free v4 pipeline | `pass` | `results/v4_anti_shortcut_summary_20260529.json`<br>`results/evidence_closure_status_v4.json` | Core anti-shortcut suite passes; private construction metadata remains evaluator-only. |
-| Human-audited orbit labels | `blocked` | `results/human_audit_v4_status_20260529.json`<br>`results/human_audit_v4_eval_status_20260529.json` | Pending labels: 300; cannot claim human-audited results. |
+| Human-audited orbit labels | `blocked` | `results/human_audit_v4_status_20260529.json`<br>`results/human_audit_v4_disagreement_taxonomy_20260529.json`<br>`results/human_audit_v4_eval_status_20260529.json` | Pending labels: 300; cannot claim human-audited results. |
 | Strong baselines and equal-budget controls | `partial` | `results/v4_strong_baseline_summary_20260529.json` | Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; claims must use calibrated/proxy wording with caveats. |
 | End-to-end selective RAG | `partial` | `results/end2end_selective_rag_proxy_summary_20260529.json` | Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction. |
 | Full CoRM-RAG reproduction | `blocked` | `results/corm_reproduction_preflight.json`<br>`results/corm_full_wikipedia_job_status.json`<br>`results/remote_storage_status_20260529.json` | Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts. |
