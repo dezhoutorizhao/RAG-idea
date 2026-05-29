@@ -8,7 +8,8 @@
     "Hotpot semantic-swap v4 is a leakage-controlled diagnostic where self-consistency and retrieval-stability shortcuts fail.",
     "The v4 failure taxonomy and case gallery are machine-readable diagnostics across FEVER and Hotpot variants, with heuristic/private-label status until human audit v4 is complete.",
     "A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection.",
-    "A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim."
+    "A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.",
+    "The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants."
   ],
   "claim_verification": {
     "failed_claims": 0,
@@ -91,9 +92,23 @@
     "risk50_wins": 12,
     "row_count": 12
   },
-  "generated_at_utc": "2026-05-29T01:21:00.255585+00:00",
+  "generated_at_utc": "2026-05-29T01:25:57.436581+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
+    "anti_shortcut": {
+      "all_group_split_no_overlap": true,
+      "all_raw_firewall_passed": true,
+      "all_structural_only_passed_0_55": true,
+      "artifact": "results/v4_anti_shortcut_summary_20260529.json",
+      "claim_implication": "The primary v4 anti-shortcut suite passes the core non-oracle checks: raw feature firewall, structural-only <= 0.55, source-item group split without overlap, and random-label sanity near 0.5. Private construction metadata remains a high-leakage upper bound, so these fields must stay evaluator-only. This supports leakage-control claims but does not replace human audit or end-to-end RAG evidence.",
+      "dataset_count": 6,
+      "max_single_feature_auroc_max": 0.51875,
+      "pass_core_anti_shortcut_suite": true,
+      "private_metadata_upper_bound_all_high": true,
+      "random_label_median_all_near_half": true,
+      "random_label_median_max": 0.50545,
+      "random_label_median_min": 0.4961
+    },
     "case_gallery": {
       "artifact": "results/v4_case_gallery_summary_20260529.json",
       "bucket_counts": {

@@ -82,6 +82,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     v4_failure_taxonomy = _v4_failure_taxonomy_status(results)
     v4_case_gallery = _v4_case_gallery_status(results)
     clean_sufficiency_figure = _clean_sufficiency_figure_status(results)
+    v4_anti_shortcut = _v4_anti_shortcut_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -113,6 +114,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "failure_taxonomy": v4_failure_taxonomy,
             "case_gallery": v4_case_gallery,
             "clean_sufficiency_figure": clean_sufficiency_figure,
+            "anti_shortcut": v4_anti_shortcut,
         },
         "risk_control": {
             "hotpot_cp": {
@@ -196,6 +198,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "The v4 failure taxonomy and case gallery are machine-readable diagnostics across FEVER and Hotpot variants, with heuristic/private-label status until human audit v4 is complete.",
             "A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection.",
             "A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.",
+            "The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.",
         ],
         "disallowed_claims": [
             "Full original CoRM-RAG retrieval-generation reproduction is complete.",
@@ -542,6 +545,30 @@ def _clean_sufficiency_figure_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _v4_anti_shortcut_status(results: Path) -> dict[str, Any] | None:
+    path = results / "v4_anti_shortcut_summary_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    aggregate = payload.get("aggregate", {})
+    return {
+        "artifact": str(path.as_posix()),
+        "dataset_count": payload.get("dataset_count"),
+        "all_raw_firewall_passed": aggregate.get("all_raw_firewall_passed"),
+        "all_structural_only_passed_0_55": aggregate.get("all_structural_only_passed_0_55"),
+        "max_single_feature_auroc_max": aggregate.get("max_single_feature_auroc_max"),
+        "all_group_split_no_overlap": aggregate.get("all_group_split_no_overlap"),
+        "random_label_median_min": aggregate.get("random_label_median_min"),
+        "random_label_median_max": aggregate.get("random_label_median_max"),
+        "random_label_median_all_near_half": aggregate.get("random_label_median_all_near_half"),
+        "private_metadata_upper_bound_all_high": aggregate.get(
+            "private_metadata_upper_bound_all_high"
+        ),
+        "pass_core_anti_shortcut_suite": aggregate.get("pass_core_anti_shortcut_suite"),
+        "claim_implication": payload.get("claim_implication"),
+    }
+
+
 def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     path = results / "human_audit_v4_eval_status_20260529.json"
     if not path.exists():
@@ -607,6 +634,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     failure_taxonomy = status["latest_v4_diagnostics"].get("failure_taxonomy")
     case_gallery = status["latest_v4_diagnostics"].get("case_gallery")
     clean_sufficiency_figure = status["latest_v4_diagnostics"].get("clean_sufficiency_figure")
+    v4_anti_shortcut = status["latest_v4_diagnostics"].get("anti_shortcut")
 
     def row(method: str, item: dict[str, float | None]) -> str:
         return (
@@ -779,6 +807,28 @@ def render_markdown(status: dict[str, Any]) -> str:
         )
     else:
         lines.extend(["Clean-sufficiency misleading diagnostic:", "- Not recorded.", ""])
+    if v4_anti_shortcut:
+        lines.extend(
+            [
+                "V4 anti-shortcut suite:",
+                f"- Datasets: `{v4_anti_shortcut['dataset_count']}`; core suite passed: "
+                f"`{v4_anti_shortcut['pass_core_anti_shortcut_suite']}`.",
+                f"- Raw firewall all passed: `{v4_anti_shortcut['all_raw_firewall_passed']}`; "
+                f"group split no-overlap all passed: `{v4_anti_shortcut['all_group_split_no_overlap']}`.",
+                f"- Structural-only all passed <= 0.55: "
+                f"`{v4_anti_shortcut['all_structural_only_passed_0_55']}`; max single-feature AUROC: "
+                f"`{_fmt(v4_anti_shortcut['max_single_feature_auroc_max'])}`.",
+                f"- Random-label median AUROC range: "
+                f"`{_fmt(v4_anti_shortcut['random_label_median_min'])}` to "
+                f"`{_fmt(v4_anti_shortcut['random_label_median_max'])}`.",
+                f"- Private metadata upper bound all high: "
+                f"`{v4_anti_shortcut['private_metadata_upper_bound_all_high']}`.",
+                f"- Claim implication: {v4_anti_shortcut['claim_implication']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["V4 anti-shortcut suite:", "- Not recorded.", ""])
     lines.extend(["## End-to-End Selective RAG Proxy", ""])
     if end2end_proxy:
         lines.extend(

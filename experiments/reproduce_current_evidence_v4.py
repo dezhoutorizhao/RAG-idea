@@ -43,6 +43,11 @@ from experiments.summarize_v4_failure_taxonomy import (
     render_markdown as render_v4_failure_taxonomy_markdown,
     summarize_v4_failure_taxonomy,
 )
+from experiments.summarize_v4_anti_shortcut import (
+    DEFAULT_INPUTS as DEFAULT_V4_ANTI_SHORTCUT_INPUTS,
+    render_markdown as render_v4_anti_shortcut_markdown,
+    summarize_v4_anti_shortcut,
+)
 from experiments.summarize_human_audit_v4_status import (
     render_markdown as render_human_audit_markdown,
     summarize_human_audit_v4_status,
@@ -200,6 +205,21 @@ def reproduce_current_evidence_v4(
                 str(clean_sufficiency_md),
             ],
             "ready": clean_sufficiency["row_count"] > 0,
+        }
+    )
+
+    anti_shortcut_json = results / "v4_anti_shortcut_summary_20260529.json"
+    anti_shortcut_md = results / "v4_anti_shortcut_summary_20260529.md"
+    anti_shortcut = summarize_v4_anti_shortcut(
+        [root / path for path in DEFAULT_V4_ANTI_SHORTCUT_INPUTS]
+    )
+    _write_json(anti_shortcut_json, anti_shortcut)
+    anti_shortcut_md.write_text(render_v4_anti_shortcut_markdown(anti_shortcut), encoding="utf-8")
+    commands.append(
+        {
+            "name": "summarize_v4_anti_shortcut",
+            "outputs": [str(anti_shortcut_json), str(anti_shortcut_md)],
+            "ready": anti_shortcut["aggregate"]["pass_core_anti_shortcut_suite"],
         }
     )
 

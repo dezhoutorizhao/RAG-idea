@@ -11,6 +11,7 @@ from experiments.summarize_evidence_closure import (
     _remote_storage_probe_status,
     _semantic_swap_status,
     _v4_case_gallery_status,
+    _v4_anti_shortcut_status,
     _v4_failure_taxonomy_status,
     _v4_strong_baseline_status,
 )
@@ -422,6 +423,34 @@ def test_clean_sufficiency_figure_status_summarizes_private_label_boundary(tmp_p
     assert status["clean_top_quartile_failure_rate"] == 0.51
     assert status["worst_top_quartile_n"] == 302
     assert "not human-adjudicated" in status["claim_boundary"]
+
+
+def test_v4_anti_shortcut_status_summarizes_passed_suite(tmp_path):
+    _write_json(
+        tmp_path / "v4_anti_shortcut_summary_20260529.json",
+        {
+            "dataset_count": 6,
+            "aggregate": {
+                "all_raw_firewall_passed": True,
+                "all_structural_only_passed_0_55": True,
+                "max_single_feature_auroc_max": 0.51875,
+                "all_group_split_no_overlap": True,
+                "random_label_median_min": 0.4961,
+                "random_label_median_max": 0.50545,
+                "random_label_median_all_near_half": True,
+                "private_metadata_upper_bound_all_high": True,
+                "pass_core_anti_shortcut_suite": True,
+            },
+            "claim_implication": "supports leakage-control claims",
+        },
+    )
+
+    status = _v4_anti_shortcut_status(tmp_path)
+
+    assert status["dataset_count"] == 6
+    assert status["pass_core_anti_shortcut_suite"] is True
+    assert status["max_single_feature_auroc_max"] == 0.51875
+    assert status["random_label_median_all_near_half"] is True
 
 
 def test_current_reproduction_status_is_aggregated(tmp_path):

@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T01:21:00.255585+00:00`
+Generated: `2026-05-29T01:25:57.436581+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -79,6 +79,14 @@ Clean-sufficiency misleading diagnostic:
 - Outputs: `paper\figures\clean_sufficiency_misleading_v4_20260529.svg` and `paper\figures\clean_sufficiency_misleading_v4_20260529.csv`.
 - Claim boundary: Private-label diagnostic figure: failure rates come from v4 heuristic/private labels, not human-adjudicated labels.
 
+V4 anti-shortcut suite:
+- Datasets: `6`; core suite passed: `True`.
+- Raw firewall all passed: `True`; group split no-overlap all passed: `True`.
+- Structural-only all passed <= 0.55: `True`; max single-feature AUROC: `0.5188`.
+- Random-label median AUROC range: `0.4961` to `0.5054`.
+- Private metadata upper bound all high: `True`.
+- Claim implication: The primary v4 anti-shortcut suite passes the core non-oracle checks: raw feature firewall, structural-only <= 0.55, source-item group split without overlap, and random-label sanity near 0.5. Private construction metadata remains a high-leakage upper bound, so these fields must stay evaluator-only. This supports leakage-control claims but does not replace human audit or end-to-end RAG evidence.
+
 ## End-to-End Selective RAG Proxy
 
 - Rows: `12`; all-win: `False`; has losses/mixed rows: `True`.
@@ -140,6 +148,7 @@ Allowed claims:
 - The v4 failure taxonomy and case gallery are machine-readable diagnostics across FEVER and Hotpot variants, with heuristic/private-label status until human audit v4 is complete.
 - A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection.
 - A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.
+- The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.
 
 Disallowed claims:
 - Full original CoRM-RAG retrieval-generation reproduction is complete.

@@ -19,6 +19,7 @@ DEFAULT_ARTIFACTS = [
     Path("results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json"),
     Path("results/end2end_selective_rag_proxy_summary_20260529.json"),
     Path("results/v4_strong_baseline_summary_20260529.json"),
+    Path("results/v4_anti_shortcut_summary_20260529.json"),
     Path("results/v4_failure_taxonomy_summary_20260529.json"),
     Path("results/v4_case_gallery_summary_20260529.json"),
     Path("results/clean_sufficiency_misleading_v4_20260529.json"),
@@ -30,6 +31,7 @@ DEFAULT_ARTIFACTS = [
     Path("experiments/reproduce_current_evidence_v4.py"),
     Path("experiments/summarize_evidence_closure.py"),
     Path("experiments/summarize_v4_failure_taxonomy.py"),
+    Path("experiments/summarize_v4_anti_shortcut.py"),
     Path("experiments/export_v4_case_gallery.py"),
     Path("experiments/build_clean_sufficiency_misleading_figure.py"),
 ]
