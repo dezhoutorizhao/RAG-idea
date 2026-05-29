@@ -15,6 +15,7 @@ DEFAULT_LLM_BATCH = Path("results/llm_judge_nli_probe_batch_run_status_20260529.
 DEFAULT_LLM_SCORE = Path("results/llm_judge_nli_probe_score_status_20260529.json")
 DEFAULT_LLM_CORRELATION = Path("results/llm_nli_correlation_status_20260529.json")
 DEFAULT_REMOTE_STORAGE = Path("results/remote_storage_status_20260529.json")
+DEFAULT_REMOTE_HOME_STORAGE = Path("results/remote_home_storage_status_20260529.json")
 DEFAULT_EXT4_DRYRUN = Path("results/remote_ext4_prepare_dryrun_20260529.json")
 DEFAULT_EXTERNAL_REVIEW = Path("results/external_review_packet_status_20260529.json")
 
@@ -29,6 +30,7 @@ def summarize_neurips_unblock_plan(
     llm_score_path: Path = DEFAULT_LLM_SCORE,
     llm_correlation_path: Path = DEFAULT_LLM_CORRELATION,
     remote_storage_path: Path = DEFAULT_REMOTE_STORAGE,
+    remote_home_storage_path: Path = DEFAULT_REMOTE_HOME_STORAGE,
     ext4_dryrun_path: Path = DEFAULT_EXT4_DRYRUN,
     external_review_path: Path = DEFAULT_EXTERNAL_REVIEW,
 ) -> dict[str, Any]:
@@ -39,13 +41,14 @@ def summarize_neurips_unblock_plan(
     llm_score = _load_optional_json(root / llm_score_path)
     llm_correlation = _load_optional_json(root / llm_correlation_path)
     remote_storage = _load_optional_json(root / remote_storage_path)
+    remote_home_storage = _load_optional_json(root / remote_home_storage_path)
     ext4_dryrun = _load_optional_json(root / ext4_dryrun_path)
     external_review = _load_optional_json(root / external_review_path)
 
     blockers = [
         _human_audit_blocker(human_collection, human_status),
         _llm_judge_blocker(llm_batch, llm_score, llm_correlation),
-        _full_corm_storage_blocker(remote_storage, ext4_dryrun),
+        _full_corm_storage_blocker(remote_storage, remote_home_storage, ext4_dryrun),
         _external_review_blocker(external_review),
         _risk_control_boundary(),
     ]
@@ -60,6 +63,7 @@ def summarize_neurips_unblock_plan(
             "llm_score": str(llm_score_path),
             "llm_correlation": str(llm_correlation_path),
             "remote_storage": str(remote_storage_path),
+            "remote_home_storage": str(remote_home_storage_path),
             "ext4_dryrun": str(ext4_dryrun_path),
             "external_review": str(external_review_path),
         },
@@ -173,7 +177,11 @@ def _llm_judge_blocker(
     }
 
 
-def _full_corm_storage_blocker(storage: dict[str, Any], ext4: dict[str, Any]) -> dict[str, Any]:
+def _full_corm_storage_blocker(
+    storage: dict[str, Any],
+    home_storage: dict[str, Any],
+    ext4: dict[str, Any],
+) -> dict[str, Any]:
     ready = bool(storage.get("ready_for_full_reproduction_storage"))
     cleanup_commands = [
         (
@@ -197,6 +205,9 @@ def _full_corm_storage_blocker(storage: dict[str, Any], ext4: dict[str, Any]) ->
             f"target={storage.get('target')}; "
             f"target_available_gib={_fmt(storage.get('target_available_gib'))}; "
             f"target_write_probe_passed={storage.get('target_write_probe_passed')}; "
+            f"home_available_gib={_fmt(home_storage.get('target_available_gib'))}; "
+            f"home_write_probe_passed={home_storage.get('target_write_probe_passed')}; "
+            f"home_min_free_met={home_storage.get('target_min_free_met')}; "
             f"ext4_mode={ext4.get('mode')}; "
             f"destructive_operations_executed={ext4.get('destructive_operations_executed')}."
         ),

@@ -24,6 +24,7 @@ DEFAULT_ARTIFACTS = [
     Path("results/neurips_readiness_matrix_20260529.md"),
     Path("results/neurips_unblock_plan_20260529.json"),
     Path("results/neurips_unblock_plan_20260529.md"),
+    Path("results/remote_home_storage_status_20260529.json"),
     Path("results/external_review_packet_status_20260529.json"),
     Path("results/external_review_packet_20260529.md"),
     Path("results/human_audit_v4_paper_pack_status_20260529.json"),

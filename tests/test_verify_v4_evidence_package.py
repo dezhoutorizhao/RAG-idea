@@ -156,6 +156,7 @@ def test_default_manifest_tracks_neurips_unblock_plan_artifacts():
 
     assert "results/neurips_unblock_plan_20260529.json" in defaults
     assert "results/neurips_unblock_plan_20260529.md" in defaults
+    assert "results/remote_home_storage_status_20260529.json" in defaults
     assert "experiments/summarize_neurips_unblock_plan.py" in defaults
 
 

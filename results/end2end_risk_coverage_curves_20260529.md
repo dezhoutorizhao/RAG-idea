@@ -1,6 +1,6 @@
 # End-to-End Risk-Coverage Curves
 
-Generated: `2026-05-29T07:34:34.195790+00:00`
+Generated: `2026-05-29T07:43:09.371347+00:00`
 
 Datasets: `6`
 Retrievers: `['bm25_orbit_pool', 'dense_hash_orbit_pool']`

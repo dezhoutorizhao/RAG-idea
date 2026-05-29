@@ -104,6 +104,27 @@ def test_hidden_path_audit_ignores_json_escaped_quotes_after_colon(tmp_path):
     assert audit["finding_count"] == 0
 
 
+def test_hidden_path_audit_ignores_json_key_suffix_before_colon(tmp_path):
+    results = tmp_path / "results"
+    results.mkdir()
+    artifact = results / "remote_probe.json"
+    artifact.write_text('{"command": "r={\\"directory\\": str(d)}"}', encoding="utf-8")
+    manifest = {
+        "artifacts": [
+            {
+                "path": "results/remote_probe.json",
+                "exists": True,
+                "size_bytes": artifact.stat().st_size,
+            }
+        ]
+    }
+
+    audit = _hidden_path_audit(tmp_path, manifest)
+
+    assert audit["passed"] is True
+    assert audit["finding_count"] == 0
+
+
 def test_seeds_extracts_explicit_seed_lists(tmp_path):
     results = tmp_path / "results"
     results.mkdir()

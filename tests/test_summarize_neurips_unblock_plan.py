@@ -34,6 +34,13 @@ def test_summarize_neurips_unblock_plan_tracks_external_gates(tmp_path):
         "target_write_probe_passed": False,
         "ready_for_full_reproduction_storage": False,
     })
+    _write_json(results / "remote_home_storage_status_20260529.json", {
+        "target": "/home/syk",
+        "target_available_gib": 12.2,
+        "target_write_probe_passed": True,
+        "target_min_free_met": False,
+        "ready_for_full_reproduction_storage": False,
+    })
     _write_json(results / "remote_ext4_prepare_dryrun_20260529.json", {
         "mode": "dry_run",
         "destructive_operations_executed": False,
@@ -55,6 +62,7 @@ def test_summarize_neurips_unblock_plan_tracks_external_gates(tmp_path):
     assert blockers["complete_human_audit_v4"]["status"] == "blocked"
     assert blockers["run_api_backed_llm_judge"]["next_commands"] == ["submit batch"]
     assert blockers["repair_storage_for_full_corm_reproduction"]["requires_user_approval"] is True
+    assert "home_write_probe_passed=True" in blockers["repair_storage_for_full_corm_reproduction"]["current_evidence"]
     assert blockers["risk_control_claim_boundary"]["status"] == "fail"
 
     text = render_markdown(summary)

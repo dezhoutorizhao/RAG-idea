@@ -1,6 +1,6 @@
 # Hardware And Storage
 
-Generated: `2026-05-29T07:34:40.893230+00:00`
+Generated: `2026-05-29T07:43:15.977341+00:00`
 
 ## Local
 

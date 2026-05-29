@@ -1,6 +1,6 @@
 # NeurIPS Readiness Matrix
 
-Generated: `2026-05-29T07:34:40.192760+00:00`
+Generated: `2026-05-29T07:43:15.209348+00:00`
 
 Ready for NeurIPS main-track claim: `False`
 
@@ -27,7 +27,7 @@ Ready for NeurIPS main-track claim: `False`
 | Calibrated orbit risk model | `partial` | `results/v4_calibration_quality_20260529.json`<br>`results/v4_calibration_quality_20260529.md` | Calibration-quality artifact shows Brier wins 6/6 against rule/minimax references, but ECE wins 4/6. This supports empirical calibration-quality wording, not a formal risk guarantee. |
 | Failure taxonomy and case studies | `pass` | `results/v4_failure_taxonomy_summary_20260529.json`<br>`paper/case_studies/v4_case_gallery_20260529.md`<br>`paper/figures/clean_sufficiency_misleading_v4_20260529.svg` | Paper-facing diagnostics are complete but private-label, not human-adjudicated. |
 | Risk-control claim | `fail` | `results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json` | Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim. |
-| Claim ledger and evidence package | `pass` | `CLAIMS_LEDGER.json`<br>`results/claims_verification.json`<br>`results/v4_evidence_package_manifest_20260529.json` | Manifest artifacts: 201; missing: 0. |
+| Claim ledger and evidence package | `pass` | `CLAIMS_LEDGER.json`<br>`results/claims_verification.json`<br>`results/v4_evidence_package_manifest_20260529.json` | Manifest artifacts: 202; missing: 0. |
 | Independent external review | `blocked` | `results/external_review_packet_status_20260529.json`<br>`results/external_review_packet_20260529.md` | External review packet is ready, but no independent review response is present; place the response at `results\external_review_response_20260529.md`. |
 
 ## Claim Policy
