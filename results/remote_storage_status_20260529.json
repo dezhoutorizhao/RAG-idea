@@ -2,13 +2,13 @@
   "claim_policy": "This checks storage writability and free space only; it is not a completed CoRM-RAG reproduction result.",
   "filesystems": [
     {
-      "available_1k_blocks": 12843496,
+      "available_1k_blocks": 12900376,
       "blocks_1k": 1967357936,
       "capacity": "100%",
       "filesystem": "/dev/nvme0n1p2",
       "mount": "/",
       "type": "ext4",
-      "used_1k_blocks": 1854504408
+      "used_1k_blocks": 1854447528
     },
     {
       "available_1k_blocks": 337792924,
@@ -36,7 +36,7 @@
     "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 24076\n1, NVIDIA GeForce RTX 4090, 24564, 24097\n"
   },
   "min_free_gib": 180.0,
-  "observed_at_utc": "2026-05-29T03:35:22.854441+00:00",
+  "observed_at_utc": "2026-05-29T04:06:55.426083+00:00",
   "ready_for_full_reproduction_storage": false,
   "remote": {
     "host": "192.168.103.101",

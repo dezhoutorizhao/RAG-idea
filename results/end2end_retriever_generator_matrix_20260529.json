@@ -5,9 +5,9 @@
     "aurc_ties": 0,
     "aurc_wins": 16,
     "has_losses": true,
-    "mean_aurc_reduction": 0.10675212442371036,
-    "mean_risk30_reduction": 0.15138888888888888,
-    "mean_risk50_reduction": 0.18833333333333332,
+    "mean_aurc_reduction": 0.10903406180735982,
+    "mean_risk30_reduction": 0.15277777777777776,
+    "mean_risk50_reduction": 0.19125,
     "risk30_losses": 4,
     "risk30_ties": 4,
     "risk30_wins": 16,
@@ -26,7 +26,7 @@
     "hotpot_v4_semanticswap_n100",
     "hotpot_v4_supportpreserve_n100"
   ],
-  "generated_at_utc": "2026-05-29T04:04:00.014289+00:00",
+  "generated_at_utc": "2026-05-29T04:07:11.027652+00:00",
   "generators": [
     "copy_candidate",
     "lexical_guarded"
@@ -524,12 +524,12 @@
     {
       "answer_accuracy": 0.5,
       "best_non_csrm": {
-        "aurc": 0.42035049818669784,
+        "aurc": 0.4751169953942851,
         "coverage_at_risk20": 0.005,
         "method": "generator_confidence",
-        "risk30": 0.41666666666666663,
-        "risk50": 0.39,
-        "risk70": 0.44285714285714284
+        "risk30": 0.44999999999999996,
+        "risk50": 0.45999999999999996,
+        "risk70": 0.48571428571428577
       },
       "csrm": {
         "aurc": 0.2597126239534901,
@@ -540,10 +540,10 @@
       },
       "dataset": "hotpot_v4_hardneg_n100",
       "deltas": {
-        "aurc_reduction": 0.16063787423320774,
+        "aurc_reduction": 0.215404371440795,
         "coverage_at_risk20_gain": 0.45,
-        "risk30_reduction": 0.23333333333333328,
-        "risk50_reduction": 0.17000000000000004
+        "risk30_reduction": 0.2666666666666666,
+        "risk50_reduction": 0.24
       },
       "generator": "lexical_guarded",
       "n": 200,
@@ -826,25 +826,25 @@
       "outputs_sample": [
         {
           "answer": "BBC",
-          "confidence": 0.8846153846153846,
+          "confidence": 0.5192307692307692,
           "correct": true,
           "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
         },
         {
           "answer": "BBC",
-          "confidence": 0.8846153846153846,
+          "confidence": 0.826923076923077,
           "correct": false,
           "orbit_id": "hotpot:5a80f793554299260e20a1e1:missing_hop"
         },
         {
           "answer": "The film was originally set to be released in May 2008",
-          "confidence": 0.9312499999999999,
+          "confidence": 0.9624999999999999,
           "correct": true,
           "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
         },
         {
           "answer": "The film was originally set to be released in May 2008",
-          "confidence": 0.9312499999999999,
+          "confidence": 0.9624999999999999,
           "correct": false,
           "orbit_id": "hotpot:5ae5086d55429908b63264eb:missing_hop"
         },
@@ -1102,13 +1102,13 @@
       "outputs_sample": [
         {
           "answer": "BBC",
-          "confidence": 0.8846153846153846,
+          "confidence": 0.5192307692307692,
           "correct": true,
           "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
         },
         {
           "answer": "The film was originally set to be released in May 2008",
-          "confidence": 0.9312499999999999,
+          "confidence": 0.9624999999999999,
           "correct": true,
           "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
         },

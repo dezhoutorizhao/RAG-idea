@@ -38,7 +38,7 @@
     "latest_storage_probe": {
       "artifact": "results/remote_storage_status_20260529.json",
       "gpu_query": "0, NVIDIA GeForce RTX 4090, 24564, 24076\n1, NVIDIA GeForce RTX 4090, 24564, 24097\n",
-      "observed_at_utc": "2026-05-29T03:35:22.854441+00:00",
+      "observed_at_utc": "2026-05-29T04:06:55.426083+00:00",
       "ready_for_full_reproduction_storage": false,
       "target": "/mnt/ntfs-disk",
       "target_available_gib": 322.14443588256836,
@@ -86,9 +86,9 @@
       "lexical_guarded"
     ],
     "has_losses": true,
-    "mean_aurc_reduction": 0.10675212442371036,
-    "mean_risk30_reduction": 0.15138888888888888,
-    "mean_risk50_reduction": 0.18833333333333332,
+    "mean_aurc_reduction": 0.10903406180735982,
+    "mean_risk30_reduction": 0.15277777777777776,
+    "mean_risk50_reduction": 0.19125,
     "retrievers": [
       "bm25_orbit_pool",
       "dense_hash_orbit_pool"
@@ -121,7 +121,7 @@
     "risk50_wins": 12,
     "row_count": 12
   },
-  "generated_at_utc": "2026-05-29T04:04:05.600941+00:00",
+  "generated_at_utc": "2026-05-29T04:07:16.634260+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
