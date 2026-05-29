@@ -124,8 +124,14 @@ def _rows(closure: dict[str, Any], manifest: dict[str, Any], reproduction: dict[
         _row(
             "End-to-end selective RAG",
             PARTIAL if end2end and end2end.get("row_count") else FAIL,
-            ["results/end2end_selective_rag_proxy_summary_20260529.json"],
-            "Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction.",
+            [
+                "results/end2end_selective_rag_proxy_summary_20260529.json",
+                "results/end2end_retriever_generator_matrix_20260529.json",
+            ],
+            (
+                "Proxy evidence now covers two local retrievers and two generators, but remains mixed "
+                "and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction."
+            ),
         ),
         _row(
             "Full CoRM-RAG reproduction",

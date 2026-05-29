@@ -1,6 +1,6 @@
 {
   "claim_policy": "This matrix tracks readiness against the NeurIPS main-track evidence plan. A pass means the current artifact supports that checklist item at the stated scope; partial means useful evidence exists but is too narrow or mixed; fail means current evidence contradicts the strong version of the requirement; blocked means the item cannot be completed without human labels, storage repair/approval, or an external review.",
-  "generated_at_utc": "2026-05-29T03:17:28.860847+00:00",
+  "generated_at_utc": "2026-05-29T03:24:09.554759+00:00",
   "hard_blockers": [
     {
       "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
@@ -44,9 +44,10 @@
       "status": "partial"
     },
     {
-      "boundary_or_next_action": "Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction.",
+      "boundary_or_next_action": "Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction.",
       "evidence": [
-        "results/end2end_selective_rag_proxy_summary_20260529.json"
+        "results/end2end_selective_rag_proxy_summary_20260529.json",
+        "results/end2end_retriever_generator_matrix_20260529.json"
       ],
       "requirement": "End-to-end selective RAG",
       "status": "partial"
@@ -95,9 +96,10 @@
       "status": "partial"
     },
     {
-      "boundary_or_next_action": "Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction.",
+      "boundary_or_next_action": "Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction.",
       "evidence": [
-        "results/end2end_selective_rag_proxy_summary_20260529.json"
+        "results/end2end_selective_rag_proxy_summary_20260529.json",
+        "results/end2end_retriever_generator_matrix_20260529.json"
       ],
       "requirement": "End-to-end selective RAG",
       "status": "partial"

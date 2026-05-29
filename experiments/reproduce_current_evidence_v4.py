@@ -27,6 +27,11 @@ from experiments.summarize_end2end_selective_rag_proxy import (
     render_markdown as render_end2end_proxy_markdown,
     summarize_end2end_selective_rag_proxy,
 )
+from experiments.run_end2end_retriever_generator_matrix_v4 import (
+    DEFAULT_DATASETS as DEFAULT_END2END_MATRIX_DATASETS,
+    render_markdown as render_end2end_matrix_markdown,
+    run_end2end_retriever_generator_matrix_v4,
+)
 from experiments.summarize_fever_cp_transfer_sweep import (
     DEFAULT_INPUTS as DEFAULT_FEVER_CP_SWEEP_INPUTS,
     render_markdown as render_fever_cp_sweep_markdown,
@@ -202,6 +207,19 @@ def reproduce_current_evidence_v4(
             "name": "summarize_end2end_selective_rag_proxy",
             "outputs": [str(end2end_proxy_json), str(end2end_proxy_md)],
             "ready": not end2end_proxy["aggregate"]["has_losses"],
+        }
+    )
+
+    end2end_matrix_json = results / "end2end_retriever_generator_matrix_20260529.json"
+    end2end_matrix_md = results / "end2end_retriever_generator_matrix_20260529.md"
+    end2end_matrix = run_end2end_retriever_generator_matrix_v4(DEFAULT_END2END_MATRIX_DATASETS)
+    _write_json(end2end_matrix_json, end2end_matrix)
+    end2end_matrix_md.write_text(render_end2end_matrix_markdown(end2end_matrix), encoding="utf-8")
+    commands.append(
+        {
+            "name": "run_end2end_retriever_generator_matrix_v4",
+            "outputs": [str(end2end_matrix_json), str(end2end_matrix_md)],
+            "ready": end2end_matrix["protocol_complete"] and not end2end_matrix["aggregate"]["has_losses"],
         }
     )
 

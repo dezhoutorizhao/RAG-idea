@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T03:17:29.779317+00:00`
+Generated: `2026-05-29T03:24:10.509369+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `22`; tracked artifacts: `104`.
+- Provenance steps: `23`; tracked artifacts: `107`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `104`; dataset construction hashes: `41`.
+- Artifact checksums: `107`; dataset construction hashes: `41`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -76,7 +76,7 @@ Hard blockers:
 
 Negative or partial evidence:
 - Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge as missing. Template multi-sample self-consistency and shared calibration-threshold selection are now auditable, but test risk/coverage remains mixed rather than all-win.
-- End-to-end selective RAG (`partial`): Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction.
+- End-to-end selective RAG (`partial`): Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction.
 - Risk-control claim (`fail`): Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.
 
 ## V4 Strong Baselines
@@ -135,6 +135,16 @@ V4 anti-shortcut suite:
 - AURC wins/ties/losses vs strongest non-CSRM: `8` / `0` / `4`.
 - Mean Risk@30/Risk@50/AURC reduction: `0.1528` / `0.1917` / `0.1086`.
 - Claim implication: The proxy supports a directional but not all-win end-to-end selective RAG claim. CSRM improves mean Risk@30/Risk@50 versus the strongest non-CSRM selector, but some Hotpot v4 variants are mixed or negative, so this evidence should be framed as proxy/diagnostic evidence rather than a complete NeurIPS main result.
+
+## End-to-End Retriever-Generator Matrix
+
+- Datasets: `6`; retrievers: `['bm25_orbit_pool', 'dense_hash_orbit_pool']`; generators: `['copy_candidate', 'lexical_guarded']`.
+- Rows: `24`; all-win: `False`; has losses/mixed rows: `True`.
+- Risk@30 wins/ties/losses vs strongest non-CSRM: `16` / `4` / `4`.
+- Risk@50 wins/ties/losses vs strongest non-CSRM: `24` / `0` / `0`.
+- AURC wins/ties/losses vs strongest non-CSRM: `16` / `0` / `8`.
+- Mean Risk@30/Risk@50/AURC reduction: `0.1514` / `0.1896` / `0.1072`.
+- Claim policy: This matrix expands the end-to-end proxy to two retrieval policies and two generators over the materialized v4 orbit corpus. It is still a local-corpus proxy, not a full Wikipedia retrieval-generation reproduction.
 
 ## CoRM Reconstruction
 

@@ -1,0 +1,1699 @@
+{
+  "aggregate": {
+    "all_win": false,
+    "aurc_losses": 8,
+    "aurc_ties": 0,
+    "aurc_wins": 16,
+    "has_losses": true,
+    "mean_aurc_reduction": 0.10721788127759381,
+    "mean_risk30_reduction": 0.15138888888888888,
+    "mean_risk50_reduction": 0.18958333333333333,
+    "risk30_losses": 4,
+    "risk30_ties": 4,
+    "risk30_wins": 16,
+    "risk50_losses": 0,
+    "risk50_ties": 0,
+    "risk50_wins": 24,
+    "row_count": 24
+  },
+  "claim_policy": "This matrix expands the end-to-end proxy to two retrieval policies and two generators over the materialized v4 orbit corpus. It is still a local-corpus proxy, not a full Wikipedia retrieval-generation reproduction.",
+  "dataset_count": 6,
+  "datasets": [
+    "fever_v4_n100_structbalanced",
+    "hotpot_v4_hardneg_n100",
+    "hotpot_v4_n100_hardmatched",
+    "hotpot_v4_n100_structbalanced",
+    "hotpot_v4_semanticswap_n100",
+    "hotpot_v4_supportpreserve_n100"
+  ],
+  "generated_at_utc": "2026-05-29T03:24:05.105271+00:00",
+  "generators": [
+    "copy_candidate",
+    "lexical_guarded"
+  ],
+  "protocol_complete": true,
+  "retrievers": [
+    "bm25_orbit_pool",
+    "dense_hash_orbit_pool"
+  ],
+  "row_count": 24,
+  "rows": [
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.3312622606194255,
+        "coverage_at_risk20": 0.275,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.35,
+        "risk70": 0.4285714285714286
+      },
+      "csrm": {
+        "aurc": 0.15108005566372382,
+        "coverage_at_risk20": 0.625,
+        "risk30": 0.0,
+        "risk50": 0.0,
+        "risk70": 0.2857142857142857
+      },
+      "dataset": "fever_v4_n100_structbalanced",
+      "deltas": {
+        "aurc_reduction": 0.18018220495570167,
+        "coverage_at_risk20_gain": 0.35,
+        "risk30_reduction": 0.23333333333333328,
+        "risk50_reduction": 0.35
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "SUPPORTS",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "fever:ddfd48bd058868b3fb294564ca0d8335:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:conflict"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "fever:f2154442f8f9547414ffb1d3d5ab7266:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "fever:464d4ff5ebb5aa6aee350541fdb28c3d:stable"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.49,
+      "best_non_csrm": {
+        "aurc": 0.33325683733900224,
+        "coverage_at_risk20": 0.275,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.35,
+        "risk70": 0.4285714285714286
+      },
+      "csrm": {
+        "aurc": 0.15890845455044933,
+        "coverage_at_risk20": 0.61,
+        "risk30": 0.0,
+        "risk50": 0.020000000000000018,
+        "risk70": 0.30000000000000004
+      },
+      "dataset": "fever_v4_n100_structbalanced",
+      "deltas": {
+        "aurc_reduction": 0.1743483827885529,
+        "coverage_at_risk20_gain": 0.33499999999999996,
+        "risk30_reduction": 0.23333333333333328,
+        "risk50_reduction": 0.32999999999999996
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "SUPPORTS",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "fever:ddfd48bd058868b3fb294564ca0d8335:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 0.375,
+          "correct": true,
+          "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 0.375,
+          "correct": false,
+          "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:conflict"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "fever:f2154442f8f9547414ffb1d3d5ab7266:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "fever:464d4ff5ebb5aa6aee350541fdb28c3d:stable"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.3312622606194255,
+        "coverage_at_risk20": 0.275,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.35,
+        "risk70": 0.4285714285714286
+      },
+      "csrm": {
+        "aurc": 0.15108005566372382,
+        "coverage_at_risk20": 0.625,
+        "risk30": 0.0,
+        "risk50": 0.0,
+        "risk70": 0.2857142857142857
+      },
+      "dataset": "fever_v4_n100_structbalanced",
+      "deltas": {
+        "aurc_reduction": 0.18018220495570167,
+        "coverage_at_risk20_gain": 0.35,
+        "risk30_reduction": 0.23333333333333328,
+        "risk50_reduction": 0.35
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "SUPPORTS",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "fever:ddfd48bd058868b3fb294564ca0d8335:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:conflict"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "fever:f2154442f8f9547414ffb1d3d5ab7266:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "fever:464d4ff5ebb5aa6aee350541fdb28c3d:stable"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.49,
+      "best_non_csrm": {
+        "aurc": 0.33325683733900224,
+        "coverage_at_risk20": 0.275,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.35,
+        "risk70": 0.4285714285714286
+      },
+      "csrm": {
+        "aurc": 0.15890845455044933,
+        "coverage_at_risk20": 0.61,
+        "risk30": 0.0,
+        "risk50": 0.020000000000000018,
+        "risk70": 0.30000000000000004
+      },
+      "dataset": "fever_v4_n100_structbalanced",
+      "deltas": {
+        "aurc_reduction": 0.1743483827885529,
+        "coverage_at_risk20_gain": 0.33499999999999996,
+        "risk30_reduction": 0.23333333333333328,
+        "risk50_reduction": 0.32999999999999996
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "SUPPORTS",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "fever:ddfd48bd058868b3fb294564ca0d8335:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 0.375,
+          "correct": true,
+          "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 0.375,
+          "correct": false,
+          "orbit_id": "fever:25dc4f70725e49253af408b42070e0c8:conflict"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "fever:f2154442f8f9547414ffb1d3d5ab7266:stable"
+        },
+        {
+          "answer": "SUPPORTS",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "fever:464d4ff5ebb5aa6aee350541fdb28c3d:stable"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4635639066197873,
+        "coverage_at_risk20": 0.01,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.47,
+        "risk70": 0.47857142857142854
+      },
+      "csrm": {
+        "aurc": 0.2597126239534901,
+        "coverage_at_risk20": 0.455,
+        "risk30": 0.18333333333333335,
+        "risk50": 0.21999999999999997,
+        "risk70": 0.35
+      },
+      "dataset": "hotpot_v4_hardneg_n100",
+      "deltas": {
+        "aurc_reduction": 0.2038512826662972,
+        "coverage_at_risk20_gain": 0.445,
+        "risk30_reduction": 0.2666666666666666,
+        "risk50_reduction": 0.25
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_hardneg:5aba926f55429901930fa83e:hard_missing_hop"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_hardneg:5ae1fced5542997283cd230e:hard_missing_hop"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4635639066197873,
+        "coverage_at_risk20": 0.01,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.47,
+        "risk70": 0.47857142857142854
+      },
+      "csrm": {
+        "aurc": 0.2597126239534901,
+        "coverage_at_risk20": 0.455,
+        "risk30": 0.18333333333333335,
+        "risk50": 0.21999999999999997,
+        "risk70": 0.35
+      },
+      "dataset": "hotpot_v4_hardneg_n100",
+      "deltas": {
+        "aurc_reduction": 0.2038512826662972,
+        "coverage_at_risk20_gain": 0.445,
+        "risk30_reduction": 0.2666666666666666,
+        "risk50_reduction": 0.25
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": false,
+          "orbit_id": "hotpot_hardneg:5aba926f55429901930fa83e:hard_missing_hop"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_hardneg:5ae1fced5542997283cd230e:hard_missing_hop"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4635639066197873,
+        "coverage_at_risk20": 0.01,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.47,
+        "risk70": 0.47857142857142854
+      },
+      "csrm": {
+        "aurc": 0.2597126239534901,
+        "coverage_at_risk20": 0.455,
+        "risk30": 0.18333333333333335,
+        "risk50": 0.21999999999999997,
+        "risk70": 0.35
+      },
+      "dataset": "hotpot_v4_hardneg_n100",
+      "deltas": {
+        "aurc_reduction": 0.2038512826662972,
+        "coverage_at_risk20_gain": 0.445,
+        "risk30_reduction": 0.2666666666666666,
+        "risk50_reduction": 0.25
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_hardneg:5aba926f55429901930fa83e:hard_missing_hop"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_hardneg:5ae1fced5542997283cd230e:hard_missing_hop"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4315286626799008,
+        "coverage_at_risk20": 0.005,
+        "method": "generator_confidence",
+        "risk30": 0.41666666666666663,
+        "risk50": 0.42000000000000004,
+        "risk70": 0.44285714285714284
+      },
+      "csrm": {
+        "aurc": 0.2597126239534901,
+        "coverage_at_risk20": 0.455,
+        "risk30": 0.18333333333333335,
+        "risk50": 0.21999999999999997,
+        "risk70": 0.35
+      },
+      "dataset": "hotpot_v4_hardneg_n100",
+      "deltas": {
+        "aurc_reduction": 0.1718160387264107,
+        "coverage_at_risk20_gain": 0.45,
+        "risk30_reduction": 0.23333333333333328,
+        "risk50_reduction": 0.20000000000000007
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": false,
+          "orbit_id": "hotpot_hardneg:5aba926f55429901930fa83e:hard_missing_hop"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_hardneg:5ae1fced5542997283cd230e:hard_missing_hop"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_hardneg:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4408155856969387,
+        "coverage_at_risk20": 0.005,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.43999999999999995,
+        "risk70": 0.4571428571428572
+      },
+      "csrm": {
+        "aurc": 0.44863693890686557,
+        "coverage_at_risk20": 0.01,
+        "risk30": 0.44999999999999996,
+        "risk50": 0.41000000000000003,
+        "risk70": 0.4214285714285714
+      },
+      "dataset": "hotpot_v4_n100_hardmatched",
+      "deltas": {
+        "aurc_reduction": -0.007821353209926885,
+        "coverage_at_risk20_gain": 0.005,
+        "risk30_reduction": 0.0,
+        "risk50_reduction": 0.029999999999999916
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "BBC",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
+        },
+        {
+          "answer": "BBC",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:missing_hop"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:missing_hop"
+        },
+        {
+          "answer": "no",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a893fc855429951533612f0:stable"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "mixed_positive"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4408155856969387,
+        "coverage_at_risk20": 0.005,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.43999999999999995,
+        "risk70": 0.4571428571428572
+      },
+      "csrm": {
+        "aurc": 0.44863693890686557,
+        "coverage_at_risk20": 0.01,
+        "risk30": 0.44999999999999996,
+        "risk50": 0.41000000000000003,
+        "risk70": 0.4214285714285714
+      },
+      "dataset": "hotpot_v4_n100_hardmatched",
+      "deltas": {
+        "aurc_reduction": -0.007821353209926885,
+        "coverage_at_risk20_gain": 0.005,
+        "risk30_reduction": 0.0,
+        "risk50_reduction": 0.029999999999999916
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "BBC",
+          "confidence": 0.5192307692307692,
+          "correct": true,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
+        },
+        {
+          "answer": "BBC",
+          "confidence": 0.5192307692307692,
+          "correct": false,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:missing_hop"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 0.925,
+          "correct": true,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 0.925,
+          "correct": false,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:missing_hop"
+        },
+        {
+          "answer": "no",
+          "confidence": 0.9375,
+          "correct": true,
+          "orbit_id": "hotpot:5a893fc855429951533612f0:stable"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "mixed_positive"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4408155856969387,
+        "coverage_at_risk20": 0.005,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.43999999999999995,
+        "risk70": 0.4571428571428572
+      },
+      "csrm": {
+        "aurc": 0.44863693890686557,
+        "coverage_at_risk20": 0.01,
+        "risk30": 0.44999999999999996,
+        "risk50": 0.41000000000000003,
+        "risk70": 0.4214285714285714
+      },
+      "dataset": "hotpot_v4_n100_hardmatched",
+      "deltas": {
+        "aurc_reduction": -0.007821353209926885,
+        "coverage_at_risk20_gain": 0.005,
+        "risk30_reduction": 0.0,
+        "risk50_reduction": 0.029999999999999916
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "BBC",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
+        },
+        {
+          "answer": "BBC",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:missing_hop"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:missing_hop"
+        },
+        {
+          "answer": "no",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a893fc855429951533612f0:stable"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "mixed_positive"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4408155856969387,
+        "coverage_at_risk20": 0.005,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.43999999999999995,
+        "risk70": 0.4571428571428572
+      },
+      "csrm": {
+        "aurc": 0.44863693890686557,
+        "coverage_at_risk20": 0.01,
+        "risk30": 0.44999999999999996,
+        "risk50": 0.41000000000000003,
+        "risk70": 0.4214285714285714
+      },
+      "dataset": "hotpot_v4_n100_hardmatched",
+      "deltas": {
+        "aurc_reduction": -0.007821353209926885,
+        "coverage_at_risk20_gain": 0.005,
+        "risk30_reduction": 0.0,
+        "risk50_reduction": 0.029999999999999916
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "BBC",
+          "confidence": 0.8846153846153846,
+          "correct": true,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
+        },
+        {
+          "answer": "BBC",
+          "confidence": 0.826923076923077,
+          "correct": false,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:missing_hop"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 0.925,
+          "correct": true,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 0.925,
+          "correct": false,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:missing_hop"
+        },
+        {
+          "answer": "no",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a893fc855429951533612f0:stable"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "mixed_positive"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.41243262258992597,
+        "coverage_at_risk20": 0.01,
+        "method": "naive_orbit_average",
+        "risk30": 0.4,
+        "risk50": 0.42000000000000004,
+        "risk70": 0.41428571428571426
+      },
+      "csrm": {
+        "aurc": 0.4448239278121807,
+        "coverage_at_risk20": 0.005,
+        "risk30": 0.44999999999999996,
+        "risk50": 0.41000000000000003,
+        "risk70": 0.3928571428571429
+      },
+      "dataset": "hotpot_v4_n100_structbalanced",
+      "deltas": {
+        "aurc_reduction": -0.03239130522225475,
+        "coverage_at_risk20_gain": -0.005,
+        "risk30_reduction": -0.04999999999999993,
+        "risk50_reduction": 0.010000000000000009
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "BBC",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
+        },
+        {
+          "answer": "no",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a893fc855429951533612f0:stable"
+        },
+        {
+          "answer": "2011",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5adf8a065542992d7e9f9392:stable"
+        },
+        {
+          "answer": "2011",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot:5adf8a065542992d7e9f9392:missing_hop"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "loss_or_mixed"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.41243262258992597,
+        "coverage_at_risk20": 0.01,
+        "method": "naive_orbit_average",
+        "risk30": 0.4,
+        "risk50": 0.42000000000000004,
+        "risk70": 0.41428571428571426
+      },
+      "csrm": {
+        "aurc": 0.4448239278121807,
+        "coverage_at_risk20": 0.005,
+        "risk30": 0.44999999999999996,
+        "risk50": 0.41000000000000003,
+        "risk70": 0.3928571428571429
+      },
+      "dataset": "hotpot_v4_n100_structbalanced",
+      "deltas": {
+        "aurc_reduction": -0.03239130522225475,
+        "coverage_at_risk20_gain": -0.005,
+        "risk30_reduction": -0.04999999999999993,
+        "risk50_reduction": 0.010000000000000009
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "BBC",
+          "confidence": 0.5192307692307692,
+          "correct": true,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 0.925,
+          "correct": true,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
+        },
+        {
+          "answer": "no",
+          "confidence": 0.9375,
+          "correct": true,
+          "orbit_id": "hotpot:5a893fc855429951533612f0:stable"
+        },
+        {
+          "answer": "2011",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "hotpot:5adf8a065542992d7e9f9392:stable"
+        },
+        {
+          "answer": "2011",
+          "confidence": 0.75,
+          "correct": false,
+          "orbit_id": "hotpot:5adf8a065542992d7e9f9392:missing_hop"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "loss_or_mixed"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.41243262258992597,
+        "coverage_at_risk20": 0.01,
+        "method": "naive_orbit_average",
+        "risk30": 0.4,
+        "risk50": 0.42000000000000004,
+        "risk70": 0.41428571428571426
+      },
+      "csrm": {
+        "aurc": 0.4448239278121807,
+        "coverage_at_risk20": 0.005,
+        "risk30": 0.44999999999999996,
+        "risk50": 0.41000000000000003,
+        "risk70": 0.3928571428571429
+      },
+      "dataset": "hotpot_v4_n100_structbalanced",
+      "deltas": {
+        "aurc_reduction": -0.03239130522225475,
+        "coverage_at_risk20_gain": -0.005,
+        "risk30_reduction": -0.04999999999999993,
+        "risk50_reduction": 0.010000000000000009
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "BBC",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
+        },
+        {
+          "answer": "no",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a893fc855429951533612f0:stable"
+        },
+        {
+          "answer": "2011",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5adf8a065542992d7e9f9392:stable"
+        },
+        {
+          "answer": "2011",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot:5adf8a065542992d7e9f9392:missing_hop"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "loss_or_mixed"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.41243262258992597,
+        "coverage_at_risk20": 0.01,
+        "method": "naive_orbit_average",
+        "risk30": 0.4,
+        "risk50": 0.42000000000000004,
+        "risk70": 0.41428571428571426
+      },
+      "csrm": {
+        "aurc": 0.4448239278121807,
+        "coverage_at_risk20": 0.005,
+        "risk30": 0.44999999999999996,
+        "risk50": 0.41000000000000003,
+        "risk70": 0.3928571428571429
+      },
+      "dataset": "hotpot_v4_n100_structbalanced",
+      "deltas": {
+        "aurc_reduction": -0.03239130522225475,
+        "coverage_at_risk20_gain": -0.005,
+        "risk30_reduction": -0.04999999999999993,
+        "risk50_reduction": 0.010000000000000009
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "BBC",
+          "confidence": 0.8846153846153846,
+          "correct": true,
+          "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
+        },
+        {
+          "answer": "The film was originally set to be released in May 2008",
+          "confidence": 0.925,
+          "correct": true,
+          "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
+        },
+        {
+          "answer": "no",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot:5a893fc855429951533612f0:stable"
+        },
+        {
+          "answer": "2011",
+          "confidence": 0.75,
+          "correct": true,
+          "orbit_id": "hotpot:5adf8a065542992d7e9f9392:stable"
+        },
+        {
+          "answer": "2011",
+          "confidence": 0.75,
+          "correct": false,
+          "orbit_id": "hotpot:5adf8a065542992d7e9f9392:missing_hop"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "loss_or_mixed"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.2719244735164208,
+        "coverage_at_risk20": 0.36,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.24,
+        "risk70": 0.30000000000000004
+      },
+      "csrm": {
+        "aurc": 0.22795489327561977,
+        "coverage_at_risk20": 0.61,
+        "risk30": 0.15000000000000002,
+        "risk50": 0.15000000000000002,
+        "risk70": 0.2928571428571428
+      },
+      "dataset": "hotpot_v4_semanticswap_n100",
+      "deltas": {
+        "aurc_reduction": 0.043969580240801026,
+        "coverage_at_risk20_gain": 0.25,
+        "risk30_reduction": 0.08333333333333326,
+        "risk50_reduction": 0.08999999999999997
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:semantic_swap"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:semantic_swap"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.2719244735164208,
+        "coverage_at_risk20": 0.36,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.24,
+        "risk70": 0.30000000000000004
+      },
+      "csrm": {
+        "aurc": 0.22795489327561977,
+        "coverage_at_risk20": 0.61,
+        "risk30": 0.15000000000000002,
+        "risk50": 0.15000000000000002,
+        "risk70": 0.2928571428571428
+      },
+      "dataset": "hotpot_v4_semanticswap_n100",
+      "deltas": {
+        "aurc_reduction": 0.043969580240801026,
+        "coverage_at_risk20_gain": 0.25,
+        "risk30_reduction": 0.08333333333333326,
+        "risk50_reduction": 0.08999999999999997
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:semantic_swap"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:semantic_swap"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.2719244735164208,
+        "coverage_at_risk20": 0.36,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.24,
+        "risk70": 0.30000000000000004
+      },
+      "csrm": {
+        "aurc": 0.22795489327561977,
+        "coverage_at_risk20": 0.61,
+        "risk30": 0.15000000000000002,
+        "risk50": 0.15000000000000002,
+        "risk70": 0.2928571428571428
+      },
+      "dataset": "hotpot_v4_semanticswap_n100",
+      "deltas": {
+        "aurc_reduction": 0.043969580240801026,
+        "coverage_at_risk20_gain": 0.25,
+        "risk30_reduction": 0.08333333333333326,
+        "risk50_reduction": 0.08999999999999997
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:semantic_swap"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:semantic_swap"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.2719244735164208,
+        "coverage_at_risk20": 0.36,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.24,
+        "risk70": 0.30000000000000004
+      },
+      "csrm": {
+        "aurc": 0.22795489327561977,
+        "coverage_at_risk20": 0.61,
+        "risk30": 0.15000000000000002,
+        "risk50": 0.15000000000000002,
+        "risk70": 0.2928571428571428
+      },
+      "dataset": "hotpot_v4_semanticswap_n100",
+      "deltas": {
+        "aurc_reduction": 0.043969580240801026,
+        "coverage_at_risk20_gain": 0.25,
+        "risk30_reduction": 0.08333333333333326,
+        "risk50_reduction": 0.08999999999999997
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5aba926f55429901930fa83e:semantic_swap"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_semanticswap:5ae1fced5542997283cd230e:semantic_swap"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_semanticswap:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4192604512309343,
+        "coverage_at_risk20": 0.01,
+        "method": "naive_orbit_average",
+        "risk30": 0.3833333333333333,
+        "risk50": 0.43000000000000005,
+        "risk70": 0.3928571428571429
+      },
+      "csrm": {
+        "aurc": 0.15281785092744365,
+        "coverage_at_risk20": 0.625,
+        "risk30": 0.0,
+        "risk50": 0.0,
+        "risk70": 0.2857142857142857
+      },
+      "dataset": "hotpot_v4_supportpreserve_n100",
+      "deltas": {
+        "aurc_reduction": 0.26644260030349065,
+        "coverage_at_risk20_gain": 0.615,
+        "risk30_reduction": 0.3833333333333333,
+        "risk50_reduction": 0.43000000000000005
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_supportpreserve:5aba926f55429901930fa83e:wrong_answer"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e:wrong_answer"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4192604512309343,
+        "coverage_at_risk20": 0.01,
+        "method": "naive_orbit_average",
+        "risk30": 0.3833333333333333,
+        "risk50": 0.43000000000000005,
+        "risk70": 0.3928571428571429
+      },
+      "csrm": {
+        "aurc": 0.15281785092744365,
+        "coverage_at_risk20": 0.625,
+        "risk30": 0.0,
+        "risk50": 0.0,
+        "risk70": 0.2857142857142857
+      },
+      "dataset": "hotpot_v4_supportpreserve_n100",
+      "deltas": {
+        "aurc_reduction": 0.26644260030349065,
+        "coverage_at_risk20_gain": 0.615,
+        "risk30_reduction": 0.3833333333333333,
+        "risk50_reduction": 0.43000000000000005
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": false,
+          "orbit_id": "hotpot_supportpreserve:5aba926f55429901930fa83e:wrong_answer"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e:wrong_answer"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "bm25_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4192604512309343,
+        "coverage_at_risk20": 0.01,
+        "method": "naive_orbit_average",
+        "risk30": 0.3833333333333333,
+        "risk50": 0.43000000000000005,
+        "risk70": 0.3928571428571429
+      },
+      "csrm": {
+        "aurc": 0.15281785092744365,
+        "coverage_at_risk20": 0.625,
+        "risk30": 0.0,
+        "risk50": 0.0,
+        "risk70": 0.2857142857142857
+      },
+      "dataset": "hotpot_v4_supportpreserve_n100",
+      "deltas": {
+        "aurc_reduction": 0.26644260030349065,
+        "coverage_at_risk20_gain": 0.615,
+        "risk30_reduction": 0.3833333333333333,
+        "risk50_reduction": 0.43000000000000005
+      },
+      "generator": "copy_candidate",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_supportpreserve:5aba926f55429901930fa83e:wrong_answer"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e:wrong_answer"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    },
+    {
+      "answer_accuracy": 0.5,
+      "best_non_csrm": {
+        "aurc": 0.4192604512309343,
+        "coverage_at_risk20": 0.01,
+        "method": "naive_orbit_average",
+        "risk30": 0.3833333333333333,
+        "risk50": 0.43000000000000005,
+        "risk70": 0.3928571428571429
+      },
+      "csrm": {
+        "aurc": 0.15281785092744365,
+        "coverage_at_risk20": 0.625,
+        "risk30": 0.0,
+        "risk50": 0.0,
+        "risk70": 0.2857142857142857
+      },
+      "dataset": "hotpot_v4_supportpreserve_n100",
+      "deltas": {
+        "aurc_reduction": 0.26644260030349065,
+        "coverage_at_risk20_gain": 0.615,
+        "risk30_reduction": 0.3833333333333333,
+        "risk50_reduction": 0.43000000000000005
+      },
+      "generator": "lexical_guarded",
+      "n": 200,
+      "outputs_sample": [
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5aba926f55429901930fa83e:stable"
+        },
+        {
+          "answer": "Graham Hill",
+          "confidence": 0.8500000000000001,
+          "correct": false,
+          "orbit_id": "hotpot_supportpreserve:5aba926f55429901930fa83e:wrong_answer"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e:stable"
+        },
+        {
+          "answer": "Naguib Mahfouz",
+          "confidence": 1.0,
+          "correct": false,
+          "orbit_id": "hotpot_supportpreserve:5ae1fced5542997283cd230e:wrong_answer"
+        },
+        {
+          "answer": "the daughter of Fridtjof Nansen.",
+          "confidence": 1.0,
+          "correct": true,
+          "orbit_id": "hotpot_supportpreserve:5a890b895542995153361278:stable"
+        }
+      ],
+      "retriever": "dense_hash_orbit_pool",
+      "selector_methods": [
+        "corm_max_clean",
+        "csrm",
+        "generator_confidence",
+        "naive_orbit_average",
+        "retriever_confidence",
+        "single_set_sure_style"
+      ],
+      "verdict": "win"
+    }
+  ],
+  "top_k": 6
+}

@@ -16,6 +16,7 @@ PROVENANCE_BY_STEP = {
     "run_human_audit_eval_v4": "experiments/run_human_audit_eval_v4.py",
     "summarize_fever_cp_transfer_sweep": "experiments/summarize_fever_cp_transfer_sweep.py",
     "summarize_end2end_selective_rag_proxy": "experiments/summarize_end2end_selective_rag_proxy.py",
+    "run_end2end_retriever_generator_matrix_v4": "experiments/run_end2end_retriever_generator_matrix_v4.py",
     "summarize_v4_strong_baselines": "experiments/summarize_v4_strong_baselines.py",
     "summarize_v4_baseline_coverage": "experiments/summarize_v4_baseline_coverage.py",
     "summarize_v4_baseline_budget_parity": "experiments/summarize_v4_baseline_budget_parity.py",

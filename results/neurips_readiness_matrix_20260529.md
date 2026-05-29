@@ -1,6 +1,6 @@
 # NeurIPS Readiness Matrix
 
-Generated: `2026-05-29T03:17:28.860847+00:00`
+Generated: `2026-05-29T03:24:09.554759+00:00`
 
 Ready for NeurIPS main-track claim: `False`
 
@@ -18,7 +18,7 @@ Ready for NeurIPS main-track claim: `False`
 | Leakage-free v4 pipeline | `pass` | `results/v4_anti_shortcut_summary_20260529.json`<br>`results/evidence_closure_status_v4.json` | Core anti-shortcut suite passes; private construction metadata remains evaluator-only. |
 | Human-audited orbit labels | `blocked` | `results/human_audit_v4_status_20260529.json`<br>`results/human_audit_v4_disagreement_taxonomy_20260529.json`<br>`results/human_audit_v4_mismatch_20260529.json`<br>`results/human_audit_v4_eval_status_20260529.json` | Pending labels: 300; cannot claim human-audited results. |
 | Strong baselines and equal-budget controls | `partial` | `results/v4_strong_baseline_summary_20260529.json`<br>`results/v4_baseline_coverage_matrix_20260529.json`<br>`results/v4_baseline_budget_parity_20260529.json`<br>`results/v4_shared_threshold_selection_20260529.json`<br>`results/v4_split_threshold_protocol_20260529.json` | Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge as missing. Template multi-sample self-consistency and shared calibration-threshold selection are now auditable, but test risk/coverage remains mixed rather than all-win. |
-| End-to-end selective RAG | `partial` | `results/end2end_selective_rag_proxy_summary_20260529.json` | Proxy evidence is directional but mixed and not a full CoRM-RAG retrieval-generation reproduction. |
+| End-to-end selective RAG | `partial` | `results/end2end_selective_rag_proxy_summary_20260529.json`<br>`results/end2end_retriever_generator_matrix_20260529.json` | Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. |
 | Full CoRM-RAG reproduction | `blocked` | `results/corm_reproduction_preflight.json`<br>`results/corm_full_wikipedia_job_status.json`<br>`results/remote_storage_status_20260529.json` | Blocked by NTFS/fuseblk storage I/O failures and missing final wiki.faiss/original artifacts. |
 | Mechanism ablations | `pass` | `results/mechanism_ablation_summary_20260529.json` | Alignment evidence is strong; no-worst-sufficiency is weak/redundant in current bridge artifacts. |
 | Failure taxonomy and case studies | `pass` | `results/v4_failure_taxonomy_summary_20260529.json`<br>`paper/case_studies/v4_case_gallery_20260529.md`<br>`paper/figures/clean_sufficiency_misleading_v4_20260529.svg` | Paper-facing diagnostics are complete but private-label, not human-adjudicated. |

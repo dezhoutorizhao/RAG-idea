@@ -78,6 +78,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     current_reproduction_status = _current_reproduction_status(results)
     fever_cp_sweep = _fever_cp_transfer_sweep_status(results)
     end2end_proxy = _end2end_proxy_status(results)
+    end2end_matrix = _end2end_matrix_status(results)
     v4_strong_baselines = _v4_strong_baseline_status(results)
     v4_failure_taxonomy = _v4_failure_taxonomy_status(results)
     v4_case_gallery = _v4_case_gallery_status(results)
@@ -175,6 +176,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         "neurips_readiness": neurips_readiness,
         "mechanism_ablation": mechanism_ablation,
         "end2end_selective_rag_proxy": end2end_proxy,
+        "end2end_retriever_generator_matrix": end2end_matrix,
         "v4_strong_baselines": v4_strong_baselines,
         "corm_reconstruction": {
             "preflight_ready": preflight.get("ready"),
@@ -464,6 +466,36 @@ def _end2end_proxy_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _end2end_matrix_status(results: Path) -> dict[str, Any] | None:
+    path = results / "end2end_retriever_generator_matrix_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    aggregate = payload.get("aggregate", {})
+    return {
+        "artifact": str(path.as_posix()),
+        "dataset_count": payload.get("dataset_count"),
+        "retrievers": payload.get("retrievers"),
+        "generators": payload.get("generators"),
+        "row_count": aggregate.get("row_count"),
+        "risk30_wins": aggregate.get("risk30_wins"),
+        "risk30_ties": aggregate.get("risk30_ties"),
+        "risk30_losses": aggregate.get("risk30_losses"),
+        "risk50_wins": aggregate.get("risk50_wins"),
+        "risk50_ties": aggregate.get("risk50_ties"),
+        "risk50_losses": aggregate.get("risk50_losses"),
+        "aurc_wins": aggregate.get("aurc_wins"),
+        "aurc_ties": aggregate.get("aurc_ties"),
+        "aurc_losses": aggregate.get("aurc_losses"),
+        "mean_risk30_reduction": aggregate.get("mean_risk30_reduction"),
+        "mean_risk50_reduction": aggregate.get("mean_risk50_reduction"),
+        "mean_aurc_reduction": aggregate.get("mean_aurc_reduction"),
+        "all_win": aggregate.get("all_win"),
+        "has_losses": aggregate.get("has_losses"),
+        "claim_policy": payload.get("claim_policy"),
+    }
+
+
 def _v4_strong_baseline_status(results: Path) -> dict[str, Any] | None:
     path = results / "v4_strong_baseline_summary_20260529.json"
     if not path.exists():
@@ -734,6 +766,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     neurips_readiness = status.get("neurips_readiness")
     mechanism_ablation = status.get("mechanism_ablation")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
+    end2end_matrix = status.get("end2end_retriever_generator_matrix")
     strong_baselines = status.get("v4_strong_baselines")
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
     human_v4 = status["latest_v4_diagnostics"].get("human_audit_v4")
@@ -1043,6 +1076,33 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"`{_fmt(end2end_proxy['mean_risk50_reduction'])}` / "
                 f"`{_fmt(end2end_proxy['mean_aurc_reduction'])}`.",
                 f"- Claim implication: {end2end_proxy['claim_implication']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## End-to-End Retriever-Generator Matrix", ""])
+    if end2end_matrix:
+        lines.extend(
+            [
+                f"- Datasets: `{end2end_matrix['dataset_count']}`; retrievers: `{end2end_matrix['retrievers']}`; "
+                f"generators: `{end2end_matrix['generators']}`.",
+                f"- Rows: `{end2end_matrix['row_count']}`; all-win: `{end2end_matrix['all_win']}`; "
+                f"has losses/mixed rows: `{end2end_matrix['has_losses']}`.",
+                f"- Risk@30 wins/ties/losses vs strongest non-CSRM: "
+                f"`{end2end_matrix['risk30_wins']}` / `{end2end_matrix['risk30_ties']}` / "
+                f"`{end2end_matrix['risk30_losses']}`.",
+                f"- Risk@50 wins/ties/losses vs strongest non-CSRM: "
+                f"`{end2end_matrix['risk50_wins']}` / `{end2end_matrix['risk50_ties']}` / "
+                f"`{end2end_matrix['risk50_losses']}`.",
+                f"- AURC wins/ties/losses vs strongest non-CSRM: "
+                f"`{end2end_matrix['aurc_wins']}` / `{end2end_matrix['aurc_ties']}` / "
+                f"`{end2end_matrix['aurc_losses']}`.",
+                f"- Mean Risk@30/Risk@50/AURC reduction: "
+                f"`{_fmt(end2end_matrix['mean_risk30_reduction'])}` / "
+                f"`{_fmt(end2end_matrix['mean_risk50_reduction'])}` / "
+                f"`{_fmt(end2end_matrix['mean_aurc_reduction'])}`.",
+                f"- Claim policy: {end2end_matrix['claim_policy']}",
                 "",
             ]
         )
