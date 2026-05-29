@@ -254,7 +254,7 @@
     "review_response_path": "results\\external_review_response_20260529.md",
     "status": "packet_ready"
   },
-  "generated_at_utc": "2026-05-29T06:42:23.193759+00:00",
+  "generated_at_utc": "2026-05-29T06:56:06.842031+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -734,7 +734,7 @@
     "hard_blocker_count": 3,
     "hard_blockers": [
       {
-        "boundary_or_next_action": "Pending labels: 1300; cannot claim human-audited results.",
+        "boundary_or_next_action": "Assignment batches ready: True; pending labels: 1300; cannot claim human-audited results.",
         "requirement": "Human-audited orbit labels",
         "status": "blocked"
       },
@@ -850,7 +850,7 @@
   ],
   "reproducibility_bundle": {
     "artifact": "reproducibility/bundle_summary_20260529.json",
-    "artifact_checksum_count": 185,
+    "artifact_checksum_count": 189,
     "checkpoint_hash_available": true,
     "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
     "dataset_construction_hash_count": 42,
@@ -870,7 +870,7 @@
   },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 185,
+    "artifact_count": 189,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,
@@ -882,7 +882,7 @@
     },
     "readme_artifact": "results/README.md",
     "readme_exists": true,
-    "step_count": 37,
+    "step_count": 38,
     "untracked_output_count": 0
   },
   "risk_control": {

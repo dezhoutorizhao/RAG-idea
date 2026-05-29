@@ -116,12 +116,17 @@ def _rows(
             BLOCKED if not gate.get("human_audit_v4_ready") else PASS,
             [
                 "results/human_audit_v4_paper_pack_status_20260529.json",
+                "results/human_audit_v4_assignment_batches_20260529.json",
                 "results/human_audit_v4_status_20260529.json",
                 "results/human_audit_v4_disagreement_taxonomy_20260529.json",
                 "results/human_audit_v4_mismatch_20260529.json",
                 "results/human_audit_v4_eval_status_20260529.json",
             ],
-            f"Pending labels: {gate.get('human_audit_v4_pending')}; cannot claim human-audited results.",
+            (
+                f"Assignment batches ready: {gate.get('human_audit_v4_assignment_ready')}; "
+                f"pending labels: {gate.get('human_audit_v4_pending')}; "
+                "cannot claim human-audited results."
+            ),
         ),
         _row(
             "Text-only semantic verifier",

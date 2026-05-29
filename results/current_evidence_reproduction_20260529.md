@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T06:42:21.762952+00:00`
+Generated: `2026-05-29T06:56:05.484158+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -9,6 +9,7 @@ Ready for NeurIPS main claim: `False`
 | Step | Ready | Outputs |
 |---|---|---|
 | materialize_human_audit_v4_paper_pack | `True` | `results\human_audit_v4_paper_pack_status_20260529.json`<br>`results\human_audit_v4_paper_pack_status_20260529.md` |
+| materialize_human_audit_v4_assignment_batches | `True` | `results\human_audit_v4_assignment_batches_20260529.json`<br>`results\human_audit_v4_assignment_batches_20260529.md`<br>`results\human_audit_v4_batches\v4_paper1000_mixed_blind1000.assignment_manifest.json` |
 | summarize_human_audit_v4_status | `False` | `results\human_audit_v4_status_20260529.json`<br>`results\human_audit_v4_status_20260529.md` |
 | summarize_human_audit_v4_disagreements | `True` | `results\human_audit_v4_disagreement_taxonomy_20260529.json`<br>`results\human_audit_v4_disagreement_taxonomy_20260529.md` |
 | summarize_human_audit_v4_mismatch | `True` | `results\human_audit_v4_mismatch_20260529.json`<br>`results\human_audit_v4_mismatch_20260529.md` |
@@ -49,6 +50,7 @@ Ready for NeurIPS main claim: `False`
 ## Gate Summary
 
 - Human audit v4 ready: `False`.
+- Human audit v4 assignment ready: `True`.
 - Human audit v4 eval ready: `False`.
 - Human audit v4 pending labels: `1300`.
 - Human audit v4 evaluated packs: `0`.

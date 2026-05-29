@@ -24,6 +24,15 @@
       "ready": true
     },
     {
+      "name": "materialize_human_audit_v4_assignment_batches",
+      "outputs": [
+        "results\\human_audit_v4_assignment_batches_20260529.json",
+        "results\\human_audit_v4_assignment_batches_20260529.md",
+        "results\\human_audit_v4_batches\\v4_paper1000_mixed_blind1000.assignment_manifest.json"
+      ],
+      "ready": true
+    },
+    {
       "name": "summarize_human_audit_v4_status",
       "outputs": [
         "results\\human_audit_v4_status_20260529.json",
@@ -327,13 +336,14 @@
   "gate_summary": {
     "claim_verifier_passed": true,
     "full_corm_reconstruction_ready": false,
+    "human_audit_v4_assignment_ready": true,
     "human_audit_v4_eval_ready": false,
     "human_audit_v4_evaluated_pack_count": 0,
     "human_audit_v4_pending": 1300,
     "human_audit_v4_ready": false,
     "remote_storage_ready": false
   },
-  "generated_at_utc": "2026-05-29T06:42:21.762952+00:00",
+  "generated_at_utc": "2026-05-29T06:56:05.484158+00:00",
   "ready_for_neurips_main_claim": false,
   "root": ".",
   "strict": false

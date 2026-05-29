@@ -33,6 +33,7 @@ SOURCE_ARTIFACTS = [
     Path("results/end2end_target_risk_coverage_20260529.json"),
     Path("results/remote_storage_status_20260529.json"),
     Path("results/human_audit_v4_paper_pack_status_20260529.json"),
+    Path("results/human_audit_v4_assignment_batches_20260529.json"),
     Path("results/human_audit_v4_status_20260529.json"),
 ]
 

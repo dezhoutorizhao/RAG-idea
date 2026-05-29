@@ -1,11 +1,12 @@
 {
   "claim_policy": "This matrix tracks readiness against the NeurIPS main-track evidence plan. A pass means the current artifact supports that checklist item at the stated scope; partial means useful evidence exists but is too narrow or mixed; fail means current evidence contradicts the strong version of the requirement; blocked means the item cannot be completed without human labels, storage repair/approval, or an external review.",
-  "generated_at_utc": "2026-05-29T06:42:22.356115+00:00",
+  "generated_at_utc": "2026-05-29T06:56:06.066920+00:00",
   "hard_blockers": [
     {
-      "boundary_or_next_action": "Pending labels: 1300; cannot claim human-audited results.",
+      "boundary_or_next_action": "Assignment batches ready: True; pending labels: 1300; cannot claim human-audited results.",
       "evidence": [
         "results/human_audit_v4_paper_pack_status_20260529.json",
+        "results/human_audit_v4_assignment_batches_20260529.json",
         "results/human_audit_v4_status_20260529.json",
         "results/human_audit_v4_disagreement_taxonomy_20260529.json",
         "results/human_audit_v4_mismatch_20260529.json",
@@ -110,9 +111,10 @@
       "status": "pass"
     },
     {
-      "boundary_or_next_action": "Pending labels: 1300; cannot claim human-audited results.",
+      "boundary_or_next_action": "Assignment batches ready: True; pending labels: 1300; cannot claim human-audited results.",
       "evidence": [
         "results/human_audit_v4_paper_pack_status_20260529.json",
+        "results/human_audit_v4_assignment_batches_20260529.json",
         "results/human_audit_v4_status_20260529.json",
         "results/human_audit_v4_disagreement_taxonomy_20260529.json",
         "results/human_audit_v4_mismatch_20260529.json",
@@ -222,7 +224,7 @@
       "status": "fail"
     },
     {
-      "boundary_or_next_action": "Manifest artifacts: 185; missing: 0.",
+      "boundary_or_next_action": "Manifest artifacts: 189; missing: 0.",
       "evidence": [
         "CLAIMS_LEDGER.json",
         "results/claims_verification.json",

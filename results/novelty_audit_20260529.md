@@ -1,6 +1,6 @@
 # Novelty Audit Update
 
-Generated: `2026-05-29T06:42:21.705639+00:00`
+Generated: `2026-05-29T06:56:05.424798+00:00`
 Search date: `2026-05-29`
 
 Method: CSRM-RAG: counterfactual sufficiency stability and calibrated selective risk over aligned evidence-set orbits for robust RAG.

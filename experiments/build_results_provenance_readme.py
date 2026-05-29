@@ -11,6 +11,9 @@ from typing import Any
 
 PROVENANCE_BY_STEP = {
     "materialize_human_audit_v4_paper_pack": "experiments/materialize_human_audit_v4_paper_pack.py",
+    "materialize_human_audit_v4_assignment_batches": (
+        "experiments/materialize_human_audit_v4_assignment_batches.py"
+    ),
     "summarize_human_audit_v4_status": "experiments/summarize_human_audit_v4_status.py",
     "summarize_human_audit_v4_disagreements": "experiments/summarize_human_audit_v4_disagreements.py",
     "summarize_human_audit_v4_mismatch": "experiments/summarize_human_audit_v4_mismatch.py",
