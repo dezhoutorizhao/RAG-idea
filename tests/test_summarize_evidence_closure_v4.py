@@ -9,6 +9,7 @@ from experiments.summarize_evidence_closure import (
     _fever_cp_transfer_sweep_status,
     _remote_storage_probe_status,
     _semantic_swap_status,
+    _v4_failure_taxonomy_status,
     _v4_strong_baseline_status,
 )
 
@@ -325,6 +326,40 @@ def test_v4_strong_baseline_status_marks_rule_losses(tmp_path):
     assert status["rule_by_auroc_losses"] == 6
     assert status["logistic_risk30_robust_wins"] == 1
     assert status["logistic_aurc_losses"] == 5
+
+
+def test_v4_failure_taxonomy_status_summarizes_diagnostic(tmp_path):
+    _write_json(
+        tmp_path / "v4_failure_taxonomy_summary_20260529.json",
+        {
+            "dataset_count": 6,
+            "taxonomy": [{"construction_type": "stable"}, {"construction_type": "semantic_swap"}],
+            "case_gallery_coverage": {"target_high_false_positive": 48},
+            "metric_aggregate": {
+                "auroc": {"wins": 0, "ties": 3, "losses": 3},
+                "risk_at_30": {"wins": 1, "ties": 4, "losses": 1},
+                "risk_at_50": {"wins": 0, "ties": 4, "losses": 2},
+            },
+            "feature_frequency": [
+                {"feature": "min_sufficiency", "top3_count": 4},
+                {"feature": "clean_to_worst_gap", "top3_count": 4},
+                {"feature": "verifier_entropy", "top3_count": 3},
+                {"feature": "retrieval_overlap", "top3_count": 3},
+                {"feature": "answer_consistency", "top3_count": 1},
+                {"feature": "unused", "top3_count": 0},
+            ],
+            "claim_implication": "heuristic/private-label until human audit v4",
+        },
+    )
+
+    status = _v4_failure_taxonomy_status(tmp_path)
+
+    assert status["dataset_count"] == 6
+    assert status["taxonomy_count"] == 2
+    assert status["auroc_losses"] == 3
+    assert status["risk30_wins"] == 1
+    assert len(status["top_feature_gaps"]) == 5
+    assert "human audit v4" in status["claim_implication"]
 
 
 def test_current_reproduction_status_is_aggregated(tmp_path):

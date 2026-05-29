@@ -5,7 +5,8 @@
     "Orbit alignment is necessary under the implemented shuffled-perturbation ablation.",
     "The directional CSRM ranking survives an automated NLI cross-scorer sensitivity probe.",
     "Hotpot-only empirical risk-target transfer is supported under the conservative CP pressure test.",
-    "Hotpot semantic-swap v4 is a leakage-controlled diagnostic where self-consistency and retrieval-stability shortcuts fail."
+    "Hotpot semantic-swap v4 is a leakage-controlled diagnostic where self-consistency and retrieval-stability shortcuts fail.",
+    "The v4 failure taxonomy and case gallery are machine-readable diagnostics across FEVER and Hotpot variants, with heuristic/private-label status until human audit v4 is complete."
   ],
   "claim_verification": {
     "failed_claims": 0,
@@ -65,7 +66,8 @@
     "A general formal risk-control guarantee is established.",
     "The results are human-audited.",
     "The method solves robust RAG generally across tasks.",
-    "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4."
+    "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4.",
+    "The v4 failure taxonomy is human-adjudicated evidence."
   ],
   "end2end_selective_rag_proxy": {
     "all_win": false,
@@ -87,9 +89,67 @@
     "risk50_wins": 12,
     "row_count": 12
   },
-  "generated_at_utc": "2026-05-28T19:23:01.360715+00:00",
+  "generated_at_utc": "2026-05-28T19:30:43.021524+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
+    "failure_taxonomy": {
+      "artifact": "results/v4_failure_taxonomy_summary_20260529.json",
+      "auroc_losses": 3,
+      "auroc_ties": 3,
+      "auroc_wins": 0,
+      "case_gallery_coverage": {
+        "baseline_over_target_on_positive": 48,
+        "target_high_false_positive": 48,
+        "target_low_false_negative": 48,
+        "target_over_baseline_on_negative": 48
+      },
+      "claim_implication": "The v4 failure taxonomy is now machine-readable across FEVER and Hotpot variants. It supports a paper narrative around counterfactual sufficiency instability and documents mixed target-vs-baseline behavior. It remains heuristic/private-label analysis until human audit v4 adjudication is complete.",
+      "dataset_count": 6,
+      "risk30_losses": 1,
+      "risk30_ties": 4,
+      "risk30_wins": 1,
+      "risk50_losses": 2,
+      "risk50_ties": 4,
+      "risk50_wins": 0,
+      "taxonomy_count": 11,
+      "top_feature_gaps": [
+        {
+          "feature": "min_sufficiency",
+          "max_absolute_gap": 0.09875844701784607,
+          "mean_absolute_gap": 0.05157297516447804,
+          "top3_count": 4,
+          "top5_count": 6
+        },
+        {
+          "feature": "clean_to_worst_gap",
+          "max_absolute_gap": 0.09875844701784604,
+          "mean_absolute_gap": 0.051371259880258015,
+          "top3_count": 4,
+          "top5_count": 6
+        },
+        {
+          "feature": "verifier_entropy",
+          "max_absolute_gap": 0.09900133045334092,
+          "mean_absolute_gap": 0.054380671927176626,
+          "top3_count": 3,
+          "top5_count": 4
+        },
+        {
+          "feature": "retrieval_overlap",
+          "max_absolute_gap": 0.6006802721088436,
+          "mean_absolute_gap": 0.177562024809924,
+          "top3_count": 3,
+          "top5_count": 3
+        },
+        {
+          "feature": "answer_consistency",
+          "max_absolute_gap": 1.0,
+          "mean_absolute_gap": 0.16666666666666666,
+          "top3_count": 1,
+          "top5_count": 1
+        }
+      ]
+    },
     "hotpot_semantic_swap_n100": {
       "anti_shortcut": {
         "group_split_no_overlap": true,

@@ -33,6 +33,11 @@ from experiments.summarize_v4_strong_baselines import (
     render_markdown as render_v4_strong_baselines_markdown,
     summarize_v4_strong_baselines,
 )
+from experiments.summarize_v4_failure_taxonomy import (
+    DEFAULT_INPUTS as DEFAULT_V4_FAILURE_TAXONOMY_INPUTS,
+    render_markdown as render_v4_failure_taxonomy_markdown,
+    summarize_v4_failure_taxonomy,
+)
 from experiments.summarize_human_audit_v4_status import (
     render_markdown as render_human_audit_markdown,
     summarize_human_audit_v4_status,
@@ -129,6 +134,21 @@ def reproduce_current_evidence_v4(
             "ready": not bool(
                 strong_baselines["aggregate"]["csrm_rule_vs_strongest"]["by_auroc"]["losses"]
             ),
+        }
+    )
+
+    failure_taxonomy_json = results / "v4_failure_taxonomy_summary_20260529.json"
+    failure_taxonomy_md = results / "v4_failure_taxonomy_summary_20260529.md"
+    failure_taxonomy = summarize_v4_failure_taxonomy(
+        [root / path for path in DEFAULT_V4_FAILURE_TAXONOMY_INPUTS]
+    )
+    _write_json(failure_taxonomy_json, failure_taxonomy)
+    failure_taxonomy_md.write_text(render_v4_failure_taxonomy_markdown(failure_taxonomy), encoding="utf-8")
+    commands.append(
+        {
+            "name": "summarize_v4_failure_taxonomy",
+            "outputs": [str(failure_taxonomy_json), str(failure_taxonomy_md)],
+            "ready": failure_taxonomy["dataset_count"] >= len(DEFAULT_V4_FAILURE_TAXONOMY_INPUTS),
         }
     )
 

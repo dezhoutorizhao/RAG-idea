@@ -79,6 +79,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     fever_cp_sweep = _fever_cp_transfer_sweep_status(results)
     end2end_proxy = _end2end_proxy_status(results)
     v4_strong_baselines = _v4_strong_baseline_status(results)
+    v4_failure_taxonomy = _v4_failure_taxonomy_status(results)
 
     structural_paths = [
         results / "hotpot_orbit_consistency_audit.json",
@@ -107,6 +108,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "hotpot_semantic_swap_n100": semantic_swap,
             "human_audit_v4": human_audit_v4_status,
             "human_audit_v4_eval": human_audit_v4_eval_status,
+            "failure_taxonomy": v4_failure_taxonomy,
         },
         "risk_control": {
             "hotpot_cp": {
@@ -187,6 +189,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "The directional CSRM ranking survives an automated NLI cross-scorer sensitivity probe.",
             "Hotpot-only empirical risk-target transfer is supported under the conservative CP pressure test.",
             "Hotpot semantic-swap v4 is a leakage-controlled diagnostic where self-consistency and retrieval-stability shortcuts fail.",
+            "The v4 failure taxonomy and case gallery are machine-readable diagnostics across FEVER and Hotpot variants, with heuristic/private-label status until human audit v4 is complete.",
         ],
         "disallowed_claims": [
             "Full original CoRM-RAG retrieval-generation reproduction is complete.",
@@ -194,6 +197,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "The results are human-audited.",
             "The method solves robust RAG generally across tasks.",
             "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4.",
+            "The v4 failure taxonomy is human-adjudicated evidence.",
         ],
         "remaining_non_human_blockers": [
             "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
@@ -467,6 +471,31 @@ def _v4_strong_baseline_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _v4_failure_taxonomy_status(results: Path) -> dict[str, Any] | None:
+    path = results / "v4_failure_taxonomy_summary_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    metrics = payload.get("metric_aggregate", {})
+    return {
+        "artifact": str(path.as_posix()),
+        "dataset_count": payload.get("dataset_count"),
+        "taxonomy_count": len(payload.get("taxonomy", [])),
+        "case_gallery_coverage": payload.get("case_gallery_coverage"),
+        "auroc_wins": get(metrics, "auroc", "wins"),
+        "auroc_ties": get(metrics, "auroc", "ties"),
+        "auroc_losses": get(metrics, "auroc", "losses"),
+        "risk30_wins": get(metrics, "risk_at_30", "wins"),
+        "risk30_ties": get(metrics, "risk_at_30", "ties"),
+        "risk30_losses": get(metrics, "risk_at_30", "losses"),
+        "risk50_wins": get(metrics, "risk_at_50", "wins"),
+        "risk50_ties": get(metrics, "risk_at_50", "ties"),
+        "risk50_losses": get(metrics, "risk_at_50", "losses"),
+        "top_feature_gaps": payload.get("feature_frequency", [])[:5],
+        "claim_implication": payload.get("claim_implication"),
+    }
+
+
 def _human_audit_v4_eval_status(results: Path) -> dict[str, Any] | None:
     path = results / "human_audit_v4_eval_status_20260529.json"
     if not path.exists():
@@ -529,6 +558,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
     human_v4 = status["latest_v4_diagnostics"].get("human_audit_v4")
     human_v4_eval = status["latest_v4_diagnostics"].get("human_audit_v4_eval")
+    failure_taxonomy = status["latest_v4_diagnostics"].get("failure_taxonomy")
 
     def row(method: str, item: dict[str, float | None]) -> str:
         return (
@@ -633,6 +663,32 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"`{strong_baselines['logistic_aurc_robust_wins']}` / "
                 f"`{strong_baselines['logistic_aurc_losses']}`.",
                 f"- Claim implication: {strong_baselines['claim_implication']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## V4 Failure Taxonomy", ""])
+    if failure_taxonomy:
+        feature_names = ", ".join(
+            str(item.get("feature")) for item in failure_taxonomy["top_feature_gaps"]
+        )
+        lines.extend(
+            [
+                f"- Datasets: `{failure_taxonomy['dataset_count']}`; "
+                f"construction buckets: `{failure_taxonomy['taxonomy_count']}`.",
+                f"- AUROC wins/ties/losses vs calibrated logistic orbit: "
+                f"`{failure_taxonomy['auroc_wins']}` / `{failure_taxonomy['auroc_ties']}` / "
+                f"`{failure_taxonomy['auroc_losses']}`.",
+                f"- Risk@30 wins/ties/losses vs calibrated logistic orbit: "
+                f"`{failure_taxonomy['risk30_wins']}` / `{failure_taxonomy['risk30_ties']}` / "
+                f"`{failure_taxonomy['risk30_losses']}`.",
+                f"- Risk@50 wins/ties/losses vs calibrated logistic orbit: "
+                f"`{failure_taxonomy['risk50_wins']}` / `{failure_taxonomy['risk50_ties']}` / "
+                f"`{failure_taxonomy['risk50_losses']}`.",
+                f"- Case gallery coverage: `{failure_taxonomy['case_gallery_coverage']}`.",
+                f"- Recurring top feature gaps: `{feature_names}`.",
+                f"- Claim implication: {failure_taxonomy['claim_implication']}",
                 "",
             ]
         )

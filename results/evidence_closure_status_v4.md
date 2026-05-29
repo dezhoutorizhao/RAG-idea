@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-28T19:23:01.360715+00:00`
+Generated: `2026-05-28T19:30:43.021524+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -55,6 +55,16 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 - CSRM-Rule losses vs strongest by AUROC/Risk@30/AURC: `6` / `6` / `6`.
 - CSRM-Calibrated-Logistic robust Risk@30 wins/losses: `1` / `1`; AURC robust wins/losses: `1` / `5`.
 - Claim implication: The v4 strong-baseline package is present and includes context sufficiency, faithful SURE-style multi-set scoring, equal-budget orbit reducers, retrieval stability, self-consistency, and out-of-fold calibrated logistic context/orbit baselines. It strengthens reviewer-facing baseline coverage, but it is also negative boundary evidence: CSRM-Rule is not an all-win method against the strongest learned/context baselines, and calibrated CSRM should be reported with per-setting caveats.
+
+## V4 Failure Taxonomy
+
+- Datasets: `6`; construction buckets: `11`.
+- AUROC wins/ties/losses vs calibrated logistic orbit: `0` / `3` / `3`.
+- Risk@30 wins/ties/losses vs calibrated logistic orbit: `1` / `4` / `1`.
+- Risk@50 wins/ties/losses vs calibrated logistic orbit: `0` / `4` / `2`.
+- Case gallery coverage: `{'baseline_over_target_on_positive': 48, 'target_high_false_positive': 48, 'target_low_false_negative': 48, 'target_over_baseline_on_negative': 48}`.
+- Recurring top feature gaps: `min_sufficiency, clean_to_worst_gap, verifier_entropy, retrieval_overlap, answer_consistency`.
+- Claim implication: The v4 failure taxonomy is now machine-readable across FEVER and Hotpot variants. It supports a paper narrative around counterfactual sufficiency instability and documents mixed target-vs-baseline behavior. It remains heuristic/private-label analysis until human audit v4 adjudication is complete.
 
 ## End-to-End Selective RAG Proxy
 
@@ -114,6 +124,7 @@ Allowed claims:
 - The directional CSRM ranking survives an automated NLI cross-scorer sensitivity probe.
 - Hotpot-only empirical risk-target transfer is supported under the conservative CP pressure test.
 - Hotpot semantic-swap v4 is a leakage-controlled diagnostic where self-consistency and retrieval-stability shortcuts fail.
+- The v4 failure taxonomy and case gallery are machine-readable diagnostics across FEVER and Hotpot variants, with heuristic/private-label status until human audit v4 is complete.
 
 Disallowed claims:
 - Full original CoRM-RAG retrieval-generation reproduction is complete.
@@ -121,6 +132,7 @@ Disallowed claims:
 - The results are human-audited.
 - The method solves robust RAG generally across tasks.
 - CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4.
+- The v4 failure taxonomy is human-adjudicated evidence.
 
 Remaining non-human blockers:
 - Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.
