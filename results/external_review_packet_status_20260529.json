@@ -3,7 +3,7 @@
   "blocker_reason": "pending_external_review",
   "claim_policy": "This packet prepares the current evidence package for independent external review. It is not itself an external review and does not upgrade any claim until an independent review response is present.",
   "external_review_completed": false,
-  "generated_at_utc": "2026-05-29T06:02:39.591861+00:00",
+  "generated_at_utc": "2026-05-29T06:12:34.703008+00:00",
   "hard_blockers": [
     {
       "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
@@ -36,7 +36,7 @@
       "status": "blocked"
     }
   ],
-  "manifest_artifact_count": 144,
+  "manifest_artifact_count": 158,
   "manifest_missing_artifact_count": 0,
   "missing_source_artifacts": [],
   "negative_or_partial_evidence": [
@@ -51,13 +51,14 @@
       "status": "partial"
     },
     {
-      "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.",
+      "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency, risk-control abstention baselines, and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.",
       "evidence": [
         "results/v4_strong_baseline_summary_20260529.json",
         "results/v4_baseline_coverage_matrix_20260529.json",
         "results/v4_baseline_budget_parity_20260529.json",
         "results/v4_shared_threshold_selection_20260529.json",
         "results/v4_split_threshold_protocol_20260529.json",
+        "results/risk_control_abstention_baselines_20260529.json",
         "results/llm_judge_v4_request_status_20260529.json"
       ],
       "requirement": "Strong baselines and equal-budget controls",
@@ -133,55 +134,61 @@
     {
       "exists": true,
       "path": "results\\evidence_closure_status_v4.json",
-      "sha256": "ba75955c63774286d0b21b86975ab1d0fe419718fafb3df1fe5d23abc75ce4a5",
-      "size_bytes": 36022
+      "sha256": "5980a7d23abad4d3420e0d0cc440e649912f321145027353762615f9be51c89a",
+      "size_bytes": 38687
     },
     {
       "exists": true,
       "path": "results\\neurips_readiness_matrix_20260529.json",
-      "sha256": "eaf5532a68fe92103ea8f176b82cecfbfaffc7b977f255d713d930b304d21140",
-      "size_bytes": 11968
+      "sha256": "1505bf121cafa3952f20766090cacded732802edcf14023bfc756eaee923666c",
+      "size_bytes": 12176
     },
     {
       "exists": true,
       "path": "results\\v4_evidence_package_manifest_20260529.json",
-      "sha256": "e8995bb68e08bcec8cdb9337ef58603617cd160f146202598315e90bc5579cca",
-      "size_bytes": 33840
+      "sha256": "409363b314b8b4ee1457d4df1beca7e634018c6c35733b54050ea24d2b204691",
+      "size_bytes": 36980
     },
     {
       "exists": true,
       "path": "results\\text_only_verifier_status_20260529.json",
-      "sha256": "2797f56788e9eb7bc9bc1a7654d22e772b943f5791440221dbd763fceaaa7b50",
+      "sha256": "df72c0a24cfb9ef881f9b5c9bc1cd8b1a845c0b3d45cf398735e90afb1dd6b18",
       "size_bytes": 4152
     },
     {
       "exists": true,
       "path": "results\\v4_strong_baseline_summary_20260529.json",
-      "sha256": "0a6340030864c014149d77110e01116eb2e2ba8f0efe67eee0be92b04495acbf",
+      "sha256": "210f1f1862fed351f24814844f53ed1f2c740f0fc9e1aa0c9de88f6bc8075010",
       "size_bytes": 73809
     },
     {
       "exists": true,
       "path": "results\\v4_calibration_quality_20260529.json",
-      "sha256": "c294f596311f7278c3719a3de0880bf9bd5198ceb4c5c71a0603d1ac01234794",
+      "sha256": "df206187ef3ff421c8f2a7ec1476b82f27b83ca55edd84c0a5c1c44740a31615",
       "size_bytes": 28533
     },
     {
       "exists": true,
+      "path": "results\\risk_control_abstention_baselines_20260529.json",
+      "sha256": "5cfd6803bd732da7066695ca4b4a96770c34f9b777093d82e413492e8041439f",
+      "size_bytes": 11626
+    },
+    {
+      "exists": true,
       "path": "results\\end2end_retriever_generator_matrix_20260529.json",
-      "sha256": "112f80a56317e800dfccdb141f91fda1bc6296ac6b744cec1a5582183a71991d",
+      "sha256": "a190a8d353b87448bc485360a3a5b927fde590f52fbaa700461f131b2940d282",
       "size_bytes": 52753
     },
     {
       "exists": true,
       "path": "results\\end2end_risk_coverage_curves_20260529.json",
-      "sha256": "debf5cd39a03c5847960b4487bad9243bfab05b82e7efa4dbad9a4d3d6d97c32",
+      "sha256": "88229abbc22bdadca6747377a179a147568cd5b78e571f6c7783cd27d8fcceb0",
       "size_bytes": 130245
     },
     {
       "exists": true,
       "path": "results\\end2end_target_risk_coverage_20260529.json",
-      "sha256": "e0a6cd484a25db8d2318c148abc419df240de40f572813046ce5591ee8e7ba61",
+      "sha256": "9d4d7659652ba99209aae40a500e8e62d4c2c98f6e46accbb4858f8ed8268922",
       "size_bytes": 30644
     },
     {

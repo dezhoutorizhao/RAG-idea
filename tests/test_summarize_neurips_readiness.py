@@ -43,6 +43,7 @@ def test_summarize_neurips_readiness_maps_current_gates(tmp_path):
     assert by_req["Human-audited orbit labels"]["status"] == BLOCKED
     assert by_req["Text-only semantic verifier"]["status"] == PARTIAL
     assert by_req["Strong baselines and equal-budget controls"]["status"] == PARTIAL
+    assert "results/risk_control_abstention_baselines_20260529.json" in by_req["Strong baselines and equal-budget controls"]["evidence"]
     assert "results/end2end_risk_coverage_curves_20260529.json" in by_req["End-to-end selective RAG"]["evidence"]
     assert "results/end2end_target_risk_coverage_20260529.json" in by_req["End-to-end selective RAG"]["evidence"]
     assert by_req["Calibrated orbit risk model"]["status"] == PARTIAL

@@ -250,7 +250,7 @@
     "review_response_path": "results\\external_review_response_20260529.md",
     "status": "packet_ready"
   },
-  "generated_at_utc": "2026-05-29T06:02:40.924891+00:00",
+  "generated_at_utc": "2026-05-29T06:12:35.982341+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -648,7 +648,7 @@
         "status": "partial"
       },
       {
-        "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.",
+        "boundary_or_next_action": "Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency, risk-control abstention baselines, and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.",
         "requirement": "Strong baselines and equal-budget controls",
         "status": "partial"
       },
@@ -689,7 +689,7 @@
   ],
   "reproducibility_bundle": {
     "artifact": "reproducibility/bundle_summary_20260529.json",
-    "artifact_checksum_count": 158,
+    "artifact_checksum_count": 161,
     "checkpoint_hash_available": true,
     "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
     "dataset_construction_hash_count": 41,
@@ -709,7 +709,7 @@
   },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 158,
+    "artifact_count": 161,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,
@@ -721,7 +721,7 @@
     },
     "readme_artifact": "results/README.md",
     "readme_exists": true,
-    "step_count": 33,
+    "step_count": 34,
     "untracked_output_count": 0
   },
   "risk_control": {
@@ -751,6 +751,74 @@
       "formal_risk_guarantee_supported": false,
       "target_miss_count": 0
     }
+  },
+  "risk_control_abstention_baselines": {
+    "artifact": "results/risk_control_abstention_baselines_20260529.json",
+    "baseline_method_count": 13,
+    "baseline_methods": [
+      "calibrated_logistic_context",
+      "calibrated_logistic_orbit",
+      "context_sufficiency_clean",
+      "corm_max_clean",
+      "corm_mean_clean",
+      "equal_budget_ensemble_logistic",
+      "equal_budget_mean",
+      "equal_budget_min",
+      "equal_budget_q25",
+      "faithful_sure_multi",
+      "retrieval_stability",
+      "self_consistency_proxy",
+      "template_self_consistency"
+    ],
+    "by_target": [
+      {
+        "best_by_test_target_pass_rate": {
+          "mean_test_coverage": 0.4783284148182173,
+          "mean_test_risk": 0.22483335894106002,
+          "method": "calibrated_logistic_orbit",
+          "no_accept_rows": 0,
+          "row_count": 18,
+          "test_target_pass_rate": 0.6111111111111112
+        },
+        "best_mean_coverage_with_mean_risk_at_target": {
+          "mean_test_coverage": 0.1847012517744225,
+          "mean_test_risk": 0.07692307692307693,
+          "method": "retrieval_stability",
+          "no_accept_rows": 12,
+          "row_count": 18,
+          "test_target_pass_rate": 0.2222222222222222
+        },
+        "method_count": 13,
+        "methods_with_mean_risk_at_target": 2,
+        "methods_with_nonzero_acceptance": 11,
+        "risk_target": 0.2
+      },
+      {
+        "best_by_test_target_pass_rate": {
+          "mean_test_coverage": 0.6119475170043618,
+          "mean_test_risk": 0.2755759906642798,
+          "method": "equal_budget_ensemble_logistic",
+          "no_accept_rows": 0,
+          "row_count": 18,
+          "test_target_pass_rate": 0.5555555555555556
+        },
+        "best_mean_coverage_with_mean_risk_at_target": {
+          "mean_test_coverage": 0.6119475170043618,
+          "mean_test_risk": 0.2755759906642798,
+          "method": "equal_budget_ensemble_logistic",
+          "no_accept_rows": 0,
+          "row_count": 18,
+          "test_target_pass_rate": 0.5555555555555556
+        },
+        "method_count": 13,
+        "methods_with_mean_risk_at_target": 4,
+        "methods_with_nonzero_acceptance": 11,
+        "risk_target": 0.3
+      }
+    ],
+    "claim_boundary": "This artifact audits non-CSRM risk-control/abstention baselines under the same calibration-threshold protocol as CSRM targets. It is empirical held-out evidence, not a formal conformal guarantee and not a full CoRM-RAG reproduction.",
+    "risk_control_abstention_baseline_present": true,
+    "shared_threshold_protocol_complete": true
   },
   "structural_audits": {
     "fever_nearmiss_corm_v3_orbit_consistency_audit.json": {

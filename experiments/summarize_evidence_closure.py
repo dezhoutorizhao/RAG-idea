@@ -82,6 +82,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     end2end_curves = _end2end_curves_status(results)
     end2end_target_risk = _end2end_target_risk_coverage_status(results)
     v4_strong_baselines = _v4_strong_baseline_status(results)
+    risk_control_abstention = _risk_control_abstention_baseline_status(results)
     v4_failure_taxonomy = _v4_failure_taxonomy_status(results)
     v4_case_gallery = _v4_case_gallery_status(results)
     clean_sufficiency_figure = _clean_sufficiency_figure_status(results)
@@ -186,6 +187,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         "end2end_risk_coverage_curves": end2end_curves,
         "end2end_target_risk_coverage": end2end_target_risk,
         "v4_strong_baselines": v4_strong_baselines,
+        "risk_control_abstention_baselines": risk_control_abstention,
         "corm_reconstruction": {
             "preflight_ready": preflight.get("ready"),
             "missing_required_artifacts": preflight.get("missing_required_artifacts"),
@@ -630,6 +632,24 @@ def _v4_strong_baseline_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _risk_control_abstention_baseline_status(results: Path) -> dict[str, Any] | None:
+    path = results / "risk_control_abstention_baselines_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    return {
+        "artifact": str(path.as_posix()),
+        "shared_threshold_protocol_complete": payload.get("shared_threshold_protocol_complete"),
+        "risk_control_abstention_baseline_present": payload.get(
+            "risk_control_abstention_baseline_present"
+        ),
+        "baseline_method_count": payload.get("baseline_method_count"),
+        "baseline_methods": payload.get("baseline_methods", []),
+        "by_target": payload.get("by_target", []),
+        "claim_boundary": payload.get("claim_boundary"),
+    }
+
+
 def _v4_failure_taxonomy_status(results: Path) -> dict[str, Any] | None:
     path = results / "v4_failure_taxonomy_summary_20260529.json"
     if not path.exists():
@@ -937,6 +957,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     end2end_curves = status.get("end2end_risk_coverage_curves")
     end2end_target_risk = status.get("end2end_target_risk_coverage")
     strong_baselines = status.get("v4_strong_baselines")
+    risk_control_abstention = status.get("risk_control_abstention_baselines")
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
     human_v4 = status["latest_v4_diagnostics"].get("human_audit_v4")
     human_v4_eval = status["latest_v4_diagnostics"].get("human_audit_v4_eval")
@@ -1152,6 +1173,22 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"`{strong_baselines['logistic_aurc_robust_wins']}` / "
                 f"`{strong_baselines['logistic_aurc_losses']}`.",
                 f"- Claim implication: {strong_baselines['claim_implication']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## Risk-Control Abstention Baselines", ""])
+    if risk_control_abstention:
+        lines.extend(
+            [
+                f"- Shared-threshold protocol complete: "
+                f"`{risk_control_abstention['shared_threshold_protocol_complete']}`.",
+                f"- Baseline present: "
+                f"`{risk_control_abstention['risk_control_abstention_baseline_present']}`; "
+                f"method count: `{risk_control_abstention['baseline_method_count']}`.",
+                f"- Methods: `{', '.join(risk_control_abstention['baseline_methods'])}`.",
+                f"- Claim boundary: {risk_control_abstention['claim_boundary']}",
                 "",
             ]
         )

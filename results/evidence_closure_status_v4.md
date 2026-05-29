@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T06:02:40.924891+00:00`
+Generated: `2026-05-29T06:12:35.982341+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `33`; tracked artifacts: `158`.
+- Provenance steps: `34`; tracked artifacts: `161`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `158`; dataset construction hashes: `41`.
+- Artifact checksums: `161`; dataset construction hashes: `41`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -84,7 +84,7 @@ Hard blockers:
 
 Negative or partial evidence:
 - Text-only semantic verifier (`partial`): NLI cross-scorer evidence is directionally positive against required weak baselines, but LLM-NLI correlation and human-label text-only evaluation are not ready.
-- Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.
+- Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency, risk-control abstention baselines, and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.
 - End-to-end selective RAG (`partial`): Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage and target-risk coverage artifacts summarize lower accepted-error risk at fixed coverage and higher coverage at fixed target risk, but do not remove the full-reproduction boundary.
 - Calibrated orbit risk model (`partial`): Calibration-quality artifact shows Brier wins 6/6 against rule/minimax references, but ECE wins 4/6. This supports empirical calibration-quality wording, not a formal risk guarantee.
 - Risk-control claim (`fail`): Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.
@@ -104,6 +104,13 @@ Negative or partial evidence:
 - CSRM-Rule losses vs strongest by AUROC/Risk@30/AURC: `6` / `6` / `6`.
 - CSRM-Calibrated-Logistic robust Risk@30 wins/losses: `1` / `1`; AURC robust wins/losses: `1` / `5`.
 - Claim implication: The v4 strong-baseline package is present and includes context sufficiency, faithful SURE-style multi-set scoring, equal-budget orbit reducers, retrieval stability, self-consistency, and out-of-fold calibrated logistic context/orbit baselines. It strengthens reviewer-facing baseline coverage, but it is also negative boundary evidence: CSRM-Rule is not an all-win method against the strongest learned/context baselines, and calibrated CSRM should be reported with per-setting caveats.
+
+## Risk-Control Abstention Baselines
+
+- Shared-threshold protocol complete: `True`.
+- Baseline present: `True`; method count: `13`.
+- Methods: `calibrated_logistic_context, calibrated_logistic_orbit, context_sufficiency_clean, corm_max_clean, corm_mean_clean, equal_budget_ensemble_logistic, equal_budget_mean, equal_budget_min, equal_budget_q25, faithful_sure_multi, retrieval_stability, self_consistency_proxy, template_self_consistency`.
+- Claim boundary: This artifact audits non-CSRM risk-control/abstention baselines under the same calibration-threshold protocol as CSRM targets. It is empirical held-out evidence, not a formal conformal guarantee and not a full CoRM-RAG reproduction.
 
 ## V4 Failure Taxonomy
 

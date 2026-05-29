@@ -14,6 +14,7 @@ from experiments.summarize_evidence_closure import (
     _remote_storage_probe_status,
     _mechanism_ablation_status,
     _neurips_readiness_status,
+    _risk_control_abstention_baseline_status,
     _reproducibility_bundle_status,
     _results_provenance_status,
     _semantic_swap_status,
@@ -432,6 +433,28 @@ def test_v4_strong_baseline_status_marks_rule_losses(tmp_path):
     assert status["rule_by_auroc_losses"] == 6
     assert status["logistic_risk30_robust_wins"] == 1
     assert status["logistic_aurc_losses"] == 5
+
+
+def test_risk_control_abstention_baseline_status_summarizes_protocol(tmp_path):
+    _write_json(
+        tmp_path / "risk_control_abstention_baselines_20260529.json",
+        {
+            "shared_threshold_protocol_complete": True,
+            "risk_control_abstention_baseline_present": True,
+            "baseline_method_count": 2,
+            "baseline_methods": ["calibrated_logistic_orbit", "faithful_sure_multi"],
+            "by_target": [{"risk_target": 0.2, "method_count": 2}],
+            "claim_boundary": "empirical abstention baseline only",
+        },
+    )
+
+    status = _risk_control_abstention_baseline_status(tmp_path)
+
+    assert status["shared_threshold_protocol_complete"] is True
+    assert status["risk_control_abstention_baseline_present"] is True
+    assert status["baseline_method_count"] == 2
+    assert "faithful_sure_multi" in status["baseline_methods"]
+    assert "empirical" in status["claim_boundary"]
 
 
 def test_v4_failure_taxonomy_status_summarizes_diagnostic(tmp_path):

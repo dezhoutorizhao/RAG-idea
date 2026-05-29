@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T06:02:39.592621+00:00`
+Generated: `2026-05-29T06:12:34.703851+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -28,6 +28,7 @@ Ready for NeurIPS main claim: `False`
 | summarize_v4_baseline_budget_parity | `False` | `results\v4_baseline_budget_parity_20260529.json`<br>`results\v4_baseline_budget_parity_20260529.md` |
 | compare_equal_budget_thresholds_v4 | `True` | `results\v4_shared_threshold_selection_20260529.json`<br>`results\v4_shared_threshold_selection_20260529.md` |
 | summarize_v4_split_threshold_protocol | `True` | `results\v4_split_threshold_protocol_20260529.json`<br>`results\v4_split_threshold_protocol_20260529.md` |
+| summarize_risk_control_abstention_baselines | `True` | `results\risk_control_abstention_baselines_20260529.json`<br>`results\risk_control_abstention_baselines_20260529.md` |
 | summarize_v4_calibration_quality | `False` | `results\v4_calibration_quality_20260529.json`<br>`results\v4_calibration_quality_20260529.md` |
 | summarize_v4_failure_taxonomy | `True` | `results\v4_failure_taxonomy_summary_20260529.json`<br>`results\v4_failure_taxonomy_summary_20260529.md` |
 | export_v4_case_gallery | `True` | `paper\case_studies\v4_case_gallery_20260529.jsonl`<br>`paper\case_studies\v4_case_gallery_20260529.md`<br>`results\v4_case_gallery_summary_20260529.json` |

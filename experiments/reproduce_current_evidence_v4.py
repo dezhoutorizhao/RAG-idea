@@ -87,6 +87,10 @@ from experiments.summarize_v4_split_threshold_protocol import (
     render_markdown as render_v4_split_threshold_protocol_markdown,
     summarize_v4_split_threshold_protocol,
 )
+from experiments.summarize_risk_control_abstention_baselines import (
+    render_markdown as render_risk_control_abstention_baselines_markdown,
+    summarize_risk_control_abstention_baselines,
+)
 from experiments.summarize_v4_calibration_quality import (
     DEFAULT_INPUTS as DEFAULT_V4_CALIBRATION_QUALITY_INPUTS,
     render_markdown as render_v4_calibration_quality_markdown,
@@ -503,6 +507,22 @@ def reproduce_current_evidence_v4(
             "name": "summarize_v4_split_threshold_protocol",
             "outputs": [str(split_threshold_json), str(split_threshold_md)],
             "ready": split_threshold["protocol_complete"],
+        }
+    )
+
+    risk_control_abstention_json = results / "risk_control_abstention_baselines_20260529.json"
+    risk_control_abstention_md = results / "risk_control_abstention_baselines_20260529.md"
+    risk_control_abstention = summarize_risk_control_abstention_baselines(shared_threshold_json)
+    _write_json(risk_control_abstention_json, risk_control_abstention)
+    risk_control_abstention_md.write_text(
+        render_risk_control_abstention_baselines_markdown(risk_control_abstention),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "summarize_risk_control_abstention_baselines",
+            "outputs": [str(risk_control_abstention_json), str(risk_control_abstention_md)],
+            "ready": risk_control_abstention["risk_control_abstention_baseline_present"],
         }
     )
 
