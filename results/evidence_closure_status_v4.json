@@ -86,9 +86,9 @@
       "lexical_guarded"
     ],
     "has_losses": true,
-    "mean_aurc_reduction": 0.10793102889728452,
-    "mean_risk30_reduction": 0.15277777777777776,
-    "mean_risk50_reduction": 0.19083333333333333,
+    "mean_aurc_reduction": 0.10675212442371036,
+    "mean_risk30_reduction": 0.15138888888888888,
+    "mean_risk50_reduction": 0.18833333333333332,
     "retrievers": [
       "bm25_orbit_pool",
       "dense_hash_orbit_pool"
@@ -121,7 +121,7 @@
     "risk50_wins": 12,
     "row_count": 12
   },
-  "generated_at_utc": "2026-05-29T03:57:14.004234+00:00",
+  "generated_at_utc": "2026-05-29T04:04:05.600941+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -552,7 +552,7 @@
   ],
   "reproducibility_bundle": {
     "artifact": "reproducibility/bundle_summary_20260529.json",
-    "artifact_checksum_count": 125,
+    "artifact_checksum_count": 128,
     "checkpoint_hash_available": true,
     "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
     "dataset_construction_hash_count": 41,
@@ -572,7 +572,7 @@
   },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 125,
+    "artifact_count": 128,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,
@@ -584,7 +584,7 @@
     },
     "readme_artifact": "results/README.md",
     "readme_exists": true,
-    "step_count": 27,
+    "step_count": 28,
     "untracked_output_count": 0
   },
   "risk_control": {

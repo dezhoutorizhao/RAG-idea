@@ -36,6 +36,10 @@ from experiments.materialize_llm_judge_requests_nli_probe import (
     materialize_llm_judge_requests_nli_probe,
     render_markdown as render_llm_judge_nli_probe_markdown,
 )
+from experiments.normalize_llm_judge_batch_responses import (
+    normalize_llm_judge_batch_responses,
+    render_markdown as render_llm_judge_nli_score_status_markdown,
+)
 from experiments.run_end2end_retriever_generator_matrix_v4 import (
     DEFAULT_DATASETS as DEFAULT_END2END_MATRIX_DATASETS,
     render_markdown as render_end2end_matrix_markdown,
@@ -280,6 +284,28 @@ def reproduce_current_evidence_v4(
                 str(llm_judge_nli_status_md),
             ],
             "ready": llm_judge_nli_status["ready_for_nli_llm_correlation"],
+        }
+    )
+
+    llm_judge_nli_score_status_json = results / "llm_judge_nli_probe_score_status_20260529.json"
+    llm_judge_nli_score_status_md = results / "llm_judge_nli_probe_score_status_20260529.md"
+    llm_judge_nli_score_status = normalize_llm_judge_batch_responses(
+        results / "llm_judge_nli_probe_batch_output_20260529.jsonl",
+        results / "llm_judge_nli_probe_scores_20260529.jsonl",
+    )
+    _write_json(llm_judge_nli_score_status_json, llm_judge_nli_score_status)
+    llm_judge_nli_score_status_md.write_text(
+        render_llm_judge_nli_score_status_markdown(llm_judge_nli_score_status),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "normalize_llm_judge_batch_responses",
+            "outputs": [
+                str(llm_judge_nli_score_status_json),
+                str(llm_judge_nli_score_status_md),
+            ],
+            "ready": llm_judge_nli_score_status["ready_for_nli_llm_correlation"],
         }
     )
 

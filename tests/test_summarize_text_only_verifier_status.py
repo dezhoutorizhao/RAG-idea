@@ -29,6 +29,14 @@ def test_text_only_verifier_status_tracks_nli_pass_and_missing_llm_scores(tmp_pa
         },
     )
     _write_json(
+        results / "llm_judge_nli_probe_score_status_20260529.json",
+        {
+            "status": "blocked",
+            "blocker_reason": "missing_or_empty_batch_output_artifact",
+            "parsed_score_count": 0,
+        },
+    )
+    _write_json(
         results / "llm_nli_correlation_status_20260529.json",
         {
             "status": "blocked",
@@ -45,6 +53,7 @@ def test_text_only_verifier_status_tracks_nli_pass_and_missing_llm_scores(tmp_pa
     assert summary["llm_judge"]["request_pack_ready"] is True
     assert summary["llm_judge"]["paired_request_pack_ready"] is True
     assert summary["llm_judge"]["paired_request_count"] == 1000
+    assert summary["llm_judge"]["paired_score_status"] == "blocked"
     assert summary["llm_judge"]["correlation_status"] == "blocked"
     assert summary["llm_judge"]["nli_llm_correlation_ready"] is False
     assert summary["ready_for_text_only_main_claim"] is False
@@ -65,6 +74,14 @@ def test_text_only_verifier_markdown_lists_comparisons(tmp_path):
         {"request_pack_ready": True, "paired_to_nli_probe": True, "request_count": 1000},
     )
     _write_json(
+        results / "llm_judge_nli_probe_score_status_20260529.json",
+        {
+            "status": "blocked",
+            "blocker_reason": "missing_or_empty_batch_output_artifact",
+            "parsed_score_count": 0,
+        },
+    )
+    _write_json(
         results / "llm_nli_correlation_status_20260529.json",
         {
             "status": "blocked",
@@ -79,6 +96,7 @@ def test_text_only_verifier_markdown_lists_comparisons(tmp_path):
     assert "Text-Only Verifier Status" in text
     assert "naive_orbit_average" in text
     assert "NLI-paired request pack ready: `True`" in text
+    assert "Paired score normalization status: `blocked`" in text
     assert "Correlation status: `blocked`" in text
     assert "NLI/LLM correlation ready: `False`" in text
 

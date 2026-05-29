@@ -14,6 +14,7 @@ DEFAULT_LLM_JUDGE_STATUS = Path("results/llm_judge_v4_request_status_20260529.js
 DEFAULT_LLM_JUDGE_SCORES = Path("results/llm_judge_v4_scores_20260529.jsonl")
 DEFAULT_PAIRED_LLM_JUDGE_STATUS = Path("results/llm_judge_nli_probe_request_status_20260529.json")
 DEFAULT_PAIRED_LLM_JUDGE_SCORES = Path("results/llm_judge_nli_probe_scores_20260529.jsonl")
+DEFAULT_PAIRED_LLM_SCORE_STATUS = Path("results/llm_judge_nli_probe_score_status_20260529.json")
 DEFAULT_LLM_NLI_CORRELATION_STATUS = Path("results/llm_nli_correlation_status_20260529.json")
 DEFAULT_HUMAN_AUDIT_STATUS = Path("results/human_audit_v4_status_20260529.json")
 REQUIRED_NLI_BASELINES = [
@@ -33,6 +34,7 @@ def summarize_text_only_verifier_status(
     llm_judge_scores_path: Path = DEFAULT_LLM_JUDGE_SCORES,
     paired_llm_judge_status_path: Path = DEFAULT_PAIRED_LLM_JUDGE_STATUS,
     paired_llm_judge_scores_path: Path = DEFAULT_PAIRED_LLM_JUDGE_SCORES,
+    paired_llm_score_status_path: Path = DEFAULT_PAIRED_LLM_SCORE_STATUS,
     llm_nli_correlation_status_path: Path = DEFAULT_LLM_NLI_CORRELATION_STATUS,
     human_audit_status_path: Path = DEFAULT_HUMAN_AUDIT_STATUS,
 ) -> dict[str, Any]:
@@ -42,12 +44,14 @@ def summarize_text_only_verifier_status(
     llm_scores_abs = root / llm_judge_scores_path
     paired_llm_status_abs = root / paired_llm_judge_status_path
     paired_llm_scores_abs = root / paired_llm_judge_scores_path
+    paired_score_status_abs = root / paired_llm_score_status_path
     correlation_status_abs = root / llm_nli_correlation_status_path
     human_status_abs = root / human_audit_status_path
 
     nli_eval = _load_optional_json(nli_eval_abs)
     llm_status = _load_optional_json(llm_status_abs)
     paired_llm_status = _load_optional_json(paired_llm_status_abs)
+    paired_score_status = _load_optional_json(paired_score_status_abs)
     correlation_status = _load_optional_json(correlation_status_abs)
     human_status = _load_optional_json(human_status_abs)
 
@@ -135,6 +139,10 @@ def summarize_text_only_verifier_status(
             "paired_score_path": str(paired_llm_judge_scores_path),
             "paired_score_artifact_ready": paired_score_ready,
             "paired_score_space_ready": paired_score_space_ready,
+            "paired_score_status_path": str(paired_llm_score_status_path),
+            "paired_score_status": _get(paired_score_status, "status"),
+            "paired_score_blocker_reason": _get(paired_score_status, "blocker_reason"),
+            "paired_score_parsed_count": _get(paired_score_status, "parsed_score_count"),
             "correlation_status_path": str(llm_nli_correlation_status_path),
             "correlation_status": _get(correlation_status, "status"),
             "correlation_blocker_reason": _get(correlation_status, "blocker_reason"),
@@ -190,6 +198,9 @@ def render_markdown(summary: dict[str, Any]) -> str:
             f"- NLI-paired request count: `{summary['llm_judge']['paired_request_count']}`.",
             f"- NLI-paired score artifact ready: `{summary['llm_judge']['paired_score_artifact_ready']}`.",
             f"- Paired score space ready: `{summary['llm_judge']['paired_score_space_ready']}`.",
+            f"- Paired score normalization status: `{summary['llm_judge']['paired_score_status']}`.",
+            f"- Paired score blocker: `{summary['llm_judge']['paired_score_blocker_reason']}`.",
+            f"- Paired parsed scores: `{summary['llm_judge']['paired_score_parsed_count']}`.",
             f"- Correlation status: `{summary['llm_judge']['correlation_status']}`.",
             f"- Correlation blocker: `{summary['llm_judge']['correlation_blocker_reason']}`.",
             f"- NLI/LLM correlation ready: `{summary['llm_judge']['nli_llm_correlation_ready']}`.",

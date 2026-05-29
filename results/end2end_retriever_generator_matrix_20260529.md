@@ -1,6 +1,6 @@
 # V4 End-to-End Retriever-Generator Matrix
 
-Generated: `2026-05-29T03:57:08.296754+00:00`
+Generated: `2026-05-29T04:04:00.014289+00:00`
 
 Datasets: `6`
 Retrievers: `['bm25_orbit_pool', 'dense_hash_orbit_pool']`
@@ -13,9 +13,9 @@ Protocol complete: `True`
 - CSRM Risk@30 wins/ties/losses: `16` / `4` / `4`.
 - CSRM Risk@50 wins/ties/losses: `24` / `0` / `0`.
 - CSRM AURC wins/ties/losses: `16` / `0` / `8`.
-- Mean Risk@30 reduction: `0.1528`.
-- Mean Risk@50 reduction: `0.1908`.
-- Mean AURC reduction: `0.1079`.
+- Mean Risk@30 reduction: `0.1514`.
+- Mean Risk@50 reduction: `0.1883`.
+- Mean AURC reduction: `0.1068`.
 
 ## Rows
 
@@ -28,7 +28,7 @@ Protocol complete: `True`
 | hotpot_v4_hardneg_n100 | bm25_orbit_pool | copy_candidate | 0.5000 | 0.1833 | 0.4500 | 0.2667 | 0.2200 | 0.4700 | 0.2500 | 0.2597 | 0.4636 | 0.2039 | win |
 | hotpot_v4_hardneg_n100 | bm25_orbit_pool | lexical_guarded | 0.5000 | 0.1833 | 0.4500 | 0.2667 | 0.2200 | 0.4700 | 0.2500 | 0.2597 | 0.4636 | 0.2039 | win |
 | hotpot_v4_hardneg_n100 | dense_hash_orbit_pool | copy_candidate | 0.5000 | 0.1833 | 0.4500 | 0.2667 | 0.2200 | 0.4700 | 0.2500 | 0.2597 | 0.4636 | 0.2039 | win |
-| hotpot_v4_hardneg_n100 | dense_hash_orbit_pool | lexical_guarded | 0.5000 | 0.1833 | 0.4500 | 0.2667 | 0.2200 | 0.4500 | 0.2300 | 0.2597 | 0.4486 | 0.1889 | win |
+| hotpot_v4_hardneg_n100 | dense_hash_orbit_pool | lexical_guarded | 0.5000 | 0.1833 | 0.4167 | 0.2333 | 0.2200 | 0.3900 | 0.1700 | 0.2597 | 0.4204 | 0.1606 | win |
 | hotpot_v4_n100_hardmatched | bm25_orbit_pool | copy_candidate | 0.5000 | 0.4500 | 0.4500 | 0.0000 | 0.4100 | 0.4400 | 0.0300 | 0.4486 | 0.4408 | -0.0078 | mixed_positive |
 | hotpot_v4_n100_hardmatched | bm25_orbit_pool | lexical_guarded | 0.5000 | 0.4500 | 0.4500 | 0.0000 | 0.4100 | 0.4400 | 0.0300 | 0.4486 | 0.4408 | -0.0078 | mixed_positive |
 | hotpot_v4_n100_hardmatched | dense_hash_orbit_pool | copy_candidate | 0.5000 | 0.4500 | 0.4500 | 0.0000 | 0.4100 | 0.4400 | 0.0300 | 0.4486 | 0.4408 | -0.0078 | mixed_positive |
