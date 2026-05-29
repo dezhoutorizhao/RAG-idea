@@ -76,5 +76,13 @@ def test_default_manifest_tracks_human_audit_protocol_docs():
     assert "annotation/label_schema_v4.json" in defaults
 
 
+def test_default_manifest_tracks_text_only_verifier_artifacts():
+    defaults = {str(path).replace("\\", "/") for path in DEFAULT_ARTIFACTS}
+
+    assert "results/text_only_verifier_status_20260529.json" in defaults
+    assert "results/audit_sample_paper_1000_v3_nli_set_eval.json" in defaults
+    assert "experiments/summarize_text_only_verifier_status.py" in defaults
+
+
 def _write_json(path, payload):
     path.write_text(json.dumps(payload), encoding="utf-8")

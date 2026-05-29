@@ -9,6 +9,7 @@ python -m pytest `
   tests/test_run_end2end_retriever_generator_matrix_v4.py `
   tests/test_summarize_human_audit_v4_disagreements.py `
   tests/test_summarize_human_audit_v4_mismatch.py `
+  tests/test_summarize_text_only_verifier_status.py `
   tests/test_summarize_v4_baseline_budget_parity.py `
   tests/test_summarize_v4_baseline_coverage.py `
   tests/test_summarize_v4_split_threshold_protocol.py `

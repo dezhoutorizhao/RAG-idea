@@ -9,6 +9,14 @@ python -m experiments.verify_v4_evidence_package `
   --output-json results\v4_evidence_package_manifest_20260529.json `
   --output-md results\v4_evidence_package_manifest_20260529.md
 
+python -m experiments.summarize_neurips_readiness `
+  --output-json results\neurips_readiness_matrix_20260529.json `
+  --output-md results\neurips_readiness_matrix_20260529.md
+
+python -m experiments.verify_v4_evidence_package `
+  --output-json results\v4_evidence_package_manifest_20260529.json `
+  --output-md results\v4_evidence_package_manifest_20260529.md
+
 python -m experiments.verify_claims `
   --output results\claims_verification.json
 

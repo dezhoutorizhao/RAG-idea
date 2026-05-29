@@ -1,0 +1,83 @@
+{
+  "claim_policy": "This audits the text-only verifier evidence from RAG-idea Section 5.2. It supports only the NLI bridge/probe claim until LLM judge scores and human adjudicated labels are available.",
+  "generated_at_utc": "2026-05-29T03:45:39.993906+00:00",
+  "human_audit": {
+    "pending": 300,
+    "ready": false,
+    "status_path": "results\\human_audit_v4_status_20260529.json"
+  },
+  "llm_judge": {
+    "nli_llm_correlation_ready": false,
+    "paired_score_space_ready": false,
+    "request_count": 1200,
+    "request_pack_ready": true,
+    "score_artifact_ready": false,
+    "score_path": "results\\llm_judge_v4_scores_20260529.jsonl",
+    "status_path": "results\\llm_judge_v4_request_status_20260529.json"
+  },
+  "nli_probe": {
+    "csrm_metrics": {
+      "aurc": 0.6676145688591014,
+      "auroc": 0.7352875,
+      "n": 1000,
+      "risk_at_30": 0.6266666666666667
+    },
+    "directional_advantage_ready": true,
+    "eval_exists": true,
+    "eval_path": "results\\audit_sample_paper_1000_v3_nli_set_eval.json",
+    "n": 1000,
+    "required_baseline_comparisons": [
+      {
+        "aurc_reduction": 0.12829912246641506,
+        "auroc_delta": 0.24731874999999998,
+        "baseline": "naive_orbit_average",
+        "passes_all_metrics": true,
+        "risk30_reduction": 0.23333333333333328
+      },
+      {
+        "aurc_reduction": 0.1525702439735227,
+        "auroc_delta": 0.25351874999999996,
+        "baseline": "single_set_sure_style",
+        "passes_all_metrics": true,
+        "risk30_reduction": 0.2433333333333333
+      },
+      {
+        "aurc_reduction": 0.11620113533602772,
+        "auroc_delta": 0.210884375,
+        "baseline": "corm_max_clean",
+        "passes_all_metrics": true,
+        "risk30_reduction": 0.15333333333333332
+      },
+      {
+        "aurc_reduction": 0.1192486786723973,
+        "auroc_delta": 0.216415625,
+        "baseline": "corm_mean_clean",
+        "passes_all_metrics": true,
+        "risk30_reduction": 0.16333333333333333
+      }
+    ],
+    "scored_exists": true,
+    "scored_path": "results\\audit_sample_paper_1000_v3_nli_set.jsonl"
+  },
+  "ready_for_text_only_main_claim": false,
+  "success_criteria": [
+    {
+      "criterion": "NLI/text-only scorer beats required weak baselines",
+      "detail": "CSRM has higher AUROC and lower Risk@30/AURC than naive orbit average, single-set SURE-style, and clean-only CoRM reducers.",
+      "evidence": "results\\audit_sample_paper_1000_v3_nli_set_eval.json",
+      "status": "pass"
+    },
+    {
+      "criterion": "LLM judge and NLI ranking correlation",
+      "detail": "LLM judge request pack exists, but no API-backed score artifact in a paired score space exists yet.",
+      "evidence": "results\\llm_judge_v4_scores_20260529.jsonl",
+      "status": "blocked"
+    },
+    {
+      "criterion": "Human-label text-only CSRM evaluation",
+      "detail": "Human audit v4 adjudicated labels are still pending, so human-label text-only Risk@30/50 cannot be claimed.",
+      "evidence": "results\\human_audit_v4_status_20260529.json",
+      "status": "blocked"
+    }
+  ]
+}

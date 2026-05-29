@@ -19,7 +19,8 @@ def summarize_neurips_readiness(root: Path) -> dict[str, Any]:
     closure = _load_json(results / "evidence_closure_status_v4.json")
     manifest = _load_json(results / "v4_evidence_package_manifest_20260529.json")
     reproduction = _load_json(results / "current_evidence_reproduction_20260529.json")
-    rows = _rows(closure, manifest, reproduction)
+    text_only = _load_optional_json(results / "text_only_verifier_status_20260529.json")
+    rows = _rows(closure, manifest, reproduction, text_only)
     return {
         "generated_at_utc": datetime.now(timezone.utc).isoformat(),
         "source": {
@@ -27,6 +28,7 @@ def summarize_neurips_readiness(root: Path) -> dict[str, Any]:
             "closure": "results/evidence_closure_status_v4.json",
             "manifest": "results/v4_evidence_package_manifest_20260529.json",
             "reproduction": "results/current_evidence_reproduction_20260529.json",
+            "text_only_verifier": "results/text_only_verifier_status_20260529.json",
         },
         "rows": rows,
         "status_counts": _status_counts(rows),
@@ -75,7 +77,12 @@ def render_markdown(summary: dict[str, Any]) -> str:
     return "\n".join(lines)
 
 
-def _rows(closure: dict[str, Any], manifest: dict[str, Any], reproduction: dict[str, Any]) -> list[dict[str, Any]]:
+def _rows(
+    closure: dict[str, Any],
+    manifest: dict[str, Any],
+    reproduction: dict[str, Any],
+    text_only: dict[str, Any],
+) -> list[dict[str, Any]]:
     latest = closure.get("latest_v4_diagnostics", {})
     strong = closure.get("v4_strong_baselines") or {}
     end2end = closure.get("end2end_selective_rag_proxy") or {}
@@ -103,6 +110,23 @@ def _rows(closure: dict[str, Any], manifest: dict[str, Any], reproduction: dict[
                 "results/human_audit_v4_eval_status_20260529.json",
             ],
             f"Pending labels: {gate.get('human_audit_v4_pending')}; cannot claim human-audited results.",
+        ),
+        _row(
+            "Text-only semantic verifier",
+            PASS
+            if text_only.get("ready_for_text_only_main_claim")
+            else PARTIAL
+            if _g(text_only, "nli_probe", "directional_advantage_ready")
+            else FAIL,
+            [
+                "results/text_only_verifier_status_20260529.json",
+                "results/audit_sample_paper_1000_v3_nli_set_eval.json",
+                "results/llm_judge_v4_request_status_20260529.json",
+            ],
+            (
+                "NLI cross-scorer evidence is directionally positive against required weak baselines, "
+                "but LLM-NLI correlation and human-label text-only evaluation are not ready."
+            ),
         ),
         _row(
             "Strong baselines and equal-budget controls",
@@ -218,6 +242,12 @@ def _g(payload: dict[str, Any], *path: str) -> Any:
 
 def _load_json(path: Path) -> dict[str, Any]:
     return json.loads(path.read_text(encoding="utf-8"))
+
+
+def _load_optional_json(path: Path) -> dict[str, Any]:
+    if not path.exists():
+        return {}
+    return _load_json(path)
 
 
 def _write_json(path: Path, payload: dict[str, Any]) -> None:

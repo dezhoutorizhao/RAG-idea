@@ -27,12 +27,20 @@ def test_summarize_neurips_readiness_maps_current_gates(tmp_path):
             }
         },
     )
+    _write_json(
+        results / "text_only_verifier_status_20260529.json",
+        {
+            "ready_for_text_only_main_claim": False,
+            "nli_probe": {"directional_advantage_ready": True},
+        },
+    )
 
     summary = summarize_neurips_readiness(tmp_path)
 
     by_req = {row["requirement"]: row for row in summary["rows"]}
     assert by_req["Leakage-free v4 pipeline"]["status"] == PASS
     assert by_req["Human-audited orbit labels"]["status"] == BLOCKED
+    assert by_req["Text-only semantic verifier"]["status"] == PARTIAL
     assert by_req["Strong baselines and equal-budget controls"]["status"] == PARTIAL
     assert by_req["Risk-control claim"]["status"] == FAIL
     assert summary["ready_for_neurips_main_track"] is False
@@ -49,6 +57,13 @@ def test_render_markdown_lists_status_policy(tmp_path):
     _write_json(
         results / "current_evidence_reproduction_20260529.json",
         {"gate_summary": {"human_audit_v4_ready": False, "human_audit_v4_pending": 300}},
+    )
+    _write_json(
+        results / "text_only_verifier_status_20260529.json",
+        {
+            "ready_for_text_only_main_claim": False,
+            "nli_probe": {"directional_advantage_ready": True},
+        },
     )
 
     text = render_markdown(summarize_neurips_readiness(tmp_path))

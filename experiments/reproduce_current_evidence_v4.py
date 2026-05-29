@@ -92,6 +92,10 @@ from experiments.summarize_mechanism_ablation import (
     render_markdown as render_mechanism_ablation_markdown,
     summarize_mechanism_ablation,
 )
+from experiments.summarize_text_only_verifier_status import (
+    render_markdown as render_text_only_verifier_markdown,
+    summarize_text_only_verifier_status,
+)
 from experiments.summarize_neurips_readiness import (
     render_markdown as render_neurips_readiness_markdown,
     summarize_neurips_readiness,
@@ -243,6 +247,19 @@ def reproduce_current_evidence_v4(
             "name": "materialize_llm_judge_requests_v4",
             "outputs": [str(llm_judge_requests_jsonl), str(llm_judge_status_json), str(llm_judge_status_md)],
             "ready": llm_judge_status["ready_for_baseline_coverage"],
+        }
+    )
+
+    text_only_status_json = results / "text_only_verifier_status_20260529.json"
+    text_only_status_md = results / "text_only_verifier_status_20260529.md"
+    text_only_status = summarize_text_only_verifier_status(root)
+    _write_json(text_only_status_json, text_only_status)
+    text_only_status_md.write_text(render_text_only_verifier_markdown(text_only_status), encoding="utf-8")
+    commands.append(
+        {
+            "name": "summarize_text_only_verifier_status",
+            "outputs": [str(text_only_status_json), str(text_only_status_md)],
+            "ready": text_only_status["ready_for_text_only_main_claim"],
         }
     )
 

@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T03:36:30.298582+00:00`
+Generated: `2026-05-29T03:45:45.031770+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `24`; tracked artifacts: `113`.
+- Provenance steps: `25`; tracked artifacts: `118`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `113`; dataset construction hashes: `41`.
+- Artifact checksums: `118`; dataset construction hashes: `41`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
@@ -66,8 +66,8 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## NeurIPS Readiness Matrix
 
 - Ready for NeurIPS main-track claim: `False`.
-- Status counts: `{'blocked': 3, 'fail': 1, 'partial': 2, 'pass': 4}`.
-- Hard blockers: `3`; negative/partial evidence items: `3`.
+- Status counts: `{'blocked': 3, 'fail': 1, 'partial': 3, 'pass': 4}`.
+- Hard blockers: `3`; negative/partial evidence items: `4`.
 
 Hard blockers:
 - Human-audited orbit labels: Pending labels: 300; cannot claim human-audited results.
@@ -75,6 +75,7 @@ Hard blockers:
 - Independent external review: Not rerun after latest evidence package; requires explicit external/subagent review or another approved review path.
 
 Negative or partial evidence:
+- Text-only semantic verifier (`partial`): NLI cross-scorer evidence is directionally positive against required weak baselines, but LLM-NLI correlation and human-label text-only evaluation are not ready.
 - Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.
 - End-to-end selective RAG (`partial`): Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction.
 - Risk-control claim (`fail`): Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.
@@ -143,7 +144,7 @@ V4 anti-shortcut suite:
 - Risk@30 wins/ties/losses vs strongest non-CSRM: `16` / `4` / `4`.
 - Risk@50 wins/ties/losses vs strongest non-CSRM: `24` / `0` / `0`.
 - AURC wins/ties/losses vs strongest non-CSRM: `16` / `0` / `8`.
-- Mean Risk@30/Risk@50/AURC reduction: `0.1528` / `0.1908` / `0.1082`.
+- Mean Risk@30/Risk@50/AURC reduction: `0.1507` / `0.1900` / `0.1068`.
 - Claim policy: This matrix expands the end-to-end proxy to two retrieval policies and two generators over the materialized v4 orbit corpus. It is still a local-corpus proxy, not a full Wikipedia retrieval-generation reproduction.
 
 ## CoRM Reconstruction
