@@ -4,6 +4,7 @@ python -m pytest `
   tests/test_build_results_provenance_readme.py `
   tests/test_build_claims_ledger_markdown.py `
   tests/test_build_reproducibility_bundle.py `
+  tests/test_compute_llm_nli_correlation.py `
   tests/test_compare_equal_budget_thresholds_v4.py `
   tests/test_materialize_llm_judge_requests_v4.py `
   tests/test_materialize_llm_judge_requests_nli_probe.py `

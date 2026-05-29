@@ -82,7 +82,9 @@ def test_default_manifest_tracks_text_only_verifier_artifacts():
     assert "results/text_only_verifier_status_20260529.json" in defaults
     assert "results/audit_sample_paper_1000_v3_nli_set_eval.json" in defaults
     assert "results/llm_judge_nli_probe_request_status_20260529.json" in defaults
+    assert "results/llm_nli_correlation_status_20260529.json" in defaults
     assert "experiments/materialize_llm_judge_requests_nli_probe.py" in defaults
+    assert "experiments/compute_llm_nli_correlation.py" in defaults
     assert "experiments/summarize_text_only_verifier_status.py" in defaults
 
 

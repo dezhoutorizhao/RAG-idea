@@ -28,6 +28,14 @@ def test_text_only_verifier_status_tracks_nli_pass_and_missing_llm_scores(tmp_pa
             "score_artifact_ready": False,
         },
     )
+    _write_json(
+        results / "llm_nli_correlation_status_20260529.json",
+        {
+            "status": "blocked",
+            "blocker_reason": "missing_or_empty_llm_score_artifact",
+            "ready_for_nli_llm_correlation_claim": False,
+        },
+    )
     _write_json(results / "human_audit_v4_status_20260529.json", {"ready": False, "pending": 300})
 
     summary = summarize_text_only_verifier_status(tmp_path)
@@ -37,6 +45,7 @@ def test_text_only_verifier_status_tracks_nli_pass_and_missing_llm_scores(tmp_pa
     assert summary["llm_judge"]["request_pack_ready"] is True
     assert summary["llm_judge"]["paired_request_pack_ready"] is True
     assert summary["llm_judge"]["paired_request_count"] == 1000
+    assert summary["llm_judge"]["correlation_status"] == "blocked"
     assert summary["llm_judge"]["nli_llm_correlation_ready"] is False
     assert summary["ready_for_text_only_main_claim"] is False
     statuses = {item["criterion"]: item["status"] for item in summary["success_criteria"]}
@@ -55,6 +64,14 @@ def test_text_only_verifier_markdown_lists_comparisons(tmp_path):
         results / "llm_judge_nli_probe_request_status_20260529.json",
         {"request_pack_ready": True, "paired_to_nli_probe": True, "request_count": 1000},
     )
+    _write_json(
+        results / "llm_nli_correlation_status_20260529.json",
+        {
+            "status": "blocked",
+            "blocker_reason": "missing_or_empty_llm_score_artifact",
+            "ready_for_nli_llm_correlation_claim": False,
+        },
+    )
     _write_json(results / "human_audit_v4_status_20260529.json", {"ready": False})
 
     text = render_markdown(summarize_text_only_verifier_status(tmp_path))
@@ -62,6 +79,7 @@ def test_text_only_verifier_markdown_lists_comparisons(tmp_path):
     assert "Text-Only Verifier Status" in text
     assert "naive_orbit_average" in text
     assert "NLI-paired request pack ready: `True`" in text
+    assert "Correlation status: `blocked`" in text
     assert "NLI/LLM correlation ready: `False`" in text
 
 

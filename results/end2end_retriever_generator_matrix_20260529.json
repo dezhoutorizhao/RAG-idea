@@ -5,9 +5,9 @@
     "aurc_ties": 0,
     "aurc_wins": 16,
     "has_losses": true,
-    "mean_aurc_reduction": 0.10825103245383222,
+    "mean_aurc_reduction": 0.10793102889728452,
     "mean_risk30_reduction": 0.15277777777777776,
-    "mean_risk50_reduction": 0.19125,
+    "mean_risk50_reduction": 0.19083333333333333,
     "risk30_losses": 4,
     "risk30_ties": 4,
     "risk30_wins": 16,
@@ -26,7 +26,7 @@
     "hotpot_v4_semanticswap_n100",
     "hotpot_v4_supportpreserve_n100"
   ],
-  "generated_at_utc": "2026-05-29T03:50:19.398442+00:00",
+  "generated_at_utc": "2026-05-29T03:57:08.296754+00:00",
   "generators": [
     "copy_candidate",
     "lexical_guarded"
@@ -524,12 +524,12 @@
     {
       "answer_accuracy": 0.5,
       "best_non_csrm": {
-        "aurc": 0.45632429090962234,
+        "aurc": 0.4486442055524777,
         "coverage_at_risk20": 0.005,
         "method": "generator_confidence",
         "risk30": 0.44999999999999996,
-        "risk50": 0.45999999999999996,
-        "risk70": 0.4642857142857143
+        "risk50": 0.44999999999999996,
+        "risk70": 0.4571428571428572
       },
       "csrm": {
         "aurc": 0.2597126239534901,
@@ -540,10 +540,10 @@
       },
       "dataset": "hotpot_v4_hardneg_n100",
       "deltas": {
-        "aurc_reduction": 0.19661166695613225,
+        "aurc_reduction": 0.1889315815989876,
         "coverage_at_risk20_gain": 0.45,
         "risk30_reduction": 0.2666666666666666,
-        "risk50_reduction": 0.24
+        "risk50_reduction": 0.22999999999999998
       },
       "generator": "lexical_guarded",
       "n": 200,
@@ -826,7 +826,7 @@
       "outputs_sample": [
         {
           "answer": "BBC",
-          "confidence": 0.46153846153846156,
+          "confidence": 0.826923076923077,
           "correct": true,
           "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
         },
@@ -838,13 +838,13 @@
         },
         {
           "answer": "The film was originally set to be released in May 2008",
-          "confidence": 0.925,
+          "confidence": 0.9312499999999999,
           "correct": true,
           "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
         },
         {
           "answer": "The film was originally set to be released in May 2008",
-          "confidence": 0.925,
+          "confidence": 0.9312499999999999,
           "correct": false,
           "orbit_id": "hotpot:5ae5086d55429908b63264eb:missing_hop"
         },
@@ -1102,13 +1102,13 @@
       "outputs_sample": [
         {
           "answer": "BBC",
-          "confidence": 0.46153846153846156,
+          "confidence": 0.826923076923077,
           "correct": true,
           "orbit_id": "hotpot:5a80f793554299260e20a1e1:stable"
         },
         {
           "answer": "The film was originally set to be released in May 2008",
-          "confidence": 0.925,
+          "confidence": 0.9312499999999999,
           "correct": true,
           "orbit_id": "hotpot:5ae5086d55429908b63264eb:stable"
         },

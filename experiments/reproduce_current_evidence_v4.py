@@ -113,6 +113,10 @@ from experiments.build_claims_ledger_markdown import (
     build_claims_ledger_markdown,
     render_markdown as render_claims_ledger_markdown,
 )
+from experiments.compute_llm_nli_correlation import (
+    compute_llm_nli_correlation,
+    render_markdown as render_llm_nli_correlation_markdown,
+)
 from experiments.verify_claims import verify_claims
 
 
@@ -276,6 +280,25 @@ def reproduce_current_evidence_v4(
                 str(llm_judge_nli_status_md),
             ],
             "ready": llm_judge_nli_status["ready_for_nli_llm_correlation"],
+        }
+    )
+
+    llm_nli_correlation_json = results / "llm_nli_correlation_status_20260529.json"
+    llm_nli_correlation_md = results / "llm_nli_correlation_status_20260529.md"
+    llm_nli_correlation = compute_llm_nli_correlation(
+        results / "audit_sample_paper_1000_v3_nli_set.jsonl",
+        results / "llm_judge_nli_probe_scores_20260529.jsonl",
+    )
+    _write_json(llm_nli_correlation_json, llm_nli_correlation)
+    llm_nli_correlation_md.write_text(
+        render_llm_nli_correlation_markdown(llm_nli_correlation),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "compute_llm_nli_correlation",
+            "outputs": [str(llm_nli_correlation_json), str(llm_nli_correlation_md)],
+            "ready": llm_nli_correlation["ready_for_nli_llm_correlation_claim"],
         }
     )
 

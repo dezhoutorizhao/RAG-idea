@@ -1,6 +1,6 @@
 # Text-Only Verifier Status
 
-Generated: `2026-05-29T03:50:19.850129+00:00`
+Generated: `2026-05-29T03:57:08.939865+00:00`
 
 Ready for text-only main claim: `False`
 
@@ -27,6 +27,8 @@ Ready for text-only main claim: `False`
 - NLI-paired request count: `1000`.
 - NLI-paired score artifact ready: `False`.
 - Paired score space ready: `False`.
+- Correlation status: `blocked`.
+- Correlation blocker: `missing_or_empty_llm_score_artifact`.
 - NLI/LLM correlation ready: `False`.
 
 ## Success Criteria
