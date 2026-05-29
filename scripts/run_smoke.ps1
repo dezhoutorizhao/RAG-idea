@@ -12,6 +12,7 @@ python -m pytest `
   tests/test_manage_openai_llm_judge_batch.py `
   tests/test_normalize_llm_judge_batch_responses.py `
   tests/test_run_end2end_retriever_generator_matrix_v4.py `
+  tests/test_plot_end2end_risk_coverage_curves.py `
   tests/test_summarize_human_audit_v4_disagreements.py `
   tests/test_summarize_human_audit_v4_mismatch.py `
   tests/test_summarize_text_only_verifier_status.py `

@@ -43,6 +43,7 @@ def test_summarize_neurips_readiness_maps_current_gates(tmp_path):
     assert by_req["Human-audited orbit labels"]["status"] == BLOCKED
     assert by_req["Text-only semantic verifier"]["status"] == PARTIAL
     assert by_req["Strong baselines and equal-budget controls"]["status"] == PARTIAL
+    assert "results/end2end_risk_coverage_curves_20260529.json" in by_req["End-to-end selective RAG"]["evidence"]
     assert "6 target-dir file probes failed" in by_req["Full CoRM-RAG reproduction"]["boundary_or_next_action"]
     assert by_req["Independent external review"]["status"] == BLOCKED
     assert "external_review_packet_20260529.md" in by_req["Independent external review"]["evidence"][1]

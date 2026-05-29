@@ -79,6 +79,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     fever_cp_sweep = _fever_cp_transfer_sweep_status(results)
     end2end_proxy = _end2end_proxy_status(results)
     end2end_matrix = _end2end_matrix_status(results)
+    end2end_curves = _end2end_curves_status(results)
     v4_strong_baselines = _v4_strong_baseline_status(results)
     v4_failure_taxonomy = _v4_failure_taxonomy_status(results)
     v4_case_gallery = _v4_case_gallery_status(results)
@@ -179,6 +180,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         "mechanism_ablation": mechanism_ablation,
         "end2end_selective_rag_proxy": end2end_proxy,
         "end2end_retriever_generator_matrix": end2end_matrix,
+        "end2end_risk_coverage_curves": end2end_curves,
         "v4_strong_baselines": v4_strong_baselines,
         "corm_reconstruction": {
             "preflight_ready": preflight.get("ready"),
@@ -533,6 +535,47 @@ def _end2end_matrix_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _end2end_curves_status(results: Path) -> dict[str, Any] | None:
+    path = results / "end2end_risk_coverage_curves_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    aggregate = payload.get("aggregate", {})
+    csrm_vs_best = aggregate.get("csrm_vs_strongest_non_csrm", [])
+    return {
+        "artifact": str(path.as_posix()),
+        "svg": get(payload, "outputs", "svg"),
+        "dataset_count": payload.get("dataset_count"),
+        "retrievers": payload.get("retrievers"),
+        "generators": payload.get("generators"),
+        "row_count": payload.get("row_count"),
+        "coverage_count": aggregate.get("coverage_count"),
+        "csrm_lower_risk_coverage_count": aggregate.get("csrm_lower_risk_coverage_count"),
+        "csrm_risk_at_30": _curve_risk(csrm_vs_best, "csrm_mean_risk", 0.30),
+        "strongest_non_csrm_risk_at_30": _curve_risk(
+            csrm_vs_best,
+            "strongest_non_csrm_mean_risk",
+            0.30,
+        ),
+        "risk30_reduction": _curve_risk(csrm_vs_best, "mean_risk_reduction", 0.30),
+        "csrm_risk_at_50": _curve_risk(csrm_vs_best, "csrm_mean_risk", 0.50),
+        "strongest_non_csrm_risk_at_50": _curve_risk(
+            csrm_vs_best,
+            "strongest_non_csrm_mean_risk",
+            0.50,
+        ),
+        "risk50_reduction": _curve_risk(csrm_vs_best, "mean_risk_reduction", 0.50),
+        "claim_policy": payload.get("claim_policy"),
+    }
+
+
+def _curve_risk(points: list[dict[str, Any]], key: str, coverage: float) -> float | None:
+    for point in points:
+        if abs(float(point.get("coverage", -1.0)) - coverage) < 1e-12:
+            return point.get(key)
+    return None
+
+
 def _v4_strong_baseline_status(results: Path) -> dict[str, Any] | None:
     path = results / "v4_strong_baseline_summary_20260529.json"
     if not path.exists():
@@ -839,6 +882,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     mechanism_ablation = status.get("mechanism_ablation")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
     end2end_matrix = status.get("end2end_retriever_generator_matrix")
+    end2end_curves = status.get("end2end_risk_coverage_curves")
     strong_baselines = status.get("v4_strong_baselines")
     semantic = status["latest_v4_diagnostics"]["hotpot_semantic_swap_n100"]
     human_v4 = status["latest_v4_diagnostics"].get("human_audit_v4")
@@ -1195,6 +1239,28 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"`{_fmt(end2end_matrix['mean_risk50_reduction'])}` / "
                 f"`{_fmt(end2end_matrix['mean_aurc_reduction'])}`.",
                 f"- Claim policy: {end2end_matrix['claim_policy']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## End-to-End Risk-Coverage Curves", ""])
+    if end2end_curves:
+        lines.extend(
+            [
+                f"- Rows: `{end2end_curves['row_count']}`; coverage points: "
+                f"`{end2end_curves['coverage_count']}`; CSRM lower-risk points: "
+                f"`{end2end_curves['csrm_lower_risk_coverage_count']}`.",
+                f"- Risk@30 mean CSRM / strongest non-CSRM / reduction: "
+                f"`{_fmt(end2end_curves['csrm_risk_at_30'])}` / "
+                f"`{_fmt(end2end_curves['strongest_non_csrm_risk_at_30'])}` / "
+                f"`{_fmt(end2end_curves['risk30_reduction'])}`.",
+                f"- Risk@50 mean CSRM / strongest non-CSRM / reduction: "
+                f"`{_fmt(end2end_curves['csrm_risk_at_50'])}` / "
+                f"`{_fmt(end2end_curves['strongest_non_csrm_risk_at_50'])}` / "
+                f"`{_fmt(end2end_curves['risk50_reduction'])}`.",
+                f"- SVG: `{end2end_curves['svg']}`.",
+                f"- Claim policy: {end2end_curves['claim_policy']}",
                 "",
             ]
         )

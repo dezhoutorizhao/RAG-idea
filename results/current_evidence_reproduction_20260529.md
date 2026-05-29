@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T04:33:30.822316+00:00`
+Generated: `2026-05-29T04:48:52.379012+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -15,6 +15,7 @@ Ready for NeurIPS main claim: `False`
 | summarize_fever_cp_transfer_sweep | `False` | `results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json`<br>`results\fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.md` |
 | summarize_end2end_selective_rag_proxy | `False` | `results\end2end_selective_rag_proxy_summary_20260529.json`<br>`results\end2end_selective_rag_proxy_summary_20260529.md` |
 | run_end2end_retriever_generator_matrix_v4 | `False` | `results\end2end_retriever_generator_matrix_20260529.json`<br>`results\end2end_retriever_generator_matrix_20260529.md` |
+| plot_end2end_risk_coverage_curves | `True` | `results\end2end_risk_coverage_curves_20260529.json`<br>`results\end2end_risk_coverage_curves_20260529.md`<br>`paper\figures\end2end_risk_coverage_curves_20260529.svg` |
 | materialize_llm_judge_requests_v4 | `False` | `results\llm_judge_v4_requests_20260529.jsonl`<br>`results\llm_judge_v4_request_status_20260529.json`<br>`results\llm_judge_v4_request_status_20260529.md` |
 | materialize_llm_judge_requests_nli_probe | `False` | `results\llm_judge_nli_probe_requests_20260529.jsonl`<br>`results\llm_judge_nli_probe_request_status_20260529.json`<br>`results\llm_judge_nli_probe_request_status_20260529.md` |
 | manage_openai_llm_judge_batch_preflight | `False` | `results\llm_judge_nli_probe_batch_run_status_20260529.json`<br>`results\llm_judge_nli_probe_batch_run_status_20260529.md` |

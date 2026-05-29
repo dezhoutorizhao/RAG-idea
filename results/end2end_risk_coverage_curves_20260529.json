@@ -1,0 +1,5768 @@
+{
+  "aggregate": {
+    "coverage_count": 7,
+    "csrm_lower_risk_coverage_count": 6,
+    "csrm_vs_strongest_non_csrm": [
+      {
+        "coverage": 0.1,
+        "csrm_mean_risk": 0.24166666666666667,
+        "mean_risk_reduction": 0.08124999999999996,
+        "strongest_non_csrm_mean_risk": 0.32291666666666663
+      },
+      {
+        "coverage": 0.2,
+        "csrm_mean_risk": 0.20833333333333334,
+        "mean_risk_reduction": 0.10624999999999998,
+        "strongest_non_csrm_mean_risk": 0.3145833333333333
+      },
+      {
+        "coverage": 0.3,
+        "csrm_mean_risk": 0.20555555555555557,
+        "mean_risk_reduction": 0.15069444444444438,
+        "strongest_non_csrm_mean_risk": 0.35624999999999996
+      },
+      {
+        "coverage": 0.5,
+        "csrm_mean_risk": 0.20000000000000004,
+        "mean_risk_reduction": 0.18916666666666662,
+        "strongest_non_csrm_mean_risk": 0.38916666666666666
+      },
+      {
+        "coverage": 0.7,
+        "csrm_mean_risk": 0.33928571428571425,
+        "mean_risk_reduction": 0.07083333333333341,
+        "strongest_non_csrm_mean_risk": 0.41011904761904766
+      },
+      {
+        "coverage": 0.9,
+        "csrm_mean_risk": 0.4537037037037037,
+        "mean_risk_reduction": 0.017824074074074048,
+        "strongest_non_csrm_mean_risk": 0.47152777777777777
+      },
+      {
+        "coverage": 1.0,
+        "csrm_mean_risk": 0.5008333333333334,
+        "mean_risk_reduction": 0.0,
+        "strongest_non_csrm_mean_risk": 0.5008333333333334
+      }
+    ],
+    "method_curves": {
+      "corm_max_clean": {
+        "mean_aurc": 0.49056746031746035,
+        "points": [
+          {
+            "coverage": 0.1,
+            "mean_risk": 0.48333333333333334,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.2,
+            "mean_risk": 0.48333333333333334,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.3,
+            "mean_risk": 0.48194444444444445,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.5,
+            "mean_risk": 0.4875,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.7,
+            "mean_risk": 0.4988095238095238,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.9,
+            "mean_risk": 0.5009259259259259,
+            "row_count": 24
+          },
+          {
+            "coverage": 1.0,
+            "mean_risk": 0.5008333333333334,
+            "row_count": 24
+          }
+        ]
+      },
+      "csrm": {
+        "mean_aurc": 0.28887103174603174,
+        "points": [
+          {
+            "coverage": 0.1,
+            "mean_risk": 0.24166666666666667,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.2,
+            "mean_risk": 0.20833333333333334,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.3,
+            "mean_risk": 0.20555555555555557,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.5,
+            "mean_risk": 0.20000000000000004,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.7,
+            "mean_risk": 0.33928571428571425,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.9,
+            "mean_risk": 0.4537037037037037,
+            "row_count": 24
+          },
+          {
+            "coverage": 1.0,
+            "mean_risk": 0.5008333333333334,
+            "row_count": 24
+          }
+        ]
+      },
+      "generator_confidence": {
+        "mean_aurc": 0.491890873015873,
+        "points": [
+          {
+            "coverage": 0.1,
+            "mean_risk": 0.4895833333333333,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.2,
+            "mean_risk": 0.48124999999999996,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.3,
+            "mean_risk": 0.4847222222222222,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.5,
+            "mean_risk": 0.4920833333333334,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.7,
+            "mean_risk": 0.49702380952380953,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.9,
+            "mean_risk": 0.4983796296296296,
+            "row_count": 24
+          },
+          {
+            "coverage": 1.0,
+            "mean_risk": 0.5008333333333334,
+            "row_count": 24
+          }
+        ]
+      },
+      "naive_orbit_average": {
+        "mean_aurc": 0.3908948412698413,
+        "points": [
+          {
+            "coverage": 0.1,
+            "mean_risk": 0.32499999999999996,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.2,
+            "mean_risk": 0.31666666666666665,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.3,
+            "mean_risk": 0.35833333333333334,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.5,
+            "mean_risk": 0.39166666666666666,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.7,
+            "mean_risk": 0.41190476190476194,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.9,
+            "mean_risk": 0.47314814814814815,
+            "row_count": 24
+          },
+          {
+            "coverage": 1.0,
+            "mean_risk": 0.5008333333333334,
+            "row_count": 24
+          }
+        ]
+      },
+      "retriever_confidence": {
+        "mean_aurc": 0.5006894841269841,
+        "points": [
+          {
+            "coverage": 0.1,
+            "mean_risk": 0.5,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.2,
+            "mean_risk": 0.5,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.3,
+            "mean_risk": 0.4993055555555555,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.5,
+            "mean_risk": 0.49875,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.7,
+            "mean_risk": 0.5032738095238095,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.9,
+            "mean_risk": 0.5023148148148148,
+            "row_count": 24
+          },
+          {
+            "coverage": 1.0,
+            "mean_risk": 0.5008333333333334,
+            "row_count": 24
+          }
+        ]
+      },
+      "single_set_sure_style": {
+        "mean_aurc": 0.5029583333333334,
+        "points": [
+          {
+            "coverage": 0.1,
+            "mean_risk": 0.525,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.2,
+            "mean_risk": 0.5,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.3,
+            "mean_risk": 0.49444444444444446,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.5,
+            "mean_risk": 0.5,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.7,
+            "mean_risk": 0.5,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.9,
+            "mean_risk": 0.5,
+            "row_count": 24
+          },
+          {
+            "coverage": 1.0,
+            "mean_risk": 0.5008333333333334,
+            "row_count": 24
+          }
+        ]
+      },
+      "strongest_non_csrm": {
+        "mean_aurc": 0.3889613095238095,
+        "points": [
+          {
+            "coverage": 0.1,
+            "mean_risk": 0.32291666666666663,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.2,
+            "mean_risk": 0.3145833333333333,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.3,
+            "mean_risk": 0.35624999999999996,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.5,
+            "mean_risk": 0.38916666666666666,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.7,
+            "mean_risk": 0.41011904761904766,
+            "row_count": 24
+          },
+          {
+            "coverage": 0.9,
+            "mean_risk": 0.47152777777777777,
+            "row_count": 24
+          },
+          {
+            "coverage": 1.0,
+            "mean_risk": 0.5008333333333334,
+            "row_count": 24
+          }
+        ]
+      }
+    }
+  },
+  "claim_policy": "This figure summarizes risk-coverage curves for the local-corpus end-to-end proxy matrix. It is useful Phase 5 visualization evidence, but it is not a full Wikipedia/CoRM-RAG retrieval-generation reproduction.",
+  "coverages": [
+    0.1,
+    0.2,
+    0.3,
+    0.5,
+    0.7,
+    0.9,
+    1.0
+  ],
+  "dataset_count": 6,
+  "datasets": [
+    "fever_v4_n100_structbalanced",
+    "hotpot_v4_hardneg_n100",
+    "hotpot_v4_n100_hardmatched",
+    "hotpot_v4_n100_structbalanced",
+    "hotpot_v4_semanticswap_n100",
+    "hotpot_v4_supportpreserve_n100"
+  ],
+  "generated_at_utc": "2026-05-29T04:48:47.843009+00:00",
+  "generators": [
+    "copy_candidate",
+    "lexical_guarded"
+  ],
+  "outputs": {
+    "svg": "paper\\figures\\end2end_risk_coverage_curves_20260529.svg"
+  },
+  "protocol_complete": true,
+  "retrievers": [
+    "bm25_orbit_pool",
+    "dense_hash_orbit_pool"
+  ],
+  "row_count": 24,
+  "rows": [
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.43333333333333335
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.2857142857142857
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4444444444444444
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.43333333333333335
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.07499999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4285714285714286
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4833333333333333
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.43333333333333335
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.48571428571428577
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.07499999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4285714285714286
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4833333333333333
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "fever_v4_n100_structbalanced",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.3312622606194255,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.35
+      }
+    },
+    {
+      "answer_accuracy": 0.49,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.020000000000000018
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.30000000000000004
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4555555555555556
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5333333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.52
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.07499999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4285714285714286
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.48571428571428577
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.07499999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4285714285714286
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ]
+      },
+      "dataset": "fever_v4_n100_structbalanced",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.33325683733900224,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.35
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.43333333333333335
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.2857142857142857
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4444444444444444
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.43333333333333335
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.07499999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4285714285714286
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4833333333333333
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.575
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5428571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5222222222222221
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.48571428571428577
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.07499999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4285714285714286
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4833333333333333
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "fever_v4_n100_structbalanced",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.3312622606194255,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.35
+      }
+    },
+    {
+      "answer_accuracy": 0.49,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.020000000000000018
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.30000000000000004
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4555555555555556
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5333333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.52
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5142857142857142
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.07499999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4285714285714286
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.575
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5333333333333333
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.48571428571428577
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.07499999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4285714285714286
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.51
+          }
+        ]
+      },
+      "dataset": "fever_v4_n100_structbalanced",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.33325683733900224,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.35
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.18333333333333335
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.21999999999999997
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4666666666666667
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.42500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.42500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_hardneg_n100",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.4635639066197873,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.47
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.18333333333333335
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.21999999999999997
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4666666666666667
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4714285714285714
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4666666666666667
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.42500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.42500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_hardneg_n100",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.4635639066197873,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.47
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.18333333333333335
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.21999999999999997
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4666666666666667
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.42500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.525
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5166666666666666
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.42500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_hardneg_n100",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.4635639066197873,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.47
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.18333333333333335
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.21999999999999997
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4666666666666667
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.41000000000000003
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4357142857142857
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4666666666666667
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.42500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.47
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.47857142857142854
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.525
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5166666666666666
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.41000000000000003
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4357142857142857
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4666666666666667
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_hardneg_n100",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.42251187905770066,
+        "method": "generator_confidence",
+        "risk30": 0.4,
+        "risk50": 0.41000000000000003
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.41000000000000003
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4214285714285714
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4571428571428572
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4571428571428572
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_n100_hardmatched",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.4408155856969387,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.43999999999999995
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.41000000000000003
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4214285714285714
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.52
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4571428571428572
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4571428571428572
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_n100_hardmatched",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.4408155856969387,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.43999999999999995
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.41000000000000003
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4214285714285714
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4571428571428572
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4571428571428572
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_n100_hardmatched",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.4408155856969387,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.43999999999999995
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.41000000000000003
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4214285714285714
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.525
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4571428571428572
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43999999999999995
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4571428571428572
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_n100_hardmatched",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.4408155856969387,
+        "method": "naive_orbit_average",
+        "risk30": 0.44999999999999996,
+        "risk50": 0.43999999999999995
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.48
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.41000000000000003
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4555555555555556
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.48
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.42000000000000004
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.41428571428571426
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.48
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5166666666666666
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.53
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5142857142857142
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.42000000000000004
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.41428571428571426
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_n100_structbalanced",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.41243262258992597,
+        "method": "naive_orbit_average",
+        "risk30": 0.4,
+        "risk50": 0.42000000000000004
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.48
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.41000000000000003
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4555555555555556
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.53
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5142857142857142
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.42000000000000004
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.41428571428571426
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.48
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5166666666666666
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.53
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5142857142857142
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.42000000000000004
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.41428571428571426
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_n100_structbalanced",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.41243262258992597,
+        "method": "naive_orbit_average",
+        "risk30": 0.4,
+        "risk50": 0.42000000000000004
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.48
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.41000000000000003
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4555555555555556
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.48
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.42000000000000004
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.41428571428571426
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5333333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.51
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5166666666666666
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.53
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5142857142857142
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.42000000000000004
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.41428571428571426
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_n100_structbalanced",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.41243262258992597,
+        "method": "naive_orbit_average",
+        "risk30": 0.4,
+        "risk50": 0.42000000000000004
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.48
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5071428571428571
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5055555555555555
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.6
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.41000000000000003
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4555555555555556
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4666666666666667
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5111111111111111
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.42000000000000004
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.41428571428571426
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5333333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.51
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.4928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.49444444444444446
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.55
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5166666666666666
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.53
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5142857142857142
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.35
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.375
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.4
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.42000000000000004
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.41428571428571426
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.46111111111111114
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_n100_structbalanced",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.41243262258992597,
+        "method": "naive_orbit_average",
+        "risk30": 0.4,
+        "risk50": 0.42000000000000004
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.2928571428571428
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4444444444444444
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.19999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.24
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.30000000000000004
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.19999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.24
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.30000000000000004
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_semanticswap_n100",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.2719244735164208,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.24
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.2928571428571428
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4444444444444444
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.19999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.24
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.30000000000000004
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.19999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.24
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.30000000000000004
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_semanticswap_n100",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.2719244735164208,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.24
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.2928571428571428
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4444444444444444
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.19999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.24
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.30000000000000004
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.19999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.24
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.30000000000000004
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_semanticswap_n100",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.2719244735164208,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.24
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.09999999999999998
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.15000000000000002
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.2928571428571428
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4444444444444444
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.19999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.24
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.30000000000000004
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.19999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.17500000000000004
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.23333333333333328
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.24
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.30000000000000004
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_semanticswap_n100",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.2719244735164208,
+        "method": "naive_orbit_average",
+        "risk30": 0.23333333333333328,
+        "risk50": 0.24
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.2857142857142857
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4444444444444444
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.3833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43000000000000005
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4722222222222222
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.3833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43000000000000005
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4722222222222222
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_supportpreserve_n100",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.4192604512309343,
+        "method": "naive_orbit_average",
+        "risk30": 0.3833333333333333,
+        "risk50": 0.43000000000000005
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.2857142857142857
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4444444444444444
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.3833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43000000000000005
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4722222222222222
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.3833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43000000000000005
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4722222222222222
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_supportpreserve_n100",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "bm25_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.4192604512309343,
+        "method": "naive_orbit_average",
+        "risk30": 0.3833333333333333,
+        "risk50": 0.43000000000000005
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.2857142857142857
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4444444444444444
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.3833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43000000000000005
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4722222222222222
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.3833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43000000000000005
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4722222222222222
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_supportpreserve_n100",
+      "generator": "copy_candidate",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.4192604512309343,
+        "method": "naive_orbit_average",
+        "risk30": 0.3833333333333333,
+        "risk50": 0.43000000000000005
+      }
+    },
+    {
+      "answer_accuracy": 0.5,
+      "curves": {
+        "corm_max_clean": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.0
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.2857142857142857
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4444444444444444
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "generator_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "naive_orbit_average": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.3833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43000000000000005
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4722222222222222
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "retriever_confidence": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "single_set_sure_style": [
+          {
+            "coverage": 0.1,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.5
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.5
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ],
+        "strongest_non_csrm": [
+          {
+            "coverage": 0.1,
+            "risk": 0.44999999999999996
+          },
+          {
+            "coverage": 0.2,
+            "risk": 0.475
+          },
+          {
+            "coverage": 0.3,
+            "risk": 0.3833333333333333
+          },
+          {
+            "coverage": 0.5,
+            "risk": 0.43000000000000005
+          },
+          {
+            "coverage": 0.7,
+            "risk": 0.3928571428571429
+          },
+          {
+            "coverage": 0.9,
+            "risk": 0.4722222222222222
+          },
+          {
+            "coverage": 1.0,
+            "risk": 0.5
+          }
+        ]
+      },
+      "dataset": "hotpot_v4_supportpreserve_n100",
+      "generator": "lexical_guarded",
+      "n": 200,
+      "retriever": "dense_hash_orbit_pool",
+      "strongest_non_csrm": {
+        "aurc": 0.4192604512309343,
+        "method": "naive_orbit_average",
+        "risk30": 0.3833333333333333,
+        "risk50": 0.43000000000000005
+      }
+    }
+  ],
+  "top_k": 6
+}

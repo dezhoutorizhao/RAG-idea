@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 import math
 import re
@@ -157,6 +158,41 @@ def render_markdown(summary: dict[str, Any]) -> str:
 
 
 def _dataset_row(dataset: DatasetConfig, retriever: str, generator: str, *, top_k: int) -> dict[str, Any]:
+    scored = score_end2end_selector_methods(dataset, retriever, generator, top_k=top_k)
+    method_metrics = {
+        name: evaluate_selective_policy(scores, scored["correct"])
+        for name, scores in sorted(scored["methods"].items())
+    }
+    csrm = _method_metrics(method_metrics["csrm"])
+    best = _best_non_csrm(method_metrics)
+    deltas = {
+        "risk30_reduction": best["risk30"] - csrm["risk30"],
+        "risk50_reduction": best["risk50"] - csrm["risk50"],
+        "aurc_reduction": best["aurc"] - csrm["aurc"],
+        "coverage_at_risk20_gain": csrm["coverage_at_risk20"] - best["coverage_at_risk20"],
+    }
+    return {
+        "dataset": dataset.name,
+        "retriever": retriever,
+        "generator": generator,
+        "n": scored["n"],
+        "answer_accuracy": scored["answer_accuracy"],
+        "selector_methods": sorted(scored["methods"]),
+        "csrm": csrm,
+        "best_non_csrm": best,
+        "deltas": deltas,
+        "verdict": _row_verdict(deltas),
+        "outputs_sample": scored["outputs_sample"],
+    }
+
+
+def score_end2end_selector_methods(
+    dataset: DatasetConfig,
+    retriever: str,
+    generator: str,
+    *,
+    top_k: int,
+) -> dict[str, Any]:
     raw_rows = _read_jsonl(dataset.raw)
     private_by_id = {row["orbit_id"]: row for row in _read_jsonl(dataset.private)}
     scored_orbits = {orbit.orbit_id: orbit for orbit in load_orbits(dataset.scored)}
@@ -188,26 +224,14 @@ def _dataset_row(dataset: DatasetConfig, retriever: str, generator: str, *, top_
     methods = _selector_scores(transformed_rows, scored_orbits)
     methods["generator_confidence"] = gen_conf
     methods["retriever_confidence"] = retriever_conf
-    method_metrics = {name: evaluate_selective_policy(scores, correct) for name, scores in sorted(methods.items())}
-    csrm = _method_metrics(method_metrics["csrm"])
-    best = _best_non_csrm(method_metrics)
-    deltas = {
-        "risk30_reduction": best["risk30"] - csrm["risk30"],
-        "risk50_reduction": best["risk50"] - csrm["risk50"],
-        "aurc_reduction": best["aurc"] - csrm["aurc"],
-        "coverage_at_risk20_gain": csrm["coverage_at_risk20"] - best["coverage_at_risk20"],
-    }
     return {
         "dataset": dataset.name,
         "retriever": retriever,
         "generator": generator,
         "n": len(raw_rows),
+        "correct": correct,
         "answer_accuracy": sum(correct) / len(correct),
-        "selector_methods": sorted(methods),
-        "csrm": csrm,
-        "best_non_csrm": best,
-        "deltas": deltas,
-        "verdict": _row_verdict(deltas),
+        "methods": methods,
         "outputs_sample": outputs[:5],
     }
 
@@ -313,7 +337,9 @@ def _hashed_char_vector(text: str, dims: int = 64) -> list[float]:
         return vec
     for index in range(len(normalized) - 2):
         tri = normalized[index : index + 3]
-        vec[hash(tri) % dims] += 1.0
+        digest = hashlib.blake2b(tri.encode("utf-8"), digest_size=8).digest()
+        bucket = int.from_bytes(digest, "big") % dims
+        vec[bucket] += 1.0
     return vec
 
 

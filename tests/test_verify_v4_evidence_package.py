@@ -100,5 +100,14 @@ def test_default_manifest_tracks_external_review_packet_artifacts():
     assert "experiments/build_external_review_packet.py" in defaults
 
 
+def test_default_manifest_tracks_end2end_risk_coverage_curve_artifacts():
+    defaults = {str(path).replace("\\", "/") for path in DEFAULT_ARTIFACTS}
+
+    assert "results/end2end_risk_coverage_curves_20260529.json" in defaults
+    assert "results/end2end_risk_coverage_curves_20260529.md" in defaults
+    assert "paper/figures/end2end_risk_coverage_curves_20260529.svg" in defaults
+    assert "experiments/plot_end2end_risk_coverage_curves.py" in defaults
+
+
 def _write_json(path, payload):
     path.write_text(json.dumps(payload), encoding="utf-8")

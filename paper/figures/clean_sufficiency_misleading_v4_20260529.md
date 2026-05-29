@@ -1,6 +1,6 @@
 # Clean Sufficiency Misleading Diagnostic
 
-Generated: `2026-05-29T04:33:30.770296+00:00`
+Generated: `2026-05-29T04:48:52.324538+00:00`
 
 Rows: `1200` across `6` scored v4 inputs.
 Overall private-label failure rate: `0.5000`.

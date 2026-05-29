@@ -50,6 +50,11 @@ from experiments.run_end2end_retriever_generator_matrix_v4 import (
     render_markdown as render_end2end_matrix_markdown,
     run_end2end_retriever_generator_matrix_v4,
 )
+from experiments.plot_end2end_risk_coverage_curves import (
+    build_end2end_risk_coverage_curves,
+    render_markdown as render_end2end_curves_markdown,
+    render_svg as render_end2end_curves_svg,
+)
 from experiments.summarize_fever_cp_transfer_sweep import (
     DEFAULT_INPUTS as DEFAULT_FEVER_CP_SWEEP_INPUTS,
     render_markdown as render_fever_cp_sweep_markdown,
@@ -250,6 +255,25 @@ def reproduce_current_evidence_v4(
             "name": "run_end2end_retriever_generator_matrix_v4",
             "outputs": [str(end2end_matrix_json), str(end2end_matrix_md)],
             "ready": end2end_matrix["protocol_complete"] and not end2end_matrix["aggregate"]["has_losses"],
+        }
+    )
+
+    end2end_curves_json = results / "end2end_risk_coverage_curves_20260529.json"
+    end2end_curves_md = results / "end2end_risk_coverage_curves_20260529.md"
+    end2end_curves_svg = root / "paper/figures/end2end_risk_coverage_curves_20260529.svg"
+    end2end_curves = build_end2end_risk_coverage_curves(
+        DEFAULT_END2END_MATRIX_DATASETS,
+        output_svg=end2end_curves_svg.relative_to(root),
+    )
+    _write_json(end2end_curves_json, end2end_curves)
+    end2end_curves_md.write_text(render_end2end_curves_markdown(end2end_curves), encoding="utf-8")
+    end2end_curves_svg.write_text(render_end2end_curves_svg(end2end_curves), encoding="utf-8")
+    commands.append(
+        {
+            "name": "plot_end2end_risk_coverage_curves",
+            "outputs": [str(end2end_curves_json), str(end2end_curves_md), str(end2end_curves_svg)],
+            "ready": end2end_curves["protocol_complete"]
+            and end2end_curves["aggregate"]["csrm_lower_risk_coverage_count"] >= 1,
         }
     )
 

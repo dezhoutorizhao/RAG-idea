@@ -7,6 +7,7 @@ from experiments.summarize_evidence_closure import (
     _human_audit_v4_status,
     _current_reproduction_status,
     _end2end_proxy_status,
+    _end2end_curves_status,
     _external_review_packet_status,
     _fever_cp_transfer_sweep_status,
     _remote_storage_probe_status,
@@ -320,6 +321,46 @@ def test_end2end_proxy_status_marks_mixed_results(tmp_path):
     assert status["risk30_losses"] == 1
     assert status["all_win"] is False
     assert status["has_losses"] is True
+
+
+def test_end2end_curves_status_summarizes_risk_coverage_points(tmp_path):
+    _write_json(
+        tmp_path / "end2end_risk_coverage_curves_20260529.json",
+        {
+            "dataset_count": 1,
+            "retrievers": ["bm25_orbit_pool"],
+            "generators": ["copy_candidate"],
+            "row_count": 4,
+            "outputs": {"svg": "paper/figures/end2end.svg"},
+            "aggregate": {
+                "coverage_count": 3,
+                "csrm_lower_risk_coverage_count": 2,
+                "csrm_vs_strongest_non_csrm": [
+                    {
+                        "coverage": 0.30,
+                        "csrm_mean_risk": 0.2,
+                        "strongest_non_csrm_mean_risk": 0.35,
+                        "mean_risk_reduction": 0.15,
+                    },
+                    {
+                        "coverage": 0.50,
+                        "csrm_mean_risk": 0.25,
+                        "strongest_non_csrm_mean_risk": 0.4,
+                        "mean_risk_reduction": 0.15,
+                    },
+                ],
+            },
+            "claim_policy": "proxy curve only",
+        },
+    )
+
+    status = _end2end_curves_status(tmp_path)
+
+    assert status["coverage_count"] == 3
+    assert status["csrm_lower_risk_coverage_count"] == 2
+    assert status["csrm_risk_at_30"] == 0.2
+    assert status["strongest_non_csrm_risk_at_50"] == 0.4
+    assert status["risk50_reduction"] == 0.15
 
 
 def test_v4_strong_baseline_status_marks_rule_losses(tmp_path):

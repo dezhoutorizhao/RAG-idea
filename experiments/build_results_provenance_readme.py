@@ -23,6 +23,7 @@ PROVENANCE_BY_STEP = {
     "compute_llm_nli_correlation": "experiments/compute_llm_nli_correlation.py",
     "summarize_text_only_verifier_status": "experiments/summarize_text_only_verifier_status.py",
     "run_end2end_retriever_generator_matrix_v4": "experiments/run_end2end_retriever_generator_matrix_v4.py",
+    "plot_end2end_risk_coverage_curves": "experiments/plot_end2end_risk_coverage_curves.py",
     "summarize_v4_strong_baselines": "experiments/summarize_v4_strong_baselines.py",
     "summarize_v4_baseline_coverage": "experiments/summarize_v4_baseline_coverage.py",
     "summarize_v4_baseline_budget_parity": "experiments/summarize_v4_baseline_budget_parity.py",
