@@ -16,6 +16,7 @@ from experiments.summarize_evidence_closure import (
     _reproducibility_bundle_status,
     _results_provenance_status,
     _semantic_swap_status,
+    _v4_calibration_quality_status,
     _v4_case_gallery_status,
     _v4_anti_shortcut_status,
     _v4_failure_taxonomy_status,
@@ -582,6 +583,35 @@ def test_neurips_readiness_status_summarizes_blockers(tmp_path):
     assert status["hard_blocker_count"] == 1
     assert status["negative_or_partial_count"] == 1
     assert status["hard_blockers"][0]["requirement"] == "Human-audited orbit labels"
+
+
+def test_v4_calibration_quality_status_summarizes_brier_and_ece(tmp_path):
+    _write_json(
+        tmp_path / "v4_calibration_quality_20260529.json",
+        {
+            "dataset_count": 6,
+            "target_methods": ["csrm_calibrated_logistic", "csrm_calibrated_isotonic"],
+            "reference_methods": ["csrm_rule", "csrm_minimax"],
+            "calibration_quality_supported": True,
+            "claim_implication": "Empirical calibration evidence only.",
+            "aggregate": {
+                "best_target_brier_win_count": 6,
+                "best_target_ece_win_count": 5,
+                "mean_best_target_brier_reduction": 0.14,
+                "mean_best_target_ece_reduction": 0.03,
+                "datasets_with_ece_nonwin": ["hardmatched"],
+                "datasets_with_brier_nonwin": [],
+            },
+        },
+    )
+
+    status = _v4_calibration_quality_status(tmp_path)
+
+    assert status["dataset_count"] == 6
+    assert status["best_target_brier_win_count"] == 6
+    assert status["best_target_ece_win_count"] == 5
+    assert status["datasets_with_ece_nonwin"] == ["hardmatched"]
+    assert status["calibration_quality_supported"] is True
 
 
 def test_results_provenance_status_summarizes_readme_artifact(tmp_path):

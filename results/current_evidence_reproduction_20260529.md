@@ -1,6 +1,6 @@
 # Current Evidence V4 Reproduction
 
-Generated: `2026-05-29T04:48:52.379012+00:00`
+Generated: `2026-05-29T05:04:34.648573+00:00`
 
 Ready for NeurIPS main claim: `False`
 
@@ -27,6 +27,7 @@ Ready for NeurIPS main claim: `False`
 | summarize_v4_baseline_budget_parity | `False` | `results\v4_baseline_budget_parity_20260529.json`<br>`results\v4_baseline_budget_parity_20260529.md` |
 | compare_equal_budget_thresholds_v4 | `True` | `results\v4_shared_threshold_selection_20260529.json`<br>`results\v4_shared_threshold_selection_20260529.md` |
 | summarize_v4_split_threshold_protocol | `True` | `results\v4_split_threshold_protocol_20260529.json`<br>`results\v4_split_threshold_protocol_20260529.md` |
+| summarize_v4_calibration_quality | `False` | `results\v4_calibration_quality_20260529.json`<br>`results\v4_calibration_quality_20260529.md` |
 | summarize_v4_failure_taxonomy | `True` | `results\v4_failure_taxonomy_summary_20260529.json`<br>`results\v4_failure_taxonomy_summary_20260529.md` |
 | export_v4_case_gallery | `True` | `paper\case_studies\v4_case_gallery_20260529.jsonl`<br>`paper\case_studies\v4_case_gallery_20260529.md`<br>`results\v4_case_gallery_summary_20260529.json` |
 | build_clean_sufficiency_misleading_figure | `True` | `paper\figures\clean_sufficiency_misleading_v4_20260529.csv`<br>`results\clean_sufficiency_misleading_v4_20260529.json`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.svg`<br>`paper\figures\clean_sufficiency_misleading_v4_20260529.md` |
@@ -61,6 +62,7 @@ Non-human:
 - External review packet is ready, but independent review remains pending; place the response at results\external_review_response_20260529.md.
 - End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.
 - V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.
+- V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.
 
 ## Claim Policy
 

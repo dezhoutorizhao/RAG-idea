@@ -10,7 +10,8 @@
     "A paper-facing v4 case-study gallery has been exported from failure-analysis top cases for qualitative inspection.",
     "A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.",
     "The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.",
-    "Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings."
+    "Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings.",
+    "The calibrated orbit risk model improves Brier score over rule/minimax baselines across current v4 calibration artifacts; ECE evidence is mostly positive but mixed."
   ],
   "claim_verification": {
     "failed_claims": 0,
@@ -113,7 +114,8 @@
     "The results are human-audited.",
     "The method solves robust RAG generally across tasks.",
     "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4.",
-    "The v4 failure taxonomy is human-adjudicated evidence."
+    "The v4 failure taxonomy is human-adjudicated evidence.",
+    "Calibration establishes a formal risk-control guarantee."
   ],
   "end2end_retriever_generator_matrix": {
     "all_win": false,
@@ -199,7 +201,7 @@
     "review_response_path": "results\\external_review_response_20260529.md",
     "status": "packet_ready"
   },
-  "generated_at_utc": "2026-05-29T04:48:53.530017+00:00",
+  "generated_at_utc": "2026-05-29T05:04:35.838706+00:00",
   "human_audit_v3_excluded_by_user": true,
   "latest_v4_diagnostics": {
     "anti_shortcut": {
@@ -587,7 +589,7 @@
         "status": "blocked"
       }
     ],
-    "negative_or_partial_count": 4,
+    "negative_or_partial_count": 5,
     "negative_or_partial_evidence": [
       {
         "boundary_or_next_action": "NLI cross-scorer evidence is directionally positive against required weak baselines, but LLM-NLI correlation and human-label text-only evaluation are not ready.",
@@ -605,6 +607,11 @@
         "status": "partial"
       },
       {
+        "boundary_or_next_action": "Calibration-quality artifact shows Brier wins 6/6 against rule/minimax references, but ECE wins 4/6. This supports empirical calibration-quality wording, not a formal risk guarantee.",
+        "requirement": "Calibrated orbit risk model",
+        "status": "partial"
+      },
+      {
         "boundary_or_next_action": "Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.",
         "requirement": "Risk-control claim",
         "status": "fail"
@@ -614,7 +621,7 @@
     "status_counts": {
       "blocked": 3,
       "fail": 1,
-      "partial": 3,
+      "partial": 4,
       "pass": 4
     }
   },
@@ -626,11 +633,12 @@
     "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
     "External review packet is ready, but independent review remains pending; place the response at results\\external_review_response_20260529.md.",
     "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
-    "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats."
+    "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.",
+    "V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim."
   ],
   "reproducibility_bundle": {
     "artifact": "reproducibility/bundle_summary_20260529.json",
-    "artifact_checksum_count": 138,
+    "artifact_checksum_count": 141,
     "checkpoint_hash_available": true,
     "claim_boundary": "This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.",
     "dataset_construction_hash_count": 41,
@@ -650,19 +658,19 @@
   },
   "results_provenance": {
     "artifact": "results/results_provenance_manifest_20260529.json",
-    "artifact_count": 138,
+    "artifact_count": 141,
     "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
     "manifest_missing_artifact_count": 0,
     "missing_output_count": 0,
     "readiness_status_counts": {
       "blocked": 3,
       "fail": 1,
-      "partial": 3,
+      "partial": 4,
       "pass": 4
     },
     "readme_artifact": "results/README.md",
     "readme_exists": true,
-    "step_count": 31,
+    "step_count": 32,
     "untracked_output_count": 0
   },
   "risk_control": {
@@ -710,6 +718,29 @@
       "error_count": 0,
       "passed": true
     }
+  },
+  "v4_calibration_quality": {
+    "artifact": "results/v4_calibration_quality_20260529.json",
+    "best_target_brier_win_count": 6,
+    "best_target_ece_win_count": 4,
+    "calibration_quality_supported": false,
+    "claim_implication": "Calibrated CSRM strongly improves Brier score over rule/minimax baselines across all current v4 calibration datasets. ECE improves on most but not all datasets, so calibration should be claimed as empirical calibration-quality evidence, not as a formal risk guarantee.",
+    "dataset_count": 6,
+    "datasets_with_brier_nonwin": [],
+    "datasets_with_ece_nonwin": [
+      "hotpot_orbits_v4_n100.constant.hardmatched",
+      "hotpot_orbits_v4_n100.constant.structbalanced"
+    ],
+    "mean_best_target_brier_reduction": 0.14187816828813768,
+    "mean_best_target_ece_reduction": 0.1008912923343835,
+    "reference_methods": [
+      "csrm_rule",
+      "csrm_minimax"
+    ],
+    "target_methods": [
+      "csrm_calibrated_logistic",
+      "csrm_calibrated_isotonic"
+    ]
   },
   "v4_strong_baselines": {
     "artifact": "results/v4_strong_baseline_summary_20260529.json",

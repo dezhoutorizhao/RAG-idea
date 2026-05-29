@@ -1,0 +1,706 @@
+{
+  "aggregate": {
+    "best_target_brier_win_count": 6,
+    "best_target_ece_win_count": 4,
+    "datasets_with_brier_nonwin": [],
+    "datasets_with_ece_nonwin": [
+      "hotpot_orbits_v4_n100.constant.hardmatched",
+      "hotpot_orbits_v4_n100.constant.structbalanced"
+    ],
+    "mean_best_target_brier_reduction": 0.14187816828813768,
+    "mean_best_target_ece_reduction": 0.1008912923343835
+  },
+  "calibration_quality_supported": false,
+  "claim_implication": "Calibrated CSRM strongly improves Brier score over rule/minimax baselines across all current v4 calibration datasets. ECE improves on most but not all datasets, so calibration should be claimed as empirical calibration-quality evidence, not as a formal risk guarantee.",
+  "dataset_count": 6,
+  "generated_at_utc": "2026-05-29T05:04:34.518865+00:00",
+  "input_count": 6,
+  "reference_methods": [
+    "csrm_rule",
+    "csrm_minimax"
+  ],
+  "rows": [
+    {
+      "artifact": "results\\calibration_fever_v4_n100_structbalanced.json",
+      "best_reference_by_brier": {
+        "aurc_mean": 0.1450646403254792,
+        "auroc_mean": 1.0,
+        "brier_mean": 0.20725290460420057,
+        "ece_mean": 0.3192005426964362,
+        "mce_mean": 0.4350057015404376,
+        "method": "csrm_minimax",
+        "risk30_mean": 0.0,
+        "risk50_mean": 0.03174603174603178,
+        "target_met_rate": 0.6666666666666666,
+        "zero_coverage_count": 0
+      },
+      "best_reference_by_ece": {
+        "aurc_mean": 0.14461385930190546,
+        "auroc_mean": 1.0,
+        "brier_mean": 0.23064245227975064,
+        "ece_mean": 0.061479358753591,
+        "mce_mean": 0.3264676204464032,
+        "method": "csrm_rule",
+        "risk30_mean": 0.0,
+        "risk50_mean": 0.03174603174603178,
+        "target_met_rate": 0.6666666666666666,
+        "zero_coverage_count": 0
+      },
+      "best_target_by_brier": {
+        "aurc_mean": 0.12501981582608687,
+        "auroc_mean": 1.0,
+        "brier_mean": 0.00400602556329376,
+        "ece_mean": 0.008412253545837503,
+        "mce_mean": 0.1972066241032887,
+        "method": "csrm_calibrated_isotonic",
+        "risk30_mean": 0.0,
+        "risk50_mean": 0.03174603174603178,
+        "target_met_rate": 1.0,
+        "zero_coverage_count": 0
+      },
+      "best_target_by_ece": {
+        "aurc_mean": 0.12501981582608687,
+        "auroc_mean": 1.0,
+        "brier_mean": 0.00400602556329376,
+        "ece_mean": 0.008412253545837503,
+        "mce_mean": 0.1972066241032887,
+        "method": "csrm_calibrated_isotonic",
+        "risk30_mean": 0.0,
+        "risk50_mean": 0.03174603174603178,
+        "target_met_rate": 1.0,
+        "zero_coverage_count": 0
+      },
+      "brier_reduction_vs_best_reference": 0.2032468790409068,
+      "brier_win_vs_best_reference": true,
+      "dataset": "fever_orbits_v4_n100.constant.structbalanced",
+      "ece_reduction_vs_best_reference": 0.0530671052077535,
+      "ece_win_vs_best_reference": true,
+      "methods": {
+        "csrm_calibrated_isotonic": {
+          "aurc_mean": 0.12501981582608687,
+          "auroc_mean": 1.0,
+          "brier_mean": 0.00400602556329376,
+          "ece_mean": 0.008412253545837503,
+          "mce_mean": 0.1972066241032887,
+          "method": "csrm_calibrated_isotonic",
+          "risk30_mean": 0.0,
+          "risk50_mean": 0.03174603174603178,
+          "target_met_rate": 1.0,
+          "zero_coverage_count": 0
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_mean": 0.14006981342323896,
+          "auroc_mean": 1.0,
+          "brier_mean": 0.006852550016528677,
+          "ece_mean": 0.04181566976382287,
+          "mce_mean": 0.3264955988660077,
+          "method": "csrm_calibrated_logistic",
+          "risk30_mean": 0.0,
+          "risk50_mean": 0.03174603174603178,
+          "target_met_rate": 1.0,
+          "zero_coverage_count": 0
+        },
+        "csrm_minimax": {
+          "aurc_mean": 0.1450646403254792,
+          "auroc_mean": 1.0,
+          "brier_mean": 0.20725290460420057,
+          "ece_mean": 0.3192005426964362,
+          "mce_mean": 0.4350057015404376,
+          "method": "csrm_minimax",
+          "risk30_mean": 0.0,
+          "risk50_mean": 0.03174603174603178,
+          "target_met_rate": 0.6666666666666666,
+          "zero_coverage_count": 0
+        },
+        "csrm_rule": {
+          "aurc_mean": 0.14461385930190546,
+          "auroc_mean": 1.0,
+          "brier_mean": 0.23064245227975064,
+          "ece_mean": 0.061479358753591,
+          "mce_mean": 0.3264676204464032,
+          "method": "csrm_rule",
+          "risk30_mean": 0.0,
+          "risk50_mean": 0.03174603174603178,
+          "target_met_rate": 0.6666666666666666,
+          "zero_coverage_count": 0
+        }
+      },
+      "n": 200,
+      "risk_target": 0.2,
+      "seeds": [
+        17,
+        31,
+        47
+      ]
+    },
+    {
+      "artifact": "results\\calibration_hotpot_v4_hardneg_n100.json",
+      "best_reference_by_brier": {
+        "aurc_mean": 0.18572522797080693,
+        "auroc_mean": 0.9566666666666667,
+        "brier_mean": 0.22187692956768565,
+        "ece_mean": 0.12791884228064346,
+        "mce_mean": 0.46822442595915276,
+        "method": "csrm_minimax",
+        "risk30_mean": 0.05555555555555558,
+        "risk50_mean": 0.08333333333333333,
+        "target_met_rate": 0.0,
+        "zero_coverage_count": 0
+      },
+      "best_reference_by_ece": {
+        "aurc_mean": 0.2697570327175591,
+        "auroc_mean": 0.8225000000000001,
+        "brier_mean": 0.24061227769371898,
+        "ece_mean": 0.06625280414253765,
+        "mce_mean": 0.43217169577862685,
+        "method": "csrm_rule",
+        "risk30_mean": 0.25,
+        "risk50_mean": 0.25,
+        "target_met_rate": 0.0,
+        "zero_coverage_count": 0
+      },
+      "best_target_by_brier": {
+        "aurc_mean": 0.12688492063492063,
+        "auroc_mean": 1.0,
+        "brier_mean": 0.00012068575560660348,
+        "ece_mean": 0.0012536726077533116,
+        "mce_mean": 0.038926492414298866,
+        "method": "csrm_calibrated_isotonic",
+        "risk30_mean": 0.0,
+        "risk50_mean": 0.0,
+        "target_met_rate": 1.0,
+        "zero_coverage_count": 0
+      },
+      "best_target_by_ece": {
+        "aurc_mean": 0.12688492063492063,
+        "auroc_mean": 1.0,
+        "brier_mean": 0.00012068575560660348,
+        "ece_mean": 0.0012536726077533116,
+        "mce_mean": 0.038926492414298866,
+        "method": "csrm_calibrated_isotonic",
+        "risk30_mean": 0.0,
+        "risk50_mean": 0.0,
+        "target_met_rate": 1.0,
+        "zero_coverage_count": 0
+      },
+      "brier_reduction_vs_best_reference": 0.22175624381207903,
+      "brier_win_vs_best_reference": true,
+      "dataset": "hotpot_orbits_v4_hardneg_n100",
+      "ece_reduction_vs_best_reference": 0.06499913153478433,
+      "ece_win_vs_best_reference": true,
+      "methods": {
+        "csrm_calibrated_isotonic": {
+          "aurc_mean": 0.12688492063492063,
+          "auroc_mean": 1.0,
+          "brier_mean": 0.00012068575560660348,
+          "ece_mean": 0.0012536726077533116,
+          "mce_mean": 0.038926492414298866,
+          "method": "csrm_calibrated_isotonic",
+          "risk30_mean": 0.0,
+          "risk50_mean": 0.0,
+          "target_met_rate": 1.0,
+          "zero_coverage_count": 0
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_mean": 0.15254289510506872,
+          "auroc_mean": 1.0,
+          "brier_mean": 0.0037935295807242377,
+          "ece_mean": 0.04855376197507998,
+          "mce_mean": 0.15758826672488438,
+          "method": "csrm_calibrated_logistic",
+          "risk30_mean": 0.0,
+          "risk50_mean": 0.0,
+          "target_met_rate": 0.3333333333333333,
+          "zero_coverage_count": 0
+        },
+        "csrm_minimax": {
+          "aurc_mean": 0.18572522797080693,
+          "auroc_mean": 0.9566666666666667,
+          "brier_mean": 0.22187692956768565,
+          "ece_mean": 0.12791884228064346,
+          "mce_mean": 0.46822442595915276,
+          "method": "csrm_minimax",
+          "risk30_mean": 0.05555555555555558,
+          "risk50_mean": 0.08333333333333333,
+          "target_met_rate": 0.0,
+          "zero_coverage_count": 0
+        },
+        "csrm_rule": {
+          "aurc_mean": 0.2697570327175591,
+          "auroc_mean": 0.8225000000000001,
+          "brier_mean": 0.24061227769371898,
+          "ece_mean": 0.06625280414253765,
+          "mce_mean": 0.43217169577862685,
+          "method": "csrm_rule",
+          "risk30_mean": 0.25,
+          "risk50_mean": 0.25,
+          "target_met_rate": 0.0,
+          "zero_coverage_count": 0
+        }
+      },
+      "n": 200,
+      "risk_target": 0.2,
+      "seeds": [
+        17,
+        31,
+        47
+      ]
+    },
+    {
+      "artifact": "results\\calibration_hotpot_v4_n100_hardmatched.json",
+      "best_reference_by_brier": {
+        "aurc_mean": 0.472733151972703,
+        "auroc_mean": 0.6058333333333333,
+        "brier_mean": 0.2437338058030338,
+        "ece_mean": 0.06960313758859865,
+        "mce_mean": 0.36935858688218887,
+        "method": "csrm_rule",
+        "risk30_mean": 0.47222222222222215,
+        "risk50_mean": 0.4166666666666667,
+        "target_met_rate": 1.0,
+        "zero_coverage_count": 3
+      },
+      "best_reference_by_ece": {
+        "aurc_mean": 0.472733151972703,
+        "auroc_mean": 0.6058333333333333,
+        "brier_mean": 0.2437338058030338,
+        "ece_mean": 0.06960313758859865,
+        "mce_mean": 0.36935858688218887,
+        "method": "csrm_rule",
+        "risk30_mean": 0.47222222222222215,
+        "risk50_mean": 0.4166666666666667,
+        "target_met_rate": 1.0,
+        "zero_coverage_count": 3
+      },
+      "best_target_by_brier": {
+        "aurc_mean": 0.3818857619426282,
+        "auroc_mean": 0.7308333333333333,
+        "brier_mean": 0.1965394342812098,
+        "ece_mean": 0.10912426648771296,
+        "mce_mean": 0.45268052440940804,
+        "method": "csrm_calibrated_logistic",
+        "risk30_mean": 0.36111111111111116,
+        "risk50_mean": 0.3,
+        "target_met_rate": 0.3333333333333333,
+        "zero_coverage_count": 1
+      },
+      "best_target_by_ece": {
+        "aurc_mean": 0.3818857619426282,
+        "auroc_mean": 0.7308333333333333,
+        "brier_mean": 0.1965394342812098,
+        "ece_mean": 0.10912426648771296,
+        "mce_mean": 0.45268052440940804,
+        "method": "csrm_calibrated_logistic",
+        "risk30_mean": 0.36111111111111116,
+        "risk50_mean": 0.3,
+        "target_met_rate": 0.3333333333333333,
+        "zero_coverage_count": 1
+      },
+      "brier_reduction_vs_best_reference": 0.04719437152182401,
+      "brier_win_vs_best_reference": true,
+      "dataset": "hotpot_orbits_v4_n100.constant.hardmatched",
+      "ece_reduction_vs_best_reference": -0.03952112889911431,
+      "ece_win_vs_best_reference": false,
+      "methods": {
+        "csrm_calibrated_isotonic": {
+          "aurc_mean": 0.43250276866409515,
+          "auroc_mean": 0.7275,
+          "brier_mean": 0.2046776038865492,
+          "ece_mean": 0.11145330323835079,
+          "mce_mean": 0.6656863124600113,
+          "method": "csrm_calibrated_isotonic",
+          "risk30_mean": 0.3888888888888889,
+          "risk50_mean": 0.3166666666666667,
+          "target_met_rate": 0.3333333333333333,
+          "zero_coverage_count": 1
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_mean": 0.3818857619426282,
+          "auroc_mean": 0.7308333333333333,
+          "brier_mean": 0.1965394342812098,
+          "ece_mean": 0.10912426648771296,
+          "mce_mean": 0.45268052440940804,
+          "method": "csrm_calibrated_logistic",
+          "risk30_mean": 0.36111111111111116,
+          "risk50_mean": 0.3,
+          "target_met_rate": 0.3333333333333333,
+          "zero_coverage_count": 1
+        },
+        "csrm_minimax": {
+          "aurc_mean": 0.5019466617783203,
+          "auroc_mean": 0.5758333333333333,
+          "brier_mean": 0.24689950300403574,
+          "ece_mean": 0.07088191671036502,
+          "mce_mean": 0.38260750955007344,
+          "method": "csrm_minimax",
+          "risk30_mean": 0.5,
+          "risk50_mean": 0.4333333333333333,
+          "target_met_rate": 0.6666666666666666,
+          "zero_coverage_count": 2
+        },
+        "csrm_rule": {
+          "aurc_mean": 0.472733151972703,
+          "auroc_mean": 0.6058333333333333,
+          "brier_mean": 0.2437338058030338,
+          "ece_mean": 0.06960313758859865,
+          "mce_mean": 0.36935858688218887,
+          "method": "csrm_rule",
+          "risk30_mean": 0.47222222222222215,
+          "risk50_mean": 0.4166666666666667,
+          "target_met_rate": 1.0,
+          "zero_coverage_count": 3
+        }
+      },
+      "n": 200,
+      "risk_target": 0.2,
+      "seeds": [
+        17,
+        31,
+        47
+      ]
+    },
+    {
+      "artifact": "results\\calibration_hotpot_v4_n100_structbalanced.json",
+      "best_reference_by_brier": {
+        "aurc_mean": 0.4552668101278989,
+        "auroc_mean": 0.6793970096399763,
+        "brier_mean": 0.23769714674682318,
+        "ece_mean": 0.14320153381658193,
+        "mce_mean": 0.39690922685321534,
+        "method": "csrm_rule",
+        "risk30_mean": 0.42979242979242976,
+        "risk50_mean": 0.3979959780875113,
+        "target_met_rate": 0.6666666666666666,
+        "zero_coverage_count": 2
+      },
+      "best_reference_by_ece": {
+        "aurc_mean": 0.47878440797960686,
+        "auroc_mean": 0.6618827464096007,
+        "brier_mean": 0.2381496154067416,
+        "ece_mean": 0.09421372896873621,
+        "mce_mean": 0.3706603899834528,
+        "method": "csrm_minimax",
+        "risk30_mean": 0.4554334554334554,
+        "risk50_mean": 0.38589556896193056,
+        "target_met_rate": 1.0,
+        "zero_coverage_count": 3
+      },
+      "best_target_by_brier": {
+        "aurc_mean": 0.3089883825184303,
+        "auroc_mean": 0.8312774608171027,
+        "brier_mean": 0.16301058875673938,
+        "ece_mean": 0.13956505797749816,
+        "mce_mean": 0.4004657697482801,
+        "method": "csrm_calibrated_logistic",
+        "risk30_mean": 0.22557997557997558,
+        "risk50_mean": 0.27834408154774287,
+        "target_met_rate": 0.6666666666666666,
+        "zero_coverage_count": 0
+      },
+      "best_target_by_ece": {
+        "aurc_mean": 0.300903112126948,
+        "auroc_mean": 0.8202849367171617,
+        "brier_mean": 0.1675215627629124,
+        "ece_mean": 0.10336588784449167,
+        "mce_mean": 0.3187822903160338,
+        "method": "csrm_calibrated_isotonic",
+        "risk30_mean": 0.2731990231990232,
+        "risk50_mean": 0.3079883503224464,
+        "target_met_rate": 0.6666666666666666,
+        "zero_coverage_count": 0
+      },
+      "brier_reduction_vs_best_reference": 0.07468655799008381,
+      "brier_win_vs_best_reference": true,
+      "dataset": "hotpot_orbits_v4_n100.constant.structbalanced",
+      "ece_reduction_vs_best_reference": -0.009152158875755462,
+      "ece_win_vs_best_reference": false,
+      "methods": {
+        "csrm_calibrated_isotonic": {
+          "aurc_mean": 0.300903112126948,
+          "auroc_mean": 0.8202849367171617,
+          "brier_mean": 0.1675215627629124,
+          "ece_mean": 0.10336588784449167,
+          "mce_mean": 0.3187822903160338,
+          "method": "csrm_calibrated_isotonic",
+          "risk30_mean": 0.2731990231990232,
+          "risk50_mean": 0.3079883503224464,
+          "target_met_rate": 0.6666666666666666,
+          "zero_coverage_count": 0
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_mean": 0.3089883825184303,
+          "auroc_mean": 0.8312774608171027,
+          "brier_mean": 0.16301058875673938,
+          "ece_mean": 0.13956505797749816,
+          "mce_mean": 0.4004657697482801,
+          "method": "csrm_calibrated_logistic",
+          "risk30_mean": 0.22557997557997558,
+          "risk50_mean": 0.27834408154774287,
+          "target_met_rate": 0.6666666666666666,
+          "zero_coverage_count": 0
+        },
+        "csrm_minimax": {
+          "aurc_mean": 0.47878440797960686,
+          "auroc_mean": 0.6618827464096007,
+          "brier_mean": 0.2381496154067416,
+          "ece_mean": 0.09421372896873621,
+          "mce_mean": 0.3706603899834528,
+          "method": "csrm_minimax",
+          "risk30_mean": 0.4554334554334554,
+          "risk50_mean": 0.38589556896193056,
+          "target_met_rate": 1.0,
+          "zero_coverage_count": 3
+        },
+        "csrm_rule": {
+          "aurc_mean": 0.4552668101278989,
+          "auroc_mean": 0.6793970096399763,
+          "brier_mean": 0.23769714674682318,
+          "ece_mean": 0.14320153381658193,
+          "mce_mean": 0.39690922685321534,
+          "method": "csrm_rule",
+          "risk30_mean": 0.42979242979242976,
+          "risk50_mean": 0.3979959780875113,
+          "target_met_rate": 0.6666666666666666,
+          "zero_coverage_count": 2
+        }
+      },
+      "n": 200,
+      "risk_target": 0.2,
+      "seeds": [
+        17,
+        31,
+        47
+      ]
+    },
+    {
+      "artifact": "results\\calibration_hotpot_v4_semanticswap_n100.json",
+      "best_reference_by_brier": {
+        "aurc_mean": 0.24499315206702377,
+        "auroc_mean": 0.8825,
+        "brier_mean": 0.224115358903444,
+        "ece_mean": 0.23144156162624038,
+        "mce_mean": 0.4762799614035067,
+        "method": "csrm_rule",
+        "risk30_mean": 0.19444444444444442,
+        "risk50_mean": 0.16666666666666666,
+        "target_met_rate": 0.3333333333333333,
+        "zero_coverage_count": 0
+      },
+      "best_reference_by_ece": {
+        "aurc_mean": 0.24499315206702377,
+        "auroc_mean": 0.8825,
+        "brier_mean": 0.224115358903444,
+        "ece_mean": 0.23144156162624038,
+        "mce_mean": 0.4762799614035067,
+        "method": "csrm_rule",
+        "risk30_mean": 0.19444444444444442,
+        "risk50_mean": 0.16666666666666666,
+        "target_met_rate": 0.3333333333333333,
+        "zero_coverage_count": 0
+      },
+      "best_target_by_brier": {
+        "aurc_mean": 0.1624156838723276,
+        "auroc_mean": 0.9658333333333333,
+        "brier_mean": 0.07111246556411298,
+        "ece_mean": 0.08260358213162405,
+        "mce_mean": 0.4379161404417129,
+        "method": "csrm_calibrated_logistic",
+        "risk30_mean": 0.02777777777777779,
+        "risk50_mean": 0.10000000000000002,
+        "target_met_rate": 0.6666666666666666,
+        "zero_coverage_count": 0
+      },
+      "best_target_by_ece": {
+        "aurc_mean": 0.207973759332455,
+        "auroc_mean": 0.9195833333333333,
+        "brier_mean": 0.07740636218652827,
+        "ece_mean": 0.0795489724022571,
+        "mce_mean": 0.2546075290873944,
+        "method": "csrm_calibrated_isotonic",
+        "risk30_mean": 0.055555555555555546,
+        "risk50_mean": 0.11666666666666665,
+        "target_met_rate": 1.0,
+        "zero_coverage_count": 0
+      },
+      "brier_reduction_vs_best_reference": 0.15300289333933104,
+      "brier_win_vs_best_reference": true,
+      "dataset": "hotpot_orbits_v4_semanticswap_n100",
+      "ece_reduction_vs_best_reference": 0.1518925892239833,
+      "ece_win_vs_best_reference": true,
+      "methods": {
+        "csrm_calibrated_isotonic": {
+          "aurc_mean": 0.207973759332455,
+          "auroc_mean": 0.9195833333333333,
+          "brier_mean": 0.07740636218652827,
+          "ece_mean": 0.0795489724022571,
+          "mce_mean": 0.2546075290873944,
+          "method": "csrm_calibrated_isotonic",
+          "risk30_mean": 0.055555555555555546,
+          "risk50_mean": 0.11666666666666665,
+          "target_met_rate": 1.0,
+          "zero_coverage_count": 0
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_mean": 0.1624156838723276,
+          "auroc_mean": 0.9658333333333333,
+          "brier_mean": 0.07111246556411298,
+          "ece_mean": 0.08260358213162405,
+          "mce_mean": 0.4379161404417129,
+          "method": "csrm_calibrated_logistic",
+          "risk30_mean": 0.02777777777777779,
+          "risk50_mean": 0.10000000000000002,
+          "target_met_rate": 0.6666666666666666,
+          "zero_coverage_count": 0
+        },
+        "csrm_minimax": {
+          "aurc_mean": 0.2575210947052345,
+          "auroc_mean": 0.8625000000000002,
+          "brier_mean": 0.22675906124931666,
+          "ece_mean": 0.24952465223761014,
+          "mce_mean": 0.46035726129162896,
+          "method": "csrm_minimax",
+          "risk30_mean": 0.19444444444444442,
+          "risk50_mean": 0.18333333333333335,
+          "target_met_rate": 0.3333333333333333,
+          "zero_coverage_count": 0
+        },
+        "csrm_rule": {
+          "aurc_mean": 0.24499315206702377,
+          "auroc_mean": 0.8825,
+          "brier_mean": 0.224115358903444,
+          "ece_mean": 0.23144156162624038,
+          "mce_mean": 0.4762799614035067,
+          "method": "csrm_rule",
+          "risk30_mean": 0.19444444444444442,
+          "risk50_mean": 0.16666666666666666,
+          "target_met_rate": 0.3333333333333333,
+          "zero_coverage_count": 0
+        }
+      },
+      "n": 200,
+      "risk_target": 0.2,
+      "seeds": [
+        17,
+        31,
+        47
+      ]
+    },
+    {
+      "artifact": "results\\calibration_hotpot_v4_supportpreserve_n100.json",
+      "best_reference_by_brier": {
+        "aurc_mean": 0.1527769179355496,
+        "auroc_mean": 1.0,
+        "brier_mean": 0.15138206612954122,
+        "ece_mean": 0.38406810131741215,
+        "mce_mean": 0.43913890074580536,
+        "method": "csrm_rule",
+        "risk30_mean": 0.0,
+        "risk50_mean": 0.0,
+        "target_met_rate": 0.6666666666666666,
+        "zero_coverage_count": 0
+      },
+      "best_reference_by_ece": {
+        "aurc_mean": 0.1527769179355496,
+        "auroc_mean": 1.0,
+        "brier_mean": 0.15138206612954122,
+        "ece_mean": 0.38406810131741215,
+        "mce_mean": 0.43913890074580536,
+        "method": "csrm_rule",
+        "risk30_mean": 0.0,
+        "risk50_mean": 0.0,
+        "target_met_rate": 0.6666666666666666,
+        "zero_coverage_count": 0
+      },
+      "best_target_by_brier": {
+        "aurc_mean": 0.125,
+        "auroc_mean": 1.0,
+        "brier_mean": 2.10493987435872e-09,
+        "ece_mean": 5.885502762463061e-06,
+        "mce_mean": 1.1771005524926123e-05,
+        "method": "csrm_calibrated_isotonic",
+        "risk30_mean": 0.0,
+        "risk50_mean": 0.0,
+        "target_met_rate": 1.0,
+        "zero_coverage_count": 0
+      },
+      "best_target_by_ece": {
+        "aurc_mean": 0.125,
+        "auroc_mean": 1.0,
+        "brier_mean": 2.10493987435872e-09,
+        "ece_mean": 5.885502762463061e-06,
+        "mce_mean": 1.1771005524926123e-05,
+        "method": "csrm_calibrated_isotonic",
+        "risk30_mean": 0.0,
+        "risk50_mean": 0.0,
+        "target_met_rate": 1.0,
+        "zero_coverage_count": 0
+      },
+      "brier_reduction_vs_best_reference": 0.15138206402460136,
+      "brier_win_vs_best_reference": true,
+      "dataset": "hotpot_orbits_v4_supportpreserve_n100",
+      "ece_reduction_vs_best_reference": 0.38406221581464967,
+      "ece_win_vs_best_reference": true,
+      "methods": {
+        "csrm_calibrated_isotonic": {
+          "aurc_mean": 0.125,
+          "auroc_mean": 1.0,
+          "brier_mean": 2.10493987435872e-09,
+          "ece_mean": 5.885502762463061e-06,
+          "mce_mean": 1.1771005524926123e-05,
+          "method": "csrm_calibrated_isotonic",
+          "risk30_mean": 0.0,
+          "risk50_mean": 0.0,
+          "target_met_rate": 1.0,
+          "zero_coverage_count": 0
+        },
+        "csrm_calibrated_logistic": {
+          "aurc_mean": 0.1451086956521739,
+          "auroc_mean": 1.0,
+          "brier_mean": 0.0001543323161752681,
+          "ece_mean": 0.011572736541176945,
+          "mce_mean": 0.012042861514605466,
+          "method": "csrm_calibrated_logistic",
+          "risk30_mean": 0.0,
+          "risk50_mean": 0.0,
+          "target_met_rate": 1.0,
+          "zero_coverage_count": 0
+        },
+        "csrm_minimax": {
+          "aurc_mean": 0.15292480725764715,
+          "auroc_mean": 1.0,
+          "brier_mean": 0.15272800496601893,
+          "ece_mean": 0.38588154716567497,
+          "mce_mean": 0.4431760270592305,
+          "method": "csrm_minimax",
+          "risk30_mean": 0.0,
+          "risk50_mean": 0.0,
+          "target_met_rate": 0.6666666666666666,
+          "zero_coverage_count": 0
+        },
+        "csrm_rule": {
+          "aurc_mean": 0.1527769179355496,
+          "auroc_mean": 1.0,
+          "brier_mean": 0.15138206612954122,
+          "ece_mean": 0.38406810131741215,
+          "mce_mean": 0.43913890074580536,
+          "method": "csrm_rule",
+          "risk30_mean": 0.0,
+          "risk50_mean": 0.0,
+          "target_met_rate": 0.6666666666666666,
+          "zero_coverage_count": 0
+        }
+      },
+      "n": 200,
+      "risk_target": 0.2,
+      "seeds": [
+        17,
+        31,
+        47
+      ]
+    }
+  ],
+  "target_methods": [
+    "csrm_calibrated_logistic",
+    "csrm_calibrated_isotonic"
+  ]
+}

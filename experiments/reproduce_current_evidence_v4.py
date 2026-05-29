@@ -83,6 +83,11 @@ from experiments.summarize_v4_split_threshold_protocol import (
     render_markdown as render_v4_split_threshold_protocol_markdown,
     summarize_v4_split_threshold_protocol,
 )
+from experiments.summarize_v4_calibration_quality import (
+    DEFAULT_INPUTS as DEFAULT_V4_CALIBRATION_QUALITY_INPUTS,
+    render_markdown as render_v4_calibration_quality_markdown,
+    summarize_v4_calibration_quality,
+)
 from experiments.summarize_v4_failure_taxonomy import (
     DEFAULT_INPUTS as DEFAULT_V4_FAILURE_TAXONOMY_INPUTS,
     render_markdown as render_v4_failure_taxonomy_markdown,
@@ -478,6 +483,24 @@ def reproduce_current_evidence_v4(
             "name": "summarize_v4_split_threshold_protocol",
             "outputs": [str(split_threshold_json), str(split_threshold_md)],
             "ready": split_threshold["protocol_complete"],
+        }
+    )
+
+    calibration_quality_json = results / "v4_calibration_quality_20260529.json"
+    calibration_quality_md = results / "v4_calibration_quality_20260529.md"
+    calibration_quality = summarize_v4_calibration_quality(
+        [root / path for path in DEFAULT_V4_CALIBRATION_QUALITY_INPUTS]
+    )
+    _write_json(calibration_quality_json, calibration_quality)
+    calibration_quality_md.write_text(
+        render_v4_calibration_quality_markdown(calibration_quality),
+        encoding="utf-8",
+    )
+    commands.append(
+        {
+            "name": "summarize_v4_calibration_quality",
+            "outputs": [str(calibration_quality_json), str(calibration_quality_md)],
+            "ready": calibration_quality["calibration_quality_supported"],
         }
     )
 

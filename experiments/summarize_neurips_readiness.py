@@ -90,6 +90,7 @@ def _rows(
     strong = closure.get("v4_strong_baselines") or {}
     end2end = closure.get("end2end_selective_rag_proxy") or {}
     mechanism = closure.get("mechanism_ablation") or {}
+    calibration = closure.get("v4_calibration_quality") or {}
     risk = closure.get("risk_control") or {}
     reconstruction = closure.get("corm_reconstruction") or {}
     storage_probe = reconstruction.get("latest_storage_probe") or {}
@@ -182,6 +183,25 @@ def _rows(
             PASS if mechanism.get("strong_alignment_evidence") else PARTIAL,
             ["results/mechanism_ablation_summary_20260529.json"],
             "Alignment evidence is strong; no-worst-sufficiency is weak/redundant in current bridge artifacts.",
+        ),
+        _row(
+            "Calibrated orbit risk model",
+            PASS
+            if calibration.get("calibration_quality_supported")
+            else PARTIAL
+            if calibration
+            else FAIL,
+            [
+                "results/v4_calibration_quality_20260529.json",
+                "results/v4_calibration_quality_20260529.md",
+            ],
+            (
+                "Calibration-quality artifact shows Brier wins "
+                f"{calibration.get('best_target_brier_win_count')}/{calibration.get('dataset_count')} "
+                "against rule/minimax references, but ECE wins "
+                f"{calibration.get('best_target_ece_win_count')}/{calibration.get('dataset_count')}. "
+                "This supports empirical calibration-quality wording, not a formal risk guarantee."
+            ),
         ),
         _row(
             "Failure taxonomy and case studies",

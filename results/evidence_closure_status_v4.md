@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T04:48:53.530017+00:00`
+Generated: `2026-05-29T05:04:35.838706+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,23 +51,31 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `31`; tracked artifacts: `138`.
+- Provenance steps: `32`; tracked artifacts: `141`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `138`; dataset construction hashes: `41`.
+- Artifact checksums: `141`; dataset construction hashes: `41`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.
 - Claim boundary: This reproducibility bundle documents the current evidence package. It does not complete human audit labels, full CoRM-RAG reproduction, or general formal risk-control support.
 
+## V4 Calibration Quality
+
+- Supported: `False`; datasets: `6`.
+- Brier wins: `6/6`; ECE wins: `4/6`.
+- Mean Brier reduction: `0.1419`; mean ECE reduction: `0.1009`.
+- ECE non-win datasets: `['hotpot_orbits_v4_n100.constant.hardmatched', 'hotpot_orbits_v4_n100.constant.structbalanced']`.
+- Claim implication: Calibrated CSRM strongly improves Brier score over rule/minimax baselines across all current v4 calibration datasets. ECE improves on most but not all datasets, so calibration should be claimed as empirical calibration-quality evidence, not as a formal risk guarantee.
+
 ## NeurIPS Readiness Matrix
 
 - Ready for NeurIPS main-track claim: `False`.
-- Status counts: `{'blocked': 3, 'fail': 1, 'partial': 3, 'pass': 4}`.
-- Hard blockers: `3`; negative/partial evidence items: `4`.
+- Status counts: `{'blocked': 3, 'fail': 1, 'partial': 4, 'pass': 4}`.
+- Hard blockers: `3`; negative/partial evidence items: `5`.
 
 Hard blockers:
 - Human-audited orbit labels: Pending labels: 300; cannot claim human-audited results.
@@ -78,6 +86,7 @@ Negative or partial evidence:
 - Text-only semantic verifier (`partial`): NLI cross-scorer evidence is directionally positive against required weak baselines, but LLM-NLI correlation and human-label text-only evaluation are not ready.
 - Strong baselines and equal-budget controls (`partial`): Baseline package exists, but CSRM-Rule has losses/ties against strongest learned/context baselines; coverage/budget matrices still mark faithful CoRM as partial, clean-only controls as lower-budget, and LLM judge scores as missing. The LLM judge request pack is ready, but no API-backed score artifact exists. Template multi-sample self-consistency and shared calibration-threshold selection are auditable, but test risk/coverage remains mixed rather than all-win.
 - End-to-end selective RAG (`partial`): Proxy evidence now covers two local retrievers and two generators, but remains mixed and is not a full CoRM-RAG Wikipedia retrieval-generation reproduction. The risk-coverage curve artifact summarizes the proxy trend but does not remove the full-reproduction boundary.
+- Calibrated orbit risk model (`partial`): Calibration-quality artifact shows Brier wins 6/6 against rule/minimax references, but ECE wins 4/6. This supports empirical calibration-quality wording, not a formal risk guarantee.
 - Risk-control claim (`fail`): Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.
 
 ## External Review Packet
@@ -217,6 +226,7 @@ Allowed claims:
 - A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.
 - The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.
 - Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings.
+- The calibrated orbit risk model improves Brier score over rule/minimax baselines across current v4 calibration artifacts; ECE evidence is mostly positive but mixed.
 
 Disallowed claims:
 - Full original CoRM-RAG retrieval-generation reproduction is complete.
@@ -225,6 +235,7 @@ Disallowed claims:
 - The method solves robust RAG generally across tasks.
 - CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4.
 - The v4 failure taxonomy is human-adjudicated evidence.
+- Calibration establishes a formal risk-control guarantee.
 
 Remaining non-human blockers:
 - Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.
@@ -232,6 +243,7 @@ Remaining non-human blockers:
 - External review packet is ready, but independent review remains pending; place the response at results\external_review_response_20260529.md.
 - End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.
 - V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.
+- V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.
 
 Remaining human-audit blockers:
 - Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items.

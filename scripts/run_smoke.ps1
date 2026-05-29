@@ -19,5 +19,6 @@ python -m pytest `
   tests/test_summarize_v4_baseline_budget_parity.py `
   tests/test_summarize_v4_baseline_coverage.py `
   tests/test_summarize_v4_split_threshold_protocol.py `
+  tests/test_summarize_v4_calibration_quality.py `
   tests/test_verify_v4_evidence_package.py `
   -q

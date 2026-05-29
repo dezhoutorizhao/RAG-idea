@@ -1,6 +1,6 @@
 # V4 Baseline Budget Parity
 
-Generated: `2026-05-29T04:48:48.519745+00:00`
+Generated: `2026-05-29T05:04:30.646716+00:00`
 Source: `results\v4_strong_baseline_summary_20260529.json`
 
 Method count: `14`

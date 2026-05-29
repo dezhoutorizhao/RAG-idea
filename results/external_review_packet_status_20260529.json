@@ -3,7 +3,7 @@
   "blocker_reason": "pending_external_review",
   "claim_policy": "This packet prepares the current evidence package for independent external review. It is not itself an external review and does not upgrade any claim until an independent review response is present.",
   "external_review_completed": false,
-  "generated_at_utc": "2026-05-29T04:48:52.378142+00:00",
+  "generated_at_utc": "2026-05-29T05:04:34.647744+00:00",
   "hard_blockers": [
     {
       "boundary_or_next_action": "Pending labels: 300; cannot claim human-audited results.",
@@ -75,6 +75,15 @@
       "status": "partial"
     },
     {
+      "boundary_or_next_action": "Calibration-quality artifact shows Brier wins 6/6 against rule/minimax references, but ECE wins 4/6. This supports empirical calibration-quality wording, not a formal risk guarantee.",
+      "evidence": [
+        "results/v4_calibration_quality_20260529.json",
+        "results/v4_calibration_quality_20260529.md"
+      ],
+      "requirement": "Calibrated orbit risk model",
+      "status": "partial"
+    },
+    {
       "boundary_or_next_action": "Hotpot-only empirical transfer is positive; FEVER 0.20 target is negative, so no general/formal claim.",
       "evidence": [
         "results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json"
@@ -88,7 +97,7 @@
   "readiness_status_counts": {
     "blocked": 3,
     "fail": 1,
-    "partial": 3,
+    "partial": 4,
     "pass": 4
   },
   "ready_for_independent_external_review_claim": false,
@@ -123,43 +132,49 @@
     {
       "exists": true,
       "path": "results\\evidence_closure_status_v4.json",
-      "sha256": "6692cfb899fe5f7ed047d910c6041ab91d19e06387cdecdca1749e2585044c6a",
-      "size_bytes": 32269
+      "sha256": "bc8f597332966b766c6b9303f0746006f704f325644bf10ec269467a75b489e4",
+      "size_bytes": 33727
     },
     {
       "exists": true,
       "path": "results\\neurips_readiness_matrix_20260529.json",
-      "sha256": "50ceec749f4a5e0cdfdae0e647abfc0f3d88b6dc446c85a11eed75c2f5d575a7",
-      "size_bytes": 10754
+      "sha256": "b19e20162adc09c53b9492d0f32465c0da498a07f24bb8eb46434c620217ee61",
+      "size_bytes": 11668
     },
     {
       "exists": true,
       "path": "results\\v4_evidence_package_manifest_20260529.json",
-      "sha256": "78464c86f7cf9cf4e105d3afa2812f4d260a06bc0e57f923343b31c44f945c15",
+      "sha256": "e0eb1bf20f51c7e9b52da2751154d68545a932b392be917d4de6977484d88ff6",
       "size_bytes": 32281
     },
     {
       "exists": true,
       "path": "results\\text_only_verifier_status_20260529.json",
-      "sha256": "c038f73b6267f52a0108d3e4c5340cdf427d69b1a5c9dbce680012d7688e2978",
+      "sha256": "4d4114c780f74c9c624915b3b641cc61983c63e51be4171183ac92d78a131706",
       "size_bytes": 4152
     },
     {
       "exists": true,
       "path": "results\\v4_strong_baseline_summary_20260529.json",
-      "sha256": "c3ad6bacb03fc7395903a2d58f933e55d692fab89d228e485a86e4b7ac5e10f3",
+      "sha256": "400bb12b90f33bc926350c828a0b635121cd5e6d850efa7fee41ab1e70ba328c",
       "size_bytes": 44027
     },
     {
       "exists": true,
+      "path": "results\\v4_calibration_quality_20260529.json",
+      "sha256": "efb063d7bc55da8e30b2300ca22551414f7b4e7b8d2fadc5e849ad9092f32b8b",
+      "size_bytes": 25694
+    },
+    {
+      "exists": true,
       "path": "results\\end2end_retriever_generator_matrix_20260529.json",
-      "sha256": "0c00e1d09eb7756993d459b14ccf7c5b0f29265efb59c43373c6549328352a54",
+      "sha256": "ef1f0b3180e3141f07407960af41d8c1e9519fb2b6ec3ac20ac72c7893be5d9a",
       "size_bytes": 52753
     },
     {
       "exists": true,
       "path": "results\\end2end_risk_coverage_curves_20260529.json",
-      "sha256": "a1ae8d7458c05b5a35d1dfc87fc980e06d2a37516a984c9cd6da5ed1a8451fc7",
+      "sha256": "b616703206f66f108df58f918e44eb579d36ff517182f04021736f298ee8bd36",
       "size_bytes": 130245
     },
     {

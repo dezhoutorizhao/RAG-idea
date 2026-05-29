@@ -29,6 +29,7 @@ PROVENANCE_BY_STEP = {
     "summarize_v4_baseline_budget_parity": "experiments/summarize_v4_baseline_budget_parity.py",
     "compare_equal_budget_thresholds_v4": "experiments/compare_equal_budget_thresholds_v4.py",
     "summarize_v4_split_threshold_protocol": "experiments/summarize_v4_split_threshold_protocol.py",
+    "summarize_v4_calibration_quality": "experiments/summarize_v4_calibration_quality.py",
     "summarize_v4_failure_taxonomy": "experiments/summarize_v4_failure_taxonomy.py",
     "export_v4_case_gallery": "experiments/export_v4_case_gallery.py",
     "build_clean_sufficiency_misleading_figure": "experiments/build_clean_sufficiency_misleading_figure.py",

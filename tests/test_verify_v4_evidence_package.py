@@ -109,5 +109,13 @@ def test_default_manifest_tracks_end2end_risk_coverage_curve_artifacts():
     assert "experiments/plot_end2end_risk_coverage_curves.py" in defaults
 
 
+def test_default_manifest_tracks_v4_calibration_quality_artifacts():
+    defaults = {str(path).replace("\\", "/") for path in DEFAULT_ARTIFACTS}
+
+    assert "results/v4_calibration_quality_20260529.json" in defaults
+    assert "results/v4_calibration_quality_20260529.md" in defaults
+    assert "experiments/summarize_v4_calibration_quality.py" in defaults
+
+
 def _write_json(path, payload):
     path.write_text(json.dumps(payload), encoding="utf-8")

@@ -86,6 +86,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
     clean_sufficiency_figure = _clean_sufficiency_figure_status(results)
     v4_anti_shortcut = _v4_anti_shortcut_status(results)
     mechanism_ablation = _mechanism_ablation_status(results)
+    v4_calibration_quality = _v4_calibration_quality_status(results)
     neurips_readiness = _neurips_readiness_status(results)
     external_review = _external_review_packet_status(results)
     results_provenance = _results_provenance_status(results)
@@ -178,6 +179,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
         "neurips_readiness": neurips_readiness,
         "external_review": external_review,
         "mechanism_ablation": mechanism_ablation,
+        "v4_calibration_quality": v4_calibration_quality,
         "end2end_selective_rag_proxy": end2end_proxy,
         "end2end_retriever_generator_matrix": end2end_matrix,
         "end2end_risk_coverage_curves": end2end_curves,
@@ -214,6 +216,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "A private-label diagnostic figure shows that high clean text-only sufficiency still contains many v4 orbit failures; this supports the qualitative motivation but not a human-audited claim.",
             "The primary v4 anti-shortcut suite passes raw-firewall, structural-only, group-split, and random-label sanity checks across six n100 variants.",
             "Mechanism ablations strongly support orbit alignment as necessary; shuffled perturbations collapse across Hotpot and FEVER bridge settings.",
+            "The calibrated orbit risk model improves Brier score over rule/minimax baselines across current v4 calibration artifacts; ECE evidence is mostly positive but mixed.",
         ],
         "disallowed_claims": [
             "Full original CoRM-RAG retrieval-generation reproduction is complete.",
@@ -222,6 +225,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             "The method solves robust RAG generally across tasks.",
             "CSRM significantly beats the strongest learned orbit baseline on Hotpot semantic-swap v4.",
             "The v4 failure taxonomy is human-adjudicated evidence.",
+            "Calibration establishes a formal risk-control guarantee.",
         ],
         "remaining_non_human_blockers": [
             "Full CoRM reconstruction is blocked by remote NTFS/fuseblk I/O failures and missing local artifacts; an ext4 cleanup path exists but needs explicit approval before deleting logs/caches.",
@@ -229,6 +233,7 @@ def evidence_closure(root: Path) -> dict[str, Any]:
             _external_review_blocker(external_review),
             "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
             "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.",
+            "V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim.",
         ],
         "remaining_human_audit_blockers": [
             "Human audit v4 packs are prepared for Hotpot semantic-swap blind200 and FEVER structbalanced blind100, but adjudicated labels are pending for all 300 items.",
@@ -715,6 +720,28 @@ def _mechanism_ablation_status(results: Path) -> dict[str, Any] | None:
     }
 
 
+def _v4_calibration_quality_status(results: Path) -> dict[str, Any] | None:
+    path = results / "v4_calibration_quality_20260529.json"
+    if not path.exists():
+        return None
+    payload = load_json(path)
+    aggregate = payload.get("aggregate", {})
+    return {
+        "artifact": str(path.as_posix()),
+        "dataset_count": payload.get("dataset_count"),
+        "target_methods": payload.get("target_methods"),
+        "reference_methods": payload.get("reference_methods"),
+        "best_target_brier_win_count": aggregate.get("best_target_brier_win_count"),
+        "best_target_ece_win_count": aggregate.get("best_target_ece_win_count"),
+        "mean_best_target_brier_reduction": aggregate.get("mean_best_target_brier_reduction"),
+        "mean_best_target_ece_reduction": aggregate.get("mean_best_target_ece_reduction"),
+        "datasets_with_ece_nonwin": aggregate.get("datasets_with_ece_nonwin", []),
+        "datasets_with_brier_nonwin": aggregate.get("datasets_with_brier_nonwin", []),
+        "calibration_quality_supported": payload.get("calibration_quality_supported"),
+        "claim_implication": payload.get("claim_implication"),
+    }
+
+
 def _neurips_readiness_status(results: Path) -> dict[str, Any] | None:
     path = results / "neurips_readiness_matrix_20260529.json"
     if not path.exists():
@@ -880,6 +907,7 @@ def render_markdown(status: dict[str, Any]) -> str:
     neurips_readiness = status.get("neurips_readiness")
     external_review = status.get("external_review")
     mechanism_ablation = status.get("mechanism_ablation")
+    calibration_quality = status.get("v4_calibration_quality")
     end2end_proxy = status.get("end2end_selective_rag_proxy")
     end2end_matrix = status.get("end2end_retriever_generator_matrix")
     end2end_curves = status.get("end2end_risk_coverage_curves")
@@ -1011,6 +1039,27 @@ def render_markdown(status: dict[str, Any]) -> str:
                 f"findings: `{reproducibility_bundle['hidden_local_path_finding_count']}`.",
                 f"- Remote storage ready: `{reproducibility_bundle['remote_storage_ready']}`.",
                 f"- Claim boundary: {reproducibility_bundle['claim_boundary']}",
+                "",
+            ]
+        )
+    else:
+        lines.extend(["- Not recorded.", ""])
+    lines.extend(["## V4 Calibration Quality", ""])
+    if calibration_quality:
+        lines.extend(
+            [
+                f"- Supported: `{calibration_quality['calibration_quality_supported']}`; "
+                f"datasets: `{calibration_quality['dataset_count']}`.",
+                f"- Brier wins: `{calibration_quality['best_target_brier_win_count']}/"
+                f"{calibration_quality['dataset_count']}`; ECE wins: "
+                f"`{calibration_quality['best_target_ece_win_count']}/"
+                f"{calibration_quality['dataset_count']}`.",
+                f"- Mean Brier reduction: "
+                f"`{_fmt(calibration_quality['mean_best_target_brier_reduction'])}`; "
+                f"mean ECE reduction: "
+                f"`{_fmt(calibration_quality['mean_best_target_ece_reduction'])}`.",
+                f"- ECE non-win datasets: `{calibration_quality['datasets_with_ece_nonwin']}`.",
+                f"- Claim implication: {calibration_quality['claim_implication']}",
                 "",
             ]
         )

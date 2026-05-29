@@ -1,7 +1,7 @@
 {
-  "artifact_count": 138,
+  "artifact_count": 141,
   "claim_boundary": "This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.",
-  "generated_at_utc": "2026-05-29T04:48:53.213422+00:00",
+  "generated_at_utc": "2026-05-29T05:04:35.518719+00:00",
   "known_blockers": {
     "hard_readiness_blockers": [
       {
@@ -28,7 +28,8 @@
       "FEVER v3 does not pass the current CP empirical-transfer target, so formal/general risk-control wording remains unsupported.",
       "External review packet is ready, but independent review remains pending; place the response at results\\external_review_response_20260529.md.",
       "End-to-end selective RAG evidence is currently proxy-only and mixed on some Hotpot v4 variants; it is not a full CoRM-RAG reproduction.",
-      "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats."
+      "V4 strong baselines are present, but CSRM-Rule loses or ties the strongest learned/context baselines; main claims must use calibrated/proxy wording with caveats.",
+      "V4 calibrated orbit risk improves Brier on all current calibration artifacts, but ECE is mixed, so calibration remains partial evidence rather than a closed formal-risk claim."
     ]
   },
   "manifest_missing_artifact_count": 0,
@@ -37,7 +38,7 @@
   "readiness_status_counts": {
     "blocked": 3,
     "fail": 1,
-    "partial": 3,
+    "partial": 4,
     "pass": 4
   },
   "reproduction_ready_for_neurips_main_claim": false,
@@ -47,7 +48,7 @@
     "neurips_readiness_matrix": "results\\neurips_readiness_matrix_20260529.json",
     "v4_evidence_package_manifest": "results\\v4_evidence_package_manifest_20260529.json"
   },
-  "step_count": 31,
+  "step_count": 32,
   "steps": [
     {
       "all_outputs_present": true,
@@ -148,14 +149,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.json",
-          "sha256": "4569fbf4ab0aada0078fcfe5537c8b133c1705dd45618c03a0dc9617ab9cc0ce",
+          "sha256": "626e1b3c5893c2c9794eda7b6c89d595a16358d7734358e8063d6d08bb58081d",
           "size_bytes": 8163
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/fever_nearmiss_corm_v3_cp_transfer_sweep_summary_20260529.md",
-          "sha256": "f280a9faf3ece08986865f4e6d7908501e2cdcbc5abbd83f1a39cffd704091df",
+          "sha256": "a7fe5679e2d955dd0d4663d7faf25610cb9652c02c37aef43f5b8f5d7933d945",
           "size_bytes": 1930
         }
       ],
@@ -171,14 +172,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/end2end_selective_rag_proxy_summary_20260529.json",
-          "sha256": "28faa3c7eb594597b628d7ec28d85a5c517ed1e86d26717dd9373ba308278113",
+          "sha256": "8e4df2c557dd6155198cf5bdbd6488d881d76cdd44fb4bada9b3846d7a899c83",
           "size_bytes": 13211
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/end2end_selective_rag_proxy_summary_20260529.md",
-          "sha256": "1bf5b3b0ddd8feb1959ab2a41634869f82b9857a5c091e46b3f00b06cb29ff98",
+          "sha256": "a41b3c46b9aaf8fb54c2a6576f3172cfb82cf2f11cd4ebe0a6dfa5ab318d58da",
           "size_bytes": 3279
         }
       ],
@@ -194,14 +195,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/end2end_retriever_generator_matrix_20260529.json",
-          "sha256": "0c00e1d09eb7756993d459b14ccf7c5b0f29265efb59c43373c6549328352a54",
+          "sha256": "ef1f0b3180e3141f07407960af41d8c1e9519fb2b6ec3ac20ac72c7893be5d9a",
           "size_bytes": 52753
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/end2end_retriever_generator_matrix_20260529.md",
-          "sha256": "52bfcaa281e35a892cb5a0de3ef7414932f2a8cb985561b60686eecf47d0e321",
+          "sha256": "d3674c2aad7684319deefc3b71c514c79cf8d928450d49fb16b50a27ddc1caf3",
           "size_bytes": 5142
         }
       ],
@@ -217,14 +218,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/end2end_risk_coverage_curves_20260529.json",
-          "sha256": "a1ae8d7458c05b5a35d1dfc87fc980e06d2a37516a984c9cd6da5ed1a8451fc7",
+          "sha256": "b616703206f66f108df58f918e44eb579d36ff517182f04021736f298ee8bd36",
           "size_bytes": 130245
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/end2end_risk_coverage_curves_20260529.md",
-          "sha256": "a479bb7274cb801a7f484dcac2af61edefaad0ddfffe1188c5a90aff829104dc",
+          "sha256": "9e928a1b76314b923e1600aa5a6203004da81074fede5f4ef335db919c47e09c",
           "size_bytes": 1354
         },
         {
@@ -254,14 +255,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/llm_judge_v4_request_status_20260529.json",
-          "sha256": "224fadd43a960e809ffea4a5344ea00d39e5f5305a10f2f53ed67f1aadc3e568",
+          "sha256": "b9e988d56b97a7c32ff316b3593b3abfa32281d8c7f19f8c131d8b3a66fa4bb1",
           "size_bytes": 1647
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/llm_judge_v4_request_status_20260529.md",
-          "sha256": "6f6de881d461358e729a45bd8bde50f19bfd8c9d0008f2436530373b786dffb3",
+          "sha256": "96cf9f2d3310b74dee9078e9abfef53eb5bd0b3e796e26b32d4d400113a31708",
           "size_bytes": 1136
         }
       ],
@@ -284,14 +285,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/llm_judge_nli_probe_request_status_20260529.json",
-          "sha256": "72195f8e0608f7bfafa608416e97d2de40a285d4e654d30a89c8c1ede6f094a6",
+          "sha256": "9fd42735df5872f0c98202923f6289422ee6cbe98bc44e97ee5260c82f5a61b3",
           "size_bytes": 1238
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/llm_judge_nli_probe_request_status_20260529.md",
-          "sha256": "6c78e00accbdb0b9b95bec79b5bd7edd74e8019dec3372f2c4f7255f7d9aed9a",
+          "sha256": "55ca227b6d0045a6a38696f67f4ba51d5375e70967355ff0e1fa490442249cf3",
           "size_bytes": 990
         }
       ],
@@ -307,14 +308,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/llm_judge_nli_probe_batch_run_status_20260529.json",
-          "sha256": "e91da4c480cfb9b447761618af66b811d47db006693a4826a53bf50452ce92fd",
+          "sha256": "1ba33cfb557b250e39d4d98326e07815462396c98df941e31a38c7b62a4e7450",
           "size_bytes": 1090
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/llm_judge_nli_probe_batch_run_status_20260529.md",
-          "sha256": "d22c82739bd0800b7a18b71c342dfebbd193007e1864985f1b4ac9b0b05b2279",
+          "sha256": "8d86963e06df70bed476ea638cd30f2813db3cbcadccfc8394ff93d92fe4dcfe",
           "size_bytes": 737
         }
       ],
@@ -330,14 +331,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/llm_judge_nli_probe_score_status_20260529.json",
-          "sha256": "d85cd313bf8ec6d448202292e34928bd370bb7697570dbf665a8e6fdf0bfb57f",
+          "sha256": "dca1136d4e414c7cc0a03130711a4e5e7382e50eea1f138421afea44f300b58e",
           "size_bytes": 693
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/llm_judge_nli_probe_score_status_20260529.md",
-          "sha256": "be360ea1b87d51cc0c19f50e03fc82f0358260e04e9a4437c574154ac3755034",
+          "sha256": "4a617ec5ad8838e909c8f05c476637b64c1288e6bf0972d86961eb41c76c4f42",
           "size_bytes": 635
         }
       ],
@@ -353,14 +354,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/llm_nli_correlation_status_20260529.json",
-          "sha256": "9b517802d77c65ec1accdfb5c0c72619234bf66c97b0bd4315280d964cb9fc5f",
+          "sha256": "feb0cfd335a6046be73897befeec015c9772ad41a8ee03a0ed74dcc9c265ff72",
           "size_bytes": 680
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/llm_nli_correlation_status_20260529.md",
-          "sha256": "825bb5aea7d2ecf4a38c20d80c24b909d51aae95b1aebcd108f53e4d093d3922",
+          "sha256": "0976c7b368ae36c4cfcf2007357e7dafd313d9a5989b65b9bf04cb6075181039",
           "size_bytes": 614
         }
       ],
@@ -376,14 +377,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/text_only_verifier_status_20260529.json",
-          "sha256": "c038f73b6267f52a0108d3e4c5340cdf427d69b1a5c9dbce680012d7688e2978",
+          "sha256": "4d4114c780f74c9c624915b3b641cc61983c63e51be4171183ac92d78a131706",
           "size_bytes": 4152
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/text_only_verifier_status_20260529.md",
-          "sha256": "88105117cacaeba317a2a576c7d6ffbc761d5a0ad002ac0699f88ad554bbafcf",
+          "sha256": "fa71ea2c868b8c75eef58151ee3c008cbfdb7361c2ae8bd6ed05d4936a2f6529",
           "size_bytes": 2166
         }
       ],
@@ -399,14 +400,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_strong_baseline_summary_20260529.json",
-          "sha256": "c3ad6bacb03fc7395903a2d58f933e55d692fab89d228e485a86e4b7ac5e10f3",
+          "sha256": "400bb12b90f33bc926350c828a0b635121cd5e6d850efa7fee41ab1e70ba328c",
           "size_bytes": 44027
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_strong_baseline_summary_20260529.md",
-          "sha256": "75486451d9f7783bf37f408245b0a4e9da5377bccc053c935f868259b2d26b7e",
+          "sha256": "420c1317da145f85f6d5ef30d705bae58d50ccb5f29e94065dfd47cc3d009acf",
           "size_bytes": 3205
         }
       ],
@@ -422,14 +423,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_baseline_coverage_matrix_20260529.json",
-          "sha256": "76572c625f926c0dd8bbf9ac1e3b629382c9e537d2f126dc44d61532d4c6baea",
+          "sha256": "d38c35347b4eded944440952d95a5c332d9d20669f215d1a57d74cde7868ff8f",
           "size_bytes": 4855
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_baseline_coverage_matrix_20260529.md",
-          "sha256": "6f3e3138742a51fab560ddc3d5650b7cff3b84c2fa10a855cff630bdee7f5a21",
+          "sha256": "19441df90f42de00c67e1873aa9711fe9d59e2cdf83411f6eeaddba2ac142347",
           "size_bytes": 2364
         }
       ],
@@ -445,14 +446,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_baseline_budget_parity_20260529.json",
-          "sha256": "10dd0d36a0f927d8b30112d6fcb06c38ec8db79fb3b7180d1ecf61785b8dc6e9",
+          "sha256": "27ee5c5e35d460248f0bd5373cd8f04f2235b76ed6016d91fdc55d7bd7cda684",
           "size_bytes": 5642
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_baseline_budget_parity_20260529.md",
-          "sha256": "1e4de8f9c286d943c9ab720b5bcc619ff9c6aa912116389ad3d0467889d77fdd",
+          "sha256": "03c5e016dedd760d24b43d3153f3fc4f95e773bc11de3d12551f6964efb649dd",
           "size_bytes": 3545
         }
       ],
@@ -468,14 +469,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_shared_threshold_selection_20260529.json",
-          "sha256": "8e509fe5fb0acfd9aed104967e3d290673e390381f962c549e0aaa154e8cc973",
+          "sha256": "00838f8862475ed36bc9ce12a96764eba5501db6f66561de0490ee907dbdd8e8",
           "size_bytes": 866466
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_shared_threshold_selection_20260529.md",
-          "sha256": "d9aade41489b3a83fedef875b8de138b596a42c84c390fe8f68d767e9485bf70",
+          "sha256": "f3a24034ba975dc6789e7e377cec3401ea2f84837659f6e245755358c85ef36b",
           "size_bytes": 4184
         }
       ],
@@ -491,14 +492,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_split_threshold_protocol_20260529.json",
-          "sha256": "8a1e7b78b1e4dad07533a87114a1cf54dd7c08cccb0f2a357345dfc44211a7d3",
+          "sha256": "d788a0b6460232162a393f09a3f1f83a2fb806bc199e058bf21db667305c2629",
           "size_bytes": 3657
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_split_threshold_protocol_20260529.md",
-          "sha256": "bfe07e8eaaa01afe1c98f1ac9bd2137f99a1a0b3d36506bde51408546b344630",
+          "sha256": "632466ea14169d4b7aa47dba52580f3eae9ddee3ab940ad49fabe7dda7798475",
           "size_bytes": 2852
         }
       ],
@@ -513,15 +514,38 @@
         {
           "exists": true,
           "manifest_tracked": true,
+          "path": "results/v4_calibration_quality_20260529.json",
+          "sha256": "efb063d7bc55da8e30b2300ca22551414f7b4e7b8d2fadc5e849ad9092f32b8b",
+          "size_bytes": 25694
+        },
+        {
+          "exists": true,
+          "manifest_tracked": true,
+          "path": "results/v4_calibration_quality_20260529.md",
+          "sha256": "e15ddcea698f5ab6db4ee12b6c202608e997a2b60d28a96953402af31c5a6213",
+          "size_bytes": 1655
+        }
+      ],
+      "ready": false,
+      "reproduction_entrypoint": "experiments/reproduce_current_evidence_v4.py",
+      "source_script": "experiments/summarize_v4_calibration_quality.py",
+      "step": "summarize_v4_calibration_quality"
+    },
+    {
+      "all_outputs_present": true,
+      "outputs": [
+        {
+          "exists": true,
+          "manifest_tracked": true,
           "path": "results/v4_failure_taxonomy_summary_20260529.json",
-          "sha256": "5c88bc6e55704e89752f9d6af6600f6c255d176cb2b04f63999757c295b3461e",
+          "sha256": "2be335d83d479cb0eeeeb78d9979ad952ea4acb413c7104337f38b37cf4f47e5",
           "size_bytes": 46069
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_failure_taxonomy_summary_20260529.md",
-          "sha256": "796d2be294bde15eb36a91bec0747c7d80f35098668fd551528adce52eb964b2",
+          "sha256": "9c4ee1c282b1fd9404afd08bf36c5c34e4c39982a175aaafddc281b5ee7f4519",
           "size_bytes": 3223
         }
       ],
@@ -544,14 +568,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "paper/case_studies/v4_case_gallery_20260529.md",
-          "sha256": "ba3960acd6b723735b520107f98824f345cf7f83ff9c18648078438e1315e71e",
+          "sha256": "2971148ca29d7a65410927961e75909f7d82960ca33be829e36b4e08164a9597",
           "size_bytes": 27403
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_case_gallery_summary_20260529.json",
-          "sha256": "3715413218fc4910266ff266f1eea5bd259ebc1be076ba3a1f7e1d6b13070f7a",
+          "sha256": "16b80cbab6c24b5ec4d1a266d48e44dee50fd25f9afefcc293e62531df693bd7",
           "size_bytes": 1882
         }
       ],
@@ -574,7 +598,7 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/clean_sufficiency_misleading_v4_20260529.json",
-          "sha256": "66e457558335110ce246653acd8f1763b0fa54b29dc2a1a371055534eb42f7d9",
+          "sha256": "0d83f37a67b0cd9d64692e987439211d7469c4bdf4bb4146f4ea67e257a9d5c3",
           "size_bytes": 2465
         },
         {
@@ -588,7 +612,7 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "paper/figures/clean_sufficiency_misleading_v4_20260529.md",
-          "sha256": "e5775ac7dbd10d1943df4a8994db09d4c0fba0d6c84e8db32291cabb28f64e21",
+          "sha256": "e6603cf2f48191a89807d051e963509b5f3ec477f377dfa49f4b856f007f974d",
           "size_bytes": 914
         }
       ],
@@ -604,14 +628,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_anti_shortcut_summary_20260529.json",
-          "sha256": "99492379ec7f47d6c377d78690aaec3a28e817cf284ec6919df4ee0cc8b1fbc8",
+          "sha256": "608388563e6f139e8a95ab27cb501f24b1326cb5c69f5c10300a84b460015d9c",
           "size_bytes": 5006
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/v4_anti_shortcut_summary_20260529.md",
-          "sha256": "0aef6a90638ce06e080a12f123923e1e980f105d474c77379fd61febaae7e439",
+          "sha256": "a0e8145e4bd8df56cd2f54ce32606008d3fd116036b0bbf9b707947004bf17a1",
           "size_bytes": 1558
         }
       ],
@@ -627,14 +651,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/mechanism_ablation_summary_20260529.json",
-          "sha256": "9f2713a4011a8906b3462e5a27addd2ad1fc0e9350c582e8554ca05eb0a07ee7",
+          "sha256": "e5e6eafe610c151694b6edd05449edef080ca97406c19fd32988a0e602e2f68e",
           "size_bytes": 10571
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/mechanism_ablation_summary_20260529.md",
-          "sha256": "354e6af179ed2c5db4af08641009ab560785317e7cde6ec35af1d1c10e4351cc",
+          "sha256": "236169a189bc7330bd022172d6a8978e1d721531bed85ea893125a6a55c65f1a",
           "size_bytes": 2368
         }
       ],
@@ -666,15 +690,15 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/evidence_closure_status_v4.json",
-          "sha256": "59e7e5762c84b7b00696066c794d3b93e461f0d2aac992d51c9d7bd7a6e8be47",
-          "size_bytes": 32269
+          "sha256": "4626302de8dc9db8ccf02fe8ffb9f7346d502bcc369641e9fd7821c3b1a00303",
+          "size_bytes": 34052
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/evidence_closure_status_v4.md",
-          "sha256": "30bb5cc15e43836d304927bac543c1ade68015e8669497008d5b208375746a98",
-          "size_bytes": 17218
+          "sha256": "7dc1b5b81750feb0d9adadb4d5f2fd50bfa8ba1b9fc3d87e8b708ccaddb15bb0",
+          "size_bytes": 18440
         }
       ],
       "ready": false,
@@ -689,15 +713,15 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/external_review_packet_status_20260529.json",
-          "sha256": "6cecc2e4092c7dd4f9139dca3458a92b2f4b94190ccd50518e7493006828db06",
-          "size_bytes": 8465
+          "sha256": "91fe88d353cef2642b17c02cc0bfae68df66f1a07dcbca94bdbb251ea64d6553",
+          "size_bytes": 9136
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/external_review_packet_20260529.md",
-          "sha256": "0244ce13285b6507d226b6f180dd48eaa68e7634a1a3892244867f6b06a7ee90",
-          "size_bytes": 5555
+          "sha256": "f68c186a4dfe3334af42e902b1ddb5ca1326e4de919455b1eeefdaf5cc3af7f7",
+          "size_bytes": 5923
         }
       ],
       "ready": false,
@@ -712,15 +736,15 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/neurips_readiness_matrix_20260529.json",
-          "sha256": "3cce5ba26719cc05acb8a12d7dc8eeaddc6575320ccbd8a67b08d3eb162a2276",
-          "size_bytes": 10754
+          "sha256": "cf692d789f3d2a0d71774cc50e7512987ab8cb74d7dbf021a06f037d2e8aab6f",
+          "size_bytes": 11668
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/neurips_readiness_matrix_20260529.md",
-          "sha256": "8e8b5a087ed4314db484842679abed526b18d09457a13fc1687d14cb90a32831",
-          "size_bytes": 4739
+          "sha256": "2a23fc168517cc36bb614957147971dde719ad3b9b9a32bee80171117fc60974",
+          "size_bytes": 5066
         }
       ],
       "ready": false,
@@ -735,15 +759,15 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "results/results_provenance_manifest_20260529.json",
-          "sha256": "2353c6d1debb59c7b90e020947fa781adf7a9bd9268276df3bcdfd2e285e5fac",
-          "size_bytes": 28701
+          "sha256": "71127646d5ea5e818aac5d11fdbe8b20adeb0372a2e1988cbc82b5b61a47de85",
+          "size_bytes": 29851
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/README.md",
-          "sha256": "372314639571ebf7d82270ff0ab2e2e6a3886a4f3e37cbaf87eee8aed74dc8ed",
-          "size_bytes": 12784
+          "sha256": "deeac3613cd43cfb76fa178a9f2c0099e881eadffc7b72261368689c666f98bd",
+          "size_bytes": 13272
         }
       ],
       "ready": true,
@@ -758,14 +782,14 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "CLAIMS_LEDGER.md",
-          "sha256": "80d0b97ac7be2e758873d26440ef50e563932b599f8ce8f2d4338cea5f133e8f",
+          "sha256": "fc522d0157a5906ca587cbf270550e4bcb9dab6582220d0d3698d9e8e9126fde",
           "size_bytes": 25742
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "results/claims_ledger_markdown_summary_20260529.json",
-          "sha256": "fba481f3da6763b8ee740c8e2dfc8fe7a218f5742575131375146e8e71e94246",
+          "sha256": "8a3b8e626a32cd1f01a5bd628c3e4d94c077f81ab44f9f7bf7b198cf088a2754",
           "size_bytes": 26379
         }
       ],
@@ -781,35 +805,35 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "reproducibility/checksums.json",
-          "sha256": "72bf488f113e68abfa1f39ebc0e1054265340adf5e143faeefaff9ab9dd82222",
+          "sha256": "ba0762efba2c0b538c745c606945220d4f5c109f3f3873c771d7a359fccfc599",
           "size_bytes": 39605
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "reproducibility/seeds.json",
-          "sha256": "7fd9e328a3838697fc678cb6ff0048bb2a8c994f885ba48d0add2cb04d7185ce",
+          "sha256": "a3abda8787345ab31a91dc0ae6c2de2f0cf957a40df6cf21637bccd69c6862e1",
           "size_bytes": 1288
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "reproducibility/hardware.md",
-          "sha256": "b62a505e0ade7ca4c19c98641afbd14b6eb5089a1bccbfa3d86be3f55b0a7d64",
+          "sha256": "8bf469dac893381bdf976917a3369e8a68e19f7e4facb1cd449f5ac85d2f250d",
           "size_bytes": 788
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "reproducibility/artifact_manifest.md",
-          "sha256": "67e1c192c2e79b0c0a3f2d0121fd7764dc066b2f85b0fb01f38f6e78cf25cb15",
+          "sha256": "b4310cbefcf43316855767932b604d8a70cd15fd2330c617d568f8abba0ec5ad",
           "size_bytes": 25154
         },
         {
           "exists": true,
           "manifest_tracked": true,
           "path": "reproducibility/hidden_local_path_audit.json",
-          "sha256": "a9b0d99137b19bbc7ac6338077e21562d9be942fcce2fccc1cbe318142d302c0",
+          "sha256": "9d3b540f7b180c3dc0ab110201ee333c508d465dd1d44292bd702f9215559c39",
           "size_bytes": 298
         },
         {
@@ -830,7 +854,7 @@
           "exists": true,
           "manifest_tracked": true,
           "path": "reproducibility/bundle_summary_20260529.json",
-          "sha256": "3d380abcb0e3e6b91ed7390aedbc1d8dcd890faa69b16a583d317e7a1a6ae18b",
+          "sha256": "3cd512d88439e6b34cb2ec1dc43b12eb574e3dc1ab9c366639d957e5f5367805",
           "size_bytes": 1209
         }
       ],
