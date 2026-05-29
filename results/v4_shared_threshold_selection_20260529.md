@@ -1,6 +1,6 @@
 # V4 Shared Calibration-Threshold Selection
 
-Generated: `2026-05-29T08:13:58.472492+00:00`
+Generated: `2026-05-29T08:23:28.644232+00:00`
 
 Datasets: `6`
 Seeds: `[17, 31, 47]`

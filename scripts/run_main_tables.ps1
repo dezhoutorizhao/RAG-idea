@@ -5,6 +5,10 @@ python -m experiments.reproduce_current_evidence_v4 `
   --output-json results\current_evidence_reproduction_20260529.json `
   --output-md results\current_evidence_reproduction_20260529.md
 
+python -m experiments.summarize_remote_launch_gate `
+  --output-json results\remote_full_corm_launch_gate_20260529.json `
+  --output-md results\remote_full_corm_launch_gate_20260529.md
+
 python -m experiments.verify_v4_evidence_package `
   --output-json results\v4_evidence_package_manifest_20260529.json `
   --output-md results\v4_evidence_package_manifest_20260529.md

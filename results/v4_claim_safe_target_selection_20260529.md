@@ -1,6 +1,6 @@
 # V4 Claim-Safe Target Selection
 
-Generated: `2026-05-29T08:13:58.521229+00:00`
+Generated: `2026-05-29T08:23:28.694055+00:00`
 Recommended primary target: `csrm_calibrated_gbdt`
 All-win supported: `False`
 Claim-safe status: `partial`

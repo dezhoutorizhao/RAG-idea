@@ -1,6 +1,6 @@
 # Risk-Control Abstention Baselines
 
-Generated: `2026-05-29T08:13:58.516068+00:00`
+Generated: `2026-05-29T08:23:28.689322+00:00`
 Input: `results\v4_shared_threshold_selection_20260529.json`
 Shared-threshold protocol complete: `True`
 Baseline present: `True`

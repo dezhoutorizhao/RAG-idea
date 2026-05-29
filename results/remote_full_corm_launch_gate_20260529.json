@@ -1,0 +1,68 @@
+{
+  "claim_policy": "This artifact is a launch gate only. It records whether Full CoRM-RAG may be started; it is not evidence that Full CoRM-RAG has completed.",
+  "cleanup_gate": {
+    "approval_token_required": "APPROVE_EXT4_LOG_CACHE_CLEANUP_FOR_FULL_CORM_RAG_REPRO",
+    "cleanup_preflight_passed": true,
+    "destructive_operations_executed": false,
+    "recommended_reclaim_gib_lower_bound": 182.82569139171392
+  },
+  "corm_script_gate": {
+    "claim_policy": "A run using these steps is reconstructed-pipeline evidence, not exact CoRM-RAG original reproduction, unless original artifacts or equivalence checks are supplied. The ext4 relocation is a launch plan only; it is not evidence that full CoRM-RAG reproduction has run.",
+    "contains_secret_markers": false,
+    "manifest_ready": true,
+    "remote_root": "/home/syk/csrm_corm_reconstruction",
+    "script_count": 9
+  },
+  "generated_at_utc": "2026-05-29T08:23:29.376726+00:00",
+  "gpu_summary": {
+    "gpus": [
+      {
+        "index": "0",
+        "memory_free_mib": 24076,
+        "memory_total_mib": 24564,
+        "name": "NVIDIA GeForce RTX 4090"
+      },
+      {
+        "index": "1",
+        "memory_free_mib": 24097,
+        "memory_total_mib": 24564,
+        "name": "NVIDIA GeForce RTX 4090"
+      }
+    ],
+    "query_exit_status": 0
+  },
+  "home_ext4_gate": {
+    "available_gib": 12.166126251220703,
+    "min_free_met": false,
+    "observed_at_utc": "2026-05-29T08:19:19.343231+00:00",
+    "ready": false,
+    "target": "/home/syk",
+    "write_probe_passed": true
+  },
+  "must_not_launch_reasons": [
+    "ext4_home_storage_not_ready: /home/syk is writable but does not meet the 180 GiB free-space gate",
+    "guarded_ext4_cleanup_not_executed",
+    "ntfs_target_not_usable_for_full_reproduction"
+  ],
+  "next_safe_actions": [
+    "obtain explicit user approval before executing guarded ext4 cleanup",
+    "after cleanup, rerun the /home/syk storage probe and require >=180 GiB plus write probe pass",
+    "launch results/corm_remote_scripts_ext4/02_build_wikipedia_and_faiss.sh only after the post-cleanup gate passes"
+  ],
+  "ntfs_gate": {
+    "available_gib": 322.14443588256836,
+    "min_free_met": true,
+    "observed_at_utc": "2026-05-29T08:19:32.689852+00:00",
+    "ready": false,
+    "target": "/mnt/ntfs-disk",
+    "write_probe_passed": false
+  },
+  "ready_to_launch_full_corm_reproduction": false,
+  "source_artifacts": {
+    "cleanup_candidates": "results\\remote_cleanup_candidates_20260529.json",
+    "cleanup_plan": "results\\remote_ext4_cleanup_guarded_plan_20260529.json",
+    "corm_manifest": "results\\corm_remote_scripts_ext4_manifest.json",
+    "home_probe": "results\\remote_home_storage_status_latest.json",
+    "ntfs_probe": "results\\remote_ntfs_storage_status_latest.json"
+  }
+}

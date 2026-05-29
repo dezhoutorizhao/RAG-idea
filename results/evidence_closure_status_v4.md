@@ -1,6 +1,6 @@
 # Evidence Closure Status
 
-Generated: `2026-05-29T08:14:00.292948+00:00`
+Generated: `2026-05-29T08:23:30.485530+00:00`
 
 Verdict: non-human bridge evidence is substantially closed, but full CoRM reconstruction and general formal risk control remain unsupported. Human audit v3 is explicitly excluded from this closure by user request.
 
@@ -51,13 +51,13 @@ Verdict: non-human bridge evidence is substantially closed, but full CoRM recons
 ## Results Provenance
 
 - README artifact: `results/README.md`; exists: `True`.
-- Provenance steps: `41`; tracked artifacts: `221`.
+- Provenance steps: `41`; tracked artifacts: `226`.
 - Manifest missing artifacts: `0`; missing current-step outputs: `0`; untracked current-step outputs: `0`.
 - Claim boundary: This README records artifact provenance for the current evidence package. It does not complete pending human audit labels, full CoRM-RAG reproduction, or unsupported formal/general risk-control claims.
 
 ## Reproducibility Bundle
 
-- Artifact checksums: `221`; dataset construction hashes: `42`.
+- Artifact checksums: `226`; dataset construction hashes: `42`.
 - Checkpoint hash available: `True`; unique seeds: `3`.
 - Hidden local path audit passed: `True`; findings: `0`.
 - Remote storage ready: `False`.

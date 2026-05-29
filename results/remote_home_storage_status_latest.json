@@ -1,0 +1,213 @@
+{
+  "claim_policy": "This checks storage writability and free space only; it is not a completed CoRM-RAG reproduction result.",
+  "filesystems": [
+    {
+      "available_1k_blocks": 12757108,
+      "blocks_1k": 1967357936,
+      "capacity": "100%",
+      "filesystem": "/dev/nvme0n1p2",
+      "mount": "/",
+      "type": "ext4",
+      "used_1k_blocks": 1854590796
+    },
+    {
+      "available_1k_blocks": 12757108,
+      "blocks_1k": 1967357936,
+      "capacity": "100%",
+      "filesystem": "/dev/nvme0n1p2",
+      "mount": "/",
+      "type": "ext4",
+      "used_1k_blocks": 1854590796
+    },
+    {
+      "available_1k_blocks": 13431312,
+      "blocks_1k": 98762796,
+      "capacity": "87%",
+      "filesystem": "tmpfs",
+      "mount": "/dev/shm",
+      "type": "tmpfs",
+      "used_1k_blocks": 85331484
+    }
+  ],
+  "gpu_query": {
+    "command": "nvidia-smi --query-gpu=index,name,memory.total,memory.free --format=csv,noheader,nounits 2>&1 || true",
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": "0, NVIDIA GeForce RTX 4090, 24564, 24076\n1, NVIDIA GeForce RTX 4090, 24564, 24097\n"
+  },
+  "inode_filesystems": [
+    {
+      "filesystem": "/dev/nvme0n1p2",
+      "ifree": 115862532,
+      "inodes": 124993536,
+      "iuse": "8%",
+      "iused": 9131004,
+      "mount": "/",
+      "type": "ext4"
+    },
+    {
+      "filesystem": "/dev/nvme0n1p2",
+      "ifree": 115862532,
+      "inodes": 124993536,
+      "iuse": "8%",
+      "iused": 9131004,
+      "mount": "/",
+      "type": "ext4"
+    },
+    {
+      "filesystem": "tmpfs",
+      "ifree": 24539085,
+      "inodes": 24690699,
+      "iuse": "1%",
+      "iused": 151614,
+      "mount": "/dev/shm",
+      "type": "tmpfs"
+    }
+  ],
+  "min_free_gib": 180.0,
+  "observed_at_utc": "2026-05-29T08:19:19.343231+00:00",
+  "ready_for_full_reproduction_storage": false,
+  "remote": {
+    "host": "192.168.103.101",
+    "port": 22,
+    "user": "syk"
+  },
+  "target": "/home/syk",
+  "target_available_gib": 12.166126251220703,
+  "target_findmnt": {
+    "command": "findmnt -no SOURCE,FSTYPE,OPTIONS /home/syk 2>&1 || true",
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "target_min_free_met": false,
+  "target_write_probe_passed": true,
+  "write_probe": {
+    "command": "set -e; TESTDIR=$(mktemp -d /home/syk/csrm_write_probe.XXXXXX); trap 'rm -rf \"$TESTDIR\"' EXIT; TESTFILE=\"$TESTDIR/probe.bin\" python3 -c 'import os,pathlib;p=pathlib.Path(os.environ['\"'\"'TESTFILE'\"'\"']);data=b'\"'\"'csrm_remote_write_probe\\n'\"'\"';f=open(p,'\"'\"'wb'\"'\"');f.write(data);f.flush();os.fsync(f.fileno());f.close();assert p.read_bytes()==data'",
+    "exit_status": 0,
+    "stderr": "",
+    "stdout": ""
+  },
+  "write_probe_matrix": [
+    {
+      "command": "TESTDIR=/home/syk python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/home/syk",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/home/syk",
+        "exists": true,
+        "is_dir": true,
+        "ok": true
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/home/syk\", \"exists\": true, \"is_dir\": true, \"ok\": true}\n",
+      "write_passed": true
+    },
+    {
+      "command": "TESTDIR=/home/syk/csrm_corm_reconstruction python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/home/syk/csrm_corm_reconstruction",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/home/syk/csrm_corm_reconstruction",
+        "errno": 2,
+        "error": "[Errno 2] No such file or directory: '/home/syk/csrm_corm_reconstruction/csrm_file_probe_3e1f6cd6d4a64c4abd445604950ad158'",
+        "exists": false,
+        "is_dir": false,
+        "ok": false
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/home/syk/csrm_corm_reconstruction\", \"errno\": 2, \"error\": \"[Errno 2] No such file or directory: '/home/syk/csrm_corm_reconstruction/csrm_file_probe_3e1f6cd6d4a64c4abd445604950ad158'\", \"exists\": false, \"is_dir\": false, \"ok\": false}\n",
+      "write_passed": false
+    },
+    {
+      "command": "TESTDIR=/home/syk/csrm_corm_reconstruction/data python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/home/syk/csrm_corm_reconstruction/data",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/home/syk/csrm_corm_reconstruction/data",
+        "errno": 2,
+        "error": "[Errno 2] No such file or directory: '/home/syk/csrm_corm_reconstruction/data/csrm_file_probe_77fbdf6187d34f01a668adaeb17936eb'",
+        "exists": false,
+        "is_dir": false,
+        "ok": false
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/home/syk/csrm_corm_reconstruction/data\", \"errno\": 2, \"error\": \"[Errno 2] No such file or directory: '/home/syk/csrm_corm_reconstruction/data/csrm_file_probe_77fbdf6187d34f01a668adaeb17936eb'\", \"exists\": false, \"is_dir\": false, \"ok\": false}\n",
+      "write_passed": false
+    },
+    {
+      "command": "TESTDIR=/home/syk/csrm_corm_reconstruction/outputs python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/home/syk/csrm_corm_reconstruction/outputs",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/home/syk/csrm_corm_reconstruction/outputs",
+        "errno": 2,
+        "error": "[Errno 2] No such file or directory: '/home/syk/csrm_corm_reconstruction/outputs/csrm_file_probe_39f917ce78ae472d89faa271562769f7'",
+        "exists": false,
+        "is_dir": false,
+        "ok": false
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/home/syk/csrm_corm_reconstruction/outputs\", \"errno\": 2, \"error\": \"[Errno 2] No such file or directory: '/home/syk/csrm_corm_reconstruction/outputs/csrm_file_probe_39f917ce78ae472d89faa271562769f7'\", \"exists\": false, \"is_dir\": false, \"ok\": false}\n",
+      "write_passed": false
+    },
+    {
+      "command": "TESTDIR=/home/syk/syk python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/home/syk/syk",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/home/syk/syk",
+        "errno": 2,
+        "error": "[Errno 2] No such file or directory: '/home/syk/syk/csrm_file_probe_47a3f407cc1a44fca59db63d4050fd5a'",
+        "exists": false,
+        "is_dir": false,
+        "ok": false
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/home/syk/syk\", \"errno\": 2, \"error\": \"[Errno 2] No such file or directory: '/home/syk/syk/csrm_file_probe_47a3f407cc1a44fca59db63d4050fd5a'\", \"exists\": false, \"is_dir\": false, \"ok\": false}\n",
+      "write_passed": false
+    },
+    {
+      "command": "TESTDIR=/home/syk/tmp python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/home/syk/tmp",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/home/syk/tmp",
+        "exists": true,
+        "is_dir": true,
+        "ok": true
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/home/syk/tmp\", \"exists\": true, \"is_dir\": true, \"ok\": true}\n",
+      "write_passed": true
+    },
+    {
+      "command": "TESTDIR=/tmp python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/tmp",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/tmp",
+        "exists": true,
+        "is_dir": true,
+        "ok": true
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/tmp\", \"exists\": true, \"is_dir\": true, \"ok\": true}\n",
+      "write_passed": true
+    },
+    {
+      "command": "TESTDIR=/dev/shm python3 -c 'import json,os,pathlib,uuid;d=pathlib.Path(os.environ['\"'\"'TESTDIR'\"'\"']);p=d/('\"'\"'csrm_file_probe_'\"'\"'+uuid.uuid4().hex);r={'\"'\"'directory'\"'\"':str(d),'\"'\"'exists'\"'\"':d.exists(),'\"'\"'is_dir'\"'\"':d.is_dir()};\ntry:\n    f=open(p,'\"'\"'wb'\"'\"'); f.write(b'\"'\"'probe\\n'\"'\"'); f.flush(); os.fsync(f.fileno()); f.close();    p.unlink(); r.update({'\"'\"'ok'\"'\"':True})\nexcept OSError as exc:\n    r.update({'\"'\"'ok'\"'\"':False,'\"'\"'errno'\"'\"':exc.errno,'\"'\"'error'\"'\"':str(exc)})\nprint(json.dumps(r,sort_keys=True))'",
+      "directory": "/dev/shm",
+      "exit_status": 0,
+      "parsed": {
+        "directory": "/dev/shm",
+        "exists": true,
+        "is_dir": true,
+        "ok": true
+      },
+      "stderr": "",
+      "stdout": "{\"directory\": \"/dev/shm\", \"exists\": true, \"is_dir\": true, \"ok\": true}\n",
+      "write_passed": true
+    }
+  ]
+}
