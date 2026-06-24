@@ -1,0 +1,207 @@
+{
+  "artifact_type": "stage40_split_hashes",
+  "claim_boundary": "Split hashes freeze the public-source n1000 source-item-group split and the materialized raw/private/scored files used by the current evidence. They do not certify future streams.",
+  "gates": {
+    "source_item_split_counts_present": true,
+    "source_item_split_no_overlap": true
+  },
+  "generated_at_utc": "2026-06-24T10:50:10.454957+00:00",
+  "source_item_split": {
+    "bytes": 216966,
+    "exists": true,
+    "mtime_utc": "2026-06-11T11:29:57.884933+00:00",
+    "path": "configs\\splits\\source_item_group_split_20260611.json",
+    "sha256": "ad5720278dd8c942cbc94c09281218f6baabb44a12601320d647eed17f14b387"
+  },
+  "split_artifacts": [
+    {
+      "bytes": 1977196,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:08.302084+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\bdsaglam_musique.private_eval.jsonl",
+      "sha256": "ed93ac8258ed393c32a6e0d68441b34ba93cc46c84ca07b23fa949a432e7ad1f"
+    },
+    {
+      "bytes": 37857431,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:08.285700+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\bdsaglam_musique.raw.jsonl",
+      "sha256": "baaf6f795602e19251e1c1407c90eef895e4b98ca67493a61c506bde05988025"
+    },
+    {
+      "bytes": 47636443,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:08.648999+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\bdsaglam_musique.textonly_scored.jsonl",
+      "sha256": "d131a087587fbb245b6fccfa0b99a2efd56c4ee920f11bccdb143e15db84a599"
+    },
+    {
+      "bytes": 1013621,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:08.702911+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\copenlu_fever_gold_evidence.private_eval.jsonl",
+      "sha256": "e8d072fdc6373295b5e2041e78e84102b13b6e8adff9a6273876a0e91e7ee338"
+    },
+    {
+      "bytes": 7104574,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:08.692425+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\copenlu_fever_gold_evidence.raw.jsonl",
+      "sha256": "9db0ba0465beddad1eed9b37d57e5867d3ed570978447935a56a2f84b41ac22a"
+    },
+    {
+      "bytes": 10961918,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:08.777389+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\copenlu_fever_gold_evidence.textonly_scored.jsonl",
+      "sha256": "855b536caa95dbb1b3e561762d75b3abf9593f0d9bad92ccc63d330ea47c8bc8"
+    },
+    {
+      "bytes": 1769428,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:09.032082+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\framolfese_2WikiMultihopQA.private_eval.jsonl",
+      "sha256": "b78d142dd594f1e0e80fdb6b1bc01c51091a152e0436a172701efab1b26fd3cd"
+    },
+    {
+      "bytes": 24726822,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:08.957967+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\framolfese_2WikiMultihopQA.raw.jsonl",
+      "sha256": "6e1ab30fece00966814d6c68d44a4c7902ca33825468e9e2420c91fe2d6f2a63"
+    },
+    {
+      "bytes": 32927862,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:09.287412+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\framolfese_2WikiMultihopQA.textonly_scored.jsonl",
+      "sha256": "96e9fbb6309e4fd5179a556dd22e6a35f3317926b4635d06bcd65112ddbf67dc"
+    },
+    {
+      "bytes": 1271615,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:09.317914+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\google-research-datasets_nq_open.private_eval.jsonl",
+      "sha256": "a92d32cbde3bed46a41739c6f6a66efcaf9da5c3a9f3f87f75356087ce09ec86"
+    },
+    {
+      "bytes": 2502555,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:09.307916+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\google-research-datasets_nq_open.raw.jsonl",
+      "sha256": "abba6b1779f26edecf041424b4c175fb706188a3c8139f4d1b93b2b041a94713"
+    },
+    {
+      "bytes": 5643593,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:09.364107+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\google-research-datasets_nq_open.textonly_scored.jsonl",
+      "sha256": "a00b668df35ca7ac0a10b9215acb0c2221f89a9ad1308fd4bdc0da26975346ef"
+    },
+    {
+      "bytes": 2164332,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:09.618560+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\hotpot_qa_distractor.private_eval.jsonl",
+      "sha256": "18cd674ae3a7ca4a4371c1831b90cafdd791747a0e511aa77ba32eae85c3418c"
+    },
+    {
+      "bytes": 33495789,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:09.600418+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\hotpot_qa_distractor.raw.jsonl",
+      "sha256": "6b996752fcf41f13d9ffc631bc8ec8b2ce214c67fd3b599bc9938f83213f9af8"
+    },
+    {
+      "bytes": 42601633,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:09.939442+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\hotpot_qa_distractor.textonly_scored.jsonl",
+      "sha256": "7e92d2240185c019bbb006a05025e8d5ce5fb7db532abeb150161776792efe69"
+    },
+    {
+      "bytes": 760344,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:09.957499+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\truthfulqa_truthful_qa_generation.private_eval.jsonl",
+      "sha256": "ef46a66a98e4dd2f03283e6a9a9c6994de105ab020fdda5c30162cf7dad586f6"
+    },
+    {
+      "bytes": 1486403,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:09.951441+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\truthfulqa_truthful_qa_generation.raw.jsonl",
+      "sha256": "1006df68880195d0dd4cf85bdcd12a48faf89c393f096fd6031e8569857c3956"
+    },
+    {
+      "bytes": 3175685,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:48:09.983375+00:00",
+      "path": "results\\public_source_end2end_splits_n1000\\truthfulqa_truthful_qa_generation.textonly_scored.jsonl",
+      "sha256": "5141f268207214f6ab91406db456b7176136fbc2f45dae56894b1279989bf398"
+    },
+    {
+      "bytes": 8956536,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:44:54.078680+00:00",
+      "path": "results\\public_source_orbits_v4_n1000.private_eval.jsonl",
+      "sha256": "59f834bdfbd75c5ca31fb04cfae1a56c5d6b784187ff2ab2fdce10f745844ec9"
+    },
+    {
+      "bytes": 107173574,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:44:54.078680+00:00",
+      "path": "results\\public_source_orbits_v4_n1000.raw.jsonl",
+      "sha256": "ee9d6dbe1111255cbb85f2505309d678462a33ec4e31eb93b7bb2f93146e97a2"
+    },
+    {
+      "bytes": 142947134,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:45:11.769270+00:00",
+      "path": "results\\public_source_orbits_v4_n1000.textonly_scored.jsonl",
+      "sha256": "cda0def2227e55e142cf77ad13e2625b70bac08671444875a0a9d400f813511b"
+    }
+  ],
+  "split_summary": {
+    "counts": {
+      "calibration": 1069,
+      "test": 1070,
+      "train": 3207
+    },
+    "dataset_counts": {
+      "calibration": {
+        "bdsaglam/musique": 177,
+        "copenlu/fever_gold_evidence": 130,
+        "framolfese/2WikiMultihopQA": 200,
+        "google-research-datasets/nq_open": 200,
+        "hotpot_qa/distractor": 199,
+        "truthfulqa/truthful_qa:generation": 163
+      },
+      "test": {
+        "bdsaglam/musique": 177,
+        "copenlu/fever_gold_evidence": 131,
+        "framolfese/2WikiMultihopQA": 200,
+        "google-research-datasets/nq_open": 200,
+        "hotpot_qa/distractor": 198,
+        "truthfulqa/truthful_qa:generation": 164
+      },
+      "train": {
+        "bdsaglam/musique": 530,
+        "copenlu/fever_gold_evidence": 391,
+        "framolfese/2WikiMultihopQA": 600,
+        "google-research-datasets/nq_open": 600,
+        "hotpot_qa/distractor": 596,
+        "truthfulqa/truthful_qa:generation": 490
+      }
+    },
+    "no_group_overlap": true,
+    "overlap": {
+      "calibration_vs_test": 0,
+      "train_vs_calibration": 0,
+      "train_vs_test": 0
+    },
+    "seed": 60611,
+    "split_hash": "68572ee121f3e504f30190c2",
+    "split_unit": "source_item_group_id"
+  }
+}

@@ -1,0 +1,1046 @@
+{
+  "artifact_type": "stage40_data_manifest",
+  "baseline_registry": {
+    "artifact_type": "accepted_baseline_registry_final_20260618",
+    "claim_policy": "Only formally accepted methods with official code/model resources and explicit reproduction levels count toward the final accepted-baseline gate. Internal controls, arXiv-only methods, SURE-RAG, and local learned selectors are excluded from the accepted-baseline count.",
+    "counted_rows": [
+      {
+        "id": "self_rag",
+        "official_resource": "https://github.com/AkariAsai/self-rag",
+        "reproduction_level": "official-pin stack + minimal-patched official-code positive control, plus adapted reflection-token public-suite scoring; not strict unmodified full reproduction",
+        "strict_counting_tier": "immediate_accepted_selective",
+        "venue": "ICLR 2024 oral"
+      },
+      {
+        "id": "sufficient_context",
+        "official_resource": "https://github.com/hljoren/sufficientcontext",
+        "reproduction_level": "official prompt/autorater when possible; protocol-equivalent wrapper must be labeled as such",
+        "strict_counting_tier": "immediate_accepted_selective",
+        "venue": "ICLR 2025 poster"
+      },
+      {
+        "id": "c_rag_certified",
+        "official_resource": "https://github.com/kangmintong/C-RAG",
+        "reproduction_level": "official-task positive control, then adapted conformal-risk comparison",
+        "strict_counting_tier": "immediate_accepted_selective",
+        "venue": "ICML 2024"
+      },
+      {
+        "id": "rag_official",
+        "official_resource": "https://huggingface.co/docs/transformers/model_doc/rag",
+        "reproduction_level": "official model-family implementation as generator/control baseline",
+        "strict_counting_tier": "accepted_generator_control",
+        "venue": "NeurIPS 2020"
+      }
+    ],
+    "gates": {
+      "accepted_baseline_count": 4,
+      "accepted_baseline_count_pass": true,
+      "accepted_generator_control_count": 1,
+      "arxiv_only_counted_count": 0,
+      "arxiv_only_counted_pass": true,
+      "every_counted_row_has_reproduction_level": true,
+      "forbidden_or_internal_counted_count": 0,
+      "forbidden_or_internal_counted_pass": true,
+      "immediate_accepted_selective_count": 3,
+      "immediate_accepted_selective_count_pass": true,
+      "official_code_or_model_count": 4,
+      "official_code_or_model_count_pass": true,
+      "public_datasets_only": true,
+      "recent_accepted_baseline_count": 3,
+      "recent_accepted_baseline_count_pass": true,
+      "registry_gate_pass": true
+    },
+    "policy": {
+      "baseline_rule": "Main-paper baselines must be accepted main-track methods; official code/model is preferred whenever released.",
+      "claim_boundary": "Internal controls, learned local selectors, SURE-RAG, and proxy rows do not count toward the strict accepted-baseline count.",
+      "date": "2026-06-17",
+      "minimum_accepted_rows_with_generator_control": "4",
+      "minimum_immediate_accepted_selective_rows": "3"
+    }
+  },
+  "canonical_artifacts": {
+    "accepted_baseline_registry": {
+      "bytes": 5563,
+      "exists": true,
+      "mtime_utc": "2026-06-18T15:40:08.058147+00:00",
+      "path": "results\\accepted_baseline_registry_final_20260618.json",
+      "sha256": "e1925e32b37dfad4eb3df931d5b85a81d73e9b6cd37ddc198aeaf7ea59673fcb"
+    },
+    "human_final": {
+      "bytes": 213930,
+      "exists": true,
+      "mtime_utc": "2026-06-09T16:54:22.554379+00:00",
+      "path": "results\\human_public_source_final_20260609_eval\\csrm_cal_gbdt_human_locked_eval_20260610.json",
+      "sha256": "e95655c17b49285b0340c7bda8dbff1e014f5e370093cf6d6df8589204295574"
+    },
+    "human_real_v2": {
+      "bytes": 215017,
+      "exists": true,
+      "mtime_utc": "2026-06-10T16:02:04.074164+00:00",
+      "path": "results\\human_public_source_real_human_v2_20260610_eval\\csrm_cal_gbdt_human_locked_eval_v2_20260610.json",
+      "sha256": "0778ba18d282cc625d7532caa7771b78708c21ca8f999a7cd69c9aad99fbcc19"
+    },
+    "p0_6_hybrid": {
+      "bytes": 223732,
+      "exists": true,
+      "mtime_utc": "2026-06-18T11:08:07.592616+00:00",
+      "path": "results\\csrm_hybrid_orbitrank_p0_5seed3fold_20260618.json",
+      "sha256": "a63f0ff72822b5a15020293e0b402a28445eb6c528646c1d28967e0565f4cdcd"
+    },
+    "p0_6_negative_closure": {
+      "bytes": 3418,
+      "exists": true,
+      "mtime_utc": "2026-06-18T17:37:24.697608+00:00",
+      "path": "results\\stage33_p0_6_negative_closure_20260619.json",
+      "sha256": "5c8b9271d52463ec00c70eae0c8fd1dc432cb25033e06d8761fe0cc26a9f032a"
+    },
+    "p0_6_selection_rules": {
+      "bytes": 10226,
+      "exists": true,
+      "mtime_utc": "2026-06-18T13:45:17.608834+00:00",
+      "path": "results\\p0_6_public_selection_rule_audit_20260618.json",
+      "sha256": "30531684d456c82dd2fe9b394c50e429bb59d736052996e6010210921a98c5bb"
+    },
+    "p1_real_generator_bottleneck": {
+      "bytes": 4960,
+      "exists": true,
+      "mtime_utc": "2026-06-18T17:51:56.508382+00:00",
+      "path": "results\\p1_real_generator_negative_bottleneck_audit_20260619.json",
+      "sha256": "0f4473735ebe952373601a004d2ad4756b37ced93edd8c87054e80d98c0e2528"
+    },
+    "public_ci_summary": {
+      "bytes": 39952,
+      "exists": true,
+      "mtime_utc": "2026-06-10T19:11:05.254869+00:00",
+      "path": "results\\public_source_p1_paired_bootstrap_ci_summary_20260611.json",
+      "sha256": "19187fb93613e3a0ec137ec5ff41f51638ab9baad05c0a05d237f10b85a729a5"
+    },
+    "public_integrity_audit": {
+      "bytes": 3623,
+      "exists": true,
+      "mtime_utc": "2026-06-02T14:46:27.971574+00:00",
+      "path": "results\\public_source_n1000_integrity_audit_20260601.json",
+      "sha256": "ef1150e28ab1f6d36a55eadc2d4ef6535564a51da76bd462f0890c18f8d3a5b5"
+    },
+    "public_manifest": {
+      "bytes": 3432,
+      "exists": true,
+      "mtime_utc": "2026-06-01T04:44:54.080681+00:00",
+      "path": "results\\public_source_orbits_v4_n1000_manifest.json",
+      "sha256": "0fdd552aaa4d7942a2361bf07815eed217bc81b92fa76594f34297c49155b111"
+    },
+    "public_paired_bootstrap": {
+      "bytes": 111795,
+      "exists": true,
+      "mtime_utc": "2026-06-06T08:37:29.417455+00:00",
+      "path": "results\\public_source_n1000_paired_bootstrap_csrm_cal_gbdt_20260606.json",
+      "sha256": "62b6e83a8d80d411dbbb91a528acc8aae3268bf16405057d66ee104e9d33118d"
+    },
+    "source_item_split": {
+      "bytes": 216966,
+      "exists": true,
+      "mtime_utc": "2026-06-11T11:29:57.884933+00:00",
+      "path": "configs\\splits\\source_item_group_split_20260611.json",
+      "sha256": "ad5720278dd8c942cbc94c09281218f6baabb44a12601320d647eed17f14b387"
+    },
+    "stage40_config": {
+      "bytes": 2437,
+      "exists": true,
+      "mtime_utc": "2026-06-24T10:50:02.533571+00:00",
+      "path": "configs\\frozen_stage40.yaml",
+      "sha256": "35808fa3dcb3a4ee4d6899c2bb9c2343454fa6e8c7b35fa76f156d3de0b142cd"
+    },
+    "strict_completion_blockers": {
+      "bytes": 6073,
+      "exists": true,
+      "mtime_utc": "2026-06-19T12:32:18.749767+00:00",
+      "path": "results\\stage33_strict_completion_blockers_20260619.json",
+      "sha256": "42aad565df8df9ede994ad155d88196b0576253105589f111b55928aa91cc2e6"
+    }
+  },
+  "claim_boundary": "Stage40 freezes the already materialized evidence and confirms that Phase 0 inputs are machine-auditable. It intentionally preserves the strict completion blockers instead of counting them as solved.",
+  "config": {
+    "bytes": 2437,
+    "exists": true,
+    "mtime_utc": "2026-06-24T10:50:02.533571+00:00",
+    "path": "configs\\frozen_stage40.yaml",
+    "sha256": "35808fa3dcb3a4ee4d6899c2bb9c2343454fa6e8c7b35fa76f156d3de0b142cd"
+  },
+  "gates": {
+    "accepted_baseline_count_passed": true,
+    "accepted_baseline_registry_passed": true,
+    "feature_firewall_passed": true,
+    "human_final_reproduced": true,
+    "human_overlap_exclusion_recorded": true,
+    "id_alignment_passed": true,
+    "learned_baseline_boundary_reproduced": true,
+    "official_code_or_model_count_passed": true,
+    "p0_6_negative_reproduced": true,
+    "p1_real_generator_negative_reproduced": true,
+    "public_integrity_passed": true,
+    "public_manifest_ready": true,
+    "public_source_main_reproduced": true,
+    "required_artifacts_exist": true,
+    "source_item_split_counts_present": true,
+    "source_item_split_no_overlap": true,
+    "strict_blocker_ledger_present": true,
+    "strict_submission_ready": false
+  },
+  "generated_at_utc": "2026-06-24T10:50:10.454957+00:00",
+  "human_final": {
+    "calibrated_logistic_orbit": {
+      "aurc": {
+        "max": 0.7082774139155799,
+        "mean": 0.7041342542211064,
+        "min": 0.6997057960183781
+      },
+      "auroc": {
+        "max": 0.7450962300773668,
+        "mean": 0.7448693239290303,
+        "min": 0.7444469504360426
+      },
+      "brier": {
+        "max": 0.2463507009011468,
+        "mean": 0.24341271351384725,
+        "min": 0.2419590706961729
+      },
+      "risk_at_30": {
+        "max": 0.7733333333333333,
+        "mean": 0.7693333333333333,
+        "min": 0.7666666666666666
+      },
+      "risk_at_50": {
+        "max": 0.6699999999999999,
+        "mean": 0.6692,
+        "min": 0.6679999999999999
+      },
+      "risk_at_70": {
+        "max": 0.7471428571428571,
+        "mean": 0.7471428571428571,
+        "min": 0.7471428571428571
+      }
+    },
+    "claim_guardrails": [
+      "No human-adjudicated labels are used to fit models or select thresholds.",
+      "Public-source rows sharing orbit_id or source_item_group_id with human evaluation rows are excluded before splitting.",
+      "Learned baselines in this artifact are trained on the same public-source train split as the primary model."
+    ],
+    "csrm_calibrated_gbdt": {
+      "aurc": {
+        "max": 0.7398911465924063,
+        "mean": 0.7389838434071752,
+        "min": 0.7380067408568692
+      },
+      "auroc": {
+        "max": 0.5914254080209956,
+        "mean": 0.5837126493343175,
+        "min": 0.5704946827414636
+      },
+      "brier": {
+        "max": 0.2249345249919293,
+        "mean": 0.22407612880893585,
+        "min": 0.22338975795530036
+      },
+      "public_threshold_selected_coverage": {
+        "max": 0.22,
+        "mean": 0.21480000000000002,
+        "min": 0.212
+      },
+      "public_threshold_selected_risk": {
+        "max": 0.7227272727272727,
+        "mean": 0.718770831038444,
+        "min": 0.7169811320754718
+      },
+      "risk_at_30": {
+        "max": 0.7833333333333333,
+        "mean": 0.7726666666666666,
+        "min": 0.7666666666666666
+      },
+      "risk_at_50": {
+        "max": 0.796,
+        "mean": 0.7816000000000001,
+        "min": 0.772
+      },
+      "risk_at_70": {
+        "max": 0.81,
+        "mean": 0.8017142857142856,
+        "min": 0.7928571428571428
+      }
+    },
+    "excluded_public_groups_due_to_human_overlap": 736,
+    "excluded_public_rows_due_to_human_overlap": 2268,
+    "human_source_item_groups": 736,
+    "n": 1000,
+    "negative": 822,
+    "positive": 178,
+    "primary_vs_public_trained_baselines": {
+      "calibrated_logistic_context": {
+        "auprc_improvement": {
+          "max": 0.1162384307660771,
+          "mean": 0.11155489656531137,
+          "min": 0.09826076559875066
+        },
+        "aurc_reduction": {
+          "max": 0.0833332929979308,
+          "mean": 0.08118049453365232,
+          "min": 0.07801057947400714
+        },
+        "auroc_improvement": {
+          "max": 0.11593058858908117,
+          "mean": 0.10667732852182947,
+          "min": 0.08667541485551816
+        },
+        "risk_at_30_reduction": {
+          "max": 0.06000000000000005,
+          "mean": 0.05266666666666668,
+          "min": 0.040000000000000036
+        },
+        "risk_at_50_reduction": {
+          "max": 0.10599999999999998,
+          "mean": 0.09719999999999998,
+          "min": 0.08199999999999996
+        },
+        "risk_at_70_reduction": {
+          "max": 0.034285714285714364,
+          "mean": 0.022285714285714308,
+          "min": 0.011428571428571344
+        }
+      },
+      "calibrated_logistic_orbit": {
+        "auprc_improvement": {
+          "max": -0.11089932224598342,
+          "mean": -0.11514387173224461,
+          "min": -0.12116176427295472
+        },
+        "aurc_reduction": {
+          "max": -0.03149362410300127,
+          "mean": -0.03484958918606884,
+          "min": -0.04018535057402817
+        },
+        "auroc_improvement": {
+          "max": -0.15302154241504695,
+          "mean": -0.16115667459471283,
+          "min": -0.17438967713715525
+        },
+        "risk_at_30_reduction": {
+          "max": 0.0033333333333332993,
+          "mean": -0.003333333333333366,
+          "min": -0.01666666666666672
+        },
+        "risk_at_50_reduction": {
+          "max": -0.10200000000000009,
+          "mean": -0.1124000000000001,
+          "min": -0.1280000000000001
+        },
+        "risk_at_70_reduction": {
+          "max": -0.04571428571428571,
+          "mean": -0.05457142857142858,
+          "min": -0.06285714285714294
+        }
+      },
+      "context_sufficiency_clean": {
+        "auprc_improvement": {
+          "max": 0.1366573740759796,
+          "mean": 0.1329423949189033,
+          "min": 0.12346479873505406
+        },
+        "aurc_reduction": {
+          "max": 0.10625202874198003,
+          "mean": 0.105274926191674,
+          "min": 0.10436762300644298
+        },
+        "auroc_improvement": {
+          "max": 0.1545080510675524,
+          "mean": 0.14679529238087424,
+          "min": 0.1335773257880204
+        },
+        "risk_at_30_reduction": {
+          "max": 0.07333333333333336,
+          "mean": 0.06733333333333331,
+          "min": 0.05666666666666664
+        },
+        "risk_at_50_reduction": {
+          "max": 0.09599999999999997,
+          "mean": 0.08639999999999996,
+          "min": 0.07199999999999995
+        },
+        "risk_at_70_reduction": {
+          "max": 0.04571428571428571,
+          "mean": 0.03685714285714283,
+          "min": 0.02857142857142847
+        }
+      },
+      "corm_max_clean": {
+        "auprc_improvement": {
+          "max": 0.16156892135834577,
+          "mean": 0.15785394220126944,
+          "min": 0.14837634601742022
+        },
+        "aurc_reduction": {
+          "max": 0.1491100770450039,
+          "mean": 0.14813297449469787,
+          "min": 0.14722567130946684
+        },
+        "auroc_improvement": {
+          "max": 0.21895076409962,
+          "mean": 0.21123800541294185,
+          "min": 0.198020038820088
+        },
+        "risk_at_30_reduction": {
+          "max": 0.17666666666666675,
+          "mean": 0.1706666666666667,
+          "min": 0.16000000000000003
+        },
+        "risk_at_50_reduction": {
+          "max": 0.09999999999999998,
+          "mean": 0.09039999999999997,
+          "min": 0.07599999999999996
+        },
+        "risk_at_70_reduction": {
+          "max": 0.04428571428571437,
+          "mean": 0.0354285714285715,
+          "min": 0.027142857142857135
+        }
+      },
+      "corm_mean_clean": {
+        "auprc_improvement": {
+          "max": 0.16172886665241387,
+          "mean": 0.15801388749533754,
+          "min": 0.14853629131148832
+        },
+        "aurc_reduction": {
+          "max": 0.14631783181234825,
+          "mean": 0.14534072926204222,
+          "min": 0.1444334260768112
+        },
+        "auroc_improvement": {
+          "max": 0.21024358238333468,
+          "mean": 0.2025308236966566,
+          "min": 0.1893128571038027
+        },
+        "risk_at_30_reduction": {
+          "max": 0.17666666666666675,
+          "mean": 0.1706666666666667,
+          "min": 0.16000000000000003
+        },
+        "risk_at_50_reduction": {
+          "max": 0.09199999999999997,
+          "mean": 0.08239999999999996,
+          "min": 0.06799999999999995
+        },
+        "risk_at_70_reduction": {
+          "max": 0.04142857142857148,
+          "mean": 0.032571428571428605,
+          "min": 0.024285714285714244
+        }
+      },
+      "equal_budget_ensemble_logistic": {
+        "auprc_improvement": {
+          "max": -0.07048524252237093,
+          "mean": -0.07382031779367733,
+          "min": -0.08255346498371874
+        },
+        "aurc_reduction": {
+          "max": -0.024718201217461044,
+          "mean": -0.025469265783054817,
+          "min": -0.026804770261361188
+        },
+        "auroc_improvement": {
+          "max": -0.13072732988873403,
+          "mean": -0.13826375789387355,
+          "min": -0.15187675988955418
+        },
+        "risk_at_30_reduction": {
+          "max": 0.020000000000000018,
+          "mean": 0.01466666666666665,
+          "min": 0.0033333333333332993
+        },
+        "risk_at_50_reduction": {
+          "max": -0.07600000000000007,
+          "mean": -0.08520000000000008,
+          "min": -0.10000000000000009
+        },
+        "risk_at_70_reduction": {
+          "max": -0.04428571428571426,
+          "mean": -0.053714285714285714,
+          "min": -0.0614285714285715
+        }
+      },
+      "equal_budget_mean": {
+        "auprc_improvement": {
+          "max": 0.06815400275365968,
+          "mean": 0.06443902359658335,
+          "min": 0.05496142741273413
+        },
+        "aurc_reduction": {
+          "max": 0.08346300149032382,
+          "mean": 0.08248589894001779,
+          "min": 0.08157859575478676
+        },
+        "auroc_improvement": {
+          "max": 0.17480658301211077,
+          "mean": 0.1670938243254326,
+          "min": 0.15387585773257878
+        },
+        "risk_at_30_reduction": {
+          "max": 0.10000000000000009,
+          "mean": 0.09400000000000004,
+          "min": 0.08333333333333337
+        },
+        "risk_at_50_reduction": {
+          "max": 0.08399999999999996,
+          "mean": 0.07439999999999995,
+          "min": 0.05999999999999994
+        },
+        "risk_at_70_reduction": {
+          "max": 0.06285714285714283,
+          "mean": 0.05399999999999996,
+          "min": 0.045714285714285596
+        }
+      },
+      "equal_budget_min": {
+        "auprc_improvement": {
+          "max": 0.0023528689872783226,
+          "mean": -0.0013621101697980143,
+          "min": -0.010839706353647227
+        },
+        "aurc_reduction": {
+          "max": 0.024904555601906297,
+          "mean": 0.023927453051600267,
+          "min": 0.023020149866369244
+        },
+        "auroc_improvement": {
+          "max": 0.058107110637250825,
+          "mean": 0.050394351950572694,
+          "min": 0.03717638535771883
+        },
+        "risk_at_30_reduction": {
+          "max": 0.01666666666666672,
+          "mean": 0.010666666666666668,
+          "min": 0.0
+        },
+        "risk_at_50_reduction": {
+          "max": 0.040000000000000036,
+          "mean": 0.030400000000000028,
+          "min": 0.016000000000000014
+        },
+        "risk_at_70_reduction": {
+          "max": 0.040000000000000036,
+          "mean": 0.03114285714285716,
+          "min": 0.022857142857142798
+        }
+      },
+      "equal_budget_q25": {
+        "auprc_improvement": {
+          "max": 0.04829408635542515,
+          "mean": 0.04457910719834881,
+          "min": 0.0351015110144996
+        },
+        "aurc_reduction": {
+          "max": 0.063528291577724,
+          "mean": 0.06255118902741796,
+          "min": 0.06164388584218694
+        },
+        "auroc_improvement": {
+          "max": 0.1414199404029634,
+          "mean": 0.1337071817162853,
+          "min": 0.12048921512343141
+        },
+        "risk_at_30_reduction": {
+          "max": 0.08666666666666667,
+          "mean": 0.08066666666666662,
+          "min": 0.06999999999999995
+        },
+        "risk_at_50_reduction": {
+          "max": 0.07599999999999996,
+          "mean": 0.06639999999999995,
+          "min": 0.051999999999999935
+        },
+        "risk_at_70_reduction": {
+          "max": 0.052857142857142936,
+          "mean": 0.04400000000000006,
+          "min": 0.0357142857142857
+        }
+      },
+      "faithful_sure_multi": {
+        "auprc_improvement": {
+          "max": 0.04457007141956737,
+          "mean": 0.04085509226249103,
+          "min": 0.03137749607864182
+        },
+        "aurc_reduction": {
+          "max": 0.05848852458842302,
+          "mean": 0.05751142203811699,
+          "min": 0.056604118852885965
+        },
+        "auroc_improvement": {
+          "max": 0.10330039093468929,
+          "mean": 0.09558763224801116,
+          "min": 0.0823696656551573
+        },
+        "risk_at_30_reduction": {
+          "max": 0.09333333333333338,
+          "mean": 0.08733333333333333,
+          "min": 0.07666666666666666
+        },
+        "risk_at_50_reduction": {
+          "max": 0.061999999999999944,
+          "mean": 0.05239999999999993,
+          "min": 0.03799999999999992
+        },
+        "risk_at_70_reduction": {
+          "max": 0.04142857142857148,
+          "mean": 0.032571428571428605,
+          "min": 0.024285714285714244
+        }
+      },
+      "retrieval_stability": {
+        "auprc_improvement": {
+          "max": 0.10631601887087566,
+          "mean": 0.10260103971379933,
+          "min": 0.09312344352995011
+        },
+        "aurc_reduction": {
+          "max": 0.07871205140989279,
+          "mean": 0.07773494885958676,
+          "min": 0.07682764567435574
+        },
+        "auroc_improvement": {
+          "max": 0.03696451515897092,
+          "mean": 0.02925175647229279,
+          "min": 0.01603378987943893
+        },
+        "risk_at_30_reduction": {
+          "max": 0.10666666666666669,
+          "mean": 0.10066666666666664,
+          "min": 0.08999999999999997
+        },
+        "risk_at_50_reduction": {
+          "max": 0.03400000000000003,
+          "mean": 0.024400000000000022,
+          "min": 0.010000000000000009
+        },
+        "risk_at_70_reduction": {
+          "max": -0.004285714285714226,
+          "mean": -0.0131428571428571,
+          "min": -0.021428571428571463
+        }
+      },
+      "self_consistency_proxy": {
+        "auprc_improvement": {
+          "max": 0.15319919488155417,
+          "mean": 0.14948421572447784,
+          "min": 0.14000661954062862
+        },
+        "aurc_reduction": {
+          "max": 0.08399325914313083,
+          "mean": 0.0830161565928248,
+          "min": 0.08210885340759377
+        },
+        "auroc_improvement": {
+          "max": 0.09142540802099564,
+          "mean": 0.0837126493343175,
+          "min": 0.07049468274146364
+        },
+        "risk_at_30_reduction": {
+          "max": 0.21000000000000008,
+          "mean": 0.20400000000000001,
+          "min": 0.19333333333333336
+        },
+        "risk_at_50_reduction": {
+          "max": 0.03600000000000003,
+          "mean": 0.026400000000000024,
+          "min": 0.01200000000000001
+        },
+        "risk_at_70_reduction": {
+          "max": 0.04428571428571437,
+          "mean": 0.0354285714285715,
+          "min": 0.027142857142857135
+        }
+      },
+      "template_self_consistency": {
+        "auprc_improvement": {
+          "max": 0.08775998878285432,
+          "mean": 0.08404500962577799,
+          "min": 0.07456741344192877
+        },
+        "aurc_reduction": {
+          "max": 0.06592846577544187,
+          "mean": 0.06495136322513584,
+          "min": 0.06404406003990482
+        },
+        "auroc_improvement": {
+          "max": 0.11550001366904505,
+          "mean": 0.10778725498236692,
+          "min": 0.09456928838951306
+        },
+        "risk_at_30_reduction": {
+          "max": 0.01666666666666672,
+          "mean": 0.010666666666666668,
+          "min": 0.0
+        },
+        "risk_at_50_reduction": {
+          "max": 0.08399999999999996,
+          "mean": 0.07439999999999995,
+          "min": 0.05999999999999994
+        },
+        "risk_at_70_reduction": {
+          "max": -0.0071428571428571175,
+          "mean": -0.015999999999999993,
+          "min": -0.024285714285714355
+        }
+      }
+    },
+    "public_rows": 17098,
+    "public_source_item_groups": 5346,
+    "seeds": [
+      17,
+      31,
+      47,
+      59,
+      71
+    ]
+  },
+  "negative_evidence": {
+    "p0_6": {
+      "hybrid_gate": {
+        "aurc_ci_lower_min": -0.06456619920824036,
+        "aurc_reduction": -0.04310487261744611,
+        "aurc_reduction_pass": false,
+        "auroc_delta": -0.19396785040597053,
+        "auroc_delta_pass": false,
+        "p0_6_gate_cleared": false,
+        "paired_ci_pass": false,
+        "reference_method": "calibrated_logistic_orbit",
+        "risk30_ci_lower_min": -0.010135135135135198,
+        "risk30_reduction": 0.0013333333333332975,
+        "risk30_reduction_pass": false,
+        "risk50_reduction": -0.014399999999999857,
+        "risk50_reduction_pass": false,
+        "selected_candidate": "csrm_p0_hybrid_stack_histgb_all"
+      },
+      "negative_closure": {
+        "current_gate": {
+          "aurc_reduction": -0.04310487261744611,
+          "auroc_delta": -0.19396785040597053,
+          "p0_6_gate_cleared": false,
+          "paired_ci_pass": false,
+          "risk30_reduction": 0.0013333333333332975,
+          "risk50_reduction": -0.014399999999999857
+        },
+        "negative_closure_gate": true,
+        "reference_method": "calibrated_logistic_orbit",
+        "selected_candidate": "csrm_p0_hybrid_stack_histgb_all",
+        "status": "p0_6_negative_closed_current_protocol"
+      },
+      "public_rule_status": {
+        "any_public_rule_clears_p0_6": false,
+        "rules_evaluated": 7,
+        "status": "no_public_only_selection_rule_clears_p0_6"
+      },
+      "selected_by_public_test": "csrm_p0_hybrid_stack_histgb_all",
+      "strongest_reference_by_human_aurc": "calibrated_logistic_orbit"
+    },
+    "p1_real_generator": {
+      "diagnostics": {
+        "answer_only_v2_mean_answer_accuracy": 0.1216666666666667,
+        "failure_overall_contains_gold_rate": 0.15,
+        "failure_overall_task_accuracy": 0.07916666666666666,
+        "hard_failure_datasets": [
+          "bdsaglam_musique",
+          "framolfese_2WikiMultihopQA",
+          "hotpot_qa_distractor",
+          "truthfulqa_truthful_qa_generation"
+        ],
+        "llama3_mean_answer_accuracy": 0.04833333333333334,
+        "posthoc_contains_recovery_over_current_count": 52,
+        "posthoc_contains_reextracted_accuracy": 0.43902439024390244,
+        "posthoc_context_oracle_possible_rate": 0.4854368932038835,
+        "posthoc_strict_recovery_over_current_count": 0,
+        "retrieval_bottleneck_datasets": [
+          "bdsaglam_musique",
+          "framolfese_2WikiMultihopQA",
+          "hotpot_qa_distractor",
+          "truthfulqa_truthful_qa_generation"
+        ]
+      },
+      "main_matrix": {
+        "dataset_count_min": 6,
+        "generated_example_count": 1800,
+        "generator_count": 3,
+        "main_p1_real_generator_rag_complete": false,
+        "mean_task_aware_accuracy": 0.08944444444444447,
+        "status": "materialized_taskaware_main_below_strict_threshold"
+      },
+      "negative_bottleneck_gate": true,
+      "requirements": {
+        "dataset_count_min": 6,
+        "generated_examples_min": 1800,
+        "generator_count_min": 3,
+        "mean_task_aware_accuracy_min": 0.2
+      },
+      "status": "negative_closed_current_protocol"
+    },
+    "strict_completion_blockers": {
+      "claim_boundary": "This audit is a strict-completion blocker ledger. It does not close any remaining blocker and does not change submission readiness. It records that the claim-bounded route is ready while strict completion remains blocked by external credentials, official patch/unmodified-run evidence, new independent-stream evidence, new generator-matrix evidence, and official CoRM artifacts/API provenance.",
+      "gates": {
+        "all_blockers_have_authoritative_evidence": true,
+        "claim_bounded_route_ready": true,
+        "derivative_readiness_blocker_count": 1,
+        "external_or_new_evidence_blocker_count": 5,
+        "strict_completion_blocker_count": 6,
+        "strict_completion_ready": false,
+        "strict_roadmap_complete": false,
+        "submission_ready": false
+      },
+      "rows": [
+        {
+          "blocker_class": "external_credential",
+          "completion_condition": "Provide Gemini/Google official credential and materialize official autorater output with full coverage and zero parse errors.",
+          "current_finding": "protocol_equivalent_complete=True; official_request_packet_ready=True; official_credential_ready=False; official_output_materialized=False; official_output_has_required_scope=False; can_mark_p0_2_pass=False",
+          "evidence": "results\\stage33_p0_2_sufficient_context_official_request_packet_20260619.json",
+          "evidence_exists": true,
+          "id": "P0.2"
+        },
+        {
+          "blocker_class": "official_patch_or_unmodified_run",
+          "completion_condition": "Obtain official patch/issue support or complete an equivalent strict unmodified official Self-RAG run.",
+          "current_finding": "dependency_blocker_reduced=True; minimal_patch_positive_control_passed=True; upstream_issue_packet_ready=True; official_support_materialized=False; strict_unmodified_completed=False; can_mark_p0_3_pass=False",
+          "evidence": "results\\stage33_p0_3_selfrag_upstream_packet_20260619.json",
+          "evidence_exists": true,
+          "id": "P0.3"
+        },
+        {
+          "blocker_class": "new_independent_stream",
+          "completion_condition": "Materialize a protocol-sufficient independent stream or preregistered amendment, then rerun the frozen candidate gate.",
+          "current_finding": "future_candidate_count=3; independent_stream_protocol_ready=False; can_reopen_p0_6_now=False; amendment_candidate_available=True; claim_must_be_downgraded=True; amendment_protocol_registered=True; amendment_pack_rows=2673; annotation_handoff_ready=True; future_labels_materialized=False; frozen_gate_rerun_materialized=False; can_mark_p0_6_pass=False",
+          "evidence": "results\\stage33_p0_6_annotation_handoff_20260619.json",
+          "evidence_exists": true,
+          "id": "P0.6"
+        },
+        {
+          "blocker_class": "new_generator_matrix",
+          "completion_condition": "Materialize the frozen v2 real-generator matrix and clear mean task-aware accuracy >= 0.20.",
+          "current_finding": "materially_new_intervention_preregistered=True; queue_materialized=True; planned_generated_examples=3600; execution_preflight_pass=False; execution_handoff_ready=True; missing_shard_output_count=3; remote_probe_success=False; future_matrix_materialized=False; future_matrix_clears_accuracy_gate=False; can_reopen_p1_1_now=False",
+          "evidence": "results\\stage33_p1_1_execution_handoff_20260619.json",
+          "evidence_exists": true,
+          "id": "P1.1"
+        },
+        {
+          "blocker_class": "official_artifacts_or_api_provenance",
+          "completion_condition": "Provide official accepted proof plus original artifacts/API provenance and full original metrics.",
+          "current_finding": "adapted_or_reconstructed_evidence_available=True; official_accepted_proof_ready=True; official_checkpoint_ready=True; author_artifact_request_packet_ready=True; original_artifacts_or_api_provenance_ready=False; full_original_metrics_materialized=False; can_count_as_full_original_reproduction=False",
+          "evidence": "results\\stage33_p2_1_corm_artifact_request_packet_20260619.json",
+          "evidence_exists": true,
+          "id": "P2.1"
+        },
+        {
+          "blocker_class": "derivative_submission_gate",
+          "completion_condition": "Clear strict P0/P1 blockers before main-track or spotlight readiness can become true.",
+          "current_finding": "strict_roadmap_complete=False; main_track_strong_gate_ready=False; submission_ready=False",
+          "evidence": "results\\stage33_roadmap_requirements_audit_20260619.json",
+          "evidence_exists": true,
+          "id": "P0.8/11-main/11-spotlight"
+        }
+      ]
+    }
+  },
+  "phase0_freeze_ready": true,
+  "public_source": {
+    "claim_assessment": {
+      "blocked_claims": [
+        "all-win superiority",
+        "statistically dominant over equal_budget_ensemble_logistic",
+        "uniformly positive over calibrated_logistic_orbit on AURC and Risk@50"
+      ],
+      "control_baseline_large_gain_supported": true,
+      "learned_baseline_dominance_supported": false,
+      "learned_baseline_has_ci_boundary": true,
+      "learned_baseline_has_non_positive_key_metric_mean": true,
+      "p1_2_summary_ready": true,
+      "safe_summary": "CSRM-Cal-GBDT has small, metric-dependent positive average gains over the strongest learned/equal-budget baselines, but the paired bootstrap does not support a statistical dominance or all-win claim. Gains against clean/single-set and naive orbit controls are large and uniformly positive on the key selective-risk metrics."
+    },
+    "comparison_vs_calibrated_logistic_orbit": {
+      "auprc_improvement": {
+        "max": 0.020961732387840604,
+        "mean": 0.017808237776066327,
+        "min": 0.014876133021893723
+      },
+      "aurc_reduction": {
+        "max": 0.006956264842419124,
+        "mean": 0.00528045960388035,
+        "min": 0.001948493199817991
+      },
+      "auroc_improvement": {
+        "max": 0.007134367144809417,
+        "mean": 0.005786830476546179,
+        "min": 0.004196526967976788
+      },
+      "per_seed_ci_lower_bounds": {
+        "auprc_improvement": [
+          0.013361414226582213,
+          0.014601214236580895,
+          0.010615193726515426,
+          0.01072562559903889,
+          0.007847903173806903
+        ],
+        "aurc_reduction": [
+          0.004157313955970965,
+          0.0039038874614421015,
+          0.0023860551365302296,
+          0.0033841129486458787,
+          -0.0010365187496598205
+        ],
+        "auroc_improvement": [
+          0.00378259697087846,
+          0.004437057613315587,
+          0.003175202764038265,
+          0.0026332762882979033,
+          0.0013807280643262088
+        ],
+        "risk_at_30_reduction": [
+          0.01945525291828798,
+          0.018410852713178327,
+          0.011527377521613813,
+          0.011650485436893177,
+          0.006809338521400754
+        ],
+        "risk_at_50_reduction": [
+          -0.009872241579558572,
+          -0.008177570093457875,
+          -0.008172796263864579,
+          -0.009291521486643473,
+          -0.007692307692307665
+        ],
+        "risk_at_70_reduction": [
+          0.0,
+          0.0,
+          0.0,
+          0.0,
+          0.0
+        ]
+      },
+      "risk_at_30_reduction": {
+        "max": 0.03197674418604657,
+        "mean": 0.02664171553210217,
+        "min": 0.021526418786692703
+      },
+      "risk_at_50_reduction": {
+        "max": 0.0,
+        "mean": -0.003848985983482267,
+        "min": -0.005830903790087438
+      },
+      "risk_at_70_reduction": {
+        "max": 0.0,
+        "mean": 0.0,
+        "min": 0.0
+      }
+    },
+    "integrity": {
+      "checks": {
+        "audit_labels_pending": true,
+        "id_alignment_passed": true,
+        "manifest_count_consistent": true,
+        "no_synthetic_main_sources": true,
+        "public_dataset_manifest_passed": true,
+        "raw_oracle_firewall_passed": true,
+        "textonly_scorer_declares_no_private_fields": true
+      },
+      "error_count": 0,
+      "passed": true
+    },
+    "manifest": {
+      "dataset_count_requested": 6,
+      "dataset_count_successful": 6,
+      "negative": 11752,
+      "positive": 5346,
+      "records": 17098,
+      "source_item_groups": 5346
+    },
+    "n": 17098,
+    "primary_method": "csrm_calibrated_gbdt",
+    "primary_metrics": {
+      "auprc": {
+        "max": 0.9084876174656354,
+        "mean": 0.9047493978273773,
+        "min": 0.8985438474851678
+      },
+      "aurc": {
+        "max": 0.3534391565564772,
+        "mean": 0.3502396340701027,
+        "min": 0.348072392840634
+      },
+      "auroc": {
+        "max": 0.9540252837958896,
+        "mean": 0.951535441531113,
+        "min": 0.9489337011995121
+      },
+      "risk_at_30": {
+        "max": 0.18023255813953487,
+        "mean": 0.17470450240772112,
+        "min": 0.16618075801749266
+      },
+      "risk_at_50": {
+        "max": 0.3947674418604651,
+        "mean": 0.38854464983178066,
+        "min": 0.38285378743394005
+      },
+      "risk_at_70": {
+        "max": 0.5560631229235881,
+        "mean": 0.5542434778078397,
+        "min": 0.5515939597315436
+      }
+    },
+    "seeds": [
+      17,
+      31,
+      47,
+      59,
+      71
+    ]
+  },
+  "source_item_split": {
+    "counts": {
+      "calibration": 1069,
+      "test": 1070,
+      "train": 3207
+    },
+    "dataset_counts": {
+      "calibration": {
+        "bdsaglam/musique": 177,
+        "copenlu/fever_gold_evidence": 130,
+        "framolfese/2WikiMultihopQA": 200,
+        "google-research-datasets/nq_open": 200,
+        "hotpot_qa/distractor": 199,
+        "truthfulqa/truthful_qa:generation": 163
+      },
+      "test": {
+        "bdsaglam/musique": 177,
+        "copenlu/fever_gold_evidence": 131,
+        "framolfese/2WikiMultihopQA": 200,
+        "google-research-datasets/nq_open": 200,
+        "hotpot_qa/distractor": 198,
+        "truthfulqa/truthful_qa:generation": 164
+      },
+      "train": {
+        "bdsaglam/musique": 530,
+        "copenlu/fever_gold_evidence": 391,
+        "framolfese/2WikiMultihopQA": 600,
+        "google-research-datasets/nq_open": 600,
+        "hotpot_qa/distractor": 596,
+        "truthfulqa/truthful_qa:generation": 490
+      }
+    },
+    "no_group_overlap": true,
+    "overlap": {
+      "calibration_vs_test": 0,
+      "train_vs_calibration": 0,
+      "train_vs_test": 0
+    },
+    "seed": 60611,
+    "split_hash": "68572ee121f3e504f30190c2",
+    "split_unit": "source_item_group_id"
+  },
+  "strict_submission_ready": false
+}

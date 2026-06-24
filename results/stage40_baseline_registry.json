@@ -1,0 +1,91 @@
+{
+  "accepted_baseline_registry": {
+    "artifact_type": "accepted_baseline_registry_final_20260618",
+    "claim_policy": "Only formally accepted methods with official code/model resources and explicit reproduction levels count toward the final accepted-baseline gate. Internal controls, arXiv-only methods, SURE-RAG, and local learned selectors are excluded from the accepted-baseline count.",
+    "counted_rows": [
+      {
+        "id": "self_rag",
+        "official_resource": "https://github.com/AkariAsai/self-rag",
+        "reproduction_level": "official-pin stack + minimal-patched official-code positive control, plus adapted reflection-token public-suite scoring; not strict unmodified full reproduction",
+        "strict_counting_tier": "immediate_accepted_selective",
+        "venue": "ICLR 2024 oral"
+      },
+      {
+        "id": "sufficient_context",
+        "official_resource": "https://github.com/hljoren/sufficientcontext",
+        "reproduction_level": "official prompt/autorater when possible; protocol-equivalent wrapper must be labeled as such",
+        "strict_counting_tier": "immediate_accepted_selective",
+        "venue": "ICLR 2025 poster"
+      },
+      {
+        "id": "c_rag_certified",
+        "official_resource": "https://github.com/kangmintong/C-RAG",
+        "reproduction_level": "official-task positive control, then adapted conformal-risk comparison",
+        "strict_counting_tier": "immediate_accepted_selective",
+        "venue": "ICML 2024"
+      },
+      {
+        "id": "rag_official",
+        "official_resource": "https://huggingface.co/docs/transformers/model_doc/rag",
+        "reproduction_level": "official model-family implementation as generator/control baseline",
+        "strict_counting_tier": "accepted_generator_control",
+        "venue": "NeurIPS 2020"
+      }
+    ],
+    "gates": {
+      "accepted_baseline_count": 4,
+      "accepted_baseline_count_pass": true,
+      "accepted_generator_control_count": 1,
+      "arxiv_only_counted_count": 0,
+      "arxiv_only_counted_pass": true,
+      "every_counted_row_has_reproduction_level": true,
+      "forbidden_or_internal_counted_count": 0,
+      "forbidden_or_internal_counted_pass": true,
+      "immediate_accepted_selective_count": 3,
+      "immediate_accepted_selective_count_pass": true,
+      "official_code_or_model_count": 4,
+      "official_code_or_model_count_pass": true,
+      "public_datasets_only": true,
+      "recent_accepted_baseline_count": 3,
+      "recent_accepted_baseline_count_pass": true,
+      "registry_gate_pass": true
+    },
+    "policy": {
+      "baseline_rule": "Main-paper baselines must be accepted main-track methods; official code/model is preferred whenever released.",
+      "claim_boundary": "Internal controls, learned local selectors, SURE-RAG, and proxy rows do not count toward the strict accepted-baseline count.",
+      "date": "2026-06-17",
+      "minimum_accepted_rows_with_generator_control": "4",
+      "minimum_immediate_accepted_selective_rows": "3"
+    }
+  },
+  "artifact_type": "stage40_baseline_registry",
+  "budget_policy": "External official-code baselines are comparison baselines only after adaptation to the same public dataset, retriever/generator context, top-k, token budget, and verifier-call budget. Each row must keep its reproduction level explicit.",
+  "gates": {
+    "accepted_baseline_count_passed": true,
+    "accepted_baseline_registry_passed": true,
+    "official_code_or_model_count_passed": true
+  },
+  "generated_at_utc": "2026-06-24T10:50:10.454957+00:00",
+  "internal_controls": {
+    "equal_budget_controls": [
+      "equal_budget_ensemble_logistic",
+      "equal_budget_min",
+      "equal_budget_q25",
+      "equal_budget_mean"
+    ],
+    "naive_or_proxy_controls": [
+      "calibrated_logistic_context",
+      "context_sufficiency_clean",
+      "retrieval_stability",
+      "faithful_sure_multi"
+    ],
+    "strongest_current_internal_control": "calibrated_logistic_orbit"
+  },
+  "source_artifact": {
+    "bytes": 5563,
+    "exists": true,
+    "mtime_utc": "2026-06-18T15:40:08.058147+00:00",
+    "path": "results\\accepted_baseline_registry_final_20260618.json",
+    "sha256": "e1925e32b37dfad4eb3df931d5b85a81d73e9b6cd37ddc198aeaf7ea59673fcb"
+  }
+}

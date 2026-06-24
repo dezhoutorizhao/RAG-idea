@@ -1,0 +1,47 @@
+artifact_type: frozen_stage40_config
+version: "2026-06-24"
+phase: phase0_freeze_before_residualset
+policy:
+  purpose: freeze existing Stage33/36 evidence before any ResidualSet or GroupDRO experiments
+  train_new_models: false
+  relabel_data: false
+  official_baseline_rule: official code/resources may be adapted only under a fixed public budget and must record reproduction level
+  strongest_internal_control: calibrated_logistic_orbit
+outputs:
+  data_manifest: results/stage40_data_manifest.json
+  split_hashes: results/stage40_split_hashes.json
+  baseline_registry: results/stage40_baseline_registry.json
+  current_reproduction: results/stage40_current_reproduction.json
+  summary_md: results/stage40_freeze_audit_summary.md
+canonical_artifacts:
+  public_manifest: results/public_source_orbits_v4_n1000_manifest.json
+  public_integrity_audit: results/public_source_n1000_integrity_audit_20260601.json
+  public_paired_bootstrap: results/public_source_n1000_paired_bootstrap_csrm_cal_gbdt_20260606.json
+  public_ci_summary: results/public_source_p1_paired_bootstrap_ci_summary_20260611.json
+  source_item_split: configs/splits/source_item_group_split_20260611.json
+  accepted_baseline_registry: results/accepted_baseline_registry_final_20260618.json
+  human_final: results/human_public_source_final_20260609_eval/csrm_cal_gbdt_human_locked_eval_20260610.json
+  human_real_v2: results/human_public_source_real_human_v2_20260610_eval/csrm_cal_gbdt_human_locked_eval_v2_20260610.json
+  p0_6_hybrid: results/csrm_hybrid_orbitrank_p0_5seed3fold_20260618.json
+  p0_6_selection_rules: results/p0_6_public_selection_rule_audit_20260618.json
+  p0_6_negative_closure: results/stage33_p0_6_negative_closure_20260619.json
+  p1_real_generator_bottleneck: results/p1_real_generator_negative_bottleneck_audit_20260619.json
+  strict_completion_blockers: results/stage33_strict_completion_blockers_20260619.json
+expected:
+  public_source:
+    dataset_count_requested: 6
+    dataset_count_successful: 6
+    primary_method: csrm_calibrated_gbdt
+    source_item_groups_min: 5000
+  source_item_split:
+    split_unit: source_item_group_id
+    no_group_overlap: true
+  human_final:
+    canonical_method: calibrated_logistic_orbit
+    canonical_auroc_mean_min: 0.74
+    canonical_auroc_mean_max: 0.75
+  p0_6:
+    reference_method: calibrated_logistic_orbit
+    gate_cleared: false
+  p1_real_generator:
+    mean_task_aware_accuracy_min_for_positive_claim: 0.2

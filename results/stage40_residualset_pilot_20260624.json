@@ -1,0 +1,4729 @@
+{
+  "aggregate": {
+    "any_phase1_candidate_gate": false,
+    "candidates": {
+      "deep_sets_residual": {
+        "dataset_count": 3,
+        "dataset_positive_count": 1,
+        "mean_aurc_reduction": 0.026635941991229626,
+        "mean_risk_at_30_reduction": 0.0004116200470798711,
+        "min_dataset_auroc_delta": 0.0,
+        "min_source_auroc_delta": null,
+        "no_dataset_auroc_drop_gt_0_02": true,
+        "phase1_candidate_gate": false,
+        "scope_ready": false,
+        "two_of_three_positive": false
+      },
+      "mlp_parameter_matched": {
+        "dataset_count": 3,
+        "dataset_positive_count": 1,
+        "mean_aurc_reduction": 0.025161969139389218,
+        "mean_risk_at_30_reduction": 0.0004444970476453535,
+        "min_dataset_auroc_delta": -0.00018535523586029611,
+        "min_source_auroc_delta": null,
+        "no_dataset_auroc_drop_gt_0_02": true,
+        "phase1_candidate_gate": false,
+        "scope_ready": false,
+        "two_of_three_positive": false
+      },
+      "set_transformer_full": {
+        "dataset_count": 3,
+        "dataset_positive_count": 1,
+        "mean_aurc_reduction": 0.025113869077750886,
+        "mean_risk_at_30_reduction": 0.000510251048776326,
+        "min_dataset_auroc_delta": -0.0028961452115718435,
+        "min_source_auroc_delta": null,
+        "no_dataset_auroc_drop_gt_0_02": true,
+        "phase1_candidate_gate": false,
+        "scope_ready": false,
+        "two_of_three_positive": false
+      },
+      "set_transformer_residual": {
+        "dataset_count": 3,
+        "dataset_positive_count": 1,
+        "mean_aurc_reduction": 0.02639595944260638,
+        "mean_risk_at_30_reduction": 0.0024381583619363344,
+        "min_dataset_auroc_delta": -0.0013320991200910903,
+        "min_source_auroc_delta": null,
+        "no_dataset_auroc_drop_gt_0_02": true,
+        "phase1_candidate_gate": false,
+        "scope_ready": false,
+        "two_of_three_positive": false
+      }
+    },
+    "ok_dataset_count": 3,
+    "scope_ready": false,
+    "source_scope_failures": [
+      {
+        "dataset": "copenlu/fever_gold_evidence",
+        "min_source_item_groups": 800,
+        "source_item_groups": 652
+      }
+    ]
+  },
+  "artifact_type": "stage40_residualset_pilot_20260624",
+  "baseline": "calibrated_logistic_orbit",
+  "candidates": [
+    "deep_sets_residual",
+    "set_transformer_residual",
+    "set_transformer_full",
+    "mlp_parameter_matched"
+  ],
+  "claim_boundary": "This is a Stage40 Phase 1 pilot over the existing public-source n1000 artifacts. It tests ResidualSet-style architectures against calibrated_logistic_orbit under source-item-group splits. It is not a human-final or independent-stream claim.",
+  "config": {
+    "batch_size": 256,
+    "bootstrap_samples": 200,
+    "cal_frac": 0.2,
+    "device": "auto",
+    "epochs": 80,
+    "hidden_dim": 48,
+    "learning_rate": 0.001,
+    "min_source_item_groups": 800,
+    "smoke_limit_groups": null,
+    "train_frac": 0.6,
+    "weight_decay": 0.0001
+  },
+  "dataset_results": [
+    {
+      "candidate_summary": {
+        "deep_sets_residual": {
+          "dataset_candidate_gate": false,
+          "mean_aurc_reduction": 0.01211516274864125,
+          "mean_auroc_delta": 0.007290072441587592,
+          "mean_risk_at_30_reduction": -0.0025210084033613356,
+          "min_aurc_ci_lower": -0.00035217432758050116,
+          "min_risk30_ci_lower": -0.037815126050420256,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": false,
+          "positive_metric_gate": false,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        },
+        "mlp_parameter_matched": {
+          "dataset_candidate_gate": false,
+          "mean_aurc_reduction": 0.007245524362145384,
+          "mean_auroc_delta": -0.00018535523586029611,
+          "mean_risk_at_30_reduction": -0.003361344537815114,
+          "min_aurc_ci_lower": -0.007544884535673035,
+          "min_risk30_ci_lower": -0.025210084033613467,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": false,
+          "positive_metric_gate": false,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        },
+        "set_transformer_full": {
+          "dataset_candidate_gate": false,
+          "mean_aurc_reduction": 0.014013075712897394,
+          "mean_auroc_delta": 0.0036237798864061643,
+          "mean_risk_at_30_reduction": -0.005042016806722671,
+          "min_aurc_ci_lower": -0.0021676889525183984,
+          "min_risk30_ci_lower": -0.054621848739495826,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": false,
+          "positive_metric_gate": false,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        },
+        "set_transformer_residual": {
+          "dataset_candidate_gate": false,
+          "mean_aurc_reduction": 0.013426620275819002,
+          "mean_auroc_delta": 0.008318879025949721,
+          "mean_risk_at_30_reduction": 0.0016806722689075792,
+          "min_aurc_ci_lower": -0.00029311641055573823,
+          "min_risk30_ci_lower": -0.050420168067226934,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": false,
+          "positive_metric_gate": false,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        }
+      },
+      "dataset": "hotpot_qa/distractor",
+      "dataset_gate": false,
+      "min_source_item_groups": 800,
+      "n": 3972,
+      "negative": 2979,
+      "positive": 993,
+      "seed_results": [
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.4675056418155575,
+              "auroc": 0.9200464238343026,
+              "n": 792,
+              "negative": 594,
+              "positive": 198,
+              "risk_at_30": 0.33193277310924374,
+              "risk_at_50": 0.5277777777777778,
+              "risk_at_70": 0.6432432432432432
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.010903240317916396,
+                "auroc_delta": 0.005433119069482739,
+                "risk_at_30_reduction": -0.008403361344537785,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4566024014976411,
+                "auroc": 0.9254795429037853,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.3403361344537815,
+                "risk_at_50": 0.5277777777777778,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.010790707930999344,
+                  "p2_5": -0.00035217432758050116,
+                  "p97_5": 0.02239382548654234
+                },
+                "auroc_delta": {
+                  "median": 0.006215352174948063,
+                  "p2_5": -0.002542257592762609,
+                  "p97_5": 0.016350372410978475
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.008403361344537785,
+                  "p2_5": -0.021008403361344574,
+                  "p97_5": 0.012605042016806678
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5660595893859863,
+                "gate_entropy": 0.6843938717574749,
+                "residual_abs_mean": 0.6352946162223816,
+                "residual_std": 0.7937775254249573
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.0017734189179468562,
+                "auroc_delta": -0.0035030439070842245,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": -0.005050505050505083,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4657322228976106,
+                "auroc": 0.9165433799272183,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.33193277310924374,
+                "risk_at_50": 0.5328282828282829,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.001840936491514067,
+                  "p2_5": -0.007544884535673035,
+                  "p97_5": 0.010594273262079179
+                },
+                "auroc_delta": {
+                  "median": -0.0035200489745943475,
+                  "p2_5": -0.009046695915382763,
+                  "p97_5": 0.0027888310716593923
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": -0.012605042016806789,
+                  "p97_5": 0.012605042016806789
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.015933593430043913,
+                "auroc_delta": 0.003911165527327176,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": -0.007575757575757569,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.45157204838551357,
+                "auroc": 0.9239575893616297,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.33193277310924374,
+                "risk_at_50": 0.5353535353535354,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.01554921422871186,
+                  "p2_5": 0.006607238869378085,
+                  "p97_5": 0.027481697731178478
+                },
+                "auroc_delta": {
+                  "median": 0.004710403700302734,
+                  "p2_5": -0.0050249974492398986,
+                  "p97_5": 0.014428799782335133
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": -0.01680672268907568,
+                  "p97_5": 0.021008403361344574
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.014852787709047355,
+                "auroc_delta": 0.009845934088358432,
+                "risk_at_30_reduction": 0.012605042016806789,
+                "risk_at_50_reduction": 0.005050505050505083,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4526528541065101,
+                "auroc": 0.929892357922661,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.31932773109243695,
+                "risk_at_50": 0.5227272727272727,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.014484093842508317,
+                  "p2_5": 0.006775797119655036,
+                  "p97_5": 0.02530807249689304
+                },
+                "auroc_delta": {
+                  "median": 0.010288065843621408,
+                  "p2_5": 0.00237220691766149,
+                  "p97_5": 0.019232731353943433
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.004201680672269004,
+                  "p2_5": -0.008403361344537785,
+                  "p97_5": 0.025210084033613467
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5449206829071045,
+                "gate_entropy": 0.689105998396219,
+                "residual_abs_mean": 0.6275145411491394,
+                "residual_std": 0.7642852663993835
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            }
+          },
+          "dataset": "hotpot_qa/distractor",
+          "seed": 17,
+          "split_sizes": {
+            "calibration_groups_unused": 199,
+            "calibration_unused": 796,
+            "test": 792,
+            "test_groups": 198,
+            "train": 2384,
+            "train_groups": 596
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.4609930317151538,
+              "auroc": 0.9391941298506955,
+              "n": 792,
+              "negative": 594,
+              "positive": 198,
+              "risk_at_30": 0.273109243697479,
+              "risk_at_50": 0.5101010101010102,
+              "risk_at_70": 0.6432432432432432
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.017798021332126934,
+                "auroc_delta": 0.004242764343774463,
+                "risk_at_30_reduction": -0.01680672268907557,
+                "risk_at_50_reduction": -0.007575757575757569,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4431950103830269,
+                "auroc": 0.94343689419447,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.2899159663865546,
+                "risk_at_50": 0.5176767676767677,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.01663811185824715,
+                  "p2_5": 0.008176886162939323,
+                  "p97_5": 0.028524582693070566
+                },
+                "auroc_delta": {
+                  "median": 0.004276774478794709,
+                  "p2_5": -0.004667891031527316,
+                  "p97_5": 0.013995170560827108
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.012605042016806789,
+                  "p2_5": -0.037815126050420256,
+                  "p97_5": 0.004201680672268893
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5616928339004517,
+                "gate_entropy": 0.6855157362262689,
+                "residual_abs_mean": 0.6108458638191223,
+                "residual_std": 0.8352735042572021
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.011187715153536282,
+                "auroc_delta": -5.101520253036895e-05,
+                "risk_at_30_reduction": -0.008403361344537785,
+                "risk_at_50_reduction": -0.007575757575757569,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.44980531656161754,
+                "auroc": 0.9391431146481651,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.2815126050420168,
+                "risk_at_50": 0.5176767676767677,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.010366743763318365,
+                  "p2_5": 0.0009457331732131702,
+                  "p97_5": 0.021077728175775245
+                },
+                "auroc_delta": {
+                  "median": -0.00022106587763148777,
+                  "p2_5": -0.007975376662245348,
+                  "p97_5": 0.008077407067306086
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.004201680672268893,
+                  "p2_5": -0.025210084033613467,
+                  "p97_5": 0.008403361344537896
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.013599174623151966,
+                "auroc_delta": -0.008247457742407205,
+                "risk_at_30_reduction": -0.03361344537815125,
+                "risk_at_50_reduction": -0.022727272727272707,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.44739385709200186,
+                "auroc": 0.9309466721082883,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.3067226890756303,
+                "risk_at_50": 0.5328282828282829,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.012476247634829851,
+                  "p2_5": -0.0008985957187718774,
+                  "p97_5": 0.02876868815877537
+                },
+                "auroc_delta": {
+                  "median": -0.008638574295139922,
+                  "p2_5": -0.021970547223072456,
+                  "p97_5": 0.005688195082134473
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.02941176470588236,
+                  "p2_5": -0.054621848739495826,
+                  "p97_5": -0.008403361344537785
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.016131591660952127,
+                "auroc_delta": 0.002890861476720019,
+                "risk_at_30_reduction": -0.025210084033613467,
+                "risk_at_50_reduction": -0.010101010101010055,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4448614400542017,
+                "auroc": 0.9420849913274155,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.2983193277310925,
+                "risk_at_50": 0.5202020202020202,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.015270325400255969,
+                  "p2_5": 0.00745721938294408,
+                  "p97_5": 0.025636001154755506
+                },
+                "auroc_delta": {
+                  "median": 0.002924871611740376,
+                  "p2_5": -0.007660782913308184,
+                  "p97_5": 0.0123286739448355
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.025210084033613356,
+                  "p2_5": -0.050420168067226934,
+                  "p97_5": -0.004201680672268893
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5529093742370605,
+                "gate_entropy": 0.6875378808441216,
+                "residual_abs_mean": 0.6025128364562988,
+                "residual_std": 0.8616958260536194
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            }
+          },
+          "dataset": "hotpot_qa/distractor",
+          "seed": 31,
+          "split_sizes": {
+            "calibration_groups_unused": 199,
+            "calibration_unused": 796,
+            "test": 792,
+            "test_groups": 198,
+            "train": 2384,
+            "train_groups": 596
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.467040607690176,
+              "auroc": 0.9260917253341496,
+              "n": 792,
+              "negative": 594,
+              "positive": 198,
+              "risk_at_30": 0.31512605042016806,
+              "risk_at_50": 0.5252525252525253,
+              "risk_at_70": 0.6432432432432432
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.012021218664630795,
+                "auroc_delta": 0.00792436145971498,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.005050505050505083,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.45501938902554523,
+                "auroc": 0.9340160867938646,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.31512605042016806,
+                "risk_at_50": 0.5202020202020202,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.011783595546957404,
+                  "p2_5": 0.0012474345605778536,
+                  "p97_5": 0.02167318395436435
+                },
+                "auroc_delta": {
+                  "median": 0.007992381729755471,
+                  "p2_5": -0.0006291874978744394,
+                  "p97_5": 0.015321565826616368
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.004201680672268893,
+                  "p2_5": -0.012605042016806789,
+                  "p97_5": 0.021008403361344574
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5614392757415771,
+                "gate_entropy": 0.6855784970052188,
+                "residual_abs_mean": 0.6937974691390991,
+                "residual_std": 0.8536781668663025
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.01556213943426904,
+                "auroc_delta": 0.0012498724619935953,
+                "risk_at_30_reduction": -0.008403361344537785,
+                "risk_at_50_reduction": -0.002525252525252486,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.451478468255907,
+                "auroc": 0.9273415977961432,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.32352941176470584,
+                "risk_at_50": 0.5277777777777778,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.014915103500033278,
+                  "p2_5": 0.008027247343450172,
+                  "p97_5": 0.02235675339447618
+                },
+                "auroc_delta": {
+                  "median": 0.0007312179029350663,
+                  "p2_5": -0.004472332755161124,
+                  "p97_5": 0.006725504200251753
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.004201680672268893,
+                  "p2_5": -0.01680672268907568,
+                  "p97_5": 0.004201680672269004
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.0167271036559416,
+                "auroc_delta": 0.006785021936537072,
+                "risk_at_30_reduction": -0.008403361344537785,
+                "risk_at_50_reduction": 0.007575757575757569,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4503135040342344,
+                "auroc": 0.9328767472706867,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.32352941176470584,
+                "risk_at_50": 0.5176767676767677,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.01683074719144456,
+                  "p2_5": 0.007025000078510701,
+                  "p97_5": 0.027178926478566234
+                },
+                "auroc_delta": {
+                  "median": 0.00694657007788313,
+                  "p2_5": -0.002542257592762609,
+                  "p97_5": 0.015253545556575876
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": -0.025210084033613356,
+                  "p97_5": 0.021008403361344574
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.014221159515942883,
+                "auroc_delta": 0.008545046423834246,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.010101010101010166,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.45281944817423314,
+                "auroc": 0.9346367717579839,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.31512605042016806,
+                "risk_at_50": 0.5151515151515151,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.01408235789710005,
+                  "p2_5": 0.003945535128735855,
+                  "p97_5": 0.026005248191580232
+                },
+                "auroc_delta": {
+                  "median": 0.008357990681223004,
+                  "p2_5": 6.802027004038091e-05,
+                  "p97_5": 0.016358874944733537
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.004201680672268893,
+                  "p2_5": -0.01680672268907568,
+                  "p97_5": 0.021008403361344574
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5547505021095276,
+                "gate_entropy": 0.6871399068152728,
+                "residual_abs_mean": 0.6581748127937317,
+                "residual_std": 0.8155685663223267
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            }
+          },
+          "dataset": "hotpot_qa/distractor",
+          "seed": 47,
+          "split_sizes": {
+            "calibration_groups_unused": 199,
+            "calibration_unused": 796,
+            "test": 792,
+            "test_groups": 198,
+            "train": 2384,
+            "train_groups": 596
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.4630225118069956,
+              "auroc": 0.9186775158997381,
+              "n": 792,
+              "negative": 594,
+              "positive": 198,
+              "risk_at_30": 0.3403361344537815,
+              "risk_at_50": 0.5277777777777778,
+              "risk_at_70": 0.6432432432432432
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.009887604908223824,
+                "auroc_delta": 0.01111281161786215,
+                "risk_at_30_reduction": 0.008403361344537785,
+                "risk_at_50_reduction": 0.010101010101010055,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4531349068987718,
+                "auroc": 0.9297903275176003,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.33193277310924374,
+                "risk_at_50": 0.5176767676767677,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.009515037671874227,
+                  "p2_5": 0.001856949300707511,
+                  "p97_5": 0.01602929205550141
+                },
+                "auroc_delta": {
+                  "median": 0.010840730537700294,
+                  "p2_5": 0.0020321055674591415,
+                  "p97_5": 0.01903717307757713
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.008403361344537896,
+                  "p2_5": -0.012605042016806789,
+                  "p97_5": 0.02941176470588236
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5503535270690918,
+                "gate_entropy": 0.6880676186910717,
+                "residual_abs_mean": 0.5502129197120667,
+                "residual_std": 0.710507333278656
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.0003450858997247619,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": -0.004201680672268893,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.46267742590727085,
+                "auroc": 0.9186775158997381,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.3445378151260504,
+                "risk_at_50": 0.5277777777777778,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.0010772282032463498,
+                  "p2_5": -0.007096119110304444,
+                  "p97_5": 0.006026763445743488
+                },
+                "auroc_delta": {
+                  "median": -0.00028058361391702924,
+                  "p2_5": -0.004905961976669149,
+                  "p97_5": 0.005637179879604104
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.004201680672268893,
+                  "p2_5": -0.01680672268907568,
+                  "p97_5": 0.012605042016806789
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.013843451056924583,
+                "auroc_delta": 0.01122334455667795,
+                "risk_at_30_reduction": 0.012605042016806789,
+                "risk_at_50_reduction": 0.007575757575757569,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.449179060750071,
+                "auroc": 0.9299008604564161,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.32773109243697474,
+                "risk_at_50": 0.5202020202020202,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.013379373694053287,
+                  "p2_5": 0.00415147529100679,
+                  "p97_5": 0.020690110915085658
+                },
+                "auroc_delta": {
+                  "median": 0.011444410434309438,
+                  "p2_5": 0.0013689079345644561,
+                  "p97_5": 0.019309254157738986
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.01680672268907557,
+                  "p2_5": -0.004201680672268893,
+                  "p97_5": 0.037815126050420145
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.013514521362459564,
+                "auroc_delta": 0.015185525286535384,
+                "risk_at_30_reduction": 0.012605042016806789,
+                "risk_at_50_reduction": 0.010101010101010055,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.44950799044453604,
+                "auroc": 0.9338630411862735,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.32773109243697474,
+                "risk_at_50": 0.5176767676767677,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.013269469010228685,
+                  "p2_5": 0.005408219534035863,
+                  "p97_5": 0.020389371018127544
+                },
+                "auroc_delta": {
+                  "median": 0.015134510084005015,
+                  "p2_5": 0.006725504200251642,
+                  "p97_5": 0.022761282862292953
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.012605042016806789,
+                  "p2_5": -0.004201680672269004,
+                  "p97_5": 0.03361344537815136
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5538363456726074,
+                "gate_entropy": 0.6873392234697102,
+                "residual_abs_mean": 0.6277235746383667,
+                "residual_std": 0.8146100044250488
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            }
+          },
+          "dataset": "hotpot_qa/distractor",
+          "seed": 59,
+          "split_sizes": {
+            "calibration_groups_unused": 199,
+            "calibration_unused": 796,
+            "test": 792,
+            "test_groups": 198,
+            "train": 2384,
+            "train_groups": 596
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.45950198405298204,
+              "auroc": 0.9282853790429548,
+              "n": 792,
+              "negative": 594,
+              "positive": 198,
+              "risk_at_30": 0.31932773109243695,
+              "risk_at_50": 0.5227272727272727,
+              "risk_at_70": 0.6432432432432432
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.009965728520308303,
+                "auroc_delta": 0.007737305717103626,
+                "risk_at_30_reduction": 0.004201680672268893,
+                "risk_at_50_reduction": 0.002525252525252486,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.44953625553267373,
+                "auroc": 0.9360226847600585,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.31512605042016806,
+                "risk_at_50": 0.5202020202020202,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.009818570760147471,
+                  "p2_5": 0.0001099801287656188,
+                  "p97_5": 0.02058914114150534
+                },
+                "auroc_delta": {
+                  "median": 0.007686290514573368,
+                  "p2_5": -0.0011393395231779069,
+                  "p97_5": 0.01650341801856947
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.008403361344537785,
+                  "p2_5": -0.012605042016806789,
+                  "p97_5": 0.025210084033613467
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5577037334442139,
+                "gate_entropy": 0.6864728768094941,
+                "residual_abs_mean": 0.6014096736907959,
+                "residual_std": 0.7327407002449036
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.007359262405249978,
+                "auroc_delta": 0.0013774104683195176,
+                "risk_at_30_reduction": 0.004201680672268893,
+                "risk_at_50_reduction": -0.005050505050505083,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.45214272164773206,
+                "auroc": 0.9296627895112743,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.31512605042016806,
+                "risk_at_50": 0.5277777777777778,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.00783502695298366,
+                  "p2_5": -0.0012669081237456914,
+                  "p97_5": 0.015231077529386183
+                },
+                "auroc_delta": {
+                  "median": 0.0013859130020746901,
+                  "p2_5": -0.007142128354249544,
+                  "p97_5": 0.008723599632690537
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.008403361344537785,
+                  "p2_5": -0.008403361344537785,
+                  "p97_5": 0.021008403361344574
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.009962055798424907,
+                "auroc_delta": 0.004446825153895828,
+                "risk_at_30_reduction": 0.004201680672268893,
+                "risk_at_50_reduction": -0.002525252525252597,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.44953992825455713,
+                "auroc": 0.9327322041968507,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.31512605042016806,
+                "risk_at_50": 0.5252525252525253,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.010387586094288914,
+                  "p2_5": -0.0021676889525183984,
+                  "p97_5": 0.02076456213026312
+                },
+                "auroc_delta": {
+                  "median": 0.004259769411284475,
+                  "p2_5": -0.007448219569431758,
+                  "p97_5": 0.015168520219025372
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.004201680672268893,
+                  "p2_5": -0.012605042016806789,
+                  "p97_5": 0.025210084033613467
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.008413041130693077,
+                "auroc_delta": 0.005127027854300525,
+                "risk_at_30_reduction": 0.008403361344537785,
+                "risk_at_50_reduction": -0.002525252525252597,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.45108894292228896,
+                "auroc": 0.9334124068972554,
+                "n": 792,
+                "negative": 594,
+                "positive": 198,
+                "risk_at_30": 0.31092436974789917,
+                "risk_at_50": 0.5252525252525253,
+                "risk_at_70": 0.6432432432432432
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.007851817788847248,
+                  "p2_5": -0.00029311641055573823,
+                  "p97_5": 0.015987419949279047
+                },
+                "auroc_delta": {
+                  "median": 0.004633880896507181,
+                  "p2_5": -0.005968778696051502,
+                  "p97_5": 0.014590347923681302
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.008403361344537785,
+                  "p2_5": -0.01680672268907557,
+                  "p97_5": 0.02941176470588225
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5498442053794861,
+                "gate_entropy": 0.688170028095194,
+                "residual_abs_mean": 0.6228665709495544,
+                "residual_std": 0.803271472454071
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 198,
+                  "slice": "wrong_answer"
+                }
+              ]
+            }
+          },
+          "dataset": "hotpot_qa/distractor",
+          "seed": 71,
+          "split_sizes": {
+            "calibration_groups_unused": 199,
+            "calibration_unused": 796,
+            "test": 792,
+            "test_groups": 198,
+            "train": 2384,
+            "train_groups": 596
+          },
+          "status": "ok"
+        }
+      ],
+      "source_item_groups": 993,
+      "source_scope_pass": true,
+      "status": "ok"
+    },
+    {
+      "candidate_summary": {
+        "deep_sets_residual": {
+          "dataset_candidate_gate": true,
+          "mean_aurc_reduction": 0.06286296205888732,
+          "mean_auroc_delta": 0.0,
+          "mean_risk_at_30_reduction": 0.0,
+          "min_aurc_ci_lower": 0.0608219997120199,
+          "min_risk30_ci_lower": 0.0,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": true,
+          "positive_metric_gate": true,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        },
+        "mlp_parameter_matched": {
+          "dataset_candidate_gate": true,
+          "mean_aurc_reduction": 0.061528866932104374,
+          "mean_auroc_delta": 0.0,
+          "mean_risk_at_30_reduction": 0.0,
+          "min_aurc_ci_lower": 0.054207153445939404,
+          "min_risk30_ci_lower": 0.0,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": true,
+          "positive_metric_gate": true,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        },
+        "set_transformer_full": {
+          "dataset_candidate_gate": true,
+          "mean_aurc_reduction": 0.06086560224714425,
+          "mean_auroc_delta": 0.0,
+          "mean_risk_at_30_reduction": 0.0,
+          "min_aurc_ci_lower": 0.05199702501055753,
+          "min_risk30_ci_lower": 0.0,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": true,
+          "positive_metric_gate": true,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        },
+        "set_transformer_residual": {
+          "dataset_candidate_gate": true,
+          "mean_aurc_reduction": 0.06286296205888732,
+          "mean_auroc_delta": 0.0,
+          "mean_risk_at_30_reduction": 0.0,
+          "min_aurc_ci_lower": 0.0608219997120199,
+          "min_risk30_ci_lower": 0.0,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": true,
+          "positive_metric_gate": true,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        }
+      },
+      "dataset": "copenlu/fever_gold_evidence",
+      "dataset_gate": true,
+      "min_source_item_groups": 800,
+      "n": 1956,
+      "negative": 1304,
+      "positive": 652,
+      "seed_results": [
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.2848540635043241,
+              "auroc": 1.0,
+              "n": 393,
+              "negative": 262,
+              "positive": 131,
+              "risk_at_30": 0.0,
+              "risk_at_50": 0.3350253807106599,
+              "risk_at_70": 0.5253623188405797
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06263184128210181,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.06251830665301283,
+                  "p2_5": 0.06093784280206732,
+                  "p97_5": 0.06389900094952322
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5337933301925659,
+                "gate_entropy": 0.690861460191601,
+                "residual_abs_mean": 6.065794467926025,
+                "residual_std": 6.607294082641602
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.060954765177544806,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22389929832677927,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.06100228997070986,
+                  "p2_5": 0.05760694524742155,
+                  "p97_5": 0.06313447239327563
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.05931551785730113,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22553854564702294,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.05956257653989891,
+                  "p2_5": 0.054121799722860214,
+                  "p97_5": 0.06312889783456466
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06263184128210181,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.06251830665301283,
+                  "p2_5": 0.06093784280206732,
+                  "p97_5": 0.06389900094952322
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5191630125045776,
+                "gate_entropy": 0.6924125585559866,
+                "residual_abs_mean": 7.173413276672363,
+                "residual_std": 7.470072269439697
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            }
+          },
+          "dataset": "copenlu/fever_gold_evidence",
+          "seed": 17,
+          "split_sizes": {
+            "calibration_groups_unused": 130,
+            "calibration_unused": 390,
+            "test": 393,
+            "test_groups": 131,
+            "train": 1173,
+            "train_groups": 391
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.2844987497659254,
+              "auroc": 1.0,
+              "n": 393,
+              "negative": 262,
+              "positive": 131,
+              "risk_at_30": 0.0,
+              "risk_at_50": 0.3350253807106599,
+              "risk_at_70": 0.5253623188405797
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06227652754370311,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.062202469048592,
+                  "p2_5": 0.06096079417250755,
+                  "p97_5": 0.06368201855092487
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.537294328212738,
+                "gate_entropy": 0.690362861621345,
+                "residual_abs_mean": 5.510071754455566,
+                "residual_std": 5.947573661804199
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06227652754370311,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.062202469048592,
+                  "p2_5": 0.06096079417250755,
+                  "p97_5": 0.06368201855092487
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06227652754370311,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.062202469048592,
+                  "p2_5": 0.06096079417250755,
+                  "p97_5": 0.06368201855092487
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06227652754370311,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.062202469048592,
+                  "p2_5": 0.06096079417250755,
+                  "p97_5": 0.06368201855092487
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5198100805282593,
+                "gate_entropy": 0.6923620965050323,
+                "residual_abs_mean": 7.111988067626953,
+                "residual_std": 7.380990505218506
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            }
+          },
+          "dataset": "copenlu/fever_gold_evidence",
+          "seed": 31,
+          "split_sizes": {
+            "calibration_groups_unused": 130,
+            "calibration_unused": 390,
+            "test": 393,
+            "test_groups": 131,
+            "train": 1173,
+            "train_groups": 391
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.284562128038562,
+              "auroc": 1.0,
+              "n": 393,
+              "negative": 262,
+              "positive": 131,
+              "risk_at_30": 0.0,
+              "risk_at_50": 0.3350253807106599,
+              "risk_at_70": 0.5253623188405797
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06233990581633975,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.06211724381254763,
+                  "p2_5": 0.0608219997120199,
+                  "p97_5": 0.06365891102333343
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.535730242729187,
+                "gate_entropy": 0.6905917025034329,
+                "residual_abs_mean": 6.3857421875,
+                "residual_std": 6.749648571014404
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06233990581633975,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.06211724381254763,
+                  "p2_5": 0.0608219997120199,
+                  "p97_5": 0.06365891102333343
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.05902358239153907,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22553854564702294,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.0589660924410558,
+                  "p2_5": 0.05199702501055753,
+                  "p97_5": 0.06320747932398418
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06233990581633975,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.06211724381254763,
+                  "p2_5": 0.0608219997120199,
+                  "p97_5": 0.06365891102333343
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5209724307060242,
+                "gate_entropy": 0.6922672367298283,
+                "residual_abs_mean": 6.340243339538574,
+                "residual_std": 7.0382561683654785
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            }
+          },
+          "dataset": "copenlu/fever_gold_evidence",
+          "seed": 47,
+          "split_sizes": {
+            "calibration_groups_unused": 130,
+            "calibration_unused": 390,
+            "test": 393,
+            "test_groups": 131,
+            "train": 1173,
+            "train_groups": 391
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.2856307976312467,
+              "auroc": 1.0,
+              "n": 393,
+              "negative": 262,
+              "positive": 131,
+              "risk_at_30": 0.0,
+              "risk_at_50": 0.3350253807106599,
+              "risk_at_70": 0.5253623188405797
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06340857540902445,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.06327015423333338,
+                  "p2_5": 0.061920611961791494,
+                  "p97_5": 0.06478713959058102
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5343278050422668,
+                "gate_entropy": 0.6907885291657639,
+                "residual_abs_mean": 5.9466986656188965,
+                "residual_std": 6.351916313171387
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06009225198422377,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22553854564702294,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.059594268981675275,
+                  "p2_5": 0.054207153445939404,
+                  "p97_5": 0.0640544599548089
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.061731499304467446,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22389929832677927,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.061731499304467446,
+                  "p2_5": 0.05729915350452841,
+                  "p97_5": 0.06413740122546674
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06340857540902445,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.06327015423333338,
+                  "p2_5": 0.061920611961791494,
+                  "p97_5": 0.06478713959058102
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5180537104606628,
+                "gate_entropy": 0.6924951659171281,
+                "residual_abs_mean": 6.727071762084961,
+                "residual_std": 6.981872081756592
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            }
+          },
+          "dataset": "copenlu/fever_gold_evidence",
+          "seed": 59,
+          "split_sizes": {
+            "calibration_groups_unused": 130,
+            "calibration_unused": 390,
+            "test": 393,
+            "test_groups": 131,
+            "train": 1173,
+            "train_groups": 391
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.28588018246548974,
+              "auroc": 1.0,
+              "n": 393,
+              "negative": 262,
+              "positive": 131,
+              "risk_at_30": 0.0,
+              "risk_at_50": 0.3350253807106599,
+              "risk_at_70": 0.5253623188405797
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06365796024326748,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.06355131455825763,
+                  "p2_5": 0.06177984535084435,
+                  "p97_5": 0.06488369373321001
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5397225022315979,
+                "gate_entropy": 0.6899880981885484,
+                "residual_abs_mean": 5.2122955322265625,
+                "residual_std": 5.826721668243408
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.061980884138710474,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22389929832677927,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.06202991230677621,
+                  "p2_5": 0.058253386856051526,
+                  "p97_5": 0.06453299007832808
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.061980884138710474,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22389929832677927,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.0619861985452661,
+                  "p2_5": 0.056597777415206885,
+                  "p97_5": 0.06461196286446663
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.06365796024326748,
+                "auroc_delta": 0.0,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.22222222222222227,
+                "auroc": 1.0,
+                "n": 393,
+                "negative": 262,
+                "positive": 131,
+                "risk_at_30": 0.0,
+                "risk_at_50": 0.3350253807106599,
+                "risk_at_70": 0.5253623188405797
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.06355131455825763,
+                  "p2_5": 0.06177984535084435,
+                  "p97_5": 0.06488369373321001
+                },
+                "auroc_delta": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": 0.0,
+                  "p97_5": 0.0
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5202634334564209,
+                "gate_entropy": 0.6923257421440562,
+                "residual_abs_mean": 7.602839946746826,
+                "residual_std": 7.588265419006348
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "conflict"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "missing_evidence"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 131,
+                  "slice": "stable"
+                }
+              ]
+            }
+          },
+          "dataset": "copenlu/fever_gold_evidence",
+          "seed": 71,
+          "split_sizes": {
+            "calibration_groups_unused": 130,
+            "calibration_unused": 390,
+            "test": 393,
+            "test_groups": 131,
+            "train": 1173,
+            "train_groups": 391
+          },
+          "status": "ok"
+        }
+      ],
+      "source_item_groups": 652,
+      "source_scope_pass": false,
+      "status": "ok"
+    },
+    {
+      "candidate_summary": {
+        "deep_sets_residual": {
+          "dataset_candidate_gate": false,
+          "mean_aurc_reduction": 0.004929701166160316,
+          "mean_auroc_delta": 0.003123836275229541,
+          "mean_risk_at_30_reduction": 0.003755868544600949,
+          "min_aurc_ci_lower": -0.02436977645427818,
+          "min_risk30_ci_lower": -0.03755868544600938,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": false,
+          "positive_metric_gate": false,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        },
+        "mlp_parameter_matched": {
+          "dataset_candidate_gate": false,
+          "mean_aurc_reduction": 0.006711516123917904,
+          "mean_auroc_delta": 0.003145115813889143,
+          "mean_risk_at_30_reduction": 0.004694835680751175,
+          "min_aurc_ci_lower": -0.009875245114354336,
+          "min_risk30_ci_lower": -0.023474178403755763,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": false,
+          "positive_metric_gate": false,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        },
+        "set_transformer_full": {
+          "dataset_candidate_gate": false,
+          "mean_aurc_reduction": 0.0004629292732110213,
+          "mean_auroc_delta": -0.0028961452115718435,
+          "mean_risk_at_30_reduction": 0.006572769953051649,
+          "min_aurc_ci_lower": -0.03963788433827581,
+          "min_risk30_ci_lower": -0.05164319248826288,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": false,
+          "positive_metric_gate": false,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        },
+        "set_transformer_residual": {
+          "dataset_candidate_gate": false,
+          "mean_aurc_reduction": 0.0028982959931128094,
+          "mean_auroc_delta": -0.0013320991200910903,
+          "mean_risk_at_30_reduction": 0.0056338028169014235,
+          "min_aurc_ci_lower": -0.03036895724992139,
+          "min_risk30_ci_lower": -0.04225352112676051,
+          "min_source_auroc_delta": null,
+          "no_source_auroc_drop_gt_0_02": true,
+          "paired_ci_gate": false,
+          "positive_metric_gate": false,
+          "residual_diagnostics_pass": true,
+          "seed_count": 5,
+          "status": "ok"
+        }
+      },
+      "dataset": "bdsaglam/musique",
+      "dataset_gate": false,
+      "min_source_item_groups": 800,
+      "n": 3536,
+      "negative": 2652,
+      "positive": 884,
+      "seed_results": [
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.5088337399842159,
+              "auroc": 0.8517241746198942,
+              "n": 708,
+              "negative": 531,
+              "positive": 177,
+              "risk_at_30": 0.45539906103286387,
+              "risk_at_50": 0.5677966101694916,
+              "risk_at_70": 0.6431451612903225
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": -0.010963362397428011,
+                "auroc_delta": -0.0021811527126092134,
+                "risk_at_30_reduction": -0.0046948356807511304,
+                "risk_at_50_reduction": 0.0028248587570621764,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5197971023816439,
+                "auroc": 0.849543021907285,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.460093896713615,
+                "risk_at_50": 0.5649717514124294,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": -0.01028581009688423,
+                  "p2_5": -0.02436977645427818,
+                  "p97_5": 0.003459803768393499
+                },
+                "auroc_delta": {
+                  "median": -0.0024897060231734436,
+                  "p2_5": -0.011288795258918793,
+                  "p97_5": 0.007330801068232917
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": -0.023474178403755874,
+                  "p97_5": 0.028169014084507005
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5544167757034302,
+                "gate_entropy": 0.6872130623642629,
+                "residual_abs_mean": 0.37324127554893494,
+                "residual_std": 0.5472972989082336
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.0005827732608310043,
+                "auroc_delta": 0.0011065360102993083,
+                "risk_at_30_reduction": -0.009389671361502372,
+                "risk_at_50_reduction": 0.008474576271186418,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5082509667233849,
+                "auroc": 0.8528307106301936,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.46478873239436624,
+                "risk_at_50": 0.5593220338983051,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.0004506274382907183,
+                  "p2_5": -0.008824869602584329,
+                  "p97_5": 0.00851452891356086
+                },
+                "auroc_delta": {
+                  "median": 0.0011490950876185124,
+                  "p2_5": -0.004362305425218427,
+                  "p97_5": 0.006192345749944095
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": -0.023474178403755763,
+                  "p97_5": 0.023474178403755874
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": -0.02148483197952289,
+                "auroc_delta": -0.014193452285954478,
+                "risk_at_30_reduction": -0.0046948356807511304,
+                "risk_at_50_reduction": -0.008474576271186418,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5303185719637388,
+                "auroc": 0.8375307223339398,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.460093896713615,
+                "risk_at_50": 0.576271186440678,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": -0.021471578497548105,
+                  "p2_5": -0.03963788433827581,
+                  "p97_5": -0.006341470641786473
+                },
+                "auroc_delta": {
+                  "median": -0.014246651132603483,
+                  "p2_5": -0.02558864523817128,
+                  "p97_5": -0.00286209794971648
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.0046948356807512415,
+                  "p2_5": -0.032863849765258246,
+                  "p97_5": 0.023474178403755874
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": -0.005702815604636924,
+                "auroc_delta": -0.004213348654601212,
+                "risk_at_30_reduction": 0.0,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5145365555888528,
+                "auroc": 0.847510825965293,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.45539906103286387,
+                "risk_at_50": 0.5677966101694916,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": -0.005551094540257595,
+                  "p2_5": -0.014203177046885118,
+                  "p97_5": 0.0039806097266137375
+                },
+                "auroc_delta": {
+                  "median": -0.0037983976507389716,
+                  "p2_5": -0.014023215976677661,
+                  "p97_5": 0.0037877578814091706
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0046948356807511304,
+                  "p2_5": -0.028169014084507005,
+                  "p97_5": 0.032863849765258246
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5546469688415527,
+                "gate_entropy": 0.6871626503923384,
+                "residual_abs_mean": 0.3062238395214081,
+                "residual_std": 0.45378682017326355
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            }
+          },
+          "dataset": "bdsaglam/musique",
+          "seed": 17,
+          "split_sizes": {
+            "calibration_groups_unused": 177,
+            "calibration_unused": 708,
+            "test": 708,
+            "test_groups": 177,
+            "train": 2120,
+            "train_groups": 530
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.523421307015624,
+              "auroc": 0.8449679210954707,
+              "n": 708,
+              "negative": 531,
+              "positive": 177,
+              "risk_at_30": 0.47887323943661975,
+              "risk_at_50": 0.5649717514124294,
+              "risk_at_70": 0.6431451612903225
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.011950265549644623,
+                "auroc_delta": 0.006330662751231508,
+                "risk_at_30_reduction": 0.018779342723004744,
+                "risk_at_50_reduction": 0.0028248587570621764,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5114710414659793,
+                "auroc": 0.8512985838467022,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.460093896713615,
+                "risk_at_50": 0.5621468926553672,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.010426447415549434,
+                  "p2_5": -0.007408657462890211,
+                  "p97_5": 0.02508537207178685
+                },
+                "auroc_delta": {
+                  "median": 0.006341302520561309,
+                  "p2_5": -0.0019257982486939884,
+                  "p97_5": 0.013799780820751839
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.009389671361502372,
+                  "p2_5": -0.023474178403755874,
+                  "p97_5": 0.03755868544600938
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5501779317855835,
+                "gate_entropy": 0.6881030440578655,
+                "residual_abs_mean": 0.3058619201183319,
+                "residual_std": 0.4426279664039612
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.006093562790958407,
+                "auroc_delta": 0.004532541734495132,
+                "risk_at_30_reduction": 0.018779342723004744,
+                "risk_at_50_reduction": 0.0028248587570621764,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5173277442246655,
+                "auroc": 0.8495004628299658,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.460093896713615,
+                "risk_at_50": 0.5621468926553672,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.005553667552767205,
+                  "p2_5": -0.004960074405985115,
+                  "p97_5": 0.014572061687100568
+                },
+                "auroc_delta": {
+                  "median": 0.0045538212731548455,
+                  "p2_5": -0.001063976932980104,
+                  "p97_5": 0.010682328407120134
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.009389671361502372,
+                  "p2_5": -0.018779342723004744,
+                  "p97_5": 0.04225352112676062
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.010261327783699703,
+                "auroc_delta": 0.004011193037334881,
+                "risk_at_30_reduction": 0.028169014084507116,
+                "risk_at_50_reduction": -0.008474576271186418,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5131599792319242,
+                "auroc": 0.8489791141328056,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.45070422535211263,
+                "risk_at_50": 0.5734463276836158,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.009363720071912884,
+                  "p2_5": -0.006883948745248891,
+                  "p97_5": 0.024537128770126482
+                },
+                "auroc_delta": {
+                  "median": 0.003670720418781359,
+                  "p2_5": -0.007043527296328178,
+                  "p97_5": 0.013650824050134625
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.023474178403755874,
+                  "p2_5": -0.0046948356807511304,
+                  "p97_5": 0.05164319248826299
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.011826108603793295,
+                "auroc_delta": 0.004426144041197122,
+                "risk_at_30_reduction": 0.023474178403755874,
+                "risk_at_50_reduction": -0.0028248587570621764,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5115951984118307,
+                "auroc": 0.8493940651366678,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.45539906103286387,
+                "risk_at_50": 0.5677966101694916,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.010270131595195409,
+                  "p2_5": -0.006047522740375677,
+                  "p97_5": 0.024125078002428357
+                },
+                "auroc_delta": {
+                  "median": 0.004255907731920416,
+                  "p2_5": -0.0045431815038249335,
+                  "p97_5": 0.011607988338812825
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.014084507042253613,
+                  "p2_5": -0.014084507042253502,
+                  "p97_5": 0.05164319248826288
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5499645471572876,
+                "gate_entropy": 0.6881459255210036,
+                "residual_abs_mean": 0.27972036600112915,
+                "residual_std": 0.4142017364501953
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            }
+          },
+          "dataset": "bdsaglam/musique",
+          "seed": 31,
+          "split_sizes": {
+            "calibration_groups_unused": 177,
+            "calibration_unused": 708,
+            "test": 708,
+            "test_groups": 177,
+            "train": 2120,
+            "train_groups": 530
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.49124602964392977,
+              "auroc": 0.8729930735101663,
+              "n": 708,
+              "negative": 531,
+              "positive": 177,
+              "risk_at_30": 0.43661971830985913,
+              "risk_at_50": 0.5508474576271186,
+              "risk_at_70": 0.6431451612903225
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": -0.006537259335828549,
+                "auroc_delta": -0.0008511815463840833,
+                "risk_at_30_reduction": -0.009389671361502372,
+                "risk_at_50_reduction": 0.005649717514124242,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4977832889797583,
+                "auroc": 0.8721418919637822,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.4460093896713615,
+                "risk_at_50": 0.5451977401129944,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": -0.007499921494130368,
+                  "p2_5": -0.017695775273372738,
+                  "p97_5": 0.006017568175473442
+                },
+                "auroc_delta": {
+                  "median": -0.0017449221700873707,
+                  "p2_5": -0.010384414865885705,
+                  "p97_5": 0.008671412003787737
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.0046948356807512415,
+                  "p2_5": -0.03755868544600938,
+                  "p97_5": 0.018779342723004744
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5443806648254395,
+                "gate_entropy": 0.6892027047086157,
+                "residual_abs_mean": 0.3682146668434143,
+                "residual_std": 0.5393788814544678
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": -0.0021936162984247387,
+                "auroc_delta": -0.0006809452371072666,
+                "risk_at_30_reduction": 0.0046948356807511304,
+                "risk_at_50_reduction": 0.005649717514124242,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4934396459423545,
+                "auroc": 0.872312128273059,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.431924882629108,
+                "risk_at_50": 0.5451977401129944,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": -0.001958450176486548,
+                  "p2_5": -0.009875245114354336,
+                  "p97_5": 0.005474899918695875
+                },
+                "auroc_delta": {
+                  "median": -0.00031919307989403123,
+                  "p2_5": -0.006011469671337477,
+                  "p97_5": 0.004245267962590504
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0046948356807512415,
+                  "p2_5": -0.014084507042253502,
+                  "p97_5": 0.028169014084507116
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": -0.013620524551677338,
+                "auroc_delta": -0.011607988338812825,
+                "risk_at_30_reduction": -0.018779342723004744,
+                "risk_at_50_reduction": -0.0028248587570621764,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5048665541956071,
+                "auroc": 0.8613850851713535,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.45539906103286387,
+                "risk_at_50": 0.5536723163841808,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": -0.01410279943238113,
+                  "p2_5": -0.027539759840535916,
+                  "p97_5": 0.0008222455858488131
+                },
+                "auroc_delta": {
+                  "median": -0.011927181418706856,
+                  "p2_5": -0.021151861427644247,
+                  "p97_5": -0.00010639769329801041
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.023474178403755874,
+                  "p2_5": -0.05164319248826288,
+                  "p97_5": 0.009389671361502372
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": -0.013999517363926073,
+                "auroc_delta": -0.007181844297615592,
+                "risk_at_30_reduction": -0.009389671361502372,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5052455470078558,
+                "auroc": 0.8658112292125507,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.4460093896713615,
+                "risk_at_50": 0.5508474576271186,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": -0.014394280664838,
+                  "p2_5": -0.03036895724992139,
+                  "p97_5": -0.0002906744509696968
+                },
+                "auroc_delta": {
+                  "median": -0.007639354378797036,
+                  "p2_5": -0.018672795173800605,
+                  "p97_5": 0.003649440880121757
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.009389671361502372,
+                  "p2_5": -0.04225352112676051,
+                  "p97_5": 0.018779342723004633
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5494365096092224,
+                "gate_entropy": 0.688251248313315,
+                "residual_abs_mean": 0.36681339144706726,
+                "residual_std": 0.5373699069023132
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            }
+          },
+          "dataset": "bdsaglam/musique",
+          "seed": 47,
+          "split_sizes": {
+            "calibration_groups_unused": 177,
+            "calibration_unused": 708,
+            "test": 708,
+            "test_groups": 177,
+            "train": 2120,
+            "train_groups": 530
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.5102137230734857,
+              "auroc": 0.8666677306435997,
+              "n": 708,
+              "negative": 531,
+              "positive": 177,
+              "risk_at_30": 0.4460093896713615,
+              "risk_at_50": 0.5536723163841808,
+              "risk_at_70": 0.6431451612903225
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.016192572227702373,
+                "auroc_delta": 0.005436922127528221,
+                "risk_at_30_reduction": 0.0046948356807511304,
+                "risk_at_50_reduction": 0.005649717514124353,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4940211508457833,
+                "auroc": 0.8721046527711279,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.44131455399061037,
+                "risk_at_50": 0.5480225988700564,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.015712003928847973,
+                  "p2_5": 0.00010080547909535609,
+                  "p97_5": 0.03068545374641618
+                },
+                "auroc_delta": {
+                  "median": 0.0053198846649004095,
+                  "p2_5": -0.004245267962590615,
+                  "p97_5": 0.015810697224084236
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.009389671361502261,
+                  "p2_5": -0.018779342723004744,
+                  "p97_5": 0.032863849765258246
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5547910928726196,
+                "gate_entropy": 0.6871309782339856,
+                "residual_abs_mean": 0.33380481600761414,
+                "residual_std": 0.48697495460510254
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.01891806312821459,
+                "auroc_delta": 0.004330386117228913,
+                "risk_at_30_reduction": 0.014084507042253502,
+                "risk_at_50_reduction": -0.0028248587570620654,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4912956599452711,
+                "auroc": 0.8709981167608286,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.431924882629108,
+                "risk_at_50": 0.5564971751412429,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.017513861331978853,
+                  "p2_5": 0.005757916421086029,
+                  "p97_5": 0.030842072820835842
+                },
+                "auroc_delta": {
+                  "median": 0.003851596497387866,
+                  "p2_5": -0.002819538872397276,
+                  "p97_5": 0.01269324481045242
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.009389671361502372,
+                  "p2_5": -0.014084507042253613,
+                  "p97_5": 0.028169014084507116
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.015195061452936254,
+                "auroc_delta": 0.00307489333631239,
+                "risk_at_30_reduction": 0.014084507042253502,
+                "risk_at_50_reduction": 0.0,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4950186616205494,
+                "auroc": 0.8697426239799121,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.431924882629108,
+                "risk_at_50": 0.5536723163841808,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.014258940853374757,
+                  "p2_5": -0.002347003896053912,
+                  "p97_5": 0.02839255606368729
+                },
+                "auroc_delta": {
+                  "median": 0.003106812644301904,
+                  "p2_5": -0.006703054677774545,
+                  "p97_5": 0.012118697266643275
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.009389671361502372,
+                  "p2_5": -0.018779342723004744,
+                  "p97_5": 0.03755868544600949
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.016837164842967267,
+                "auroc_delta": 0.006064668517986482,
+                "risk_at_30_reduction": 0.023474178403755874,
+                "risk_at_50_reduction": -0.0028248587570620654,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.4933765582305184,
+                "auroc": 0.8727323991615862,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.4225352112676056,
+                "risk_at_50": 0.5564971751412429,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.015259743282706184,
+                  "p2_5": 0.0018343256612878278,
+                  "p97_5": 0.029892609321843233
+                },
+                "auroc_delta": {
+                  "median": 0.006011469671337477,
+                  "p2_5": -0.003106812644301793,
+                  "p97_5": 0.015119112217647168
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.018779342723004633,
+                  "p2_5": -0.009389671361502261,
+                  "p97_5": 0.04225352112676062
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.547899603843689,
+                "gate_entropy": 0.6885513917121184,
+                "residual_abs_mean": 0.3117469251155853,
+                "residual_std": 0.4688892066478729
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": true,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            }
+          },
+          "dataset": "bdsaglam/musique",
+          "seed": 59,
+          "split_sizes": {
+            "calibration_groups_unused": 177,
+            "calibration_unused": 708,
+            "test": 708,
+            "test_groups": 177,
+            "train": 2120,
+            "train_groups": 530
+          },
+          "status": "ok"
+        },
+        {
+          "baseline": {
+            "method": "calibrated_logistic_orbit",
+            "metrics": {
+              "aurc": 0.5351759349376584,
+              "auroc": 0.825975932841776,
+              "n": 708,
+              "negative": 531,
+              "positive": 177,
+              "risk_at_30": 0.49295774647887325,
+              "risk_at_50": 0.5734463276836158,
+              "risk_at_70": 0.6431451612903225
+            }
+          },
+          "candidates": {
+            "deep_sets_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.014006289786711146,
+                "auroc_delta": 0.0068839307563812735,
+                "risk_at_30_reduction": 0.009389671361502372,
+                "risk_at_50_reduction": -0.005649717514124242,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5211696451509472,
+                "auroc": 0.8328598635981572,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.4835680751173709,
+                "risk_at_50": 0.57909604519774,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.012667932850815355,
+                  "p2_5": 0.002067189604004094,
+                  "p97_5": 0.02374398261409094
+                },
+                "auroc_delta": {
+                  "median": 0.005756115207422252,
+                  "p2_5": -0.003691999957440961,
+                  "p97_5": 0.015097832678987566
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.009389671361502372,
+                  "p2_5": -0.014084507042253613,
+                  "p97_5": 0.03755868544600938
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5568190217018127,
+                "gate_entropy": 0.6866764090561068,
+                "residual_abs_mean": 0.32945215702056885,
+                "residual_std": 0.45258280634880066
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "mlp_parameter_matched": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.01015679773801026,
+                "auroc_delta": 0.00643706044452963,
+                "risk_at_30_reduction": -0.0046948356807511304,
+                "risk_at_50_reduction": 0.0028248587570621764,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5250191371996481,
+                "auroc": 0.8324129932863056,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.4976525821596244,
+                "risk_at_50": 0.5706214689265536,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.009641347687877388,
+                  "p2_5": 0.001636060443635845,
+                  "p97_5": 0.01910383255539505
+                },
+                "auroc_delta": {
+                  "median": 0.006054028748656681,
+                  "p2_5": 0.001574685860810554,
+                  "p97_5": 0.011980380265355861
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.0,
+                  "p2_5": -0.018779342723004744,
+                  "p97_5": 0.018779342723004744
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_full": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.011963613660619377,
+                "auroc_delta": 0.004234628193260814,
+                "risk_at_30_reduction": 0.014084507042253502,
+                "risk_at_50_reduction": -0.005649717514124242,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.523212321277039,
+                "auroc": 0.8302105610350368,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.47887323943661975,
+                "risk_at_50": 0.57909604519774,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.010739052392340409,
+                  "p2_5": 9.609223311946025e-05,
+                  "p97_5": 0.02308659638116084
+                },
+                "auroc_delta": {
+                  "median": 0.0037771181120792585,
+                  "p2_5": -0.005947631055358782,
+                  "p97_5": 0.01289540042771875
+                },
+                "risk_at_30_reduction": {
+                  "median": 0.014084507042253613,
+                  "p2_5": -0.009389671361502372,
+                  "p97_5": 0.03755868544600938
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": false
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            },
+            "set_transformer_residual": {
+              "comparison_vs_calibrated_logistic_orbit": {
+                "aurc_reduction": 0.0055305394873664815,
+                "auroc_delta": -0.005756115207422252,
+                "risk_at_30_reduction": -0.009389671361502261,
+                "risk_at_50_reduction": -0.016949152542372947,
+                "risk_at_70_reduction": 0.0
+              },
+              "max_source_auroc_drop": null,
+              "metrics": {
+                "aurc": 0.5296453954502919,
+                "auroc": 0.8202198176343537,
+                "n": 708,
+                "negative": 531,
+                "positive": 177,
+                "risk_at_30": 0.5023474178403755,
+                "risk_at_50": 0.5903954802259888,
+                "risk_at_70": 0.6431451612903225
+              },
+              "paired_group_bootstrap_ci": {
+                "aurc_reduction": {
+                  "median": 0.0041417638735693485,
+                  "p2_5": -0.007056594575683972,
+                  "p97_5": 0.017669259916356927
+                },
+                "auroc_delta": {
+                  "median": -0.006596656984476534,
+                  "p2_5": -0.019577175566833804,
+                  "p97_5": 0.005564599359485833
+                },
+                "risk_at_30_reduction": {
+                  "median": -0.009389671361502372,
+                  "p2_5": -0.03755868544600938,
+                  "p97_5": 0.014084507042253502
+                },
+                "samples": 200,
+                "unit": "source_item_group_id"
+              },
+              "residual_diagnostics": {
+                "applies": true,
+                "gate": 0.5579420924186707,
+                "gate_entropy": 0.6864174986056055,
+                "residual_abs_mean": 0.32845574617385864,
+                "residual_std": 0.458999365568161
+              },
+              "residual_diagnostics_pass": true,
+              "seed_candidate_gate": false,
+              "slice_auroc_deltas": [
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "distractor_only"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "missing_hop"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "stable"
+                },
+                {
+                  "auroc_delta": null,
+                  "n": 177,
+                  "slice": "wrong_answer"
+                }
+              ]
+            }
+          },
+          "dataset": "bdsaglam/musique",
+          "seed": 71,
+          "split_sizes": {
+            "calibration_groups_unused": 177,
+            "calibration_unused": 708,
+            "test": 708,
+            "test_groups": 177,
+            "train": 2120,
+            "train_groups": 530
+          },
+          "status": "ok"
+        }
+      ],
+      "source_item_groups": 884,
+      "source_scope_pass": true,
+      "status": "ok"
+    }
+  ],
+  "datasets": [
+    "hotpot_qa/distractor",
+    "copenlu/fever_gold_evidence",
+    "bdsaglam/musique"
+  ],
+  "generated_at_utc": "2026-06-24T11:38:25.083046+00:00",
+  "private_input": "results/public_source_orbits_v4_n1000.private_eval.jsonl",
+  "raw_input": "results/public_source_orbits_v4_n1000.raw.jsonl",
+  "scored_input": "results/public_source_orbits_v4_n1000.textonly_scored.jsonl",
+  "seeds": [
+    17,
+    31,
+    47,
+    59,
+    71
+  ]
+}
